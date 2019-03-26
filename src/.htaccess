@@ -1,0 +1,148 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+# TN - START EXPIRES CACHING #
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access 1 month"
+    ExpiresByType text/html "access 1 month"
+    ExpiresByType image/gif "access 1 year"
+    ExpiresByType image/png "access 1 year"
+    ExpiresByType image/jpg "access 1 year"
+    ExpiresByType image/jpeg "access 1 year"
+    ExpiresByType image/x-icon "access 1 year"
+    ExpiresByType application/font-woff "access 1 year"
+    ExpiresByType application/font-woff2 "access 1 year"
+    ExpiresByType application/x-font-ttf "access 1 year"
+    ExpiresByType application/x-font-truetype "access 1 year"
+    ExpiresByType application/pdf "access 1 month"
+    ExpiresByType application/javascript "access 1 month"
+    ExpiresByType text/x-javascript "access 1 month"
+    ExpiresByType application/x-shockwave-flash "access 1 month"
+    ExpiresDefault "access 1 month"
+</IfModule>
+# TN - END EXPIRES CACHING #
+
+# TN - BEGIN Cache-Control Headers
+<ifModule mod_headers.c>
+    <filesMatch "\.(ico|jpe?g|png|gif|swf|ttf|woff|woff2)$">
+        Header set Cache-Control "public"
+    </filesMatch>
+    <filesMatch "\.(ttf|woff|woff2)$">
+        Header set Cache-Control "public"
+    </filesMatch>
+    <filesMatch "\.(css)$">
+        Header set Cache-Control "public"
+    </filesMatch>
+    <filesMatch "\.(js)$">
+        Header set Cache-Control "public"
+    </filesMatch>
+    <filesMatch "\.(x?html?|php)$">
+        Header set Cache-Control "public, must-revalidate"
+    </filesMatch>
+</ifModule>
+# TN - END Cache-Control Headers
+
+#Disable Etags
+<IfModule mod_headers.c>
+   Header unset Etag
+   Header set Connection keep-alive
+</IfModule>
+FileETag None
+
+<IfModule mod_deflate.c>
+  # Compress HTML, CSS, JavaScript, Text, XML and fonts
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE application/x-font
+  AddOutputFilterByType DEFLATE application/x-font-opentype
+  AddOutputFilterByType DEFLATE application/x-font-otf
+  AddOutputFilterByType DEFLATE application/x-font-truetype
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE image/x-icon
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  # Remove browser bugs (only needed for really old browsers)
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  Header append Vary User-Agent
+</IfModule>
+
+
+
+
+# BEGIN Security
+
+<IfModule mod_headers.c>
+	<Limit GET POST PUT DELETE>
+		order deny,allow
+		allow from all
+		Require all granted
+	</Limit>
+
+	# HSTS verwenden
+	# Pflichtangabe: max-age""
+	# Optional: "includeSubDomains"
+	Header set Strict-Transport-Security "max-age=31556926; includeSubDomains"
+
+	# Verhindert mime based attacks, nur IE und Chrome
+	Header set X-Content-Type-Options "nosniff"
+
+	# Aktiviert XSS Praeventions-/Filter-Tools
+	# Optional: mode=block
+	Header set X-XSS-Protection "1; mode=block"
+
+	# Begrenzung der frame/iframe Darstellung
+	Header append X-Frame-Options "SAMEORIGIN"
+
+	# Cookies nur ueber SSL and kein Javascript Zugriff
+	# Optional: Expires, Max-Age, Path, Domain
+	Header always edit Set-Cookie (.*) "$1; HttpOnly; Secure"
+
+	# Kein PHP und System-Version ausgeben
+	Header unset X-Powered-By
+
+	# Download / Lade Inhalte nur von Seiten die explizit erlaubt sind
+	# Beispiel das alles von der eigenen Domain erlaubt allerdings keinerlei Externas:
+	Header set Content-Security-Policy "default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.all-in-data.dev *.paypalobjects.com *.paypal.com *.cloudflare.com *.youtube.com *.ytimg.com *.vimeo.com *.googleapis.com; connect-src 'self' *.paypal.com; img-src 'self' 'unsafe-inline' data: *.all-in-data.dev *.w.org *.cloudfront.net *.gravatar.com *.template-help.com http://*.template-help.com; style-src 'self' 'unsafe-inline' *.googleapis.com; font-src 'self' *.gstatic.com data:; frame-src 'self' *.all-in-data.dev *.sandbox.paypal.com; manifest-src 'self'"
+
+	# Referrer Policy
+	Header set Referrer-Policy "origin-when-cross-origin"
+</IfModule>
+# END Security
+
+
+# Wordfence WAF
+<Files ".user.ini">
+<IfModule mod_authz_core.c>
+	Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+	Order deny,allow
+	Deny from all
+</IfModule>
+</Files>
+
+# END Wordfence WAF
+

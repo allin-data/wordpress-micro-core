@@ -1,0 +1,62 @@
+version: "3"
+
+services:
+
+  app:
+    image: bitnami/wordpress:latest
+    ports:
+      - 80:80
+    env_file:
+      - .env
+    links:
+      - db
+    environment:
+      - MARIADB_HOST=${MYSQL_HOST}
+      - MARIADB_PORT_NUMBER=${MYSQL_PORT}
+      - WORDPRESS_DATABASE_USER=${MYSQL_USER}
+      - WORDPRESS_DATABASE_PASSWORD=${MYSQL_PASSWORD}
+      - WORDPRESS_DATABASE_NAME=${MYSQL_DATABASE}
+      - WORDPRESS_USERNAME=${APP_USER_NAME}
+      - WORDPRESS_PASSWORD=${APP_USER_PASSWORD}
+      - WORDPRESS_EMAIL=${APP_USER_EMAIL}
+      - WORDPRESS_BLOG_NAME='Markenhund CMS'
+      - WORDPRESS_HTACESS_OVERRIDE_NONE=All
+    volumes:
+      - appdata:/bitnami:delegated
+      - ./src:/opt/bitnami/wordpress:delegated
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - dbdata:/var/lib/mysql
+    ports:
+      - 3306:3306
+    env_file:
+      - .env
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_USER: ${MYSQL_ROOT_USER}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8080:80
+    env_file:
+      - .env
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=${MYSQL_HOST}
+    links:
+      - db
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - 8025:8025
+
+volumes:
+  appdata:
+  dbdata:
