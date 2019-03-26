@@ -7,7 +7,7 @@ Copyright (C) 2019 All.In Data GmbH
 get_header();
 ?>
 
-    <section id="primary" class="content-area">
+    <section id="primary" class="container">
         <main id="main" class="site-main">
             FOOBAR
             <?php

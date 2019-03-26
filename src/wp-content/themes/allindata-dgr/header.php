@@ -16,4 +16,4 @@ Copyright (C) 2019 All.In Data GmbH
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
-    <div id="content" class="site-content">
+    <main id="content" role="main">
