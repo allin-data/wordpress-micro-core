@@ -23,7 +23,7 @@ services:
       - WORDPRESS_HTACESS_OVERRIDE_NONE=All
     volumes:
       - appdata:/bitnami:delegated
-      - ./src:/opt/bitnami/wordpress:delegated
+      - ./src/wp-content:/bitnami/wordpress/wp-content:delegated
 
   db:
     image: mysql:5.7

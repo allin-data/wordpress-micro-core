@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-03-25 09:54:47+0000\n"
+"PO-Revision-Date: 2019-03-26 15:52:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -177,11 +177,11 @@ msgstr "Seite %s"
 
 #: languages/yoast-seo-js.php:322
 msgid "%3$sImage alt attributes%5$s: Out of %2$d images on this page, %1$d have alt attributes with words from your keyphrase or synonyms. That's a bit much. %4$sOnly include the keyphrase or its synonyms when it really fits the image%5$s."
-msgstr "%3$sBilder mit Alt-Attributen%5$s: die Alt-Attribute bei %1$d von %2$d Bildern auf dieser Seite enthalten Wörter aus der Keyphrase oder entsprechende Synonyme. Das ist etwas viel. %4$sVerwende die Keyphrase bzw. Synonyme davon nur wenn sie zum Bild passen%5$s."
+msgstr "%3$sBilder mit Alt-Attributen%5$s: Die Alt-Attribute bei %1$d von %2$d Bildern auf dieser Seite enthalten Wörter aus der Keyphrase oder entsprechende Synonyme. Das ist etwas viel. %4$sVerwende die Keyphrase bzw. Synonyme davon nur wenn sie zum Bild passen%5$s."
 
 #: languages/yoast-seo-js.php:319
 msgid "%1$sImage alt attributes%2$s: Good job!"
-msgstr "%1$sBild Alt-Attribute%2$s: Gut gemacht!"
+msgstr "%1$sBilder mit Alt-Attributen%2$s: Gut gemacht!"
 
 #: languages/yoast-seo-js.php:316
 msgid "%3$sImage alt attributes%5$s: Out of %2$d images on this page, only %1$d has an alt attribute that reflects the topic of your text. %4$sAdd your keyphrase or synonyms to the alt tags of more relevant images%5$s!"
@@ -193,7 +193,7 @@ msgstr[1] "%3$sBilder mit Alt-Attributen%5$s: Von %2$d Bildern auf dieser Seite,
 #. anchor end tag
 #: languages/yoast-seo-js.php:313
 msgid "%1$sImage alt attributes%3$s: Images on this page do not have alt attributes that reflect the topic of your text. %2$sAdd your keyphrase or synonyms to the alt tags of relevant images%3$s!"
-msgstr "%1$sBilder mit Alt-Attributen%3$s: Bilder auf dieser Seite haben keine Alt-Attribute (Alt-Texte), die dein Thema reflektieren. %2$sErgänze deine Keyphrase oder Synonyme zu den Alt-Schlagwörtern bei relevanten Bildern%3$s!"
+msgstr "%1$sBilder mit Alt-Attributen%3$s: Die Bilder auf dieser Seite haben keine Alt-Attribute, die das Thema deines Textes widerspiegeln. %2$sFüge deine Keyphrase oder entsprechende Synonyme zu den Alt-Attributen bei passenden Bildern hinzu%3$s!"
 
 #: languages/yoast-seo-js.php:308
 msgid "%1$sImage alt attributes%3$s: Images on this page have alt attributes, but you have not set your keyphrase. %2$sFix that%3$s!"
@@ -203,7 +203,7 @@ msgstr "%1$sBilder mit Alt-Attributen%3$s: Die Bilder auf dieser Seite haben Alt
 msgid "%1$sKeyphrase in subheading%2$s: %3$s of your higher-level subheadings reflects the topic of your copy. Good job!"
 msgid_plural "%1$sKeyphrase in subheading%2$s: %3$s of your higher-level subheadings reflect the topic of your copy. Good job!"
 msgstr[0] "%1$sKeyphrase in Zwischenüberschriften%2$s: %3$s deiner hierarchisch höheren Zwischenüberschriften spiegelt das Thema deines Textes wider. Gut gemacht!"
-msgstr[1] "%1$sSchlüsselphrase in Zwischenüberschriften%2$s: %3$s deiner hierarchisch höheren Zwischenüberschriften spiegeln das Thema deines Textes wider. Gut gemacht!"
+msgstr[1] "%1$sKeyphrase in Zwischenüberschriften%2$s: %3$s deiner hierarchisch höheren Zwischenüberschriften spiegeln das Thema deines Textes wider. Gut gemacht!"
 
 #: languages/yoast-seo-js.php:250
 msgid "%1$sKeyphrase in subheading%2$s: Your higher-level subheading reflects the topic of your copy. Good job!"
@@ -393,7 +393,7 @@ msgstr "%4$sBereits verwendete Keyphrase%6$s: Du hast diese Keyphrase zuvor scho
 #. the anchor end tag.
 #: languages/yoast-seo-js.php:364
 msgid "%3$sPreviously used keyphrase%5$s: You've used this keyphrase %1$sonce before%2$s. %4$sDo not use your keyphrase more than once%5$s."
-msgstr "%3$sBereits verwendete Schlüsselphrase%5$s: Du hast diese Schlüsselphrase bereits zuvor schon %1$seinmal%2$s verwendet. %4$sVerwende Schlüsselphrasen immer nur einmal.%5$s."
+msgstr "%3$sBereits verwendete Keyphrase%5$s: Du hast diese Keyphrase bereits zuvor schon %1$seinmal%2$s verwendet. %4$sVerwende Keyphrases immer nur einmal.%5$s."
 
 #: languages/yoast-seo-js.php:359
 msgid "%1$sPreviously used keyphrase%2$s: You've not used this keyphrase before, very good."
@@ -441,7 +441,7 @@ msgstr "%1$sKeyphrase im Titel%2$s: Die wortwörtliche Form der Keyphrase ersche
 
 #: languages/yoast-seo-js.php:305
 msgid "%1$sImage alt attributes%3$s: No images appear on this page. %2$sAdd some%3$s!"
-msgstr "%1$s Bild Alt-Attribute%3$s: Auf dieser Seite werden keine Bilder angezeigt. %2$s Füge Einige hinzu%3$s!"
+msgstr "%1$s Bilder mit Alt-Attributen%3$s: Auf dieser Seite gibt es keine Bilder. %2$s Füge welche hinzu%3$s!"
 
 #: languages/yoast-seo-js.php:302
 msgid "%1$sLink keyphrase%3$s: You're linking to another page with the words you want this page to rank for. %2$sDon't do that%3$s!"
