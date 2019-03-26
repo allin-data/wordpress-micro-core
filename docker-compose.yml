@@ -40,6 +40,12 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
+  compass:
+    image: antonienko/compass-watch:latest
+    command: watch --poll /bitnami/wordpress/wp-content/themes/allindata-dgr/
+    volumes:
+      - ./src/wp-content:/bitnami/wordpress/wp-content:delegated
+
   myadmin:
     image: phpmyadmin/phpmyadmin
     ports:
