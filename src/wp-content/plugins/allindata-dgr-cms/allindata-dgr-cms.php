@@ -61,4 +61,4 @@ $beanFactory = new \bitExpert\Disco\AnnotationBeanFactory(
 
 /** @var \AllInData\Dgr\Core\PluginInterface $app */
 $app = $beanFactory->get('PluginApp');
-$app->load();
+$app->doInit();

@@ -16,8 +16,14 @@ interface PluginInterface
 {
     /**
      * Init plugin
+     * Required by Wordpress
      */
     public function init();
+
+    /**
+     * Init plugin
+     */
+    public function doInit();
 
     /**
      * Load plugin

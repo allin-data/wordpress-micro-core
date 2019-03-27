@@ -6,70 +6,32 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\Dgr\Core;
-
-use AllInData\Dgr\Core\Controller\PluginControllerInterface;
-use AllInData\Dgr\Core\ShortCode\PluginShortCodeInterface;
+namespace AllInData\Dgr\Core\ShortCode;
 
 /**
  * Class AbstractPlugin
  * @package AllInData\Dgr\Core
  */
-abstract class AbstractPlugin implements PluginInterface
+abstract class AbstractShortCode implements PluginShortCodeInterface
 {
     /**
      * @var string
      */
     private $templatePath;
-    /**
-     * @var PluginControllerInterface[]
-     */
-    private $controllers = [];
-    /**
-     * @var PluginShortCodeInterface[]
-     */
-    private $shortCodes = [];
 
     /**
      * AbstractPlugin constructor.
      * @param string $templatePath
-     * @param PluginControllerInterface[] $controllers
-     * @param PluginShortCodeInterface[] $shortCodes
      */
-    public function __construct(string $templatePath, array $controllers = [], array $shortCodes = [])
+    public function __construct(string $templatePath = '')
     {
         $this->templatePath = $templatePath;
-        $this->controllers = $controllers;
-        $this->shortCodes = $shortCodes;
     }
 
     /**
      * @inheritdoc
      */
-    public function init()
-    {
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function doInit()
-    {
-        foreach ($this->controllers as $controller) {
-            $controller->init();
-        }
-
-        foreach ($this->shortCodes as $shortCode) {
-            $shortCode->init();
-        }
-
-        $this->load();
-    }
-
-    /**
-     * @inheritdoc
-     */
-    abstract public function load();
+    abstract public function init();
 
     /**
      * @param string $templateName

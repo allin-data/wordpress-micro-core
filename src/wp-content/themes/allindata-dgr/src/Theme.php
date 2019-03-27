@@ -37,7 +37,7 @@ class Theme
      * @param ThemeControllerInterface[] $controllers
      * @param ThemeShortCodeInterface[] $shortCodes
      */
-    public function __construct(array $modules, array $controllers, array $shortCodes)
+    public function __construct(array $modules = [], array $controllers = [], array $shortCodes = [])
     {
         $this->modules = $modules;
         $this->controllers = $controllers;

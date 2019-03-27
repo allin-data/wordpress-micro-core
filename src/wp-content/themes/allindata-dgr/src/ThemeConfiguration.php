@@ -16,6 +16,7 @@ use AllInData\Dgr\Theme\Module\ForceLogin;
 use AllInData\Dgr\Theme\Module\ThemeModuleInterface;
 use AllInData\Dgr\Theme\ShortCode\LoginForm;
 use AllInData\Dgr\Theme\ShortCode\ThemeShortCodeInterface;
+use AllInData\Dgr\Theme\ShortCode\UserProfile;
 use bitExpert\Disco\Annotations\Configuration;
 use bitExpert\Disco\Annotations\Bean;
 
@@ -73,7 +74,8 @@ class ThemeConfiguration
     private function getThemeShortCodes() : array
     {
         return [
-            new LoginForm()
+            new LoginForm(),
+            new UserProfile()
         ];
     }
 }
