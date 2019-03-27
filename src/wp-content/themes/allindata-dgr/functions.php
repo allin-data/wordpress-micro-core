@@ -7,7 +7,7 @@ Copyright (C) 2019 All.In Data GmbH
 define('AID_DGR_THEME_VERSION', '1.0');
 define('AID_DGR_THEME_SLUG', 'allindata-dgr-theme');
 define('AID_DGR_THEME_TEXTDOMAIN', 'allindata-dgr-theme');
-define('AID_DGR_THEME_TEMPLATE_DIR', __DIR__ . '/view/');
+define('AID_DGR_THEME_TEMPLATE_DIR', __DIR__ . '/templates/');
 define('AID_DGR_THEME_TEMP_DIR', ABSPATH . 'tmp/');
 
 defined('ABSPATH') or exit;

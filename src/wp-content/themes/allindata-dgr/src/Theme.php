@@ -34,6 +34,19 @@ class Theme
     /**
      *
      */
+    public function addNavigationMenus()
+    {
+        register_nav_menus(
+            array(
+                'main-menu' => __( 'Main Menu' ),
+                'footer-menu' => __( 'Footer Menu' )
+            )
+        );
+    }
+
+    /**
+     *
+     */
     public function addScripts()
     {
         wp_enqueue_script(
@@ -60,5 +73,6 @@ class Theme
     {
         add_action('wp_enqueue_scripts', [$this, 'addStylesToThemeEnqueue']);
         add_action('wp_enqueue_scripts', [$this, 'addScripts']);
+        add_action('init', [$this, 'addNavigationMenus']);
     }
 }
