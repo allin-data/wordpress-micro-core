@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Contact Form 7 - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-02-20 14:41:05+0000\n"
+"PO-Revision-Date: 2019-03-27 07:55:07+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,6 +24,10 @@ msgstr "Änderungen speichern"
 msgid "reCAPTCHA (v3)"
 msgstr "reCAPTCHA (v3)"
 
+#: modules/constant-contact.php:366
+msgid "Connect to the Constant Contact API"
+msgstr "Verbindung zur Constant Contact API herstellen"
+
 #: modules/constant-contact.php:362 modules/recaptcha.php:436
 msgctxt "API keys"
 msgid "Remove Keys"
@@ -31,11 +35,15 @@ msgstr "Schlüssel entfernen"
 
 #: modules/constant-contact.php:354
 msgid "Set this URL as the redirect URI."
-msgstr "Diese URL als Weiterleitungs-URI setzen"
+msgstr "Diese URL als Weiterleitungs-URI setzen."
 
 #: modules/constant-contact.php:347
 msgid "Redirect URI"
 msgstr "Weiterleitungs-URI"
+
+#: modules/constant-contact.php:330
+msgid "App Secret"
+msgstr "App Secret"
 
 #: modules/constant-contact.php:313
 msgid "API Key"
@@ -45,9 +53,17 @@ msgstr "API-Schlüssel"
 msgid "Setup Integration"
 msgstr "Integration konfigurieren"
 
+#: modules/constant-contact.php:291
+msgid "Constant Contact Integration"
+msgstr "Integration von Constant Contact"
+
 #: modules/constant-contact.php:287
 msgid "https://contactform7.com/constant-contact-integration/"
 msgstr "https://contactform7.com/constant-contact-integration/"
+
+#: modules/constant-contact.php:171
+msgid "Constant Contact"
+msgstr "Constant Contact"
 
 #: modules/constant-contact.php:9
 msgid "Email Marketing"
@@ -59,7 +75,7 @@ msgstr "Es ist nicht erlaubt, Dateien außerhalb des Verzeichnisses „wp-conten
 
 #: modules/acceptance.php:254
 msgid "Make this checkbox optional"
-msgstr "Diese Checkbox als optional einstellen."
+msgstr "Diese Checkbox als optional einstellen"
 
 #: admin/edit-contact-form.php:206
 msgid "Professional Services"
@@ -170,7 +186,7 @@ msgstr "zu spenden"
 #. translators: %s: link labeled 'making a donation'
 #: admin/includes/welcome-panel.php:35
 msgid "If you enjoy using Contact Form 7 and find it useful, please consider %s."
-msgstr "Wenn Sie gerne Contact Form 7 nutzen und es nützlich finden dann erwägen Sie %s. "
+msgstr "Wenn Sie gerne Contact Form 7 nutzen und es nützlich finden, dann erwägen Sie %s."
 
 #: admin/includes/welcome-panel.php:33
 msgid "It is hard to continue development and support for this plugin without contributions from users like you."
@@ -202,7 +218,7 @@ msgstr "Sie haben keine Berechtigung das Kontaktformular zu öffnen."
 #: includes/rest-api.php:247 includes/rest-api.php:276
 #: includes/rest-api.php:316
 msgid "The requested contact form was not found."
-msgstr "Das angeforderte Kontaktformular wurde nicht gefunden. "
+msgstr "Das angeforderte Kontaktformular wurde nicht gefunden."
 
 #: includes/rest-api.php:127
 msgid "You are not allowed to create a contact form."
@@ -350,7 +366,7 @@ msgstr "Die E-Mail-Adresse ist ungültig."
 
 #: modules/quiz.php:166
 msgid "The answer to the quiz is incorrect."
-msgstr "Die eingegebene Antwort ist falsch!"
+msgstr "Die eingegebene Antwort ist falsch."
 
 #: modules/number.php:132
 msgid "The number is larger than the maximum allowed."
@@ -1142,7 +1158,7 @@ msgstr "https://contactform7.com/additional-settings/"
 
 #: admin/includes/editor.php:194
 msgid "File Attachments"
-msgstr "Datei Anhänge"
+msgstr "Dateianhänge"
 
 #: admin/includes/editor.php:188
 msgid "Use HTML content type"

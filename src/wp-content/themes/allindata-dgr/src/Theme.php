@@ -8,12 +8,27 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\Dgr\Theme;
 
+use AllInData\Dgr\Theme\Module\ThemeModuleInterface;
+
 /**
  * Class Theme
  * @package AllInData\Dgr\Theme
  */
 class Theme
 {
+    /**
+     * @var ThemeModuleInterface[]
+     */
+    private $modules = [];
+
+    /**
+     * Theme constructor.
+     * @param ThemeModuleInterface[] $modules
+     */
+    public function __construct(array $modules = [])
+    {
+        $this->modules = $modules;
+    }
 
     /**
      * Initialize
@@ -21,6 +36,10 @@ class Theme
     public function init()
     {
         $this->initHooks();
+
+        foreach ($this->modules as $module) {
+            $module->init();
+        }
     }
 
     /**

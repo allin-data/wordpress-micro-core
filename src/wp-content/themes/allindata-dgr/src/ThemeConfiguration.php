@@ -8,6 +8,8 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\Dgr\Theme;
 
+use AllInData\Dgr\Theme\Module\ForceLogin;
+use AllInData\Dgr\Theme\Module\ThemeModuleInterface;
 use bitExpert\Disco\Annotations\Configuration;
 use bitExpert\Disco\Annotations\Bean;
 
@@ -23,6 +25,16 @@ class ThemeConfiguration
      */
     public function Theme() : Theme
     {
-        return new Theme();
+        return new Theme($this->getThemeModules());
+    }
+
+    /**
+     * @return ThemeModuleInterface[]
+     */
+    private function getThemeModules() : array
+    {
+        return [
+            new ForceLogin()
+        ];
     }
 }

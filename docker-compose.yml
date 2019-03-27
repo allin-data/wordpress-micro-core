@@ -22,8 +22,9 @@ services:
       - WORDPRESS_BLOG_NAME='Markenhund CMS'
       - WORDPRESS_HTACESS_OVERRIDE_NONE=All
     volumes:
-      - appdata:/bitnami:delegated
-      - ./src/wp-content:/bitnami/wordpress/wp-content:delegated
+      - appdata:/bitnami:cached
+      - ./src/wp-content:/bitnami/wordpress/wp-content:cached
+      - ./conf/app:/bitnami/php/conf/conf.d:cached
 
   db:
     image: mysql:5.7
@@ -44,7 +45,7 @@ services:
     image: antonienko/compass-watch:latest
     command: watch --poll /bitnami/wordpress/wp-content/themes/allindata-dgr/
     volumes:
-      - ./src/wp-content:/bitnami/wordpress/wp-content:delegated
+      - ./src/wp-content:/bitnami/wordpress/wp-content:cached
 
   myadmin:
     image: phpmyadmin/phpmyadmin
