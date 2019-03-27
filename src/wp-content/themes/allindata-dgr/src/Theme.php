@@ -8,7 +8,9 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\Dgr\Theme;
 
+use AllInData\Dgr\Theme\Controller\ThemeControllerInterface;
 use AllInData\Dgr\Theme\Module\ThemeModuleInterface;
+use AllInData\Dgr\Theme\ShortCode\ThemeShortCodeInterface;
 
 /**
  * Class Theme
@@ -20,14 +22,26 @@ class Theme
      * @var ThemeModuleInterface[]
      */
     private $modules = [];
+    /**
+     * @var ThemeControllerInterface[]
+     */
+    private $controllers = [];
+    /**
+     * @var ThemeShortCodeInterface[]
+     */
+    private $shortCodes = [];
 
     /**
      * Theme constructor.
      * @param ThemeModuleInterface[] $modules
+     * @param ThemeControllerInterface[] $controllers
+     * @param ThemeShortCodeInterface[] $shortCodes
      */
-    public function __construct(array $modules = [])
+    public function __construct(array $modules, array $controllers, array $shortCodes)
     {
         $this->modules = $modules;
+        $this->controllers = $controllers;
+        $this->shortCodes = $shortCodes;
     }
 
     /**
@@ -39,6 +53,14 @@ class Theme
 
         foreach ($this->modules as $module) {
             $module->init();
+        }
+
+        foreach ($this->controllers as $controller) {
+            $controller->init();
+        }
+
+        foreach ($this->shortCodes as $shortCode) {
+            $shortCode->init();
         }
     }
 

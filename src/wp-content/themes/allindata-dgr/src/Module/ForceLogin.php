@@ -40,7 +40,7 @@ class ForceLogin implements ThemeModuleInterface
     {
         $relativeUrl = filter_input(INPUT_SERVER, 'REQUEST_URI');
         $path = parse_url($relativeUrl, PHP_URL_PATH);
-        $currentPage = ltrim($path, '/');
+        $currentPage = ltrim(rtrim($path, '/'), '/');
         if (!is_user_logged_in() && !in_array($currentPage, self::WHITELIST_PATH_SET)) {
             wp_redirect($this->getLoginUrl());
             exit();

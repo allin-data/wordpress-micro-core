@@ -9,8 +9,13 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\Dgr\Theme;
 
 use AllInData\Dgr\Theme\Block\Navigation\Menu;
+use AllInData\Dgr\Theme\Controller\Login;
+use AllInData\Dgr\Theme\Controller\Logout;
+use AllInData\Dgr\Theme\Controller\ThemeControllerInterface;
 use AllInData\Dgr\Theme\Module\ForceLogin;
 use AllInData\Dgr\Theme\Module\ThemeModuleInterface;
+use AllInData\Dgr\Theme\ShortCode\LoginForm;
+use AllInData\Dgr\Theme\ShortCode\ThemeShortCodeInterface;
 use bitExpert\Disco\Annotations\Configuration;
 use bitExpert\Disco\Annotations\Bean;
 
@@ -26,7 +31,11 @@ class ThemeConfiguration
      */
     public function Theme() : Theme
     {
-        return new Theme($this->getThemeModules());
+        return new Theme(
+            $this->getThemeModules(),
+            $this->getThemeControllers(),
+            $this->getThemeShortCodes()
+        );
     }
 
     /**
@@ -44,6 +53,27 @@ class ThemeConfiguration
     {
         return [
             new ForceLogin()
+        ];
+    }
+
+    /**
+     * @return ThemeControllerInterface[]
+     */
+    private function getThemeControllers() : array
+    {
+        return [
+            new Login(),
+            new Logout()
+        ];
+    }
+
+    /**
+     * @return ThemeShortCodeInterface[]
+     */
+    private function getThemeShortCodes() : array
+    {
+        return [
+            new LoginForm()
         ];
     }
 }
