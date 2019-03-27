@@ -8,6 +8,7 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\Dgr\Theme;
 
+use AllInData\Dgr\Theme\Block\Navigation\Menu;
 use AllInData\Dgr\Theme\Module\ForceLogin;
 use AllInData\Dgr\Theme\Module\ThemeModuleInterface;
 use bitExpert\Disco\Annotations\Configuration;
@@ -26,6 +27,14 @@ class ThemeConfiguration
     public function Theme() : Theme
     {
         return new Theme($this->getThemeModules());
+    }
+
+    /**
+     * @return Menu
+     */
+    public function BlockNavigationMenu() : Menu
+    {
+        return new Menu();
     }
 
     /**

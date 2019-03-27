@@ -8,18 +8,9 @@ get_header();
 ?>
 <section id="primary" class="container-fluid fill-height">
     <div class="row fill-height">
-        <div class="col-md-2 d-md-none">
-            <?php
-            get_template_part('templates/navigation/menu', 'main');
-            get_template_part('templates/navigation/menu', 'admin');
-            ?>
-        </div>
-        <div class="col-md-2 fill-height d-none d-md-block">
-            <?php
-            get_template_part('templates/navigation/menu', 'main');
-            get_template_part('templates/navigation/menu', 'admin');
-            ?>
-        </div>
+        <?php
+        get_template_part('templates/navigation/menu', 'sidebar');
+        ?>
         <div class="col-md-10">
             <div>
                 <main id="main" class="site-main">
