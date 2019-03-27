@@ -21,14 +21,22 @@ class Logout implements ThemeControllerInterface
     {
         add_action('wp_ajax_logout', [$this, 'applyLogout']);
         add_action('wp_ajax_nopriv_logout', [$this, 'applyLogout']);
+        add_filter('wp_nav_menu_items', [$this, 'addLogoutMenuEntry'], 10, 2);
     }
 
     /**
-     *
+     * add link to main menu, trigger logout action
      */
-    public function addLogoutMenuEntry()
+    public function addLogoutMenuEntry($items, $args)
     {
-        // add link to main menu, trigger logout action
+        $menuType = $args->theme_location ?: null;
+        if (!is_user_logged_in() || $menuType !== 'main-menu') {
+            return $items;
+        }
+        $logoutUrl = wp_logout_url(get_permalink());
+        $logoutItemEntry = '<li class="logout"><a href="' . $logoutUrl . '">' . __('Logout', AID_DGR_THEME_TEXTDOMAIN) . '</a></li>';
+        $items = $items . $logoutItemEntry;
+        return $items;
     }
 
     /**

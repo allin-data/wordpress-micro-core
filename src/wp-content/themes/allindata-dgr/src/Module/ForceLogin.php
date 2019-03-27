@@ -21,6 +21,7 @@ class ForceLogin implements ThemeModuleInterface
     const WHITELIST_PATH_SET = [
         'wp-login.php',
         'wp-register.php',
+        'wp-admin',
         'login',
         'register',
     ];
