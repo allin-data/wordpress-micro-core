@@ -57,6 +57,7 @@ class Theme
     {
         register_nav_menus(
             array(
+                'admin-menu' => __( 'Admin Menu' ),
                 'main-menu' => __( 'Main Menu' ),
                 'footer-menu' => __( 'Footer Menu' )
             )

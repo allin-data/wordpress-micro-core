@@ -14,6 +14,6 @@ Copyright (C) 2019 All.In Data GmbH
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+<div id="page" class="site fill-height">
 
-    <main id="content" role="main">
+    <main id="content" role="main" class="fill-height">
