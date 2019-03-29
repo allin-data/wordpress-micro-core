@@ -39,8 +39,9 @@ abstract class AbstractShortCode implements PluginShortCodeInterface
      */
     protected function getTemplate($templateName, $args = [])
     {
+        global $wp_query;
         if (is_array($args) && isset($args)) {
-            extract($args);
+            $wp_query->query_vars = array_merge($wp_query->query_vars, $args);
         }
 
         $templateFile = $this->loadTemplate($templateName);
