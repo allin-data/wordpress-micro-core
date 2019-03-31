@@ -29,7 +29,11 @@ abstract class AbstractModel
      */
     public function __get($name)
     {
-        return $this->{$name} ?: null;
+        $methodName = sprintf('get%s',  $this->canonicalizeMethodName($name));
+        if (!method_exists($this, $methodName)) {
+            return $this->{$name} ?: null;
+        }
+        return $this->{$methodName}();
     }
 
     /**
@@ -39,7 +43,12 @@ abstract class AbstractModel
      */
     public function __set($name, $value)
     {
-        $this->{$name} = $value;
+        $methodName = sprintf('set%s',  $this->canonicalizeMethodName($name));
+        if (!method_exists($this, $methodName)) {
+            $this->{$name} = $value;
+            return $this;
+        }
+        $this->{$methodName}($value);
         return $this;
     }
 
@@ -49,7 +58,11 @@ abstract class AbstractModel
      */
     public function get($name)
     {
-        return $this->{$name} ?: null;
+        $methodName = sprintf('get%s',  $this->canonicalizeMethodName($name));
+        if (!method_exists($this, $methodName)) {
+            return $this->{$name} ?: null;
+        }
+        return $this->{$methodName}();
     }
 
     /**
@@ -59,7 +72,12 @@ abstract class AbstractModel
      */
     public function set($name, $value)
     {
-        $this->{$name} = $value;
+        $methodName = sprintf('set%s',  $this->canonicalizeMethodName($name));
+        if (!method_exists($this, $methodName)) {
+            $this->{$name} = $value;
+            return $this;
+        }
+        $this->{$methodName}($value);
         return $this;
     }
 

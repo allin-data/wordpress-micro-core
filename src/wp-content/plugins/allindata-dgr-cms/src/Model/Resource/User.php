@@ -129,6 +129,7 @@ class User extends AbstractResource
         );
 
         $postMetaDataSet = $this->extractUserMetaData($entity->toArray());
+var_dump($entity->toArray(), $postData, $postMetaDataSet); exit();
         foreach ($postMetaDataSet as $postMetaData) {
             $db->delete($db->usermeta, [
                 'user_id' => $postMetaData['data']['user_id'],
@@ -152,14 +153,19 @@ class User extends AbstractResource
         $primaryKeyValue = $entityData[$this->getPrimaryKey()] ?: null;
 
         $postEntityDataKeySet = $this->getUserEntityDataKeySet();
-        $data = array_filter($entityData, function ($item) use ($postEntityDataKeySet) {
-            return isset($postEntityDataKeySet, $item);
-        }, ARRAY_FILTER_USE_KEY);
-        $data['ID'] = $primaryKeyValue;
+        $filteredDataSet = [];
+        foreach ($entityData as $itemKey => $itemValue) {
+            $key = $this->decanonicalizeAttributeName($itemKey);
+            if (!in_array($key, $postEntityDataKeySet)) {
+                continue;
+            }
+            $filteredDataSet[$key] = $itemValue;
+        }
+        $filteredDataSet['ID'] = $primaryKeyValue;
 
         $mappingSet = [
-            'data' => $data,
-            'format' => $this->getFormatSet($data)
+            'data' => $filteredDataSet,
+            'format' => $this->getFormatSet($filteredDataSet)
         ];
 
         return $mappingSet;
@@ -174,12 +180,24 @@ class User extends AbstractResource
         $primaryKeyValue = $entityData[$this->getPrimaryKey()] ?: null;
 
         $postEntityDataKeySet = $this->getUserEntityDataKeySet();
-        $data = array_filter($entityData, function ($item) use ($postEntityDataKeySet) {
-            return !isset($postEntityDataKeySet, $item);
-        }, ARRAY_FILTER_USE_KEY);
+        $filteredDataSet = [];
+        foreach ($entityData as $itemKey => $itemValue) {
+            $key = $this->decanonicalizeAttributeName($itemKey);
+            if (in_array($key, $postEntityDataKeySet)) {
+                continue;
+            }
+            $filteredDataSet[$key] = $itemValue;
+        }
 
         $mappingSet = [];
-        foreach ($data as $key => $value) {
+        foreach ($filteredDataSet as $key => $value) {
+            if (in_array($key, [
+                $this->getPrimaryKey(),
+                'umeta_id'
+            ])) {
+                continue;
+            }
+
             $set = [
                 'user_id' => $primaryKeyValue,
                 'meta_key' => $key,

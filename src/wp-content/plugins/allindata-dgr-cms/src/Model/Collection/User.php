@@ -8,6 +8,7 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\Dgr\Cms\Model\Collection;
 
+use AllInData\Dgr\Cms\Model\UserRole;
 use AllInData\Dgr\Core\Model\AbstractCollection;
 
 /**
@@ -17,35 +18,48 @@ use AllInData\Dgr\Core\Model\AbstractCollection;
 class User extends AbstractCollection
 {
     /**
-     * @TODO remove dummy
      * @param int $limit
      * @param int $offset
      * @return array
      */
     public function load($limit = self::DEFAULT_LIMIT, $offset = self::DEFAULT_OFFSET): array
     {
-        /*
-         * @TODO remove dummy
-         */
-        return [
-            $this->getResource()->getModelFactory()->create([
-                'id' => 1,
-                'firstName' => 'Foo',
-                'lastName' => 'Bar'
-            ]),
-            $this->getResource()->getModelFactory()->create([
-                'id' => 2,
-                'firstName' => 'Alice',
-                'lastName' => 'Bob'
-            ]),
-            $this->getResource()->getModelFactory()->create([
-                'id' => 3,
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann'
-            ])
-        ];
-        /*
-         * @TODO remove dummy
-         */
+        $query = new \WP_User_Query([
+            'role' => UserRole::ROLE_LEVEL_USER_DEFAULT,
+            'fields' => [
+                'ID'
+            ],
+            'offset' => $offset,
+            'number' => $limit
+        ]);
+
+        $collectionIdSet = (array)$query->get_results();
+
+        if (!is_array($collectionIdSet)) {
+            return [];
+        }
+
+        $collectionItems = [];
+        foreach ($collectionIdSet as $item) {
+            $entity = $this->getResource()->loadById($item->ID);
+            $collectionItems[] = $entity;
+        }
+
+        return $collectionItems;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTotalCount(): int
+    {
+        $query = new \WP_User_Query([
+            'role' => UserRole::ROLE_LEVEL_USER_DEFAULT,
+            'fields' => [
+                'ID'
+            ]
+        ]);
+
+        return $query->get_total();
     }
 }

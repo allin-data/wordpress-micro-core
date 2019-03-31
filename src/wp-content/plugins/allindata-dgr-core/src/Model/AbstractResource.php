@@ -229,7 +229,6 @@ abstract class AbstractResource
     protected function update(AbstractModel $entity)
     {
         $postData = $this->extractPostData($entity->toArray());
-
         $db = $this->database->getInstance();
         $db->update(
             $db->posts,
@@ -242,6 +241,7 @@ abstract class AbstractResource
         );
 
         $postMetaDataSet = $this->extractPostMetaData($entity->toArray());
+
         foreach ($postMetaDataSet as $postMetaData) {
             $db->delete($db->postmeta, [
                 'post_id' => $postMetaData['data']['post_id'],
@@ -275,19 +275,22 @@ abstract class AbstractResource
         $primaryKeyValue = $entityData[$this->primaryKey] ?: null;
 
         $postEntityDataKeySet = $this->getPostEntityDataKeySet();
-        $mappingFunc = [$this, 'decanonicalizeAttributeName'];
-        $data = array_filter($entityData, function ($item) use ($postEntityDataKeySet, $mappingFunc) {
-            $key = $mappingFunc($item);
-            return isset($postEntityDataKeySet, $key);
-        }, ARRAY_FILTER_USE_KEY);
+        $filteredDataSet = [];
+        foreach ($entityData as $itemKey => $itemValue) {
+            $key = $this->decanonicalizeAttributeName($itemKey);
+            if (!in_array($key, $postEntityDataKeySet)) {
+                continue;
+            }
+            $filteredDataSet[$key] = $itemValue;
+        }
 
-        unset($data[$this->primaryKey]);
-        $data['ID'] = $primaryKeyValue;
-        $data['post_type'] = $this->entityName;
+        unset($filteredDataSet[$this->primaryKey]);
+        $filteredDataSet['ID'] = $primaryKeyValue;
+        $filteredDataSet['post_type'] = $this->entityName;
 
         $mappingSet = [
-            'data' => $data,
-            'format' => $this->getFormatSet($data)
+            'data' => $filteredDataSet,
+            'format' => $this->getFormatSet($filteredDataSet)
         ];
 
         return $mappingSet;
@@ -302,15 +305,21 @@ abstract class AbstractResource
         $primaryKeyValue = $entityData[$this->primaryKey] ?: null;
 
         $postEntityDataKeySet = $this->getPostEntityDataKeySet();
-        $mappingFunc = [$this, 'decanonicalizeAttributeName'];
-        $data = array_filter($entityData, function ($item) use ($postEntityDataKeySet, $mappingFunc) {
-            $key = $mappingFunc($item);
-            return !isset($postEntityDataKeySet, $key);
-        }, ARRAY_FILTER_USE_KEY);
+        $filteredDataSet = [];
+        foreach ($entityData as $itemKey => $itemValue) {
+            $key = $this->decanonicalizeAttributeName($itemKey);
+            if (in_array($key, $postEntityDataKeySet)) {
+                continue;
+            }
+            $filteredDataSet[$key] = $itemValue;
+        }
 
         $mappingSet = [];
-        foreach ($data as $key => $value) {
-            if ($this->primaryKey === $key) {
+        foreach ($filteredDataSet as $key => $value) {
+            if (in_array($key, [
+                $this->primaryKey,
+                'meta_id'
+            ])) {
                 continue;
             }
 

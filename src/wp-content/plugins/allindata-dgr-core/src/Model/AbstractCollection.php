@@ -49,8 +49,7 @@ abstract class AbstractCollection
         $db = $this->resource->getDatabase()->getInstance();
 
         $queryCollection = $db->prepare(
-            'SELECT ID FROM %s WHERE post_type="%s" LIMIT %d OFFSET %d',
-            $db->posts,
+            'SELECT ID FROM `'.$db->posts.'` WHERE `post_type`=%s LIMIT %d OFFSET %d',
             $this->resource->getEntityName(),
             $limit,
             $offset
@@ -73,5 +72,30 @@ abstract class AbstractCollection
         }
 
         return $collectionItems;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTotalCount(): int
+    {
+        $db = $this->resource->getDatabase()->getInstance();
+
+        $queryCollection = $db->prepare(
+            'SELECT ID FROM `'.$db->posts.'` WHERE `post_type`=%s',
+            $this->resource->getEntityName()
+        );
+
+        /** @var array $entity */
+        $collectionIdSet = $db->get_results(
+            $queryCollection,
+            ARRAY_A
+        );
+
+        if (!is_array($collectionIdSet)) {
+            return 0;
+        }
+
+        return count($collectionIdSet);
     }
 }
