@@ -39,16 +39,17 @@ define('AID_DGR_CMS_VERSION', '1.0');
 define('AID_DGR_CMS_SLUG', 'allindata-dgr-cms');
 define('AID_DGR_CMS_TEXTDOMAIN', 'allindata-dgr-cms');
 define('AID_DGR_CMS_TEMPLATE_DIR', __DIR__ . '/view/');
-define('AID_DGR_CMS__TEMP_DIR', ABSPATH . 'tmp/');
+define('AID_DGR_CMS_TEMP_DIR', ABSPATH . 'tmp/');
+define('AID_DGR_CMS_FILE', __FILE__);
 
 defined('ABSPATH') or exit;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$config = new \bitExpert\Disco\BeanFactoryConfiguration(AID_DGR_CMS__TEMP_DIR);
+$config = new \bitExpert\Disco\BeanFactoryConfiguration(AID_DGR_CMS_TEMP_DIR);
 $config->setProxyAutoloader(
     new \ProxyManager\Autoloader\Autoloader(
-        new \ProxyManager\FileLocator\FileLocator(AID_DGR_CMS__TEMP_DIR),
+        new \ProxyManager\FileLocator\FileLocator(AID_DGR_CMS_TEMP_DIR),
         new \ProxyManager\Inflector\ClassNameInflector(AID_DGR_CMS_SLUG)
     )
 );

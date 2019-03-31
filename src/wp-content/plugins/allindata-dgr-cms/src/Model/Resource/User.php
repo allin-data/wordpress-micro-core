@@ -30,8 +30,7 @@ class User extends AbstractResource
         $db = $this->getDatabase()->getInstance();
 
         $queryEntity = $db->prepare(
-            'SELECT * FROM `%s` WHERE `ID`=%u',
-            $db->users,
+            'SELECT * FROM `'.$db->users.'` WHERE `ID`=%d',
             $id
         );
 
@@ -42,8 +41,7 @@ class User extends AbstractResource
         );
 
         $queryEntityData = $db->prepare(
-            'SELECT * FROM `%s` WHERE `user_id`=%u',
-            $db->usermeta,
+            'SELECT * FROM `'.$db->usermeta.'` WHERE `user_id`=%d',
             $id
         );
 

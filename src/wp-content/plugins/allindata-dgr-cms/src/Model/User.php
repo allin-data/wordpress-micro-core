@@ -17,7 +17,7 @@ use AllInData\Dgr\Core\Model\AbstractModel;
 class User extends AbstractModel
 {
     /**
-     * @var int|null
+     * @var int|string|null
      */
     private $id;
     /**
@@ -46,18 +46,18 @@ class User extends AbstractModel
     private $userEmail;
 
     /**
-     * @return int|null
+     * @return int|string|null
      */
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
 
     /**
-     * @param int|null $id
+     * @param int|string|null $id
      * @return User
      */
-    public function setId(?int $id): User
+    public function setId($id)
     {
         $this->id = $id;
         return $this;

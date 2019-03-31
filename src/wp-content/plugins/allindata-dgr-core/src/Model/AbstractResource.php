@@ -98,8 +98,7 @@ abstract class AbstractResource
         $db = $this->database->getInstance();
 
         $queryEntity = $db->prepare(
-            'SELECT * FROM `%s` WHERE `post_type`="%s" AND `ID`=%u',
-            $db->posts,
+            'SELECT * FROM `'.$db->posts.'` WHERE `post_type`=%s AND `ID`=%d',
             $this->entityName,
             $id
         );
@@ -111,8 +110,7 @@ abstract class AbstractResource
         );
 
         $queryEntityData = $db->prepare(
-            'SELECT * FROM `%s` WHERE `post_id`=%u',
-            $db->postmeta,
+            'SELECT * FROM `'.$db->postmeta.'` WHERE `post_id`=%d',
             $id
         );
 

@@ -9,6 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\Dgr\Cms\Controller\Admin;
 
 use AllInData\Dgr\Cms\Model\User;
+use AllInData\Dgr\Cms\Model\UserRole;
 use AllInData\Dgr\Cms\Model\Validator\User as UserValidator;
 use AllInData\Dgr\Cms\Model\Resource\User as UserResource;
 use AllInData\Dgr\Core\Controller\AbstractAdminController;
@@ -55,6 +56,8 @@ class CreateUser extends AbstractAdminController
         /** @var string $password */
         $password = wp_generate_password(self::USER_PASSWORD_LENGTH, true, true);
         $userId = wp_create_user($login, $password, $email);
+        $nativeUser = new \WP_User($userId);
+        $nativeUser->set_role(UserRole::ROLE_LEVEL_USER_DEFAULT);
 
         if (!is_int($userId)) {
             if ($userId instanceof \WP_Error) {
