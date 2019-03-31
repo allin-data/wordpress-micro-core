@@ -8,9 +8,11 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\Dgr\Cms;
 
+use AllInData\Dgr\Cms\Controller\Admin\CreateUser;
 use AllInData\Dgr\Cms\Model\Collection\User as UserCollection;
 use AllInData\Dgr\Cms\Model\Resource\User as UserResource;
 use AllInData\Dgr\Cms\Model\Factory\User as UserFactory;
+use AllInData\Dgr\Cms\Model\Validator\User as UserValidator;
 use AllInData\Dgr\Cms\Model\User;
 use AllInData\Dgr\Cms\ShortCode\Admin\GridUser;
 use AllInData\Dgr\Cms\ShortCode\UserOrganization;
@@ -44,7 +46,12 @@ class PluginConfiguration
      */
     private function getPluginControllers(): array
     {
-        return [];
+        return [
+            new CreateUser(
+                $this->getUserValidator(),
+                $this->getUserResource()
+            )
+        ];
     }
 
     /**
@@ -59,6 +66,16 @@ class PluginConfiguration
                 new Block\Admin\GridUser($this->getUserCollection())
             )
         ];
+    }
+
+    /**
+     * @return UserValidator
+     */
+    private function getUserValidator(): UserValidator
+    {
+        return new UserValidator(
+            User::class
+        );
     }
 
     /**

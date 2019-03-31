@@ -12,6 +12,7 @@ use AllInData\Dgr\Theme\Block\Navigation\Menu;
 use AllInData\Dgr\Theme\Controller\Login;
 use AllInData\Dgr\Theme\Controller\Logout;
 use AllInData\Dgr\Theme\Controller\ThemeControllerInterface;
+use AllInData\Dgr\Theme\Module\DisabledAdminBar;
 use AllInData\Dgr\Theme\Module\ForceLogin;
 use AllInData\Dgr\Theme\Module\ThemeModuleInterface;
 use AllInData\Dgr\Theme\ShortCode\LoginForm;
@@ -53,7 +54,8 @@ class ThemeConfiguration
     private function getThemeModules() : array
     {
         return [
-            new ForceLogin()
+            new ForceLogin(),
+            new DisabledAdminBar()
         ];
     }
 

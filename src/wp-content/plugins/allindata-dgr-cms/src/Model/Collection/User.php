@@ -29,17 +29,17 @@ class User extends AbstractCollection
          */
         return [
             $this->getResource()->getModelFactory()->create([
-                'ID' => 1,
+                'id' => 1,
                 'firstName' => 'Foo',
                 'lastName' => 'Bar'
             ]),
             $this->getResource()->getModelFactory()->create([
-                'ID' => 2,
+                'id' => 2,
                 'firstName' => 'Alice',
                 'lastName' => 'Bob'
             ]),
             $this->getResource()->getModelFactory()->create([
-                'ID' => 3,
+                'id' => 3,
                 'firstName' => 'Max',
                 'lastName' => 'Mustermann'
             ])

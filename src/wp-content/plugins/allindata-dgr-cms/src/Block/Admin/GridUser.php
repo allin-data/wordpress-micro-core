@@ -8,14 +8,16 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\Dgr\Cms\Block\Admin;
 
+use AllInData\Dgr\Cms\Controller\Admin\CreateUser;
 use AllInData\Dgr\Cms\Model\Collection\User as UserCollection;
 use AllInData\Dgr\Cms\Model\User;
+use AllInData\Dgr\Core\Block\AbstractBlock;
 
 /**
  * Class GridUser
  * @package AllInData\Dgr\Cms\Block\Admin
  */
-class GridUser
+class GridUser extends AbstractBlock
 {
     /**
      * @var UserCollection
@@ -39,5 +41,13 @@ class GridUser
     public function getUsers($limit = UserCollection::DEFAULT_LIMIT, $offset = UserCollection::DEFAULT_OFFSET): array
     {
         return $this->userCollection->load($limit, $offset);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCreateUserActionSlug()
+    {
+        return CreateUser::ACTION_SLUG;
     }
 }

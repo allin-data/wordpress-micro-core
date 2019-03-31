@@ -70,7 +70,7 @@ abstract class AbstractModel
     public function fromArray(array $dataSet)
     {
         foreach ($dataSet as $key => $value) {
-            $methodName = sprintf('set%s', ucfirst($key));
+            $methodName = sprintf('set%s',  $this->canonicalizeMethodName($key));
             if (!method_exists($this, $methodName)) {
                 $this->{$key} = $value;
                 continue;
@@ -97,5 +97,19 @@ abstract class AbstractModel
         }
 
         return $dataSet;
+    }
+
+    /**
+     * @param string $methodName
+     * @return string
+     */
+    private function canonicalizeMethodName(string $methodName): string
+    {
+        $methodNameParts = explode(' ', ucwords(str_replace(['-','_'], ' ', $methodName)));
+        foreach ($methodNameParts as $idx => $part) {
+            $methodNameParts[$idx] = ucfirst(strtolower($part));
+        }
+
+        return implode('', $methodNameParts);
     }
 }

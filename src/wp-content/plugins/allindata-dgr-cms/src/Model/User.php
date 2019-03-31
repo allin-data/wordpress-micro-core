@@ -19,7 +19,7 @@ class User extends AbstractModel
     /**
      * @var int|null
      */
-    private $ID;
+    private $id;
     /**
      * @var string|null
      */
@@ -28,22 +28,38 @@ class User extends AbstractModel
      * @var string|null
      */
     private $lastName;
+    /**
+     * @var string|null
+     */
+    private $displayName;
+    /**
+     * @var string|null
+     */
+    private $userLogin;
+    /**
+     * @var string|null
+     */
+    private $userPass;
+    /**
+     * @var string|null
+     */
+    private $userEmail;
 
     /**
      * @return int|null
      */
     public function getId(): ?int
     {
-        return $this->ID;
+        return $this->id;
     }
 
     /**
-     * @param int|null $ID
+     * @param int|null $id
      * @return User
      */
-    public function setId(?int $ID): User
+    public function setId(?int $id): User
     {
-        $this->ID = $ID;
+        $this->id = $id;
         return $this;
     }
 
@@ -80,6 +96,78 @@ class User extends AbstractModel
     public function setLastName(?string $lastName): User
     {
         $this->lastName = $lastName;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDisplayName(): ?string
+    {
+        return $this->displayName;
+    }
+
+    /**
+     * @param string|null $displayName
+     * @return User
+     */
+    public function setDisplayName(?string $displayName): User
+    {
+        $this->displayName = $displayName;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getUserLogin(): ?string
+    {
+        return $this->userLogin;
+    }
+
+    /**
+     * @param string|null $userLogin
+     * @return User
+     */
+    public function setUserLogin(?string $userLogin): User
+    {
+        $this->userLogin = $userLogin;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getUserPass(): ?string
+    {
+        return $this->userPass;
+    }
+
+    /**
+     * @param string|null $userPass
+     * @return User
+     */
+    public function setUserPass(?string $userPass): User
+    {
+        $this->userPass = $userPass;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getUserEmail(): ?string
+    {
+        return $this->userEmail;
+    }
+
+    /**
+     * @param string|null $userEmail
+     * @return User
+     */
+    public function setUserEmail(?string $userEmail): User
+    {
+        $this->userEmail = $userEmail;
         return $this;
     }
 }

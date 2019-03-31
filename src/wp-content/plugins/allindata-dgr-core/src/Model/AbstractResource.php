@@ -17,7 +17,7 @@ use AllInData\Dgr\Core\Database\WordpressDatabase;
 abstract class AbstractResource
 {
     /*
-     *
+     * References
      */
     const ENTITY_NAME = '';
 
@@ -49,14 +49,13 @@ abstract class AbstractResource
         WordpressDatabase $database,
         string $entityName,
         AbstractFactory $modelFactory,
-        string $primaryKey = 'ID'
+        string $primaryKey = 'id'
     ) {
         $this->database = $database;
         $this->entityName = $entityName;
         $this->modelFactory = $modelFactory;
         $this->primaryKey = $primaryKey;
     }
-
 
     /**
      * @return WordpressDatabase
@@ -99,10 +98,9 @@ abstract class AbstractResource
         $db = $this->database->getInstance();
 
         $queryEntity = $db->prepare(
-            'SELECT * FROM %s WHERE post_type="%s" AND %s=%s',
+            'SELECT * FROM `%s` WHERE `post_type`="%s" AND `ID`=%u',
             $db->posts,
             $this->entityName,
-            $this->primaryKey,
             $id
         );
 
@@ -113,7 +111,7 @@ abstract class AbstractResource
         );
 
         $queryEntityData = $db->prepare(
-            'SELECT * FROM %s WHERE post_id=%s',
+            'SELECT * FROM `%s` WHERE `post_id`=%u',
             $db->postmeta,
             $id
         );
@@ -156,11 +154,41 @@ abstract class AbstractResource
             'post_id' => $id
         ]);
         $db->delete($db->posts, [
-            $this->primaryKey => $id,
+            'ID' => $id,
             'post_type' => $this->entityName
         ]);
 
         return true;
+    }
+
+    /**
+     * Maps camel_case to CamelCase
+     * @param string $attributeName
+     * @return string
+     */
+    public function canonicalizeAttributeName(string $attributeName): string
+    {
+        $attributeNameParts = explode(' ', ucwords(str_replace(['-','_'], ' ', $attributeName)));
+        foreach ($attributeNameParts as $idx => $part) {
+            $attributeNameParts[$idx] = ucfirst(strtolower($part));
+        }
+
+        return implode('', $attributeNameParts);
+    }
+
+    /**
+     * Maps CamelCase to camel_case
+     * @param string $attributeName
+     * @return string
+     */
+    public function decanonicalizeAttributeName(string $attributeName): string
+    {
+        $attributeNameParts = preg_split('/(?=[A-Z])/', $attributeName);
+        foreach ($attributeNameParts as $idx => $part) {
+            $attributeNameParts[$idx] = strtolower($part);
+        }
+
+        return implode('_', $attributeNameParts);
     }
 
     /**
@@ -169,7 +197,30 @@ abstract class AbstractResource
      */
     protected function insert(AbstractModel $entity)
     {
-        //@TODO implementation
+        $postData = $this->extractPostData($entity->toArray());
+
+        $db = $this->database->getInstance();
+        $db->insert(
+            $db->posts,
+            $postData['data'],
+            $postData['format']
+        );
+        $entityId = $db->insert_id;
+        $entity->set($this->primaryKey, $entityId);
+
+        $postMetaDataSet = $this->extractPostMetaData($entity->toArray());
+        foreach ($postMetaDataSet as $postMetaData) {
+            $db->delete($db->postmeta, [
+                'post_id' => $postMetaData['data']['post_id'],
+                'meta_key' => $postMetaData['data']['meta_key']
+            ]);
+            $db->insert(
+                $db->postmeta,
+                $postMetaData['data'],
+                $postMetaData['format']
+            );
+        }
+
         return $entity;
     }
 
@@ -179,7 +230,134 @@ abstract class AbstractResource
      */
     protected function update(AbstractModel $entity)
     {
-        //@TODO implementation
+        $postData = $this->extractPostData($entity->toArray());
+
+        $db = $this->database->getInstance();
+        $db->update(
+            $db->posts,
+            $postData['data'],
+            [
+                'ID' => $entity->get($this->primaryKey),
+                'post_type' => $this->entityName
+            ],
+            $postData['format']
+        );
+
+        $postMetaDataSet = $this->extractPostMetaData($entity->toArray());
+        foreach ($postMetaDataSet as $postMetaData) {
+            $db->delete($db->postmeta, [
+                'post_id' => $postMetaData['data']['post_id'],
+                'meta_key' => $postMetaData['data']['meta_key']
+            ]);
+            $db->insert(
+                $db->postmeta,
+                $postMetaData['data'],
+                $postMetaData['format']
+            );
+        }
+
         return $entity;
+    }
+
+    /**
+     * @param array $data
+     * @return array
+     */
+    protected function getFormatSet(array $data): array
+    {
+        return [];
+    }
+
+    /**
+     * @param array $entityData
+     * @return array
+     */
+    private function extractPostData(array $entityData): array
+    {
+        $primaryKeyValue = $entityData[$this->primaryKey] ?: null;
+
+        $postEntityDataKeySet = $this->getPostEntityDataKeySet();
+        $mappingFunc = [$this, 'decanonicalizeAttributeName'];
+        $data = array_filter($entityData, function ($item) use ($postEntityDataKeySet, $mappingFunc) {
+            $key = $mappingFunc($item);
+            return isset($postEntityDataKeySet, $key);
+        }, ARRAY_FILTER_USE_KEY);
+
+        unset($data[$this->primaryKey]);
+        $data['ID'] = $primaryKeyValue;
+        $data['post_type'] = $this->entityName;
+
+        $mappingSet = [
+            'data' => $data,
+            'format' => $this->getFormatSet($data)
+        ];
+
+        return $mappingSet;
+    }
+
+    /**
+     * @param array $entityData
+     * @return array
+     */
+    private function extractPostMetaData(array $entityData): array
+    {
+        $primaryKeyValue = $entityData[$this->primaryKey] ?: null;
+
+        $postEntityDataKeySet = $this->getPostEntityDataKeySet();
+        $mappingFunc = [$this, 'decanonicalizeAttributeName'];
+        $data = array_filter($entityData, function ($item) use ($postEntityDataKeySet, $mappingFunc) {
+            $key = $mappingFunc($item);
+            return !isset($postEntityDataKeySet, $key);
+        }, ARRAY_FILTER_USE_KEY);
+
+        $mappingSet = [];
+        foreach ($data as $key => $value) {
+            if ($this->primaryKey === $key) {
+                continue;
+            }
+
+            $set = [
+                'post_id' => $primaryKeyValue,
+                'meta_key' => $key,
+                'meta_value' => $value
+            ];
+            $mappingSet[] = [
+                'data' => $set,
+                'format' => $this->getFormatSet($set)
+            ];
+        }
+        return $mappingSet;
+    }
+
+    /**
+     * @return array
+     */
+    private function getPostEntityDataKeySet(): array
+    {
+        return [
+            'ID',
+            'post_author',
+            'post_date',
+            'post_date_gmt',
+            'post_content',
+            'post_title',
+            'post_excerpt',
+            'post_status',
+            'comment_status',
+            'ping_status',
+            'post_password',
+            'post_name',
+            'to_ping',
+            'pinged',
+            'post_modified',
+            'post_modified_gmt',
+            'post_content_filtered',
+            'post_parent',
+            'guid',
+            'menu_order',
+            'post_type',
+            'post_mime_type',
+            'comment_count'
+        ];
     }
 }

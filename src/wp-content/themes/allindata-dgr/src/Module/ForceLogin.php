@@ -9,7 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\Dgr\Theme\Module;
 
 /**
- * Interface ThemeModuleInterface
+ * Class ForceLogin
  * @package AllInData\Dgr\Theme\Module
  */
 class ForceLogin implements ThemeModuleInterface
