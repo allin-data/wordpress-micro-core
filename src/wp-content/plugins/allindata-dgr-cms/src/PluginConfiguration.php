@@ -9,6 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\Dgr\Cms;
 
 use AllInData\Dgr\Cms\Controller\Admin\CreateUser;
+use AllInData\Dgr\Cms\Controller\Admin\UpdateUser;
 use AllInData\Dgr\Cms\Model\Collection\User as UserCollection;
 use AllInData\Dgr\Cms\Model\Resource\User as UserResource;
 use AllInData\Dgr\Cms\Model\Factory\User as UserFactory;
@@ -48,6 +49,10 @@ class PluginConfiguration
     {
         return [
             new CreateUser(
+                $this->getUserValidator(),
+                $this->getUserResource()
+            ),
+            new UpdateUser(
                 $this->getUserValidator(),
                 $this->getUserResource()
             )

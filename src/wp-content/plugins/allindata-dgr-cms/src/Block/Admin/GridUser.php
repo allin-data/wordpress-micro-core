@@ -9,6 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\Dgr\Cms\Block\Admin;
 
 use AllInData\Dgr\Cms\Controller\Admin\CreateUser;
+use AllInData\Dgr\Cms\Controller\Admin\UpdateUser;
 use AllInData\Dgr\Cms\Model\Collection\User as UserCollection;
 use AllInData\Dgr\Cms\Model\User;
 use AllInData\Dgr\Core\Block\AbstractBlock;
@@ -49,5 +50,13 @@ class GridUser extends AbstractBlock
     public function getCreateUserActionSlug()
     {
         return CreateUser::ACTION_SLUG;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUpdateUserActionSlug()
+    {
+        return UpdateUser::ACTION_SLUG;
     }
 }

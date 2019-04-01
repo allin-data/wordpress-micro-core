@@ -46,14 +46,16 @@ class User extends AbstractResource
         );
 
         /** @var array $entityData */
-        $entityData = $db->get_row(
+        $entityData = $db->get_results(
             $queryEntityData,
             ARRAY_A
         );
 
-        $data = array_merge($entity, $entityData);
+        $mappedEntity = $this->mapUserData($entity);
+        $mappedEntityData = $this->mapUserMetaData($entityData);
+        $data = array_merge($mappedEntity, $mappedEntityData);
         $entity = $this->getModelFactory()->create($data);
-
+;
         return $entity;
     }
 
@@ -81,29 +83,29 @@ class User extends AbstractResource
      */
     protected function insert(AbstractModel $entity)
     {
-        $postData = $this->extractUserData($entity->toArray());
-        $postData['user_pass'] = wp_hash_password($postData['user_pass']);
-        $postData['user_login'] = sanitize_user($postData['user_login'], false);
+        $userData = $this->extractUserData($entity->toArray());
+        $userData['user_pass'] = wp_hash_password($userData['user_pass']);
+        $userData['user_login'] = sanitize_user($userData['user_login'], false);
 
         $db = $this->getDatabase()->getInstance();
         $db->insert(
             $db->users,
-            $postData['data'],
-            $postData['format']
+            $userData['data'],
+            $userData['format']
         );
         $entityId = $db->insert_id;
         $entity->set($this->getPrimaryKey(), $entityId);
 
-        $postMetaDataSet = $this->extractUserMetaData($entity->toArray());
-        foreach ($postMetaDataSet as $postMetaData) {
+        $userMetaDataSet = $this->extractUserMetaData($entity->toArray());
+        foreach ($userMetaDataSet as $userMetaData) {
             $db->delete($db->usermeta, [
-                'user_id' => $postMetaData['data']['user_id'],
-                'meta_key' => $postMetaData['data']['meta_key']
+                'user_id' => $userMetaData['data']['user_id'],
+                'meta_key' => $userMetaData['data']['meta_key']
             ]);
             $db->insert(
                 $db->usermeta,
-                $postMetaData['data'],
-                $postMetaData['format']
+                $userMetaData['data'],
+                $userMetaData['format']
             );
         }
 
@@ -116,34 +118,76 @@ class User extends AbstractResource
      */
     protected function update(AbstractModel $entity)
     {
-        $postData = $this->extractUserData($entity->toArray());
+        $userData = $this->extractUserData($entity->toArray());
 
         $db = $this->getDatabase()->getInstance();
         $db->update(
             $db->users,
-            $postData['data'],
+            $userData['data'],
             [
                 'ID' => $entity->get($this->getPrimaryKey())
             ],
-            $postData['format']
+            $userData['format']
         );
 
-        $postMetaDataSet = $this->extractUserMetaData($entity->toArray());
-var_dump($entity->toArray(), $postData, $postMetaDataSet); exit();
-        foreach ($postMetaDataSet as $postMetaData) {
+        $userMetaDataSet = $this->extractUserMetaData($entity->toArray());
+        foreach ($userMetaDataSet as $userMetaData) {
             $db->delete($db->usermeta, [
-                'user_id' => $postMetaData['data']['user_id'],
-                'meta_key' => $postMetaData['data']['meta_key']
+                'user_id' => $userMetaData['data']['user_id'],
+                'meta_key' => $userMetaData['data']['meta_key']
             ]);
             $db->insert(
                 $db->usermeta,
-                $postMetaData['data'],
-                $postMetaData['format']
+                $userMetaData['data'],
+                $userMetaData['format']
             );
         }
 
         return $entity;
     }
+
+    /**
+     * @param array $entityData
+     * @return array
+     */
+    private function mapUserData(array $entityData): array
+    {
+        $primaryKeyValue = $entityData['ID'] ?: null;
+
+        $postEntityDataKeySet = $this->getUserEntityDataKeySet();
+        $filteredDataSet = [];
+        foreach ($entityData as $itemKey => $itemValue) {
+            if (!in_array($itemKey, $postEntityDataKeySet)) {
+                continue;
+            }
+            $key = $this->canonicalizeAttributeName($itemKey);
+            $filteredDataSet[$key] = $itemValue;
+        }
+        $filteredDataSet[$this->getPrimaryKey()] = $primaryKeyValue;
+
+        return $filteredDataSet;
+    }
+
+    /**
+     * @param array $entityData
+     * @return array
+     */
+    private function mapUserMetaData(array $entityData): array
+    {
+        $postEntityDataKeySet = $this->getUserEntityDataKeySet();
+        $filteredDataSet = [];
+        foreach($entityData as $attributeSet) {
+            $itemKey = $attributeSet['meta_key'];
+            $itemValue = $attributeSet['meta_value'];
+            if (in_array($itemKey, $postEntityDataKeySet)) {
+                continue;
+            }
+            $key = $this->canonicalizeAttributeName($itemKey);
+            $filteredDataSet[$key] = $itemValue;
+        }
+        return $filteredDataSet;
+    }
+
     /**
      * @param array $entityData
      * @return array

@@ -8,6 +8,10 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\Dgr\Core\Model;
 
+use ReflectionClass;
+use ReflectionException;
+use ReflectionProperty;
+
 /**
  * Class AbstractModel
  * @package AllInData\Dgr\Core\Model
@@ -103,12 +107,26 @@ abstract class AbstractModel
      */
     public function toArray(): array
     {
-        $dataSet = get_object_vars($this);
-        foreach ($dataSet as $idx => $value) {
+        try {
+            $reflect = new ReflectionClass($this);
+        } catch (ReflectionException $e) {
+            return [];
+        }
+        $properties = $reflect->getProperties(
+            ReflectionProperty::IS_PUBLIC |
+            ReflectionProperty::IS_PROTECTED |
+            ReflectionProperty::IS_PRIVATE
+        );
+        $dataSet = [];
+        foreach ($properties as $property) {
+            $methodName = sprintf('get%s',  ucfirst($property->getName()));
+            $value = $this->{$methodName}();
             if ($value instanceof AbstractModel) {
-                $dataSet[$idx] = $value->toArray();
+                $dataSet[$property->getName()] = $value->toArray();
             } elseif (is_object($value)) {
-                $dataSet[$idx] = json_decode(json_encode($value), true);
+                $dataSet[$property->getName()] = json_decode(json_encode($value), true);
+            } else {
+                $dataSet[$property->getName()] = $value;
             }
 
             continue;

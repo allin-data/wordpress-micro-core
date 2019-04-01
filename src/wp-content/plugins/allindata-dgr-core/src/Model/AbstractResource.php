@@ -115,12 +115,14 @@ abstract class AbstractResource
         );
 
         /** @var array $entityData */
-        $entityData = $db->get_row(
+        $entityData = $db->get_results(
             $queryEntityData,
             ARRAY_A
         );
 
-        $data = array_merge($entity, $entityData);
+        $mappedEntity = $this->mapPostData($entity);
+        $mappedEntityData = $this->mapPostMetaData($entityData);
+        $data = array_merge($mappedEntity, $mappedEntityData);
         $entity = $this->modelFactory->create($data);
 
         return $entity;
@@ -170,6 +172,10 @@ abstract class AbstractResource
         foreach ($attributeNameParts as $idx => $part) {
             $attributeNameParts[$idx] = ucfirst(strtolower($part));
         }
+        if (0 === count($attributeNameParts)) {
+            return '';
+        }
+        $attributeNameParts[0] = strtolower($attributeNameParts[0]);
 
         return implode('', $attributeNameParts);
     }
@@ -264,6 +270,48 @@ abstract class AbstractResource
     protected function getFormatSet(array $data): array
     {
         return [];
+    }
+
+    /**
+     * @param array $entityData
+     * @return array
+     */
+    private function mapPostData(array $entityData): array
+    {
+        $primaryKeyValue = $entityData['ID'] ?: null;
+
+        $postEntityDataKeySet = $this->getPostEntityDataKeySet();
+        $filteredDataSet = [];
+        foreach ($entityData as $itemKey => $itemValue) {
+            if (!in_array($itemKey, $postEntityDataKeySet)) {
+                continue;
+            }
+            $key = $this->canonicalizeAttributeName($itemKey);
+            $filteredDataSet[$key] = $itemValue;
+        }
+        $filteredDataSet[$this->getPrimaryKey()] = $primaryKeyValue;
+
+        return $filteredDataSet;
+    }
+
+    /**
+     * @param array $entityData
+     * @return array
+     */
+    private function mapPostMetaData(array $entityData): array
+    {
+        $postEntityDataKeySet = $this->getPostEntityDataKeySet();
+        $filteredDataSet = [];
+        foreach($entityData as $attributeSet) {
+            $itemKey = $attributeSet['meta_key'];
+            $itemValue = $attributeSet['meta_value'];
+            if (in_array($itemKey, $postEntityDataKeySet)) {
+                continue;
+            }
+            $key = $this->canonicalizeAttributeName($itemKey);
+            $filteredDataSet[$key] = $itemValue;
+        }
+        return $filteredDataSet;
     }
 
     /**
