@@ -45,6 +45,14 @@ class GridUser extends AbstractBlock
     }
 
     /**
+     * @return int
+     */
+    public function getUserTotalCount()
+    {
+        return $this->userCollection->getTotalCount();
+    }
+
+    /**
      * @return string
      */
     public function getCreateUserActionSlug()

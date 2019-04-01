@@ -7,6 +7,7 @@ Copyright (C) 2019 All.In Data GmbH
 /** @var \AllInData\Dgr\Cms\Block\Admin\GridUser $block */
 ?>
 <h2>User List</h2>
+<p>Total: <?= $block->getUserTotalCount(); ?></p>
 
 <table class="table">
     <thead>
