@@ -27,8 +27,6 @@ class AdminMenu implements ThemeShortCodeInterface
      */
     public function addShortCode($attributes, $content, $name)
     {
-        ob_start();
         get_template_part('templates/navigation/menu-admin');
-        return ob_get_contents();
     }
 }

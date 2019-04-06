@@ -18,6 +18,7 @@ class ForceLogin implements ThemeModuleInterface
      * URI Path
      */
     const REQUEST_URI_PATH_LOGIN = 'login';
+    const SHORTCODE_LOGIN_FORM = '[dgr_login_form]';
     const WHITELIST_PATH_SET = [
         'wp-login.php',
         'wp-register.php',
@@ -31,7 +32,21 @@ class ForceLogin implements ThemeModuleInterface
      */
     public function init()
     {
+        add_action('display_post_states', [$this, 'addLoginPageState'], 10, 2);
         add_action('init', [$this, 'addForceLogin']);
+    }
+
+    /**
+     * @param array $postStates
+     * @param \WP_Post $post
+     * @return array
+     */
+    public function addLoginPageState($postStates, $post)
+    {
+        if (strpos($post->post_content, self::SHORTCODE_LOGIN_FORM)) {
+            $postStates[] = __('Login and Register Page', AID_DGR_THEME_TEXTDOMAIN);
+        }
+        return $postStates;
     }
 
     /**
