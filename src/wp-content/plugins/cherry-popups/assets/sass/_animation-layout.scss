@@ -1,0 +1,179 @@
+.cherry-popup-wrapper{
+
+	&.simple-fade-animation {
+		display: none;
+
+		&.show-animation {
+			display: flex;
+
+			.cherry-popup-container {
+				animation-name: container-simple-fade-in;
+				animation-duration: 0.5s;
+				animation-iteration-count: 1;
+				animation-delay: 0.1s;
+				animation-fill-mode: both;
+			}
+
+			.cherry-popup-overlay {
+				animation-name: simple-fade-in;
+				animation-duration: 0.5s;
+				animation-iteration-count: 1;
+				animation-fill-mode: both;
+			}
+		}
+
+		&.hide-animation {
+			display: flex;
+
+			.cherry-popup-container {
+				animation-name: simple-fade-out;
+				animation-duration: 0.3s;
+				animation-iteration-count: 1;
+				animation-fill-mode: both;
+			}
+
+			.cherry-popup-overlay {
+				animation-name: simple-fade-out;
+				animation-duration: 0.3s;
+				animation-iteration-count: 1;
+				animation-fill-mode: both;
+			}
+		}
+
+		&.waiting-status {
+			display: none;
+		}
+	}
+
+	&.simple-scale-animation{
+		display: none;
+		@include perspective(1000px);
+		@include perspective-origin(50% 50%);
+
+		&.show-animation{
+			display: flex;
+			.cherry-popup-container{
+				animation-name: container-simple-scale-in;
+				animation-duration: 0.5s;
+				animation-iteration-count: 1;
+				animation-delay: 0.1s;
+				animation-fill-mode: both;
+				animation-timing-function: cubic-bezier(.43,.31,.14,.93);
+			}
+			.cherry-popup-overlay{
+				animation-name: simple-fade-in;
+				animation-duration: 0.5s;
+				animation-iteration-count: 1;
+				animation-fill-mode: both;
+			}
+		}
+
+		&.hide-animation{
+			display: flex;
+			.cherry-popup-container{
+				animation-name: simple-fade-out;
+				animation-duration: 0.3s;
+				animation-iteration-count: 1;
+				animation-fill-mode: both;
+			}
+			.cherry-popup-overlay{
+				animation-name: simple-fade-out;
+				animation-duration: 0.3s;
+				animation-iteration-count: 1;
+				animation-fill-mode: both;
+			}
+		}
+	}
+
+	&.move-up-animation{
+		display: none;
+		@include perspective(1000px);
+		@include perspective-origin(50% 50%);
+
+		&.show-animation{
+			display: flex;
+			.cherry-popup-container{
+				animation-name: container-move-up-in;
+				animation-duration: 0.5s;
+				animation-iteration-count: 1;
+				animation-delay: 0.1s;
+				animation-fill-mode: both;
+				animation-timing-function: cubic-bezier(.43,.31,.14,.93);
+			}
+			.cherry-popup-overlay{
+				animation-name: simple-fade-in;
+				animation-duration: 0.5s;
+				animation-iteration-count: 1;
+			}
+		}
+
+		&.hide-animation{
+			display: flex;
+			.cherry-popup-container{
+				animation-name: simple-fade-out;
+				animation-duration: 0.3s;
+				animation-iteration-count: 1;
+				animation-fill-mode: both;
+			}
+			.cherry-popup-overlay{
+				animation-name: simple-fade-out;
+				animation-duration: 0.3s;
+				animation-iteration-count: 1;
+				animation-fill-mode: both;
+			}
+		}
+	}
+}
+
+@keyframes container-simple-fade-in {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+@keyframes container-simple-scale-in {
+	0% {
+		opacity: 0;
+		transform: translateZ(-2000px) rotateX(25deg);
+	}
+	100% {
+		opacity: 1;
+		transform: translateZ(0px) rotateX(0deg);
+
+	}
+}
+
+@keyframes container-move-up-in {
+	0% {
+		opacity: 0;
+		transform: translateY(200px) rotateX(25deg) translateZ(-1500px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px) rotateX(0deg) translateZ(0px);
+
+	}
+}
+
+@keyframes simple-fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes simple-fade-out {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

@@ -1,0 +1,221 @@
+@import "variables";
+@import "tm_mixins";
+@import "animation-layout";
+@import "base-styles";
+@import "popup-element";
+@import "login-form-styles";
+@import "signup-form-styles";
+
+.cherry-popup-wrapper {
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+
+	.cherry-popup-container {
+		flex: 0 1 auto;
+		align-self: center;
+		position: relative;
+		min-width: 300px;
+		min-height: 300px;
+		max-height: 90%;
+		background-color: rgba( 255, 255, 255, 1);
+		box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+		z-index: 2;
+
+		&__inner {
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			overflow-y: auto;
+			position: relative;
+			height: 100%;
+
+			&::-webkit-scrollbar {
+				width: 4px;
+				height: 4px;
+			}
+
+			&::-webkit-scrollbar-button {
+				width: 0px;
+				height: 0px;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background: $dark_color_1;
+				border: 0px none $dark_color_1;
+				border-radius: 4px;
+			}
+
+			&::-webkit-scrollbar-thumb:hover {
+				background: $dark_color_2;
+			}
+
+			&::-webkit-scrollbar-thumb:active {
+				background: $dark_color_2;
+			}
+
+			&::-webkit-scrollbar-track {
+				background-color: rgba(0, 0, 0, 0.2);
+				border: 0px none #ffffff;
+				border-radius: 4px;
+			}
+
+			&::-webkit-scrollbar-track:hover {
+			}
+
+			&::-webkit-scrollbar-track:active {
+			}
+
+			&::-webkit-scrollbar-corner {
+				background: transparent;
+			}
+		}
+		.container-image-type{
+			background-size: cover;
+		}
+	}
+
+	.cherry-popup-overlay {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba( 0, 0, 0, 0.5);
+		z-index: 1;
+	}
+
+	.cherry-popup-close-button {
+		display: block;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		cursor: pointer;
+		color: $grey_color_1;
+		@include transition(all 0.3s ease);
+
+		span {
+			width: 30px;
+			height: 30px;
+			font-size: 30px;
+		}
+
+		&:hover{
+			color: $red_color;
+		}
+	}
+
+	.cherry-popup-close-label {
+		cursor: pointer;
+	}
+
+	.cherry-popup-check {
+		display: flex;
+		height: 20px;
+		cursor: pointer;
+		user-select: none;
+
+		.marker {
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			background-color: $grey_color_2;
+			margin-right: 5px;
+			border-radius: 2px;
+			transition: all 300ms ease-in-out;
+
+			span {
+				width: 20px;
+				height: 20px;
+				font-size: 22px;
+				color: #ffffff;
+				display: none;
+
+				&:before {
+					position: relative;
+					left: -2px;
+					top: -1px;
+				}
+			}
+		}
+
+		.label {
+			display: inline-block;
+			font-size: 12px;
+			line-height: 20px;
+		}
+
+		&.checked {
+			.marker{
+				background-color: $blue_color;
+				span{
+					display: block;
+				}
+			}
+		}
+	}
+
+	.cherry-popup-show-again-check {
+		position: absolute;
+		bottom: 10px;
+		left: 10px;
+	}
+
+	&.overlay-disabled-type{
+		pointer-events: none;
+		.cherry-popup-overlay{
+			display: none;
+		}
+		.cherry-popup-container{
+			pointer-events: all;
+		}
+	}
+
+	&.overlay-image-type{
+		.cherry-popup-overlay{
+			background-size: cover;
+		}
+	}
+
+	&.layout-type-center-fullwidth{
+		.cherry-popup-container{
+			align-self: center;
+		}
+	}
+
+	&.layout-type-center{
+		.cherry-popup-container{
+			align-self: center;
+		}
+	}
+
+	&.layout-type-bottom{
+		.cherry-popup-container{
+			align-self: flex-end;
+		}
+	}
+
+	&.layout-type-fullwidth{
+		.cherry-popup-container{
+			min-width: 99%;
+			min-height: 98%;
+
+			.cherry-popup-container__inner {
+				align-items: center;
+			}
+
+			.cherry-popup-container__dynamic {
+				width: 30%;
+				min-width: 300px;
+			}
+		}
+	}
+}

@@ -42,6 +42,7 @@ class ThemeConfiguration
     }
 
     /**
+     * @Bean
      * @return Menu
      */
     public function BlockNavigationMenu() : Menu

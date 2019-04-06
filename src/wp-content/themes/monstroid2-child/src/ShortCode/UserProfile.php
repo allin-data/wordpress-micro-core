@@ -27,6 +27,9 @@ class UserProfile implements ThemeShortCodeInterface
      */
     public function addShortCode($attributes, $content, $name)
     {
+        if (is_admin()) {
+            return;
+        }
         get_template_part('templates/user/profile');
     }
 }

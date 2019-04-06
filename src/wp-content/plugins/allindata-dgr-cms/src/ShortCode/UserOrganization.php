@@ -33,6 +33,9 @@ class UserOrganization extends AbstractShortCode implements PluginShortCodeInter
         if (!is_user_logged_in()) {
             return '';
         }
+        if (is_admin()) {
+            return '';
+        }
         $this->getTemplate('user-organization');
     }
 }
