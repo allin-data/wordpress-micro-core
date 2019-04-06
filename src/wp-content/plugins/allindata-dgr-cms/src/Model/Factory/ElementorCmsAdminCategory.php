@@ -12,14 +12,14 @@ use Elementor\Core\Common\Modules\Finder\Base_Category as Entity;
 use AllInData\Dgr\Core\Model\AbstractElementorFactory;
 
 /**
- * Class ElementorCmsCategory
+ * Class ElementorCmsAdminCategory
  * @package AllInData\Dgr\Cms\Model\Factory
  */
-class ElementorCmsCategory extends AbstractElementorFactory
+class ElementorCmsAdminCategory extends AbstractElementorFactory
 {
     /**
      * @param array $data
-     * @return \AllInData\Dgr\Cms\Model\ElementorCmsCategory
+     * @return \AllInData\Dgr\Cms\Model\ElementorCmsAdminCategory
      */
     public function create(array $data = []): Entity
     {

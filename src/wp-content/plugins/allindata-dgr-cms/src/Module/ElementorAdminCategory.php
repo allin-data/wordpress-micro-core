@@ -8,15 +8,15 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\Dgr\Cms\Module;
 
-use AllInData\Dgr\Cms\Model\Factory\ElementorCmsCategory as CategoryFactory;
+use AllInData\Dgr\Cms\Model\Factory\ElementorCmsAdminCategory as CategoryFactory;
 use AllInData\Dgr\Core\Module\PluginModuleInterface;
 use Elementor\Elements_Manager;
 
 /**
- * Class ElementorCategory
+ * Class ElementorAdminCategory
  * @package AllInData\Dgr\Cms\Module
  */
-class ElementorCategory implements PluginModuleInterface
+class ElementorAdminCategory implements PluginModuleInterface
 {
     /**
      * @var CategoryFactory

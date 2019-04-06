@@ -11,19 +11,19 @@ namespace AllInData\Dgr\Cms\Model;
 use Elementor\Core\Common\Modules\Finder\Base_Category;
 
 /**
- * Class ElementorCmsCategory
+ * Class ElementorCmsAdminCategory
  * @package AllInData\Dgr\Cms\Model
  */
-class ElementorCmsCategory extends Base_Category
+class ElementorCmsAdminCategory extends Base_Category
 {
-    const CATEGORY_NAME = 'allindata-dgr-cms-category';
+    const CATEGORY_NAME = 'allindata-dgr-cms-admin-category';
 
     /**
      * @return string|void
      */
     public function get_title()
     {
-        return __('DGR CMS', AID_DGR_CMS_TEXTDOMAIN);
+        return __('DGR CMS Administration', AID_DGR_CMS_TEXTDOMAIN);
     }
 
     /**

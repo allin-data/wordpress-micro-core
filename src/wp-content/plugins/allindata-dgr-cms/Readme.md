@@ -4,6 +4,7 @@
 
 | ShortCode | Description |
 | ---- | ---- |
+| dgr_cms_user_profile | Renders user account information and form to update these information |
 | dgr_cms_user_organization | Renders user organization information and form to update these information |
 
 ## ShortCodes with Privilege

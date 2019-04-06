@@ -9,14 +9,14 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\Dgr\Cms;
 
 use AllInData\Dgr\Cms\Model\UserRole;
-use AllInData\Dgr\Core\AbstractPlugin;
+use AllInData\Dgr\Core\AbstractElementorPlugin;
 use AllInData\Dgr\Core\PluginInterface;
 
 /**
  * Class Plugin
  * @package AllInData\Dgr\Cms
  */
-class Plugin extends AbstractPlugin implements PluginInterface
+class Plugin extends AbstractElementorPlugin implements PluginInterface
 {
     /**
      * @inheritdoc

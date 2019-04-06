@@ -24,7 +24,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  * Plugin Name: AllInData Dgr CMS
  * Description: All.In Data - Dgr CMS
  * Version: 1.0
- * Depends: AllInData Dgr Core
+ * Depends: AllInData Dgr Core, Elementor Page Builder
  * Author: All.In Data GmbH
  * Author URI: https://www.all-in-data.de
  * Text Domain: allindata-dgr-cms
@@ -46,20 +46,27 @@ defined('ABSPATH') or exit;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$config = new \bitExpert\Disco\BeanFactoryConfiguration(AID_DGR_CMS_TEMP_DIR);
-$config->setProxyAutoloader(
-    new \ProxyManager\Autoloader\Autoloader(
-        new \ProxyManager\FileLocator\FileLocator(AID_DGR_CMS_TEMP_DIR),
-        new \ProxyManager\Inflector\ClassNameInflector(AID_DGR_CMS_SLUG)
-    )
-);
-$beanFactory = new \bitExpert\Disco\AnnotationBeanFactory(
-    \AllInData\Dgr\Cms\PluginConfiguration::class,
-    [],
-    $config
-);
-\bitExpert\Disco\BeanFactoryRegistry::register($beanFactory);
+class AllInDataDgrCms
+{
+    static function init()
+    {
+        $config = new \bitExpert\Disco\BeanFactoryConfiguration(AID_DGR_CMS_TEMP_DIR);
+        $config->setProxyAutoloader(
+            new \ProxyManager\Autoloader\Autoloader(
+                new \ProxyManager\FileLocator\FileLocator(AID_DGR_CMS_TEMP_DIR),
+                new \ProxyManager\Inflector\ClassNameInflector(AID_DGR_CMS_SLUG)
+            )
+        );
+        $beanFactory = new \bitExpert\Disco\AnnotationBeanFactory(
+            \AllInData\Dgr\Cms\PluginConfiguration::class,
+            [],
+            $config
+        );
+        \bitExpert\Disco\BeanFactoryRegistry::register($beanFactory);
 
-/** @var \AllInData\Dgr\Core\PluginInterface $app */
-$app = $beanFactory->get('PluginApp');
-$app->doInit();
+        /** @var \AllInData\Dgr\Core\PluginInterface $app */
+        $app = $beanFactory->get('PluginApp');
+        $app->doInit();
+    }
+}
+add_action('elementor/init', [AllInDataDgrCms::class, 'init']);

@@ -18,7 +18,6 @@ use AllInData\Dgr\Theme\Module\ThemeModuleInterface;
 use AllInData\Dgr\Theme\ShortCode\AdminMenu;
 use AllInData\Dgr\Theme\ShortCode\LoginForm;
 use AllInData\Dgr\Theme\ShortCode\ThemeShortCodeInterface;
-use AllInData\Dgr\Theme\ShortCode\UserProfile;
 use bitExpert\Disco\Annotations\Configuration;
 use bitExpert\Disco\Annotations\Bean;
 
@@ -79,8 +78,7 @@ class ThemeConfiguration
     {
         return [
             new LoginForm(),
-            new AdminMenu(),
-            new UserProfile()
+            new AdminMenu()
         ];
     }
 }
