@@ -10,6 +10,7 @@ namespace AllInData\Dgr\Core;
 
 use AllInData\Dgr\Core\Controller\PluginControllerInterface;
 use AllInData\Dgr\Core\ShortCode\PluginShortCodeInterface;
+use AllInData\Dgr\Core\Module\PluginModuleInterface;
 
 /**
  * Class AbstractPlugin
@@ -22,6 +23,10 @@ abstract class AbstractPlugin implements PluginInterface
      */
     private $templatePath;
     /**
+     * @var PluginModuleInterface[]
+     */
+    private $modules = [];
+    /**
      * @var PluginControllerInterface[]
      */
     private $controllers = [];
@@ -33,12 +38,18 @@ abstract class AbstractPlugin implements PluginInterface
     /**
      * AbstractPlugin constructor.
      * @param string $templatePath
+     * @param PluginModuleInterface[] $modules
      * @param PluginControllerInterface[] $controllers
      * @param PluginShortCodeInterface[] $shortCodes
      */
-    public function __construct(string $templatePath, array $controllers = [], array $shortCodes = [])
-    {
+    public function __construct(
+        string $templatePath,
+        array $modules = [],
+        array $controllers = [],
+        array $shortCodes = []
+    ) {
         $this->templatePath = $templatePath;
+        $this->modules = $modules;
         $this->controllers = $controllers;
         $this->shortCodes = $shortCodes;
     }
@@ -55,6 +66,10 @@ abstract class AbstractPlugin implements PluginInterface
      */
     public function doInit()
     {
+        foreach ($this->modules as $module) {
+            $module->init();
+        }
+
         foreach ($this->controllers as $controller) {
             $controller->init();
         }

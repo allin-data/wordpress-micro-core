@@ -11,14 +11,17 @@ namespace AllInData\Dgr\Cms;
 use AllInData\Dgr\Cms\Controller\Admin\CreateUser;
 use AllInData\Dgr\Cms\Controller\Admin\UpdateUser;
 use AllInData\Dgr\Cms\Model\Collection\User as UserCollection;
+use AllInData\Dgr\Cms\Model\Factory\ElementorCmsCategory;
 use AllInData\Dgr\Cms\Model\Resource\User as UserResource;
 use AllInData\Dgr\Cms\Model\Factory\User as UserFactory;
 use AllInData\Dgr\Cms\Model\Validator\User as UserValidator;
 use AllInData\Dgr\Cms\Model\User;
+use AllInData\Dgr\Cms\Module\ElementorCategory;
 use AllInData\Dgr\Cms\ShortCode\Admin\GridUser;
 use AllInData\Dgr\Cms\ShortCode\UserOrganization;
 use AllInData\Dgr\Core\Controller\PluginControllerInterface;
 use AllInData\Dgr\Core\Database\WordpressDatabase;
+use AllInData\Dgr\Core\Module\PluginModuleInterface;
 use AllInData\Dgr\Core\ShortCode\PluginShortCodeInterface;
 use bitExpert\Disco\Annotations\Configuration;
 use bitExpert\Disco\Annotations\Bean;
@@ -37,9 +40,24 @@ class PluginConfiguration
     {
         return new Plugin(
             AID_DGR_CMS_TEMPLATE_DIR,
+            $this->getPluginModules(),
             $this->getPluginControllers(),
             $this->getPluginShortCodes()
         );
+    }
+
+    /**
+     * @return PluginModuleInterface[]
+     */
+    private function getPluginModules(): array
+    {
+        return [
+            new ElementorCategory(
+                new ElementorCmsCategory(
+                    \AllInData\Dgr\Cms\Model\ElementorCmsCategory::class
+                )
+            )
+        ];
     }
 
     /**
