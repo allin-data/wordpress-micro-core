@@ -1,0 +1,35 @@
+.fusion-main-menu .jet-menu-container li {
+	float: none;
+}
+
+.fusion-main-menu-icon.top-level-link {
+	font-family: 'icomoon' !important;
+}
+
+.fusion-main-menu .fusion-main-menu-search a:after {
+	align-self: center;
+}
+
+.jet-mobile-menu-active .fusion-mobile-menu-design-modern.fusion-header-v1 .fusion-main-menu,
+.jet-mobile-menu-active .fusion-mobile-menu-design-modern.fusion-header-v2 .fusion-main-menu,
+.jet-mobile-menu-active .fusion-mobile-menu-design-modern.fusion-header-v3 .fusion-main-menu,
+.jet-mobile-menu-active .fusion-mobile-menu-design-modern.fusion-header-v4 .fusion-main-menu,
+.jet-mobile-menu-active .fusion-mobile-menu-design-modern.fusion-header-v5 .fusion-main-menu,
+.jet-mobile-menu-active .fusion-mobile-menu-design-modern.fusion-header-v7 .fusion-main-menu > ul > li {
+	display: block !important;
+}
+
+.jet-mobile-menu-active .fusion-mobile-menu-icons .fusion-icon {
+	display: none;
+}
+
+div.fusion-middle-logo-menu-logo {
+	display: none !important;
+}
+
+.jet-mobile-menu-active div.fusion-middle-logo-menu-logo {
+	display: block !important;
+}
+.jet-mobile-menu-active li.fusion-middle-logo-menu-logo {
+	display: none !important;
+}

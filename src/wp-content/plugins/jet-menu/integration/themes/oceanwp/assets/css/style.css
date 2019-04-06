@@ -1,0 +1,21 @@
+@media only screen and (max-width: 959px) {
+	body.default-breakpoint.jet-mobile-menu-active #site-navigation-wrap {
+		display: block;
+	}
+}
+
+body.jet-mobile-menu-active #oceanwp-mobile-menu-icon {
+	display: none;
+}
+body.jet-mobile-menu-active .jet-mobile-menu-cover {
+	z-index: 99;
+}
+
+body.jet-mobile-menu-active #top-bar-wrap {
+	z-index: 100;
+}
+
+.jet-mobile-menu-toggle-button .jet-menu-toggle__icon {
+	vertical-align: middle;
+	margin-top: -3px;
+}

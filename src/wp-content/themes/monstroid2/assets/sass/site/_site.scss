@@ -1,0 +1,84 @@
+.site {
+	@include hyphens(auto);
+	overflow: hidden;
+	&-logo {
+		margin: 0;
+		@include font-size(32/16);
+		line-height: 1.2;
+		text-transform: lowercase;
+		font-weight: 700;
+	}
+	&-header.container,
+	&-breadcrumbs.container,
+	&-content.container,
+	&-footer.container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	&-breadcrumbs {
+		margin-top: 20px;
+	}
+	&-content {
+		body:not(.page-template-fullwidth-content) & {
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+	}
+	&-main {
+		>*:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+#secondary {
+	@include media-breakpoint-down(sm) {
+		margin-top: 40px;
+	}
+}
+
+.space-between-content {
+	@include space-between-content;
+}
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+
+@import "primary/header";
+
+/*--------------------------------------------------------------
+## Top panel
+--------------------------------------------------------------*/
+
+@import "primary/top-panel";
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+
+@import "primary/footer";
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+
+@import "primary/posts-and-pages";
+
+/*--------------------------------------------------------------
+## Post Formats
+--------------------------------------------------------------*/
+
+@import "primary/post-formats";
+
+/*--------------------------------------------------------------
+## Single post
+--------------------------------------------------------------*/
+
+@import "primary/single-post";
+
+/*--------------------------------------------------------------
+## Sticky 
+--------------------------------------------------------------*/
+
+@import "primary/sticky";

@@ -1,0 +1,28 @@
+.elementor-panel {
+	.elementor-header-button {
+		.elementor-icon.eicon-menu-bar {
+			font-size: 26px;
+			&:before {
+				content: '\e941';
+			}
+		}
+	}
+	#elementor-panel-footer-exit {
+		.fa-times {
+			&:before {
+				content: '\f053';
+			}
+		}
+	}
+	#elementor-panel-footer-settings {
+		.fa-cog {
+			&:before {
+				content: '\f053';
+			}
+		}
+	}
+	#elementor-panel-saver-menu-save-draft,
+	#elementor-panel-saver-menu-discard {
+		display: none !important;
+	}
+}

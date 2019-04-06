@@ -1,0 +1,164 @@
+#jet-popup-conditions-manager-modal {
+
+	.dialog-widget-content {
+		position: relative;
+		height: 100%;
+	}
+
+	.dialog-close-button {
+		top: 15px;
+		right: 15px;
+		font-size: 20px;
+	}
+
+	.dialog-message {
+		width: 100%;
+		height: 100%;
+		padding: 30px;
+	}
+
+	.dialog-header {
+		display: none;
+	}
+
+	.dialog-buttons-wrapper {
+		display: none;
+	}
+
+	.dialog-widget-content {
+		width: 60%;
+		min-width: 800px;
+		max-width: 95%;
+		height: 90%;
+		min-height: 500px;
+		max-height: 95%;
+	}
+}
+
+#jet-popup-conditions-manager {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.jet-popup-conditions-manager {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow-y: scroll;
+
+	&__container {
+		flex: 1 1 auto;
+		overflow-y: scroll;
+		padding-right: 10px;
+	}
+
+	&__controls {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 15px;
+		padding-top: 15px;
+		border-top: 1px solid #e8eaec;
+		min-height: 48px;
+	}
+
+	&__blank {
+		padding-bottom: 30px;
+
+		&-title {
+			font-size: 25px;
+			margin-bottom: 20px;
+		}
+
+		&-message {
+			display: flex;
+			flex-direction: column;
+		}
+
+	}
+
+	&__list {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	&__list-inner {
+		width: 100%;
+
+		> div {
+			> .ivu-card {
+				margin-bottom: 10px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	&__add-condition {
+		width: 100%;
+		padding-bottom: 30px;
+	}
+
+	&__item {
+		display: flex;
+		width: 100%;
+	}
+
+	&__item-control {
+		padding: 0 5px;
+		display: flex;
+		align-items: center;
+
+		&.select-type {
+			flex: 1 1 auto;
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-left: 0;
+		}
+
+		.ivu-select {
+			text-align: left;
+		}
+	}
+
+	&__item-delete {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-left: 10px;
+
+		.ivu-icon {
+			cursor: pointer;
+		}
+	}
+}
+
+.elementor-control {
+
+	input, textarea {
+		line-height: 11px;
+		padding: 5px 8px;
+	}
+}
+
+.ivu-notice {
+	z-index: 10001 !important;
+}
+
+.conditions-list-anim-enter-active, .list-leave-active {
+	transition: all .4s;
+}
+.conditions-list-anim-enter, .conditions-list-anim-leave-to {
+	opacity: 0;
+	transform: scale(.95);
+}

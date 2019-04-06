@@ -1,0 +1,1336 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: JetPopup for Elementor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-23 12:06+0200\n"
+"PO-Revision-Date: 2018-01-03 12:10+0200\n"
+"Last-Translator: \n"
+"Language-Team: Zemez\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;_ex:1,2c;_n:1,2;_nx:4c,1,2;_n_noop:1,2;"
+"_nx_noop:4c,1,2\n"
+"esc_attr__;_x: 1,2c;_n:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: cherry-framework\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: includes/addons/jet-action-button-widget.php:22
+msgid "Popup Action Button"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:51
+#: includes/addons/jet-popup-mailchimp.php:85 includes/document.php:40
+#: includes/settings.php:117 includes/settings.php:118
+#: templates/vue-templates/settings-form.php:3
+msgid "Settings"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:58
+msgid "Action Type"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:62
+msgid "Link"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:63
+msgid "Leave Page"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:64
+msgid "Close Popup"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:65
+msgid "Close Сonstantly"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:73
+msgid "Button text"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:75
+msgid "Read More"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:82
+msgid "Button Link"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:99
+#: includes/addons/jet-popup-mailchimp.php:343
+#: includes/conditions/manager.php:250
+msgid "General"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:108
+#: includes/addons/jet-popup-mailchimp.php:308
+#: includes/addons/jet-popup-mailchimp.php:1066
+msgid "Alignment"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:113
+#: includes/addons/jet-popup-mailchimp.php:313
+#: includes/addons/jet-popup-mailchimp.php:1071 includes/document.php:328
+msgid "Left"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:117
+#: includes/addons/jet-popup-mailchimp.php:317
+#: includes/addons/jet-popup-mailchimp.php:1075 includes/document.php:332
+msgid "Center"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:121
+#: includes/addons/jet-popup-mailchimp.php:321
+#: includes/addons/jet-popup-mailchimp.php:1079 includes/document.php:336
+msgid "Right"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:134
+#: includes/addons/jet-popup-mailchimp.php:776
+msgid "Add Icon"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:136
+#: includes/addons/jet-popup-mailchimp.php:104
+#: includes/addons/jet-popup-mailchimp.php:130
+#: includes/addons/jet-popup-mailchimp.php:190
+#: includes/addons/jet-popup-mailchimp.php:778
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:255
+#: includes/document.php:163 includes/document.php:272
+#: includes/document.php:582 includes/document.php:664
+msgid "Yes"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:137
+#: includes/addons/jet-popup-mailchimp.php:105
+#: includes/addons/jet-popup-mailchimp.php:131
+#: includes/addons/jet-popup-mailchimp.php:191
+#: includes/addons/jet-popup-mailchimp.php:779
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:256
+#: includes/document.php:164 includes/document.php:273
+#: includes/document.php:583 includes/document.php:665
+msgid "No"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:146
+#: includes/addons/jet-popup-mailchimp.php:789 includes/document.php:592
+msgid "Icon"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:160
+msgid "Icon Position"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:163
+msgid "Before Text"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:164
+msgid "After Text"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:177
+#: includes/addons/jet-popup-mailchimp.php:838
+msgid "Icon Margin"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:192
+#: includes/addons/jet-popup-mailchimp.php:394
+#: includes/addons/jet-popup-mailchimp.php:570
+#: includes/addons/jet-popup-mailchimp.php:862
+#: includes/addons/jet-popup-mailchimp.php:1101 includes/document.php:514
+msgid "Padding"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:204
+#: includes/addons/jet-popup-mailchimp.php:406
+#: includes/addons/jet-popup-mailchimp.php:582
+#: includes/addons/jet-popup-mailchimp.php:886
+#: includes/addons/jet-popup-mailchimp.php:1125
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:244
+#: includes/document.php:538
+msgid "Border Radius"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:218
+#: includes/addons/jet-popup-mailchimp.php:420
+#: includes/addons/jet-popup-mailchimp.php:604
+#: includes/addons/jet-popup-mailchimp.php:900 includes/document.php:481
+#: includes/document.php:614
+msgid "Normal"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:234
+#: includes/addons/jet-action-button-widget.php:309
+#: includes/addons/jet-popup-mailchimp.php:427
+#: includes/addons/jet-popup-mailchimp.php:466
+#: includes/addons/jet-popup-mailchimp.php:611
+#: includes/addons/jet-popup-mailchimp.php:663
+#: includes/addons/jet-popup-mailchimp.php:715
+#: includes/addons/jet-popup-mailchimp.php:1154
+#: includes/addons/jet-popup-mailchimp.php:1196
+msgid "Background Color"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:250
+#: includes/addons/jet-action-button-widget.php:321 includes/document.php:622
+#: includes/document.php:640
+msgid "Icon Styles"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:261
+#: includes/addons/jet-action-button-widget.php:332
+#: includes/addons/jet-popup-mailchimp.php:622
+#: includes/addons/jet-popup-mailchimp.php:674
+#: includes/addons/jet-popup-mailchimp.php:726
+#: includes/addons/jet-popup-mailchimp.php:938
+#: includes/addons/jet-popup-mailchimp.php:1004
+#: includes/addons/jet-popup-mailchimp.php:1165
+#: includes/addons/jet-popup-mailchimp.php:1207
+msgid "Text Color"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:273
+#: includes/addons/jet-action-button-widget.php:344
+#: includes/addons/jet-popup-mailchimp.php:439
+#: includes/addons/jet-popup-mailchimp.php:478
+#: includes/addons/jet-popup-mailchimp.php:636
+#: includes/addons/jet-popup-mailchimp.php:688
+#: includes/addons/jet-popup-mailchimp.php:740
+#: includes/addons/jet-popup-mailchimp.php:950
+#: includes/addons/jet-popup-mailchimp.php:1030
+#: includes/addons/jet-popup-mailchimp.php:1177
+#: includes/addons/jet-popup-mailchimp.php:1219 includes/document.php:552
+msgid "Border"
+msgstr ""
+
+#: includes/addons/jet-action-button-widget.php:293
+#: includes/addons/jet-popup-mailchimp.php:970 includes/document.php:632
+#: includes/extension.php:130
+msgid "Hover"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:31
+msgid "mailchimp"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:64
+#: includes/addons/jet-popup-mailchimp.php:459
+#: includes/addons/jet-popup-mailchimp.php:708
+#: includes/addons/jet-popup-mailchimp.php:1189 includes/export-import.php:219
+#: includes/export-import.php:237 includes/export-import.php:250
+#: includes/export-import.php:275 includes/export-import.php:284
+#: includes/export-import.php:293 includes/export-import.php:337
+#: includes/settings.php:212 includes/settings.php:241
+#: includes/settings.php:296 includes/settings.php:362
+msgid "Error"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:92
+msgid "List"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:102
+msgid "Use Redirect Url?"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:114
+msgid "Redirect Url"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:116
+msgid "Enter Redirect Url"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:127
+msgid "Close Popup When Success"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:128
+msgid ""
+"if the widget is in a popup, the successful response status will close the "
+"popup."
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:142
+#: includes/addons/jet-popup-mailchimp.php:505
+msgid "Fields"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:149
+msgid "E-Mail Label"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:151
+msgid "E-Mail"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:158
+msgid "E-Mail Placeholder"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:160
+msgid "Enter E-Mail"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:167
+msgid "Email Size"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:188
+msgid "Use Additional Fields"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:203
+msgid "Field Merge Tag"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:212
+#: includes/addons/jet-popup-mailchimp.php:214
+#: includes/addons/jet-popup-mailchimp.php:514
+msgid "Label"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:221
+#: includes/addons/jet-popup-mailchimp.php:223
+msgid "Placeholder"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:230
+msgid "Column Width"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:267
+#: includes/addons/jet-popup-mailchimp.php:767
+msgid "Submit Button"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:274
+msgid "Submit Text"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:276
+msgid "Enter Submit Button Text"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:277
+msgid "Subscribe"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:284
+msgid "Button Size"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:325
+msgid "Justified"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:352
+msgid "Columns Gap"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:373
+msgid "Rows Gap"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:522
+msgid "Label Color"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:541
+msgid "Label Gap"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:561
+msgid "Input"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:656
+msgid "Focus"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:804
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:169
+msgid "Icon Size"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:824
+#: includes/addons/jet-popup-mailchimp.php:1015
+msgid "Icon Color"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:874
+#: includes/addons/jet-popup-mailchimp.php:1113 includes/document.php:526
+msgid "Margin"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:914
+#: includes/addons/jet-popup-mailchimp.php:984
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:55
+msgctxt "Background Control"
+msgid "Background Color"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:921
+#: includes/addons/jet-popup-mailchimp.php:987
+msgctxt "Background Control"
+msgid "Second Background Color"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:1057
+msgid "Message"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:1147 includes/settings.php:227
+#: includes/settings.php:281 includes/settings.php:347
+#: includes/settings.php:405
+msgid "Success"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:1605
+#: templates/vue-templates/settings-form.php:6
+msgid "MailChimp"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:1606
+msgid "Synchronize your MailChimp account or add a new list"
+msgstr ""
+
+#: includes/ajax-handlers.php:51
+msgid "Please, provide valid mail"
+msgstr ""
+
+#: includes/ajax-handlers.php:52
+msgid "Please, set up MailChimp API key and List ID"
+msgstr ""
+
+#: includes/ajax-handlers.php:53
+msgid "Internal error. Please, try again later"
+msgstr ""
+
+#: includes/ajax-handlers.php:54 includes/settings.php:213
+#: includes/settings.php:242 includes/settings.php:297
+#: includes/settings.php:363
+msgid "Server error. Please, try again later"
+msgstr ""
+
+#: includes/ajax-handlers.php:55
+#, php-format
+msgid "E-mail %s has been subscribed"
+msgstr ""
+
+#: includes/conditions/archive-all.php:33
+msgid "All Archives"
+msgstr ""
+
+#: includes/conditions/archive-category.php:33
+msgid "Category Archives"
+msgstr ""
+
+#: includes/conditions/archive-category.php:48
+#: includes/conditions/singular-post-from-cat.php:48
+msgid "Select Categories"
+msgstr ""
+
+#: includes/conditions/archive-category.php:53
+msgid "Leave empty to apply for all categories"
+msgstr ""
+
+#: includes/conditions/archive-category.php:86
+#: includes/conditions/archive-post-type.php:60
+#: includes/conditions/archive-tag.php:87
+#: includes/conditions/singular-page.php:86
+#: includes/conditions/singular-post-from-cat.php:85
+#: includes/conditions/singular-post-from-tag.php:85
+#: includes/conditions/singular-post-type.php:60
+#: includes/conditions/singular-post.php:86
+msgid "All"
+msgstr ""
+
+#: includes/conditions/archive-post-type.php:33
+msgid "Post Type Archives"
+msgstr ""
+
+#: includes/conditions/archive-post-type.php:48
+#: includes/conditions/singular-post-type.php:33
+#: includes/conditions/singular-post-type.php:48
+msgid "Post Type"
+msgstr ""
+
+#: includes/conditions/archive-tag.php:33
+msgid "Tag Archives"
+msgstr ""
+
+#: includes/conditions/archive-tag.php:48
+#: includes/conditions/singular-post-from-tag.php:48
+msgid "Select Tags"
+msgstr ""
+
+#: includes/conditions/archive-tag.php:53
+msgid "Leave empty to apply for all tags"
+msgstr ""
+
+#: includes/conditions/manager.php:226 includes/conditions/manager.php:582
+msgid "Entire Site"
+msgstr ""
+
+#: includes/conditions/manager.php:227
+msgid "Singular"
+msgstr ""
+
+#: includes/conditions/manager.php:228
+msgid "Archive"
+msgstr ""
+
+#: includes/conditions/manager.php:244
+#: includes/conditions/singular-page-child.php:91
+#: includes/conditions/singular-page-template.php:63 includes/document.php:76
+#: includes/utils.php:71
+msgid "Not Selected"
+msgstr ""
+
+#: includes/conditions/singular-404.php:33
+msgid "404 Page"
+msgstr ""
+
+#: includes/conditions/singular-front-page.php:33
+msgid "Front Page"
+msgstr ""
+
+#: includes/conditions/singular-page-child.php:33
+msgid "Page, Child of"
+msgstr ""
+
+#: includes/conditions/singular-page-child.php:48
+msgid "Select Parent"
+msgstr ""
+
+#: includes/conditions/singular-page-template.php:33
+msgid "Page Template"
+msgstr ""
+
+#: includes/conditions/singular-page-template.php:48
+msgid "Select..."
+msgstr ""
+
+#: includes/conditions/singular-page-template.php:52
+msgid "Select Template"
+msgstr ""
+
+#: includes/conditions/singular-page.php:33
+msgid "Page"
+msgstr ""
+
+#: includes/conditions/singular-page.php:48
+msgid "Select Pages"
+msgstr ""
+
+#: includes/conditions/singular-page.php:53
+msgid "Leave empty to apply for all pages"
+msgstr ""
+
+#: includes/conditions/singular-post-from-cat.php:33
+msgid "Posts from Category"
+msgstr ""
+
+#: includes/conditions/singular-post-from-tag.php:33
+msgid "Posts from Tag"
+msgstr ""
+
+#: includes/conditions/singular-post.php:33
+msgid "Post"
+msgstr ""
+
+#: includes/conditions/singular-post.php:48
+msgid "Select Posts"
+msgstr ""
+
+#: includes/conditions/singular-post.php:53
+msgid "Leave empty to apply for all posts"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:27
+msgid "Font Color"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:35
+msgctxt "Background Control"
+msgid "Background Type"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:39
+msgctxt "Background Control"
+msgid "Classic"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:43
+msgctxt "Background Control"
+msgid "Gradient"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:52
+msgctxt "Background Control"
+msgid "Color"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:65
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:91
+msgctxt "Background Control"
+msgid "Location"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:80
+msgctxt "Background Control"
+msgid "Second Color"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:106
+msgctxt "Background Control"
+msgid "Type"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:109
+msgctxt "Background Control"
+msgid "Linear"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:110
+msgctxt "Background Control"
+msgid "Radial"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:121
+msgctxt "Background Control"
+msgid "Angle"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:144
+msgctxt "Background Control"
+msgid "Position"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:147
+msgctxt "Background Control"
+msgid "Center Center"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:148
+msgctxt "Background Control"
+msgid "Center Left"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:149
+msgctxt "Background Control"
+msgid "Center Right"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:150
+msgctxt "Background Control"
+msgid "Top Center"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:151
+msgctxt "Background Control"
+msgid "Top Left"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:152
+msgctxt "Background Control"
+msgid "Top Right"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:153
+msgctxt "Background Control"
+msgid "Bottom Center"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:154
+msgctxt "Background Control"
+msgid "Bottom Left"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:155
+msgctxt "Background Control"
+msgid "Bottom Right"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:188
+msgid "Box Size"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:206
+msgctxt "Border Control"
+msgid "Border Type"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:209
+#: includes/document.php:177
+msgid "None"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:210
+msgctxt "Border Control"
+msgid "Solid"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:211
+msgctxt "Border Control"
+msgid "Double"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:212
+msgctxt "Border Control"
+msgid "Dotted"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:213
+msgctxt "Border Control"
+msgid "Dashed"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:221
+msgctxt "Border Control"
+msgid "Width"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:232
+msgctxt "Border Control"
+msgid "Color"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:253
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:263
+msgctxt "Box Shadow Control"
+msgid "Box Shadow"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:274
+msgctxt "Box Shadow Control"
+msgid "Position"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:277
+msgctxt "Box Shadow Control"
+msgid "Outline"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:278
+msgctxt "Box Shadow Control"
+msgid "Inset"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-transform-style.php:46
+msgctxt "Transform Control"
+msgid "Translate X"
+msgstr ""
+
+#: includes/controls/groups/class-jet-popup-group-control-transform-style.php:67
+msgctxt "Transform Control"
+msgid "Translate Y"
+msgstr ""
+
+#: includes/document.php:22 includes/extension.php:89
+#: includes/integration.php:56 includes/post-type.php:259 jet-popup.php:187
+msgid "Jet Popup"
+msgstr ""
+
+#: includes/document.php:48
+msgid "Animation"
+msgstr ""
+
+#: includes/document.php:52
+msgid "Fade"
+msgstr ""
+
+#: includes/document.php:53
+msgid "ZoomIn"
+msgstr ""
+
+#: includes/document.php:54
+msgid "ZoomOut"
+msgstr ""
+
+#: includes/document.php:55
+msgid "Rotate"
+msgstr ""
+
+#: includes/document.php:56
+msgid "MoveUp"
+msgstr ""
+
+#: includes/document.php:57
+msgid "Horizontal Flip"
+msgstr ""
+
+#: includes/document.php:58
+msgid "Vertical Flip"
+msgstr ""
+
+#: includes/document.php:59
+msgid "BounceIn"
+msgstr ""
+
+#: includes/document.php:60
+msgid "BounceOut"
+msgstr ""
+
+#: includes/document.php:61
+msgid "SlideInUp"
+msgstr ""
+
+#: includes/document.php:62
+msgid "SlideInRight"
+msgstr ""
+
+#: includes/document.php:63
+msgid "SlideInDown"
+msgstr ""
+
+#: includes/document.php:64
+msgid "SlideInLeft"
+msgstr ""
+
+#: includes/document.php:72
+msgid "Open event"
+msgstr ""
+
+#: includes/document.php:77
+msgid "On page load(s)"
+msgstr ""
+
+#: includes/document.php:78
+msgid "Inactivity time after(s)"
+msgstr ""
+
+#: includes/document.php:79
+msgid "Page Scrolled(%)"
+msgstr ""
+
+#: includes/document.php:80
+msgid "Try exit"
+msgstr ""
+
+#: includes/document.php:81
+msgid "On Date"
+msgstr ""
+
+#: includes/document.php:82
+msgid "Custom Selector Click"
+msgstr ""
+
+#: includes/document.php:90
+msgid "Open delay"
+msgstr ""
+
+#: includes/document.php:104
+msgid "User inactivity time"
+msgstr ""
+
+#: includes/document.php:118
+msgid "Scroll Page Progress(%)"
+msgstr ""
+
+#: includes/document.php:132
+msgid "Open Date"
+msgstr ""
+
+#: includes/document.php:141
+#, php-format
+msgid "Date set according to your timezone: %s."
+msgstr ""
+
+#: includes/document.php:148 includes/document.php:150
+#: includes/extension.php:139 includes/extension.php:142
+msgid "Custom Selector"
+msgstr ""
+
+#: includes/document.php:161
+msgid "Show once"
+msgstr ""
+
+#: includes/document.php:173
+msgid "Show Again Delay"
+msgstr ""
+
+#: includes/document.php:178
+msgid "Minute"
+msgstr ""
+
+#: includes/document.php:179
+msgid "10 Minutes"
+msgstr ""
+
+#: includes/document.php:180
+msgid "30 Minutes"
+msgstr ""
+
+#: includes/document.php:181
+msgid "1 Hour"
+msgstr ""
+
+#: includes/document.php:182
+msgid "3 Hours"
+msgstr ""
+
+#: includes/document.php:183
+msgid "6 Hours"
+msgstr ""
+
+#: includes/document.php:184
+msgid "12 Hours"
+msgstr ""
+
+#: includes/document.php:185
+msgid "Day"
+msgstr ""
+
+#: includes/document.php:186
+msgid "3 Days"
+msgstr ""
+
+#: includes/document.php:187
+msgid "Week"
+msgstr ""
+
+#: includes/document.php:188
+msgid "Month"
+msgstr ""
+
+#: includes/document.php:201
+msgid "Conditions"
+msgstr ""
+
+#: includes/document.php:212
+msgid "Available For Roles"
+msgstr ""
+
+#: includes/document.php:226
+msgid "Popup Container"
+msgstr ""
+
+#: includes/document.php:234
+msgid "Size"
+msgstr ""
+
+#: includes/document.php:242
+msgid "Width"
+msgstr ""
+
+#: includes/document.php:270
+msgid "Custom Height"
+msgstr ""
+
+#: includes/document.php:282
+msgid "Height"
+msgstr ""
+
+#: includes/document.php:313
+msgid "Position"
+msgstr ""
+
+#: includes/document.php:322
+msgid "Horizontal Position"
+msgstr ""
+
+#: includes/document.php:349
+msgid "Vertical Position"
+msgstr ""
+
+#: includes/document.php:355 includes/document.php:382
+msgid "Top"
+msgstr ""
+
+#: includes/document.php:359 includes/document.php:386
+msgid "Middle"
+msgstr ""
+
+#: includes/document.php:363 includes/document.php:390
+msgid "Bottom"
+msgstr ""
+
+#: includes/document.php:376
+msgid "Content Position"
+msgstr ""
+
+#: includes/document.php:403
+msgid "Container Background"
+msgstr ""
+
+#: includes/document.php:420
+msgid "Container Overlay"
+msgstr ""
+
+#: includes/document.php:443
+msgid "Opacity"
+msgstr ""
+
+#: includes/document.php:478
+msgid "Blend Mode"
+msgstr ""
+
+#: includes/document.php:505
+msgid "Other Styles"
+msgstr ""
+
+#: includes/document.php:572
+msgid "Close Button"
+msgstr ""
+
+#: includes/document.php:580
+msgid "Use Close Button"
+msgstr ""
+
+#: includes/document.php:604
+msgid "Icon Transform"
+msgstr ""
+
+#: includes/document.php:654
+msgid "Popup Overlay"
+msgstr ""
+
+#: includes/document.php:662
+msgid "Use Overlay"
+msgstr ""
+
+#: includes/elementor-finder/categories/popup-finder-category.php:22
+#: includes/elementor-finder/categories/popup-finder-category.php:37
+msgid "Jet Popup Settings"
+msgstr ""
+
+#: includes/elementor-finder/categories/popup-finder-category.php:42
+msgid "Jet Popup Library"
+msgstr ""
+
+#: includes/export-import.php:59
+msgid "Export Popup"
+msgstr ""
+
+#: includes/export-import.php:169 includes/export-import.php:236
+#: includes/export-import.php:274
+msgid "You don't have permissions to do this"
+msgstr ""
+
+#: includes/export-import.php:173
+msgid "File not passed"
+msgstr ""
+
+#: includes/export-import.php:179
+msgid "Format not allowed"
+msgstr ""
+
+#: includes/export-import.php:186
+msgid "No data found in file"
+msgstr ""
+
+#: includes/export-import.php:210 includes/export-import.php:320
+msgid "New Popup"
+msgstr ""
+
+#: includes/export-import.php:218
+msgid "Can't create popup. Please try again"
+msgstr ""
+
+#: includes/export-import.php:249
+msgid "This template not rigestered"
+msgstr ""
+
+#: includes/export-import.php:283
+msgid "Stop Cheating!"
+msgstr ""
+
+#: includes/export-import.php:292
+msgid "Api Server Error"
+msgstr ""
+
+#: includes/export-import.php:336
+msgid "Can't create preset. Please try again"
+msgstr ""
+
+#: includes/export-import.php:474
+msgid "Classic"
+msgstr ""
+
+#: includes/export-import.php:479
+msgid "Slide In"
+msgstr ""
+
+#: includes/export-import.php:484
+msgid "Bar"
+msgstr ""
+
+#: includes/export-import.php:489
+msgid "Bordering"
+msgstr ""
+
+#: includes/export-import.php:494
+msgid "Full View"
+msgstr ""
+
+#: includes/export-import.php:499
+msgid "Full Width"
+msgstr ""
+
+#: includes/export-import.php:534
+msgid "Import Popup"
+msgstr ""
+
+#: includes/export-import.php:538
+msgid "Import Now"
+msgstr ""
+
+#: includes/export-import.php:541
+msgid "Popup Layout"
+msgstr ""
+
+#: includes/export-import.php:544
+msgid "Select Layout Preset"
+msgstr ""
+
+#: includes/export-import.php:567
+msgid "Create Popup"
+msgstr ""
+
+#: includes/extension.php:113
+msgid "Attached Popup"
+msgstr ""
+
+#: includes/extension.php:123
+msgid "Trigger Type"
+msgstr ""
+
+#: includes/extension.php:127
+msgid "Click On Button"
+msgstr ""
+
+#: includes/extension.php:128
+msgid "Click On Widget"
+msgstr ""
+
+#: includes/extension.php:129
+msgid "Click On Custom Selector"
+msgstr ""
+
+#: includes/extension.php:131
+msgid "Scroll To Widget"
+msgstr ""
+
+#: includes/extension.php:186
+msgid "You Haven’t Created Popup Yet."
+msgstr ""
+
+#: includes/generator.php:195 includes/post-type.php:263
+msgid "Edit Popup"
+msgstr ""
+
+#: includes/post-type.php:83
+msgid "Active Conditions"
+msgstr ""
+
+#: includes/post-type.php:84
+msgid "Date"
+msgstr ""
+
+#: includes/post-type.php:156
+msgid "Active"
+msgstr ""
+
+#: includes/post-type.php:166 includes/post-type.php:173
+msgid "Conditions not selected"
+msgstr ""
+
+#: includes/post-type.php:258 includes/post-type.php:264
+msgid "JetPopup"
+msgstr ""
+
+#: includes/post-type.php:260
+msgid "All Popups"
+msgstr ""
+
+#: includes/post-type.php:261 includes/post-type.php:262
+msgid "Add New Popup"
+msgstr ""
+
+#: includes/post-type.php:323
+msgid "Library"
+msgstr ""
+
+#: includes/post-type.php:324
+msgid "Popup Library"
+msgstr ""
+
+#: includes/settings.php:228
+msgid "Settings have been saved!"
+msgstr ""
+
+#: includes/settings.php:266 includes/settings.php:321
+#: includes/settings.php:389
+msgid "MailChimp Error"
+msgstr ""
+
+#: includes/settings.php:267 includes/settings.php:322
+#: includes/settings.php:390
+msgid "Server error. Please, check your apikey status or format"
+msgstr ""
+
+#: includes/settings.php:282
+msgid "Account Data were received"
+msgstr ""
+
+#: includes/settings.php:348
+msgid "Lists were received"
+msgstr ""
+
+#: includes/settings.php:406
+msgid "Merge Fields were received"
+msgstr ""
+
+#: includes/utils.php:116
+msgid "Guest"
+msgstr ""
+
+#: jet-popup.php:182
+msgid "Elementor"
+msgstr ""
+
+#: jet-popup.php:186
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
+msgstr ""
+
+#: jet-popup.php:386
+msgid "Changelog"
+msgstr ""
+
+#: templates/vue-templates/mailchimp-list-item.php:2
+msgid "Name: "
+msgstr ""
+
+#: templates/vue-templates/mailchimp-list-item.php:3
+msgid "List ID: "
+msgstr ""
+
+#: templates/vue-templates/mailchimp-list-item.php:4
+msgid "Date Created: "
+msgstr ""
+
+#: templates/vue-templates/mailchimp-list-item.php:5
+msgid "Member Count: "
+msgstr ""
+
+#: templates/vue-templates/mailchimp-list-item.php:7
+msgid "DoubleOptin: "
+msgstr ""
+
+#: templates/vue-templates/mailchimp-list-item.php:12
+msgid "Merge Fields: "
+msgstr ""
+
+#: templates/vue-templates/mailchimp-list-item.php:20
+msgid "Get Merge Fields"
+msgstr ""
+
+#: templates/vue-templates/preset-filters.php:3
+msgid "Categories: "
+msgstr ""
+
+#: templates/vue-templates/preset-filters.php:14
+msgid "Filter By : "
+msgstr ""
+
+#: templates/vue-templates/preset-item.php:6
+msgid "Add"
+msgstr ""
+
+#: templates/vue-templates/preset-item.php:9
+msgid "You really want to create a new Popup?"
+msgstr ""
+
+#: templates/vue-templates/preset-item.php:14
+msgid ""
+"A new preset will be created. You'll be redirected to Editing page. Also the "
+"template will be added to the popups list on \"All Popups\" page."
+msgstr ""
+
+#: templates/vue-templates/preset-item.php:24
+msgid "Category: "
+msgstr ""
+
+#: templates/vue-templates/preset-item.php:33
+msgid "Users Choice."
+msgstr ""
+
+#: templates/vue-templates/preset-item.php:34
+msgid "This preset has been added to collection by users {{install}} time"
+msgstr ""
+
+#: templates/vue-templates/preset-item.php:35
+msgid "This preset has been added to collection by users {{install}} times"
+msgstr ""
+
+#: templates/vue-templates/preset-item.php:43
+msgid "Required Plugins: "
+msgstr ""
+
+#: templates/vue-templates/preset-item.php:44
+msgid "When creating content"
+msgstr ""
+
+#: templates/vue-templates/preset-item.php:45
+msgid "third-party plug-ins are used"
+msgstr ""
+
+#: templates/vue-templates/preset-library.php:13
+msgid "Server Error"
+msgstr ""
+
+#: templates/vue-templates/preset-library.php:25
+msgid "Jet Popup Presets Library"
+msgstr ""
+
+#: templates/vue-templates/preset-library.php:37
+msgid "No matches found"
+msgstr ""
+
+#: templates/vue-templates/settings-form.php:12
+msgid "API key"
+msgstr ""
+
+#: templates/vue-templates/settings-form.php:20
+msgid "Sync"
+msgstr ""
+
+#: templates/vue-templates/settings-form.php:33
+msgid "Account ID: "
+msgstr ""
+
+#: templates/vue-templates/settings-form.php:34
+msgid "First Name: "
+msgstr ""
+
+#: templates/vue-templates/settings-form.php:35
+msgid "Last Name: "
+msgstr ""
+
+#: templates/vue-templates/settings-form.php:36
+msgid "Username: "
+msgstr ""
+
+#: templates/vue-templates/settings-form.php:64
+#: templates/vue-templates/settings-form.php:68
+msgid "Save"
+msgstr ""
+
+#: templates/vue-templates/settings-form.php:73
+msgid "Are you sure you want to save the settings?"
+msgstr ""

@@ -1,0 +1,45 @@
+.jet-unfold {
+	transition: all 300ms ease;
+
+	&__mask {
+		overflow: hidden;
+		position: relative;
+	}
+
+	&__separator {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 30px;
+		bottom: 0;
+		opacity: 1;
+		transition: opacity 100ms ease;
+	}
+
+	&__trigger {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+		margin-top: 30px;
+	}
+
+	&__button {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		background-color: #6ec1e4;
+		cursor: pointer;
+	}
+
+	&__button-icon {
+		margin-right: 5px;
+	}
+
+	&-state {
+		.jet-unfold__separator {
+			opacity: 0;
+		}
+	}
+}

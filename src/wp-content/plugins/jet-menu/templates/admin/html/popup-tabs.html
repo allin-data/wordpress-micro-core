@@ -1,0 +1,20 @@
+<div class="jet-settings-tabs">
+	<div class="jet-settings-tabs__nav">
+		<# _.each( data.tabs, function( tab, key ) { #>
+		<# if ( ! ( tab.depthFrom <= data.depth && data.depth < tab.depthTo ) ) {
+				return;
+		} #>
+			<div class="jet-settings-tabs__nav-item" data-tab="{{{ key }}}" data-action="{{{ tab.action }}}" data-template="{{{ tab.template }}}">
+				{{{ tab.label }}}
+			</div>
+		<# } ); #>
+	</div>
+	<div class="jet-settings-tabs__content">
+		<# _.each( data.tabs, function( tab, key ) { #>
+		<# if ( ! ( tab.depthFrom <= data.depth && data.depth < tab.depthTo ) ) {
+				return;
+		} #>
+			<div class="jet-settings-tabs__content-item jet-hidden-tab" data-tab="{{{ key }}}" data-action="{{{ tab.action }}}" data-template="{{{ tab.template }}}" data-loaded="0"><div class="tab-loader"></div></div>
+		<# } ); #>
+	</div>
+</div>

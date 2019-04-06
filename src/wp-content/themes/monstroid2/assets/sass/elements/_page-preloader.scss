@@ -1,0 +1,36 @@
+$main-loader-width: 30px;
+$main-loader-border-width: 3px;
+
+.page-preloader-cover {
+	position: fixed;
+	z-index: 1200;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: $color__bg-preloader-cover;
+}
+
+.page-preloader {
+	position: relative;
+	display: block;
+	left: 50%;
+	top: 50%;
+	border-radius: 50%;
+	width: $main-loader-width;
+	height: $main-loader-width;
+	border: $main-loader-border-width solid transparent;
+	margin: ($main-loader-width+$main-loader-border-width)/-2 0 0 ($main-loader-width+$main-loader-border-width)/-2;
+	animation: tm_spin 1s linear infinite;
+	z-index: 11;
+}
+
+@keyframes tm_spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

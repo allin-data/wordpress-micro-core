@@ -1,0 +1,212 @@
+.jet-family-column-flex-horizontal {
+	> .elementor-column-wrap {
+		> .elementor-widget-wrap {
+			display: flex;
+			flex-direction: row;
+		}
+	}
+}
+
+.jet-family-column-flex-vertical {
+	> .elementor-column-wrap {
+		> .elementor-widget-wrap {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
+	}
+}
+
+.jet-family-column-flex-wrap-true {
+	> .elementor-column-wrap {
+		> .elementor-widget-wrap {
+			flex-wrap: wrap;
+		}
+	}
+}
+
+.jet-family-column-flex-start {
+	> .elementor-column-wrap {
+		> .elementor-widget-wrap {
+			justify-content: flex-start;
+		}
+	}
+}
+
+.jet-family-column-flex-center {
+	> .elementor-column-wrap {
+		> .elementor-widget-wrap {
+			justify-content: center;
+		}
+	}
+}
+
+.jet-family-column-flex-end {
+	> .elementor-column-wrap {
+		> .elementor-widget-wrap {
+			justify-content: flex-end;
+		}
+	}
+}
+
+.jet-family-column-flex-space-between {
+	> .elementor-column-wrap {
+		> .elementor-widget-wrap {
+			justify-content: space-between;
+		}
+	}
+}
+
+.jet-family-column-flex-space-evenly {
+	> .elementor-column-wrap {
+		> .elementor-widget-wrap {
+			justify-content: space-evenly;
+		}
+	}
+}
+
+.jet-family-column-flex-space-around {
+	> .elementor-column-wrap {
+		> .elementor-widget-wrap {
+			justify-content: space-around;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.jet-family-column-tablet-flex-horizontal {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				display: flex;
+				flex-direction: row;
+			}
+		}
+	}
+
+	.jet-family-column-tablet-flex-vertical {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+			}
+		}
+	}
+
+	.jet-family-column-tablet-flex-start {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				justify-content: flex-start;
+			}
+		}
+	}
+
+	.jet-family-column-tablet-flex-center {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				justify-content: center;
+			}
+		}
+	}
+
+	.jet-family-column-tablet-flex-end {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				justify-content: flex-end;
+			}
+		}
+	}
+
+	.jet-family-column-tablet-flex-space-between {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				justify-content: space-between;
+			}
+		}
+	}
+
+	.jet-family-column-tablet-flex-space-evenly {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				justify-content: space-evenly;
+			}
+		}
+	}
+
+	.jet-family-column-tablet-flex-space-around {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				justify-content: space-around;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.jet-family-column-mobile-flex-horizontal {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				display: flex;
+				flex-direction: row;
+			}
+		}
+	}
+
+	.jet-family-column-mobile-flex-vertical {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+			}
+		}
+	}
+
+	.jet-family-column-mobile-flex-start {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				justify-content: flex-start;
+			}
+		}
+	}
+
+	.jet-family-column-mobile-flex-center {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				justify-content: center;
+			}
+		}
+	}
+
+	.jet-family-column-mobile-flex-end {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				justify-content: flex-end;
+			}
+		}
+	}
+
+	.jet-family-column-mobile-flex-space-between {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				justify-content: space-between;
+			}
+		}
+	}
+
+	.jet-family-column-mobile-flex-space-evenly {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				justify-content: space-evenly;
+			}
+		}
+	}
+
+	.jet-family-column-mobile-flex-space-around {
+		> .elementor-column-wrap {
+			> .elementor-widget-wrap {
+				justify-content: space-around;
+			}
+		}
+	}
+}

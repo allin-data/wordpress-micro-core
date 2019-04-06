@@ -1,0 +1,1450 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: JetTabs for Elementor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-23 12:19+0200\n"
+"PO-Revision-Date: 2018-11-23 16:46+0200\n"
+"Last-Translator: \n"
+"Language-Team: Zemez\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;_ex:1,2c;_n:1,2;_nx:4c,1,2;_n_noop:1,2;"
+"_nx_noop:4c,1,2\n"
+"esc_attr__;_x: 1,2c;_n:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: cherry-framework\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: includes/addons/jet-accordion-widget.php:28
+msgid "Classic Accordion"
+msgstr "Classic Accordion"
+
+#: includes/addons/jet-accordion-widget.php:55
+#: includes/addons/jet-image-accordion-widget.php:65
+#: includes/addons/jet-switcher-widget.php:56
+#: includes/addons/jet-tabs-widget.php:57
+msgid "Items"
+msgstr "Элементы"
+
+#: includes/addons/jet-accordion-widget.php:64
+#: includes/addons/jet-accordion-widget.php:547
+#: includes/addons/jet-image-accordion-widget.php:74
+#: includes/addons/jet-image-accordion-widget.php:417
+#: includes/addons/jet-tabs-widget.php:66
+#: includes/addons/jet-tabs-widget.php:903
+#: includes/lib/class-tgm-plugin-activation.php:2414
+msgid "Active"
+msgstr "Активная вкладка"
+
+#: includes/addons/jet-accordion-widget.php:66
+#: includes/addons/jet-accordion-widget.php:212
+#: includes/addons/jet-image-accordion-widget.php:76
+#: includes/addons/jet-tabs-widget.php:68
+#: includes/addons/jet-tabs-widget.php:80
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:255
+msgid "Yes"
+msgstr "Да"
+
+#: includes/addons/jet-accordion-widget.php:67
+#: includes/addons/jet-accordion-widget.php:213
+#: includes/addons/jet-image-accordion-widget.php:77
+#: includes/addons/jet-tabs-widget.php:69
+#: includes/addons/jet-tabs-widget.php:81
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:256
+msgid "No"
+msgstr "Нет"
+
+#: includes/addons/jet-accordion-widget.php:76
+#: includes/addons/jet-accordion-widget.php:456
+#: includes/addons/jet-accordion-widget.php:517
+#: includes/addons/jet-accordion-widget.php:578
+#: includes/addons/jet-tabs-widget.php:90
+msgid "Icon"
+msgstr "Иконка"
+
+#: includes/addons/jet-accordion-widget.php:87
+msgid "Active Icon"
+msgstr "Иконка активного элемента"
+
+#: includes/addons/jet-accordion-widget.php:98
+#: includes/addons/jet-switcher-widget.php:100
+#: includes/addons/jet-switcher-widget.php:165
+#: includes/addons/jet-tabs-widget.php:109
+msgid "Label"
+msgstr "Заголовок"
+
+#: includes/addons/jet-accordion-widget.php:100
+#: includes/addons/jet-tabs-widget.php:111
+msgid "New Tab"
+msgstr "Новая вкладка"
+
+#: includes/addons/jet-accordion-widget.php:124
+#: includes/addons/jet-switcher-widget.php:78
+#: includes/addons/jet-tabs-widget.php:135
+msgid "Select"
+msgstr "Выбрать"
+
+#: includes/addons/jet-accordion-widget.php:137
+#: includes/addons/jet-switcher-widget.php:112
+#: includes/addons/jet-switcher-widget.php:177
+#: includes/addons/jet-tabs-widget.php:148
+msgid "Content Type"
+msgstr "Тип контента"
+
+#: includes/addons/jet-accordion-widget.php:141
+#: includes/addons/jet-switcher-widget.php:116
+#: includes/addons/jet-switcher-widget.php:126
+#: includes/addons/jet-switcher-widget.php:181
+#: includes/addons/jet-switcher-widget.php:191
+#: includes/addons/jet-tabs-widget.php:152
+msgid "Template"
+msgstr "Шаблон"
+
+#: includes/addons/jet-accordion-widget.php:142
+#: includes/addons/jet-switcher-widget.php:117
+#: includes/addons/jet-switcher-widget.php:182
+#: includes/addons/jet-tabs-widget.php:153
+msgid "Editor"
+msgstr "Редактор"
+
+#: includes/addons/jet-accordion-widget.php:151
+#: includes/addons/jet-tabs-widget.php:162
+msgid "Choose Template"
+msgstr "Выбрать шаблон"
+
+#: includes/addons/jet-accordion-widget.php:166
+#: includes/addons/jet-image-accordion-widget.php:441
+#: includes/addons/jet-switcher-widget.php:141
+#: includes/addons/jet-switcher-widget.php:206
+#: includes/addons/jet-tabs-widget.php:177
+msgid "Content"
+msgstr "Контент"
+
+#: includes/addons/jet-accordion-widget.php:168
+#: includes/addons/jet-switcher-widget.php:143
+#: includes/addons/jet-switcher-widget.php:208
+#: includes/addons/jet-tabs-widget.php:179
+msgid "Tab Item Content"
+msgstr "Контент вкладки"
+
+#: includes/addons/jet-accordion-widget.php:185
+msgid "Toggle #1"
+msgstr "Элемент #1"
+
+#: includes/addons/jet-accordion-widget.php:188
+msgid "Toggle #2"
+msgstr "Элемент #2"
+
+#: includes/addons/jet-accordion-widget.php:191
+msgid "Toggle #3"
+msgstr "Элемент #3"
+
+#: includes/addons/jet-accordion-widget.php:203
+#: includes/addons/jet-image-accordion-widget.php:168
+#: includes/addons/jet-switcher-widget.php:227
+#: includes/addons/jet-tabs-widget.php:214
+msgid "Settings"
+msgstr "Настройки"
+
+#: includes/addons/jet-accordion-widget.php:210
+msgid "Collapsible"
+msgstr "Закрывать при клике на другой элемент?"
+
+#: includes/addons/jet-accordion-widget.php:222
+#: includes/addons/jet-switcher-widget.php:259
+#: includes/addons/jet-tabs-widget.php:221
+msgid "Show Effect"
+msgstr "Анимация"
+
+#: includes/addons/jet-accordion-widget.php:226
+#: includes/addons/jet-switcher-widget.php:263
+#: includes/addons/jet-tabs-widget.php:225
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:209
+msgid "None"
+msgstr "Отсутствует"
+
+#: includes/addons/jet-accordion-widget.php:227
+#: includes/addons/jet-switcher-widget.php:264
+#: includes/addons/jet-tabs-widget.php:226
+msgid "Fade"
+msgstr "Fade"
+
+#: includes/addons/jet-accordion-widget.php:229
+#: includes/addons/jet-switcher-widget.php:265
+#: includes/addons/jet-tabs-widget.php:228
+msgid "Zoom In"
+msgstr "Zoom In"
+
+#: includes/addons/jet-accordion-widget.php:230
+#: includes/addons/jet-switcher-widget.php:266
+#: includes/addons/jet-tabs-widget.php:229
+msgid "Zoom Out"
+msgstr "Zoom Out"
+
+#: includes/addons/jet-accordion-widget.php:231
+#: includes/addons/jet-switcher-widget.php:267
+#: includes/addons/jet-tabs-widget.php:230
+msgid "Move Up"
+msgstr "Move Up"
+
+#: includes/addons/jet-accordion-widget.php:233
+#: includes/addons/jet-switcher-widget.php:268
+#: includes/addons/jet-tabs-widget.php:232
+msgid "Fall Perspective"
+msgstr "Fall Perspective"
+
+#: includes/addons/jet-accordion-widget.php:243
+msgid "Accordion Container"
+msgstr "Контейнер блока Аккордеон"
+
+#: includes/addons/jet-accordion-widget.php:261
+#: includes/addons/jet-accordion-widget.php:350
+#: includes/addons/jet-accordion-widget.php:474
+#: includes/addons/jet-accordion-widget.php:535
+#: includes/addons/jet-accordion-widget.php:596
+#: includes/addons/jet-accordion-widget.php:731
+#: includes/addons/jet-image-accordion-widget.php:276
+#: includes/addons/jet-image-accordion-widget.php:359
+#: includes/addons/jet-image-accordion-widget.php:785
+#: includes/addons/jet-image-accordion-widget.php:855
+#: includes/addons/jet-switcher-widget.php:349
+#: includes/addons/jet-switcher-widget.php:575
+#: includes/addons/jet-tabs-widget.php:366
+#: includes/addons/jet-tabs-widget.php:472
+#: includes/addons/jet-tabs-widget.php:764
+#: includes/addons/jet-tabs-widget.php:883
+#: includes/addons/jet-tabs-widget.php:1022
+#: includes/addons/jet-tabs-widget.php:1071
+msgid "Border"
+msgstr "Граница"
+
+#: includes/addons/jet-accordion-widget.php:271
+#: includes/addons/jet-accordion-widget.php:359
+#: includes/addons/jet-accordion-widget.php:623
+#: includes/addons/jet-accordion-widget.php:741
+#: includes/addons/jet-image-accordion-widget.php:286
+#: includes/addons/jet-image-accordion-widget.php:369
+#: includes/addons/jet-image-accordion-widget.php:772
+#: includes/addons/jet-image-accordion-widget.php:842
+#: includes/addons/jet-switcher-widget.php:359
+#: includes/addons/jet-switcher-widget.php:585
+#: includes/addons/jet-tabs-widget.php:376
+#: includes/addons/jet-tabs-widget.php:482
+#: includes/addons/jet-tabs-widget.php:751
+#: includes/addons/jet-tabs-widget.php:1001
+#: includes/addons/jet-tabs-widget.php:1081
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:244
+msgid "Border Radius"
+msgstr "Скругление углов"
+
+#: includes/addons/jet-accordion-widget.php:291
+#: includes/addons/jet-accordion-widget.php:317
+#: includes/addons/jet-accordion-widget.php:610
+#: includes/addons/jet-accordion-widget.php:718
+#: includes/addons/jet-image-accordion-widget.php:306
+#: includes/addons/jet-image-accordion-widget.php:458
+#: includes/addons/jet-image-accordion-widget.php:530
+#: includes/addons/jet-image-accordion-widget.php:614
+#: includes/addons/jet-image-accordion-widget.php:748
+#: includes/addons/jet-switcher-widget.php:562
+#: includes/addons/jet-tabs-widget.php:341
+#: includes/addons/jet-tabs-widget.php:447
+#: includes/addons/jet-tabs-widget.php:727
+#: includes/addons/jet-tabs-widget.php:858
+#: includes/addons/jet-tabs-widget.php:977
+#: includes/addons/jet-tabs-widget.php:1058
+msgid "Padding"
+msgstr "Внутренний отступ"
+
+#: includes/addons/jet-accordion-widget.php:308
+msgid "Toggle"
+msgstr "Блок элемента"
+
+#: includes/addons/jet-accordion-widget.php:329
+#: includes/addons/jet-accordion-widget.php:672
+#: includes/addons/jet-accordion-widget.php:706
+#: includes/addons/jet-image-accordion-widget.php:542
+#: includes/addons/jet-image-accordion-widget.php:626
+#: includes/addons/jet-image-accordion-widget.php:760
+#: includes/addons/jet-switcher-widget.php:336
+#: includes/addons/jet-tabs-widget.php:353
+#: includes/addons/jet-tabs-widget.php:459
+#: includes/addons/jet-tabs-widget.php:739
+#: includes/addons/jet-tabs-widget.php:870
+#: includes/addons/jet-tabs-widget.php:989
+msgid "Margin"
+msgstr "Внешний отступ"
+
+#: includes/addons/jet-accordion-widget.php:384
+msgid "Toggle Control"
+msgstr "Переключатель элемента"
+
+#: includes/addons/jet-accordion-widget.php:393
+#: includes/addons/jet-image-accordion-widget.php:554
+#: includes/addons/jet-image-accordion-widget.php:638
+#: includes/addons/jet-image-accordion-widget.php:678
+#: includes/addons/jet-tabs-widget.php:516
+#: includes/addons/jet-tabs-widget.php:546
+msgid "Alignment"
+msgstr "Выравнивание"
+
+#: includes/addons/jet-accordion-widget.php:398
+#: includes/addons/jet-accordion-widget.php:656
+#: includes/addons/jet-image-accordion-widget.php:475
+#: includes/addons/jet-image-accordion-widget.php:559
+#: includes/addons/jet-image-accordion-widget.php:643
+#: includes/addons/jet-image-accordion-widget.php:683
+#: includes/addons/jet-tabs-widget.php:295
+#: includes/addons/jet-tabs-widget.php:415
+#: includes/addons/jet-tabs-widget.php:521
+#: includes/addons/jet-tabs-widget.php:551
+#: includes/addons/jet-tabs-widget.php:633
+msgid "Left"
+msgstr "Слева"
+
+#: includes/addons/jet-accordion-widget.php:402
+#: includes/addons/jet-image-accordion-widget.php:479
+#: includes/addons/jet-image-accordion-widget.php:563
+#: includes/addons/jet-image-accordion-widget.php:647
+#: includes/addons/jet-image-accordion-widget.php:687
+#: includes/addons/jet-tabs-widget.php:419
+#: includes/addons/jet-tabs-widget.php:525
+#: includes/addons/jet-tabs-widget.php:555
+msgid "Center"
+msgstr "По центру"
+
+#: includes/addons/jet-accordion-widget.php:406
+msgid "Justify"
+msgstr "По ширине"
+
+#: includes/addons/jet-accordion-widget.php:410
+#: includes/addons/jet-accordion-widget.php:660
+#: includes/addons/jet-image-accordion-widget.php:483
+#: includes/addons/jet-image-accordion-widget.php:567
+#: includes/addons/jet-image-accordion-widget.php:651
+#: includes/addons/jet-image-accordion-widget.php:691
+#: includes/addons/jet-tabs-widget.php:297
+#: includes/addons/jet-tabs-widget.php:423
+#: includes/addons/jet-tabs-widget.php:529
+#: includes/addons/jet-tabs-widget.php:559
+msgid "Right"
+msgstr "Справа"
+
+#: includes/addons/jet-accordion-widget.php:425
+#: includes/addons/jet-image-accordion-widget.php:400
+#: includes/addons/jet-image-accordion-widget.php:706
+#: includes/addons/jet-tabs-widget.php:653
+msgid "Normal"
+msgstr "Стандарт"
+
+#: includes/addons/jet-accordion-widget.php:432
+#: includes/addons/jet-accordion-widget.php:493
+#: includes/addons/jet-accordion-widget.php:554
+#: includes/addons/jet-image-accordion-widget.php:728
+#: includes/addons/jet-image-accordion-widget.php:823
+#: includes/addons/jet-tabs-widget.php:660
+#: includes/addons/jet-tabs-widget.php:791
+#: includes/addons/jet-tabs-widget.php:910
+msgid "Text Color"
+msgstr "Цвет текста"
+
+#: includes/addons/jet-accordion-widget.php:486
+#: includes/addons/jet-image-accordion-widget.php:805
+#: includes/addons/jet-tabs-widget.php:245
+#: includes/addons/jet-tabs-widget.php:784
+msgid "Hover"
+msgstr "При наведении"
+
+#: includes/addons/jet-accordion-widget.php:643
+msgid "Icon "
+msgstr "Иконка"
+
+#: includes/addons/jet-accordion-widget.php:652
+msgid "Position"
+msgstr "Положение"
+
+#: includes/addons/jet-accordion-widget.php:689
+msgid "Toggle Content"
+msgstr "Содержание блока элемента в Аккордеоне"
+
+#: includes/addons/jet-accordion-widget.php:850
+#: includes/addons/jet-accordion-widget.php:947
+#: includes/addons/jet-switcher-widget.php:712
+#: includes/addons/jet-switcher-widget.php:781
+#: includes/addons/jet-tabs-widget.php:1241
+#: includes/addons/jet-tabs-widget.php:1323
+msgid "Edit Template"
+msgstr "Редактировать шаблон"
+
+#: includes/addons/jet-accordion-widget.php:897
+#: includes/addons/jet-switcher-widget.php:731
+#: includes/addons/jet-tabs-widget.php:1271
+msgid "You Haven’t Saved Templates Yet."
+msgstr "У Вас отсутствуют сохраненные шаблоны."
+
+#: includes/addons/jet-accordion-widget.php:898
+#: includes/addons/jet-switcher-widget.php:732
+#: includes/addons/jet-tabs-widget.php:1272
+msgid "What is Library?"
+msgstr "Что такое Библиотека?"
+
+#: includes/addons/jet-accordion-widget.php:898
+#: includes/addons/jet-switcher-widget.php:732
+#: includes/addons/jet-tabs-widget.php:1272
+msgid "Read our tutorial on using Library templates."
+msgstr ""
+"Ознакомьтесь с нашим руководством по использованию библиотеки шаблонов."
+
+#: includes/addons/jet-accordion-widget.php:907
+#: includes/addons/jet-switcher-widget.php:741
+#: includes/addons/jet-tabs-widget.php:1281
+msgid "Template is not defined. "
+msgstr "Вы не выбрали шаблон для отображения."
+
+#: includes/addons/jet-accordion-widget.php:919
+#: includes/addons/jet-switcher-widget.php:753
+#: includes/addons/jet-tabs-widget.php:1295
+msgid "Select an existing template or create a "
+msgstr "Выберите один из уже существующей библиотеки, либо создайте "
+
+#: includes/addons/jet-accordion-widget.php:919
+#: includes/addons/jet-switcher-widget.php:753
+#: includes/addons/jet-tabs-widget.php:1295
+msgid "new one"
+msgstr "новый"
+
+#: includes/addons/jet-accordion-widget.php:933
+msgid ""
+"The toggles are working. Please, note, that you have to add a template to "
+"the library in order to be able to display it inside the toggles."
+msgstr ""
+"Элементы работают. Пожалуйста, обратие внимание, что Вам необходимо добавить "
+"шаблон в библиотеку для того чтобы добавить его во вкладку."
+
+#: includes/addons/jet-image-accordion-widget.php:28
+msgid "Image Accordion"
+msgstr "Image Accordion"
+
+#: includes/addons/jet-image-accordion-widget.php:86
+#: includes/addons/jet-tabs-widget.php:101
+msgid "Image"
+msgstr "Изображение"
+
+#: includes/addons/jet-image-accordion-widget.php:97
+#: includes/addons/jet-image-accordion-widget.php:501
+msgid "Title"
+msgstr "Заголовок"
+
+#: includes/addons/jet-image-accordion-widget.php:105
+#: includes/addons/jet-image-accordion-widget.php:585
+msgid "Description"
+msgstr "Основной текст"
+
+#: includes/addons/jet-image-accordion-widget.php:113
+msgid "Button text"
+msgstr "Текст кнопки"
+
+#: includes/addons/jet-image-accordion-widget.php:115
+msgid "More"
+msgstr "Подробнее"
+
+#: includes/addons/jet-image-accordion-widget.php:122
+msgid "Link"
+msgstr "Ссылка"
+
+#: includes/addons/jet-image-accordion-widget.php:141
+msgid "Item #1"
+msgstr "Элемент #1"
+
+#: includes/addons/jet-image-accordion-widget.php:142
+#: includes/addons/jet-image-accordion-widget.php:149
+#: includes/addons/jet-image-accordion-widget.php:156
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+msgstr "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+
+#: includes/addons/jet-image-accordion-widget.php:148
+msgid "Item #2"
+msgstr "Элемент #2"
+
+#: includes/addons/jet-image-accordion-widget.php:155
+msgid "Item #3"
+msgstr "Элемент #3"
+
+#: includes/addons/jet-image-accordion-widget.php:175
+msgid "Orientation"
+msgstr "Расположение изображений"
+
+#: includes/addons/jet-image-accordion-widget.php:179
+msgid "Vertical"
+msgstr "Вертикально"
+
+#: includes/addons/jet-image-accordion-widget.php:180
+msgid "Horizontal"
+msgstr "Горизонтально"
+
+#: includes/addons/jet-image-accordion-widget.php:188
+msgid "Active Size(%)"
+msgstr "Размер активной вкладки (%)"
+
+#: includes/addons/jet-image-accordion-widget.php:206
+msgid "Animation Duration"
+msgstr "Скорость анимации"
+
+#: includes/addons/jet-image-accordion-widget.php:218
+msgid "Easing"
+msgstr "Анимация"
+
+#: includes/addons/jet-image-accordion-widget.php:222
+msgid "Sine"
+msgstr "Sine"
+
+#: includes/addons/jet-image-accordion-widget.php:223
+msgid "Quint"
+msgstr "Quint"
+
+#: includes/addons/jet-image-accordion-widget.php:224
+msgid "Cubic"
+msgstr "Cubic"
+
+#: includes/addons/jet-image-accordion-widget.php:225
+msgid "Expo"
+msgstr "Expo"
+
+#: includes/addons/jet-image-accordion-widget.php:226
+msgid "Circ"
+msgstr "Circ"
+
+#: includes/addons/jet-image-accordion-widget.php:227
+msgid "Back"
+msgstr "Back"
+
+#: includes/addons/jet-image-accordion-widget.php:237
+msgid "Container"
+msgstr "Контейнер"
+
+#: includes/addons/jet-image-accordion-widget.php:246
+msgid "Height(px)"
+msgstr "Высота (px)"
+
+#: includes/addons/jet-image-accordion-widget.php:320
+msgid "Item"
+msgstr "Элемент"
+
+#: includes/addons/jet-image-accordion-widget.php:329
+msgid "Item Gutter"
+msgstr "Расстояние между изображениями"
+
+#: includes/addons/jet-image-accordion-widget.php:389
+msgid "Cover Styles"
+msgstr "Стили наложения"
+
+#: includes/addons/jet-image-accordion-widget.php:470
+msgid "Text Alignment"
+msgstr "Выравнивание текста"
+
+#: includes/addons/jet-image-accordion-widget.php:510
+#: includes/addons/jet-image-accordion-widget.php:594
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:27
+msgid "Color"
+msgstr "Цвет"
+
+#: includes/addons/jet-image-accordion-widget.php:669
+msgid "Action Button"
+msgstr "Кнопка"
+
+#: includes/addons/jet-image-accordion-widget.php:713
+#: includes/addons/jet-image-accordion-widget.php:812
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#: includes/addons/jet-image-accordion-widget.php:882
+msgid "Content Order and Alignment"
+msgstr "Порядок размещения контента"
+
+#: includes/addons/jet-image-accordion-widget.php:891
+msgid "Title Order"
+msgstr "Название"
+
+#: includes/addons/jet-image-accordion-widget.php:906
+msgid "Description Order"
+msgstr "Описание"
+
+#: includes/addons/jet-image-accordion-widget.php:921
+msgid "Button Order"
+msgstr "Кнопка"
+
+#: includes/addons/jet-switcher-widget.php:28
+msgid "Switcher"
+msgstr ""
+
+#: includes/addons/jet-switcher-widget.php:93
+#: includes/addons/jet-switcher-widget.php:102
+#: includes/addons/jet-switcher-widget.php:237
+#: includes/addons/jet-switcher-widget.php:432
+msgid "Disable"
+msgstr "Закрыть"
+
+#: includes/addons/jet-switcher-widget.php:158
+#: includes/addons/jet-switcher-widget.php:167
+#: includes/addons/jet-switcher-widget.php:236
+#: includes/addons/jet-switcher-widget.php:485
+msgid "Enable"
+msgstr "Открыть"
+
+#: includes/addons/jet-switcher-widget.php:234
+msgid "Initial State"
+msgstr "Открыть по умолчанию"
+
+#: includes/addons/jet-switcher-widget.php:246
+msgid "Switcher Preset"
+msgstr "Пресет элемента для переключения"
+
+#: includes/addons/jet-switcher-widget.php:250
+msgid "Preset-1"
+msgstr ""
+
+#: includes/addons/jet-switcher-widget.php:251
+msgid "Preset-2"
+msgstr ""
+
+#: includes/addons/jet-switcher-widget.php:278
+msgid "Switcher Control"
+msgstr "Элемент переключения "
+
+#: includes/addons/jet-switcher-widget.php:287
+msgid "Width"
+msgstr "Ширина"
+
+#: includes/addons/jet-switcher-widget.php:302
+msgid "Height"
+msgstr "Высота"
+
+#: includes/addons/jet-switcher-widget.php:317
+msgid "Handler Width"
+msgstr "Ширина элемента переключения"
+
+#: includes/addons/jet-switcher-widget.php:379
+msgid "Handler"
+msgstr "Переключатель"
+
+#: includes/addons/jet-switcher-widget.php:388
+msgid "Handler Offset"
+msgstr "Оффсет переключателя"
+
+#: includes/addons/jet-switcher-widget.php:403
+msgid "Typography"
+msgstr "Типографика"
+
+#: includes/addons/jet-switcher-widget.php:412
+msgid "Labels"
+msgstr "Заголовки"
+
+#: includes/addons/jet-switcher-widget.php:421
+msgid "States"
+msgstr "Открытый / закрытый элемент"
+
+#: includes/addons/jet-switcher-widget.php:439
+#: includes/addons/jet-switcher-widget.php:492
+msgid "Control Color"
+msgstr "Цвет блока переключателя"
+
+#: includes/addons/jet-switcher-widget.php:450
+#: includes/addons/jet-switcher-widget.php:503
+msgid "Handler Color"
+msgstr "Цвет элемента переключателя"
+
+#: includes/addons/jet-switcher-widget.php:461
+#: includes/addons/jet-switcher-widget.php:514
+msgid "Disable Label Color"
+msgstr "Цвет текста при закрытии"
+
+#: includes/addons/jet-switcher-widget.php:472
+#: includes/addons/jet-switcher-widget.php:525
+msgid "Enable Label Color"
+msgstr "Цвет текста при открытии"
+
+#: includes/addons/jet-switcher-widget.php:545
+msgid "Switcher Content"
+msgstr "Контент блока переключения"
+
+#: includes/addons/jet-switcher-widget.php:767
+msgid ""
+"The switcher are working. Please, note, that you have to add a template to "
+"the library in order to be able to display it inside the switcher."
+msgstr ""
+"Switcher работает. Пожалуйста, обратите внимание, что Вам следует добавить "
+"шаблн в библиотеку чтобы добавить его в блок Switcher."
+
+#: includes/addons/jet-tabs-widget.php:29
+msgid "Tabs"
+msgstr "Tabs"
+
+#: includes/addons/jet-tabs-widget.php:78
+msgid "Use Image?"
+msgstr "Использовать изображение?"
+
+#: includes/addons/jet-tabs-widget.php:196
+msgid "Tab #1"
+msgstr "Вкладка #1"
+
+#: includes/addons/jet-tabs-widget.php:199
+msgid "Tab #2"
+msgstr "Вкладка #2"
+
+#: includes/addons/jet-tabs-widget.php:202
+msgid "Tab #3"
+msgstr "Вкладка #3"
+
+#: includes/addons/jet-tabs-widget.php:240
+msgid "Tabs Event"
+msgstr "Открывать вкладки"
+
+#: includes/addons/jet-tabs-widget.php:244
+msgid "Click"
+msgstr "При нажатии"
+
+#: includes/addons/jet-tabs-widget.php:253
+msgid "Auto Switch"
+msgstr "Автоматическое переключение"
+
+#: includes/addons/jet-tabs-widget.php:255
+msgid "On"
+msgstr "Вкл."
+
+#: includes/addons/jet-tabs-widget.php:256
+msgid "Off"
+msgstr "Выкл."
+
+#: includes/addons/jet-tabs-widget.php:265
+msgid "Auto Switch Delay"
+msgstr "Задержка при автоматическом переключении"
+
+#: includes/addons/jet-tabs-widget.php:282
+msgid "General"
+msgstr "Общий"
+
+#: includes/addons/jet-tabs-widget.php:291
+msgid "Tabs Position"
+msgstr "Положение вкладок"
+
+#: includes/addons/jet-tabs-widget.php:296
+#: includes/addons/jet-tabs-widget.php:634
+msgid "Top"
+msgstr "Сверху"
+
+#: includes/addons/jet-tabs-widget.php:305
+msgid "Tabs Control Width"
+msgstr "Ширина переключающего элемента вкладки"
+
+#: includes/addons/jet-tabs-widget.php:401
+msgid "Tabs Control"
+msgstr "Блоки переключения вкладок"
+
+#: includes/addons/jet-tabs-widget.php:410
+msgid "Tabs Alignment"
+msgstr "Выравнивание вкладок"
+
+#: includes/addons/jet-tabs-widget.php:507
+msgid "Tabs Control Item"
+msgstr "Элементы вкладки"
+
+#: includes/addons/jet-tabs-widget.php:576
+msgid "Icon Styles"
+msgstr "Стили иконки"
+
+#: includes/addons/jet-tabs-widget.php:585
+msgid "Icon Margin"
+msgstr "Внешние отступы иконки"
+
+#: includes/addons/jet-tabs-widget.php:597
+msgid "Image Margin"
+msgstr "Внешние отступы изображения"
+
+#: includes/addons/jet-tabs-widget.php:609
+msgid "Image Width"
+msgstr "Ширина изображения"
+
+#: includes/addons/jet-tabs-widget.php:629
+msgid "Icon Position"
+msgstr "Выравнивание иконки"
+
+#: includes/addons/jet-tabs-widget.php:642
+msgid "State Styles"
+msgstr "Стиль заголовка вкладки"
+
+#: includes/addons/jet-tabs-widget.php:684
+#: includes/addons/jet-tabs-widget.php:815
+#: includes/addons/jet-tabs-widget.php:934
+msgid "Icon Color"
+msgstr "Цвет иконки"
+
+#: includes/addons/jet-tabs-widget.php:699
+#: includes/addons/jet-tabs-widget.php:830
+#: includes/addons/jet-tabs-widget.php:949
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:169
+msgid "Icon Size"
+msgstr "Размер иконки"
+
+#: includes/addons/jet-tabs-widget.php:1041
+msgid "Tabs Content"
+msgstr "Содержание блока вкладки"
+
+#: includes/addons/jet-tabs-widget.php:1309
+msgid ""
+"The tabs are working. Please, note, that you have to add a template to the "
+"library in order to be able to display it inside the tabs."
+msgstr ""
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:35
+msgctxt "Background Control"
+msgid "Background Type"
+msgstr "Тип фона"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:39
+msgctxt "Background Control"
+msgid "Classic"
+msgstr "Классический"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:43
+msgctxt "Background Control"
+msgid "Gradient"
+msgstr "Градиентный"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:52
+msgctxt "Background Control"
+msgid "Color"
+msgstr "Цвет"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:55
+msgctxt "Background Control"
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:65
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:91
+msgctxt "Background Control"
+msgid "Location"
+msgstr "Местоположение"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:80
+msgctxt "Background Control"
+msgid "Second Color"
+msgstr "Второй цвет"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:106
+msgctxt "Background Control"
+msgid "Type"
+msgstr "Тип"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:109
+msgctxt "Background Control"
+msgid "Linear"
+msgstr "Линейный"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:110
+msgctxt "Background Control"
+msgid "Radial"
+msgstr "Радиальный"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:121
+msgctxt "Background Control"
+msgid "Angle"
+msgstr "Угловой"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:144
+msgctxt "Background Control"
+msgid "Position"
+msgstr "Выравнивание"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:147
+msgctxt "Background Control"
+msgid "Center Center"
+msgstr "Центр центра"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:148
+msgctxt "Background Control"
+msgid "Center Left"
+msgstr "Центр слева"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:149
+msgctxt "Background Control"
+msgid "Center Right"
+msgstr "Центр справа"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:150
+msgctxt "Background Control"
+msgid "Top Center"
+msgstr "Центр вверху"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:151
+msgctxt "Background Control"
+msgid "Top Left"
+msgstr "Слева вверху"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:152
+msgctxt "Background Control"
+msgid "Top Right"
+msgstr "Справа вверху"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:153
+msgctxt "Background Control"
+msgid "Bottom Center"
+msgstr "Центр внизу"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:154
+msgctxt "Background Control"
+msgid "Bottom Left"
+msgstr "Слева внизу"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:155
+msgctxt "Background Control"
+msgid "Bottom Right"
+msgstr "Справа внизу"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:188
+msgid "Box Size"
+msgstr "Размер ячейки"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:206
+msgctxt "Border Control"
+msgid "Border Type"
+msgstr "Тип границы"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:210
+msgctxt "Border Control"
+msgid "Solid"
+msgstr "Сплошной"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:211
+msgctxt "Border Control"
+msgid "Double"
+msgstr "Двойной"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:212
+msgctxt "Border Control"
+msgid "Dotted"
+msgstr "Точечный"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:213
+msgctxt "Border Control"
+msgid "Dashed"
+msgstr "Пунктирный"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:221
+msgctxt "Border Control"
+msgid "Width"
+msgstr "Ширина"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:232
+msgctxt "Border Control"
+msgid "Color"
+msgstr "Цвет"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:253
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:263
+msgctxt "Box Shadow Control"
+msgid "Box Shadow"
+msgstr "Тень объекта"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:274
+msgctxt "Box Shadow Control"
+msgid "Position"
+msgstr "Положение"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:277
+msgctxt "Box Shadow Control"
+msgid "Outline"
+msgstr "Внешний контур"
+
+#: includes/controls/groups/class-jet-tabs-group-control-box-style.php:278
+msgctxt "Box Shadow Control"
+msgid "Inset"
+msgstr "Внутренний контур"
+
+#: includes/integration.php:229
+msgid "Jet Elements"
+msgstr "JetElements"
+
+#: includes/lib/class-tgm-plugin-activation.php:334
+msgid "Install Required Plugins"
+msgstr "Установить необходимые плагины"
+
+#: includes/lib/class-tgm-plugin-activation.php:335
+msgid "Install Plugins"
+msgstr "Установить плагины"
+
+#: includes/lib/class-tgm-plugin-activation.php:337
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Установка плагина: %s"
+
+#: includes/lib/class-tgm-plugin-activation.php:339
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr "Обновление плагина: %s"
+
+#: includes/lib/class-tgm-plugin-activation.php:340
+msgid "Something went wrong with the plugin API."
+msgstr "Что-то пошло не так с плагином API."
+
+#: includes/lib/class-tgm-plugin-activation.php:343
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "Для данной темы требуется установка следующего плагина: %1$s."
+msgstr[1] "Для данной темы требуется установка следующих плагинов: %1$s."
+msgstr[2] "Для данной темы требуется установка следующего плагина: %1$s."
+
+#: includes/lib/class-tgm-plugin-activation.php:349
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "Для данной темы рекомендуется установка следующего плагина: %1$s."
+msgstr[1] "Для данной темы рекомендуется установка следующих плагинов: %1$s."
+msgstr[2] "Для данной темы рекомендуется установка следующих плагинов: %1$s."
+
+#: includes/lib/class-tgm-plugin-activation.php:355
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+"Следующий плагин необходимо обновить до последней версии чтобы создать "
+"максимальную совместимость с темой: %1$s."
+msgstr[1] ""
+"Следующие плагины необходимо обновить до последней версии чтобы создать "
+"максимальную совместимость с темой: %1$s."
+msgstr[2] ""
+"Следующий плагин необходимо обновить до последней версии чтобы создать "
+"максимальную совместимость с темой: %1$s."
+
+#: includes/lib/class-tgm-plugin-activation.php:361
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] "Обновление доступно для: %1$s."
+msgstr[1] "Обновление доступно для: %1$s."
+msgstr[2] "Обновление доступно для: %1$s."
+
+#: includes/lib/class-tgm-plugin-activation.php:367
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "Следующий необходимый плагин на данный момент неактивен: %1$s."
+msgstr[1] "Следующие необходимые плагины на данный момент неактивны: %1$s."
+msgstr[2] "Следующий необходимый плагин на данный момент неактивен: %1$s."
+
+#: includes/lib/class-tgm-plugin-activation.php:373
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "Следующий рекомендуемый плагин на данный момент неактивен: %1$s."
+msgstr[1] "Следующие рекомендуемые плагины на данный момент неактивны: %1$s."
+msgstr[2] "Следующие рекомендуемые плагины на данный момент неактивны: %1$s."
+
+#: includes/lib/class-tgm-plugin-activation.php:378
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Начать установку плагина"
+msgstr[1] "Начать установку плагинов"
+msgstr[2] "Начать установку плагина"
+
+#: includes/lib/class-tgm-plugin-activation.php:383
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "Начать обновление плагина"
+msgstr[1] "Начать обновление плагинов"
+msgstr[2] "Начать обновление плагина"
+
+#: includes/lib/class-tgm-plugin-activation.php:388
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Начать активацию плагина"
+msgstr[1] "Начать активацию плагинов"
+msgstr[2] "Начать активацию плагина"
+
+#: includes/lib/class-tgm-plugin-activation.php:392
+msgid "Return to Required Plugins Installer"
+msgstr "Вернуться к установщику необходимых плагинов"
+
+#: includes/lib/class-tgm-plugin-activation.php:393
+#: includes/lib/class-tgm-plugin-activation.php:920
+#: includes/lib/class-tgm-plugin-activation.php:2626
+#: includes/lib/class-tgm-plugin-activation.php:3673
+msgid "Return to the Dashboard"
+msgstr "Вернуться к панеле управления"
+
+#: includes/lib/class-tgm-plugin-activation.php:394
+#: includes/lib/class-tgm-plugin-activation.php:3252
+msgid "Plugin activated successfully."
+msgstr "Плагин активирован успешно."
+
+#: includes/lib/class-tgm-plugin-activation.php:395
+#: includes/lib/class-tgm-plugin-activation.php:3045
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "Следующий плагин был активирован успешно:"
+msgstr[1] "Следующие плагины был активированы успешно:"
+msgstr[2] "Следующий(е) плагин(ы) был(и) активирован(ы) успешно:"
+
+#: includes/lib/class-tgm-plugin-activation.php:397
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "Никаких действий не выполнено. Плагин %1$s был уже активирован."
+
+#: includes/lib/class-tgm-plugin-activation.php:399
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"Плагин не активирован. Более новая версия %s нужна для этой темы. "
+"Пожалуйста, обновите плагин."
+
+#: includes/lib/class-tgm-plugin-activation.php:401
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Все плагины установлены и активированы успешно. %1$s"
+
+#: includes/lib/class-tgm-plugin-activation.php:402
+msgid "Dismiss this notice"
+msgstr "Закрыть это уведомление"
+
+#: includes/lib/class-tgm-plugin-activation.php:403
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+"Для установки, обновления или активации есть один или несколько необходимых "
+"или рекомендуемых плагинов."
+
+#: includes/lib/class-tgm-plugin-activation.php:404
+msgid "Please contact the administrator of this site for help."
+msgstr "Пожалуйста, обратитесь за помощью к администратору этого сайта."
+
+#: includes/lib/class-tgm-plugin-activation.php:607
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+"Этот плагин должен быть обновлен, чтобы быть совместимым с вашей темой."
+
+#: includes/lib/class-tgm-plugin-activation.php:608
+msgid "Update Required"
+msgstr "Требуется обновление"
+
+#: includes/lib/class-tgm-plugin-activation.php:725
+msgid "Set the parent_slug config variable instead."
+msgstr "Вместо этого установите конфигурационную переменную parent_slug."
+
+#: includes/lib/class-tgm-plugin-activation.php:1027
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+"Пакет удаленных плагинов не содержит папку с желаемым slug, и переименование "
+"не сработало."
+
+#: includes/lib/class-tgm-plugin-activation.php:1027
+#: includes/lib/class-tgm-plugin-activation.php:1030
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+"Обратитесь к поставщику плагинов и попросите укомплектовать плагин в "
+"соответствии с рекомендациями WordPress."
+
+#: includes/lib/class-tgm-plugin-activation.php:1030
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+"Пакет удаленных плагинов состоит из нескольких файлов, но файлы не "
+"укомплектованы в папку."
+
+#: includes/lib/class-tgm-plugin-activation.php:1214
+#: includes/lib/class-tgm-plugin-activation.php:3041
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: includes/lib/class-tgm-plugin-activation.php:2075
+#, php-format
+msgid "TGMPA v%s"
+msgstr "TGMPA v%s"
+
+#: includes/lib/class-tgm-plugin-activation.php:2366
+msgid "Required"
+msgstr "Необходимый"
+
+#: includes/lib/class-tgm-plugin-activation.php:2369
+msgid "Recommended"
+msgstr "Рекомендуемый"
+
+#: includes/lib/class-tgm-plugin-activation.php:2385
+msgid "WordPress Repository"
+msgstr "Репозиторий WordPress"
+
+#: includes/lib/class-tgm-plugin-activation.php:2388
+msgid "External Source"
+msgstr "Внешний источник"
+
+#: includes/lib/class-tgm-plugin-activation.php:2391
+msgid "Pre-Packaged"
+msgstr "Предварительно укомплектован"
+
+#: includes/lib/class-tgm-plugin-activation.php:2408
+msgid "Not Installed"
+msgstr "Не установлен"
+
+#: includes/lib/class-tgm-plugin-activation.php:2412
+msgid "Installed But Not Activated"
+msgstr "Установлен, но не активирован"
+
+#: includes/lib/class-tgm-plugin-activation.php:2420
+msgid "Required Update not Available"
+msgstr "Необходимое обновление недоступно"
+
+#: includes/lib/class-tgm-plugin-activation.php:2423
+msgid "Requires Update"
+msgstr "Требует обновления"
+
+#: includes/lib/class-tgm-plugin-activation.php:2426
+msgid "Update recommended"
+msgstr "Рекомендуемое обновление"
+
+#: includes/lib/class-tgm-plugin-activation.php:2435
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#: includes/lib/class-tgm-plugin-activation.php:2481
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] "Все <span class=\"count\">(%s)</span>"
+msgstr[1] "Все <span class=\"count\">(%s)</span>"
+msgstr[2] "Все <span class=\"count\">(%s)</span>"
+
+#: includes/lib/class-tgm-plugin-activation.php:2485
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] "Установить <span class=\"count\">(%s)</span>"
+msgstr[1] "Установить <span class=\"count\">(%s)</span>"
+msgstr[2] "Установить <span class=\"count\">(%s)</span>"
+
+#: includes/lib/class-tgm-plugin-activation.php:2489
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] "Доступно обновление <span class=\"count\">(%s)</span>"
+msgstr[1] "Доступно обновление <span class=\"count\">(%s)</span>"
+msgstr[2] "Доступно обновление <span class=\"count\">(%s)</span>"
+
+#: includes/lib/class-tgm-plugin-activation.php:2493
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] "Активировать <span class=\"count\">(%s)</span>"
+msgstr[1] "Активировать <span class=\"count\">(%s)</span>"
+msgstr[2] "Активировать <span class=\"count\">(%s)</span>"
+
+#: includes/lib/class-tgm-plugin-activation.php:2575
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr "неизвестный"
+
+#: includes/lib/class-tgm-plugin-activation.php:2583
+msgid "Installed version:"
+msgstr "Установленная версия:"
+
+#: includes/lib/class-tgm-plugin-activation.php:2591
+msgid "Minimum required version:"
+msgstr "Минимально необходимая версия:"
+
+#: includes/lib/class-tgm-plugin-activation.php:2603
+msgid "Available version:"
+msgstr "Доступна версия:"
+
+#: includes/lib/class-tgm-plugin-activation.php:2626
+msgid "No plugins to install, update or activate."
+msgstr "Нет плагинов для установки, обновления или активации."
+
+#: includes/lib/class-tgm-plugin-activation.php:2640
+msgid "Plugin"
+msgstr "Плагин"
+
+#: includes/lib/class-tgm-plugin-activation.php:2641
+msgid "Source"
+msgstr "Источник"
+
+#: includes/lib/class-tgm-plugin-activation.php:2642
+msgid "Type"
+msgstr "Тип"
+
+#: includes/lib/class-tgm-plugin-activation.php:2646
+msgid "Version"
+msgstr "Версия"
+
+#: includes/lib/class-tgm-plugin-activation.php:2647
+msgid "Status"
+msgstr "Статус"
+
+#: includes/lib/class-tgm-plugin-activation.php:2696
+#, php-format
+msgid "Install %2$s"
+msgstr "Установить %2$s"
+
+#: includes/lib/class-tgm-plugin-activation.php:2701
+#, php-format
+msgid "Update %2$s"
+msgstr "Обновить %2$s"
+
+#: includes/lib/class-tgm-plugin-activation.php:2707
+#, php-format
+msgid "Activate %2$s"
+msgstr "Активировать %2$s"
+
+#: includes/lib/class-tgm-plugin-activation.php:2777
+msgid "Upgrade message from the plugin author:"
+msgstr "Обновить сообщение от автора плагина:"
+
+#: includes/lib/class-tgm-plugin-activation.php:2810
+msgid "Install"
+msgstr "Установить"
+
+#: includes/lib/class-tgm-plugin-activation.php:2816
+msgid "Update"
+msgstr "Обновить"
+
+#: includes/lib/class-tgm-plugin-activation.php:2819
+msgid "Activate"
+msgstr "Активировать"
+
+#: includes/lib/class-tgm-plugin-activation.php:2850
+msgid "No plugins were selected to be installed. No action taken."
+msgstr "Не были выбраны плагины для установки. Никаких действий не выполнено."
+
+#: includes/lib/class-tgm-plugin-activation.php:2852
+msgid "No plugins were selected to be updated. No action taken."
+msgstr "Не были выбраны плагины для обновления. Никаких действий не выполнено."
+
+#: includes/lib/class-tgm-plugin-activation.php:2893
+msgid "No plugins are available to be installed at this time."
+msgstr "В данный момент плагины недоступны для установки."
+
+#: includes/lib/class-tgm-plugin-activation.php:2895
+msgid "No plugins are available to be updated at this time."
+msgstr "В данный момент плагины недоступны для обновления."
+
+#: includes/lib/class-tgm-plugin-activation.php:3001
+msgid "No plugins were selected to be activated. No action taken."
+msgstr "Не были выбраны плагины для активации. Никаких действий не выполнено."
+
+#: includes/lib/class-tgm-plugin-activation.php:3027
+msgid "No plugins are available to be activated at this time."
+msgstr "В данный момент плагины недоступны для активации."
+
+#: includes/lib/class-tgm-plugin-activation.php:3251
+msgid "Plugin activation failed."
+msgstr "Не удалось активировать плагин."
+
+#: includes/lib/class-tgm-plugin-activation.php:3591
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "Обновление плагина %1$s (%2$d/%3$d)"
+
+#: includes/lib/class-tgm-plugin-activation.php:3594
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "При установке произошла ошибка %1$s: <strong>%2$s</strong>."
+
+#: includes/lib/class-tgm-plugin-activation.php:3596
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "Не удалось выполнить установку %1$s."
+
+#: includes/lib/class-tgm-plugin-activation.php:3600
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"Запускается процесс установки и активации. Этот процесс может занять какое-"
+"то время."
+
+#: includes/lib/class-tgm-plugin-activation.php:3602
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s установлен и активирован успешно."
+
+#: includes/lib/class-tgm-plugin-activation.php:3602
+#: includes/lib/class-tgm-plugin-activation.php:3610
+msgid "Show Details"
+msgstr "Показать подробнее"
+
+#: includes/lib/class-tgm-plugin-activation.php:3602
+#: includes/lib/class-tgm-plugin-activation.php:3610
+msgid "Hide Details"
+msgstr "Скрыть подробности"
+
+#: includes/lib/class-tgm-plugin-activation.php:3603
+msgid "All installations and activations have been completed."
+msgstr "Все установки и активации были выполнены."
+
+#: includes/lib/class-tgm-plugin-activation.php:3605
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Установка и активация плагина %1$s (%2$d/%3$d)"
+
+#: includes/lib/class-tgm-plugin-activation.php:3608
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"Запускается процесс установки. Этот процесс может занять какое-то время."
+
+#: includes/lib/class-tgm-plugin-activation.php:3610
+#, php-format
+msgid "%1$s installed successfully."
+msgstr "%1$s установлен успешно."
+
+#: includes/lib/class-tgm-plugin-activation.php:3611
+msgid "All installations have been completed."
+msgstr "Все установки выполнены."
+
+#: includes/lib/class-tgm-plugin-activation.php:3613
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Установка плагина %1$s (%2$d/%3$d)"
+
+#: jet-tabs.php:164
+#, php-format
+msgid "JetTabs for Elementor requires the following plugin: %1$s."
+msgid_plural "JetTabs for Elementor requires the following plugins: %1$s."
+msgstr[0] "JetTabs требует установки следующего плагина: %1$s."
+msgstr[1] "JetTabs требует установки следующих плагинов: %1$s."
+msgstr[2] "JetTabs требует установки следующего плагина: %1$s."
+
+#: jet-tabs.php:169
+#, php-format
+msgid "JetTabs for Elementor recommends the following plugin: %1$s."
+msgid_plural "JetTabs for Elementor recommends the following plugins: %1$s."
+msgstr[0] "JetTabs рекомендует установку следующего плагина: %1$s."
+msgstr[1] "JetTabs рекомендует установку следующих плагинов: %1$s."
+msgstr[2] "JetTabs рекомендует установку следующего плагина: %1$s."
+
+#: jet-tabs.php:285
+msgid "Changelog"
+msgstr "Изменения"

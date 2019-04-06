@@ -1,0 +1,41 @@
+#jet-template-library-header {
+	min-height: 52px;
+}
+#jet-template-library-tabs-items {
+	.elementor-template-library-menu-item {
+		display: inline-block;
+		position: relative;
+		text-align: left;
+		padding: 0;
+		width: auto;
+		font-size: 13px;
+		color: $editor-dark;
+		input[type="radio"] {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			margin: 0;
+			opacity: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		span {
+			display: block;
+			padding: 20px 19px 16px 19px;
+			border-bottom: 3px solid transparent;
+		}
+		&:hover span,
+		input:checked + span {
+			background: #fafafa;
+			border-bottom: 3px solid $editor-accent;
+		}
+	}
+}
+
+#jet-template-library-header-tabs {
+	flex: 1 1 auto;
+	text-align: left;
+}

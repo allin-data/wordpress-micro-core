@@ -1,0 +1,287 @@
+.jet-popup-mailchimp {
+	max-width: 100%;
+
+	&__inner {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-items: stretch;
+
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+
+	&__field-container {
+		width: 100%;
+		box-sizing: border-box;
+		padding-left: 10px;
+		padding-right: 10px;
+
+		margin-bottom: 10px;
+	}
+
+	&__submit-container {
+		width: 100%;
+		display: flex;
+		flex-flow: column;
+		box-sizing: border-box;
+		justify-content: flex-end;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	&__submit {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 0 1 auto;
+		position: relative;
+		max-width: 100%;
+
+		background-color: #6ec1e4;
+
+		i {
+			visibility: visible;
+		}
+
+		span {
+			visibility: visible;
+		}
+
+		&:before {
+			box-sizing: border-box;
+			position: absolute;
+			visibility: hidden;
+			top: 50%;
+			left: 50%;
+			width: 26px;
+			height: 26px;
+			margin-top: -13px;
+			margin-left: -13px;
+			border-radius: 50%;
+			border: 3px solid #fff;
+			border-top-color: #000;
+			content: '';
+			animation: jet-spinner .6s linear infinite;
+		}
+
+		&.loading {
+
+			i {
+				visibility: hidden;
+			}
+
+			span {
+				visibility: hidden;
+			}
+
+			&:before {
+				visibility: visible;
+			}
+		}
+
+		.jet-popup-mailchimp__submit-icon {
+			color: white;
+			font-size: 15px;
+			margin-right: 10px;
+		}
+	}
+
+	&__message {
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		box-sizing: border-box;
+		visibility: hidden;
+		margin: 20px 0;
+
+		.jet-popup-mailchimp__message-inner {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	&__field-label {
+		display: block;
+		margin-bottom: 5px;
+	}
+
+	input[type='text'],
+	input[type='email'],
+	input[type='url'],
+	input[type='password'],
+	input[type='search'],
+	input[type='number'],
+	input[type='tel'],
+	input[type='range'],
+	input[type='date'],
+	input[type='month'],
+	input[type='week'],
+	input[type='time'],
+	input[type='datetime'],
+	input[type='datetime-local'],
+	select {
+		border: 1px solid #e0e0e8;
+		background-color: #f7fafd;
+		border-radius: 4px;
+		line-height: 16px;
+		padding: 14px 20px;
+		color: #a1a2a4;
+		-webkit-appearance: none;
+		appearance: none;
+
+		&.mail-invalid {
+			color: #d9534f;
+		}
+
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 10px #e0e0e8;
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	fieldset {
+		padding: 0;
+		margin: 0;
+		border: none;
+		display: flex;
+		flex-flow: column nowrap;
+
+		div {
+			margin: 3px 0;
+		}
+
+		label {
+			margin-left: 5px;
+		}
+
+	}
+}
+
+.jet-popup-mailchimp--response-success {
+	.jet-popup-mailchimp__message {
+		color: #5cb85c;
+	}
+}
+
+.jet-popup-mailchimp--response-error {
+	.jet-popup-mailchimp__message {
+		color: #d9534f;
+	}
+}
+
+.jet-popup-mailchimp__field-container {
+
+	@media screen and (min-width: 1px) and (max-width: 767px) {
+		&[data-column-mobile="20"] {
+			width: 20%;
+		}
+		&[data-column-mobile="25"] {
+			width: 25%;
+		}
+		&[data-column-mobile="33"] {
+			width: 33.3333%;
+		}
+		&[data-column-mobile="40"] {
+			width: 40%;
+		}
+		&[data-column-mobile="50"] {
+			width: 50%;
+		}
+		&[data-column-mobile="60"] {
+			width: 60%;
+		}
+		&[data-column-mobile="66"] {
+			width: 66.3333%;
+		}
+		&[data-column-mobile="75"] {
+			width: 75%;
+		}
+		&[data-column-mobile="80"] {
+			width: 80%;
+		}
+		&[data-column-mobile="100"] {
+			width: 100%;
+		}
+	}
+
+	@media screen and (min-width: 768px) and (max-width: 1024px){
+		&[data-column-tablet="20"] {
+			width: 20%;
+		}
+		&[data-column-tablet="25"] {
+			width: 25%;
+		}
+		&[data-column-tablet="33"] {
+			width: 33.3333%;
+		}
+		&[data-column-tablet="40"] {
+			width: 40%;
+		}
+		&[data-column-tablet="50"] {
+			width: 50%;
+		}
+		&[data-column-tablet="60"] {
+			width: 60%;
+		}
+		&[data-column-tablet="66"] {
+			width: 66.3333%;
+		}
+		&[data-column-tablet="75"] {
+			width: 75%;
+		}
+		&[data-column-tablet="80"] {
+			width: 80%;
+		}
+		&[data-column-tablet="100"] {
+			width: 100%;
+		}
+	}
+
+	@media ( min-width: 1025px ) {
+		&[data-column="20"] {
+			width: 20%;
+		}
+		&[data-column="25"] {
+			width: 25%;
+		}
+		&[data-column="33"] {
+			width: 33.3333%;
+		}
+		&[data-column="40"] {
+			width: 40%;
+		}
+		&[data-column="50"] {
+			width: 50%;
+		}
+		&[data-column="60"] {
+			width: 60%;
+		}
+		&[data-column="66"] {
+			width: 66.3333%;
+		}
+		&[data-column="75"] {
+			width: 75%;
+		}
+		&[data-column="80"] {
+			width: 80%;
+		}
+		&[data-column="100"] {
+			width: 100%;
+		}
+	}
+}
+
+@keyframes jet-spinner {
+	to {transform: rotate(360deg);}
+}

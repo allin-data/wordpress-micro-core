@@ -1,0 +1,1350 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: JetPopup for Elementor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-23 12:06+0200\n"
+"PO-Revision-Date: 2018-11-23 12:06+0200\n"
+"Last-Translator: \n"
+"Language-Team: Zemez\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;_ex:1,2c;_n:1,2;_nx:4c,1,2;_n_noop:1,2;"
+"_nx_noop:4c,1,2\n"
+"esc_attr__;_x: 1,2c;_n:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: cherry-framework\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: includes/addons/jet-action-button-widget.php:22
+msgid "Popup Action Button"
+msgstr "Popup Action Button"
+
+#: includes/addons/jet-action-button-widget.php:51
+#: includes/addons/jet-popup-mailchimp.php:85 includes/document.php:40
+#: includes/settings.php:117 includes/settings.php:118
+#: templates/vue-templates/settings-form.php:3
+msgid "Settings"
+msgstr "Настройки"
+
+#: includes/addons/jet-action-button-widget.php:58
+msgid "Action Type"
+msgstr "Тип действия"
+
+#: includes/addons/jet-action-button-widget.php:62
+msgid "Link"
+msgstr "Ссылка"
+
+#: includes/addons/jet-action-button-widget.php:63
+msgid "Leave Page"
+msgstr "Покинуть страницу"
+
+#: includes/addons/jet-action-button-widget.php:64
+msgid "Close Popup"
+msgstr "Закрыть Popup"
+
+#: includes/addons/jet-action-button-widget.php:65
+msgid "Close Сonstantly"
+msgstr "Закрыть навсегда"
+
+#: includes/addons/jet-action-button-widget.php:73
+msgid "Button text"
+msgstr "Текст кнопки"
+
+#: includes/addons/jet-action-button-widget.php:75
+msgid "Read More"
+msgstr "Прочитать больше"
+
+#: includes/addons/jet-action-button-widget.php:82
+msgid "Button Link"
+msgstr "Ссылка кнопки"
+
+#: includes/addons/jet-action-button-widget.php:99
+#: includes/addons/jet-popup-mailchimp.php:343
+#: includes/conditions/manager.php:250
+msgid "General"
+msgstr "Общие"
+
+#: includes/addons/jet-action-button-widget.php:108
+#: includes/addons/jet-popup-mailchimp.php:308
+#: includes/addons/jet-popup-mailchimp.php:1066
+msgid "Alignment"
+msgstr "Выравнивание"
+
+#: includes/addons/jet-action-button-widget.php:113
+#: includes/addons/jet-popup-mailchimp.php:313
+#: includes/addons/jet-popup-mailchimp.php:1071 includes/document.php:328
+msgid "Left"
+msgstr "Слева"
+
+#: includes/addons/jet-action-button-widget.php:117
+#: includes/addons/jet-popup-mailchimp.php:317
+#: includes/addons/jet-popup-mailchimp.php:1075 includes/document.php:332
+msgid "Center"
+msgstr "По центру"
+
+#: includes/addons/jet-action-button-widget.php:121
+#: includes/addons/jet-popup-mailchimp.php:321
+#: includes/addons/jet-popup-mailchimp.php:1079 includes/document.php:336
+msgid "Right"
+msgstr "Справа"
+
+#: includes/addons/jet-action-button-widget.php:134
+#: includes/addons/jet-popup-mailchimp.php:776
+msgid "Add Icon"
+msgstr "Добавить иконку"
+
+#: includes/addons/jet-action-button-widget.php:136
+#: includes/addons/jet-popup-mailchimp.php:104
+#: includes/addons/jet-popup-mailchimp.php:130
+#: includes/addons/jet-popup-mailchimp.php:190
+#: includes/addons/jet-popup-mailchimp.php:778
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:255
+#: includes/document.php:163 includes/document.php:272
+#: includes/document.php:582 includes/document.php:664
+msgid "Yes"
+msgstr "Да"
+
+#: includes/addons/jet-action-button-widget.php:137
+#: includes/addons/jet-popup-mailchimp.php:105
+#: includes/addons/jet-popup-mailchimp.php:131
+#: includes/addons/jet-popup-mailchimp.php:191
+#: includes/addons/jet-popup-mailchimp.php:779
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:256
+#: includes/document.php:164 includes/document.php:273
+#: includes/document.php:583 includes/document.php:665
+msgid "No"
+msgstr "Нет"
+
+#: includes/addons/jet-action-button-widget.php:146
+#: includes/addons/jet-popup-mailchimp.php:789 includes/document.php:592
+msgid "Icon"
+msgstr "Иконка"
+
+#: includes/addons/jet-action-button-widget.php:160
+msgid "Icon Position"
+msgstr "Положение иконки"
+
+#: includes/addons/jet-action-button-widget.php:163
+msgid "Before Text"
+msgstr "Перед текстом"
+
+#: includes/addons/jet-action-button-widget.php:164
+msgid "After Text"
+msgstr "После текста"
+
+#: includes/addons/jet-action-button-widget.php:177
+#: includes/addons/jet-popup-mailchimp.php:838
+msgid "Icon Margin"
+msgstr "Внешний отступ иконки"
+
+#: includes/addons/jet-action-button-widget.php:192
+#: includes/addons/jet-popup-mailchimp.php:394
+#: includes/addons/jet-popup-mailchimp.php:570
+#: includes/addons/jet-popup-mailchimp.php:862
+#: includes/addons/jet-popup-mailchimp.php:1101 includes/document.php:514
+msgid "Padding"
+msgstr "Внутренний отступ"
+
+#: includes/addons/jet-action-button-widget.php:204
+#: includes/addons/jet-popup-mailchimp.php:406
+#: includes/addons/jet-popup-mailchimp.php:582
+#: includes/addons/jet-popup-mailchimp.php:886
+#: includes/addons/jet-popup-mailchimp.php:1125
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:244
+#: includes/document.php:538
+msgid "Border Radius"
+msgstr "Радиус границы"
+
+#: includes/addons/jet-action-button-widget.php:218
+#: includes/addons/jet-popup-mailchimp.php:420
+#: includes/addons/jet-popup-mailchimp.php:604
+#: includes/addons/jet-popup-mailchimp.php:900 includes/document.php:481
+#: includes/document.php:614
+msgid "Normal"
+msgstr "Стандартный"
+
+#: includes/addons/jet-action-button-widget.php:234
+#: includes/addons/jet-action-button-widget.php:309
+#: includes/addons/jet-popup-mailchimp.php:427
+#: includes/addons/jet-popup-mailchimp.php:466
+#: includes/addons/jet-popup-mailchimp.php:611
+#: includes/addons/jet-popup-mailchimp.php:663
+#: includes/addons/jet-popup-mailchimp.php:715
+#: includes/addons/jet-popup-mailchimp.php:1154
+#: includes/addons/jet-popup-mailchimp.php:1196
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#: includes/addons/jet-action-button-widget.php:250
+#: includes/addons/jet-action-button-widget.php:321 includes/document.php:622
+#: includes/document.php:640
+msgid "Icon Styles"
+msgstr "Стили иконки"
+
+#: includes/addons/jet-action-button-widget.php:261
+#: includes/addons/jet-action-button-widget.php:332
+#: includes/addons/jet-popup-mailchimp.php:622
+#: includes/addons/jet-popup-mailchimp.php:674
+#: includes/addons/jet-popup-mailchimp.php:726
+#: includes/addons/jet-popup-mailchimp.php:938
+#: includes/addons/jet-popup-mailchimp.php:1004
+#: includes/addons/jet-popup-mailchimp.php:1165
+#: includes/addons/jet-popup-mailchimp.php:1207
+msgid "Text Color"
+msgstr "Цвет текста"
+
+#: includes/addons/jet-action-button-widget.php:273
+#: includes/addons/jet-action-button-widget.php:344
+#: includes/addons/jet-popup-mailchimp.php:439
+#: includes/addons/jet-popup-mailchimp.php:478
+#: includes/addons/jet-popup-mailchimp.php:636
+#: includes/addons/jet-popup-mailchimp.php:688
+#: includes/addons/jet-popup-mailchimp.php:740
+#: includes/addons/jet-popup-mailchimp.php:950
+#: includes/addons/jet-popup-mailchimp.php:1030
+#: includes/addons/jet-popup-mailchimp.php:1177
+#: includes/addons/jet-popup-mailchimp.php:1219 includes/document.php:552
+msgid "Border"
+msgstr "Граница"
+
+#: includes/addons/jet-action-button-widget.php:293
+#: includes/addons/jet-popup-mailchimp.php:970 includes/document.php:632
+#: includes/extension.php:130
+msgid "Hover"
+msgstr "При наведении"
+
+#: includes/addons/jet-popup-mailchimp.php:31
+msgid "mailchimp"
+msgstr "MailChimp"
+
+#: includes/addons/jet-popup-mailchimp.php:64
+#: includes/addons/jet-popup-mailchimp.php:459
+#: includes/addons/jet-popup-mailchimp.php:708
+#: includes/addons/jet-popup-mailchimp.php:1189 includes/export-import.php:219
+#: includes/export-import.php:237 includes/export-import.php:250
+#: includes/export-import.php:275 includes/export-import.php:284
+#: includes/export-import.php:293 includes/export-import.php:337
+#: includes/settings.php:212 includes/settings.php:241
+#: includes/settings.php:296 includes/settings.php:362
+msgid "Error"
+msgstr "Ошибка"
+
+#: includes/addons/jet-popup-mailchimp.php:92
+msgid "List"
+msgstr "Список"
+
+#: includes/addons/jet-popup-mailchimp.php:102
+msgid "Use Redirect Url?"
+msgstr "Использовать перенаправление по ссылке?"
+
+#: includes/addons/jet-popup-mailchimp.php:114
+msgid "Redirect Url"
+msgstr "Ссылка"
+
+#: includes/addons/jet-popup-mailchimp.php:116
+msgid "Enter Redirect Url"
+msgstr "Введите ссылку"
+
+#: includes/addons/jet-popup-mailchimp.php:127
+msgid "Close Popup When Success"
+msgstr "Закрывать всплывающее окно после успешного действия"
+
+#: includes/addons/jet-popup-mailchimp.php:128
+msgid ""
+"if the widget is in a popup, the successful response status will close the "
+"popup."
+msgstr ""
+"если виджет находится во всплывающем окне, статус успешного ответа закроет "
+"данное окно"
+
+#: includes/addons/jet-popup-mailchimp.php:142
+#: includes/addons/jet-popup-mailchimp.php:505
+msgid "Fields"
+msgstr "Поля"
+
+#: includes/addons/jet-popup-mailchimp.php:149
+msgid "E-Mail Label"
+msgstr "Заголовок для E-Mail "
+
+#: includes/addons/jet-popup-mailchimp.php:151
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: includes/addons/jet-popup-mailchimp.php:158
+msgid "E-Mail Placeholder"
+msgstr "Плейсхолдер для E-Mail "
+
+#: includes/addons/jet-popup-mailchimp.php:160
+msgid "Enter E-Mail"
+msgstr "Введите E-Mail "
+
+#: includes/addons/jet-popup-mailchimp.php:167
+msgid "Email Size"
+msgstr "Размер E-Mail "
+
+#: includes/addons/jet-popup-mailchimp.php:188
+msgid "Use Additional Fields"
+msgstr "Использовать дополнительные поля"
+
+#: includes/addons/jet-popup-mailchimp.php:203
+msgid "Field Merge Tag"
+msgstr "Тэг Merge поля"
+
+#: includes/addons/jet-popup-mailchimp.php:212
+#: includes/addons/jet-popup-mailchimp.php:214
+#: includes/addons/jet-popup-mailchimp.php:514
+msgid "Label"
+msgstr "Заголовок"
+
+#: includes/addons/jet-popup-mailchimp.php:221
+#: includes/addons/jet-popup-mailchimp.php:223
+msgid "Placeholder"
+msgstr "Плейсхолдер"
+
+#: includes/addons/jet-popup-mailchimp.php:230
+msgid "Column Width"
+msgstr "Ширина колонки"
+
+#: includes/addons/jet-popup-mailchimp.php:267
+#: includes/addons/jet-popup-mailchimp.php:767
+msgid "Submit Button"
+msgstr "Кнопка отправки"
+
+#: includes/addons/jet-popup-mailchimp.php:274
+msgid "Submit Text"
+msgstr "Текст для кнопки"
+
+#: includes/addons/jet-popup-mailchimp.php:276
+msgid "Enter Submit Button Text"
+msgstr "Введите текст для кнопки отправки"
+
+#: includes/addons/jet-popup-mailchimp.php:277
+msgid "Subscribe"
+msgstr "Подписаться"
+
+#: includes/addons/jet-popup-mailchimp.php:284
+msgid "Button Size"
+msgstr "Размер кнопки"
+
+#: includes/addons/jet-popup-mailchimp.php:325
+msgid "Justified"
+msgstr "По ширине"
+
+#: includes/addons/jet-popup-mailchimp.php:352
+msgid "Columns Gap"
+msgstr "Расстояние между колонками"
+
+#: includes/addons/jet-popup-mailchimp.php:373
+msgid "Rows Gap"
+msgstr "Расстояние между строками"
+
+#: includes/addons/jet-popup-mailchimp.php:522
+msgid "Label Color"
+msgstr "Цвет заголовка"
+
+#: includes/addons/jet-popup-mailchimp.php:541
+msgid "Label Gap"
+msgstr "Расстояние от заголовка"
+
+#: includes/addons/jet-popup-mailchimp.php:561
+msgid "Input"
+msgstr "Текст внутри поля"
+
+#: includes/addons/jet-popup-mailchimp.php:656
+msgid "Focus"
+msgstr "В фокусе"
+
+#: includes/addons/jet-popup-mailchimp.php:804
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:169
+msgid "Icon Size"
+msgstr "Размер иконки"
+
+#: includes/addons/jet-popup-mailchimp.php:824
+#: includes/addons/jet-popup-mailchimp.php:1015
+msgid "Icon Color"
+msgstr "Цвет иконки"
+
+#: includes/addons/jet-popup-mailchimp.php:874
+#: includes/addons/jet-popup-mailchimp.php:1113 includes/document.php:526
+msgid "Margin"
+msgstr "Внешний отступ"
+
+#: includes/addons/jet-popup-mailchimp.php:914
+#: includes/addons/jet-popup-mailchimp.php:984
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:55
+msgctxt "Background Control"
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#: includes/addons/jet-popup-mailchimp.php:921
+#: includes/addons/jet-popup-mailchimp.php:987
+msgctxt "Background Control"
+msgid "Second Background Color"
+msgstr "Второй цвет фона"
+
+#: includes/addons/jet-popup-mailchimp.php:1057
+msgid "Message"
+msgstr "Сообщение"
+
+#: includes/addons/jet-popup-mailchimp.php:1147 includes/settings.php:227
+#: includes/settings.php:281 includes/settings.php:347
+#: includes/settings.php:405
+msgid "Success"
+msgstr "Успех"
+
+#: includes/addons/jet-popup-mailchimp.php:1605
+#: templates/vue-templates/settings-form.php:6
+msgid "MailChimp"
+msgstr ""
+
+#: includes/addons/jet-popup-mailchimp.php:1606
+msgid "Synchronize your MailChimp account or add a new list"
+msgstr "Синхронизируйте Ваш профиль MailChimp  или создайте новый список"
+
+#: includes/ajax-handlers.php:51
+msgid "Please, provide valid mail"
+msgstr "Пожалуйста, предоставьте настоящий mail"
+
+#: includes/ajax-handlers.php:52
+msgid "Please, set up MailChimp API key and List ID"
+msgstr "Пожалуйста, установите MailChimp API ключ и List ID"
+
+#: includes/ajax-handlers.php:53
+msgid "Internal error. Please, try again later"
+msgstr "Внутренняя ошибка. Пожалуйста, попробуйте повторить действие позже"
+
+#: includes/ajax-handlers.php:54 includes/settings.php:213
+#: includes/settings.php:242 includes/settings.php:297
+#: includes/settings.php:363
+msgid "Server error. Please, try again later"
+msgstr "Ошибка сервера. Пожалуйста, попробуйте повторить действие позже"
+
+#: includes/ajax-handlers.php:55
+#, php-format
+msgid "E-mail %s has been subscribed"
+msgstr "E-mail %s успешно подписан"
+
+#: includes/conditions/archive-all.php:33
+msgid "All Archives"
+msgstr "Все архивы"
+
+#: includes/conditions/archive-category.php:33
+msgid "Category Archives"
+msgstr "Категория Архивы"
+
+#: includes/conditions/archive-category.php:48
+#: includes/conditions/singular-post-from-cat.php:48
+msgid "Select Categories"
+msgstr "Выбрать категории"
+
+#: includes/conditions/archive-category.php:53
+msgid "Leave empty to apply for all categories"
+msgstr "Оставьте пустым, чтобы применить ко всем категориям"
+
+#: includes/conditions/archive-category.php:86
+#: includes/conditions/archive-post-type.php:60
+#: includes/conditions/archive-tag.php:87
+#: includes/conditions/singular-page.php:86
+#: includes/conditions/singular-post-from-cat.php:85
+#: includes/conditions/singular-post-from-tag.php:85
+#: includes/conditions/singular-post-type.php:60
+#: includes/conditions/singular-post.php:86
+msgid "All"
+msgstr "Все"
+
+#: includes/conditions/archive-post-type.php:33
+msgid "Post Type Archives"
+msgstr "Архивы типов публикаций"
+
+#: includes/conditions/archive-post-type.php:48
+#: includes/conditions/singular-post-type.php:33
+#: includes/conditions/singular-post-type.php:48
+msgid "Post Type"
+msgstr "Тип публикаций"
+
+#: includes/conditions/archive-tag.php:33
+msgid "Tag Archives"
+msgstr "Метка архивов"
+
+#: includes/conditions/archive-tag.php:48
+#: includes/conditions/singular-post-from-tag.php:48
+msgid "Select Tags"
+msgstr "Отобрать метки"
+
+#: includes/conditions/archive-tag.php:53
+msgid "Leave empty to apply for all tags"
+msgstr "Оставьте пустым, чтобы применить ко всем меткам"
+
+#: includes/conditions/manager.php:226 includes/conditions/manager.php:582
+msgid "Entire Site"
+msgstr "Для всего сайта"
+
+#: includes/conditions/manager.php:227
+msgid "Singular"
+msgstr "Для одной страницы"
+
+#: includes/conditions/manager.php:228
+msgid "Archive"
+msgstr "Для архива"
+
+#: includes/conditions/manager.php:244
+#: includes/conditions/singular-page-child.php:91
+#: includes/conditions/singular-page-template.php:63 includes/document.php:76
+#: includes/utils.php:71
+msgid "Not Selected"
+msgstr "Не выбрано"
+
+#: includes/conditions/singular-404.php:33
+msgid "404 Page"
+msgstr "404 Page"
+
+#: includes/conditions/singular-front-page.php:33
+msgid "Front Page"
+msgstr "Титульная страница"
+
+#: includes/conditions/singular-page-child.php:33
+msgid "Page, Child of"
+msgstr "Дочерняя страница"
+
+#: includes/conditions/singular-page-child.php:48
+msgid "Select Parent"
+msgstr "Выбрать родительскую страницу"
+
+#: includes/conditions/singular-page-template.php:33
+msgid "Page Template"
+msgstr "Шаблоны страницы"
+
+#: includes/conditions/singular-page-template.php:48
+msgid "Select..."
+msgstr "Выбрать..."
+
+#: includes/conditions/singular-page-template.php:52
+msgid "Select Template"
+msgstr "Выбрать шаблон"
+
+#: includes/conditions/singular-page.php:33
+msgid "Page"
+msgstr "Страница"
+
+#: includes/conditions/singular-page.php:48
+msgid "Select Pages"
+msgstr "Выбрать страницы"
+
+#: includes/conditions/singular-page.php:53
+msgid "Leave empty to apply for all pages"
+msgstr "Оставьте пустым, чтобы применить ко всем страницам"
+
+#: includes/conditions/singular-post-from-cat.php:33
+msgid "Posts from Category"
+msgstr "Публикации по категории"
+
+#: includes/conditions/singular-post-from-tag.php:33
+msgid "Posts from Tag"
+msgstr "Публикации по метке"
+
+#: includes/conditions/singular-post.php:33
+msgid "Post"
+msgstr "Публикации"
+
+#: includes/conditions/singular-post.php:48
+msgid "Select Posts"
+msgstr "Выбрать публикации"
+
+#: includes/conditions/singular-post.php:53
+msgid "Leave empty to apply for all posts"
+msgstr "Оставьте пустым, чтобы применить ко всем публикациям"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:27
+msgid "Font Color"
+msgstr "Цвет шрифта"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:35
+msgctxt "Background Control"
+msgid "Background Type"
+msgstr "Тип фона"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:39
+msgctxt "Background Control"
+msgid "Classic"
+msgstr "Классический"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:43
+msgctxt "Background Control"
+msgid "Gradient"
+msgstr "Градиент"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:52
+msgctxt "Background Control"
+msgid "Color"
+msgstr "Цвет"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:65
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:91
+msgctxt "Background Control"
+msgid "Location"
+msgstr "Местоположение"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:80
+msgctxt "Background Control"
+msgid "Second Color"
+msgstr "Второй цвет"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:106
+msgctxt "Background Control"
+msgid "Type"
+msgstr "Тип"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:109
+msgctxt "Background Control"
+msgid "Linear"
+msgstr "Линейный"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:110
+msgctxt "Background Control"
+msgid "Radial"
+msgstr "Радиальный"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:121
+msgctxt "Background Control"
+msgid "Angle"
+msgstr "Угол"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:144
+msgctxt "Background Control"
+msgid "Position"
+msgstr "Положение"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:147
+msgctxt "Background Control"
+msgid "Center Center"
+msgstr "Центр центр"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:148
+msgctxt "Background Control"
+msgid "Center Left"
+msgstr "Центр лево"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:149
+msgctxt "Background Control"
+msgid "Center Right"
+msgstr "Центр право"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:150
+msgctxt "Background Control"
+msgid "Top Center"
+msgstr "Верх центр"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:151
+msgctxt "Background Control"
+msgid "Top Left"
+msgstr "Верх лево"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:152
+msgctxt "Background Control"
+msgid "Top Right"
+msgstr "Верх право"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:153
+msgctxt "Background Control"
+msgid "Bottom Center"
+msgstr "Низ центр"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:154
+msgctxt "Background Control"
+msgid "Bottom Left"
+msgstr "Низ лево"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:155
+msgctxt "Background Control"
+msgid "Bottom Right"
+msgstr "Низ право"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:188
+msgid "Box Size"
+msgstr "Размер ячейки"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:206
+msgctxt "Border Control"
+msgid "Border Type"
+msgstr "Тип границы"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:209
+#: includes/document.php:177
+msgid "None"
+msgstr "Отсутствует"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:210
+msgctxt "Border Control"
+msgid "Solid"
+msgstr "Сплошной"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:211
+msgctxt "Border Control"
+msgid "Double"
+msgstr "Двойной"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:212
+msgctxt "Border Control"
+msgid "Dotted"
+msgstr "Точечный"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:213
+msgctxt "Border Control"
+msgid "Dashed"
+msgstr "Пунктирный"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:221
+msgctxt "Border Control"
+msgid "Width"
+msgstr "Ширина"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:232
+msgctxt "Border Control"
+msgid "Color"
+msgstr "Цвет"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:253
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:263
+msgctxt "Box Shadow Control"
+msgid "Box Shadow"
+msgstr "Тень объекта"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:274
+msgctxt "Box Shadow Control"
+msgid "Position"
+msgstr "Положение"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:277
+msgctxt "Box Shadow Control"
+msgid "Outline"
+msgstr "По контуру"
+
+#: includes/controls/groups/class-jet-popup-group-control-box-style.php:278
+msgctxt "Box Shadow Control"
+msgid "Inset"
+msgstr "Внутри контура"
+
+#: includes/controls/groups/class-jet-popup-group-control-transform-style.php:46
+msgctxt "Transform Control"
+msgid "Translate X"
+msgstr "Перевод X"
+
+#: includes/controls/groups/class-jet-popup-group-control-transform-style.php:67
+msgctxt "Transform Control"
+msgid "Translate Y"
+msgstr "Перевод Y"
+
+#: includes/document.php:22 includes/extension.php:89
+#: includes/integration.php:56 includes/post-type.php:259 jet-popup.php:187
+msgid "Jet Popup"
+msgstr "Jet Popup"
+
+#: includes/document.php:48
+msgid "Animation"
+msgstr "Эффекты анимации"
+
+#: includes/document.php:52
+msgid "Fade"
+msgstr "Fade"
+
+#: includes/document.php:53
+msgid "ZoomIn"
+msgstr "ZoomIn"
+
+#: includes/document.php:54
+msgid "ZoomOut"
+msgstr "ZoomOut"
+
+#: includes/document.php:55
+msgid "Rotate"
+msgstr "Rotate"
+
+#: includes/document.php:56
+msgid "MoveUp"
+msgstr "MoveUp"
+
+#: includes/document.php:57
+msgid "Horizontal Flip"
+msgstr "Horizontal Flip"
+
+#: includes/document.php:58
+msgid "Vertical Flip"
+msgstr "Vertical Flip"
+
+#: includes/document.php:59
+msgid "BounceIn"
+msgstr "BounceIn"
+
+#: includes/document.php:60
+msgid "BounceOut"
+msgstr "BounceOut"
+
+#: includes/document.php:61
+msgid "SlideInUp"
+msgstr "SlideInUp"
+
+#: includes/document.php:62
+msgid "SlideInRight"
+msgstr "SlideInRight"
+
+#: includes/document.php:63
+msgid "SlideInDown"
+msgstr "SlideInDown"
+
+#: includes/document.php:64
+msgid "SlideInLeft"
+msgstr "SlideInLeft"
+
+#: includes/document.php:72
+msgid "Open event"
+msgstr "Условие показа"
+
+#: includes/document.php:77
+msgid "On page load(s)"
+msgstr "При загрузке страницы (сек)"
+
+#: includes/document.php:78
+msgid "Inactivity time after(s)"
+msgstr "Время бездействия (сек)"
+
+#: includes/document.php:79
+msgid "Page Scrolled(%)"
+msgstr "При прокрутке страницы(%)"
+
+#: includes/document.php:80
+msgid "Try exit"
+msgstr "При попытке выйти"
+
+#: includes/document.php:81
+msgid "On Date"
+msgstr "В назначенную дату"
+
+#: includes/document.php:82
+msgid "Custom Selector Click"
+msgstr "По клику на кастомный селектор"
+
+#: includes/document.php:90
+msgid "Open delay"
+msgstr "Задержка показа"
+
+#: includes/document.php:104
+msgid "User inactivity time"
+msgstr "Время бездействия пользователя"
+
+#: includes/document.php:118
+msgid "Scroll Page Progress(%)"
+msgstr "Прокрутка страницы(%)"
+
+#: includes/document.php:132
+msgid "Open Date"
+msgstr "Дата открытия"
+
+#: includes/document.php:141
+#, php-format
+msgid "Date set according to your timezone: %s."
+msgstr "Дата устанавливается в соответствии с вашим часовым поясом: %s."
+
+#: includes/document.php:148 includes/document.php:150
+#: includes/extension.php:139 includes/extension.php:142
+msgid "Custom Selector"
+msgstr "Кастомный селектор"
+
+#: includes/document.php:161
+msgid "Show once"
+msgstr "Показывать один раз"
+
+#: includes/document.php:173
+msgid "Show Again Delay"
+msgstr ""
+
+#: includes/document.php:178
+msgid "Minute"
+msgstr ""
+
+#: includes/document.php:179
+msgid "10 Minutes"
+msgstr ""
+
+#: includes/document.php:180
+msgid "30 Minutes"
+msgstr ""
+
+#: includes/document.php:181
+msgid "1 Hour"
+msgstr ""
+
+#: includes/document.php:182
+msgid "3 Hours"
+msgstr ""
+
+#: includes/document.php:183
+msgid "6 Hours"
+msgstr ""
+
+#: includes/document.php:184
+msgid "12 Hours"
+msgstr ""
+
+#: includes/document.php:185
+msgid "Day"
+msgstr ""
+
+#: includes/document.php:186
+msgid "3 Days"
+msgstr ""
+
+#: includes/document.php:187
+msgid "Week"
+msgstr ""
+
+#: includes/document.php:188
+msgid "Month"
+msgstr ""
+
+#: includes/document.php:201
+msgid "Conditions"
+msgstr "Условия"
+
+#: includes/document.php:212
+msgid "Available For Roles"
+msgstr "Дотупен для таких ролей пользователей:"
+
+#: includes/document.php:226
+msgid "Popup Container"
+msgstr "Контейнер Popup"
+
+#: includes/document.php:234
+msgid "Size"
+msgstr "Размер"
+
+#: includes/document.php:242
+msgid "Width"
+msgstr "Ширина"
+
+#: includes/document.php:270
+msgid "Custom Height"
+msgstr "Кастомная высота"
+
+#: includes/document.php:282
+msgid "Height"
+msgstr "Высота"
+
+#: includes/document.php:313
+msgid "Position"
+msgstr "Положение"
+
+#: includes/document.php:322
+msgid "Horizontal Position"
+msgstr "Горизонтальное положение"
+
+#: includes/document.php:349
+msgid "Vertical Position"
+msgstr "Вертикальное положение"
+
+#: includes/document.php:355 includes/document.php:382
+msgid "Top"
+msgstr "Верх"
+
+#: includes/document.php:359 includes/document.php:386
+msgid "Middle"
+msgstr "Середина"
+
+#: includes/document.php:363 includes/document.php:390
+msgid "Bottom"
+msgstr "Низ"
+
+#: includes/document.php:376
+msgid "Content Position"
+msgstr "Положение контента"
+
+#: includes/document.php:403
+msgid "Container Background"
+msgstr "Фон контейнера"
+
+#: includes/document.php:420
+msgid "Container Overlay"
+msgstr "Перекрытие контейнера"
+
+#: includes/document.php:443
+msgid "Opacity"
+msgstr "Непрозрачность"
+
+#: includes/document.php:478
+msgid "Blend Mode"
+msgstr "Режим смешивания"
+
+#: includes/document.php:505
+msgid "Other Styles"
+msgstr "Другие стили"
+
+#: includes/document.php:572
+msgid "Close Button"
+msgstr "Кнопка закрытия Popup"
+
+#: includes/document.php:580
+msgid "Use Close Button"
+msgstr "Использовать кнопку закрытия"
+
+#: includes/document.php:604
+msgid "Icon Transform"
+msgstr "Иконка трансформации"
+
+#: includes/document.php:654
+msgid "Popup Overlay"
+msgstr "Перекрытие Popup"
+
+#: includes/document.php:662
+msgid "Use Overlay"
+msgstr "Использовать перекрытие"
+
+#: includes/elementor-finder/categories/popup-finder-category.php:22
+#: includes/elementor-finder/categories/popup-finder-category.php:37
+msgid "Jet Popup Settings"
+msgstr ""
+
+#: includes/elementor-finder/categories/popup-finder-category.php:42
+msgid "Jet Popup Library"
+msgstr ""
+
+#: includes/export-import.php:59
+msgid "Export Popup"
+msgstr "Экспортировать Popup"
+
+#: includes/export-import.php:169 includes/export-import.php:236
+#: includes/export-import.php:274
+msgid "You don't have permissions to do this"
+msgstr "У вас нет для этого разрешения"
+
+#: includes/export-import.php:173
+msgid "File not passed"
+msgstr "Файл не передан"
+
+#: includes/export-import.php:179
+msgid "Format not allowed"
+msgstr "Недопустимый формат"
+
+#: includes/export-import.php:186
+msgid "No data found in file"
+msgstr "В файле нет данных"
+
+#: includes/export-import.php:210 includes/export-import.php:320
+msgid "New Popup"
+msgstr "Новый Popup"
+
+#: includes/export-import.php:218
+msgid "Can't create popup. Please try again"
+msgstr "Невозможно создать popup. Пожалуйста, попробуйте снова"
+
+#: includes/export-import.php:249
+msgid "This template not rigestered"
+msgstr "Этот шаблон не зарегистрирован"
+
+#: includes/export-import.php:283
+msgid "Stop Cheating!"
+msgstr "Прекратите жульничать!"
+
+#: includes/export-import.php:292
+msgid "Api Server Error"
+msgstr "Ошибка сервера Api"
+
+#: includes/export-import.php:336
+msgid "Can't create preset. Please try again"
+msgstr "Невозможно создать пресет. Пожалуйста, попробуйте снова"
+
+#: includes/export-import.php:474
+msgid "Classic"
+msgstr "Классический"
+
+#: includes/export-import.php:479
+msgid "Slide In"
+msgstr "Сайдбар"
+
+#: includes/export-import.php:484
+msgid "Bar"
+msgstr "Панель"
+
+#: includes/export-import.php:489
+msgid "Bordering"
+msgstr "Уведомление"
+
+#: includes/export-import.php:494
+msgid "Full View"
+msgstr "На весь экран"
+
+#: includes/export-import.php:499
+msgid "Full Width"
+msgstr "Полная ширина"
+
+#: includes/export-import.php:534
+msgid "Import Popup"
+msgstr "Импортировать Popup"
+
+#: includes/export-import.php:538
+msgid "Import Now"
+msgstr "Импортировать сейчас"
+
+#: includes/export-import.php:541
+msgid "Popup Layout"
+msgstr "Макет Popup"
+
+#: includes/export-import.php:544
+msgid "Select Layout Preset"
+msgstr "Выбрать макет пресета"
+
+#: includes/export-import.php:567
+msgid "Create Popup"
+msgstr "Создать Popup"
+
+#: includes/extension.php:113
+msgid "Attached Popup"
+msgstr "Прикреплённый Popup"
+
+#: includes/extension.php:123
+msgid "Trigger Type"
+msgstr "Тип триггера"
+
+#: includes/extension.php:127
+msgid "Click On Button"
+msgstr "По клику на кнопку"
+
+#: includes/extension.php:128
+msgid "Click On Widget"
+msgstr "По клику на виджет"
+
+#: includes/extension.php:129
+msgid "Click On Custom Selector"
+msgstr "По клику на кастомный селектор"
+
+#: includes/extension.php:131
+msgid "Scroll To Widget"
+msgstr "В момент прокрутки до виджета"
+
+#: includes/extension.php:186
+msgid "You Haven’t Created Popup Yet."
+msgstr "Вы еще не создали Popup."
+
+#: includes/generator.php:195 includes/post-type.php:263
+msgid "Edit Popup"
+msgstr "Редактировать Popup"
+
+#: includes/post-type.php:83
+msgid "Active Conditions"
+msgstr "Условия активации"
+
+#: includes/post-type.php:84
+msgid "Date"
+msgstr "Дата"
+
+#: includes/post-type.php:156
+msgid "Active"
+msgstr "Активный"
+
+#: includes/post-type.php:166 includes/post-type.php:173
+msgid "Conditions not selected"
+msgstr "Условия не выбраны"
+
+#: includes/post-type.php:258 includes/post-type.php:264
+msgid "JetPopup"
+msgstr "JetPopup"
+
+#: includes/post-type.php:260
+msgid "All Popups"
+msgstr "Все Popups"
+
+#: includes/post-type.php:261 includes/post-type.php:262
+msgid "Add New Popup"
+msgstr "Добавить новый Popup"
+
+#: includes/post-type.php:323
+msgid "Library"
+msgstr "Библиотека"
+
+#: includes/post-type.php:324
+msgid "Popup Library"
+msgstr "Библиотека Popup"
+
+#: includes/settings.php:228
+msgid "Settings have been saved!"
+msgstr "Настройки успешно сохранены!"
+
+#: includes/settings.php:266 includes/settings.php:321
+#: includes/settings.php:389
+msgid "MailChimp Error"
+msgstr "Ошибка MailChimp"
+
+#: includes/settings.php:267 includes/settings.php:322
+#: includes/settings.php:390
+msgid "Server error. Please, check your apikey status or format"
+msgstr "Ошибка сервера. Пожалуйста, проверьте статус и формат Вашего API ключа"
+
+#: includes/settings.php:282
+msgid "Account Data were received"
+msgstr "Получены данные из профиля"
+
+#: includes/settings.php:348
+msgid "Lists were received"
+msgstr "Данные о списках получены"
+
+#: includes/settings.php:406
+msgid "Merge Fields were received"
+msgstr "Данные о полях Merge получены"
+
+#: includes/utils.php:116
+msgid "Guest"
+msgstr "Гость"
+
+#: jet-popup.php:182
+msgid "Elementor"
+msgstr "Elementor"
+
+#: jet-popup.php:186
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
+msgstr "Установка и активация \"%1$s\" требует \"%2$s\"."
+
+#: jet-popup.php:386
+msgid "Changelog"
+msgstr "Изменения"
+
+#: templates/vue-templates/mailchimp-list-item.php:2
+msgid "Name: "
+msgstr "Имя:"
+
+#: templates/vue-templates/mailchimp-list-item.php:3
+msgid "List ID: "
+msgstr "List ID: "
+
+#: templates/vue-templates/mailchimp-list-item.php:4
+msgid "Date Created: "
+msgstr "Дата создания:"
+
+#: templates/vue-templates/mailchimp-list-item.php:5
+msgid "Member Count: "
+msgstr "Количество подписчиков:"
+
+#: templates/vue-templates/mailchimp-list-item.php:7
+msgid "DoubleOptin: "
+msgstr "DoubleOptin: "
+
+#: templates/vue-templates/mailchimp-list-item.php:12
+msgid "Merge Fields: "
+msgstr "Поля Merge:"
+
+#: templates/vue-templates/mailchimp-list-item.php:20
+msgid "Get Merge Fields"
+msgstr "Получить Merge  поля"
+
+#: templates/vue-templates/preset-filters.php:3
+msgid "Categories: "
+msgstr "Категории: "
+
+#: templates/vue-templates/preset-filters.php:14
+msgid "Filter By : "
+msgstr "Сортировать по: "
+
+#: templates/vue-templates/preset-item.php:6
+msgid "Add"
+msgstr "Добавить"
+
+#: templates/vue-templates/preset-item.php:9
+msgid "You really want to create a new Popup?"
+msgstr "Вы действительно хотите создать новый Popup?"
+
+#: templates/vue-templates/preset-item.php:14
+msgid ""
+"A new preset will be created. You'll be redirected to Editing page. Also the "
+"template will be added to the popups list on \"All Popups\" page."
+msgstr ""
+"Будет создан новый пресет. Вы будете перенаправлены на страницу "
+"редактирования. Так же шаблон будет добавлен в список на странице \"All "
+"Popups\"."
+
+#: templates/vue-templates/preset-item.php:24
+msgid "Category: "
+msgstr "Категория: "
+
+#: templates/vue-templates/preset-item.php:33
+msgid "Users Choice."
+msgstr "Выбор пользователей."
+
+#: templates/vue-templates/preset-item.php:34
+msgid "This preset has been added to collection by users {{install}} time"
+msgstr "Этот пресет был добавлен в коллекцию пользователями {{install}} раз"
+
+#: templates/vue-templates/preset-item.php:35
+msgid "This preset has been added to collection by users {{install}} times"
+msgstr "Этот пресет был добавлен в коллекцию пользователями {{install}} раз"
+
+#: templates/vue-templates/preset-item.php:43
+msgid "Required Plugins: "
+msgstr "Требуемые плагины: "
+
+#: templates/vue-templates/preset-item.php:44
+msgid "When creating content"
+msgstr "При создании контента"
+
+#: templates/vue-templates/preset-item.php:45
+msgid "third-party plug-ins are used"
+msgstr "используются сторонние плагины"
+
+#: templates/vue-templates/preset-library.php:13
+msgid "Server Error"
+msgstr "Ошибка сервера"
+
+#: templates/vue-templates/preset-library.php:25
+msgid "Jet Popup Presets Library"
+msgstr "Библиотека готовых Popups"
+
+#: templates/vue-templates/preset-library.php:37
+msgid "No matches found"
+msgstr "Совпадений не найдено"
+
+#: templates/vue-templates/settings-form.php:12
+msgid "API key"
+msgstr ""
+
+#: templates/vue-templates/settings-form.php:20
+msgid "Sync"
+msgstr "Синхронизировать"
+
+#: templates/vue-templates/settings-form.php:33
+msgid "Account ID: "
+msgstr "ID профиля: "
+
+#: templates/vue-templates/settings-form.php:34
+msgid "First Name: "
+msgstr "Имя:"
+
+#: templates/vue-templates/settings-form.php:35
+msgid "Last Name: "
+msgstr "Фамилия:"
+
+#: templates/vue-templates/settings-form.php:36
+msgid "Username: "
+msgstr "Имя пользователя:"
+
+#: templates/vue-templates/settings-form.php:64
+#: templates/vue-templates/settings-form.php:68
+msgid "Save"
+msgstr "Сохранить"
+
+#: templates/vue-templates/settings-form.php:73
+msgid "Are you sure you want to save the settings?"
+msgstr "Вы уверены что хотите сохранить настройки?"
+
+#~ msgid "Click Button"
+#~ msgstr "Нажать на кнопку"
+
+#~ msgid "Click Selector"
+#~ msgstr "Нажать на селектор"
+
+#~ msgid "Scroll To"
+#~ msgstr "Прокрутить до"

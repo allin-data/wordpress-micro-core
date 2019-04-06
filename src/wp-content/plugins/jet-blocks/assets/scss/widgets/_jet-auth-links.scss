@@ -1,0 +1,16 @@
+.jet-auth-links {
+	display: flex;
+	align-items: center;
+	&__section {
+		display: flex;
+		align-items: center;
+	}
+	&__item {
+		margin-right: 5px;
+		margin-left: 5px;
+		display: block;
+		&-icon {
+			margin-right: 5px;
+		}
+	}
+}

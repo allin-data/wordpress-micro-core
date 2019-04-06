@@ -1,0 +1,877 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Jet Theme Core\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-23 12:30+0200\n"
+"PO-Revision-Date: 2018-11-23 12:30+0200\n"
+"Last-Translator: \n"
+"Language-Team: Zemez\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;_ex:1,2c;_n:1,2;_nx:4c,1,2;_n_noop:1,2;"
+"_nx_noop:4c,1,2\n"
+"esc_attr__;_x: 1,2c;_n:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: cherry-framework\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: includes/api.php:154 includes/api.php:198
+msgid "Remote API is disabled."
+msgstr "Дистанционный API деактивирован."
+
+#: includes/api.php:158 includes/api.php:202
+msgid "Empty license key."
+msgstr "Лицензионный ключ пуст."
+
+#: includes/api.php:166 includes/api.php:210
+msgid "Internal error, please try again later."
+msgstr "Внутренняя ошибка, пожалуйста, попробуйте снова позже."
+
+#: includes/api.php:238
+msgid "Your license is missing. Please check your key again."
+msgstr "У вас отсутствует лицензия. Пожалуйста, проверьте ваш ключ еще раз."
+
+#: includes/api.php:239
+#, php-format
+msgid ""
+"<strong>You have no more activations left.</strong> <a href=\"%s\" target="
+"\"_blank\">Please upgrade to a more advanced license</a> (you'll only need "
+"to cover the difference)."
+msgstr ""
+"<strong>У вас больше нет активаций.</strong> <a href=\"%s\" target=\"_blank"
+"\">Пожалуйста, обновите свою лицензию до расширенной версии.</a> (Вам нужно "
+"доплатить только разницу)."
+
+#: includes/api.php:240
+#, php-format
+msgid ""
+"<strong>Your License Has Expired.</strong> <a href=\"%s\" target=\"_blank"
+"\">Renew your license today</a> to keep getting feature updates, premium "
+"support and unlimited access to the template library."
+msgstr ""
+"<strong>Срок вашей лицензии истек.</strong> <a href=\"%s\" target=\"_blank"
+"\">Обновите вашу лицензию сегодня</a>, чтобы получать обновления, поддержку "
+"и неограниченный доступ к библиотеке шаблонов."
+
+#: includes/api.php:241 includes/api.php:242
+msgid ""
+"<strong>Your license key has been cancelled</strong> (most likely due to a "
+"refund request). Please consider acquiring a new license."
+msgstr ""
+"<strong>Ваш лицензионный ключ отменен</strong> (скорей всего из-за запроса "
+"на возврат средств). Пожалуйста, рассмотрите возможность приобретения новой "
+"лицензии."
+
+#: includes/api.php:243 includes/api.php:245
+msgid ""
+"<strong>Your license key doesn't match your current domain</strong>. This is "
+"most likely due to a change in the domain URL of your site (including HTTPS/"
+"SSL migration). Please deactivate the license and then reactivate it again."
+msgstr ""
+"<strong>Ваш лицензионный ключ не соответствует вашему текущему домену</"
+"strong>. Скорей всего это обусловлено сменой в URL домена вашего сайта "
+"(включая миграцию HTTPS/SSL). Пожалуйста, деактивируйте лицензию и "
+"активируйте ее снова."
+
+#: includes/api.php:244
+msgid ""
+"<strong>Your license key doesn't match your current domain</strong>. This is "
+"most likely due to a change in the domain URL. Please deactivate the license "
+"and then reactivate it again."
+msgstr ""
+"<strong>Ваш лицензионный ключ не соответствует вашему текущему домену</"
+"strong>. Скорей всего это обусловлено сменой в URL домена. Пожалуйста, "
+"деактивируйте лицензию и активируйте ее снова."
+
+#: includes/api.php:248
+msgid ""
+"An error occurred. Please check your internet connection and try again. If "
+"the problem persists, contact our support."
+msgstr ""
+"Произошла ошибка. Пожалуйста, проверьте ваше интернет соединение и "
+"попробуйте снова. Если проблема возникнет снова, обратитесь в нашу Службу "
+"поддержки."
+
+#: includes/api.php:332
+msgid "Remote API is disabled"
+msgstr "Дистанционный API деактивирован"
+
+#: includes/api.php:340
+msgid "Empty license key"
+msgstr "Лицензионный ключ пуст"
+
+#: includes/api.php:360 includes/dashboard/page-theme.php:474
+#: includes/dashboard/page-theme.php:514 includes/templates/post-type.php:176
+msgid "Active"
+msgstr "Активный"
+
+#: includes/assets.php:89 includes/conditions/manager.php:215
+#: includes/conditions/singular-page-template.php:48
+msgid "Select..."
+msgstr "Выбрать..."
+
+#: includes/backups.php:260 includes/backups.php:302
+msgid "Permission denied"
+msgstr "Отказано в разрешении"
+
+#: includes/backups.php:270 includes/backups.php:312
+msgid "File not exists"
+msgstr "Файл не существует"
+
+#: includes/backups.php:319
+msgid "Can't delete selected backup"
+msgstr "Невозможно удалить выбранную резервную копию"
+
+#: includes/conditions/archive-all.php:33
+msgid "All Archives"
+msgstr "Все архивы"
+
+#: includes/conditions/archive-category.php:33
+msgid "Category Archives"
+msgstr "Архивы категорий"
+
+#: includes/conditions/archive-category.php:48
+#: includes/conditions/singular-post-from-cat.php:48
+msgid "Select Categories"
+msgstr "Выберите категории"
+
+#: includes/conditions/archive-category.php:53
+msgid "Leave empty to apply for all categories"
+msgstr "Оставьте пустым, чтобы применить ко всем категориям"
+
+#: includes/conditions/archive-category.php:86
+#: includes/conditions/archive-post-type.php:60
+#: includes/conditions/archive-tag.php:87
+#: includes/conditions/archive-tax.php:102
+#: includes/conditions/singular-page.php:86
+#: includes/conditions/singular-post-from-cat.php:85
+#: includes/conditions/singular-post-from-tag.php:85
+#: includes/conditions/singular-post-type.php:60
+#: includes/conditions/singular-post.php:86 includes/templates/manager.php:244
+#: includes/templates/post-type.php:412
+msgid "All"
+msgstr "Все"
+
+#: includes/conditions/archive-post-type.php:33
+msgid "Post Type Archives"
+msgstr "Архивы типа поста"
+
+#: includes/conditions/archive-post-type.php:48
+#: includes/conditions/singular-post-type.php:33
+#: includes/conditions/singular-post-type.php:48
+#: includes/document-types/archive.php:50 includes/document-types/single.php:74
+msgid "Post Type"
+msgstr "Тип поста"
+
+#: includes/conditions/archive-search.php:33
+msgid "Search Results"
+msgstr "Результаты поиска"
+
+#: includes/conditions/archive-tag.php:33
+msgid "Tag Archives"
+msgstr "Архивы тэгов"
+
+#: includes/conditions/archive-tag.php:48
+#: includes/conditions/singular-post-from-tag.php:48
+msgid "Select Tags"
+msgstr "Выберети тэги"
+
+#: includes/conditions/archive-tag.php:53
+msgid "Leave empty to apply for all tags"
+msgstr "Оставьте пустым, чтобы применить ко всем тэгам"
+
+#: includes/conditions/archive-tax.php:33
+msgid "Custom Taxonomy Archives"
+msgstr ""
+
+#: includes/conditions/archive-tax.php:48
+msgid "Taxonomy"
+msgstr ""
+
+#: includes/conditions/archive-tax.php:55
+msgid "Select Terms"
+msgstr "Выбрать категории"
+
+#: includes/conditions/archive-tax.php:61
+msgid "Leave empty to apply for all terms"
+msgstr "Оставьте пустым, чтобы применить ко всем тэгам"
+
+#: includes/conditions/manager.php:197 includes/conditions/manager.php:530
+msgid "Entire Site"
+msgstr "Весь сайт"
+
+#: includes/conditions/manager.php:198
+msgid "Singular"
+msgstr "Единичный"
+
+#: includes/conditions/manager.php:199 includes/document-types/archive.php:14
+#: includes/structures/archive.php:15
+msgid "Archive"
+msgstr "Архив"
+
+#: includes/conditions/manager.php:221
+msgid "General"
+msgstr "Общий"
+
+#: includes/conditions/singular-404.php:33
+msgid "404 Page"
+msgstr "Страница 404"
+
+#: includes/conditions/singular-front-page.php:33
+msgid "Front Page"
+msgstr "Главная страница"
+
+#: includes/conditions/singular-page-child.php:33
+msgid "Page, Child of"
+msgstr "Дочерняя страница"
+
+#: includes/conditions/singular-page-child.php:48
+msgid "Select Parent"
+msgstr "Выберите родительский"
+
+#: includes/conditions/singular-page-child.php:91
+#: includes/conditions/singular-page-template.php:63
+#: includes/templates/manager.php:196
+msgid "Not Selected"
+msgstr "Не выбран"
+
+#: includes/conditions/singular-page-template.php:33
+msgid "Page Template"
+msgstr "Шаблон страницы"
+
+#: includes/conditions/singular-page-template.php:52
+msgid "Select Template"
+msgstr "Выберите шаблон"
+
+#: includes/conditions/singular-page.php:33 includes/document-types/page.php:14
+#: includes/structures/page.php:15
+msgid "Page"
+msgstr "Страница"
+
+#: includes/conditions/singular-page.php:48
+msgid "Select Pages"
+msgstr "Выберите страницы"
+
+#: includes/conditions/singular-page.php:53
+msgid "Leave empty to apply for all pages"
+msgstr "Оставьте пустым, чтобы применить ко всем страницам"
+
+#: includes/conditions/singular-post-from-cat.php:33
+msgid "Posts from Category"
+msgstr "Посты из Категории"
+
+#: includes/conditions/singular-post-from-tag.php:33
+msgid "Posts from Tag"
+msgstr "Посты по тэгу"
+
+#: includes/conditions/singular-post.php:33
+msgid "Post"
+msgstr "Пост"
+
+#: includes/conditions/singular-post.php:48
+msgid "Select Posts"
+msgstr "Выберите посты"
+
+#: includes/conditions/singular-post.php:53
+msgid "Leave empty to apply for all posts"
+msgstr "Оставьте пустым, чтобы применить ко всем постам"
+
+#: includes/config.php:45
+msgid "CrocoBlock"
+msgstr "CrocoBlock"
+
+#: includes/config.php:51
+msgid "Magic Button"
+msgstr "Magic Button"
+
+#: includes/config.php:65
+msgid "Learn More About CrocoBlock"
+msgstr "Узнайте больше о CrocoBlock"
+
+#: includes/config.php:66
+msgid ""
+"Here you can get all the necessary information, detailed instructions and "
+"latest news."
+msgstr ""
+"Здесь Вы найдете всю необходимую информацию, детальные интрукции и последние "
+"новости."
+
+#: includes/config.php:69
+msgid "Check documentation"
+msgstr "Читать Документацию"
+
+#: includes/config.php:73
+msgid "Get more info from documentation"
+msgstr "Найдите больше информации в документации"
+
+#: includes/config.php:77
+msgid "Knowledge Base"
+msgstr "База знаний"
+
+#: includes/config.php:81
+msgid "Access the vast knowledge base"
+msgstr "Получите доступ к базе знаний"
+
+#: includes/config.php:85
+msgid "Community"
+msgstr "Сообщество"
+
+#: includes/config.php:89
+msgid "Join community to stay tuned to the latest news"
+msgstr "Присоединитесь к сообществу, чтобы быть в курсе последних новостей"
+
+#: includes/config.php:93
+msgid "View Video"
+msgstr "Просмотреть видео"
+
+#: includes/config.php:97
+msgid "View video tutorials"
+msgstr "Просмотреть видео туториалы"
+
+#: includes/dashboard/page-guide.php:42
+msgid "User Guide"
+msgstr "Руководство пользователя"
+
+#: includes/dashboard/page-license.php:49
+msgid "License"
+msgstr "Лицензия"
+
+#: includes/dashboard/page-license.php:95
+#: templates/editor/template-library-error.php:15
+msgid "Activate license"
+msgstr "Активировать лицензию"
+
+#: includes/dashboard/page-license.php:133
+msgid "Please enter your license key."
+msgstr "Пожалуйста, введите ваш лицензионный код."
+
+#: includes/dashboard/page-plugins.php:53
+msgid "Plugins"
+msgstr "Плагины"
+
+#: includes/dashboard/page-plugins.php:168
+msgid "No plugin specified."
+msgstr "Не выбран ни один плагин."
+
+#: includes/dashboard/page-plugins.php:183
+msgid "Sorry, you are not allowed to update plugins for this site."
+msgstr "Простите, но вы не можете обновить плагины на этом сайте."
+
+#: includes/dashboard/page-plugins.php:193
+#, php-format
+msgid "Version %s"
+msgstr "Версия %s"
+
+#: includes/dashboard/page-plugins.php:227
+#: includes/dashboard/page-plugins.php:253
+msgid "Plugin update failed."
+msgstr "Обновление плагинов не удалось."
+
+#: includes/dashboard/page-plugins.php:242
+#: includes/dashboard/page-theme.php:170 includes/dashboard/page-theme.php:233
+#: includes/utils.php:233
+msgid "Unable to connect to the filesystem. Please confirm your credentials."
+msgstr ""
+"Невозможно соединиться с файловой системой. Пожалуйста, подтвердите ваши "
+"данные."
+
+#: includes/dashboard/page-plugins.php:274 includes/dashboard/page-skins.php:84
+#: includes/dashboard/page-theme.php:331
+msgid "Installing..."
+msgstr "Установка..."
+
+#: includes/dashboard/page-plugins.php:275 includes/dashboard/page-skins.php:85
+#: includes/dashboard/page-theme.php:333
+#: templates/dashboard/license/activate-license-control.php:20
+#: templates/dashboard/skins/install-wizard.php:12
+msgid "Activate"
+msgstr "Активировать"
+
+#: includes/dashboard/page-plugins.php:276 includes/dashboard/page-skins.php:86
+#: includes/dashboard/page-theme.php:334
+msgid "Activating..."
+msgstr "Активируется..."
+
+#: includes/dashboard/page-plugins.php:277 includes/dashboard/page-skins.php:87
+#: includes/dashboard/page-theme.php:335
+msgid "Activated"
+msgstr "Активирован"
+
+#: includes/dashboard/page-plugins.php:278
+#: includes/dashboard/page-theme.php:336
+msgid "Updating..."
+msgstr "Обновляется..."
+
+#: includes/dashboard/page-plugins.php:279
+#: includes/dashboard/page-theme.php:337
+msgid "Updated"
+msgstr "Обновлен"
+
+#: includes/dashboard/page-plugins.php:280 includes/dashboard/page-skins.php:88
+#: includes/dashboard/page-theme.php:338
+msgid "Failed"
+msgstr "Не удалось"
+
+#: includes/dashboard/page-plugins.php:318
+msgid "Check for updates"
+msgstr "Проверить обновления"
+
+#: includes/dashboard/page-plugins.php:330
+msgid "Check for new plugins"
+msgstr "Проверить новые плагины"
+
+#: includes/dashboard/page-plugins.php:488
+msgid "Activate License to Install"
+msgstr "Активировать лицензию для установки"
+
+#: includes/dashboard/page-plugins.php:497
+#: includes/dashboard/page-skins.php:182
+#: templates/dashboard/theme/child-theme.php:15
+msgid "Install"
+msgstr "Установить"
+
+#: includes/dashboard/page-settings.php:42
+msgid "Settings"
+msgstr "Настройки"
+
+#: includes/dashboard/page-skins.php:56
+msgid "Reloading page to apply changes..."
+msgstr "Перезагрузка старницы для применения изменений..."
+
+#: includes/dashboard/page-skins.php:96
+msgid "Select skin"
+msgstr "Выберите скин"
+
+#: includes/dashboard/page-skins.php:100
+msgid "Switch the current skin to another one"
+msgstr "Поменять текущий скин на другой"
+
+#: includes/dashboard/page-skins.php:209
+msgid "Skins"
+msgstr "Скины"
+
+#: includes/dashboard/page-theme.php:45
+msgid "Theme"
+msgstr "Тема"
+
+#: includes/dashboard/page-theme.php:72
+msgid "You are not allowed to save options."
+msgstr "Вы не можете сохранить опции."
+
+#: includes/dashboard/page-theme.php:77
+msgid "New value not provided."
+msgstr "Новое значение не задано."
+
+#: includes/dashboard/page-theme.php:107
+msgid "You are not allowed to update themes."
+msgstr "Вы не можете обновлять темы."
+
+#: includes/dashboard/page-theme.php:181
+msgid "Update failed."
+msgstr "Обновление не удалось."
+
+#: includes/dashboard/page-theme.php:196
+msgid "You are not allowed to install themes."
+msgstr "Вы не можете устанавливать темы."
+
+#: includes/dashboard/page-theme.php:203
+msgid "Child theme URL not found."
+msgstr "URL дочерней темы не найден."
+
+#: includes/dashboard/page-theme.php:261
+msgid "You are not allowed to switch themes."
+msgstr "Вы не можете менять темы."
+
+#: includes/dashboard/page-theme.php:283
+msgid "Theme not found."
+msgstr "Тема не найдена."
+
+#: includes/dashboard/page-theme.php:332 includes/dashboard/page-theme.php:476
+#: includes/dashboard/page-theme.php:515
+msgid "Installed but not active"
+msgstr "Установлен, но не активирован"
+
+#: includes/dashboard/page-theme.php:475
+msgid "Child theme active"
+msgstr "Дочерняя тема активна"
+
+#: includes/dashboard/page-theme.php:477
+msgid "Not Installed"
+msgstr "Не установлен"
+
+#: includes/dashboard/page-theme.php:516
+msgid "Not installed"
+msgstr "Не установлен"
+
+#: includes/dashboard/page-theme.php:646
+msgid "Download"
+msgstr "Загрузить"
+
+#: includes/dashboard/page-theme.php:652
+msgid "Delete"
+msgstr "Удалить"
+
+#: includes/document-types/archive.php:42 includes/document-types/single.php:66
+msgid "Preview"
+msgstr "Предпросмотр"
+
+#: includes/document-types/archive.php:62
+#: includes/document-types/single.php:100
+msgid "Please reload page after applying preview settings"
+msgstr ""
+"Пожалуйста, перезагрузите страницу после применения настроек для "
+"предпросмотра"
+
+#: includes/document-types/base.php:54
+msgid "Conditions"
+msgstr "Условия"
+
+#: includes/document-types/footer.php:14 includes/structures/footer.php:15
+msgid "Footer"
+msgstr "Футер"
+
+#: includes/document-types/header.php:14 includes/structures/header.php:15
+msgid "Header"
+msgstr "Хедер"
+
+#: includes/document-types/section.php:14 includes/structures/section.php:15
+msgid "Section"
+msgstr "Секция"
+
+#: includes/document-types/single.php:14 includes/structures/single.php:15
+#: includes/structures/single.php:19
+msgid "Single"
+msgstr ""
+
+#: includes/document-types/single.php:84
+msgid "Select Post"
+msgstr "Выбрать публикацию"
+
+#: includes/document-types/single.php:91
+msgid "Please remove selected post after changing preview post type"
+msgstr ""
+"Пожалуйста, удалите выбранную публикацию после изменения типа публикации для "
+"предпросмотра"
+
+#: includes/locations.php:264
+msgid "Edit"
+msgstr "Редактировать"
+
+#: includes/settings.php:82
+msgid "Settings saved"
+msgstr "Настройки сохранены"
+
+#: includes/settings.php:226
+msgid "Locations realtions"
+msgstr "Приоритет локаций"
+
+#: includes/settings.php:227
+msgid ""
+"Define relations before Jet and Pro templates attached to the same locations"
+msgstr "Определите приоритеты Jet и Pro шаблонов для отображения в локациях"
+
+#: includes/settings.php:232
+msgid "Prevent Pro locations registration"
+msgstr "Предотвратить регистацию локаций для PRO"
+
+#: includes/settings.php:233
+msgid ""
+"Prevent Elemntor Pro locations registration from JetThemeCore. Enable this "
+"if your headers/footers disappear when JetThemeCore is active"
+msgstr ""
+"Предотвратить регистрацию локаций Elementor Pro. Активируйте данную опцию "
+"если у Вас исчез хедер или футер после активации JetThemeCore"
+
+#: includes/settings.php:259
+msgid "Save"
+msgstr "Сохранить"
+
+#: includes/structures/archive.php:19
+msgid "Archives"
+msgstr ""
+
+#: includes/structures/footer.php:19
+msgid "Footers"
+msgstr "Футеры"
+
+#: includes/structures/header.php:19
+msgid "Headers"
+msgstr "Хедеры"
+
+#: includes/structures/page.php:19
+msgid "Pages"
+msgstr "Страницы"
+
+#: includes/structures/section.php:19
+msgid "Sections"
+msgstr "Секции"
+
+#: includes/templates/manager.php:136 includes/templates/post-type.php:349
+#: includes/templates/post-type.php:394 includes/templates/post-type.php:395
+msgid "My Library"
+msgstr "Моя библиотека"
+
+#: includes/templates/post-type.php:85 includes/templates/post-type.php:376
+msgid "Type"
+msgstr "Тип"
+
+#: includes/templates/post-type.php:86
+msgid "Active Conditions"
+msgstr "Условия "
+
+#: includes/templates/post-type.php:87
+msgid "Date"
+msgstr "Дата"
+
+#: includes/templates/post-type.php:198
+msgid "You don't have permissions to do this"
+msgstr "У вас нет прав для этого"
+
+#: includes/templates/post-type.php:199 includes/templates/post-type.php:208
+#: includes/templates/post-type.php:218 includes/templates/post-type.php:249
+msgid "Error"
+msgstr "Ошибка"
+
+#: includes/templates/post-type.php:207 includes/templates/post-type.php:217
+msgid "Incorrect template type. Please try again."
+msgstr "Неправильный тип шаблона. Пожалуйста, попробуйте снова."
+
+#: includes/templates/post-type.php:248
+msgid "Can't create template. Please try again"
+msgstr "Невозможно создать шаблон. Пожалуйста, попробуйте снова"
+
+#: includes/templates/post-type.php:339
+msgid "Theme Parts"
+msgstr "Части темы"
+
+#: includes/templates/post-type.php:340
+msgid "Template"
+msgstr "Шаблон"
+
+#: includes/templates/post-type.php:341
+msgid "Add New"
+msgstr "Добавить новый шаблон"
+
+#: includes/templates/post-type.php:342 includes/templates/post-type.php:344
+msgid "Add New Template"
+msgstr "Добавить новый шаблон"
+
+#: includes/templates/post-type.php:343
+msgid "Edit Template"
+msgstr "Редактировать шаблон"
+
+#: includes/templates/post-type.php:345
+msgid "View Template"
+msgstr "Показать шаблон"
+
+#: includes/templates/post-type.php:346
+msgid "Search Template"
+msgstr "Искать шаблон"
+
+#: includes/templates/post-type.php:347
+msgid "No Templates Found"
+msgstr "Шаблон не найден"
+
+#: includes/templates/post-type.php:348
+msgid "No Templates Found In Trash"
+msgstr "Шаблон не найден в корзине"
+
+#: includes/utils.php:181 includes/utils.php:269
+msgid "Sorry, you are not allowed to install plugins on this site."
+msgstr "Простите, но вы не можете установить плагины на этот сайт."
+
+#: includes/utils.php:186 includes/utils.php:274
+msgid "Plugin slug is required"
+msgstr "Требуется slug плагина"
+
+#: templates/dashboard/license/activate-license-control.php:8
+msgid ""
+"Enter your license key here, to activate Crocoblock, and get feature "
+"updates, premium support and unlimited access to the template library."
+msgstr ""
+"Введите сюда лицензионный ключ чтобы активировать CrocoBlock, получать "
+"обновления, премиальную клиентскую поддержку и неограниченный доступ к "
+"библиотеке шаблонов. "
+
+#: templates/dashboard/license/activate-license-control.php:12
+msgid "Log in to your account to get your license key."
+msgstr "Авторизируйтесь в своем аккаунте, чтобы получить лицензионный ключ."
+
+#: templates/dashboard/license/activate-license-control.php:13
+msgid "Copy the license key from your account and paste it below."
+msgstr "Скопируйте лицензионный ключ из вашего аккаунта и введите ниже."
+
+#: templates/dashboard/license/activate-license-control.php:16
+#: templates/dashboard/license/deactivate-license-control.php:8
+msgid "Your License Key"
+msgstr "Ваш лицензионный ключ"
+
+#: templates/dashboard/license/activate-license-control.php:18
+msgid "Please enter your license key here"
+msgstr "Пожалуйста, введите ваш лицензионный ключ сюда"
+
+#: templates/dashboard/license/activate-license-control.php:25
+msgid "Your license key should look something like this:"
+msgstr "Ваш лицензионный ключ должен выглядеть так:"
+
+#: templates/dashboard/license/deactivate-license-control.php:12
+msgid "Deactivate"
+msgstr "Деактивировать"
+
+#: templates/dashboard/license/deactivate-license-control.php:15
+#: templates/dashboard/theme/child-theme.php:9
+msgid "Status:"
+msgstr "Статус:"
+
+#: templates/dashboard/plugins/core.php:22
+#: templates/dashboard/plugins/plugin.php:24
+msgid "Update"
+msgstr "Обновить"
+
+#: templates/dashboard/plugins/core.php:26
+#: templates/dashboard/plugins/plugin.php:28
+msgid "Documentation"
+msgstr "Документация"
+
+#: templates/dashboard/plugins/core.php:30
+msgid "Synchronize Templates Library"
+msgstr "Синхронизировать библиотеку шаблонов"
+
+#: templates/dashboard/skins/install-wizard.php:15
+msgid "Install Plugin"
+msgstr "Установить плагин"
+
+#: templates/dashboard/skins/install-wizard.php:21
+msgid ""
+"You need to install and activate <b>JetPluginsWizard</b> to manage skins"
+msgstr ""
+"Вам необходимо установить и активировать <b>JetPluginsWizard</b> чтобы "
+"работать со скинами"
+
+#: templates/dashboard/skins/skins-actions.php:8
+msgid "Synchronise Skins Library"
+msgstr "Синхронизировать библиотеку скинов"
+
+#: templates/dashboard/skins/skins-actions.php:24
+msgid "Activate License to Install Skins"
+msgstr "Активировать лицензию, чтобы установить скины"
+
+#: templates/dashboard/skins/skins-list.php:18
+msgid "Live Demo"
+msgstr "Демо"
+
+#: templates/dashboard/theme/backup-actions.php:10
+msgid "Enable automatic backup"
+msgstr "Включите авторезервирование"
+
+#: templates/dashboard/theme/backup-actions.php:11
+msgid ""
+"If On - new theme backup will be automaticcally created before each update"
+msgstr ""
+"Если эта опция включена - новая резервная копия темы будет автоматически "
+"создана перед каждым обновлением"
+
+#: templates/dashboard/theme/backup-actions.php:31
+msgid "Create Backup"
+msgstr "Создать резервную копию"
+
+#: templates/dashboard/theme/backups-list.php:11
+msgid "File"
+msgstr "Файл"
+
+#: templates/dashboard/theme/backups-list.php:14
+msgid "Created"
+msgstr "Создан"
+
+#: templates/dashboard/theme/backups-list.php:17
+msgid "Actions"
+msgstr "Действия"
+
+#: templates/dashboard/theme/child-theme.php:7
+msgid "Child Theme"
+msgstr "Дочерняя тема"
+
+#: templates/dashboard/theme/theme.php:21
+msgid "Update now"
+msgstr "Обновить сейчас"
+
+#: templates/dashboard/theme/theme.php:26
+msgid "New version available"
+msgstr "Доступна новая версия"
+
+#: templates/dashboard/theme/theme.php:34
+msgid "Check Updates"
+msgstr "Проверить обновления"
+
+#: templates/editor/template-library-error.php:8
+msgid "Template couldn't be loaded. Please activate you license key before."
+msgstr ""
+"Шаблон не может быть загружен. Пожалуйста, вначале активируйте лицензионный "
+"ключ."
+
+#: templates/editor/template-library-header-back.php:3
+msgid "Back to Library"
+msgstr "Назад в Библиотеку"
+
+#: templates/editor/template-library-header.php:8
+msgid "Close"
+msgstr "Закрыть"
+
+#: templates/editor/template-library-insert-button.php:4
+#: templates/editor/template-library-item.php:23
+msgid "Insert"
+msgstr "Вставить"
+
+#: templates/editor/template-library-item.php:31
+msgid "Clone to Library"
+msgstr "Копировать в библиотеку"
+
+#: templates/editor/template-library-item.php:42
+msgid "Type:"
+msgstr "Тип:"
+
+#: templates/editor/template-library-keywords.php:10
+msgid "Any Topic"
+msgstr "Тема"
+
+#: templates/template-types-popup.php:10
+msgid "Select Template Type"
+msgstr "Выберите тип шаблона"
+
+#: templates/template-types-popup.php:14
+msgid "Select Type:"
+msgstr "Выберите тип:"
+
+#: templates/template-types-popup.php:27
+msgid "Template Name:"
+msgstr "Имя шаблона:"
+
+#: templates/template-types-popup.php:28
+msgid "Set template name"
+msgstr "Введите имя шаблона"
+
+#: templates/template-types-popup.php:32
+msgid "Create Template"
+msgstr "Создайте шаблон"
+
+#~ msgid "Edit %s"
+#~ msgstr "Редактировать %s"
+
+#~ msgid ""
+#~ "Enter your license key here, to activate Elementor Pro, and get feature "
+#~ "updates, premium support and unlimited access to the template library."
+#~ msgstr ""
+#~ "Введите свой лицензионный ключ здесь, чтобы активировать Elementor Pro, и "
+#~ "получайте обновления компонентов, качественную поддержку и неограниченный "
+#~ "доступ к библиотеке шаблонов."
+
+#~ msgid "Select keyword..."
+#~ msgstr "Выберите ключевое слово..."

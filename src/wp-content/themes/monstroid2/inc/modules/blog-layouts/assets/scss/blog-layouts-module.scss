@@ -1,0 +1,15 @@
+@import "../../../../../assets/sass/variables-site/variables-site"; //main theme variables
+@import "../../../../../assets/sass/grid/variables";                //main theme grid variables
+@import "../../../../../assets/sass/grid/breakpoints";              //main theme grid breakpoints
+@import "../../../../../assets/sass/mixins/mixins-master";          //main theme mixins
+
+
+/*--------------------------------------------------------------
+## Blog layouts
+--------------------------------------------------------------*/
+
+@import "blog-layouts/list";
+@import "blog-layouts/creative";
+@import "blog-layouts/grid";
+@import "blog-layouts/vertical-justify";
+@import "blog-layouts/masonry";

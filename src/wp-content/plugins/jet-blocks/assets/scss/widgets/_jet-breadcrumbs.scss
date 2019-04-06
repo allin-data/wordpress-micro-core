@@ -1,0 +1,126 @@
+.jet-breadcrumbs {
+	display: flex;
+	flex-direction: column;
+
+	.jet-breadcrumbs-page-title-yes.jet-breadcrumbs-align-justify & {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		&__title,
+		&__content {
+			flex-grow: 0;
+		}
+	}
+
+	.jet-breadcrumbs-page-title-yes.jet-breadcrumbs-align-tablet-justify & {
+		@media ( max-width: $md-max ) {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			&__title,
+			&__content {
+				flex-grow: 0;
+			}
+		}
+	}
+
+	.jet-breadcrumbs-page-title-yes.jet-breadcrumbs-align-tablet-left &,
+	.jet-breadcrumbs-page-title-yes.jet-breadcrumbs-align-tablet-center &,
+	.jet-breadcrumbs-page-title-yes.jet-breadcrumbs-align-tablet-right &{
+		@media ( max-width: $md-max ) {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: stretch;
+
+			&__title,
+			&__content {
+				flex-grow: 1;
+			}
+		}
+	}
+
+	.jet-breadcrumbs-page-title-yes.jet-breadcrumbs-align-mobile-justify & {
+		@media ( max-width: $sm-max ) {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			&__title,
+			&__content {
+				flex-grow: 0;
+			}
+		}
+	}
+
+	.jet-breadcrumbs-page-title-yes.jet-breadcrumbs-align-mobile-left &,
+	.jet-breadcrumbs-page-title-yes.jet-breadcrumbs-align-mobile-center &,
+	.jet-breadcrumbs-page-title-yes.jet-breadcrumbs-align-mobile-right & {
+		@media ( max-width: $sm-max ) {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: stretch;
+
+			&__title,
+			&__content {
+				flex-grow: 1;
+			}
+		}
+	}
+
+	&__title,
+	&__content {
+		flex-grow: 1;
+	}
+
+	&__title {
+		padding: 0;
+		margin: 0;
+		border: none;
+		text-align: inherit;
+	}
+
+	&__content {
+		font-size: 0;
+	}
+
+	&__browse,
+	&__item,
+	&__item-link,
+	&__item-target {
+		display: inline-block;
+	}
+	&__wrap {
+		display: inline;
+	}
+
+	&__browse {
+		margin-right: 5px;
+	}
+
+	&__browse,
+	&__item {
+		font-size: 14px;
+		vertical-align: middle;
+	}
+
+	&__item-sep {
+		margin-left: 5px;
+		margin-right: 5px;
+
+		i {
+			display: block;
+			width: 1em;
+			height: 1em;
+			line-height: 1;
+			text-align: center;
+		}
+	}
+}
+
+body.home {
+	.elementor-widget-jet-breadcrumbs:not(.jet-breadcrumbs-on-front-yes):not(.elementor-element-edit-mode) {
+		display: none;
+	}
+}

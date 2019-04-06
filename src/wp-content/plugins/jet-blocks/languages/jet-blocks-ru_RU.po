@@ -1,0 +1,2563 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: JetBlocks for Elementor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-26 10:20+0200\n"
+"PO-Revision-Date: 2019-03-26 10:20+0200\n"
+"Last-Translator: \n"
+"Language-Team: Zemez\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;_ex:1,2c;_n:1,2;_nx:4c,1,2;_n_noop:1,2;"
+"_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: cherry-framework\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: includes/class-jet-blocks-ext-elements.php:69
+msgid "Column Order"
+msgstr "Порядок колонки"
+
+#: includes/class-jet-blocks-ext-elements.php:96
+msgid "Jet Sticky"
+msgstr "Jet Sticky"
+
+#: includes/class-jet-blocks-ext-elements.php:104
+msgid "Sticky Section"
+msgstr "Фиксированная секция"
+
+#: includes/class-jet-blocks-ext-elements.php:114
+msgid "Sticky Section Visibility"
+msgstr "Видимость фиксированной секции"
+
+#: includes/class-jet-blocks-ext-elements.php:120
+msgid "Desktop"
+msgstr "Компьютер"
+
+#: includes/class-jet-blocks-ext-elements.php:121
+msgid "Tablet"
+msgstr "Планшет"
+
+#: includes/class-jet-blocks-ext-elements.php:122
+msgid "Mobile"
+msgstr "Мобильное устройство"
+
+#: includes/class-jet-blocks-ext-elements.php:134
+msgid "Z-index"
+msgstr "Z - индекс"
+
+#: includes/class-jet-blocks-ext-elements.php:152
+msgid "Max Width (px)"
+msgstr "Максимальная ширина (px)"
+
+#: includes/class-jet-blocks-ext-elements.php:172
+msgid "Sticky Section Style"
+msgstr "Стиль фиксированной секции"
+
+#: includes/class-jet-blocks-ext-elements.php:184
+#: includes/widgets/jet-blocks-auth-links.php:578
+#: includes/widgets/jet-blocks-auth-links.php:777
+#: includes/widgets/jet-blocks-auth-links.php:976
+#: includes/widgets/jet-blocks-auth-links.php:1175
+#: includes/widgets/jet-blocks-breadcrumbs.php:295
+#: includes/widgets/jet-blocks-hamburger-panel.php:464
+#: includes/widgets/jet-blocks-login.php:197
+#: includes/widgets/jet-blocks-login.php:292
+#: includes/widgets/jet-blocks-login.php:445
+#: includes/widgets/jet-blocks-login.php:557
+#: includes/widgets/jet-blocks-login.php:636
+#: includes/widgets/jet-blocks-nav-menu.php:529
+#: includes/widgets/jet-blocks-register.php:270
+#: includes/widgets/jet-blocks-register.php:365
+#: includes/widgets/jet-blocks-register.php:518
+#: includes/widgets/jet-blocks-register.php:631
+#: includes/widgets/jet-blocks-search.php:364
+#: includes/widgets/jet-blocks-search.php:526
+#: includes/widgets/jet-blocks-search.php:600
+#: includes/widgets/jet-blocks-search.php:699
+#: includes/widgets/jet-blocks-search.php:1052
+#: includes/widgets/jet-blocks-search.php:1216
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:542
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:780
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:868
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:962
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1008
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1130
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1292
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1440
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1638
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1814
+msgid "Margin"
+msgstr "Внешний отступ"
+
+#: includes/class-jet-blocks-ext-elements.php:206
+#: includes/widgets/jet-blocks-auth-links.php:565
+#: includes/widgets/jet-blocks-auth-links.php:764
+#: includes/widgets/jet-blocks-auth-links.php:963
+#: includes/widgets/jet-blocks-auth-links.php:1162
+#: includes/widgets/jet-blocks-breadcrumbs.php:307
+#: includes/widgets/jet-blocks-breadcrumbs.php:512
+#: includes/widgets/jet-blocks-breadcrumbs.php:630
+#: includes/widgets/jet-blocks-breadcrumbs.php:736
+#: includes/widgets/jet-blocks-hamburger-panel.php:295
+#: includes/widgets/jet-blocks-hamburger-panel.php:452
+#: includes/widgets/jet-blocks-login.php:185
+#: includes/widgets/jet-blocks-login.php:280
+#: includes/widgets/jet-blocks-login.php:433
+#: includes/widgets/jet-blocks-login.php:624
+#: includes/widgets/jet-blocks-nav-menu.php:516
+#: includes/widgets/jet-blocks-nav-menu.php:734
+#: includes/widgets/jet-blocks-nav-menu.php:949
+#: includes/widgets/jet-blocks-nav-menu.php:1310
+#: includes/widgets/jet-blocks-register.php:257
+#: includes/widgets/jet-blocks-register.php:353
+#: includes/widgets/jet-blocks-register.php:506
+#: includes/widgets/jet-blocks-register.php:619
+#: includes/widgets/jet-blocks-search.php:351
+#: includes/widgets/jet-blocks-search.php:513
+#: includes/widgets/jet-blocks-search.php:588
+#: includes/widgets/jet-blocks-search.php:687
+#: includes/widgets/jet-blocks-search.php:1040
+#: includes/widgets/jet-blocks-search.php:1204
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:382
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:661
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:795
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:880
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:974
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1020
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1304
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1452
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1625
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1801
+msgid "Padding"
+msgstr "Внутренний отступ"
+
+#: includes/class-jet-blocks-ext-elements.php:243
+msgid "Transition Duration"
+msgstr "Продолжительность перехода"
+
+#: includes/class-jet-blocks-handlers.php:86
+msgid "ERROR"
+msgstr "Ошибка"
+
+#: includes/class-jet-blocks-handlers.php:87
+msgid "The username field is empty."
+msgstr "Поле имени пользователя пустое."
+
+#: includes/class-jet-blocks-handlers.php:138
+msgid "Entered passwords don't match"
+msgstr "Введённые пароли не совпадают"
+
+#: includes/class-jet-blocks-handlers.php:182
+msgid "Please enter a valid account username."
+msgstr "Пожалуйста, введите действительное имя пользователя аккаунта."
+
+#: includes/class-jet-blocks-handlers.php:189
+msgid ""
+"An account is already registered with that username. Please choose another."
+msgstr ""
+"Учётная запись уже зарегистрирована с этим именем пользователя. Пожалуйста, "
+"выберите другое имя."
+
+#: includes/class-jet-blocks-handlers.php:197
+msgid "Please provide a valid email address."
+msgstr "Пожалуйста, предоставьте действующий адрес электронной почты."
+
+#: includes/class-jet-blocks-handlers.php:204
+msgid ""
+"An account is already registered with your email address. Please log in."
+msgstr ""
+"Учетная запись уже зарегистрирована на ваш адрес электронной почты. "
+"Пожалуйста, войдите в систему."
+
+#: includes/class-jet-blocks-handlers.php:212
+msgid "Please enter an account password."
+msgstr "Пожалуйста, введите пароль учётной записи."
+
+#: includes/class-jet-blocks-handlers.php:227
+msgid "Error:"
+msgstr "Ошибка:"
+
+#: includes/class-jet-blocks-handlers.php:227
+msgid ""
+"Couldn&#8217;t register you&hellip; please contact us if you continue to "
+"have problems."
+msgstr ""
+"Не удалось&#8217;t зарегистрировать вас&hellip; пожалуйста, свяжитесь с "
+"нами, если проблема повторится."
+
+#: includes/class-jet-blocks-integration.php:231
+msgid "JetBlocks"
+msgstr "JetBlocks"
+
+#: includes/class-jet-blocks-settings.php:114
+msgid "Settings saved"
+msgstr "Настройки сохранены"
+
+#: includes/class-jet-blocks-settings.php:197
+#: includes/class-jet-blocks-settings.php:198
+#: includes/class-jet-blocks-settings.php:222
+msgid "JetBlocks Settings"
+msgstr "JetBlocks настройки"
+
+#: includes/class-jet-blocks-settings.php:266
+#: includes/class-jet-blocks-settings.php:280
+msgid "Available Widgets"
+msgstr "Доступные виджеты"
+
+#: includes/class-jet-blocks-settings.php:281
+msgid "List of widgets that will be available when editing the page"
+msgstr "Список виджетов доступных при редактировании страницы"
+
+#: includes/class-jet-blocks-settings.php:291
+#: includes/class-jet-blocks-settings.php:308
+msgid "Available Extensions"
+msgstr ""
+
+#: includes/class-jet-blocks-settings.php:305
+msgid "Sticky Section Extension"
+msgstr ""
+
+#: includes/class-jet-blocks-settings.php:306
+msgid "Column Order Extension"
+msgstr ""
+
+#: includes/class-jet-blocks-settings.php:309
+msgid "List of Extension that will be available when editing the page"
+msgstr ""
+
+#: includes/class-jet-blocks-settings.php:319
+msgid "Breadcrumbs Settings"
+msgstr ""
+
+#: includes/class-jet-blocks-settings.php:330
+msgid "Taxonomy to show in breadcrumbs for content types"
+msgstr ""
+
+#: includes/class-jet-blocks-settings.php:343
+#: includes/class-jet-blocks-tools.php:147
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:209
+#: includes/widgets/jet-blocks-nav-menu.php:1402
+#: includes/widgets/jet-blocks-search.php:158
+msgid "None"
+msgstr "Отсутствует"
+
+#: includes/class-jet-blocks-settings.php:376
+msgid "Save"
+msgstr "Сохранить"
+
+#: includes/class-jet-blocks-tools.php:96
+#: includes/widgets/jet-blocks-breadcrumbs.php:175
+msgid "Full"
+msgstr "Полный"
+
+#: includes/class-jet-blocks-tools.php:148
+msgid "ID"
+msgstr "ID"
+
+#: includes/class-jet-blocks-tools.php:149
+msgid "Author"
+msgstr "Автор"
+
+#: includes/class-jet-blocks-tools.php:150
+msgid "Title"
+msgstr "Название"
+
+#: includes/class-jet-blocks-tools.php:151
+msgid "Name (slug)"
+msgstr "Имя (slug)"
+
+#: includes/class-jet-blocks-tools.php:152
+msgid "Date"
+msgstr "Дата"
+
+#: includes/class-jet-blocks-tools.php:153
+msgid "Modified"
+msgstr "Модифицированный"
+
+#: includes/class-jet-blocks-tools.php:154
+msgid "Rand"
+msgstr "Рандомный"
+
+#: includes/class-jet-blocks-tools.php:155
+msgid "Comment Count"
+msgstr "Количество комментариев"
+
+#: includes/class-jet-blocks-tools.php:156
+msgid "Menu Order"
+msgstr "Порядок меню"
+
+#: includes/class-jet-blocks-tools.php:168
+msgid "Descending"
+msgstr "Нисходящий"
+
+#: includes/class-jet-blocks-tools.php:169
+msgid "Ascending"
+msgstr "Восходящий"
+
+#: includes/class-jet-blocks-tools.php:181
+#: includes/widgets/jet-blocks-logo.php:221
+msgid "Baseline"
+msgstr "Основание"
+
+#: includes/class-jet-blocks-tools.php:182
+#: includes/widgets/jet-blocks-logo.php:209
+#: includes/widgets/jet-blocks-search.php:757
+msgid "Top"
+msgstr "Верх"
+
+#: includes/class-jet-blocks-tools.php:183
+#: includes/widgets/jet-blocks-logo.php:213
+msgid "Middle"
+msgstr "Середина"
+
+#: includes/class-jet-blocks-tools.php:184
+#: includes/widgets/jet-blocks-logo.php:217
+#: includes/widgets/jet-blocks-search.php:758
+msgid "Bottom"
+msgstr "Низ"
+
+#: includes/class-jet-blocks-tools.php:185
+msgid "Sub"
+msgstr "Под"
+
+#: includes/class-jet-blocks-tools.php:186
+msgid "Super"
+msgstr "Над"
+
+#: includes/class-jet-blocks-tools.php:187
+msgid "Text Top"
+msgstr "Верх текста"
+
+#: includes/class-jet-blocks-tools.php:188
+msgid "Text Bottom"
+msgstr "Низ текста"
+
+#: includes/class-jet-blocks-tools.php:331
+#: includes/class-jet-blocks-tools.php:354
+#: includes/widgets/jet-blocks-nav-menu.php:1394
+msgid "Angle"
+msgstr "Angle"
+
+#: includes/class-jet-blocks-tools.php:332
+#: includes/class-jet-blocks-tools.php:355
+#: includes/widgets/jet-blocks-nav-menu.php:1396
+msgid "Chevron"
+msgstr "Chevron"
+
+#: includes/class-jet-blocks-tools.php:333
+#: includes/class-jet-blocks-tools.php:356
+#: includes/widgets/jet-blocks-nav-menu.php:1395
+msgid "Angle Double"
+msgstr "Angle Double"
+
+#: includes/class-jet-blocks-tools.php:334
+#: includes/class-jet-blocks-tools.php:357
+msgid "Arrow"
+msgstr "Arrow"
+
+#: includes/class-jet-blocks-tools.php:335
+#: includes/class-jet-blocks-tools.php:358
+#: includes/widgets/jet-blocks-nav-menu.php:1398
+msgid "Caret"
+msgstr "Caret"
+
+#: includes/class-jet-blocks-tools.php:336
+#: includes/class-jet-blocks-tools.php:359
+msgid "Long Arrow"
+msgstr "Long Arrow"
+
+#: includes/class-jet-blocks-tools.php:337
+#: includes/class-jet-blocks-tools.php:360
+msgid "Arrow Circle"
+msgstr "Arrow Circle"
+
+#: includes/class-jet-blocks-tools.php:338
+#: includes/class-jet-blocks-tools.php:361
+#: includes/widgets/jet-blocks-nav-menu.php:1397
+msgid "Chevron Circle"
+msgstr "Chevron Circle"
+
+#: includes/class-jet-blocks-tools.php:339
+#: includes/class-jet-blocks-tools.php:362
+msgid "Caret Square"
+msgstr "Caret Square"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:27
+#: includes/widgets/jet-blocks-auth-links.php:600
+#: includes/widgets/jet-blocks-auth-links.php:799
+#: includes/widgets/jet-blocks-auth-links.php:998
+#: includes/widgets/jet-blocks-auth-links.php:1197
+#: includes/widgets/jet-blocks-breadcrumbs.php:273
+#: includes/widgets/jet-blocks-breadcrumbs.php:380
+#: includes/widgets/jet-blocks-breadcrumbs.php:419
+#: includes/widgets/jet-blocks-breadcrumbs.php:472
+#: includes/widgets/jet-blocks-breadcrumbs.php:608
+#: includes/widgets/jet-blocks-breadcrumbs.php:708
+#: includes/widgets/jet-blocks-login.php:535
+#: includes/widgets/jet-blocks-logo.php:249
+#: includes/widgets/jet-blocks-nav-menu.php:1345
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1086
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1162
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1196
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1238
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1269
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1371
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1402
+msgid "Color"
+msgstr "Цвет"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:35
+msgctxt "Background Control"
+msgid "Background Type"
+msgstr "Тип фона"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:39
+msgctxt "Background Control"
+msgid "Classic"
+msgstr "Классический"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:43
+msgctxt "Background Control"
+msgid "Gradient"
+msgstr "Градиент"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:52
+msgctxt "Background Control"
+msgid "Color"
+msgstr "Цвет"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:55
+msgctxt "Background Control"
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:65
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:91
+msgctxt "Background Control"
+msgid "Location"
+msgstr "Местоположение"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:80
+msgctxt "Background Control"
+msgid "Second Color"
+msgstr "Второй цвет"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:106
+msgctxt "Background Control"
+msgid "Type"
+msgstr "Тип"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:109
+msgctxt "Background Control"
+msgid "Linear"
+msgstr "Линейный"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:110
+msgctxt "Background Control"
+msgid "Radial"
+msgstr "Радиальный"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:121
+msgctxt "Background Control"
+msgid "Angle"
+msgstr "Угол"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:144
+msgctxt "Background Control"
+msgid "Position"
+msgstr "Положение"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:147
+msgctxt "Background Control"
+msgid "Center Center"
+msgstr "Центр центр"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:148
+msgctxt "Background Control"
+msgid "Center Left"
+msgstr "Центр лево"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:149
+msgctxt "Background Control"
+msgid "Center Right"
+msgstr "Центр право"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:150
+msgctxt "Background Control"
+msgid "Top Center"
+msgstr "Верх центр"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:151
+msgctxt "Background Control"
+msgid "Top Left"
+msgstr "Верх лево"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:152
+msgctxt "Background Control"
+msgid "Top Right"
+msgstr "Верх право"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:153
+msgctxt "Background Control"
+msgid "Bottom Center"
+msgstr "Низ центр"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:154
+msgctxt "Background Control"
+msgid "Bottom Left"
+msgstr "Низ лево"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:155
+msgctxt "Background Control"
+msgid "Bottom Right"
+msgstr "Низ право"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:169
+#: includes/widgets/jet-blocks-breadcrumbs.php:576
+#: includes/widgets/jet-blocks-nav-menu.php:1218
+#: includes/widgets/jet-blocks-search.php:415
+#: includes/widgets/jet-blocks-search.php:996
+#: includes/widgets/jet-blocks-search.php:1185
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:416
+msgid "Icon Size"
+msgstr "Размер иконки"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:188
+msgid "Box Size"
+msgstr "Размер ячейки"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:206
+msgctxt "Border Control"
+msgid "Border Type"
+msgstr "Тип границы"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:210
+msgctxt "Border Control"
+msgid "Solid"
+msgstr "Сплошной"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:211
+msgctxt "Border Control"
+msgid "Double"
+msgstr "Двойной"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:212
+msgctxt "Border Control"
+msgid "Dotted"
+msgstr "Точечный"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:213
+msgctxt "Border Control"
+msgid "Dashed"
+msgstr "Пунктирный"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:221
+msgctxt "Border Control"
+msgid "Width"
+msgstr "Ширина"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:232
+msgctxt "Border Control"
+msgid "Color"
+msgstr "Цвет"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:244
+#: includes/widgets/jet-blocks-auth-links.php:545
+#: includes/widgets/jet-blocks-auth-links.php:744
+#: includes/widgets/jet-blocks-auth-links.php:943
+#: includes/widgets/jet-blocks-auth-links.php:1142
+#: includes/widgets/jet-blocks-breadcrumbs.php:329
+#: includes/widgets/jet-blocks-breadcrumbs.php:536
+#: includes/widgets/jet-blocks-breadcrumbs.php:652
+#: includes/widgets/jet-blocks-breadcrumbs.php:764
+#: includes/widgets/jet-blocks-hamburger-panel.php:275
+#: includes/widgets/jet-blocks-hamburger-panel.php:432
+#: includes/widgets/jet-blocks-login.php:219
+#: includes/widgets/jet-blocks-login.php:314
+#: includes/widgets/jet-blocks-login.php:467
+#: includes/widgets/jet-blocks-login.php:658
+#: includes/widgets/jet-blocks-nav-menu.php:551
+#: includes/widgets/jet-blocks-nav-menu.php:720
+#: includes/widgets/jet-blocks-nav-menu.php:1166
+#: includes/widgets/jet-blocks-register.php:292
+#: includes/widgets/jet-blocks-register.php:387
+#: includes/widgets/jet-blocks-register.php:540
+#: includes/widgets/jet-blocks-register.php:653
+#: includes/widgets/jet-blocks-search.php:386
+#: includes/widgets/jet-blocks-search.php:548
+#: includes/widgets/jet-blocks-search.php:622
+#: includes/widgets/jet-blocks-search.php:721
+#: includes/widgets/jet-blocks-search.php:1074
+#: includes/widgets/jet-blocks-search.php:1238
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:404
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:554
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:673
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1536
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1601
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1712
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1777
+msgid "Border Radius"
+msgstr "Скругление углов"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:253
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:263
+msgctxt "Box Shadow Control"
+msgid "Box Shadow"
+msgstr "Тень объекта"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:255
+#: includes/widgets/jet-blocks-auth-links.php:55
+#: includes/widgets/jet-blocks-auth-links.php:126
+#: includes/widgets/jet-blocks-auth-links.php:217
+#: includes/widgets/jet-blocks-auth-links.php:288
+#: includes/widgets/jet-blocks-logo.php:127
+#: includes/widgets/jet-blocks-logo.php:139
+#: includes/widgets/jet-blocks-register.php:108
+#: includes/widgets/jet-blocks-search.php:63
+#: includes/widgets/jet-blocks-search.php:101
+#: includes/widgets/jet-blocks-search.php:113
+#: includes/widgets/jet-blocks-search.php:173
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:57
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:81
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:105
+msgid "Yes"
+msgstr "Да"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:256
+#: includes/widgets/jet-blocks-auth-links.php:56
+#: includes/widgets/jet-blocks-auth-links.php:127
+#: includes/widgets/jet-blocks-auth-links.php:218
+#: includes/widgets/jet-blocks-auth-links.php:289
+#: includes/widgets/jet-blocks-logo.php:128
+#: includes/widgets/jet-blocks-logo.php:140
+#: includes/widgets/jet-blocks-register.php:109
+#: includes/widgets/jet-blocks-search.php:64
+#: includes/widgets/jet-blocks-search.php:102
+#: includes/widgets/jet-blocks-search.php:114
+#: includes/widgets/jet-blocks-search.php:174
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:58
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:82
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:106
+msgid "No"
+msgstr "Нет"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:274
+msgctxt "Box Shadow Control"
+msgid "Position"
+msgstr "Положение"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:277
+msgctxt "Box Shadow Control"
+msgid "Outline"
+msgstr "По контуру"
+
+#: includes/controls/groups/class-jet-blocks-group-control-box-style.php:278
+msgctxt "Box Shadow Control"
+msgid "Inset"
+msgstr "Внутри контура"
+
+#: includes/widgets/jet-blocks-auth-links.php:29
+msgid "Auth Links"
+msgstr "Auth Links"
+
+#: includes/widgets/jet-blocks-auth-links.php:45
+msgid "Login Link"
+msgstr "Авторизация"
+
+#: includes/widgets/jet-blocks-auth-links.php:52
+msgid "Show Login Link"
+msgstr "Показать ссылку авторизации"
+
+#: includes/widgets/jet-blocks-auth-links.php:53
+#: includes/widgets/jet-blocks-auth-links.php:215
+msgid "For not logged-in users"
+msgstr "Для неавторизированных пользователей"
+
+#: includes/widgets/jet-blocks-auth-links.php:65
+msgid "Login Page URL"
+msgstr "URL страницы авторизации"
+
+#: includes/widgets/jet-blocks-auth-links.php:76
+msgid "Login Link Text"
+msgstr "Текст ссылки авторизации"
+
+#: includes/widgets/jet-blocks-auth-links.php:78
+msgid "Login"
+msgstr "Логин"
+
+#: includes/widgets/jet-blocks-auth-links.php:88
+msgid "Login Icon"
+msgstr "Иконка логина"
+
+#: includes/widgets/jet-blocks-auth-links.php:102
+msgid "Login Prefix"
+msgstr "Префикс логина"
+
+#: includes/widgets/jet-blocks-auth-links.php:104
+msgid "Have an account?"
+msgstr "Уже имеете аккаунт?"
+
+#: includes/widgets/jet-blocks-auth-links.php:116
+msgid "Logout Link"
+msgstr "Выход из аккаунта"
+
+#: includes/widgets/jet-blocks-auth-links.php:123
+msgid "Show Logout Link"
+msgstr "Показать ссылку выхода"
+
+#: includes/widgets/jet-blocks-auth-links.php:124
+#: includes/widgets/jet-blocks-auth-links.php:286
+msgid "For logged-in users"
+msgstr "Для авторизированных пользователей"
+
+#: includes/widgets/jet-blocks-auth-links.php:136
+msgid "Logout Link Text"
+msgstr "Текст ссылки выхода"
+
+#: includes/widgets/jet-blocks-auth-links.php:138
+msgid "Logout"
+msgstr "Выйти"
+
+#: includes/widgets/jet-blocks-auth-links.php:148
+msgid "Logout Icon"
+msgstr "Иконка выхода"
+
+#: includes/widgets/jet-blocks-auth-links.php:163
+msgid "Redirect After Logout"
+msgstr "Перенаправление после выхода из аккаунта"
+
+#: includes/widgets/jet-blocks-auth-links.php:166
+#: includes/widgets/jet-blocks-login.php:92
+#: includes/widgets/jet-blocks-register.php:155
+msgid "Home page"
+msgstr "Главная страница"
+
+#: includes/widgets/jet-blocks-auth-links.php:167
+msgid "Left on the current page"
+msgstr "Текущая страница"
+
+#: includes/widgets/jet-blocks-auth-links.php:168
+#: includes/widgets/jet-blocks-login.php:94
+#: includes/widgets/jet-blocks-register.php:157
+msgid "Custom URL"
+msgstr "Пользовательский URL"
+
+#: includes/widgets/jet-blocks-auth-links.php:179
+msgid "Logout Link URL"
+msgstr "URL-адрес выхода из системы"
+
+#: includes/widgets/jet-blocks-auth-links.php:192
+msgid "Logout Prefix"
+msgstr "Префикс выхода"
+
+#: includes/widgets/jet-blocks-auth-links.php:194
+#, php-format
+msgid "Hi, %s"
+msgstr "Привет, %s"
+
+#: includes/widgets/jet-blocks-auth-links.php:195
+#, php-format
+msgid "Use %s marker for username"
+msgstr "Использовать %s маркер для имени пользователя"
+
+#: includes/widgets/jet-blocks-auth-links.php:207
+msgid "Register Link"
+msgstr "Регистрация"
+
+#: includes/widgets/jet-blocks-auth-links.php:214
+msgid "Show Register Link"
+msgstr "Отображать ссылку регистрации"
+
+#: includes/widgets/jet-blocks-auth-links.php:227
+msgid "Register Page URL"
+msgstr "URL страницы регистарции"
+
+#: includes/widgets/jet-blocks-auth-links.php:238
+msgid "Register Link Text"
+msgstr "Текст ссылки регистрации"
+
+#: includes/widgets/jet-blocks-auth-links.php:240
+#: includes/widgets/jet-blocks-register.php:144
+msgid "Register"
+msgstr "Регистрация"
+
+#: includes/widgets/jet-blocks-auth-links.php:250
+msgid "Register Icon"
+msgstr "Иконка регистрации"
+
+#: includes/widgets/jet-blocks-auth-links.php:264
+msgid "Register Prefix"
+msgstr "Префикс регистрации"
+
+#: includes/widgets/jet-blocks-auth-links.php:266
+msgid "or"
+msgstr "или"
+
+#: includes/widgets/jet-blocks-auth-links.php:278
+msgid "Registered Link"
+msgstr "Аккаунт"
+
+#: includes/widgets/jet-blocks-auth-links.php:285
+msgid "Show Registered Link"
+msgstr "Отображать ссылку для авторизированных пользователей"
+
+#: includes/widgets/jet-blocks-auth-links.php:298
+msgid "Registered Page URL"
+msgstr "URL страницы аккаунта зарегистрированных пользователей"
+
+#: includes/widgets/jet-blocks-auth-links.php:309
+msgid "Registered Link Text"
+msgstr "Текст ссылки аккаунта зарегистрированных пользователей"
+
+#: includes/widgets/jet-blocks-auth-links.php:311
+msgid "My Account"
+msgstr "Мой аккаунт"
+
+#: includes/widgets/jet-blocks-auth-links.php:321
+msgid "Registered Icon"
+msgstr "Иконка ссылки аккаунта"
+
+#: includes/widgets/jet-blocks-auth-links.php:335
+msgid "Registered Prefix"
+msgstr "Префикс ссылки аккаунта"
+
+#: includes/widgets/jet-blocks-auth-links.php:349
+msgid "General"
+msgstr "Общие"
+
+#: includes/widgets/jet-blocks-auth-links.php:356
+#: includes/widgets/jet-blocks-breadcrumbs.php:214
+msgid "Order"
+msgstr "Порядок"
+
+#: includes/widgets/jet-blocks-auth-links.php:361
+msgid "Login/Logout, Register/Registered"
+msgstr "Вход/Выход, Регистрация/Аккаунт"
+
+#: includes/widgets/jet-blocks-auth-links.php:362
+msgid "Register/Registered, Login/Logout"
+msgstr "Регистрация/Аккаунт, Вход/Выход"
+
+#: includes/widgets/jet-blocks-auth-links.php:372
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:161
+msgid "General Styles"
+msgstr "Общие стили"
+
+#: includes/widgets/jet-blocks-auth-links.php:381
+msgid "Auth Links Alignment"
+msgstr "Выравнивание ссылок для авторизации"
+
+#: includes/widgets/jet-blocks-auth-links.php:386
+#: includes/widgets/jet-blocks-breadcrumbs.php:188
+#: includes/widgets/jet-blocks-hamburger-panel.php:111
+#: includes/widgets/jet-blocks-hamburger-panel.php:185
+#: includes/widgets/jet-blocks-login.php:492
+#: includes/widgets/jet-blocks-logo.php:182
+#: includes/widgets/jet-blocks-logo.php:302
+#: includes/widgets/jet-blocks-nav-menu.php:119
+#: includes/widgets/jet-blocks-nav-menu.php:170
+#: includes/widgets/jet-blocks-nav-menu.php:272
+#: includes/widgets/jet-blocks-register.php:565
+#: includes/widgets/jet-blocks-search.php:833
+#: includes/widgets/jet-blocks-search.php:1019
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:174
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:689
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:827
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:896
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1330
+msgid "Left"
+msgstr "Слева"
+
+#: includes/widgets/jet-blocks-auth-links.php:390
+#: includes/widgets/jet-blocks-breadcrumbs.php:192
+#: includes/widgets/jet-blocks-hamburger-panel.php:115
+#: includes/widgets/jet-blocks-login.php:496
+#: includes/widgets/jet-blocks-logo.php:186
+#: includes/widgets/jet-blocks-logo.php:306
+#: includes/widgets/jet-blocks-nav-menu.php:123
+#: includes/widgets/jet-blocks-nav-menu.php:174
+#: includes/widgets/jet-blocks-nav-menu.php:276
+#: includes/widgets/jet-blocks-register.php:569
+#: includes/widgets/jet-blocks-search.php:1023
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:178
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:831
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:900
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1334
+msgid "Center"
+msgstr "По центру"
+
+#: includes/widgets/jet-blocks-auth-links.php:394
+#: includes/widgets/jet-blocks-breadcrumbs.php:196
+#: includes/widgets/jet-blocks-hamburger-panel.php:119
+#: includes/widgets/jet-blocks-hamburger-panel.php:184
+#: includes/widgets/jet-blocks-login.php:500
+#: includes/widgets/jet-blocks-logo.php:190
+#: includes/widgets/jet-blocks-logo.php:310
+#: includes/widgets/jet-blocks-nav-menu.php:127
+#: includes/widgets/jet-blocks-nav-menu.php:178
+#: includes/widgets/jet-blocks-nav-menu.php:280
+#: includes/widgets/jet-blocks-register.php:573
+#: includes/widgets/jet-blocks-search.php:834
+#: includes/widgets/jet-blocks-search.php:1027
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:182
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:690
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:835
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:904
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1338
+msgid "Right"
+msgstr "Справа"
+
+#: includes/widgets/jet-blocks-auth-links.php:423
+msgid "Login Link Styles"
+msgstr "Стили ссылки авторизации"
+
+#: includes/widgets/jet-blocks-auth-links.php:432
+#: includes/widgets/jet-blocks-auth-links.php:631
+#: includes/widgets/jet-blocks-auth-links.php:830
+#: includes/widgets/jet-blocks-auth-links.php:1029
+msgid "Link"
+msgstr "Ссылка"
+
+#: includes/widgets/jet-blocks-auth-links.php:451
+#: includes/widgets/jet-blocks-auth-links.php:650
+#: includes/widgets/jet-blocks-auth-links.php:849
+#: includes/widgets/jet-blocks-auth-links.php:1048
+#: includes/widgets/jet-blocks-breadcrumbs.php:365
+#: includes/widgets/jet-blocks-hamburger-panel.php:318
+#: includes/widgets/jet-blocks-hamburger-panel.php:369
+#: includes/widgets/jet-blocks-hamburger-panel.php:487
+#: includes/widgets/jet-blocks-hamburger-panel.php:536
+#: includes/widgets/jet-blocks-login.php:347
+#: includes/widgets/jet-blocks-nav-menu.php:303
+#: includes/widgets/jet-blocks-nav-menu.php:854
+#: includes/widgets/jet-blocks-nav-menu.php:1077
+#: includes/widgets/jet-blocks-register.php:420
+#: includes/widgets/jet-blocks-search.php:231
+#: includes/widgets/jet-blocks-search.php:435
+#: includes/widgets/jet-blocks-search.php:918
+#: includes/widgets/jet-blocks-search.php:1107
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:208
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1496
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1672
+msgid "Normal"
+msgstr "Стандарт"
+
+#: includes/widgets/jet-blocks-auth-links.php:458
+#: includes/widgets/jet-blocks-auth-links.php:494
+#: includes/widgets/jet-blocks-auth-links.php:657
+#: includes/widgets/jet-blocks-auth-links.php:693
+#: includes/widgets/jet-blocks-auth-links.php:856
+#: includes/widgets/jet-blocks-auth-links.php:892
+#: includes/widgets/jet-blocks-auth-links.php:1055
+#: includes/widgets/jet-blocks-auth-links.php:1091
+#: includes/widgets/jet-blocks-login.php:166
+#: includes/widgets/jet-blocks-login.php:261
+#: includes/widgets/jet-blocks-login.php:365
+#: includes/widgets/jet-blocks-login.php:396
+#: includes/widgets/jet-blocks-login.php:591
+#: includes/widgets/jet-blocks-nav-menu.php:321
+#: includes/widgets/jet-blocks-nav-menu.php:382
+#: includes/widgets/jet-blocks-nav-menu.php:457
+#: includes/widgets/jet-blocks-nav-menu.php:872
+#: includes/widgets/jet-blocks-nav-menu.php:903
+#: includes/widgets/jet-blocks-nav-menu.php:934
+#: includes/widgets/jet-blocks-nav-menu.php:1095
+#: includes/widgets/jet-blocks-nav-menu.php:1126
+#: includes/widgets/jet-blocks-register.php:208
+#: includes/widgets/jet-blocks-register.php:334
+#: includes/widgets/jet-blocks-register.php:438
+#: includes/widgets/jet-blocks-register.php:469
+#: includes/widgets/jet-blocks-register.php:608
+#: includes/widgets/jet-blocks-search.php:249
+#: includes/widgets/jet-blocks-search.php:301
+#: includes/widgets/jet-blocks-search.php:453
+#: includes/widgets/jet-blocks-search.php:484
+#: includes/widgets/jet-blocks-search.php:936
+#: includes/widgets/jet-blocks-search.php:967
+#: includes/widgets/jet-blocks-search.php:1125
+#: includes/widgets/jet-blocks-search.php:1156
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1514
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1576
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1690
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1752
+msgid "Text Color"
+msgstr "Цвет текста"
+
+#: includes/widgets/jet-blocks-auth-links.php:474
+#: includes/widgets/jet-blocks-auth-links.php:505
+#: includes/widgets/jet-blocks-auth-links.php:673
+#: includes/widgets/jet-blocks-auth-links.php:704
+#: includes/widgets/jet-blocks-auth-links.php:872
+#: includes/widgets/jet-blocks-auth-links.php:903
+#: includes/widgets/jet-blocks-auth-links.php:1071
+#: includes/widgets/jet-blocks-auth-links.php:1102
+#: includes/widgets/jet-blocks-breadcrumbs.php:284
+#: includes/widgets/jet-blocks-breadcrumbs.php:391
+#: includes/widgets/jet-blocks-breadcrumbs.php:430
+#: includes/widgets/jet-blocks-breadcrumbs.php:483
+#: includes/widgets/jet-blocks-breadcrumbs.php:619
+#: includes/widgets/jet-blocks-breadcrumbs.php:722
+#: includes/widgets/jet-blocks-login.php:155
+#: includes/widgets/jet-blocks-login.php:250
+#: includes/widgets/jet-blocks-login.php:354
+#: includes/widgets/jet-blocks-login.php:385
+#: includes/widgets/jet-blocks-login.php:580
+#: includes/widgets/jet-blocks-nav-menu.php:310
+#: includes/widgets/jet-blocks-nav-menu.php:371
+#: includes/widgets/jet-blocks-nav-menu.php:446
+#: includes/widgets/jet-blocks-nav-menu.php:691
+#: includes/widgets/jet-blocks-nav-menu.php:861
+#: includes/widgets/jet-blocks-nav-menu.php:892
+#: includes/widgets/jet-blocks-nav-menu.php:923
+#: includes/widgets/jet-blocks-nav-menu.php:1084
+#: includes/widgets/jet-blocks-nav-menu.php:1115
+#: includes/widgets/jet-blocks-register.php:197
+#: includes/widgets/jet-blocks-register.php:323
+#: includes/widgets/jet-blocks-register.php:427
+#: includes/widgets/jet-blocks-register.php:458
+#: includes/widgets/jet-blocks-register.php:597
+#: includes/widgets/jet-blocks-search.php:238
+#: includes/widgets/jet-blocks-search.php:290
+#: includes/widgets/jet-blocks-search.php:442
+#: includes/widgets/jet-blocks-search.php:473
+#: includes/widgets/jet-blocks-search.php:577
+#: includes/widgets/jet-blocks-search.php:676
+#: includes/widgets/jet-blocks-search.php:925
+#: includes/widgets/jet-blocks-search.php:956
+#: includes/widgets/jet-blocks-search.php:1114
+#: includes/widgets/jet-blocks-search.php:1145
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:215
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:290
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:614
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1503
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1565
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1679
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1741
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#: includes/widgets/jet-blocks-auth-links.php:487
+#: includes/widgets/jet-blocks-auth-links.php:686
+#: includes/widgets/jet-blocks-auth-links.php:885
+#: includes/widgets/jet-blocks-auth-links.php:1084
+#: includes/widgets/jet-blocks-breadcrumbs.php:404
+#: includes/widgets/jet-blocks-hamburger-panel.php:336
+#: includes/widgets/jet-blocks-hamburger-panel.php:394
+#: includes/widgets/jet-blocks-hamburger-panel.php:505
+#: includes/widgets/jet-blocks-hamburger-panel.php:565
+#: includes/widgets/jet-blocks-login.php:378
+#: includes/widgets/jet-blocks-nav-menu.php:364
+#: includes/widgets/jet-blocks-nav-menu.php:885
+#: includes/widgets/jet-blocks-nav-menu.php:1108
+#: includes/widgets/jet-blocks-register.php:451
+#: includes/widgets/jet-blocks-search.php:466
+#: includes/widgets/jet-blocks-search.php:949
+#: includes/widgets/jet-blocks-search.php:1138
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:283
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1558
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1734
+msgid "Hover"
+msgstr "При наведении"
+
+#: includes/widgets/jet-blocks-auth-links.php:516
+#: includes/widgets/jet-blocks-auth-links.php:715
+#: includes/widgets/jet-blocks-auth-links.php:914
+#: includes/widgets/jet-blocks-auth-links.php:1113
+#: includes/widgets/jet-blocks-breadcrumbs.php:441
+#: includes/widgets/jet-blocks-breadcrumbs.php:494
+#: includes/widgets/jet-blocks-login.php:407
+#: includes/widgets/jet-blocks-nav-menu.php:393
+#: includes/widgets/jet-blocks-nav-menu.php:468
+#: includes/widgets/jet-blocks-nav-menu.php:1137
+#: includes/widgets/jet-blocks-register.php:480
+#: includes/widgets/jet-blocks-search.php:325
+#: includes/widgets/jet-blocks-search.php:495
+#: includes/widgets/jet-blocks-search.php:978
+#: includes/widgets/jet-blocks-search.php:1167
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:301
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1587
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1763
+msgid "Border Color"
+msgstr "Цвет границы"
+
+#: includes/widgets/jet-blocks-auth-links.php:591
+#: includes/widgets/jet-blocks-auth-links.php:790
+#: includes/widgets/jet-blocks-auth-links.php:989
+#: includes/widgets/jet-blocks-auth-links.php:1188
+msgid "Prefix"
+msgstr "Префикс"
+
+#: includes/widgets/jet-blocks-auth-links.php:622
+msgid "Logout Link Styles"
+msgstr "Стили ссылки выхода из аккаунта"
+
+#: includes/widgets/jet-blocks-auth-links.php:821
+msgid "Register Link Styles"
+msgstr "Стили ссылки регистрации"
+
+#: includes/widgets/jet-blocks-auth-links.php:1020
+msgid "Registered Link Styles"
+msgstr "Стили ссылки на просмотр аккаунта"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:29
+#: includes/widgets/jet-blocks-breadcrumbs.php:346
+msgid "Breadcrumbs"
+msgstr "Breadcrumbs"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:63
+#: includes/widgets/jet-blocks-search.php:45
+msgid "General Settings"
+msgstr "Общие настройки"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:70
+msgid "Show on Front Page"
+msgstr "Отображать на главной странице"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:80
+msgid "Show Page Title"
+msgstr "Отображать заголовок страницы"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:91
+msgid "Title HTML Tag"
+msgstr "HTML-разметка заголовка"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:112
+msgid "Show Prefix"
+msgstr "Отображать префикс"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:121
+msgid "Prefix for the breadcrumb path"
+msgstr "Префикс для breadcrumbs"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:124
+msgid "Browse:"
+msgstr "Вы находитесь здесь:"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:134
+msgid "Separator Type"
+msgstr "Тип разделителя"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:137
+#: includes/widgets/jet-blocks-hamburger-panel.php:65
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:44
+msgid "Icon"
+msgstr "Иконка"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:138
+#: includes/widgets/jet-blocks-logo.php:93
+msgid "Custom"
+msgstr "Кастомный"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:147
+msgid "Icon Separator"
+msgstr "Иконка разделителя"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:159
+msgid "Custom Separator"
+msgstr "Кастомный разделитель"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:171
+msgid "Path type"
+msgstr "Тип отображения breadcrumbs"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:176
+msgid "Minified"
+msgstr "Минимизированный"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:184
+#: includes/widgets/jet-blocks-login.php:487
+#: includes/widgets/jet-blocks-logo.php:298
+#: includes/widgets/jet-blocks-register.php:560
+#: includes/widgets/jet-blocks-search.php:1015
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:170
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:823
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:892
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1326
+msgid "Alignment"
+msgstr "Выравнивание"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:200
+#: includes/widgets/jet-blocks-nav-menu.php:131
+msgid "Justified"
+msgstr "По ширине"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:219
+msgid "Page Title / Breadcrumbs Items"
+msgstr "Заголовок страницы / Элементы breadcrumbs"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:220
+msgid "Breadcrumbs Items / Page Title"
+msgstr "Элементы breadcrumbs / Заголовок страницы"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:239
+#, php-format
+msgid "Additional settings are available in the %s"
+msgstr ""
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:240
+msgid "Settings page"
+msgstr ""
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:253
+msgid "Page Title"
+msgstr "Заголовок страницы"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:320
+#: includes/widgets/jet-blocks-breadcrumbs.php:527
+#: includes/widgets/jet-blocks-breadcrumbs.php:643
+#: includes/widgets/jet-blocks-breadcrumbs.php:752
+#: includes/widgets/jet-blocks-hamburger-panel.php:265
+#: includes/widgets/jet-blocks-hamburger-panel.php:422
+#: includes/widgets/jet-blocks-login.php:210
+#: includes/widgets/jet-blocks-login.php:305
+#: includes/widgets/jet-blocks-login.php:458
+#: includes/widgets/jet-blocks-login.php:649
+#: includes/widgets/jet-blocks-nav-menu.php:542
+#: includes/widgets/jet-blocks-nav-menu.php:703
+#: includes/widgets/jet-blocks-nav-menu.php:1156
+#: includes/widgets/jet-blocks-register.php:283
+#: includes/widgets/jet-blocks-register.php:378
+#: includes/widgets/jet-blocks-register.php:531
+#: includes/widgets/jet-blocks-register.php:644
+#: includes/widgets/jet-blocks-search.php:377
+#: includes/widgets/jet-blocks-search.php:539
+#: includes/widgets/jet-blocks-search.php:613
+#: includes/widgets/jet-blocks-search.php:712
+#: includes/widgets/jet-blocks-search.php:1065
+#: includes/widgets/jet-blocks-search.php:1229
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:395
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:626
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:811
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:987
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1317
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1465
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1526
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1702
+msgid "Border"
+msgstr "Граница"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:355
+msgid "Crumbs Style"
+msgstr "Стиль breadcrumbs"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:457
+msgid "Current"
+msgstr "Текущий"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:549
+msgid "Separators Style"
+msgstr "Стиль разделителя"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:558
+#: includes/widgets/jet-blocks-breadcrumbs.php:676
+#: includes/widgets/jet-blocks-logo.php:273
+msgid "Gap"
+msgstr "Отступ"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:664
+msgid "Prefix Style"
+msgstr "Стиль префикса"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:798
+msgid "404 Not Found"
+msgstr "404 Не найдено"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:799
+msgid "Archives"
+msgstr "Архивы"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:800
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "Результаты поиска для &#8220;%s&#8221;"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:801
+#, php-format
+msgid "Page %s"
+msgstr "Страничка %s"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:802
+#, php-format
+msgid "Minute %s"
+msgstr "Минута %s"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:803
+#, php-format
+msgid "Week %s"
+msgstr "Неделя %s"
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:806
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:807
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:808
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:809
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:810
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr ""
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:811
+msgctxt "daily archives date format"
+msgid "j"
+msgstr ""
+
+#: includes/widgets/jet-blocks-breadcrumbs.php:812
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:29
+msgid "Hamburger Panel"
+msgstr "Hamburger Panel"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:58
+#: includes/widgets/jet-blocks-login.php:45
+#: includes/widgets/jet-blocks-logo.php:45
+#: includes/widgets/jet-blocks-register.php:45
+msgid "Content"
+msgstr "Контент"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:76
+msgid "Active Icon"
+msgstr "Иконка Активной панели"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:87
+#: includes/widgets/jet-blocks-hamburger-panel.php:325
+#: includes/widgets/jet-blocks-hamburger-panel.php:343
+msgid "Close Icon"
+msgstr "Иконка опции Закрыть"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:98
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:35
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:452
+msgid "Label"
+msgstr "Текст"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:100
+msgid "More"
+msgstr "Далее"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:107
+msgid "Toggle Alignment"
+msgstr "Выравнивание гамбургера"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:146
+msgid "Select"
+msgstr "Выбрать"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:159
+msgid "Choose Template"
+msgstr "Выбрать шаблон для отображения"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:173
+#: includes/widgets/jet-blocks-logo.php:118
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:28
+msgid "Settings"
+msgstr "Настройки"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:180
+msgid "Position"
+msgstr "Положение"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:193
+msgid "Effect"
+msgstr "Эффект"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:197
+msgid "Slide"
+msgstr "Slide"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:198
+#: includes/widgets/jet-blocks-search.php:159
+msgid "Fade"
+msgstr "Fade"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:199
+msgid "Zoom"
+msgstr "Zoom"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:207
+msgid "Z-Index"
+msgstr "Z-индекс"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:223
+msgid "Panel"
+msgstr "Панель"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:232
+msgid "Panel Width"
+msgstr "Ширина панели"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:307
+msgid "Close Button"
+msgstr "Кнопка Закрыть"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:358
+msgid "Toggle"
+msgstr "Кнопка-гамбургер"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:476
+msgid "Icon Styles"
+msgstr "Стили иконок"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:494
+#: includes/widgets/jet-blocks-hamburger-panel.php:512
+msgid "Toggle Icon"
+msgstr "Иконка гамбургера"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:525
+msgid "Label Styles"
+msgstr "Стили текста"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:543
+#: includes/widgets/jet-blocks-hamburger-panel.php:572
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:226
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:315
+msgid "Label Color"
+msgstr "Цвет текста"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:661
+msgid "Edit Template"
+msgstr "Редактировать шаблон"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:692
+msgid "You Haven’t Saved Templates Yet."
+msgstr "Вы еще не сохранили шаблон."
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:693
+msgid "What is Library?"
+msgstr "Что такое Библиотека?"
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:693
+msgid "Read our tutorial on using Library templates."
+msgstr ""
+"Ознакомьтесь с нашим руководством по использованию шаблонов библиотеки."
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:703
+msgid "Template is not defined. "
+msgstr "Шаблон не определён "
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:715
+msgid "Select an existing template or create a "
+msgstr "Выберите существующий шаблон или создайте "
+
+#: includes/widgets/jet-blocks-hamburger-panel.php:715
+msgid "new one"
+msgstr "новый"
+
+#: includes/widgets/jet-blocks-login.php:29
+msgid "Login Form"
+msgstr "Login Form"
+
+#: includes/widgets/jet-blocks-login.php:52
+#: includes/widgets/jet-blocks-register.php:52
+msgid "Username Label"
+msgstr "Текст поля для имени пользователя"
+
+#: includes/widgets/jet-blocks-login.php:54
+#: includes/widgets/jet-blocks-register.php:54
+#: includes/widgets/jet-blocks-register.php:63
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: includes/widgets/jet-blocks-login.php:61
+#: includes/widgets/jet-blocks-register.php:88
+msgid "Password Label"
+msgstr "Текст поля для пароля"
+
+#: includes/widgets/jet-blocks-login.php:63
+#: includes/widgets/jet-blocks-register.php:90
+#: includes/widgets/jet-blocks-register.php:99
+msgid "Password"
+msgstr "Пароль"
+
+#: includes/widgets/jet-blocks-login.php:70
+msgid "Remember Me Label"
+msgstr "Текст опции \"Запомнить меня\""
+
+#: includes/widgets/jet-blocks-login.php:72
+msgid "Remember Me"
+msgstr "Запомнить меня"
+
+#: includes/widgets/jet-blocks-login.php:79
+msgid "Log In Button Label"
+msgstr "Текст для кнопки авторизации"
+
+#: includes/widgets/jet-blocks-login.php:81
+msgid "Log In"
+msgstr "Вход"
+
+#: includes/widgets/jet-blocks-login.php:89
+msgid "Redirect After Login"
+msgstr "Перенаправление после авторизации"
+
+#: includes/widgets/jet-blocks-login.php:93
+#: includes/widgets/jet-blocks-register.php:156
+msgid "Stay on the current page"
+msgstr "Остаться на текущей странице"
+
+#: includes/widgets/jet-blocks-login.php:102
+#: includes/widgets/jet-blocks-register.php:165
+msgid "Redirect URL"
+msgstr "Redirect URL"
+
+#: includes/widgets/jet-blocks-login.php:114
+msgid "Logged in message"
+msgstr "Сообщение о совершенной авторизации"
+
+#: includes/widgets/jet-blocks-login.php:116
+msgid "You already logged in"
+msgstr "Вы уже авторизированы"
+
+#: includes/widgets/jet-blocks-login.php:123
+msgid "Lost Password link"
+msgstr ""
+
+#: includes/widgets/jet-blocks-login.php:132
+msgid "Lost Password link text"
+msgstr ""
+
+#: includes/widgets/jet-blocks-login.php:134
+msgid "Lost your password?"
+msgstr ""
+
+#: includes/widgets/jet-blocks-login.php:146
+#: includes/widgets/jet-blocks-register.php:188
+msgid "Fields"
+msgstr "Поля"
+
+#: includes/widgets/jet-blocks-login.php:241
+#: includes/widgets/jet-blocks-register.php:314
+msgid "Labels"
+msgstr "Заголовки элементов"
+
+#: includes/widgets/jet-blocks-login.php:336
+#: includes/widgets/jet-blocks-register.php:409
+msgid "Submit"
+msgstr "Кнопка авторизации"
+
+#: includes/widgets/jet-blocks-login.php:515
+msgid "Lost Password Link"
+msgstr ""
+
+#: includes/widgets/jet-blocks-login.php:546
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1173
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1207
+msgid "Hover Color"
+msgstr "Цвет при наведении"
+
+#: includes/widgets/jet-blocks-login.php:571
+#: includes/widgets/jet-blocks-register.php:588
+msgid "Errors"
+msgstr "Ошибки"
+
+#: includes/widgets/jet-blocks-login.php:602
+msgid "Link Color"
+msgstr ""
+
+#: includes/widgets/jet-blocks-login.php:613
+msgid "Link Hover Color"
+msgstr ""
+
+#: includes/widgets/jet-blocks-logo.php:29
+msgid "Site Logo"
+msgstr "Site Logo"
+
+#: includes/widgets/jet-blocks-logo.php:53
+msgid "Logo Type"
+msgstr "Тип логотипа"
+
+#: includes/widgets/jet-blocks-logo.php:56
+#: includes/widgets/jet-blocks-logo.php:240
+msgid "Text"
+msgstr "Текст"
+
+#: includes/widgets/jet-blocks-logo.php:57
+msgid "Image"
+msgstr "Изображение"
+
+#: includes/widgets/jet-blocks-logo.php:58
+msgid "Both Text and Image"
+msgstr "Текст и изображение"
+
+#: includes/widgets/jet-blocks-logo.php:66
+msgid "Logo Image"
+msgstr "Изображение логотипа"
+
+#: includes/widgets/jet-blocks-logo.php:77
+msgid "Retina Logo Image"
+msgstr "Изображение логотипа Retina"
+
+#: includes/widgets/jet-blocks-logo.php:89
+msgid "Logo Text From"
+msgstr "Использовать как логотип:"
+
+#: includes/widgets/jet-blocks-logo.php:92
+msgid "Site Name"
+msgstr "Название сайта"
+
+#: includes/widgets/jet-blocks-logo.php:104
+msgid "Custom Logo Text"
+msgstr "Кастомный текст логотипа"
+
+#: includes/widgets/jet-blocks-logo.php:125
+msgid "Linked Logo"
+msgstr "Логотип со ссылкой"
+
+#: includes/widgets/jet-blocks-logo.php:137
+msgid "Remove Link on Front Page"
+msgstr "Не использовать ссылку для главной страницы"
+
+#: includes/widgets/jet-blocks-logo.php:150
+msgid "Display Logo Image and Text"
+msgstr "Отобразить изображение и текст логотипа"
+
+#: includes/widgets/jet-blocks-logo.php:154
+msgid "Inline"
+msgstr "Встроенный"
+
+#: includes/widgets/jet-blocks-logo.php:155
+msgid "Text Below Image"
+msgstr "Текст под изображением"
+
+#: includes/widgets/jet-blocks-logo.php:168
+msgid "Logo"
+msgstr "Логотип"
+
+#: includes/widgets/jet-blocks-logo.php:177
+msgid "Logo Alignment"
+msgstr "Выравнивание логотипа"
+
+#: includes/widgets/jet-blocks-logo.php:203
+msgid "Image and Text Vertical Alignment"
+msgstr "Вертикальное выравнивание изображения и текста"
+
+#: includes/widgets/jet-blocks-nav-menu.php:29
+msgid "Nav Menu"
+msgstr "Nav Menu"
+
+#: includes/widgets/jet-blocks-nav-menu.php:49
+msgid "Menu"
+msgstr "Меню"
+
+#: includes/widgets/jet-blocks-nav-menu.php:64
+msgid "Select Menu"
+msgstr "Выбрать меню"
+
+#: includes/widgets/jet-blocks-nav-menu.php:74
+msgid "Layout"
+msgstr "Расположение меню"
+
+#: includes/widgets/jet-blocks-nav-menu.php:78
+msgid "Horizontal"
+msgstr "Горизонтальное меню"
+
+#: includes/widgets/jet-blocks-nav-menu.php:79
+msgid "Vertical"
+msgstr "Вертикальное меню"
+
+#: includes/widgets/jet-blocks-nav-menu.php:87
+msgid "Dropdown Placement"
+msgstr "Отображать выпадающий список с меню сторого уровня"
+
+#: includes/widgets/jet-blocks-nav-menu.php:91
+msgid "Left Side"
+msgstr "С левой стороны"
+
+#: includes/widgets/jet-blocks-nav-menu.php:92
+msgid "Right Side"
+msgstr "С правой стороны"
+
+#: includes/widgets/jet-blocks-nav-menu.php:93
+msgid "At the bottom"
+msgstr "Снизу"
+
+#: includes/widgets/jet-blocks-nav-menu.php:104
+msgid "Dropdown Icon"
+msgstr "Иконка выпадающего списка"
+
+#: includes/widgets/jet-blocks-nav-menu.php:114
+msgid "Menu Alignment"
+msgstr "Выравнивание меню"
+
+#: includes/widgets/jet-blocks-nav-menu.php:155
+msgid "Enable Mobile Trigger"
+msgstr "Использовать гамбургер для меню на мобильном устройстве"
+
+#: includes/widgets/jet-blocks-nav-menu.php:165
+msgid "Mobile Trigger Alignment"
+msgstr "Выравнивание гамбургера"
+
+#: includes/widgets/jet-blocks-nav-menu.php:191
+msgid "Mobile Trigger Icon"
+msgstr "Иконка гамбургера"
+
+#: includes/widgets/jet-blocks-nav-menu.php:204
+msgid "Mobile Trigger Close Icon"
+msgstr "Иконка \"Закрыть\" для гамбургера"
+
+#: includes/widgets/jet-blocks-nav-menu.php:217
+msgid "Mobile Menu Layout"
+msgstr "Стиль отображения меню"
+
+#: includes/widgets/jet-blocks-nav-menu.php:222
+msgid "Default"
+msgstr "По умолчанию"
+
+#: includes/widgets/jet-blocks-nav-menu.php:223
+msgid "Full Width"
+msgstr "По ширине"
+
+#: includes/widgets/jet-blocks-nav-menu.php:224
+msgid "Slide From The Left Side "
+msgstr "Сайдбар с левой стороны"
+
+#: includes/widgets/jet-blocks-nav-menu.php:225
+msgid "Slide From The Right Side "
+msgstr "Сайдбар с правой стороны"
+
+#: includes/widgets/jet-blocks-nav-menu.php:238
+msgid "Top Level Items"
+msgstr "Элементы верхнего уровня"
+
+#: includes/widgets/jet-blocks-nav-menu.php:247
+msgid "Vertical Menu Width"
+msgstr "Ширина вертикального меню"
+
+#: includes/widgets/jet-blocks-nav-menu.php:268
+msgid "Vertical Menu Alignment"
+msgstr "Выравнивание вертикального меню"
+
+#: includes/widgets/jet-blocks-nav-menu.php:332
+#: includes/widgets/jet-blocks-nav-menu.php:407
+#: includes/widgets/jet-blocks-nav-menu.php:482
+msgid "Text Background Color"
+msgstr "Цвет фона текста"
+
+#: includes/widgets/jet-blocks-nav-menu.php:343
+#: includes/widgets/jet-blocks-nav-menu.php:418
+#: includes/widgets/jet-blocks-nav-menu.php:493
+msgid "Dropdown Icon Color"
+msgstr "Цвет иконки выпадающего списка"
+
+#: includes/widgets/jet-blocks-nav-menu.php:439
+#: includes/widgets/jet-blocks-nav-menu.php:916
+msgid "Active"
+msgstr "Активный"
+
+#: includes/widgets/jet-blocks-nav-menu.php:563
+#: includes/widgets/jet-blocks-nav-menu.php:962
+msgid "Dropdown Icon Size"
+msgstr "Размер иконки выпадающего списка"
+
+#: includes/widgets/jet-blocks-nav-menu.php:584
+#: includes/widgets/jet-blocks-nav-menu.php:983
+msgid "Gap Before Dropdown Icon"
+msgstr "Отступ перед иконкой выпадающего списка"
+
+#: includes/widgets/jet-blocks-nav-menu.php:608
+#: includes/widgets/jet-blocks-nav-menu.php:1047
+msgid "Description"
+msgstr "Описание"
+
+#: includes/widgets/jet-blocks-nav-menu.php:627
+msgid "Dropdown"
+msgstr "Выпадающий список"
+
+#: includes/widgets/jet-blocks-nav-menu.php:636
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:606
+msgid "Container Styles"
+msgstr "Стили контейнера"
+
+#: includes/widgets/jet-blocks-nav-menu.php:644
+msgid "Container Width"
+msgstr "Ширина контейнера"
+
+#: includes/widgets/jet-blocks-nav-menu.php:746
+msgid "Gap Before 1st Level Sub"
+msgstr "Отступ перед меню второго порядка"
+
+#: includes/widgets/jet-blocks-nav-menu.php:791
+msgid "Gap Before 2nd Level Sub"
+msgstr "Отступ перед меню третьего порядка"
+
+#: includes/widgets/jet-blocks-nav-menu.php:835
+msgid "Items Styles"
+msgstr "Стили элементов"
+
+#: includes/widgets/jet-blocks-nav-menu.php:1007
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1032
+msgid "Divider"
+msgstr "Разделитель"
+
+#: includes/widgets/jet-blocks-nav-menu.php:1025
+msgid "Border Width"
+msgstr "Ширина граници"
+
+#: includes/widgets/jet-blocks-nav-menu.php:1066
+msgid "Mobile Trigger"
+msgstr "Гвмбургер для мобильных устройств"
+
+#: includes/widgets/jet-blocks-nav-menu.php:1178
+#: includes/widgets/jet-blocks-nav-menu.php:1246
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1112
+msgid "Width"
+msgstr "Ширина"
+
+#: includes/widgets/jet-blocks-nav-menu.php:1200
+msgid "Height"
+msgstr "Высота"
+
+#: includes/widgets/jet-blocks-nav-menu.php:1238
+msgid "Mobile Menu"
+msgstr "Меню на мобильном устройстве"
+
+#: includes/widgets/jet-blocks-nav-menu.php:1274
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:944
+msgid "Max Height"
+msgstr "Максимальная высота"
+
+#: includes/widgets/jet-blocks-nav-menu.php:1299
+msgid "Background color"
+msgstr "Цвет фона"
+
+#: includes/widgets/jet-blocks-nav-menu.php:1330
+msgid "Close icon"
+msgstr "Иконка закрытия"
+
+#: includes/widgets/jet-blocks-nav-menu.php:1362
+msgid "Font size"
+msgstr "Размер шрифта"
+
+#: includes/widgets/jet-blocks-nav-menu.php:1399
+msgid "Plus"
+msgstr "Plus"
+
+#: includes/widgets/jet-blocks-nav-menu.php:1400
+msgid "Plus Square"
+msgstr "Plus Square"
+
+#: includes/widgets/jet-blocks-nav-menu.php:1401
+msgid "Plus Circle"
+msgstr "Plus Circle"
+
+#: includes/widgets/jet-blocks-register.php:29
+msgid "Registration Form"
+msgstr "Registration Form"
+
+#: includes/widgets/jet-blocks-register.php:61
+msgid "Username Placeholder"
+msgstr "Placeholder поля Имя пользователя"
+
+#: includes/widgets/jet-blocks-register.php:70
+msgid "Email Label"
+msgstr "Текст поля для электронной почты"
+
+#: includes/widgets/jet-blocks-register.php:72
+#: includes/widgets/jet-blocks-register.php:81
+msgid "Email"
+msgstr "Электронная почта"
+
+#: includes/widgets/jet-blocks-register.php:79
+msgid "Email Placeholder"
+msgstr "Placeholder поля Электронная почта"
+
+#: includes/widgets/jet-blocks-register.php:97
+msgid "Password Placeholder"
+msgstr "Placeholder поля Пароль"
+
+#: includes/widgets/jet-blocks-register.php:106
+msgid "Show Confirm Password Field"
+msgstr "Отображать  поле Подтверждение пароля"
+
+#: includes/widgets/jet-blocks-register.php:118
+msgid "Confirm Password Label"
+msgstr "Текст для поля Подтверждение пароля"
+
+#: includes/widgets/jet-blocks-register.php:120
+msgid "Please Confirm Password"
+msgstr "Пожалуйста, подтвердите пароль"
+
+#: includes/widgets/jet-blocks-register.php:130
+msgid "Confirm Password Placeholder"
+msgstr "Placeholder поля  Подтверждение пароля"
+
+#: includes/widgets/jet-blocks-register.php:132
+msgid "Confirm Password"
+msgstr "Подтвердить пароль"
+
+#: includes/widgets/jet-blocks-register.php:142
+msgid "Register Button Label"
+msgstr "Текст для кнопки регистрации"
+
+#: includes/widgets/jet-blocks-register.php:152
+msgid "Redirect After Register"
+msgstr "Перенаправление после регистрации"
+
+#: includes/widgets/jet-blocks-register.php:177
+msgid "User Registered Message"
+msgstr "Сообщение об успешной регистрации"
+
+#: includes/widgets/jet-blocks-register.php:179
+msgid "You already registered"
+msgstr "Вы уже зарегистирировались"
+
+#: includes/widgets/jet-blocks-register.php:227
+msgid "Placeholder"
+msgstr "Placeholder"
+
+#: includes/widgets/jet-blocks-register.php:236
+#: includes/widgets/jet-blocks-search.php:260
+#: includes/widgets/jet-blocks-search.php:312
+msgid "Placeholder Color"
+msgstr "Цвет текста placeholder"
+
+#: includes/widgets/jet-blocks-register.php:694
+msgid "Registration disabled"
+msgstr "Регистрация отключена"
+
+#: includes/widgets/jet-blocks-register.php:716
+msgid ""
+"Registration currently disabled and this form will not be visible for guest "
+"users. Please, enable registration in Settings/General or remove this widget "
+"from the page."
+msgstr ""
+"Регистрация отключена, и эта форма не будет видна для гостевых "
+"пользователей. Пожалуйста, включите регистрацию в Настройках/Общие, или "
+"удалите этот виджет со всей страницы."
+
+#: includes/widgets/jet-blocks-search.php:29
+msgid "Search"
+msgstr "Search"
+
+#: includes/widgets/jet-blocks-search.php:52
+msgid "Search Placeholder"
+msgstr "Placeholder для поля Поиск"
+
+#: includes/widgets/jet-blocks-search.php:53
+msgid "Search &hellip;"
+msgstr "Поиск &hellip;"
+
+#: includes/widgets/jet-blocks-search.php:61
+msgid "Show Submit Button"
+msgstr "Отображать кнопку запуска поиска"
+
+#: includes/widgets/jet-blocks-search.php:73
+msgid "Submit Button Label"
+msgstr "Текст кнопки запуска поиска"
+
+#: includes/widgets/jet-blocks-search.php:85
+msgid "Submit Button Icon"
+msgstr "Иконка кнопки запуска поиска"
+
+#: includes/widgets/jet-blocks-search.php:99
+msgid "Show Search Form in Popup"
+msgstr "Отображать форму поиска как всплывающее окно"
+
+#: includes/widgets/jet-blocks-search.php:111
+msgid "Full Screen Popup"
+msgstr "Полноэкранное всплывающее окно"
+
+#: includes/widgets/jet-blocks-search.php:126
+msgid "Popup Trigger Icon"
+msgstr "Иконка триггера всплывающего окна"
+
+#: includes/widgets/jet-blocks-search.php:140
+msgid "Popup Close Button Icon"
+msgstr "Иконка кнопки закрытия"
+
+#: includes/widgets/jet-blocks-search.php:155
+msgid "Show Effect"
+msgstr "Использовать эффект"
+
+#: includes/widgets/jet-blocks-search.php:160
+msgid "Scale"
+msgstr "Scale"
+
+#: includes/widgets/jet-blocks-search.php:161
+msgid "Move Up"
+msgstr "Move Up"
+
+#: includes/widgets/jet-blocks-search.php:162
+msgid "Move Down"
+msgstr "Move Down"
+
+#: includes/widgets/jet-blocks-search.php:171
+msgid "Is Product Search"
+msgstr "Поиск продукта"
+
+#: includes/widgets/jet-blocks-search.php:204
+msgid "Form"
+msgstr "Форма"
+
+#: includes/widgets/jet-blocks-search.php:213
+msgid "Input Field"
+msgstr "Поле ввода"
+
+#: includes/widgets/jet-blocks-search.php:283
+msgid "Focus"
+msgstr "В фокусе"
+
+#: includes/widgets/jet-blocks-search.php:398
+msgid "Submit Button"
+msgstr "Кнопка запуска поиска"
+
+#: includes/widgets/jet-blocks-search.php:568
+msgid "Form Style"
+msgstr "Стиль формы"
+
+#: includes/widgets/jet-blocks-search.php:644
+msgid "Popup Box"
+msgstr "Контейнер всплывающего окна"
+
+#: includes/widgets/jet-blocks-search.php:653
+msgid "Popup Content Width"
+msgstr "Ширина контента во всплывающем окне"
+
+#: includes/widgets/jet-blocks-search.php:741
+msgid "Popup Position"
+msgstr "Положение всплывающего окна"
+
+#: includes/widgets/jet-blocks-search.php:753
+msgid "Vertical Postition by"
+msgstr "Вертикальное положение по"
+
+#: includes/widgets/jet-blocks-search.php:769
+msgid "Top Indent"
+msgstr "Верхний отступ"
+
+#: includes/widgets/jet-blocks-search.php:799
+msgid "Bottom Indent"
+msgstr "Нижний отступ"
+
+#: includes/widgets/jet-blocks-search.php:829
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:685
+msgid "Horizontal Position by"
+msgstr "Горизонтальное положение по"
+
+#: includes/widgets/jet-blocks-search.php:845
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:699
+msgid "Left Indent"
+msgstr "Отступ слева"
+
+#: includes/widgets/jet-blocks-search.php:875
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:728
+msgid "Right Indent"
+msgstr "Отступ справа"
+
+#: includes/widgets/jet-blocks-search.php:907
+msgid "Popup Trigger"
+msgstr "Триггер всплывающего окна"
+
+#: includes/widgets/jet-blocks-search.php:1096
+msgid "Popup Close"
+msgstr "Закрытие всплывающего окна"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:13
+msgid "WooCommerce Shopping Cart"
+msgstr "WooCommerce Shopping Cart"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:37
+msgid "Cart"
+msgstr "Корзина"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:55
+msgid "Show Products Count"
+msgstr "Отображать количество продуктов"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:67
+msgid "Products Count Format"
+msgstr "Формат значения количества продуктов"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:79
+msgid "Show Cart Total"
+msgstr "Показать общую стоимость продуктов в корзине"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:91
+msgid "Cart Total Format"
+msgstr "Формат значения общей стоимости"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:103
+msgid "Show Cart Dropdown"
+msgstr "Отображать содержимое корзины как выпадающий список"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:116
+msgid "Cart Dropdown Label"
+msgstr "Заголовок выпадающего списка корзины"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:118
+msgid "My Cart"
+msgstr "Моя корзина"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:197
+msgid "Cart Link"
+msgstr "Ссылка на корзину"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:237
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:326
+msgid "Icon Color"
+msgstr "Цвет иконки"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:248
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:337
+msgid "Count Background Color"
+msgstr "Цвет фона значения количества продуктов"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:259
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:348
+msgid "Count Color"
+msgstr "Цвет значения количества продуктов"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:270
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:359
+msgid "Totals Color"
+msgstr "Цвет  значения общей стоимости продуктов"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:434
+msgid "Gap After Icon"
+msgstr "Отступ после иконки"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:461
+msgid "Label Font Size"
+msgstr "Размер шрифта текста заголовка"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:479
+msgid "Gap After Label"
+msgstr "Отступ после заголовка"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:497
+msgid "Count"
+msgstr "Подсчет"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:506
+msgid "Count Font Size"
+msgstr "Размер шрифта значения количества продуктов"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:524
+msgid "Count Box Size"
+msgstr "Размер ячейки значения количества продуктов"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:566
+msgid "Totals"
+msgstr "Значения общей стоимости продуктов"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:575
+msgid "Totals Font Size"
+msgstr "Размер шрифта значения общей стоимости "
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:595
+msgid "Cart Dropdown"
+msgstr "Выпадающий список корзины"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:643
+msgid "Width (px)"
+msgstr "Ширина (px)"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:757
+msgid "Dropdown Label Styles"
+msgstr "Стили заголовка для выпадающего списка"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:851
+msgid "Dropdown Empty Message Styles"
+msgstr "Стили сообщения о пустой корзине"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:922
+msgid "Cart Items Style"
+msgstr "Стиль элементов корзины"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:936
+msgid "Product List Style"
+msgstr "Стили списка продуктов в корзине"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:999
+msgid "Product Item Style"
+msgstr "Стили элементов продуктов"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1042
+msgid "Style"
+msgstr "Стиль"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1045
+msgid "Solid"
+msgstr "Сплошной"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1046
+msgid "Double"
+msgstr "Двойной"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1047
+msgid "Dotted"
+msgstr "Точечный"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1048
+msgid "Dashed"
+msgstr "Пунктирный"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1063
+msgid "Weight"
+msgstr "Начертание"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1103
+msgid "Product Image Style"
+msgstr "Стиль миниатюры продукта"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1145
+msgid "Product Title Styles"
+msgstr "Стили названия продукта"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1187
+msgid "Product Remove Button Styles"
+msgstr "Стили кнопки \"Удалить продукт\""
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1221
+msgid "Product Quantity Styles"
+msgstr "Стили значения количества продукта"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1252
+msgid "Product Amount Styles"
+msgstr "Стили значения стоимости продуктов"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1283
+msgid "Total Container Styles"
+msgstr "Стили контейнера общей стоимости продуктов"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1354
+msgid "Total Title Styles"
+msgstr "Стили заголовка блока общей стоимости продуктов"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1385
+msgid "Total Amount Styles"
+msgstr "Стили суммарной стоимости продуктов в корзине"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1418
+msgid "Cart Buttons Style"
+msgstr "Стили кнопки Просмотреть Корзину"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1432
+msgid "Buttons Container Styles"
+msgstr "Стили контейнера кнопок"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1477
+msgid "View Cart Button Styles"
+msgstr "Стили кнопки Посмотреть корзину"
+
+#: includes/widgets/vendor/jet-blocks-woo-cart.php:1653
+msgid "Checkout Button Styles"
+msgstr "Стили кнопки оформления заказа"
+
+#: jet-blocks.php:176
+msgid "JetBlocks requires Elementor to be activated."
+msgstr ""
+
+#: jet-blocks.php:177
+msgid "Activate Elementor Now"
+msgstr ""
+
+#: jet-blocks.php:185
+msgid "JetBlocks requires Elementor to be installed."
+msgstr ""
+
+#: jet-blocks.php:186
+msgid "Install Elementor Now"
+msgstr ""
+
+#: jet-blocks.php:305
+msgid "Changelog"
+msgstr "Изменения"
+
+#: templates/jet-blocks-cart/global/cart-link.php:7
+msgid "View your shopping cart"
+msgstr "Просмотреть содержимое корзины"
+
+#~ msgid "Install Required Plugins"
+#~ msgstr "Установить необходимые плагины"
+
+#~ msgid "Install Plugins"
+#~ msgstr "Установить плагины"
+
+#~ msgid "Installing Plugin: %s"
+#~ msgstr "Установка плагина: %s"
+
+#~ msgid "Updating Plugin: %s"
+#~ msgstr "Обновление плагина: %s"
+
+#~ msgid "Something went wrong with the plugin API."
+#~ msgstr "Что-то пошло не так с API плагина."
+
+#~ msgid "Return to Required Plugins Installer"
+#~ msgstr "Вернуться к установщику необходимых плагинов"
+
+#~ msgid "Return to the Dashboard"
+#~ msgstr "Вернуться к панели управления"
+
+#~ msgid "Plugin activated successfully."
+#~ msgstr "Плагин был успешно активирован."
+
+#~ msgid "The following plugin was activated successfully:"
+#~ msgid_plural "The following plugins were activated successfully:"
+#~ msgstr[0] "Данный плагин был активирован:"
+#~ msgstr[1] "Данные плагины были активированы:"
+#~ msgstr[2] "Данные плагины были активированы:"
+
+#~ msgid "No action taken. Plugin %1$s was already active."
+#~ msgstr "Никаких действий не предпринято. Плагин  %1$s  был уже активен."
+
+#~ msgid ""
+#~ "Plugin not activated. A higher version of %s is needed for this theme. "
+#~ "Please update the plugin."
+#~ msgstr ""
+#~ "Плагин не активирован. Для этой темы нужна более высокая версия %s. "
+#~ "Пожалуйста, обновите плагин."
+
+#~ msgid "All plugins installed and activated successfully. %1$s"
+#~ msgstr "Все плагины были успешно установлены и активированы. %1$s"
+
+#~ msgid "Dismiss this notice"
+#~ msgstr "Закрыть уведомление"
+
+#~ msgid ""
+#~ "There are one or more required or recommended plugins to install, update "
+#~ "or activate."
+#~ msgstr ""
+#~ "В установке, обновлении и активации нуждаются еще один или более "
+#~ "обязательных или рекомендуемых плагинов."
+
+#~ msgid "Please contact the administrator of this site for help."
+#~ msgstr "Пожалуйста, обратитесь к администратору этого сайта за помощью."
+
+#~ msgid "This plugin needs to be updated to be compatible with your theme."
+#~ msgstr ""
+#~ "Этат плагин нуждается в обновлении, чтобы быть совместимым с вашей темой."
+
+#~ msgid "Update Required"
+#~ msgstr "Требуется обновление"
+
+#~ msgid "Set the parent_slug config variable instead."
+#~ msgstr "Вместо этого установите конфигурационную переменную parent_slug."
+
+#~ msgid ""
+#~ "The remote plugin package does not contain a folder with the desired slug "
+#~ "and renaming did not work."
+#~ msgstr ""
+#~ "Пакет удаленных плагинова не содержит папку с желаемым слэгом (slug), и "
+#~ "переименование не сработало."
+
+#~ msgid ""
+#~ "Please contact the plugin provider and ask them to package their plugin "
+#~ "according to the WordPress guidelines."
+#~ msgstr ""
+#~ "Обратитесь к провайдеру плагина и попросите его запаковать плагин в "
+#~ "соответствии с рекомендациями WordPress."
+
+#~ msgid ""
+#~ "The remote plugin package consists of more than one file, but the files "
+#~ "are not packaged in a folder."
+#~ msgstr ""
+#~ "Пакет удаленных плагинов состоит из нескольких файлов, но файлы не "
+#~ "упакованы в папку."
+
+#~ msgid "TGMPA v%s"
+#~ msgstr "TGMPA v%s"
+
+#~ msgid "Required"
+#~ msgstr "Требуемые"
+
+#~ msgid "Recommended"
+#~ msgstr "Рекомендуемые"
+
+#~ msgid "WordPress Repository"
+#~ msgstr "Хранилище WordPress"
+
+#~ msgid "External Source"
+#~ msgstr "Внешний ресурс"
+
+#~ msgid "Pre-Packaged"
+#~ msgstr "Предварительно упакованный"
+
+#~ msgid "Not Installed"
+#~ msgstr "Не установлен"
+
+#~ msgid "Installed But Not Activated"
+#~ msgstr "Установлен, но не активирован"
+
+#~ msgid "Required Update not Available"
+#~ msgstr "Тебуемое обновление не доступно"
+
+#~ msgid "Requires Update"
+#~ msgstr "Требует обновления"
+
+#~ msgid "Update recommended"
+#~ msgstr "Рекомендуется обновление"
+
+#~ msgctxt "Install/Update Status"
+#~ msgid "%1$s, %2$s"
+#~ msgstr "%1$s, %2$s"
+
+#~ msgid "To Install <span class=\"count\">(%s)</span>"
+#~ msgid_plural "To Install <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "Установить <span class=\"count\">(%s)</span>"
+#~ msgstr[1] "Установить <span class=\"count\">(%s)</span>"
+#~ msgstr[2] "Установить <span class=\"count\">(%s)</span>"
+
+#~ msgid "Update Available <span class=\"count\">(%s)</span>"
+#~ msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "Доступно обновление <span class=\"count\">(%s)</span>"
+#~ msgstr[1] "Доступно обновление <span class=\"count\">(%s)</span>"
+#~ msgstr[2] "Доступно обновление <span class=\"count\">(%s)</span>"
+
+#~ msgid "To Activate <span class=\"count\">(%s)</span>"
+#~ msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "Активировать <span class=\"count\">(%s)</span>"
+#~ msgstr[1] "Активировать <span class=\"count\">(%s)</span>"
+#~ msgstr[2] "Активировать <span class=\"count\">(%s)</span>"
+
+#~ msgctxt "as in: \"version nr unknown\""
+#~ msgid "unknown"
+#~ msgstr "неизвестный"
+
+#~ msgid "Installed version:"
+#~ msgstr "Установленная версия:"
+
+#~ msgid "Minimum required version:"
+#~ msgstr "Минимальная требуемая версия:"
+
+#~ msgid "Available version:"
+#~ msgstr "Доступная версия:"
+
+#~ msgid "No plugins to install, update or activate."
+#~ msgstr "Нет плагинов для установки, обновления или активации."
+
+#~ msgid "Plugin"
+#~ msgstr "Плагин"
+
+#~ msgid "Source"
+#~ msgstr "Источник"
+
+#~ msgid "Type"
+#~ msgstr "Тип"
+
+#~ msgid "Version"
+#~ msgstr "Версия"
+
+#~ msgid "Status"
+#~ msgstr "Статус"
+
+#~ msgid "Install %2$s"
+#~ msgstr "Установить %2$s"
+
+#~ msgid "Update %2$s"
+#~ msgstr "Обновить %2$s"
+
+#~ msgid "Activate %2$s"
+#~ msgstr "Активировать %2$s"
+
+#~ msgid "Upgrade message from the plugin author:"
+#~ msgstr "Обновить сообщение от автора плагина:"
+
+#~ msgid "Install"
+#~ msgstr "Установить"
+
+#~ msgid "Update"
+#~ msgstr "Обновить"
+
+#~ msgid "Activate"
+#~ msgstr "Активировать"
+
+#~ msgid "No plugins were selected to be installed. No action taken."
+#~ msgstr ""
+#~ "Ни одного плагина не было выбрано для установки. Никаких действий не было "
+#~ "предпринято."
+
+#~ msgid "No plugins were selected to be updated. No action taken."
+#~ msgstr ""
+#~ "Ни одного плагина не было выбрано для обновления. Никаких действий не "
+#~ "было предпринято."
+
+#~ msgid "No plugins are available to be installed at this time."
+#~ msgstr "В настоящее время плагины не доступны для установки."
+
+#~ msgid "No plugins are available to be updated at this time."
+#~ msgstr "В настоящее время плагины не доступны для обновления."
+
+#~ msgid "No plugins were selected to be activated. No action taken."
+#~ msgstr ""
+#~ "Ни одного плагина не было выбрано для активации. Никаких действий не было "
+#~ "предпринято."
+
+#~ msgid "No plugins are available to be activated at this time."
+#~ msgstr "В настоящее время плагины не доступны для активации."
+
+#~ msgid "Plugin activation failed."
+#~ msgstr "Не удалось активировать плагин."
+
+#~ msgid "Updating Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "Обновление плагина %1$s (%2$d/%3$d)"
+
+#~ msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+#~ msgstr "Произошла ошибка при установке %1$s: <strong>%2$s</strong>."
+
+#~ msgid "The installation of %1$s failed."
+#~ msgstr "Не удалось установить %1$s."
+
+#~ msgid ""
+#~ "The installation and activation process is starting. This process may "
+#~ "take a while on some hosts, so please be patient."
+#~ msgstr ""
+#~ "Запускаются процессы установки и активации. Эти процессы могут занять "
+#~ "некоторое время на некоторых хостинг платформах, поэтому, пожалуйста, "
+#~ "будьте терпеливы."
+
+#~ msgid "%1$s installed and activated successfully."
+#~ msgstr "%1$s был успешно установлен и активирован."
+
+#~ msgid "Show Details"
+#~ msgstr "Показать детали"
+
+#~ msgid "Hide Details"
+#~ msgstr "Скрыть детали"
+
+#~ msgid "All installations and activations have been completed."
+#~ msgstr "Все установки и активации завершены."
+
+#~ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "Установка и активация плагина %1$s (%2$d/%3$d)"
+
+#~ msgid ""
+#~ "The installation process is starting. This process may take a while on "
+#~ "some hosts, so please be patient."
+#~ msgstr ""
+#~ "Запускается процесс установки. Этот процесс может занять некоторое время "
+#~ "на некоторых хостинг платформах, поэтому, пожалуйста, будьте терпеливы."
+
+#~ msgid "%1$s installed successfully."
+#~ msgstr "%1$s был успешно установлен."
+
+#~ msgid "All installations have been completed."
+#~ msgstr "Установка завершена."
+
+#~ msgid "Installing Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "Установка плагина %1$s (%2$d/%3$d)"

@@ -1,0 +1,25 @@
+.jet_elements_settings_form {
+	&__checkbox-group {
+
+		display: flex;
+		flex-flow: row wrap;
+
+		.cx-checkbox-item-wrap {
+			width: 33.333%;
+
+			@media screen and (max-width: 1200px) {
+				width: 50%;
+			}
+
+			@media screen and (max-width: 782px) {
+				width: 100%;
+			}
+		}
+	}
+
+	.save_button {
+		display: flex;
+		justify-content: flex-end;
+		padding: 15px;
+	}
+}

@@ -1,0 +1,40 @@
+.elementor-jet-blog-posts-navigation {
+	.nav-links {
+		display: flex;
+		align-items: center;
+		.nav-previous a,
+		.nav-next a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		&:before {
+			content: "";
+			order:1;
+		}
+		.nav-next {
+			order: 2;
+		}
+		.nav-previous {
+			order: 0;
+		}
+	}
+	.jet-blog-arrow {
+		width: 24px;
+		height: 24px;
+		text-align: center;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 999;
+		&:before {
+			display: block;
+		}
+		&.jet-arrow-next {
+			&:before {
+				transform: scale(-1, 1);
+			}
+		}
+	}
+}

@@ -1,0 +1,184 @@
+#jet-template-library-modal {
+
+	.dialog-widget-content {
+		width: 90%;
+		max-width: 1200px;
+		background-color: $editor-background-light;
+	}
+
+	.dialog-widget-header,
+	.dialog-header {
+		padding: 0;
+		background-color: #fff;
+		box-shadow: $panel-bottom-shadow;
+		position: relative; // Show the shadow above the scrolled list
+		z-index: 1;
+	}
+
+	.dialog-buttons-wrapper {
+		display: none;
+	}
+
+	.dialog-message {
+		height: 630px;
+		max-height: 85vh;
+		overflow: auto;
+		padding: 15px;
+	}
+
+	a {
+		&,
+		&:hover {
+			color: inherit;
+		}
+	}
+
+	a.elementor-template-library-blank-footer-link {
+		transition: color .5s;
+
+		&:hover {
+			color: $editor-accent;
+		}
+	}
+
+	.elementor-button {
+		text-transform: uppercase;
+	}
+
+	::-webkit-scrollbar {
+		width: 6px;
+		height: 0;
+		border-radius: 3px;
+	}
+	::-webkit-scrollbar-button {
+		width: 0px;
+		height: 10px;
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: #d5dadf;
+		border: 0px none #d5dadf;
+		border-radius: 0;
+		border-radius: 3px;
+	}
+	::-webkit-scrollbar-track {
+		border: 0px none #fff;
+		border-radius: 0;
+	}
+	::-webkit-scrollbar-corner {
+		background: transparent;
+	}
+}
+
+#jet-template-library-header {
+	display: flex;
+	justify-content: space-between;
+	.jet-template-library-back {
+		background: none;
+		border: none;
+		border-right: 1px solid $editor-background;
+		padding: 15px 20px 15px 15px;
+		line-height: 20px;
+		font-size: 13px;
+		font-weight: bold;
+		outline: none;
+		transition: all 200ms linear;
+		cursor: pointer;
+		color: $editor-dark;
+		&:not(:hover) {
+			color: $editor-light;
+		}
+	}
+	.elementor-button {
+		padding: 8px 10px;
+		margin: 9px 10px 0 0;
+	}
+}
+
+#jet-template-library-header-close-modal {
+	width: 45px;
+	border-left: 1px solid $editor-background;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 200ms linear;
+	i {
+		color: $editor-light;
+		font-size: 16px;
+	}
+	&:hover {
+		i {
+			color: $editor-dark;
+		}
+	}
+}
+
+#jet-template-library-header-actions {
+	.template-library-activate-license {
+		display: block;
+		margin: 17px 20px 0 0;
+		color: $editor-orange;
+		&:hover {
+			color: darken( $editor-orange, 15% );
+		}
+	}
+}
+
+#jet-template-library-modal {
+	.elementor-loader {
+		position: relative;
+		.elementor-loader-box:first-of-type {
+			left: 40px;
+			top: 40px;
+			width: 14px;
+			height: 70px;
+		}
+		.elementor-loader-box:not(:first-of-type) {
+			right: 40px;
+			height: 14px;
+			width: 42px;
+		}
+		.elementor-loader-box:nth-of-type(2) {
+			top: 40px;
+		}
+		.elementor-loader-box:nth-of-type(3) {
+			top: 68px;
+		}
+		.elementor-loader-box:nth-of-type(4) {
+			bottom: 40px;
+		}
+	}
+	.elementor-library-error {
+		margin: 18% 0 0 0;
+		&-message {
+			font-size: 18px;
+			padding: 0 0 20px;
+		}
+		&-link {
+			a {
+				display: inline-block;
+				color: #fff;
+				background-image: none;
+				background: $editor-orange;
+				font-size: 13px;
+				font-weight: normal;
+				font-style: normal;
+				text-transform: uppercase;
+				line-height: 1;
+				height: 40px;
+				line-height: 40px;
+				min-width: 170px;
+				padding: 0 20px;
+				border: none;
+				border-radius: 3px;
+				cursor: pointer;
+				-webkit-transition: all 0.5s;
+				transition: all 0.5s;
+				&:hover {
+					opacity: 0.85;
+					box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
+				}
+			}
+		}
+	}
+}

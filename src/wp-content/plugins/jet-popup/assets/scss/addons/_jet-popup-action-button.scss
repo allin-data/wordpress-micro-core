@@ -1,0 +1,62 @@
+.jet-popup-action-button {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+
+	&__instance {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+
+		padding: 12px 24px;
+		border-radius: 3px;
+		background-color: #6ec1e4;
+
+		transition: all 0.3s ease;
+	}
+
+	&__icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: all 0.3s ease;
+
+		color: white;
+		border-radius: 50px;
+	}
+
+	&__text {
+		transition: all 0.3s ease;
+		font-size: 15px;
+		font-family: "Roboto", Sans-serif;
+		font-weight: 500;
+		color: white;
+	}
+}
+
+.jet-popup-action-button--icon-before {
+
+	.jet-popup-action-button__icon {
+		order: 1;
+		margin-right: 5px;
+	}
+
+	.jet-popup-action-button__text {
+		order: 2;
+	}
+
+}
+
+.jet-popup-action-button--icon-after {
+	.jet-popup-action-button__icon {
+		order: 2;
+		margin-left: 5px;
+	}
+
+	.jet-popup-action-button__text {
+		order: 1;
+	}
+
+}

@@ -1,0 +1,26 @@
+@import "addons/jet-view-more";
+@import "addons/jet-unfold";
+@import "addons/jet-hotspots";
+@import "extensions/jet-satellite";
+@import "extensions/jet-tooltip";
+@import "extensions/jet-particles";
+
+.jet-sticky-section {
+	&.stuck {
+		position: fixed;
+		width: auto;
+		z-index: 99;
+	}
+}
+
+.jet-sticky-column {
+	align-self: flex-start;
+}
+
+.jet-parallax-widget:not(.is-mac) {
+	> .elementor-widget-container {
+		transition: transform 0.25s cubic-bezier(.25,.88,.54,.98);
+		will-change: transform;
+		transform: translateZ(0);
+	}
+}

@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'jetelements';
+  src:  url('../fonts/jetelements.eot?n7pshk');
+  src:  url('../fonts/jetelements.eot?n7pshk#iefix') format('embedded-opentype'),
+    url('../fonts/jetelements.ttf?n7pshk') format('truetype'),
+    url('../fonts/jetelements.woff?n7pshk') format('woff'),
+    url('../fonts/jetelements.svg?n7pshk#jetelements') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+[class^="jetelements-icon-"], [class*=" jetelements-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'jetelements' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.elementor-panel [class^="jetelements-icon-"]:before,
+.elementor-panel [class*=" jetelements-icon-"]:before {
+  display: block;
+  font-size: 48px;
+  line-height: 28px;
+}
+
+.jetelements-icon-1:before {
+  content: "\e900";
+}
+.jetelements-icon-2:before {
+  content: "\e901";
+}
+.jetelements-icon-3:before {
+  content: "\e902";
+}
+.jetelements-icon-4:before {
+  content: "\e903";
+}
+.jetelements-icon-5:before {
+  content: "\e904";
+}
+.jetelements-icon-6:before {
+  content: "\e905";
+}
+.jetelements-icon-7:before {
+  content: "\e906";
+}
+.jetelements-icon-8:before {
+  content: "\e907";
+}
+.jetelements-icon-9:before {
+  content: "\e908";
+}
+.jetelements-icon-10:before {
+  content: "\e909";
+}
+.jetelements-icon-11:before {
+  content: "\e90a";
+}
+.jetelements-icon-12:before {
+  content: "\e90b";
+}
+.jetelements-icon-13:before {
+  content: "\e90c";
+}
+.jetelements-icon-14:before {
+  content: "\e90d";
+}
+.jetelements-icon-15:before {
+  content: "\e90e";
+}
+.jetelements-icon-16:before {
+  content: "\e90f";
+}
+.jetelements-icon-17:before {
+  content: "\e910";
+}
+.jetelements-icon-18:before {
+  content: "\e911";
+}
+.jetelements-icon-19:before {
+  content: "\e912";
+}
+.jetelements-icon-20:before {
+  content: "\e913";
+}
+.jetelements-icon-21:before {
+  content: "\e914";
+}
+.jetelements-icon-22:before {
+  content: "\e915";
+}
+.jetelements-icon-23:before {
+  content: "\e916";
+}
+.jetelements-icon-24:before {
+  content: "\e917";
+}
+.jetelements-icon-25:before {
+  content: "\e918";
+}
+.jetelements-icon-26:before {
+  content: "\e919";
+}
+.jetelements-icon-27:before {
+  content: "\e91a";
+}
+.jetelements-icon-28:before {
+  content: "\e91b";
+}
+.jetelements-icon-29:before {
+  content: "\e91c";
+}
+.jetelements-icon-30:before {
+  content: "\e91d";
+}
+.jetelements-icon-31:before {
+  content: "\e91e";
+}
+.jetelements-icon-32:before {
+  content: "\e91f";
+}
+.jetelements-icon-33:before {
+  content: "\e920";
+}
+.jetelements-icon-34:before {
+  content: "\e921";
+}
+.jetelements-icon-35:before {
+  content: "\e922";
+}
+.jetelements-icon-36:before {
+  content: "\e923";
+}
+.jetelements-icon-37:before {
+  content: "\e924";
+}
+.jetelements-icon-38:before {
+  content: "\e925";
+}
+.jetelements-icon-39:before {
+  content: "\e926";
+}
+.jetelements-icon-40:before {
+  content: "\e927";
+}
+.jetelements-icon-41:before {
+  content: "\e928";
+}
+.jetelements-icon-42:before {
+  content: "\e929";
+}
+.jetelements-icon-43:before {
+  content: "\e92a";
+}
+.jetelements-icon-44:before {
+  content: "\e92b";
+}
+.jetelements-icon-45:before {
+  content: "\e92c";
+}
+.jetelements-icon-46:before {
+  content: "\e92d";
+}

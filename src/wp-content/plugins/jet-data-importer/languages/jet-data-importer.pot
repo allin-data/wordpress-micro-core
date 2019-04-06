@@ -1,0 +1,451 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jet Data Importer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-23 11:48+0200\n"
+"PO-Revision-Date: 2018-05-09 17:23+0200\n"
+"Last-Translator: \n"
+"Language-Team: Cherry Team <support@cherryframework.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;_ex:1,2c;_n:1,2;_nx:4c,1,2;_n_noop:1,2;"
+"_nx_noop:4c,1,2\n"
+"esc_attr__;_x: 1,2c;_n:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: cherry-framework\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: includes/class-jet-data-importer-tools.php:77
+msgid "Importing sample data"
+msgstr ""
+
+#: includes/class-jet-data-importer-tools.php:80
+msgid "Regenerating thumbnails"
+msgstr ""
+
+#: includes/class-jet-data-importer-tools.php:83
+msgid "Congratulations! You’re all Set!"
+msgstr ""
+
+#: includes/class-jet-data-importer-tools.php:86
+msgid "Select source to import"
+msgstr ""
+
+#: includes/config/default-config.php:28
+msgid "Export all content with Jet Data Export tool"
+msgstr ""
+
+#: includes/config/default-config.php:35 templates/import-after.php:16
+msgid "View your site"
+msgstr ""
+
+#: includes/config/default-config.php:39
+msgid "Take a look at your site"
+msgstr ""
+
+#: includes/config/default-config.php:43
+msgid "Start editing"
+msgstr ""
+
+#: includes/config/default-config.php:47
+msgid "Proceed to editing pages"
+msgstr ""
+
+#: includes/config/default-config.php:51
+msgid "Check documentation"
+msgstr ""
+
+#: includes/config/default-config.php:55
+msgid "Get more info from documentation"
+msgstr ""
+
+#: includes/config/default-config.php:59
+msgid "Knowledge Base"
+msgstr ""
+
+#: includes/config/default-config.php:63
+msgid "Access the vast knowledge base"
+msgstr ""
+
+#: includes/config/default-config.php:67
+msgid "Community"
+msgstr ""
+
+#: includes/config/default-config.php:71
+msgid "Join community to stay tuned to the latest news"
+msgstr ""
+
+#: includes/export/class-jet-data-export-interface.php:47
+#: templates/export.php:8
+msgid "Export"
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:127
+msgid "Password is empty"
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:140
+msgid "Content successfully removed"
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:147
+msgid "Entered password is invalid"
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:191
+#, php-format
+msgid "%1$s: %2$s required, yours - %3$s"
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:217
+msgid "Some parameters from your server don't meet the requirements:"
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:250
+msgid "Import"
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:332
+msgid "Error! Import file not found. Please contact our support team."
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:423
+#: includes/import/class-jet-data-importer-interface.php:431
+msgid "You don't have permissions to do this"
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:459
+#, php-format
+msgid "%s is missing in request"
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:518
+msgid "Chunk number is missing in request"
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:748
+msgid "Upload XML file with demo content"
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:752
+msgid "We found 1 XML file with demo content in your theme, install it?"
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:757
+#, php-format
+msgid ""
+"We found %s XML files in your theme. Please select one of them to install"
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:839
+msgid "Upload File"
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:895
+msgid ""
+"You don't have permissions to replace content, please re-enter with "
+"admiistrator account"
+msgstr ""
+
+#: includes/import/class-jet-data-importer-interface.php:918
+msgid "XML file not passed"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:673
+msgid "Cannot import auto-draft posts"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1124
+msgid "Sidebar does not exist in theme (using Inactive)"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1149
+msgid "Site does not support widget"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1185
+msgid "Widget already exists"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1246
+msgid "Imported"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1249
+msgid "Imported to Inactive"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1256
+msgid "No Title"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1401
+#, php-format
+msgid "Failed to import \"%s\": Invalid post type %s"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1412
+#, php-format
+msgid "%s \"%s\" already exists."
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1492
+#, php-format
+msgid "Skipping attachment \"%s\", fetching attachments disabled"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1508
+#, php-format
+msgid "Failed to import \"%s\" (%s)"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1545
+#: includes/import/class-jet-wxr-importer.php:1851
+#, php-format
+msgid "Imported \"%s\" (%s)"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1550
+#, php-format
+msgid "Post %d remapped to %d"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1687
+#, php-format
+msgid "Failed to import user \"%s\""
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1709
+#, php-format
+msgid "Imported user \"%s\""
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1714
+#, php-format
+msgid "User %d remapped to %d"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1815
+#, php-format
+msgid "Failed to import %s %s"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:1856
+#, php-format
+msgid "Term %d remapped to %d"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:2278
+msgid "Invalid file type"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:2358
+msgid "Zero size file downloaded"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:2367
+#, php-format
+msgid "Remote file is too large, limit is %s"
+msgstr ""
+
+#: includes/import/class-jet-wxr-importer.php:2536
+msgid "Could not open the file for parsing"
+msgstr ""
+
+#: jet-data-importer.php:196 jet-data-importer.php:197
+#: jet-data-importer.php:221
+msgid "Demo Content "
+msgstr ""
+
+#: jet-data-importer.php:208
+msgid "Settings"
+msgstr ""
+
+#: jet-data-importer.php:662
+msgid "Select or upload file with demo content"
+msgstr ""
+
+#: jet-data-importer.php:663
+msgid "Select"
+msgstr ""
+
+#: jet-data-importer.php:668
+msgid "Data processing error, please try again!"
+msgstr ""
+
+#: templates/advanced-popup.php:8
+msgid "Attention!"
+msgstr ""
+
+#: templates/advanced-popup.php:9 templates/wizard-after-install.php:26
+msgid ""
+"We are ready to install demo data. Do you want to append demo content to "
+"your existing content or completely rewrite it?"
+msgstr ""
+
+#: templates/advanced-popup.php:15 templates/wizard-after-install.php:34
+msgid "Append demo content to my existing content"
+msgstr ""
+
+#: templates/advanced-popup.php:22 templates/wizard-after-install.php:46
+msgid "Replace my existing content with demo content"
+msgstr ""
+
+#: templates/advanced-popup.php:28
+msgid "NOTE:"
+msgstr ""
+
+#: templates/advanced-popup.php:29
+msgid ""
+"This option will remove all your existing content - posts, pages, "
+"attachments, terms and comments"
+msgstr ""
+
+#: templates/advanced-popup.php:33
+msgid "Start Install"
+msgstr ""
+
+#: templates/import-advanced.php:40
+msgid "Recommended Plugins:"
+msgstr ""
+
+#: templates/import-advanced.php:56
+msgid "Optimize Demo Content"
+msgstr ""
+
+#: templates/import-advanced.php:58
+msgid ""
+"Please select this option to install light version of demo content. "
+"Recommended for slow severs and shared web hosts"
+msgstr ""
+
+#: templates/import-advanced.php:63
+msgid "Install Demo"
+msgstr ""
+
+#: templates/import-advanced.php:66
+msgid "View Demo"
+msgstr ""
+
+#: templates/import-after.php:8
+msgid "Don’t know from where to start? Let us help you!"
+msgstr ""
+
+#: templates/import-after.php:20
+msgid "See what you get"
+msgstr ""
+
+#: templates/import-before.php:23
+msgid "or"
+msgstr ""
+
+#: templates/import-before.php:30
+msgid "Start import"
+msgstr ""
+
+#: templates/import.php:23
+msgid "Import Summary"
+msgstr ""
+
+#: templates/import.php:24
+msgid "Completed"
+msgstr ""
+
+#: templates/import.php:25
+msgid "Progress"
+msgstr ""
+
+#: templates/import.php:33
+msgid "Posts"
+msgstr ""
+
+#: templates/import.php:34
+msgid "Authors"
+msgstr ""
+
+#: templates/import.php:35
+msgid "Comments"
+msgstr ""
+
+#: templates/import.php:36
+msgid "Media"
+msgstr ""
+
+#: templates/import.php:37
+msgid "Terms"
+msgstr ""
+
+#: templates/import.php:38
+msgid "Tables"
+msgstr ""
+
+#: templates/page-settings.php:8
+msgid "Cache handler:"
+msgstr ""
+
+#: templates/page-settings.php:20
+msgid "Save"
+msgstr ""
+
+#: templates/regenerate.php:9
+msgid "Starting process, please wait few seconds..."
+msgstr ""
+
+#: templates/remove-content-form.php:9
+msgid ""
+"Please, enter your WordPress user password to confirm and start content "
+"replacing."
+msgstr ""
+
+#: templates/remove-content-form.php:12
+msgid ""
+"NOTE: All your content will be replaced (posts, pages, comments, attachments "
+"and terms)"
+msgstr ""
+
+#: templates/remove-content-form.php:16
+msgid "Please, enter your password"
+msgstr ""
+
+#: templates/remove-content-form.php:18
+msgid "Import Content"
+msgstr ""
+
+#: templates/wizard-after-install.php:24
+msgid "We're almost there!"
+msgstr ""
+
+#: templates/wizard-after-install.php:37
+msgid ""
+"If you have chosen this option, the sample data will be added to the current "
+"content of your theme."
+msgstr ""
+
+#: templates/wizard-after-install.php:49
+msgid ""
+"NB! If you want to install theme demo content, you agree that your current "
+"data will be replaced by the new demo content (sample data). If you want to "
+"save the current content of your theme, please choose Skip Data Installation."
+msgstr ""
+
+#: templates/wizard-after-install.php:60
+msgid "Skip demo content installation"
+msgstr ""
+
+#: templates/wizard-after-install.php:63
+msgid ""
+"If you have chosen this option, the sample data will not be installed on "
+"your theme and your current content will stay as it is."
+msgstr ""
+
+#: templates/wizard-after-install.php:76
+msgid "Next"
+msgstr ""

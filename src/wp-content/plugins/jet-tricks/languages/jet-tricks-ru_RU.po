@@ -1,0 +1,998 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: JetTricks for Elementor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-09 17:41+0200\n"
+"PO-Revision-Date: 2019-01-09 17:41+0200\n"
+"Last-Translator: \n"
+"Language-Team: Zemez\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;_ex:1,2c;_n:1,2;_nx:4c,1,2;"
+"_n_noop:1,2;_nx_noop:4c,1,2\n"
+"esc_attr__;_x: 1,2c;_n:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: cherry-framework\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: includes/addons/jet-hotspots-widget.php:28
+#: includes/addons/jet-hotspots-widget.php:78
+msgid "Hotspots"
+msgstr "Hotspots"
+
+#: includes/addons/jet-hotspots-widget.php:58
+#: includes/ext/element-extension.php:401
+#: includes/ext/element-extension.php:444
+msgid "Image"
+msgstr "Изображение"
+
+#: includes/addons/jet-hotspots-widget.php:65
+msgid "Choose Image"
+msgstr "Выберите изображение"
+
+#: includes/addons/jet-hotspots-widget.php:89
+#: includes/addons/jet-unfold-widget.php:204
+#: includes/addons/jet-unfold-widget.php:470
+msgid "Content"
+msgstr "Контент"
+
+#: includes/addons/jet-hotspots-widget.php:96
+#: includes/addons/jet-view-more-widget.php:95
+#: includes/ext/element-extension.php:400
+#: includes/ext/element-extension.php:428
+msgid "Icon"
+msgstr "Иконка"
+
+#: includes/addons/jet-hotspots-widget.php:107
+#: includes/ext/element-extension.php:399
+#: includes/ext/element-extension.php:413
+msgid "Text"
+msgstr "Текст"
+
+#: includes/addons/jet-hotspots-widget.php:115
+#: includes/ext/element-extension.php:732
+msgid "Description"
+msgstr "Описание"
+
+#: includes/addons/jet-hotspots-widget.php:123
+msgid "Link"
+msgstr "Ссылка"
+
+#: includes/addons/jet-hotspots-widget.php:137
+#: includes/ext/element-extension.php:460
+msgid "Position"
+msgstr "Позиция отметок"
+
+#: includes/addons/jet-hotspots-widget.php:144
+msgid "Horizontal Position(%)"
+msgstr "Горизонтальное положение"
+
+#: includes/addons/jet-hotspots-widget.php:161
+msgid "Vertical Position(%)"
+msgstr "Вертикальное положение"
+
+#: includes/addons/jet-hotspots-widget.php:204
+#: includes/addons/jet-hotspots-widget.php:427
+#: includes/ext/element-extension.php:765
+msgid "Animation"
+msgstr "Анимация"
+
+#: includes/addons/jet-hotspots-widget.php:208
+#: includes/addons/jet-hotspots-widget.php:311
+#: includes/addons/jet-view-more-widget.php:131
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:209
+msgid "None"
+msgstr "Отсутствует"
+
+#: includes/addons/jet-hotspots-widget.php:209
+msgid "Flash"
+msgstr "Flash"
+
+#: includes/addons/jet-hotspots-widget.php:210
+msgid "Pulse"
+msgstr "Pulse"
+
+#: includes/addons/jet-hotspots-widget.php:211
+msgid "Shake"
+msgstr "Shake"
+
+#: includes/addons/jet-hotspots-widget.php:212
+msgid "Tada"
+msgstr "Tada"
+
+#: includes/addons/jet-hotspots-widget.php:213
+msgid "Rubber"
+msgstr "Rubber"
+
+#: includes/addons/jet-hotspots-widget.php:214
+msgid "Swing"
+msgstr "Swing"
+
+#: includes/addons/jet-hotspots-widget.php:224
+#: includes/addons/jet-hotspots-widget.php:642
+#: includes/ext/element-extension.php:698
+msgid "Tooltip"
+msgstr "Tooltip"
+
+#: includes/addons/jet-hotspots-widget.php:231
+msgid "Show On Init"
+msgstr "Отображать при инициализации"
+
+#: includes/addons/jet-hotspots-widget.php:233
+#: includes/addons/jet-hotspots-widget.php:260
+#: includes/addons/jet-unfold-widget.php:68
+#: includes/addons/jet-view-more-widget.php:117
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:255
+#: includes/ext/element-extension.php:199
+#: includes/ext/element-extension.php:291
+#: includes/ext/element-extension.php:325
+#: includes/ext/element-extension.php:372
+#: includes/ext/element-extension.php:709
+msgid "Yes"
+msgstr "Да"
+
+#: includes/addons/jet-hotspots-widget.php:234
+#: includes/addons/jet-hotspots-widget.php:261
+#: includes/addons/jet-unfold-widget.php:69
+#: includes/addons/jet-view-more-widget.php:118
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:256
+#: includes/ext/element-extension.php:200
+#: includes/ext/element-extension.php:292
+#: includes/ext/element-extension.php:326
+#: includes/ext/element-extension.php:373
+#: includes/ext/element-extension.php:710
+msgid "No"
+msgstr "Нет"
+
+#: includes/addons/jet-hotspots-widget.php:243
+#: includes/ext/element-extension.php:746
+msgid "Placement"
+msgstr "Расположение"
+
+#: includes/addons/jet-hotspots-widget.php:247
+#: includes/ext/element-extension.php:750
+msgid "Top"
+msgstr "Сверху"
+
+#: includes/addons/jet-hotspots-widget.php:248
+#: includes/ext/element-extension.php:751
+msgid "Bottom"
+msgstr "Снизу"
+
+#: includes/addons/jet-hotspots-widget.php:249
+#: includes/addons/jet-hotspots-widget.php:684
+#: includes/addons/jet-unfold-widget.php:561
+#: includes/ext/element-extension.php:752
+#: includes/ext/element-extension.php:896
+msgid "Left"
+msgstr "Слева"
+
+#: includes/addons/jet-hotspots-widget.php:250
+#: includes/addons/jet-hotspots-widget.php:692
+#: includes/addons/jet-unfold-widget.php:569
+#: includes/ext/element-extension.php:753
+#: includes/ext/element-extension.php:904
+msgid "Right"
+msgstr "Справа"
+
+#: includes/addons/jet-hotspots-widget.php:258
+msgid "Use Arrow"
+msgstr "Использовать указатель"
+
+#: includes/addons/jet-hotspots-widget.php:270
+msgid "Arrow Type"
+msgstr "Тип указателя"
+
+#: includes/addons/jet-hotspots-widget.php:274
+msgid "Sharp"
+msgstr "Острый"
+
+#: includes/addons/jet-hotspots-widget.php:275
+msgid "Round"
+msgstr "Скругленный"
+
+#: includes/addons/jet-hotspots-widget.php:286
+msgid "Arrow Size"
+msgstr "Размер указателя"
+
+#: includes/addons/jet-hotspots-widget.php:290
+#: includes/addons/jet-hotspots-widget.php:517
+#: includes/addons/jet-unfold-widget.php:584
+#: includes/addons/jet-view-more-widget.php:194
+msgid "Normal"
+msgstr "Стандарнтый"
+
+#: includes/addons/jet-hotspots-widget.php:291
+msgid "Small"
+msgstr "Уменьшенный"
+
+#: includes/addons/jet-hotspots-widget.php:292
+msgid "Skinny"
+msgstr "Заостренный"
+
+#: includes/addons/jet-hotspots-widget.php:293
+msgid "Large"
+msgstr "Крупный"
+
+#: includes/addons/jet-hotspots-widget.php:294
+msgid "Wide"
+msgstr "Широкий"
+
+#: includes/addons/jet-hotspots-widget.php:305
+msgid "Trigger"
+msgstr "Триггер"
+
+#: includes/addons/jet-hotspots-widget.php:309
+msgid "Mouseenter"
+msgstr "При наведении"
+
+#: includes/addons/jet-hotspots-widget.php:310
+msgid "Click"
+msgstr "По клику"
+
+#: includes/addons/jet-hotspots-widget.php:320
+msgid "Always show tooltips."
+msgstr "Всегда показывать подсказки."
+
+#: includes/addons/jet-hotspots-widget.php:331
+msgid "Show Duration"
+msgstr "Скорость появления"
+
+#: includes/addons/jet-hotspots-widget.php:356
+msgid "Hide Duration"
+msgstr "Скорость исчезновения"
+
+#: includes/addons/jet-hotspots-widget.php:381
+msgid "Delay"
+msgstr "Задержка подсказки"
+
+#: includes/addons/jet-hotspots-widget.php:406
+#: includes/ext/element-extension.php:800
+msgid "Distance"
+msgstr "Отступ по вертикали"
+
+#: includes/addons/jet-hotspots-widget.php:431
+#: includes/ext/element-extension.php:769
+msgid "Shift-Away"
+msgstr "Shift-Away"
+
+#: includes/addons/jet-hotspots-widget.php:432
+#: includes/ext/element-extension.php:770
+msgid "Shift-Toward"
+msgstr "Shift-Toward"
+
+#: includes/addons/jet-hotspots-widget.php:433
+#: includes/addons/jet-view-more-widget.php:132
+#: includes/ext/element-extension.php:771
+msgid "Fade"
+msgstr "Fade"
+
+#: includes/addons/jet-hotspots-widget.php:434
+#: includes/ext/element-extension.php:772
+msgid "Scale"
+msgstr "Scale"
+
+#: includes/addons/jet-hotspots-widget.php:435
+#: includes/ext/element-extension.php:773
+msgid "Perspective"
+msgstr "Perspective"
+
+#: includes/addons/jet-hotspots-widget.php:451
+msgid "Hotspot"
+msgstr "Отметка"
+
+#: includes/addons/jet-hotspots-widget.php:460
+#: includes/addons/jet-hotspots-widget.php:738
+#: includes/addons/jet-unfold-widget.php:386
+#: includes/addons/jet-unfold-widget.php:626
+#: includes/addons/jet-unfold-widget.php:720
+#: includes/addons/jet-view-more-widget.php:156
+#: includes/ext/element-extension.php:945
+msgid "Padding"
+msgstr "Внутренний отступ"
+
+#: includes/addons/jet-hotspots-widget.php:473
+#: includes/addons/jet-hotspots-widget.php:751
+#: includes/addons/jet-unfold-widget.php:328
+#: includes/addons/jet-unfold-widget.php:364
+#: includes/addons/jet-unfold-widget.php:663
+#: includes/addons/jet-unfold-widget.php:757
+#: includes/addons/jet-view-more-widget.php:261
+#: includes/addons/jet-view-more-widget.php:356
+#: includes/ext/element-extension.php:962
+msgid "Border"
+msgstr "Граница"
+
+#: includes/addons/jet-hotspots-widget.php:483
+#: includes/addons/jet-hotspots-widget.php:761
+#: includes/addons/jet-unfold-widget.php:411
+#: includes/addons/jet-unfold-widget.php:650
+#: includes/addons/jet-unfold-widget.php:744
+#: includes/addons/jet-view-more-widget.php:180
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:244
+#: includes/ext/element-extension.php:975
+msgid "Border Radius"
+msgstr "Скругление углов"
+
+#: includes/addons/jet-hotspots-widget.php:524
+#: includes/addons/jet-hotspots-widget.php:583
+#: includes/addons/jet-view-more-widget.php:232
+#: includes/addons/jet-view-more-widget.php:327
+msgid "Icon Size"
+msgstr "Размер иконки"
+
+#: includes/addons/jet-hotspots-widget.php:544
+#: includes/addons/jet-hotspots-widget.php:603
+#: includes/addons/jet-view-more-widget.php:221
+#: includes/addons/jet-view-more-widget.php:312
+msgid "Icon Color"
+msgstr "Цвет иконки"
+
+#: includes/addons/jet-hotspots-widget.php:555
+#: includes/addons/jet-hotspots-widget.php:614
+#: includes/addons/jet-hotspots-widget.php:705
+#: includes/addons/jet-unfold-widget.php:606
+#: includes/addons/jet-unfold-widget.php:701
+#: includes/addons/jet-view-more-widget.php:201
+#: includes/addons/jet-view-more-widget.php:288
+#: includes/ext/element-extension.php:877
+msgid "Text Color"
+msgstr "Цвет текста"
+
+#: includes/addons/jet-hotspots-widget.php:576
+#: includes/addons/jet-unfold-widget.php:683
+#: includes/addons/jet-view-more-widget.php:281
+msgid "Hover"
+msgstr "При наведении"
+
+#: includes/addons/jet-hotspots-widget.php:651
+#: includes/ext/element-extension.php:630
+#: includes/ext/element-extension.php:842
+msgid "Width"
+msgstr "Ширина"
+
+#: includes/addons/jet-hotspots-widget.php:680
+#: includes/ext/element-extension.php:891
+msgid "Text Alignment"
+msgstr "Выравнивание текста"
+
+#: includes/addons/jet-hotspots-widget.php:688
+#: includes/addons/jet-unfold-widget.php:565
+#: includes/ext/element-extension.php:900
+msgid "Center"
+msgstr "По центру"
+
+#: includes/addons/jet-hotspots-widget.php:724
+#: includes/ext/element-extension.php:928
+msgid "Arrow Color"
+msgstr "Цвет стрелки"
+
+#: includes/addons/jet-hotspots-widget.php:820
+msgid "Image not defined"
+msgstr "Изображение отсутствует"
+
+#: includes/addons/jet-unfold-widget.php:28
+#: includes/addons/jet-unfold-widget.php:102
+#: includes/addons/jet-unfold-widget.php:264
+#: includes/addons/jet-unfold-widget.php:510
+msgid "Unfold"
+msgstr "Unfold"
+
+#: includes/addons/jet-unfold-widget.php:59
+#: includes/addons/jet-view-more-widget.php:88
+#: includes/ext/element-extension.php:385
+#: includes/ext/element-extension.php:722
+msgid "Settings"
+msgstr "Настройки"
+
+#: includes/addons/jet-unfold-widget.php:66
+#: includes/addons/jet-unfold-widget.php:151
+#: includes/addons/jet-unfold-widget.php:234
+#: includes/addons/jet-unfold-widget.php:312
+#: includes/addons/jet-unfold-widget.php:481
+msgid "Fold"
+msgstr "Fold"
+
+#: includes/addons/jet-unfold-widget.php:78
+msgid "Closed Height"
+msgstr "Высота закрытого блока"
+
+#: includes/addons/jet-unfold-widget.php:109
+#: includes/addons/jet-unfold-widget.php:158
+msgid "Duration"
+msgstr "Скорость"
+
+#: includes/addons/jet-unfold-widget.php:129
+#: includes/addons/jet-unfold-widget.php:178
+msgid "Easing"
+msgstr "Анимация"
+
+#: includes/addons/jet-unfold-widget.php:133
+#: includes/addons/jet-unfold-widget.php:182
+msgid "Linear"
+msgstr "Linear"
+
+#: includes/addons/jet-unfold-widget.php:134
+#: includes/addons/jet-unfold-widget.php:183
+msgid "Sine"
+msgstr "Sine"
+
+#: includes/addons/jet-unfold-widget.php:135
+#: includes/addons/jet-unfold-widget.php:184
+msgid "Expo"
+msgstr "Expo"
+
+#: includes/addons/jet-unfold-widget.php:136
+#: includes/addons/jet-unfold-widget.php:185
+msgid "Circ"
+msgstr "Circ"
+
+#: includes/addons/jet-unfold-widget.php:137
+#: includes/addons/jet-unfold-widget.php:186
+msgid "Back"
+msgstr "Back"
+
+#: includes/addons/jet-unfold-widget.php:138
+#: includes/addons/jet-unfold-widget.php:187
+msgid "InOutSine"
+msgstr "InOutSine"
+
+#: includes/addons/jet-unfold-widget.php:139
+#: includes/addons/jet-unfold-widget.php:188
+msgid "InOutExpo"
+msgstr "InOutExpo"
+
+#: includes/addons/jet-unfold-widget.php:140
+#: includes/addons/jet-unfold-widget.php:189
+msgid "InOutCirc"
+msgstr "InOutCirc"
+
+#: includes/addons/jet-unfold-widget.php:141
+#: includes/addons/jet-unfold-widget.php:190
+msgid "InOutBack"
+msgstr "InOutBack"
+
+#: includes/addons/jet-unfold-widget.php:216
+msgid ""
+"I am text block. Click edit button to change this text. Lorem ipsum dolor "
+"sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec "
+"ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, "
+"consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, "
+"pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing "
+"elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. "
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, "
+"luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit "
+"amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper "
+"mattis, pulvinar dapibus leo."
+msgstr ""
+"Нажмите кнопку «Редактировать», чтобы изменить этот текст.  Lorem ipsum "
+"dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec "
+"ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, "
+"consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, "
+"pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing "
+"elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. "
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, "
+"luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit "
+"amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper "
+"mattis, pulvinar dapibus leo."
+
+#: includes/addons/jet-unfold-widget.php:225
+#: includes/addons/jet-unfold-widget.php:547
+msgid "Button"
+msgstr "Кнопка"
+
+#: includes/addons/jet-unfold-widget.php:241
+msgid "Fold Icon"
+msgstr "Иконка опции Fold"
+
+#: includes/addons/jet-unfold-widget.php:253
+msgid "Fold Text"
+msgstr "Текст опции Fold"
+
+#: includes/addons/jet-unfold-widget.php:255
+msgid "Hide"
+msgstr "Скрыть"
+
+#: includes/addons/jet-unfold-widget.php:271
+msgid "Unfold Icon"
+msgstr "Иконка опции Unfold"
+
+#: includes/addons/jet-unfold-widget.php:283
+msgid "Unfold Text"
+msgstr "Текст опции Unfold"
+
+#: includes/addons/jet-unfold-widget.php:285
+msgid "Show"
+msgstr "Показать"
+
+#: includes/addons/jet-unfold-widget.php:301
+msgid "Container"
+msgstr "Контейнер"
+
+#: includes/addons/jet-unfold-widget.php:348
+msgid "UnFold"
+msgstr "Unfold"
+
+#: includes/addons/jet-unfold-widget.php:399
+#: includes/addons/jet-unfold-widget.php:638
+#: includes/addons/jet-unfold-widget.php:732
+#: includes/addons/jet-view-more-widget.php:168
+msgid "Margin"
+msgstr "Внешний отступ"
+
+#: includes/addons/jet-unfold-widget.php:428
+msgid "Separator"
+msgstr "Разделитель"
+
+#: includes/addons/jet-unfold-widget.php:437
+#: includes/ext/element-extension.php:649
+msgid "Height"
+msgstr "Высота"
+
+#: includes/addons/jet-unfold-widget.php:488
+#: includes/addons/jet-unfold-widget.php:517
+#: includes/ext/element-extension.php:591
+msgid "Color"
+msgstr "Цвет"
+
+#: includes/addons/jet-unfold-widget.php:556
+msgid "Alignment"
+msgstr "Выравнивание"
+
+#: includes/addons/jet-unfold-widget.php:591
+#: includes/addons/jet-unfold-widget.php:690
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#: includes/addons/jet-view-more-widget.php:28
+#: includes/addons/jet-view-more-widget.php:108
+msgid "View More"
+msgstr "View More"
+
+#: includes/addons/jet-view-more-widget.php:53
+msgid "Sections"
+msgstr "Элементы"
+
+#: includes/addons/jet-view-more-widget.php:62
+msgid "Section Id"
+msgstr "ID виджета"
+
+#: includes/addons/jet-view-more-widget.php:106
+msgid "Label"
+msgstr "Ярлык кнопки"
+
+#: includes/addons/jet-view-more-widget.php:115
+msgid "Show All Sections"
+msgstr "Открывать все элементы сразу"
+
+#: includes/addons/jet-view-more-widget.php:127
+msgid "Show Effect"
+msgstr "Анимация"
+
+#: includes/addons/jet-view-more-widget.php:133
+msgid "Zoom In"
+msgstr "Zoom In"
+
+#: includes/addons/jet-view-more-widget.php:134
+msgid "Zoom Out"
+msgstr "Zoom Out"
+
+#: includes/addons/jet-view-more-widget.php:135
+msgid "Move Up"
+msgstr "Move Up"
+
+#: includes/addons/jet-view-more-widget.php:136
+msgid "Fall Perspective"
+msgstr "Fall Perspective"
+
+#: includes/addons/jet-view-more-widget.php:147
+msgid "General"
+msgstr "Общее"
+
+#: includes/compatibility/compatibility.php:64
+msgid "Jet Unfold: Content"
+msgstr ""
+
+#: includes/compatibility/compatibility.php:69
+msgid "Jet Unfold: Fold Text"
+msgstr ""
+
+#: includes/compatibility/compatibility.php:74
+msgid "Jet Unfold: Unfold Text"
+msgstr ""
+
+#: includes/compatibility/compatibility.php:85
+msgid "Jet View More: Button Label"
+msgstr ""
+
+#: includes/compatibility/compatibility.php:137
+msgid "JetTricks - Tooltip Description"
+msgstr ""
+
+#: includes/compatibility/compatibility.php:142
+msgid "JetTricks - Satellite Text"
+msgstr ""
+
+#: includes/compatibility/wpml/modules/class-wpml-jet-tricks-hotspots.php:36
+msgid "Jet Hotspots: Text"
+msgstr ""
+
+#: includes/compatibility/wpml/modules/class-wpml-jet-tricks-hotspots.php:39
+msgid "Jet Hotspots: Description"
+msgstr ""
+
+#: includes/compatibility/wpml/modules/class-wpml-jet-tricks-hotspots.php:42
+msgid "Jet Hotspots: Link"
+msgstr ""
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:27
+msgctxt "Background Control"
+msgid "Background Type"
+msgstr "Тип фона"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:31
+msgctxt "Background Control"
+msgid "Classic"
+msgstr "Классический"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:35
+msgctxt "Background Control"
+msgid "Gradient"
+msgstr "Градиент"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:44
+msgctxt "Background Control"
+msgid "Color"
+msgstr "Цвет"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:47
+msgctxt "Background Control"
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:57
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:83
+msgctxt "Background Control"
+msgid "Location"
+msgstr "Местоположение"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:72
+msgctxt "Background Control"
+msgid "Second Color"
+msgstr "Второй цвет"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:98
+msgctxt "Background Control"
+msgid "Type"
+msgstr "Тип"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:101
+msgctxt "Background Control"
+msgid "Linear"
+msgstr "Линейный"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:102
+msgctxt "Background Control"
+msgid "Radial"
+msgstr "Радиальный"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:113
+msgctxt "Background Control"
+msgid "Angle"
+msgstr "Угол"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:136
+msgctxt "Background Control"
+msgid "Position"
+msgstr "Положение"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:139
+msgctxt "Background Control"
+msgid "Center Center"
+msgstr "Центр центр"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:140
+msgctxt "Background Control"
+msgid "Center Left"
+msgstr "Центр лево"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:141
+msgctxt "Background Control"
+msgid "Center Right"
+msgstr "Центр право"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:142
+msgctxt "Background Control"
+msgid "Top Center"
+msgstr "Верх центр"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:143
+msgctxt "Background Control"
+msgid "Top Left"
+msgstr "Верх лево"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:144
+msgctxt "Background Control"
+msgid "Top Right"
+msgstr "Справа вверху"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:145
+msgctxt "Background Control"
+msgid "Bottom Center"
+msgstr "Низ центр"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:146
+msgctxt "Background Control"
+msgid "Bottom Left"
+msgstr "Низ лево"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:147
+msgctxt "Background Control"
+msgid "Bottom Right"
+msgstr "Низ право"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:161
+msgid "Font Color"
+msgstr "Цвет шрифта"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:169
+msgid "Font Size"
+msgstr "Размер шрифта"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:188
+msgid "Box Size"
+msgstr "Размер ячейки"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:206
+msgctxt "Border Control"
+msgid "Border Type"
+msgstr "Тип границы"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:210
+msgctxt "Border Control"
+msgid "Solid"
+msgstr "Сплошной"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:211
+msgctxt "Border Control"
+msgid "Double"
+msgstr "Двойной"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:212
+msgctxt "Border Control"
+msgid "Dotted"
+msgstr "Точечный"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:213
+msgctxt "Border Control"
+msgid "Dashed"
+msgstr "Пунктирный"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:221
+msgctxt "Border Control"
+msgid "Width"
+msgstr "Ширина"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:232
+msgctxt "Border Control"
+msgid "Color"
+msgstr "Цвет"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:253
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:263
+msgctxt "Box Shadow Control"
+msgid "Box Shadow"
+msgstr "Тень объекта"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:274
+msgctxt "Box Shadow Control"
+msgid "Position"
+msgstr "Почложение"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:277
+msgctxt "Box Shadow Control"
+msgid "Outline"
+msgstr "По контуру"
+
+#: includes/controls/groups/class-jet-tricks-group-control-box-style.php:278
+msgctxt "Box Shadow Control"
+msgid "Inset"
+msgstr "Внутри контура"
+
+#: includes/ext/element-extension.php:141
+#: includes/ext/element-extension.php:189
+#: includes/ext/element-extension.php:273
+msgid "Jet Tricks"
+msgstr "Jet Tricks"
+
+#: includes/ext/element-extension.php:149
+msgid "Enable Particles"
+msgstr "Использовать эффект Particles"
+
+#: includes/ext/element-extension.php:155
+msgid "Switch on to enable & access Particles options!"
+msgstr "Добавление анимированных элементов для фона секции"
+
+#: includes/ext/element-extension.php:163
+msgid "Particles JSON"
+msgstr "Добавьте JSON для анимированных частиц"
+
+#: includes/ext/element-extension.php:168
+msgid ""
+"Paste your particles JSON code here - Generate it from <a href=\"http://"
+"vincentgarreau.com/particles.js/#default\" target=\"_blank\">Here!</a>"
+msgstr ""
+"Скопируйте и вставьте в поле выше готовый JSON. Вы можете создать его  <a "
+"href=\"http://vincentgarreau.com/particles.js/#default\" target=\"_blank"
+"\">здесь</a>."
+
+#: includes/ext/element-extension.php:197
+msgid "Sticky Column"
+msgstr "Использовать эффект Sticky?"
+
+#: includes/ext/element-extension.php:209
+msgid "Top Spacing"
+msgstr "Верхний отступ"
+
+#: includes/ext/element-extension.php:224
+msgid "Bottom Spacing"
+msgstr "Нижний отступ"
+
+#: includes/ext/element-extension.php:239
+msgid "Sticky On"
+msgstr "Использовать эффект для устройств:"
+
+#: includes/ext/element-extension.php:248
+#: includes/ext/element-extension.php:347
+msgid "Desktop"
+msgstr "Компьютер"
+
+#: includes/ext/element-extension.php:249
+#: includes/ext/element-extension.php:348
+msgid "Tablet"
+msgstr "Планшет"
+
+#: includes/ext/element-extension.php:250
+#: includes/ext/element-extension.php:349
+msgid "Mobile"
+msgstr "Мобильное устройство"
+
+#: includes/ext/element-extension.php:281
+msgid "Parallax"
+msgstr "Parallax"
+
+#: includes/ext/element-extension.php:289
+msgid "Use Parallax?"
+msgstr "Использовать  эффект Parallax?"
+
+#: includes/ext/element-extension.php:301
+msgid "Parallax Speed(%)"
+msgstr "Скорость анимации (%)"
+
+#: includes/ext/element-extension.php:323
+msgid "Invert"
+msgstr "Обратный Parallax"
+
+#: includes/ext/element-extension.php:338
+msgid "Active On"
+msgstr "Активно для"
+
+#: includes/ext/element-extension.php:361
+msgid "Satellite"
+msgstr "Satellite"
+
+#: includes/ext/element-extension.php:370
+msgid "Use Satellite?"
+msgstr "Использовать эффект Satellite?"
+
+#: includes/ext/element-extension.php:395
+msgid "Type"
+msgstr "Тип элемента"
+
+#: includes/ext/element-extension.php:464
+msgid "Top Left"
+msgstr "Сверху слева"
+
+#: includes/ext/element-extension.php:465
+msgid "Top Center"
+msgstr "Сверху по центру"
+
+#: includes/ext/element-extension.php:466
+msgid "Top Right"
+msgstr "Сверху справа"
+
+#: includes/ext/element-extension.php:467
+msgid "Middle Left"
+msgstr "Слева по центру"
+
+#: includes/ext/element-extension.php:468
+msgid "Middle Center"
+msgstr "Абсолютно по центру"
+
+#: includes/ext/element-extension.php:469
+msgid "Middle Right"
+msgstr "Справа по центру"
+
+#: includes/ext/element-extension.php:470
+msgid "Bottom Left"
+msgstr "Снизу слева"
+
+#: includes/ext/element-extension.php:471
+msgid "Bottom Center"
+msgstr "Снизу по центру"
+
+#: includes/ext/element-extension.php:472
+msgid "Bottom Right"
+msgstr "Снизу справа"
+
+#: includes/ext/element-extension.php:484
+msgid "x-Offset"
+msgstr "Положение по горизонтали"
+
+#: includes/ext/element-extension.php:509
+msgid "y-Offset"
+msgstr "Положение по вертикали"
+
+#: includes/ext/element-extension.php:534
+msgid "Rotate"
+msgstr "Положение под углом"
+
+#: includes/ext/element-extension.php:561
+#: includes/ext/element-extension.php:815
+msgid "z-Index"
+msgstr "Z-Индекс"
+
+#: includes/ext/element-extension.php:581
+msgid "Styles"
+msgstr "Стили"
+
+#: includes/ext/element-extension.php:668
+msgid "Icon Box"
+msgstr "Иконка ячейки"
+
+#: includes/ext/element-extension.php:707
+msgid "Use Tooltip?"
+msgstr "Использовать эффект Tooltip?"
+
+#: includes/ext/element-extension.php:785
+msgid "Offset"
+msgstr "Отступ по горизонтали"
+
+#: includes/ext/element-extension.php:832
+msgid "Style"
+msgstr "Стиль"
+
+#: includes/integration.php:202
+msgid "Jet Elements"
+msgstr "Jet Elements"
+
+#: jet-tricks.php:172
+#, php-format
+msgid "JetTricks for Elementor requires the following plugin: %1$s."
+msgid_plural "JetTricks for Elementor requires the following plugins: %1$s."
+msgstr[0] "JetTricks для Elementor необходим следующий плагин: %1$s."
+msgstr[1] "JetTricks для Elementor необходимы следующие плагины: %1$s."
+msgstr[2] "JetTricks для Elementor необходим следующий плагин: %1$s."
+
+#: jet-tricks.php:177
+#, php-format
+msgid "JetTricks for Elementor recommends the following plugin: %1$s."
+msgid_plural "JetTricks for Elementor recommends the following plugins: %1$s."
+msgstr[0] "JetTricks для Elementor реомендуется следующий плагин: %1$s."
+msgstr[1] "JetTricks для Elementor реомендуются следующие плагины: %1$s."
+msgstr[2] "JetTricks для Elementor реомендуется следующий плагин: %1$s."
+
+#: jet-tricks.php:298
+msgid "Changelog"
+msgstr "Изменения"
+
+#~ msgid "Lorem Ipsum"
+#~ msgstr "Lorem Ipsum"

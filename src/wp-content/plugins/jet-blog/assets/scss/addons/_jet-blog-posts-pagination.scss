@@ -1,0 +1,36 @@
+.elementor-jet-blog-posts-pagination {
+	.navigation.pagination {
+		.nav-links {
+			display: flex;
+			align-items: center;
+			.page-numbers {
+				display: block;
+				text-align: center;
+				&.next,
+				&.prev {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+		}
+	}
+	.jet-blog-arrow {
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 999;
+		&:before {
+			display: block;
+		}
+		&.jet-arrow-next {
+			&:before {
+				transform: scale(-1, 1);
+			}
+		}
+	}
+}

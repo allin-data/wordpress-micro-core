@@ -1,0 +1,232 @@
+.jet-search {
+	position: relative;
+	&__label {
+		display: block;
+		flex: 1 1 auto;
+		margin: 0;
+	}
+	&__form {
+		display: flex;
+		align-items: center;
+		flex: 1 1 auto;
+	}
+	&__field {
+		width: 100%;
+
+		&[type="search"] {
+			box-sizing: border-box;
+			-webkit-appearance: none;
+			appearance: none;
+		}
+	}
+	&__submit {
+		margin-left: 10px;
+		display: flex;
+		align-items: center;
+		border: none;
+
+		&-icon + &-label {
+			margin-left: 4px;
+		}
+	}
+	&__popup {
+		visibility: hidden;
+		position: absolute;
+		z-index: 2;
+		top: -999em;
+		left: -999em;
+		width: 250px;
+		opacity: 0;
+
+		.jet-search-popup-active & {
+			opacity: 1;
+		}
+
+		.jet-transition-out & {
+			opacity: 0;
+		}
+
+		.jet-transition-in & {
+			opacity: 1;
+		}
+
+		.jet-search-popup-active &,
+		.jet-transition-out &,
+		.jet-transition-in & {
+			visibility: visible;
+			top: 0;
+			left: 0;
+		}
+
+		&.jet-search__popup--move-up-effect:not(.jet-search__popup--full-screen) {
+			transform: translateY( -20px );
+			transition: opacity 200ms linear, transform 200ms linear;
+
+			.jet-search-popup-active & {
+				transform: translateY( 0 );
+			}
+
+			.jet-transition-out & {
+				transform: translateY( -20px );
+			}
+
+			.jet-transition-in & {
+				transform: translateY( 0 );
+			}
+		}
+
+		&.jet-search__popup--move-down-effect:not(.jet-search__popup--full-screen) {
+			transform: translateY( 20px );
+			transition: opacity 200ms linear, transform 200ms linear;
+
+			.jet-search-popup-active & {
+				transform: translateY( 0 );
+			}
+
+			.jet-transition-out & {
+				transform: translateY( 20px );
+			}
+
+			.jet-transition-in & {
+				transform: translateY( 0 );
+			}
+		}
+
+		&.jet-search__popup--fade-effect {
+			transition: opacity 200ms linear;
+		}
+
+		&.jet-search__popup--scale-effect {
+			transform: scale(0);
+			transition: opacity 200ms linear, transform 200ms linear;
+
+			.jet-search-popup-active & {
+				transform: scale(1);
+			}
+
+			.jet-transition-out & {
+				transform: scale(0);
+			}
+
+			.jet-transition-in & {
+				transform: scale(1);
+			}
+		}
+
+		&-content {
+			display: flex;
+			align-items: center;
+		}
+		&-close {
+			margin-left: 10px;
+			border: none;
+		}
+
+		&--full-screen {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 9998;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: auto;
+			padding: 30px;
+			background-color: rgba(0, 0, 0, .7);
+			transform: scale(0);
+
+			.jet-search-popup-active & {
+				transform: scale(1);
+			}
+
+			&.jet-search__popup--none-effect {
+				.jet-transition-out & {
+					transform: scale(0);
+				}
+
+				.jet-transition-in & {
+					transform: scale(1);
+				}
+			}
+
+			&.jet-search__popup--fade-effect {
+				.jet-transition-out &,
+				.jet-transition-in & {
+					transform: scale(1);
+				}
+			}
+
+			&.jet-search__popup--move-up-effect,
+			&.jet-search__popup--move-down-effect {
+				transition: opacity 200ms linear;
+
+				.jet-transition-out &,
+				.jet-transition-in & {
+					transform: scale(1);
+				}
+			}
+
+			&.jet-search__popup--move-up-effect {
+				.jet-search__form {
+					transform: translateY( -20px );
+					transition: transform 200ms linear;
+
+					.jet-search-popup-active & {
+						transform: translateY( 0 );
+					}
+
+					.jet-transition-out & {
+						transform: translateY( -20px );
+					}
+
+					.jet-transition-in & {
+						transform: translateY( 0 );
+					}
+				}
+			}
+
+			&.jet-search__popup--move-down-effect {
+				.jet-search__form {
+					transform: translateY( 20px );
+					transition: transform 200ms linear;
+
+					.jet-search-popup-active & {
+						transform: translateY( 0 );
+					}
+
+					.jet-transition-out & {
+						transform: translateY( 20px );
+					}
+
+					.jet-transition-in & {
+						transform: translateY( 0 );
+					}
+				}
+			}
+
+			.jet-search__popup-content {
+				width: 500px;
+				max-width: 100%;
+			}
+
+			.jet-search__popup-close {
+				position: absolute;
+				top: 0;
+				right: 0;
+				margin: 30px;
+
+				@media ( max-width: $sm-max ) {
+					margin: 15px;
+				}
+			}
+		}
+	}
+	&__popup-trigger-container {
+		display: flex;
+	}
+	&__popup-trigger {
+		border: none;
+	}
+}

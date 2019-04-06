@@ -1,0 +1,33 @@
+{
+  "name": "gulp-tasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZemezLab/jet-popup.git"
+  },
+  "author": "Shin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZemezLab/jet-popup/issues"
+  },
+  "homepage": "https://github.com/ZemezLab/jet-popup#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.1"
+  },
+  "dependencies": {
+    "gulp-checktextdomain": "^2.2.0",
+    "gulp-livereload": "^4.0.0"
+  }
+}

@@ -1,0 +1,193 @@
+.jet-view-more {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		padding: 15px 30px;
+		font-size: 16px;
+		border-radius: 4px;
+		line-height: 1;
+		background-color: #818a91;
+		color: white;
+		text-align: center;
+		transition:  all 0.5s;
+	}
+
+	&__icon {
+		color: white;
+		margin: 0 5px 0 0;
+	}
+
+	&__label {
+		color: white;
+	}
+}
+
+.jet-view-more-section-edit-mode {
+	filter: grayscale(1);
+	opacity: 0.5;
+}
+
+.jet-view-more-section {
+	height: 0;
+	overflow: hidden;
+
+	&.jet-tricks-fade-effect {
+		animation-name: jetTricksFade;
+		animation-duration: 500ms;
+		animation-timing-function: cubic-bezier(.26,.69,.37,.96);
+		animation-play-state: paused;
+
+		&.view-more-visible {
+			height: auto;
+			animation-play-state: running;
+		}
+	}
+
+	&.jet-tricks-zoom-in-effect {
+		animation-name: jetTricksZoomIn;
+		animation-duration: 500ms;
+		animation-timing-function: cubic-bezier(.26,.69,.37,.96);
+		animation-play-state: paused;
+
+		&.view-more-visible {
+			height: auto;
+			animation-play-state: running;
+		}
+	}
+
+	&.jet-tricks-zoom-out-effect {
+		animation-name: jetTricksZoomOut;
+		animation-duration: 500ms;
+		animation-timing-function: cubic-bezier(.26,.69,.37,.96);
+		animation-play-state: paused;
+
+		&.view-more-visible {
+			height: auto;
+			animation-play-state: running;
+		}
+	}
+
+	&.jet-tricks-move-up-effect {
+		animation-name: jetTricksMoveUp;
+		animation-duration: 500ms;
+		animation-timing-function: cubic-bezier(.26,.69,.37,.96);
+		animation-play-state: paused;
+
+		&.view-more-visible {
+			height: auto;
+			animation-play-state: running;
+		}
+	}
+
+	&.jet-tricks-fall-perspective-effect {
+		animation-name: jetTricksFallPerspective;
+		animation-duration: 500ms;
+		animation-timing-function: cubic-bezier(.26,.69,.37,.96);
+		animation-play-state: paused;
+
+		&.view-more-visible {
+			height: auto;
+			animation-play-state: running;
+		}
+	}
+}
+
+@keyframes jetTricksFade {
+	0% {
+		height: 0;
+		opacity: 0;
+	}
+
+	1% {
+		height: auto;
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes jetTricksZoomIn {
+	0% {
+		height: 0;
+		opacity: 0;
+		transform: scale(0.75);
+	}
+
+	1% {
+		height: auto;
+		opacity: 0;
+		transform: scale(0.75);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes jetTricksZoomOut {
+	0% {
+		height: 0;
+		opacity: 0;
+		transform: scale(1.1);
+	}
+
+	1% {
+		height: auto;
+		opacity: 0;
+		transform: scale(1.1);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+
+@keyframes jetTricksMoveUp {
+	0% {
+		height: 0;
+		opacity: 0;
+		transform: translateY(50px);
+	}
+
+	1% {
+		height: auto;
+		opacity: 0;
+		transform: translateY(50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes jetTricksFallPerspective {
+	0% {
+		height: 0;
+		opacity: 0;
+		transform: perspective(1000px) translateY(50px) translateZ(-300px) rotateX(-35deg);
+	}
+
+	1% {
+		height: auto;
+		opacity: 0;
+		transform: perspective(1000px) translateY(50px) translateZ(-300px) rotateX(-35deg);
+	}
+
+	100% {
+		opacity: 1;
+		transform: perspective(1000px) translateY(0) translateZ(0) rotateX(0deg);
+	}
+}
+

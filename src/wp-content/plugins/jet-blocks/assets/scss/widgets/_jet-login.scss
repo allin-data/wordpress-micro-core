@@ -1,0 +1,26 @@
+.jet-login {
+	label {
+		display: block;
+	}
+	p {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.jet-login-lost-password-link {
+	display: inline-block;
+	margin-top: 15px;
+}
+
+.jet-login-message {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	color: #f00;
+}
+
+.jet-login-lost-password-link + .jet-login-message {
+	a[href*="action=lostpassword"] {
+		display: none;
+	}
+}

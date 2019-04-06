@@ -1,0 +1,18 @@
+@import "addons/jet-blog-smart-listing";
+@import "addons/jet-blog-smart-tiles";
+@import "addons/jet-blog-text-ticker";
+@import "addons/jet-blog-video-playlist";
+@import "addons/jet-blog-posts-pagination";
+@import "addons/jet-blog-posts-navigation";
+
+@media (max-width: 767px) {
+	.jet-blog-hidden-mobile {
+		display: none !important;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.jet-blog-hidden-tablet {
+		display: none !important;
+	}
+}

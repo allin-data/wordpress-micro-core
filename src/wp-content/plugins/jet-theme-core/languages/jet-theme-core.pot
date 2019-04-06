@@ -1,0 +1,825 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jet Theme Core\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-23 12:30+0200\n"
+"PO-Revision-Date: 2018-05-09 17:25+0200\n"
+"Last-Translator: \n"
+"Language-Team: Zemez\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;_ex:1,2c;_n:1,2;_nx:4c,1,2;_n_noop:1,2;"
+"_nx_noop:4c,1,2\n"
+"esc_attr__;_x: 1,2c;_n:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: cherry-framework\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: includes/api.php:154 includes/api.php:198
+msgid "Remote API is disabled."
+msgstr ""
+
+#: includes/api.php:158 includes/api.php:202
+msgid "Empty license key."
+msgstr ""
+
+#: includes/api.php:166 includes/api.php:210
+msgid "Internal error, please try again later."
+msgstr ""
+
+#: includes/api.php:238
+msgid "Your license is missing. Please check your key again."
+msgstr ""
+
+#: includes/api.php:239
+#, php-format
+msgid ""
+"<strong>You have no more activations left.</strong> <a href=\"%s\" target="
+"\"_blank\">Please upgrade to a more advanced license</a> (you'll only need "
+"to cover the difference)."
+msgstr ""
+
+#: includes/api.php:240
+#, php-format
+msgid ""
+"<strong>Your License Has Expired.</strong> <a href=\"%s\" target=\"_blank"
+"\">Renew your license today</a> to keep getting feature updates, premium "
+"support and unlimited access to the template library."
+msgstr ""
+
+#: includes/api.php:241 includes/api.php:242
+msgid ""
+"<strong>Your license key has been cancelled</strong> (most likely due to a "
+"refund request). Please consider acquiring a new license."
+msgstr ""
+
+#: includes/api.php:243 includes/api.php:245
+msgid ""
+"<strong>Your license key doesn't match your current domain</strong>. This is "
+"most likely due to a change in the domain URL of your site (including HTTPS/"
+"SSL migration). Please deactivate the license and then reactivate it again."
+msgstr ""
+
+#: includes/api.php:244
+msgid ""
+"<strong>Your license key doesn't match your current domain</strong>. This is "
+"most likely due to a change in the domain URL. Please deactivate the license "
+"and then reactivate it again."
+msgstr ""
+
+#: includes/api.php:248
+msgid ""
+"An error occurred. Please check your internet connection and try again. If "
+"the problem persists, contact our support."
+msgstr ""
+
+#: includes/api.php:332
+msgid "Remote API is disabled"
+msgstr ""
+
+#: includes/api.php:340
+msgid "Empty license key"
+msgstr ""
+
+#: includes/api.php:360 includes/dashboard/page-theme.php:474
+#: includes/dashboard/page-theme.php:514 includes/templates/post-type.php:176
+msgid "Active"
+msgstr ""
+
+#: includes/assets.php:89 includes/conditions/manager.php:215
+#: includes/conditions/singular-page-template.php:48
+msgid "Select..."
+msgstr ""
+
+#: includes/backups.php:260 includes/backups.php:302
+msgid "Permission denied"
+msgstr ""
+
+#: includes/backups.php:270 includes/backups.php:312
+msgid "File not exists"
+msgstr ""
+
+#: includes/backups.php:319
+msgid "Can't delete selected backup"
+msgstr ""
+
+#: includes/conditions/archive-all.php:33
+msgid "All Archives"
+msgstr ""
+
+#: includes/conditions/archive-category.php:33
+msgid "Category Archives"
+msgstr ""
+
+#: includes/conditions/archive-category.php:48
+#: includes/conditions/singular-post-from-cat.php:48
+msgid "Select Categories"
+msgstr ""
+
+#: includes/conditions/archive-category.php:53
+msgid "Leave empty to apply for all categories"
+msgstr ""
+
+#: includes/conditions/archive-category.php:86
+#: includes/conditions/archive-post-type.php:60
+#: includes/conditions/archive-tag.php:87
+#: includes/conditions/archive-tax.php:102
+#: includes/conditions/singular-page.php:86
+#: includes/conditions/singular-post-from-cat.php:85
+#: includes/conditions/singular-post-from-tag.php:85
+#: includes/conditions/singular-post-type.php:60
+#: includes/conditions/singular-post.php:86 includes/templates/manager.php:244
+#: includes/templates/post-type.php:412
+msgid "All"
+msgstr ""
+
+#: includes/conditions/archive-post-type.php:33
+msgid "Post Type Archives"
+msgstr ""
+
+#: includes/conditions/archive-post-type.php:48
+#: includes/conditions/singular-post-type.php:33
+#: includes/conditions/singular-post-type.php:48
+#: includes/document-types/archive.php:50 includes/document-types/single.php:74
+msgid "Post Type"
+msgstr ""
+
+#: includes/conditions/archive-search.php:33
+msgid "Search Results"
+msgstr ""
+
+#: includes/conditions/archive-tag.php:33
+msgid "Tag Archives"
+msgstr ""
+
+#: includes/conditions/archive-tag.php:48
+#: includes/conditions/singular-post-from-tag.php:48
+msgid "Select Tags"
+msgstr ""
+
+#: includes/conditions/archive-tag.php:53
+msgid "Leave empty to apply for all tags"
+msgstr ""
+
+#: includes/conditions/archive-tax.php:33
+msgid "Custom Taxonomy Archives"
+msgstr ""
+
+#: includes/conditions/archive-tax.php:48
+msgid "Taxonomy"
+msgstr ""
+
+#: includes/conditions/archive-tax.php:55
+msgid "Select Terms"
+msgstr ""
+
+#: includes/conditions/archive-tax.php:61
+msgid "Leave empty to apply for all terms"
+msgstr ""
+
+#: includes/conditions/manager.php:197 includes/conditions/manager.php:530
+msgid "Entire Site"
+msgstr ""
+
+#: includes/conditions/manager.php:198
+msgid "Singular"
+msgstr ""
+
+#: includes/conditions/manager.php:199 includes/document-types/archive.php:14
+#: includes/structures/archive.php:15
+msgid "Archive"
+msgstr ""
+
+#: includes/conditions/manager.php:221
+msgid "General"
+msgstr ""
+
+#: includes/conditions/singular-404.php:33
+msgid "404 Page"
+msgstr ""
+
+#: includes/conditions/singular-front-page.php:33
+msgid "Front Page"
+msgstr ""
+
+#: includes/conditions/singular-page-child.php:33
+msgid "Page, Child of"
+msgstr ""
+
+#: includes/conditions/singular-page-child.php:48
+msgid "Select Parent"
+msgstr ""
+
+#: includes/conditions/singular-page-child.php:91
+#: includes/conditions/singular-page-template.php:63
+#: includes/templates/manager.php:196
+msgid "Not Selected"
+msgstr ""
+
+#: includes/conditions/singular-page-template.php:33
+msgid "Page Template"
+msgstr ""
+
+#: includes/conditions/singular-page-template.php:52
+msgid "Select Template"
+msgstr ""
+
+#: includes/conditions/singular-page.php:33 includes/document-types/page.php:14
+#: includes/structures/page.php:15
+msgid "Page"
+msgstr ""
+
+#: includes/conditions/singular-page.php:48
+msgid "Select Pages"
+msgstr ""
+
+#: includes/conditions/singular-page.php:53
+msgid "Leave empty to apply for all pages"
+msgstr ""
+
+#: includes/conditions/singular-post-from-cat.php:33
+msgid "Posts from Category"
+msgstr ""
+
+#: includes/conditions/singular-post-from-tag.php:33
+msgid "Posts from Tag"
+msgstr ""
+
+#: includes/conditions/singular-post.php:33
+msgid "Post"
+msgstr ""
+
+#: includes/conditions/singular-post.php:48
+msgid "Select Posts"
+msgstr ""
+
+#: includes/conditions/singular-post.php:53
+msgid "Leave empty to apply for all posts"
+msgstr ""
+
+#: includes/config.php:45
+msgid "CrocoBlock"
+msgstr ""
+
+#: includes/config.php:51
+msgid "Magic Button"
+msgstr ""
+
+#: includes/config.php:65
+msgid "Learn More About CrocoBlock"
+msgstr ""
+
+#: includes/config.php:66
+msgid ""
+"Here you can get all the necessary information, detailed instructions and "
+"latest news."
+msgstr ""
+
+#: includes/config.php:69
+msgid "Check documentation"
+msgstr ""
+
+#: includes/config.php:73
+msgid "Get more info from documentation"
+msgstr ""
+
+#: includes/config.php:77
+msgid "Knowledge Base"
+msgstr ""
+
+#: includes/config.php:81
+msgid "Access the vast knowledge base"
+msgstr ""
+
+#: includes/config.php:85
+msgid "Community"
+msgstr ""
+
+#: includes/config.php:89
+msgid "Join community to stay tuned to the latest news"
+msgstr ""
+
+#: includes/config.php:93
+msgid "View Video"
+msgstr ""
+
+#: includes/config.php:97
+msgid "View video tutorials"
+msgstr ""
+
+#: includes/dashboard/page-guide.php:42
+msgid "User Guide"
+msgstr ""
+
+#: includes/dashboard/page-license.php:49
+msgid "License"
+msgstr ""
+
+#: includes/dashboard/page-license.php:95
+#: templates/editor/template-library-error.php:15
+msgid "Activate license"
+msgstr ""
+
+#: includes/dashboard/page-license.php:133
+msgid "Please enter your license key."
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:53
+msgid "Plugins"
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:168
+msgid "No plugin specified."
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:183
+msgid "Sorry, you are not allowed to update plugins for this site."
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:193
+#, php-format
+msgid "Version %s"
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:227
+#: includes/dashboard/page-plugins.php:253
+msgid "Plugin update failed."
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:242
+#: includes/dashboard/page-theme.php:170 includes/dashboard/page-theme.php:233
+#: includes/utils.php:233
+msgid "Unable to connect to the filesystem. Please confirm your credentials."
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:274 includes/dashboard/page-skins.php:84
+#: includes/dashboard/page-theme.php:331
+msgid "Installing..."
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:275 includes/dashboard/page-skins.php:85
+#: includes/dashboard/page-theme.php:333
+#: templates/dashboard/license/activate-license-control.php:20
+#: templates/dashboard/skins/install-wizard.php:12
+msgid "Activate"
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:276 includes/dashboard/page-skins.php:86
+#: includes/dashboard/page-theme.php:334
+msgid "Activating..."
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:277 includes/dashboard/page-skins.php:87
+#: includes/dashboard/page-theme.php:335
+msgid "Activated"
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:278
+#: includes/dashboard/page-theme.php:336
+msgid "Updating..."
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:279
+#: includes/dashboard/page-theme.php:337
+msgid "Updated"
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:280 includes/dashboard/page-skins.php:88
+#: includes/dashboard/page-theme.php:338
+msgid "Failed"
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:318
+msgid "Check for updates"
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:330
+msgid "Check for new plugins"
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:488
+msgid "Activate License to Install"
+msgstr ""
+
+#: includes/dashboard/page-plugins.php:497
+#: includes/dashboard/page-skins.php:182
+#: templates/dashboard/theme/child-theme.php:15
+msgid "Install"
+msgstr ""
+
+#: includes/dashboard/page-settings.php:42
+msgid "Settings"
+msgstr ""
+
+#: includes/dashboard/page-skins.php:56
+msgid "Reloading page to apply changes..."
+msgstr ""
+
+#: includes/dashboard/page-skins.php:96
+msgid "Select skin"
+msgstr ""
+
+#: includes/dashboard/page-skins.php:100
+msgid "Switch the current skin to another one"
+msgstr ""
+
+#: includes/dashboard/page-skins.php:209
+msgid "Skins"
+msgstr ""
+
+#: includes/dashboard/page-theme.php:45
+msgid "Theme"
+msgstr ""
+
+#: includes/dashboard/page-theme.php:72
+msgid "You are not allowed to save options."
+msgstr ""
+
+#: includes/dashboard/page-theme.php:77
+msgid "New value not provided."
+msgstr ""
+
+#: includes/dashboard/page-theme.php:107
+msgid "You are not allowed to update themes."
+msgstr ""
+
+#: includes/dashboard/page-theme.php:181
+msgid "Update failed."
+msgstr ""
+
+#: includes/dashboard/page-theme.php:196
+msgid "You are not allowed to install themes."
+msgstr ""
+
+#: includes/dashboard/page-theme.php:203
+msgid "Child theme URL not found."
+msgstr ""
+
+#: includes/dashboard/page-theme.php:261
+msgid "You are not allowed to switch themes."
+msgstr ""
+
+#: includes/dashboard/page-theme.php:283
+msgid "Theme not found."
+msgstr ""
+
+#: includes/dashboard/page-theme.php:332 includes/dashboard/page-theme.php:476
+#: includes/dashboard/page-theme.php:515
+msgid "Installed but not active"
+msgstr ""
+
+#: includes/dashboard/page-theme.php:475
+msgid "Child theme active"
+msgstr ""
+
+#: includes/dashboard/page-theme.php:477
+msgid "Not Installed"
+msgstr ""
+
+#: includes/dashboard/page-theme.php:516
+msgid "Not installed"
+msgstr ""
+
+#: includes/dashboard/page-theme.php:646
+msgid "Download"
+msgstr ""
+
+#: includes/dashboard/page-theme.php:652
+msgid "Delete"
+msgstr ""
+
+#: includes/document-types/archive.php:42 includes/document-types/single.php:66
+msgid "Preview"
+msgstr ""
+
+#: includes/document-types/archive.php:62
+#: includes/document-types/single.php:100
+msgid "Please reload page after applying preview settings"
+msgstr ""
+
+#: includes/document-types/base.php:54
+msgid "Conditions"
+msgstr ""
+
+#: includes/document-types/footer.php:14 includes/structures/footer.php:15
+msgid "Footer"
+msgstr ""
+
+#: includes/document-types/header.php:14 includes/structures/header.php:15
+msgid "Header"
+msgstr ""
+
+#: includes/document-types/section.php:14 includes/structures/section.php:15
+msgid "Section"
+msgstr ""
+
+#: includes/document-types/single.php:14 includes/structures/single.php:15
+#: includes/structures/single.php:19
+msgid "Single"
+msgstr ""
+
+#: includes/document-types/single.php:84
+msgid "Select Post"
+msgstr ""
+
+#: includes/document-types/single.php:91
+msgid "Please remove selected post after changing preview post type"
+msgstr ""
+
+#: includes/locations.php:264
+msgid "Edit"
+msgstr ""
+
+#: includes/settings.php:82
+msgid "Settings saved"
+msgstr ""
+
+#: includes/settings.php:226
+msgid "Locations realtions"
+msgstr ""
+
+#: includes/settings.php:227
+msgid ""
+"Define relations before Jet and Pro templates attached to the same locations"
+msgstr ""
+
+#: includes/settings.php:232
+msgid "Prevent Pro locations registration"
+msgstr ""
+
+#: includes/settings.php:233
+msgid ""
+"Prevent Elemntor Pro locations registration from JetThemeCore. Enable this "
+"if your headers/footers disappear when JetThemeCore is active"
+msgstr ""
+
+#: includes/settings.php:259
+msgid "Save"
+msgstr ""
+
+#: includes/structures/archive.php:19
+msgid "Archives"
+msgstr ""
+
+#: includes/structures/footer.php:19
+msgid "Footers"
+msgstr ""
+
+#: includes/structures/header.php:19
+msgid "Headers"
+msgstr ""
+
+#: includes/structures/page.php:19
+msgid "Pages"
+msgstr ""
+
+#: includes/structures/section.php:19
+msgid "Sections"
+msgstr ""
+
+#: includes/templates/manager.php:136 includes/templates/post-type.php:349
+#: includes/templates/post-type.php:394 includes/templates/post-type.php:395
+msgid "My Library"
+msgstr ""
+
+#: includes/templates/post-type.php:85 includes/templates/post-type.php:376
+msgid "Type"
+msgstr ""
+
+#: includes/templates/post-type.php:86
+msgid "Active Conditions"
+msgstr ""
+
+#: includes/templates/post-type.php:87
+msgid "Date"
+msgstr ""
+
+#: includes/templates/post-type.php:198
+msgid "You don't have permissions to do this"
+msgstr ""
+
+#: includes/templates/post-type.php:199 includes/templates/post-type.php:208
+#: includes/templates/post-type.php:218 includes/templates/post-type.php:249
+msgid "Error"
+msgstr ""
+
+#: includes/templates/post-type.php:207 includes/templates/post-type.php:217
+msgid "Incorrect template type. Please try again."
+msgstr ""
+
+#: includes/templates/post-type.php:248
+msgid "Can't create template. Please try again"
+msgstr ""
+
+#: includes/templates/post-type.php:339
+msgid "Theme Parts"
+msgstr ""
+
+#: includes/templates/post-type.php:340
+msgid "Template"
+msgstr ""
+
+#: includes/templates/post-type.php:341
+msgid "Add New"
+msgstr ""
+
+#: includes/templates/post-type.php:342 includes/templates/post-type.php:344
+msgid "Add New Template"
+msgstr ""
+
+#: includes/templates/post-type.php:343
+msgid "Edit Template"
+msgstr ""
+
+#: includes/templates/post-type.php:345
+msgid "View Template"
+msgstr ""
+
+#: includes/templates/post-type.php:346
+msgid "Search Template"
+msgstr ""
+
+#: includes/templates/post-type.php:347
+msgid "No Templates Found"
+msgstr ""
+
+#: includes/templates/post-type.php:348
+msgid "No Templates Found In Trash"
+msgstr ""
+
+#: includes/utils.php:181 includes/utils.php:269
+msgid "Sorry, you are not allowed to install plugins on this site."
+msgstr ""
+
+#: includes/utils.php:186 includes/utils.php:274
+msgid "Plugin slug is required"
+msgstr ""
+
+#: templates/dashboard/license/activate-license-control.php:8
+msgid ""
+"Enter your license key here, to activate Crocoblock, and get feature "
+"updates, premium support and unlimited access to the template library."
+msgstr ""
+
+#: templates/dashboard/license/activate-license-control.php:12
+msgid "Log in to your account to get your license key."
+msgstr ""
+
+#: templates/dashboard/license/activate-license-control.php:13
+msgid "Copy the license key from your account and paste it below."
+msgstr ""
+
+#: templates/dashboard/license/activate-license-control.php:16
+#: templates/dashboard/license/deactivate-license-control.php:8
+msgid "Your License Key"
+msgstr ""
+
+#: templates/dashboard/license/activate-license-control.php:18
+msgid "Please enter your license key here"
+msgstr ""
+
+#: templates/dashboard/license/activate-license-control.php:25
+msgid "Your license key should look something like this:"
+msgstr ""
+
+#: templates/dashboard/license/deactivate-license-control.php:12
+msgid "Deactivate"
+msgstr ""
+
+#: templates/dashboard/license/deactivate-license-control.php:15
+#: templates/dashboard/theme/child-theme.php:9
+msgid "Status:"
+msgstr ""
+
+#: templates/dashboard/plugins/core.php:22
+#: templates/dashboard/plugins/plugin.php:24
+msgid "Update"
+msgstr ""
+
+#: templates/dashboard/plugins/core.php:26
+#: templates/dashboard/plugins/plugin.php:28
+msgid "Documentation"
+msgstr ""
+
+#: templates/dashboard/plugins/core.php:30
+msgid "Synchronize Templates Library"
+msgstr ""
+
+#: templates/dashboard/skins/install-wizard.php:15
+msgid "Install Plugin"
+msgstr ""
+
+#: templates/dashboard/skins/install-wizard.php:21
+msgid ""
+"You need to install and activate <b>JetPluginsWizard</b> to manage skins"
+msgstr ""
+
+#: templates/dashboard/skins/skins-actions.php:8
+msgid "Synchronise Skins Library"
+msgstr ""
+
+#: templates/dashboard/skins/skins-actions.php:24
+msgid "Activate License to Install Skins"
+msgstr ""
+
+#: templates/dashboard/skins/skins-list.php:18
+msgid "Live Demo"
+msgstr ""
+
+#: templates/dashboard/theme/backup-actions.php:10
+msgid "Enable automatic backup"
+msgstr ""
+
+#: templates/dashboard/theme/backup-actions.php:11
+msgid ""
+"If On - new theme backup will be automaticcally created before each update"
+msgstr ""
+
+#: templates/dashboard/theme/backup-actions.php:31
+msgid "Create Backup"
+msgstr ""
+
+#: templates/dashboard/theme/backups-list.php:11
+msgid "File"
+msgstr ""
+
+#: templates/dashboard/theme/backups-list.php:14
+msgid "Created"
+msgstr ""
+
+#: templates/dashboard/theme/backups-list.php:17
+msgid "Actions"
+msgstr ""
+
+#: templates/dashboard/theme/child-theme.php:7
+msgid "Child Theme"
+msgstr ""
+
+#: templates/dashboard/theme/theme.php:21
+msgid "Update now"
+msgstr ""
+
+#: templates/dashboard/theme/theme.php:26
+msgid "New version available"
+msgstr ""
+
+#: templates/dashboard/theme/theme.php:34
+msgid "Check Updates"
+msgstr ""
+
+#: templates/editor/template-library-error.php:8
+msgid "Template couldn't be loaded. Please activate you license key before."
+msgstr ""
+
+#: templates/editor/template-library-header-back.php:3
+msgid "Back to Library"
+msgstr ""
+
+#: templates/editor/template-library-header.php:8
+msgid "Close"
+msgstr ""
+
+#: templates/editor/template-library-insert-button.php:4
+#: templates/editor/template-library-item.php:23
+msgid "Insert"
+msgstr ""
+
+#: templates/editor/template-library-item.php:31
+msgid "Clone to Library"
+msgstr ""
+
+#: templates/editor/template-library-item.php:42
+msgid "Type:"
+msgstr ""
+
+#: templates/editor/template-library-keywords.php:10
+msgid "Any Topic"
+msgstr ""
+
+#: templates/template-types-popup.php:10
+msgid "Select Template Type"
+msgstr ""
+
+#: templates/template-types-popup.php:14
+msgid "Select Type:"
+msgstr ""
+
+#: templates/template-types-popup.php:27
+msgid "Template Name:"
+msgstr ""
+
+#: templates/template-types-popup.php:28
+msgid "Set template name"
+msgstr ""
+
+#: templates/template-types-popup.php:32
+msgid "Create Template"
+msgstr ""

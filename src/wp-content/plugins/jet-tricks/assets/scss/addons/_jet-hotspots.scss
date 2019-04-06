@@ -1,0 +1,253 @@
+.jet-hotspots {
+	position: relative;
+
+	&.image-loaded {
+		.jet-hotspots__item {
+			visibility: visible;
+		}
+	}
+
+	&__container {
+		width: 100%;
+		height: 100%;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		display: block;
+	}
+
+	&__image {
+		width: 100%;
+	}
+
+	&__item {
+		visibility: hidden;
+		position: absolute;
+		transform: translate3d(-50%,-50%, 0);
+		z-index: 99;
+
+		.jet-hotspots__item-inner {
+			position: relative;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: center;
+			align-items: center;
+			padding: 10px;
+			color: white;
+			background-color: #6ec1e4;
+			border-radius: 4px;
+			transform: translateZ(0);
+			transition: all 0.3s ease;
+		}
+
+		i {
+			font-size: 20px;
+		}
+
+		span {
+			font-size: 14px;
+			margin: 0 5px;
+			overflow-wrap: break-word;
+		}
+	}
+}
+
+.jet-hotspots {
+	&.jet-hotspots__hotspots-flash-animation {
+		.jet-hotspots__item {
+			.jet-hotspots__item-inner {
+				animation-name: flash;
+				animation-duration: 7.5s;
+				animation-fill-mode: both;
+				animation-iteration-count: infinite;
+				animation-play-state: running;
+			}
+			&:hover {
+				.jet-hotspots__item-inner {
+					animation-play-state: paused;
+				}
+			}
+		}
+	}
+
+	&.jet-hotspots__hotspots-pulse-animation {
+		.jet-hotspots__item {
+			.jet-hotspots__item-inner {
+				animation-name: pulse;
+				animation-duration: 5s;
+				animation-fill-mode: both;
+				animation-iteration-count: infinite;
+				animation-play-state: running;
+			}
+			&:hover {
+				.jet-hotspots__item-inner {
+					animation-play-state: paused;
+				}
+			}
+		}
+	}
+
+	&.jet-hotspots__hotspots-shake-animation {
+		.jet-hotspots__item {
+			.jet-hotspots__item-inner {
+				animation-name: shake;
+				animation-duration: 5s;
+				animation-fill-mode: both;
+				animation-iteration-count: infinite;
+				animation-play-state: running;
+			}
+			&:hover {
+				.jet-hotspots__item-inner {
+					animation-play-state: paused;
+				}
+			}
+		}
+	}
+
+	&.jet-hotspots__hotspots-tada-animation {
+		.jet-hotspots__item {
+			.jet-hotspots__item-inner {
+				animation-name: tada;
+				animation-duration: 5s;
+				animation-fill-mode: both;
+				animation-iteration-count: infinite;
+				animation-play-state: running;
+			}
+			&:hover {
+				.jet-hotspots__item-inner {
+					animation-play-state: paused;
+				}
+			}
+		}
+	}
+
+	&.jet-hotspots__hotspots-rubber-animation {
+		.jet-hotspots__item {
+			.jet-hotspots__item-inner {
+				animation-name: rubber;
+				animation-duration: 5s;
+				animation-fill-mode: both;
+				animation-iteration-count: infinite;
+				animation-play-state: running;
+			}
+			&:hover {
+				.jet-hotspots__item-inner {
+					animation-play-state: paused;
+				}
+			}
+		}
+	}
+
+	&.jet-hotspots__hotspots-swing-animation {
+		.jet-hotspots__item {
+			.jet-hotspots__item-inner {
+				transform-origin: top center;
+				animation-name: swing;
+				animation-duration: 5s;
+				animation-fill-mode: both;
+				animation-iteration-count: infinite;
+				animation-play-state: running;
+			}
+			&:hover {
+				.jet-hotspots__item-inner {
+					animation-play-state: paused;
+				}
+			}
+		}
+	}
+}
+
+@keyframes flash {
+	0%, 100%, 89% {
+		opacity: 1;
+	}
+	90%, 94%, 98% {
+		opacity: 0;
+	}
+	92%, 96% {
+		opacity: 1;
+	}
+}
+
+@keyframes pulse {
+	0%, 100%, 89% {
+		transform: scale3d(1, 1, 1);
+	}
+	90%, 94%, 98% {
+		transform: scale3d(1.1, 1.1, 1.1);
+	}
+	92%, 96% {
+		transform: scale3d(0.9, 0.9, 0.9);
+	}
+}
+
+@keyframes shake {
+	0%, 100%, 89% {
+		transform: translate3d(0, 0, 0);
+	}
+	90%, 94%, 98% {
+		transform: translate3d(-5px, 0, 0);
+	}
+	92%, 96% {
+		transform: translate3d(5px, 0, 0);
+	}
+}
+
+@keyframes tada {
+	0%, 100%, 86% {
+		transform: scale3d(1, 1, 1);
+	}
+	87% {
+		transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+	}
+	90%, 94%, 98% {
+		transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+	}
+	92%, 96% {
+		transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+	}
+}
+
+@keyframes rubber {
+	64% {
+		transform: scale3d(1, 1, 1);
+	}
+	73% {
+		transform: scale3d(1.25, 0.75, 1);
+	}
+	77% {
+		transform: scale3d(0.75, 1.25, 1);
+	}
+	81% {
+		transform: scale3d(1.15, 0.85, 1);
+	}
+	86% {
+		transform: scale3d(.95, 1.05, 1);
+	}
+	90% {
+		transform: scale3d(1.05, .95, 1);
+	}
+	100% {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+@keyframes swing {
+	0%, 100%, 75% {
+		transform: rotate3d(0, 0, 1, 0deg);
+	}
+	80% {
+		transform: rotate3d(0, 0, 1, 15deg);
+	}
+	85% {
+		transform: rotate3d(0, 0, 1, -10deg);
+	}
+	90% {
+		transform: rotate3d(0, 0, 1, 5deg);
+	}
+	95% {
+		transform: rotate3d(0, 0, 1, -5deg);
+	}
+}

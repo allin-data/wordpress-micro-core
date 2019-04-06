@@ -1,0 +1,395 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jet Plugin Wizard\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-23 12:04+0200\n"
+"PO-Revision-Date: 2018-06-05 12:08+0200\n"
+"Last-Translator: \n"
+"Language-Team: Cherry Team <support@cherryframework.com>\n"
+"Language: su\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;_ex:1,2c;_n:1,2;_nx:4c,1,2;_n_noop:1,2;"
+"_nx_noop:4c,1,2\n"
+"esc_attr__;_x: 1,2c;_n:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: cherry-framework\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: includes/class-jet-plugins-wizard-data.php:56
+msgid "Plugins array are empty"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-extensions.php:163
+msgid "Recommended plugins"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:75
+msgid "You don't have permissions to do this"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:87
+msgid "No plugin to install"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:110
+msgid "All plugins are installed. Redirecting to the next step..."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:138
+msgid "This plugin is not registered"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:242
+msgid "Action not provided"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:258
+msgid "Plugin slug not provided"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:279
+msgid "Installation failed"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:298
+msgid "Plugin data not provided"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:315
+msgid "Can't perform plugin activation. Please try again later"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:72
+msgid "Plugins Installation Wizard"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:73
+msgid "Plugins Wizard"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:179
+msgid "No data found for installation"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:181
+msgid "Start install"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:183
+msgid "Select skin and start install"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:314
+msgid "PHP version"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:322
+msgid "Memory limit"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:330
+msgid "Max execution time"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:351
+#, php-format
+msgid "%1$s%2$s Recommended"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:357
+msgid "Ok"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:372
+msgid ""
+"Not all of your server parameters met requirements. You can continue the "
+"installation process, but it will take more time and can probably drive to "
+"bugs:"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:427
+msgid "Select Skin"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:431
+#: templates/wizard-notice.php:14
+msgid "Start Install"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:110
+msgid "Sorry, license API is disabled"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:143
+msgid "Sorry, you not allowed to activate license"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:151
+msgid "Please provide valid license key"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:162
+msgid "Internal error, please try again later."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:176
+msgid "Thanks for license activation. Press Next to continue installation."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:212
+msgid "Your license is missing. Please check your key again."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:213
+msgid ""
+"<strong>You have no more activations left.</strong> Please upgrade to a more "
+"advanced license (you'll only need to cover the difference)."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:214
+msgid ""
+"<strong>Your License Has Expired.</strong> Renew your license today to keep "
+"getting feature updates, premium support and unlimited access to the "
+"template library."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:215
+#: includes/class-jet-plugins-wizard-license.php:216
+msgid ""
+"<strong>Your license key has been cancelled</strong> (most likely due to a "
+"refund request). Please consider acquiring a new license."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:217
+#: includes/class-jet-plugins-wizard-license.php:219
+msgid ""
+"<strong>Your license key doesn't match your current domain</strong>. This is "
+"most likely due to a change in the domain URL of your site (including HTTPS/"
+"SSL migration). Please deactivate the license and then reactivate it again."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:218
+msgid ""
+"<strong>Your license key doesn't match your current domain</strong>. This is "
+"most likely due to a change in the domain URL. Please deactivate the license "
+"and then reactivate it again."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:222
+msgid ""
+"An error occurred. Please check your internet connection and try again. If "
+"the problem persists, contact our support."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:237
+msgid "Please enter your license"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-plugin-upgrader-skin.php:50
+msgid "Details"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-plugin-upgrader.php:115
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-plugin-upgrader.php:115
+#: includes/class-jet-plugins-wizard-plugin-upgrader.php:123
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-plugin-upgrader.php:123
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: templates/dashboard/btn-activate.php:7
+msgid "Activate"
+msgstr ""
+
+#: templates/dashboard/btn-install.php:7
+msgid "Install"
+msgstr ""
+
+#: templates/plugin-item.php:8
+msgid "Install Plugin"
+msgstr ""
+
+#: templates/service-notice.php:6 templates/step-activate-licesne.php:6
+#: templates/step-service-notice.php:6
+msgid "Installation Wizard"
+msgstr ""
+
+#: templates/skin-item.php:21
+msgid "View Demo"
+msgstr ""
+
+#: templates/start-install-button.php:7 templates/step-configure-plugins.php:76
+#: templates/step-select-type.php:49
+msgid "Next"
+msgstr ""
+
+#: templates/step-activate-licesne.php:7
+msgid ""
+"Demo data import wizard will guide you through the process of demo content "
+"import and recommended plugins installation. Before gettings started please "
+"activate your license key."
+msgstr ""
+
+#: templates/step-activate-licesne.php:9
+msgid "Please enter your license key"
+msgstr ""
+
+#: templates/step-activate-licesne.php:11
+msgid "Activate License"
+msgstr ""
+
+#: templates/step-after-install.php:6
+msgid "Congratulations"
+msgstr ""
+
+#: templates/step-after-install.php:7
+msgid "Install complete"
+msgstr ""
+
+#: templates/step-before-install.php:7
+msgid ""
+"Each skin comes with custom demo content and predefined set of plugins. "
+"Depending upon the selected skin the wizard will install required plugins "
+"and some demo posts and pages"
+msgstr ""
+
+#: templates/step-configure-plugins.php:6
+msgid "Configure plugins"
+msgstr ""
+
+#: templates/step-configure-plugins.php:32
+msgid "Required Plugins"
+msgstr ""
+
+#: templates/step-configure-plugins.php:33
+msgid ""
+"The minimum set of service plugins for your theme installation is set by "
+"default."
+msgstr ""
+
+#: templates/step-configure-plugins.php:46
+msgid "Recommended Plugins"
+msgstr ""
+
+#: templates/step-configure-plugins.php:47
+msgid ""
+"The recommended set of basic plugins to display the template’s pages. The "
+"best option for your site's future configuration. If you will not install "
+"one or more plugins from this list, the specific sections of the template, "
+"for which these plugins are responsible, will not be displayed."
+msgstr ""
+
+#: templates/step-configure-plugins.php:60
+msgid "Extra Plugins"
+msgstr ""
+
+#: templates/step-configure-plugins.php:61
+msgid ""
+"The full list of plugins available for a template installation is "
+"recommended if you want to get additional functionality to your theme."
+msgstr ""
+
+#: templates/step-configure-plugins.php:81
+msgid "If you already have these plugins, feel free to skip this step"
+msgstr ""
+
+#: templates/step-configure-plugins.php:84
+msgid "Skip to Demo Content"
+msgstr ""
+
+#: templates/step-install.php:6
+msgid "Install Plugins"
+msgstr ""
+
+#: templates/step-install.php:8
+msgid ""
+"Before demo data import a set of required plugins will be installed. Please "
+"be patient, this may take few minutes."
+msgstr ""
+
+#: templates/step-select-type.php:10
+msgid "Demo Content Settings"
+msgstr ""
+
+#: templates/step-select-type.php:12
+msgid ""
+"Each theme comes with lite and full version of demo content. The number of "
+"posts and plugins may affect your site speed. We recommend importing lite "
+"version of demo content if you are running shared inexpensive server."
+msgstr ""
+
+#: templates/step-select-type.php:20
+msgid "Lite Install"
+msgstr ""
+
+#: templates/step-select-type.php:23
+msgid ""
+"Lite version sample data includes the optimal amount of demo data with a "
+"smaller number of blog posts and images and fits for acquaintance with the "
+"template. It is recommended to install the Lite sample data version if you "
+"use an entry-level hosting plan."
+msgstr ""
+
+#: templates/step-select-type.php:31
+msgid "Full Install"
+msgstr ""
+
+#: templates/step-select-type.php:34
+msgid ""
+"Full version of sample data contains the entire amount of available demo "
+"data used in the template, including all posts, products, reviews, images "
+"and more. It is recommended to install a Full sample data version if you use "
+"premium hosting plans, dedicated or VPS servers."
+msgstr ""
+
+#: templates/step-service-notice.php:7
+msgid ""
+"Demo data import wizard will guide you through the process of demo content "
+"import and recommended plugins installation. Before gettings started make "
+"sure your server complies with"
+msgstr ""
+
+#: templates/step-service-notice.php:7
+msgid "WordPress minimal requirements."
+msgstr ""
+
+#: templates/step-service-notice.php:8
+msgid "Your system information:"
+msgstr ""
+
+#: templates/step-service-notice.php:15
+msgid ""
+"Not all of your server parameters met requirements. You can continue the "
+"installation process, but it will take more time and can probably drive to "
+"bugs."
+msgstr ""
+
+#: templates/wizard-notice.php:10
+#, php-format
+msgid ""
+"This wizard will help you to select skin, install plugins and import demo "
+"data for your %s theme. To start the install click the button below!"
+msgstr ""
+
+#: templates/wizard-notice.php:17
+msgid "Dismiss"
+msgstr ""

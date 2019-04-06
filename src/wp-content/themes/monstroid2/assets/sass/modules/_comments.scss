@@ -1,0 +1,144 @@
+.comments {
+	&-area {
+		position: relative;
+		margin: 45px 0 40px;
+	}
+	&-title {
+		margin: 0 0 40px;
+	}
+}
+
+// comments list
+.comment {
+	&-list {
+		margin: 0 0 45px;
+		padding: 0 0 8px;
+		list-style: none;
+		border-bottom: 1px solid $color__background-hr;
+		.children {
+			margin-top: 18px;
+			margin-left: 30px;
+			list-style: none;
+			@include media-breakpoint-up(lg) {
+				margin-left: 70px;
+			}
+		}
+		.comment,
+		.pingback {
+			margin-bottom: 36px;
+		}
+	}
+}
+
+// comment item
+.comment {
+	&-body {
+		display: flex;
+	}
+	&-author {
+		flex-shrink: 0;
+		width: 50px;
+		margin: 0 20px 0 0;
+		.avatar {
+			border-radius: 50%;
+		}
+	}
+	&-meta {
+		margin-bottom: 2px;
+		.fn {
+			margin-right: 12px;
+		}
+	}
+	&-date {
+		display: inline-block;
+		&__time {
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+	&-content {
+		p {
+			margin-bottom: 1px;
+		}
+		a {
+			word-wrap: break-word;
+		}
+	}
+	&-reply-link {
+		text-transform: uppercase;
+		i {
+			margin-right: 5px;
+		}
+	}
+}
+
+// comment respond
+.comment {
+	&-respond {
+		.comment-reply-title {
+			margin-bottom: 20px;
+		}
+		.comment-notes {
+			margin-bottom: 25px;
+		}
+	}
+}
+
+// comment form
+.comment {
+	&-form {
+		&-author,
+		&-email,
+		&-url {
+			margin: 10px 0 0 0;
+		}
+		&-comment {
+			margin-bottom: 30px;
+		}
+		.form-submit {
+			margin: 30px 0 0 0;
+		}
+		&__field {
+			vertical-align: top;
+		}
+		.submit {
+			width: 100%;
+		}
+		&-cookies-consent {
+			margin-top: 25px;
+			user-select: none;
+			input[type='checkbox'] {
+				position: absolute;
+				width: 0;
+				height: 0;
+				visibility: hidden;
+			}
+			label[for=wp-comment-cookies-consent] {
+				&:before {
+					content: '';
+					position: relative;
+					top: -1px;
+					display: inline-block;
+					@include font-awesome-icon;
+					width: 20px;
+					height: 20px;
+					line-height: 18px;
+					text-align: center;
+					margin-right: 10px;
+					vertical-align: middle;
+					border-radius: 4px;
+					border: 1px solid $color__border-input;
+				}
+			}
+			input[type='checkbox']:checked~label[for=wp-comment-cookies-consent] {
+				&:before  {
+					content: '\f00c';
+				}
+			}
+		}
+	}
+}
+
+.bypostauthor {
+	display: block;
+}
