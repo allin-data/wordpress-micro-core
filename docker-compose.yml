@@ -43,7 +43,7 @@ services:
 
   compass:
     image: antonienko/compass-watch:latest
-    command: watch --poll /bitnami/wordpress/wp-content/themes/allindata-dgr/
+    command: watch --poll /bitnami/wordpress/wp-content/themes/monstroid2-child/
     volumes:
       - ./src/wp-content:/bitnami/wordpress/wp-content:cached
 

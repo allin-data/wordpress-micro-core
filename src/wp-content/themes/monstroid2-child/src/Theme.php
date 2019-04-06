@@ -79,9 +79,10 @@ class Theme
     {
         register_nav_menus(
             array(
-                'admin-menu' => __( 'Admin Menu' ),
-                'main-menu' => __( 'Main Menu' ),
-                'footer-menu' => __( 'Footer Menu' )
+                'admin-menu' => __('Admin Menu'),
+                'main' => __('Main Menu'),
+                'footer' => __('Footer Menu'),
+                'social' => __('Social Menu')
             )
         );
     }
@@ -91,13 +92,13 @@ class Theme
      */
     public function addScripts()
     {
-        wp_enqueue_script(
-            'bootstrap-js',
-            $this->getThemeBaseUrl() . '/vendor/twbs/bootstrap/dist/js/bootstrap.js',
-            ['jquery'],
-            1.1,
-            true
-        );
+//        wp_enqueue_script(
+//            'bootstrap-js',
+//            $this->getThemeBaseUrl() . '/vendor/twbs/bootstrap/dist/js/bootstrap.js',
+//            ['jquery'],
+//            1.1,
+//            true
+//        );
     }
 
     /**
@@ -105,7 +106,7 @@ class Theme
      */
     public function addStylesToThemeEnqueue()
     {
-        wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', []);
+        wp_enqueue_style('monstroid2-parent-theme-style', get_stylesheet_directory_uri() . '/style.css', []);
     }
 
     /**
@@ -115,6 +116,6 @@ class Theme
     {
         add_action('wp_enqueue_scripts', [$this, 'addStylesToThemeEnqueue']);
         add_action('wp_enqueue_scripts', [$this, 'addScripts']);
-        add_action('init', [$this, 'addNavigationMenus']);
+        add_action('after_setup_theme', [$this, 'addNavigationMenus'], 10);
     }
 }

@@ -30,7 +30,7 @@ class Logout implements ThemeControllerInterface
     public function addLogoutMenuEntry($items, $args)
     {
         $menuType = $args->theme_location ?: null;
-        if (!is_user_logged_in() || $menuType !== 'main-menu') {
+        if (!is_user_logged_in() || $menuType !== 'main') {
             return $items;
         }
         $logoutUrl = wp_logout_url(get_permalink());

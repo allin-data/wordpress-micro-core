@@ -15,6 +15,7 @@ use AllInData\Dgr\Theme\Controller\ThemeControllerInterface;
 use AllInData\Dgr\Theme\Module\DisabledAdminBar;
 use AllInData\Dgr\Theme\Module\ForceLogin;
 use AllInData\Dgr\Theme\Module\ThemeModuleInterface;
+use AllInData\Dgr\Theme\ShortCode\AdminMenu;
 use AllInData\Dgr\Theme\ShortCode\LoginForm;
 use AllInData\Dgr\Theme\ShortCode\ThemeShortCodeInterface;
 use AllInData\Dgr\Theme\ShortCode\UserProfile;
@@ -77,6 +78,7 @@ class ThemeConfiguration
     {
         return [
             new LoginForm(),
+            new AdminMenu(),
             new UserProfile()
         ];
     }

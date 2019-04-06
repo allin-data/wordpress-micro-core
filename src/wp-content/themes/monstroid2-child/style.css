@@ -1,12 +1,21 @@
 /*!
-Theme Name: Monstroid2 Child
+Theme Name: MarkenHund DeskDog
 Theme URI:
-Author: Zemez
+Author: All.In Data GmbH
 Author URI:
-Description: Monstroid2 child theme.
+Description: MarkenHund DeskDog theme based on Monstroid2 (child theme).
 Template: monstroid2
 Version: 1.0.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: proprietary
 Text Domain: monstroid2-child
 */
+/* line 1, sass/_layout.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 5, sass/_layout.scss */
+.fill-height {
+  min-height: 100%;
+  height: 100%;
+}

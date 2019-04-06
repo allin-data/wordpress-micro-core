@@ -1,0 +1,22 @@
+/*!
+Theme Name: MarkenHund DeskDog
+Theme URI:
+Author: All.In Data GmbH
+Author URI:
+Description: MarkenHund DeskDog theme based on Monstroid2 (child theme).
+Template: monstroid2
+Version: 1.0.0
+License: proprietary
+Text Domain: monstroid2-child
+*/
+@import "compass/css3/background-size";
+@import "compass/css3/transition";
+@import "compass/css3/box-shadow";
+@import "compass/css3/background-clip";
+@import "compass/css3/appearance";
+
+//@import "../vendor/twbs/bootstrap/scss/bootstrap-reboot";
+//@import "../vendor/twbs/bootstrap/scss/bootstrap";
+//@import "../vendor/twbs/bootstrap/scss/bootstrap-grid";
+
+@import "layout";
