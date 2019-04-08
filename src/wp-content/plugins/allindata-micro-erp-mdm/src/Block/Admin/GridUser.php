@@ -55,14 +55,6 @@ class GridUser extends AbstractBlock
     /**
      * @return string
      */
-    public function getCreateUserActionSlug()
-    {
-        return CreateUser::ACTION_SLUG;
-    }
-
-    /**
-     * @return string
-     */
     public function getUpdateUserActionSlug()
     {
         return UpdateUser::ACTION_SLUG;

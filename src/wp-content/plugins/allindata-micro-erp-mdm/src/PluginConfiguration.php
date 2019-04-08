@@ -19,8 +19,10 @@ use AllInData\MicroErp\Mdm\Model\Validator\User as UserValidator;
 use AllInData\MicroErp\Mdm\Model\User;
 use AllInData\MicroErp\Mdm\Module\ElementorAdminCategory;
 use AllInData\MicroErp\Mdm\Module\ElementorCategory;
+use AllInData\MicroErp\Mdm\ShortCode\Admin\FormCreateUser;
 use AllInData\MicroErp\Mdm\ShortCode\Admin\GridUser;
 use AllInData\MicroErp\Mdm\ShortCode\UserOrganization;
+use AllInData\MicroErp\Mdm\Widget\Elementor\Admin\FormCreateNewUser;
 use AllInData\MicroErp\Mdm\Widget\Elementor\FooBar;
 use AllInData\MicroErp\Mdm\Widget\Elementor\Admin\ListOfUserAccounts;
 use AllInData\MicroErp\Mdm\Widget\Elementor\UserOrganizationForm;
@@ -64,8 +66,9 @@ class PluginConfiguration
     {
         return [
             new FooBar(),
+            new UserOrganizationForm(),
             new ListOfUserAccounts(),
-            new UserOrganizationForm()
+            new FormCreateNewUser()
         ];
     }
 
@@ -117,6 +120,10 @@ class PluginConfiguration
             new GridUser(
                 AID_MICRO_ERP_MDM_TEMPLATE_DIR,
                 new Block\Admin\GridUser($this->getUserCollection())
+            ),
+            new FormCreateUser(
+                AID_MICRO_ERP_MDM_TEMPLATE_DIR,
+                new Block\Admin\FormCreateUser()
             )
         ];
     }

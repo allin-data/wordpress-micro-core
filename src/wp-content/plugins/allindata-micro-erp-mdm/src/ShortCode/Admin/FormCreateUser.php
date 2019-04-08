@@ -12,24 +12,24 @@ use AllInData\MicroErp\Core\ShortCode\AbstractShortCode;
 use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
 
 /**
- * Class GridUser
+ * Class FormCreateUser
  * @package AllInData\MicroErp\Mdm\ShortCode\Admin
  */
-class GridUser extends AbstractShortCode implements PluginShortCodeInterface
+class FormCreateUser extends AbstractShortCode implements PluginShortCodeInterface
 {
     /**
-     * @var \AllInData\MicroErp\Mdm\Block\Admin\GridUser
+     * @var \AllInData\MicroErp\Mdm\Block\Admin\FormCreateUser
      */
     private $block;
 
     /**
-     * GridUser constructor.
+     * FormCreateUser constructor.
      * @param string $templatePath
-     * @param \AllInData\MicroErp\Mdm\Block\Admin\GridUser $block
+     * @param \AllInData\MicroErp\Mdm\Block\Admin\FormCreateUser $block
      */
     public function __construct(
         string $templatePath,
-        \AllInData\MicroErp\Mdm\Block\Admin\GridUser $block
+        \AllInData\MicroErp\Mdm\Block\Admin\FormCreateUser $block
     ) {
         parent::__construct($templatePath);
         $this->block = $block;
@@ -40,7 +40,7 @@ class GridUser extends AbstractShortCode implements PluginShortCodeInterface
      */
     public function init()
     {
-        add_shortcode('micro_erp_mdm_admin_grid_user', [$this, 'addShortCode']);
+        add_shortcode('micro_erp_mdm_admin_form_create_user', [$this, 'addShortCode']);
     }
 
     /**
@@ -54,7 +54,7 @@ class GridUser extends AbstractShortCode implements PluginShortCodeInterface
         if (is_admin()) {
             return '';
         }
-        $this->getTemplate('admin/grid-user', [
+        $this->getTemplate('admin/form-create-user', [
             'block' => $this->block
         ]);
     }

@@ -12,3 +12,4 @@
 | ShortCode | Description |
 | ---- | ---- |
 | micro_erp_mdm_admin_grid_user | Renders list of users |
+| micro_erp_mdm_admin_form_create_user | Renders form to create new user |

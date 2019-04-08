@@ -52,6 +52,33 @@ class UserProfileForm extends AbstractElementorWidget
     /**
      * @inheritDoc
      */
+    protected function _register_controls()
+    {
+
+        $this->start_controls_section(
+            'content_section',
+            [
+                'label' => __('Content', AID_MICRO_ERP_MDM_TEXTDOMAIN),
+                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+            ]
+        );
+
+        $this->add_control(
+            'url',
+            [
+                'label' => __('URL to embed', AID_MICRO_ERP_MDM_TEXTDOMAIN),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'input_type' => 'url',
+                'placeholder' => __('https://your-link.com', AID_MICRO_ERP_MDM_TEXTDOMAIN),
+            ]
+        );
+
+        $this->end_controls_section();
+    }
+
+    /**
+     * @inheritDoc
+     */
     protected function render()
     {
         echo '<div class="'.$this->get_name().'-elementor-widget">';

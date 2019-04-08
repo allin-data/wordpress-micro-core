@@ -9,13 +9,3 @@ Version: 1.0.0
 License: proprietary
 Text Domain: monstroid2-child
 */
-/* line 1, sass/_layout.scss */
-html, body {
-  height: 100%;
-}
-
-/* line 5, sass/_layout.scss */
-.fill-height {
-  min-height: 100%;
-  height: 100%;
-}
