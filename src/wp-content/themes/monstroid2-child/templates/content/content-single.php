@@ -15,7 +15,7 @@ Copyright (C) 2019 All.In Data GmbH
             sprintf(
                 wp_kses(
                 /* translators: %s: Name of current post. Only visible to screen readers */
-                    __('Continue reading<span class="screen-reader-text"> "%s"</span>', AID_DGR_THEME_TEXTDOMAIN),
+                    __('Continue reading<span class="screen-reader-text"> "%s"</span>', AID_MICRO_ERP_THEME_TEXTDOMAIN),
                     [
                         'span' => [
                             'class' => [],

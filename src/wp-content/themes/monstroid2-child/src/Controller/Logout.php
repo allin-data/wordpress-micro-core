@@ -6,11 +6,11 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\Dgr\Theme\Controller;
+namespace AllInData\MicroErp\Theme\Controller;
 
 /**
  * Class Login
- * @package AllInData\Dgr\Theme\Controller
+ * @package AllInData\MicroErp\Theme\Controller
  */
 class Logout implements ThemeControllerInterface
 {
@@ -34,7 +34,7 @@ class Logout implements ThemeControllerInterface
             return $items;
         }
         $logoutUrl = wp_logout_url(get_permalink());
-        $logoutItemEntry = '<li class="logout"><a href="' . $logoutUrl . '">' . __('Logout', AID_DGR_THEME_TEXTDOMAIN) . '</a></li>';
+        $logoutItemEntry = '<li class="logout"><a href="' . $logoutUrl . '">' . __('Logout', AID_MICRO_ERP_THEME_TEXTDOMAIN) . '</a></li>';
         $items = $items . $logoutItemEntry;
         return $items;
     }

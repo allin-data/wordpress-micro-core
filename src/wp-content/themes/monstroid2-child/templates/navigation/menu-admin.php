@@ -6,7 +6,7 @@ Copyright (C) 2019 All.In Data GmbH
 ?>
 <?php if (current_user_can('administrator') && has_nav_menu('admin-menu')) : ?>
 <nav id="site-navigation" class="admin-navigation"
-     aria-label="<?php esc_attr_e('Admin Menu', AID_DGR_THEME_TEXTDOMAIN); ?>">
+     aria-label="<?php esc_attr_e('Admin Menu', AID_MICRO_ERP_THEME_TEXTDOMAIN); ?>">
     <?php
     wp_nav_menu(
         array(

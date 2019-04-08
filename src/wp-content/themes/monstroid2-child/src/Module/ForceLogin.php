@@ -6,11 +6,11 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\Dgr\Theme\Module;
+namespace AllInData\MicroErp\Theme\Module;
 
 /**
  * Class ForceLogin
- * @package AllInData\Dgr\Theme\Module
+ * @package AllInData\MicroErp\Theme\Module
  */
 class ForceLogin implements ThemeModuleInterface
 {
@@ -18,7 +18,7 @@ class ForceLogin implements ThemeModuleInterface
      * URI Path
      */
     const REQUEST_URI_PATH_LOGIN = 'login';
-    const SHORTCODE_LOGIN_FORM = '[dgr_login_form]';
+    const SHORTCODE_LOGIN_FORM = '[micro_erp_login_form]';
     const WHITELIST_PATH_SET = [
         'wp-login.php',
         'wp-register.php',
@@ -44,7 +44,7 @@ class ForceLogin implements ThemeModuleInterface
     public function addLoginPageState($postStates, $post)
     {
         if (strpos($post->post_content, self::SHORTCODE_LOGIN_FORM)) {
-            $postStates[] = __('Login and Register Page', AID_DGR_THEME_TEXTDOMAIN);
+            $postStates[] = __('Login and Register Page', AID_MICRO_ERP_THEME_TEXTDOMAIN);
         }
         return $postStates;
     }

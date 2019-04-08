@@ -13,7 +13,7 @@ Copyright (C) 2019 All.In Data GmbH
     <?php get_template_part('templates/footer/footer', 'widgets'); ?>
     <div class="row">
         <?php if (has_nav_menu('footer')) : ?>
-            <nav class="footer-navigation" aria-label="<?php esc_attr_e('Footer Menu', AID_DGR_THEME_TEXTDOMAIN); ?>">
+            <nav class="footer-navigation" aria-label="<?php esc_attr_e('Footer Menu', AID_MICRO_ERP_THEME_TEXTDOMAIN); ?>">
                 <?php
                 wp_nav_menu(
                     array(

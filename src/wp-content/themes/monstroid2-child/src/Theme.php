@@ -6,15 +6,15 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\Dgr\Theme;
+namespace AllInData\MicroErp\Theme;
 
-use AllInData\Dgr\Theme\Controller\ThemeControllerInterface;
-use AllInData\Dgr\Theme\Module\ThemeModuleInterface;
-use AllInData\Dgr\Theme\ShortCode\ThemeShortCodeInterface;
+use AllInData\MicroErp\Theme\Controller\ThemeControllerInterface;
+use AllInData\MicroErp\Theme\Module\ThemeModuleInterface;
+use AllInData\MicroErp\Theme\ShortCode\ThemeShortCodeInterface;
 
 /**
  * Class Theme
- * @package AllInData\Dgr\Theme
+ * @package AllInData\MicroErp\Theme
  */
 class Theme
 {

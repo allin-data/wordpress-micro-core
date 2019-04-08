@@ -1,0 +1,23 @@
+{
+    "name": "allindata/allindata-micro-erp-core",
+    "description": "MicroErp Core",
+    "type": "wp-plugin",
+    "version": "1.0.0",
+    "minimum-stability": "stable",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Florian Horn",
+            "email": "florian.horn@all-in-data.de",
+            "homepage": "https://www.all-in-data.de"
+        }
+    ],
+    "require": {
+        "bitexpert/disco": "^0.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "AllInData\\MicroErp\\Core\\": "./src"
+        }
+    }
+}

@@ -1,6 +1,6 @@
 {
-    "name": "allindata/allindata-theme-dgr",
-    "description": "Dgr Theme",
+    "name": "allindata/allindata-theme-micro-erp",
+    "description": "Micro ERP Theme",
     "type": "wp-theme",
     "version": "1.0.0",
     "minimum-stability": "stable",
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "AllInData\\Dgr\\Theme\\": "./src"
+            "AllInData\\MicroErp\\Theme\\": "./src"
         }
     }
 }

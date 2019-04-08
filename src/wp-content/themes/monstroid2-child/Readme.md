@@ -1,8 +1,8 @@
-# Dgr Theme
+# Micro ERP Theme
 
 ## ShortCodes
 
 | ShortCode | Description |
 | ---- | ---- |
-| dgr_admin_menu | Renders admin menu |
-| dgr_login_form | Renders login and registration form |
+| micro_erp_admin_menu | Renders admin menu |
+| micro_erp_login_form | Renders login and registration form |

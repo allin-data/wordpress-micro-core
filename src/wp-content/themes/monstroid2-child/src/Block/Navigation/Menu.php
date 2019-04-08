@@ -6,11 +6,11 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\Dgr\Theme\Block\Navigation;
+namespace AllInData\MicroErp\Theme\Block\Navigation;
 
 /**
  * Class Menu
- * @package AllInData\Dgr\Theme\Block\Navigation
+ * @package AllInData\MicroErp\Theme\Block\Navigation
  */
 class Menu
 {

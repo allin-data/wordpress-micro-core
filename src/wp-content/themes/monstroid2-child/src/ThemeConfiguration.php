@@ -6,24 +6,24 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\Dgr\Theme;
+namespace AllInData\MicroErp\Theme;
 
-use AllInData\Dgr\Theme\Block\Navigation\Menu;
-use AllInData\Dgr\Theme\Controller\Login;
-use AllInData\Dgr\Theme\Controller\Logout;
-use AllInData\Dgr\Theme\Controller\ThemeControllerInterface;
-use AllInData\Dgr\Theme\Module\DisabledAdminBar;
-use AllInData\Dgr\Theme\Module\ForceLogin;
-use AllInData\Dgr\Theme\Module\ThemeModuleInterface;
-use AllInData\Dgr\Theme\ShortCode\AdminMenu;
-use AllInData\Dgr\Theme\ShortCode\LoginForm;
-use AllInData\Dgr\Theme\ShortCode\ThemeShortCodeInterface;
+use AllInData\MicroErp\Theme\Block\Navigation\Menu;
+use AllInData\MicroErp\Theme\Controller\Login;
+use AllInData\MicroErp\Theme\Controller\Logout;
+use AllInData\MicroErp\Theme\Controller\ThemeControllerInterface;
+use AllInData\MicroErp\Theme\Module\DisabledAdminBar;
+use AllInData\MicroErp\Theme\Module\ForceLogin;
+use AllInData\MicroErp\Theme\Module\ThemeModuleInterface;
+use AllInData\MicroErp\Theme\ShortCode\AdminMenu;
+use AllInData\MicroErp\Theme\ShortCode\LoginForm;
+use AllInData\MicroErp\Theme\ShortCode\ThemeShortCodeInterface;
 use bitExpert\Disco\Annotations\Configuration;
 use bitExpert\Disco\Annotations\Bean;
 
 /**
  * Class ThemeConfiguration
- * @package AllInData\Dgr\Theme
+ * @package AllInData\MicroErp\Theme
  * @Configuration
  */
 class ThemeConfiguration

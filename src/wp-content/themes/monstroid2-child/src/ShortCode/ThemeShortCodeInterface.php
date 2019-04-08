@@ -6,11 +6,11 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\Dgr\Theme\ShortCode;
+namespace AllInData\MicroErp\Theme\ShortCode;
 
 /**
  * Interface ThemeShortCodeInterface
- * @package AllInData\Dgr\Theme\ShortCode
+ * @package AllInData\MicroErp\Theme\ShortCode
  */
 interface ThemeShortCodeInterface
 {

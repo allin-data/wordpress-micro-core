@@ -6,11 +6,11 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\Dgr\Theme\ShortCode;
+namespace AllInData\MicroErp\Theme\ShortCode;
 
 /**
  * Class AdminMenu
- * @package AllInData\Dgr\Theme\ShortCode
+ * @package AllInData\MicroErp\Theme\ShortCode
  */
 class AdminMenu implements ThemeShortCodeInterface
 {
@@ -19,7 +19,7 @@ class AdminMenu implements ThemeShortCodeInterface
      */
     public function init()
     {
-        add_shortcode('dgr_admin_menu', [$this, 'addShortCode']);
+        add_shortcode('micro_erp_admin_menu', [$this, 'addShortCode']);
     }
 
     /**

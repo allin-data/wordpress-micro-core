@@ -6,11 +6,11 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\Dgr\Theme\ShortCode;
+namespace AllInData\MicroErp\Theme\ShortCode;
 
 /**
  * Class LoginForm
- * @package AllInData\Dgr\Theme\Controller
+ * @package AllInData\MicroErp\Theme\Controller
  */
 class LoginForm implements ThemeShortCodeInterface
 {
@@ -19,7 +19,7 @@ class LoginForm implements ThemeShortCodeInterface
      */
     public function init()
     {
-        add_shortcode('dgr_login_form', [$this, 'addShortCode']);
+        add_shortcode('micro_erp_login_form', [$this, 'addShortCode']);
     }
 
     /**
