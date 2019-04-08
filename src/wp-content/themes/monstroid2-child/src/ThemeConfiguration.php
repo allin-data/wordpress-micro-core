@@ -13,9 +13,9 @@ use AllInData\MicroErp\Theme\Controller\Login;
 use AllInData\MicroErp\Theme\Controller\Logout;
 use AllInData\MicroErp\Theme\Controller\ThemeControllerInterface;
 use AllInData\MicroErp\Theme\Module\DisabledAdminBar;
+use AllInData\MicroErp\Theme\Module\ExtendMainMenuByAdminMenu;
 use AllInData\MicroErp\Theme\Module\ForceLogin;
 use AllInData\MicroErp\Theme\Module\ThemeModuleInterface;
-use AllInData\MicroErp\Theme\ShortCode\AdminMenu;
 use AllInData\MicroErp\Theme\ShortCode\LoginForm;
 use AllInData\MicroErp\Theme\ShortCode\ThemeShortCodeInterface;
 use bitExpert\Disco\Annotations\Configuration;
@@ -56,7 +56,8 @@ class ThemeConfiguration
     {
         return [
             new ForceLogin(),
-            new DisabledAdminBar()
+            new DisabledAdminBar(),
+            new ExtendMainMenuByAdminMenu()
         ];
     }
 
@@ -77,8 +78,7 @@ class ThemeConfiguration
     private function getThemeShortCodes() : array
     {
         return [
-            new LoginForm(),
-            new AdminMenu()
+            new LoginForm()
         ];
     }
 }

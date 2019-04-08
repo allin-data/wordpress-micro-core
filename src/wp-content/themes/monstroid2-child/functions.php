@@ -7,7 +7,7 @@ Copyright (C) 2019 All.In Data GmbH
 define('AID_MICRO_ERP_THEME_VERSION', '1.0');
 define('AID_MICRO_ERP_THEME_SLUG', 'allindata-micro-erp-theme');
 define('AID_MICRO_ERP_THEME_TEXTDOMAIN', 'allindata-micro-erp-theme');
-define('AID_MICRO_ERP_THEME_TEMPLATE_DIR', __DIR__ . '/templates/');
+define('AID_MICRO_ERP_THEME_TEMPLATE_DIR', __DIR__ . '/template-parts/');
 define('AID_MICRO_ERP_THEME_TEMP_DIR', ABSPATH . 'tmp/');
 
 defined('ABSPATH') or exit;
