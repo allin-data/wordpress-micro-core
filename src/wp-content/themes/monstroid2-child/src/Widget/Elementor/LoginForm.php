@@ -9,7 +9,6 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Theme\Widget\Elementor;
 
 use AllInData\MicroErp\Mdm\Model\ElementorMdmCategory;
-use AllInData\MicroErp\Core\Widget\AbstractElementorWidget;
 
 /**
  * Class FooBar
