@@ -18,6 +18,7 @@ use WP_Post;
 class ExtendMainMenuByAdminMenu implements ThemeModuleInterface
 {
     const ADMIN_MENU_SLUG = 'adminmenu';
+    const MAIN_MENU_SLUG = 'hauptmenue';
 
     /**
      * @inheritdoc
@@ -36,7 +37,10 @@ class ExtendMainMenuByAdminMenu implements ThemeModuleInterface
      */
     public function extendMainMenu($items, $menu, $args)
     {
-        if (self::ADMIN_MENU_SLUG === $menu->slug || !current_user_can(UserRole::ROLE_LEVEL_ADMINISTRATION)) {
+        if (self::MAIN_MENU_SLUG !== $menu->slug ||
+            self::ADMIN_MENU_SLUG === $menu->slug ||
+            is_admin() ||
+            !current_user_can(UserRole::ROLE_LEVEL_ADMINISTRATION)) {
             return $items;
         }
         $adminMenu = wp_get_nav_menu_object(self::ADMIN_MENU_SLUG);
