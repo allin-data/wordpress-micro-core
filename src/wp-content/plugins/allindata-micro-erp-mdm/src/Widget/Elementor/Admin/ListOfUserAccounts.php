@@ -38,7 +38,7 @@ class ListOfUserAccounts extends AbstractElementorWidget
      */
     public function get_icon()
     {
-        return 'fa fa-code';
+        return 'fa fa-users';
     }
 
     /**

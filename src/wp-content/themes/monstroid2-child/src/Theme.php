@@ -106,7 +106,13 @@ class Theme
      */
     public function addStylesToThemeEnqueue()
     {
-        wp_enqueue_style('monstroid2-parent-theme-style', get_stylesheet_directory_uri() . '/style.css', []);
+        wp_enqueue_style(
+            'monstroid2-child-theme-style',
+            get_stylesheet_directory_uri() . '/style.css',
+            [
+                'monstroid2-theme-style'
+            ]
+        );
     }
 
     /**
@@ -114,8 +120,8 @@ class Theme
      */
     private function initHooks()
     {
-        add_action('wp_enqueue_scripts', [$this, 'addStylesToThemeEnqueue']);
-        add_action('wp_enqueue_scripts', [$this, 'addScripts']);
+        add_action('wp_enqueue_scripts', [$this, 'addStylesToThemeEnqueue'], 999);
+        add_action('wp_enqueue_scripts', [$this, 'addScripts'], 999);
         add_action('after_setup_theme', [$this, 'addNavigationMenus'], 10);
     }
 }
