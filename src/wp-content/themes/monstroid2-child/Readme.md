@@ -4,5 +4,4 @@
 
 | ShortCode | Description |
 | ---- | ---- |
-| micro_erp_admin_menu | Renders admin menu |
 | micro_erp_login_form | Renders login and registration form |

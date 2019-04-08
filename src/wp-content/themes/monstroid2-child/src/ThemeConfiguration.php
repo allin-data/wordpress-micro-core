@@ -18,8 +18,10 @@ use AllInData\MicroErp\Theme\Module\ForceLogin;
 use AllInData\MicroErp\Theme\Module\ThemeModuleInterface;
 use AllInData\MicroErp\Theme\ShortCode\LoginForm;
 use AllInData\MicroErp\Theme\ShortCode\ThemeShortCodeInterface;
+use AllInData\MicroErp\Theme\Widget\Elementor\ElementorWidgetInterface;
 use bitExpert\Disco\Annotations\Configuration;
 use bitExpert\Disco\Annotations\Bean;
+use Exception;
 
 /**
  * Class ThemeConfiguration
@@ -36,7 +38,8 @@ class ThemeConfiguration
         return new Theme(
             $this->getThemeModules(),
             $this->getThemeControllers(),
-            $this->getThemeShortCodes()
+            $this->getThemeShortCodes(),
+            $this->getThemeWidgets()
         );
     }
 
@@ -79,6 +82,17 @@ class ThemeConfiguration
     {
         return [
             new LoginForm()
+        ];
+    }
+
+    /**
+     * @return ElementorWidgetInterface[]
+     * @throws Exception
+     */
+    private function getThemeWidgets() : array
+    {
+        return [
+            new \AllInData\MicroErp\Theme\Widget\Elementor\LoginForm()
         ];
     }
 }

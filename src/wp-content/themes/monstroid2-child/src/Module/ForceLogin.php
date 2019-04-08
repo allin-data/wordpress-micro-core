@@ -8,6 +8,9 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Theme\Module;
 
+use AllInData\MicroErp\Theme\Widget\Elementor\LoginForm;
+use WP_Post;
+
 /**
  * Class ForceLogin
  * @package AllInData\MicroErp\Theme\Module
@@ -38,14 +41,25 @@ class ForceLogin implements ThemeModuleInterface
 
     /**
      * @param array $postStates
-     * @param \WP_Post $post
+     * @param WP_Post $post
      * @return array
      */
     public function addLoginPageState($postStates, $post)
     {
         if (strpos($post->post_content, self::SHORTCODE_LOGIN_FORM)) {
             $postStates[] = __('Login and Register Page', AID_MICRO_ERP_THEME_TEXTDOMAIN);
+            return $postStates;
         }
+
+        $data = get_post_meta($post->ID, '_elementor_data', true);
+        if (!$data) {
+            return $postStates;
+        }
+
+        if (strpos($data, LoginForm::WIDGET_NAME)) {
+            $postStates[] = __('Login and Register Page', AID_MICRO_ERP_THEME_TEXTDOMAIN);
+        }
+
         return $postStates;
     }
 

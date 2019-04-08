@@ -14,20 +14,27 @@ defined('ABSPATH') or exit;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$config = new \bitExpert\Disco\BeanFactoryConfiguration(AID_MICRO_ERP_THEME_TEMP_DIR);
-$config->setProxyAutoloader(
-    new \ProxyManager\Autoloader\Autoloader(
-        new \ProxyManager\FileLocator\FileLocator(AID_MICRO_ERP_THEME_TEMP_DIR),
-        new \ProxyManager\Inflector\ClassNameInflector(AID_MICRO_ERP_THEME_SLUG)
-    )
-);
-$beanFactory = new \bitExpert\Disco\AnnotationBeanFactory(
-    \AllInData\MicroErp\Theme\ThemeConfiguration::class,
-    [],
-    $config
-);
-\bitExpert\Disco\BeanFactoryRegistry::register($beanFactory);
+class AllInDataMicroErpTheme
+{
+    static function init()
+    {
+        $config = new \bitExpert\Disco\BeanFactoryConfiguration(AID_MICRO_ERP_THEME_TEMP_DIR);
+        $config->setProxyAutoloader(
+            new \ProxyManager\Autoloader\Autoloader(
+                new \ProxyManager\FileLocator\FileLocator(AID_MICRO_ERP_THEME_TEMP_DIR),
+                new \ProxyManager\Inflector\ClassNameInflector(AID_MICRO_ERP_THEME_SLUG)
+            )
+        );
+        $beanFactory = new \bitExpert\Disco\AnnotationBeanFactory(
+            \AllInData\MicroErp\Theme\ThemeConfiguration::class,
+            [],
+            $config
+        );
+        \bitExpert\Disco\BeanFactoryRegistry::register($beanFactory);
 
-/** @var \AllInData\MicroErp\Theme\Theme $theme */
-$theme = $beanFactory->get('Theme');
-$theme->init();
+        /** @var \AllInData\MicroErp\Theme\Theme $theme */
+        $theme = $beanFactory->get('Theme');
+        $theme->init();
+    }
+}
+add_action('elementor/init', [AllInDataMicroErpTheme::class, 'init']);

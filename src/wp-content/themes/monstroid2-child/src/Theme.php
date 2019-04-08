@@ -11,6 +11,7 @@ namespace AllInData\MicroErp\Theme;
 use AllInData\MicroErp\Theme\Controller\ThemeControllerInterface;
 use AllInData\MicroErp\Theme\Module\ThemeModuleInterface;
 use AllInData\MicroErp\Theme\ShortCode\ThemeShortCodeInterface;
+use AllInData\MicroErp\Theme\Widget\Elementor\ElementorWidgetInterface;
 
 /**
  * Class Theme
@@ -30,18 +31,24 @@ class Theme
      * @var ThemeShortCodeInterface[]
      */
     private $shortCodes = [];
+    /**
+     * @var ElementorWidgetInterface[]
+     */
+    private $widgets = [];
 
     /**
      * Theme constructor.
      * @param ThemeModuleInterface[] $modules
      * @param ThemeControllerInterface[] $controllers
      * @param ThemeShortCodeInterface[] $shortCodes
+     * @param ElementorWidgetInterface[] $widgets
      */
-    public function __construct(array $modules = [], array $controllers = [], array $shortCodes = [])
+    public function __construct(array $modules = [], array $controllers = [], array $shortCodes = [], array $widgets = [])
     {
         $this->modules = $modules;
         $this->controllers = $controllers;
         $this->shortCodes = $shortCodes;
+        $this->widgets = $widgets;
     }
 
     /**
@@ -61,6 +68,10 @@ class Theme
 
         foreach ($this->shortCodes as $shortCode) {
             $shortCode->init();
+        }
+
+        foreach ($this->widgets as $widget) {
+            $widget->init();
         }
     }
 
