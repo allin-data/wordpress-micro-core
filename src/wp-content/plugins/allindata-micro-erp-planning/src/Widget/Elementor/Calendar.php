@@ -6,17 +6,18 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Theme\Widget\Elementor;
+namespace AllInData\MicroErp\Planning\Widget\Elementor;
 
+use AllInData\MicroErp\Core\Widget\AbstractElementorWidget;
 use AllInData\MicroErp\Mdm\Model\ElementorMdmCategory;
 
 /**
- * Class FooBar
- * @package AllInData\MicroErp\Mdm\Widget\Elementor
+ * Class Calendar
+ * @package AllInData\MicroErp\Planning\Widget\Elementor
  */
-class LoginForm extends AbstractElementorWidget
+class Calendar extends AbstractElementorWidget
 {
-    const WIDGET_NAME = 'allindata-micro-erp-theme-login-form';
+    const WIDGET_NAME = 'allindata-micro-erp-planning-calendar';
 
     /**
      * @inheritDoc
@@ -31,7 +32,7 @@ class LoginForm extends AbstractElementorWidget
      */
     public function get_title()
     {
-        return __('Login Form', AID_MICRO_ERP_MDM_TEXTDOMAIN);
+        return __('Calendar', AID_MICRO_ERP_PLANNING_TEXTDOMAIN);
     }
 
     /**
@@ -39,7 +40,7 @@ class LoginForm extends AbstractElementorWidget
      */
     public function get_icon()
     {
-        return 'fa fa-sign-in';
+        return 'fa fa-calendar';
     }
 
     /**
@@ -56,7 +57,7 @@ class LoginForm extends AbstractElementorWidget
     protected function render()
     {
         echo '<div class="'.$this->get_name().'-elementor-widget">';
-        echo do_shortcode("[micro_erp_login_form]");
+        echo do_shortcode("[micro_erp_planning_calendar]");
         echo '</div>';
     }
 }

@@ -17,6 +17,9 @@ use Exception;
  */
 abstract class AbstractController implements PluginControllerInterface
 {
+    const ACTION_SLUG = '';
+    const REDIRECTION_KEY = 'redirect_target';
+
     /**
      * @inheritdoc
      */

@@ -55,6 +55,14 @@ abstract class AbstractPlugin implements PluginInterface
     }
 
     /**
+     * @return string
+     */
+    public function getTemplatePath(): string
+    {
+        return $this->templatePath;
+    }
+
+    /**
      * @inheritdoc
      */
     public function init()
@@ -109,7 +117,7 @@ abstract class AbstractPlugin implements PluginInterface
      */
     private function loadTemplate($templateName)
     {
-        $template = $this->templatePath . $templateName . '.php';
+        $template = $this->getTemplatePath() . $templateName . '.php';
         return \apply_filters('micro_erp_locate_template', $template, $templateName, $this->templatePath);
     }
 }

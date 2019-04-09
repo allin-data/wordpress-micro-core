@@ -1,6 +1,6 @@
 {
     "name": "allindata/allindata-micro-erp-core",
-    "description": "MicroErp Core",
+    "description": "Micro ERP Core",
     "type": "wp-plugin",
     "version": "1.0.0",
     "minimum-stability": "stable",

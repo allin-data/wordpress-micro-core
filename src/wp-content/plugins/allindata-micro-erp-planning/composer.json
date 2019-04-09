@@ -1,10 +1,10 @@
 {
-    "name": "allindata/allindata-micro-erp-mdm",
-    "description": "Micro ERP MDM",
+    "name": "allindata/allindata-micro-erp-planning",
+    "description": "Micro ERP Planning",
     "type": "wp-plugin",
     "version": "1.0.0",
     "minimum-stability": "stable",
-    "license": "GPLv2",
+    "license": "proprietary",
     "authors": [
         {
             "name": "Florian Horn",
@@ -18,7 +18,7 @@
     "autoload": {
         "psr-4": {
             "AllInData\\MicroErp\\Core\\": "../allindata-micro-erp-core/src",
-            "AllInData\\MicroErp\\Mdm\\": "./src"
+            "AllInData\\MicroErp\\Planning\\": "./src"
         }
     }
 }

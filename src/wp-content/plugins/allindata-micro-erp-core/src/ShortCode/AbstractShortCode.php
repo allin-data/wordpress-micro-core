@@ -29,6 +29,14 @@ abstract class AbstractShortCode implements PluginShortCodeInterface
     }
 
     /**
+     * @return string
+     */
+    public function getTemplatePath(): string
+    {
+        return $this->templatePath;
+    }
+
+    /**
      * @inheritdoc
      */
     abstract public function init();
@@ -57,7 +65,7 @@ abstract class AbstractShortCode implements PluginShortCodeInterface
      */
     private function loadTemplate($templateName)
     {
-        $template = $this->templatePath . $templateName . '.php';
+        $template = $this->getTemplatePath() . $templateName . '.php';
         return \apply_filters('micro_erp_locate_template', $template, $templateName, $this->templatePath);
     }
 }

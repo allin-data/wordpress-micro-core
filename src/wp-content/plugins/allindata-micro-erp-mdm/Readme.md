@@ -1,4 +1,4 @@
-# MicroErp MDM
+# Micro ERP MDM
 
 ## ShortCodes
 

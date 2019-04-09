@@ -16,9 +16,6 @@ use Exception;
  */
 interface PluginControllerInterface
 {
-    const ACTION_SLUG = '';
-    const REDIRECTION_KEY = 'redirect_target';
-
     /**
      * Init plugin controller
      */

@@ -21,44 +21,45 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
 /**
- * Plugin Name: AllInData Micro ERP MDM
- * Description: All.In Data - Micro ERP - Master Data Management
+ * Plugin Name: AllInData Micro ERP Auth
+ * Description: All.In Data - Micro ERP - Authentication and Authorization
  * Version: 1.0
- * Depends: AllInData MicroErp Core, Elementor Page Builder
+ * Depends: AllInData Micro ERP Core, Elementor Page Builder
  * Author: All.In Data GmbH
  * Author URI: https://www.all-in-data.de
- * Text Domain: allindata-micro-erp-mdm
+ * Text Domain: allindata-micro-erp-auth
  * Domain Path: /languages
- * License: GPLv2 or later
+ * License: proprietary
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * WC requires at least: 5.0.0
  * WC tested up to: 5.1.0
  */
 
-define('AID_MICRO_ERP_MDM_VERSION', '1.0');
-define('AID_MICRO_ERP_MDM_SLUG', 'allindata-micro-erp-mdm');
-define('AID_MICRO_ERP_MDM_TEXTDOMAIN', 'allindata-micro-erp-mdm');
-define('AID_MICRO_ERP_MDM_TEMPLATE_DIR', __DIR__ . '/view/');
-define('AID_MICRO_ERP_MDM_TEMP_DIR', ABSPATH . 'tmp/');
-define('AID_MICRO_ERP_MDM_FILE', __FILE__);
+define('AID_MICRO_ERP_AUTH_VERSION', '1.0');
+define('AID_MICRO_ERP_AUTH_SLUG', 'allindata-micro-erp-auth');
+define('AID_MICRO_ERP_AUTH_TEXTDOMAIN', 'allindata-micro-erp-auth');
+define('AID_MICRO_ERP_AUTH_TEMPLATE_DIR', __DIR__ . '/view/');
+define('AID_MICRO_ERP_AUTH_TEMP_DIR', ABSPATH . 'tmp/');
+define('AID_MICRO_ERP_AUTH_PATH', plugin_dir_path(__FILE__));
+define('AID_MICRO_ERP_AUTH_URL', plugin_dir_url(__FILE__));
 
 defined('ABSPATH') or exit;
 
 require __DIR__ . '/vendor/autoload.php';
 
-class AllInDataMicroErpMdm
+class AllInDataMicroErpAuth
 {
     static function init()
     {
-        $config = new \bitExpert\Disco\BeanFactoryConfiguration(AID_MICRO_ERP_MDM_TEMP_DIR);
+        $config = new \bitExpert\Disco\BeanFactoryConfiguration(AID_MICRO_ERP_AUTH_TEMP_DIR);
         $config->setProxyAutoloader(
             new \ProxyManager\Autoloader\Autoloader(
-                new \ProxyManager\FileLocator\FileLocator(AID_MICRO_ERP_MDM_TEMP_DIR),
-                new \ProxyManager\Inflector\ClassNameInflector(AID_MICRO_ERP_MDM_SLUG)
+                new \ProxyManager\FileLocator\FileLocator(AID_MICRO_ERP_AUTH_TEMP_DIR),
+                new \ProxyManager\Inflector\ClassNameInflector(AID_MICRO_ERP_AUTH_SLUG)
             )
         );
         $beanFactory = new \bitExpert\Disco\AnnotationBeanFactory(
-            \AllInData\MicroErp\Mdm\PluginConfiguration::class,
+            \AllInData\MicroErp\Auth\PluginConfiguration::class,
             [],
             $config
         );
@@ -69,4 +70,4 @@ class AllInDataMicroErpMdm
         $app->doInit();
     }
 }
-add_action('elementor/init', [AllInDataMicroErpMdm::class, 'init']);
+add_action('elementor/init', [AllInDataMicroErpAuth::class, 'init']);

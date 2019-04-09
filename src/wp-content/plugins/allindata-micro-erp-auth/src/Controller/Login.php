@@ -6,27 +6,23 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Theme\Controller;
+namespace AllInData\MicroErp\Auth\Controller;
+
+use AllInData\MicroErp\Core\Controller\AbstractAnonController;
+use AllInData\MicroErp\Core\Controller\PluginControllerInterface;
 
 /**
  * Class Login
- * @package AllInData\MicroErp\Theme\Controller
+ * @package AllInData\MicroErp\Auth\Controller
  */
-class Login implements ThemeControllerInterface
+class Login extends AbstractAnonController implements PluginControllerInterface
 {
-    /**
-     * @inheritdoc
-     */
-    public function init()
-    {
-        add_action('wp_ajax_login', [$this, 'applyLogin']);
-        add_action('wp_ajax_nopriv_login', [$this, 'applyLogin']);
-    }
+    const ACTION_SLUG = 'login';
 
     /**
-     *
+     * @inheritDoc
      */
-    public function applyLogin()
+    protected function doExecute()
     {
         $credentials = [];
         $username = null;

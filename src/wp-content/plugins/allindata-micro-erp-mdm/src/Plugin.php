@@ -38,7 +38,7 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
     {
         /** @var \WP_Role $parentRole */
         $parentRole = get_role('subscriber');
-        add_role(UserRole::ROLE_LEVEL_USER_DEFAULT, __('MicroErp User Default'), $parentRole->capabilities);
+        add_role(UserRole::ROLE_LEVEL_USER_DEFAULT, __('Micro ERP User Default'), $parentRole->capabilities);
     }
 
     /**

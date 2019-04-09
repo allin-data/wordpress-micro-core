@@ -28,7 +28,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  * Author URI: https://www.all-in-data.de
  * Text Domain: allindata-micro-erp-core
  * Domain Path: /languages
- * License: GPLv2 or later
+ * License: proprietary
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * WC requires at least: 5.0.0
  * WC tested up to: 5.1.0
@@ -43,3 +43,5 @@ define('AID_MICRO_ERP_CORE_TEMP_DIR', ABSPATH . 'tmp/');
 defined('ABSPATH') or exit;
 
 require __DIR__ . '/vendor/autoload.php';
+
+do_action('allindata/micro/erp/init');
