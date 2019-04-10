@@ -8,7 +8,7 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Core\Block;
 
-use AllInData\MicroErp\Core\Controller\PluginControllerInterface;
+use AllInData\MicroErp\Core\Controller\AbstractController;
 
 /**
  * Class AbstractBlock
@@ -40,7 +40,7 @@ abstract class AbstractBlock
      */
     public function getFormRedirectKey()
     {
-        return PluginControllerInterface::REDIRECTION_KEY;
+        return AbstractController::REDIRECTION_KEY;
     }
 
     /**
