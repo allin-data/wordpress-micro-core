@@ -70,30 +70,7 @@ class Theme
      */
     public function addScripts()
     {
-        wp_deregister_script('jquery-migrate');
-        wp_deregister_script('jquery');
-        wp_register_script(
-            'jquery',
-            get_theme_file_uri('node_modules/jquery/dist/jquery.js'),
-            [],
-            '3.3.1'
-        );
-        wp_register_script(
-            'corejs',
-            get_theme_file_uri('node_modules/jquery/dist/core.js'),
-            [
-                'jquery'
-            ],
-            '3.3.1'
-        );
-        wp_register_script(
-            'jquery-migrate',
-            get_theme_file_uri('node_modules/jquery-migrate/dist/jquery-migrate.js'),
-            [
-                'jquery'
-            ],
-            '3.0.1'
-        );
+        // do nothing for now
     }
 
     /**

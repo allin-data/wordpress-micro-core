@@ -18,6 +18,24 @@ use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
 class Calendar extends AbstractShortCode implements PluginShortCodeInterface
 {
     /**
+     * @var \AllInData\MicroErp\Planning\Block\Calendar
+     */
+    private $block;
+
+    /**
+     * Calendar constructor.
+     * @param string $templatePath
+     * @param \AllInData\MicroErp\Planning\Block\Calendar $block
+     */
+    public function __construct(
+        string $templatePath,
+        \AllInData\MicroErp\Planning\Block\Calendar $block
+    ) {
+        parent::__construct($templatePath);
+        $this->block = $block;
+    }
+
+    /**
      * @inheritdoc
      */
     public function init()
@@ -33,6 +51,8 @@ class Calendar extends AbstractShortCode implements PluginShortCodeInterface
         if (is_admin()) {
             return '';
         }
-        $this->getTemplate('calendar');
+        $this->getTemplate('calendar', [
+            'block' => $this->block
+        ]);
     }
 }

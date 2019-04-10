@@ -71,7 +71,10 @@ class PluginConfiguration
     private function getPluginShortCodes(): array
     {
         return [
-            new Calendar(AID_MICRO_ERP_PLANNING_TEMPLATE_DIR)
+            new Calendar(
+                AID_MICRO_ERP_PLANNING_TEMPLATE_DIR,
+                new \AllInData\MicroErp\Planning\Block\Calendar()
+            )
         ];
     }
 }
