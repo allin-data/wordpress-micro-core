@@ -83,7 +83,7 @@ class PluginConfiguration
     private function getPluginShortCodes(): array
     {
         return [
-            new LoginForm()
+            new LoginForm(AID_MICRO_ERP_AUTH_TEMPLATE_DIR)
         ];
     }
 }
