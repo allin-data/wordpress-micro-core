@@ -8,18 +8,23 @@ Copyright (C) 2019 All.In Data GmbH
 ?>
 <h2>Calendar Template</h2>
 
-<div class="planning-calendar-controls">
-    <div id="view-year" class="button">Jahresplaner</div>
-    <div id="view-month" class="button">Monatsplaner</div>
-    <div id="view-day" class="button">Tagesplaner</div>
+<div class="row planning-calendar-controls">
+    <div class="btn-toolbar" role="toolbar">
+        <div class="btn-group mr-2" role="group">
+            <div id="view-month" class="btn btn-primary">Monatsplaner</div>
+            <div id="view-week" class="btn btn-secondary">Wochenplaner</div>
+            <div id="view-day" class="btn btn-secondary">Tagesplaner</div>
+        </div>
+    </div>
 </div>
+
 <div id="calendar" class="planning-calendar"></div>
 
 <script>
     jQuery(document).ready(function ($) {
 
         $('#calendar').microErpPlanningCalendar({
-            target: '#calenda',
+            target: '#calendar',
             labels: {
                 'Milestone': '<?php _e('Milestone', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
                 'Task': '<?php _e('Task', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
@@ -50,46 +55,49 @@ Copyright (C) 2019 All.In Data GmbH
             schedules: <?= json_encode($block->getSchedules()); ?>
         });
 
-        $('#view-year').click(function () {
+        $('#view-month').click(function () {
+            let button = $(this);
             $('#calendar')
-                .trigger('calendar-set-view', ['year', function () {
-                    console.log('Set calendar view to year');
+                .trigger('calendar-set-view', ['month', function () {
+                    // after callback
+                    $('.planning-calendar-controls')
+                        .find('.btn')
+                        .removeClass('btn-primary')
+                        .addClass('btn-secondary');
+                    button
+                        .removeClass('btn-secondary')
+                        .addClass('btn-primary');
                 }]);
         });
 
-        $('#view-month').click(function () {
+        $('#view-week').click(function () {
+            let button = $(this);
             $('#calendar')
-                .trigger('calendar-set-view', ['month', function () {
-                    console.log('Set calendar view to year');
+                .trigger('calendar-set-view', ['week', function () {
+                    // after callback
+                    $('.planning-calendar-controls')
+                        .find('.btn')
+                        .removeClass('btn-primary')
+                        .addClass('btn-secondary');
+                    button
+                        .removeClass('btn-secondary')
+                        .addClass('btn-primary');
                 }]);
         });
 
         $('#view-day').click(function () {
+            let button = $(this);
             $('#calendar')
                 .trigger('calendar-set-view', ['day', function () {
-                    console.log('Set calendar view to year');
+                    // after callback
+                    $('.planning-calendar-controls')
+                        .find('.btn')
+                        .removeClass('btn-primary')
+                        .addClass('btn-secondary');
+                    button
+                        .removeClass('btn-secondary')
+                        .addClass('btn-primary');
                 }]);
         });
-
-        // setTimeout(function () {
-        //     $('#calendar').trigger('calendar-set-view', ['day', function () {
-        //         console.log('custom calendar set view event');
-        //     }]);
-        //     setTimeout(function () {
-        //         $('#calendar')
-        //             .trigger('calendar-set-view', ['month', function () {
-        //                 console.log('custom calendar set view event');
-        //             }])
-        //             .trigger('calendar-set-option', [{month: {visibleWeeksCount: 2}}, function () {
-        //                 console.log('custom calendar set view event');
-        //             }]);
-        //
-        //         setTimeout(function () {
-        //             $('#calendar').trigger('calendar-refresh', function () {
-        //                 console.log('custom calendar refresh event');
-        //             });
-        //         }, 5000);
-        //     }, 5000);
-        // }, 5000);
     });
 </script>

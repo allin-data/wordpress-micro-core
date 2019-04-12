@@ -285,15 +285,12 @@
             });
 
             $(config.target).on('calendar-set-option', function(e, option, callback) {
-    console.log(arguments);
                 me._setCalendarOption(calendar, option, config, callback);
             });
             $(config.target).on('calendar-set-view', function(e, view, callback) {
-    console.log(arguments);
                 me._setCalendarView(calendar, view, config, callback);
             });
             $(config.target).on('calendar-refresh', function(e, callback) {
-    console.log(arguments);
                 me._updateCalendar(calendar, config, callback);
             })
         },

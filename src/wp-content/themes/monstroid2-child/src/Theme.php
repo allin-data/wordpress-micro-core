@@ -70,7 +70,15 @@ class Theme
      */
     public function addScripts()
     {
-        // do nothing for now
+        wp_enqueue_script(
+            'bootstrap-js',
+            get_theme_file_uri('vendor/twbs/bootstrap/dist/js/bootstrap.js'),
+            [
+                'jquery'
+            ],
+            4.3,
+            true
+        );
     }
 
     /**
