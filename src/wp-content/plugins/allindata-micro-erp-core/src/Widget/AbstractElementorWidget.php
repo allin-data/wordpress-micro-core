@@ -32,4 +32,34 @@ abstract class AbstractElementorWidget extends Widget_Base implements ElementorW
     {
         ElementorPlugin::instance()->widgets_manager->register_widget_type($this);
     }
+
+    /**
+     * @param string $name
+     * @param array $attributes
+     * @return string
+     */
+    protected function getShortCode(string $name, array $attributes = []): string
+    {
+        $attributesString = '';
+        foreach ($attributes as $key => $value) {
+            $attributesString .= sprintf(
+                ' %s="%s"',
+                $key,
+                $value
+            );
+        }
+
+        if (empty($attributes) || 0 === strlen(trim($attributesString))) {
+            return sprintf(
+                '[%s]',
+                $name
+            );
+        }
+
+        return sprintf(
+            '[%s %s]',
+            $name,
+            $attributesString
+        );
+    }
 }

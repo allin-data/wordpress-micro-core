@@ -17,6 +17,14 @@ use AllInData\MicroErp\Core\Block\AbstractBlock;
 class Calendar extends AbstractBlock
 {
     /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->getAttribute('title');
+    }
+
+    /**
      * @TODO implementation
      * @return array
      */

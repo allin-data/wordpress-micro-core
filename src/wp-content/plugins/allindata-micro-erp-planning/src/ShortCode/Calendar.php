@@ -51,6 +51,31 @@ class Calendar extends AbstractShortCode implements PluginShortCodeInterface
         if (is_admin()) {
             return '';
         }
+
+        $attributes = $this->prepareAttributes($attributes, [
+            'id' => '',
+            'title' => __('Calendar', AID_MICRO_ERP_MDM_TEXTDOMAIN),
+            'default-view' => 'month',
+            'label-milestone' => __('Milestone', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-task' => __('Task', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-all_day' => __('All Day', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-new_schedule' => __('New Schedule', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-more_events' => __('See %1$s more events', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-going_time' => __('GoingTime', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-coming_time' => __('ComingTime', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-sunday' => __('Sunday', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-monday' => __('Monday', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-tuesday' => __('Tuesday', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-wednesday' => __('Wednesday', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-thursday' => __('Thursday', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-friday' => __('Friday', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-saturday' => __('Saturday', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-schedule_monthly' => __('Monthly Schedule', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-schedule_weekly' => __('Weekly Schedule', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+            'label-schedule_daily' => __('Daily Schedule', AID_MICRO_ERP_PLANNING_TEXTDOMAIN)
+        ], $name);
+        $this->block->setAttributes($attributes);
+
         $this->getTemplate('calendar', [
             'block' => $this->block
         ]);

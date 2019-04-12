@@ -60,6 +60,19 @@ abstract class AbstractShortCode implements PluginShortCodeInterface
     }
 
     /**
+     * @param array $attributes
+     * @param array $defaultAttributes
+     * @param string $tagName
+     * @return array
+     */
+    protected function prepareAttributes(array $attributes, array $defaultAttributes, string $tagName)
+    {
+        $attributes = array_change_key_case((array)$attributes, CASE_LOWER);
+        // override default attributes with user attributes
+        return shortcode_atts($defaultAttributes, $attributes, $tagName);
+    }
+
+    /**
      * @param string $templateName
      * @return mixed|void
      */
