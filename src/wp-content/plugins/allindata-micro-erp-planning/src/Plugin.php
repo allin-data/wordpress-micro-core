@@ -75,6 +75,15 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
         }
 
         wp_enqueue_script(
+            'sprintf-js',
+            AID_MICRO_ERP_PLANNING_URL . 'node_modules/sprintf-js/dist/sprintf.min.js',
+            [
+                'jquery'
+            ],
+            '1.1.2',
+            true
+        );
+        wp_enqueue_script(
             'tui-code-snippet',
             AID_MICRO_ERP_PLANNING_URL . 'node_modules/tui-code-snippet/dist/tui-code-snippet.js',
             [
@@ -112,6 +121,18 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
                 'tui-calendar'
             ],
             '1.5',
+            true
+        );
+        wp_enqueue_script(
+            'aid-micro-erp-planning-calendar',
+            AID_MICRO_ERP_PLANNING_URL . 'view/js/calendar.js',
+            [
+                'jquery',
+                'tui-calendar',
+                'tui-date-picker',
+                'tui-time-picker'
+            ],
+            '1.0',
             true
         );
     }

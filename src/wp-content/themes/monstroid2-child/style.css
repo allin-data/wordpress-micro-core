@@ -9,3 +9,7 @@ Version: 1.0.0
 License: proprietary
 Text Domain: monstroid2-child
 */
+/* line 1, sass/modules/planning/_calendar.scss */
+.planning-calendar {
+  width: 100%;
+}

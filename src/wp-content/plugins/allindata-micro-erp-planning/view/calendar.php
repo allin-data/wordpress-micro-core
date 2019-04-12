@@ -8,203 +8,88 @@ Copyright (C) 2019 All.In Data GmbH
 ?>
 <h2>Calendar Template</h2>
 
-<div id="calendar" style="height: 800px;"></div>
+<div class="planning-calendar-controls">
+    <div id="view-year" class="button">Jahresplaner</div>
+    <div id="view-month" class="button">Monatsplaner</div>
+    <div id="view-day" class="button">Tagesplaner</div>
+</div>
+<div id="calendar" class="planning-calendar"></div>
 
 <script>
     jQuery(document).ready(function ($) {
-        let Calendar = tui.Calendar;
-        let lastClickSchedule;
 
-        let calendar = new Calendar('#calendar', {
-            title: 'Demo Schedule Calendar',
-            defaultView: 'month',
-            taskView: 'milestone',    // Can be also ['milestone', 'task']
-            scheduleView: 'allday',  // Can be also ['allday', 'time']
-            isReadOnly: false,
-            disableClick: false,
-            disableDblClick: false,
-            useCreationPopup: true,
-            useDetailPopup: true,
-            template: {
-                milestone: function (schedule) {
-                    return '<span style="color:red;"><i class="fa fa-flag"></i> ' + schedule.title + '</span>';
-                },
-                milestoneTitle: function () {
-                    return 'Milestone';
-                },
-                task: function (schedule) {
-                    return '&nbsp;&nbsp;#' + schedule.title;
-                },
-                taskTitle: function () {
-                    return '<label><input type="checkbox" />Task</label>';
-                },
-                allday: function (schedule) {
-                    return schedule.title + ' <i class="fa fa-refresh"></i>';
-                },
-                alldayTitle: function () {
-                    return 'All Day';
-                },
-                time: function (schedule) {
-                    return schedule.title + ' <i class="fa fa-refresh"></i>' + schedule.start;
-                },
-                monthMoreTitleDate: function (date) {
-                    date = new Date(date);
-                    return tui.util.formatDate('MM-DD', date) + '(' + daynames[date.getDay()] + ')';
-                },
-                monthMoreClose: function () {
-                    return '<i class="fa fa-close"></i>';
-                },
-                monthGridHeader: function (model) {
-                    var date = new Date(model.date);
-                    var template = '<span class="tui-full-calendar-weekday-grid-date">' + date.getDate() + '</span>';
-                    var today = model.isToday ? 'TDY' : '';
-                    if (today) {
-                        template += '<span class="tui-full-calendar-weekday-grid-date-decorator">' + today + '</span>';
-                    }
-                    //if (tempHolidays[date.getDate()]) {
-                    //    template += '<span class="tui-full-calendar-weekday-grid-date-title">' + tempHolidays[date.getDate()] + '</span>';
-                    //}
-                    return template;
-                },
-                monthGridHeaderExceed: function (hiddenSchedules) {
-                    return '<span class="calendar-more-schedules">+' + hiddenSchedules + '</span>';
-                },
-
-                monthGridFooter: function () {
-                    return '<div class="calendar-new-schedule-button">New Schedule</div>';
-                },
-
-                monthGridFooterExceed: function (hiddenSchedules) {
-                    return '<span class="calendar-footer-more-schedules">+ See ' + hiddenSchedules + ' more events</span>';
-                },
-                weekDayname: function (dayname) {
-                    return '<span class="calendar-week-dayname-name">' + dayname.dayName + '</span><br><span class="calendar-week-dayname-date">' + dayname.date + '</span>';
-                },
-                monthDayname: function (dayname) {
-                    return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
-                },
-                timegridDisplayPrimaryTime: function (time) {
-                    var meridiem = time.hour < 12 ? 'am' : 'pm';
-
-                    return time.hour + ' ' + meridiem;
-                },
-                timegridDisplayTime: function (time) {
-                    return time.hour + ':' + time.minutes;
-                },
-                goingDuration: function (model) {
-                    var goingDuration = model.goingDuration;
-                    var hour = parseInt(goingDuration / SIXTY_MINUTES, 10);
-                    var minutes = goingDuration % SIXTY_MINUTES;
-
-                    return 'GoingTime ' + hour + ':' + minutes;
-                },
-                comingDuration: function (model) {
-                    var goingDuration = model.goingDuration;
-                    var hour = parseInt(goingDuration / SIXTY_MINUTES, 10);
-                    var minutes = goingDuration % SIXTY_MINUTES;
-
-                    return 'ComingTime ' + hour + ':' + minutes;
-                },
-                popupDetailRepeat: function (model) {
-                    return model.recurrenceRule;
-                },
-                popupDetailBody: function (model) {
-                    return model.body;
-                }
+        $('#calendar').microErpPlanningCalendar({
+            target: '#calenda',
+            labels: {
+                'Milestone': '<?php _e('Milestone', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'Task': '<?php _e('Task', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'All Day': '<?php _e('All Day', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'New Schedule': '<?php _e('New Schedule', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'See %1$s more events': '<?php _e('See %1$s more events', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'GoingTime': '<?php _e('GoingTime', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'ComingTime': '<?php _e('ComingTime', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'Sunday': '<?php _e('Sunday', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'Monday': '<?php _e('Monday', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'Tuesday': '<?php _e('Tuesday', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'Wednesday': '<?php _e('Wednesday', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'Thursday': '<?php _e('Thursday', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'Friday': '<?php _e('Friday', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'Saturday': '<?php _e('Saturday', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>'
             },
-            month: {
-                daynames: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-                startDayOfWeek: 1,
-                narrowWeekend: true
+            calendarOptions: {
+                title: 'Demo Schedule Calendar',
+                defaultView: 'month',
+                taskView: 'milestone',
+                scheduleView: 'allday',
+                isReadOnly: false,
+                disableClick: false,
+                disableDblClick: false,
+                useCreationPopup: true,
+                useDetailPopup: true
             },
-            week: {
-                daynames: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-                startDayOfWeek: 1,
-                narrowWeekend: true
-            }
+            schedules: <?= json_encode($block->getSchedules()); ?>
         });
 
-        calendar.createSchedules(<?= json_encode($block->getSchedules()); ?>);
-
-        calendar.on({
-            'clickSchedule': function (e) {
-                console.log('clickSchedule', e);
-                var schedule = event.schedule;
-
-                // focus the schedule
-                if (lastClickSchedule) {
-                    calendar.updateSchedule(lastClickSchedule.id, lastClickSchedule.calendarId, {
-                        isFocused: false
-                    });
-                }
-                calendar.updateSchedule(schedule.id, schedule.calendarId, {
-                    isFocused: true
-                });
-
-                lastClickSchedule = schedule;
-
-                // open detail view
-            },
-            'clickMore': function(e) {
-                console.log('clickMore', e.date, e.target);
-            },
-            'beforeCreateSchedule': function (e) {
-                console.log('beforeCreateSchedule', e);
-                // open a creation popup
-
-                // If you dont' want to show any popup, just use `e.guide.clearGuideElement()`
-
-                // then close guide element(blue box from dragging or clicking days)
-                e.guide.clearGuideElement();
-            },
-            'beforeUpdateSchedule': function (e) {
-                console.log('beforeUpdateSchedule', e);
-                e.schedule.start = e.start;
-                e.schedule.end = e.end;
-                cal.updateSchedule(e.schedule.id, e.schedule.calendarId, e.schedule);
-            },
-            'beforeDeleteSchedule': function (e) {
-                console.log('beforeDeleteSchedule', e);
-                cal.deleteSchedule(e.schedule.id, e.schedule.calendarId);
-            }
+        $('#view-year').click(function () {
+            $('#calendar')
+                .trigger('calendar-set-view', ['year', function () {
+                    console.log('Set calendar view to year');
+                }]);
         });
 
+        $('#view-month').click(function () {
+            $('#calendar')
+                .trigger('calendar-set-view', ['month', function () {
+                    console.log('Set calendar view to year');
+                }]);
+        });
 
-        // // daily view
-        // calendar.changeView('day', true);
+        $('#view-day').click(function () {
+            $('#calendar')
+                .trigger('calendar-set-view', ['day', function () {
+                    console.log('Set calendar view to year');
+                }]);
+        });
+
+        // setTimeout(function () {
+        //     $('#calendar').trigger('calendar-set-view', ['day', function () {
+        //         console.log('custom calendar set view event');
+        //     }]);
+        //     setTimeout(function () {
+        //         $('#calendar')
+        //             .trigger('calendar-set-view', ['month', function () {
+        //                 console.log('custom calendar set view event');
+        //             }])
+        //             .trigger('calendar-set-option', [{month: {visibleWeeksCount: 2}}, function () {
+        //                 console.log('custom calendar set view event');
+        //             }]);
         //
-        // // weekly view
-        // calendar.changeView('week', true);
-        //
-        // // monthly view with 5 weeks or 6 weeks based on the month
-        // calendar.setOptions({month: {isAlways6Week: false}}, true);
-        // calendar.changeView('month', true);
-        //
-        // // monthly view(default 6 weeks view)
-        // calendar.setOptions({month: {visibleWeeksCount: 6}}, true); // or null
-        // calendar.changeView('month', true);
-        //
-        // // 2 weeks monthly view
-        // calendar.setOptions({month: {visibleWeeksCount: 2}}, true);
-        // calendar.changeView('month', true);
-        //
-        // // 3 weeks monthly view
-        // calendar.setOptions({month: {visibleWeeksCount: 3}}, true);
-        // calendar.changeView('month', true);
-        //
-        // // narrow weekend
-        // calendar.setOptions({month: {narrowWeekend: true}}, true);
-        // calendar.setOptions({week: {narrowWeekend: true}}, true);
-        // calendar.changeView(calendar.getViewName(), true);
-        //
-        // // change start day of week(from monday)
-        // calendar.setOptions({week: {startDayOfWeek: 1}}, true);
-        // calendar.setOptions({month: {startDayOfWeek: 1}}, true);
-        // calendar.changeView(calendar.getViewName(), true);
-        //
-        // // work week
-        // calendar.setOptions({week: {workweek: true}}, true);
-        // calendar.setOptions({month: {workweek: true}}, true);
-        // calendar.changeView(calendar.getViewName(), true);
+        //         setTimeout(function () {
+        //             $('#calendar').trigger('calendar-refresh', function () {
+        //                 console.log('custom calendar refresh event');
+        //             });
+        //         }, 5000);
+        //     }, 5000);
+        // }, 5000);
     });
 </script>

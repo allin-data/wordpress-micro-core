@@ -9,6 +9,7 @@
   "author": "florian.horn@all-in-data.de",
   "license": "SEE LICENSE IN Readme.md",
   "dependencies": {
+    "sprintf-js": "^1.1.2",
     "tui-calendar": "^1.11.0"
   }
 }
