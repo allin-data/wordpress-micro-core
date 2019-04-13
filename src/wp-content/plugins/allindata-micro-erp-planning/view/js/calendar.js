@@ -268,19 +268,19 @@
             let me = this;
             calendar.on({
                 'clickSchedule': function (event) {
-                    this._addHookOnClickSchedule(calendar, event, config);
+                    me._addHookOnClickSchedule(calendar, event, config);
                 },
                 'clickMore': function (event) {
-                    this._addHookOnClickMore(calendar, event, config);
+                    me._addHookOnClickMore(calendar, event, config);
                 },
                 'beforeCreateSchedule': function (event) {
-                    this._addHookOnBeforeCreateSchedule(calendar, event, config);
+                    me._addHookOnBeforeCreateSchedule(calendar, event, config);
                 },
                 'beforeUpdateSchedule': function (event) {
-                    this._addHookOnBeforeUpdateSchedule(calendar, event, config);
+                    me._addHookOnBeforeUpdateSchedule(calendar, event, config);
                 },
                 'beforeDeleteSchedule': function (event) {
-                    this._addHookOnBeforeDeleteSchedule(calendar, event, config);
+                    me._addHookOnBeforeDeleteSchedule(calendar, event, config);
                 },
             });
 
@@ -340,7 +340,7 @@
             // If you dont' want to show any popup, just use `e.guide.clearGuideElement()`
 
             // then close guide element(blue box from dragging or clicking days)
-            e.guide.clearGuideElement();
+            //e.guide.clearGuideElement();
         },
 
         /**

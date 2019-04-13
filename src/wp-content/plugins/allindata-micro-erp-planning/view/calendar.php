@@ -22,6 +22,10 @@ Copyright (C) 2019 All.In Data GmbH
 
 <script>
     jQuery(document).ready(function ($) {
+        var Calendar = tui.Calendar;
+        var DatePicket = tui.DatePicket;
+        var TimePicket = tui.TimePicket;
+
         let calendarSelector = '#calendar_<?= $block->getAttribute('id') ?>';
         $(calendarSelector).microErpPlanningCalendar({
             target: calendarSelector,

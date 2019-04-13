@@ -71,6 +71,14 @@ class Theme
     public function addScripts()
     {
         wp_enqueue_script(
+            'jquery-noconflict',
+            get_theme_file_uri('js/jquery-noconflict.js'),
+            [
+                'jquery'
+            ],
+            '1.0'
+        );
+        wp_enqueue_script(
             'bootstrap-js',
             get_theme_file_uri('vendor/twbs/bootstrap/dist/js/bootstrap.js'),
             [

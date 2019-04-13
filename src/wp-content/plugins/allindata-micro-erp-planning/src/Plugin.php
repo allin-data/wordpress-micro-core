@@ -93,14 +93,13 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             true
         );
         wp_enqueue_script(
-            'tui-calendar',
-            AID_MICRO_ERP_PLANNING_URL . 'node_modules/tui-calendar/dist/tui-calendar.js',
+            'tui-time-picker',
+            AID_MICRO_ERP_PLANNING_URL . 'node_modules/tui-time-picker/dist/tui-time-picker.js',
             [
                 'jquery',
-                'tui-code-snippet',
-                'moment'
+                'tui-code-snippet'
             ],
-            '1.11',
+            '1.5',
             true
         );
         wp_enqueue_script(
@@ -108,19 +107,22 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             AID_MICRO_ERP_PLANNING_URL . 'node_modules/tui-date-picker/dist/tui-date-picker.js',
             [
                 'jquery',
-                'tui-calendar'
+                'tui-code-snippet',
+                'tui-time-picker'
             ],
             '3.2.1',
             true
         );
         wp_enqueue_script(
-            'tui-time-picker',
-            AID_MICRO_ERP_PLANNING_URL . 'node_modules/tui-time-picker/dist/tui-time-picker.js',
+            'tui-calendar',
+            AID_MICRO_ERP_PLANNING_URL . 'node_modules/tui-calendar/dist/tui-calendar.js',
             [
                 'jquery',
-                'tui-calendar'
+                'tui-code-snippet',
+                'tui-date-picker',
+                'tui-time-picker'
             ],
-            '1.5',
+            '1.11',
             true
         );
         wp_enqueue_script(
@@ -128,9 +130,7 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             AID_MICRO_ERP_PLANNING_URL . 'view/js/calendar.js',
             [
                 'jquery',
-                'tui-calendar',
-                'tui-date-picker',
-                'tui-time-picker'
+                'tui-calendar'
             ],
             '1.0',
             true

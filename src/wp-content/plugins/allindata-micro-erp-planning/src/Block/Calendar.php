@@ -9,6 +9,8 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Planning\Block;
 
 use AllInData\MicroErp\Core\Block\AbstractBlock;
+use AllInData\MicroErp\Planning\Controller\CreateSchedule;
+use AllInData\MicroErp\Planning\Model\Collection\Schedule as ScheduleCollection;
 
 /**
  * Class Calendar
@@ -16,6 +18,20 @@ use AllInData\MicroErp\Core\Block\AbstractBlock;
  */
 class Calendar extends AbstractBlock
 {
+    /**
+     * @var ScheduleCollection
+     */
+    private $scheduleCollection;
+
+    /**
+     * Calendar constructor.
+     * @param ScheduleCollection $scheduleCollection
+     */
+    public function __construct(ScheduleCollection $scheduleCollection)
+    {
+        $this->scheduleCollection = $scheduleCollection;
+    }
+
     /**
      * @return string
      */
@@ -52,5 +68,13 @@ class Calendar extends AbstractBlock
                 'isReadOnly' => true
             ]
         ];
+        //return $this->scheduleCollection->load();
+    }
+    /**
+     * @return string
+     */
+    public function getCreateScheduleActionSlug()
+    {
+        return CreateSchedule::ACTION_SLUG;
     }
 }
