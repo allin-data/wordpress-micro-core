@@ -132,7 +132,7 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
                 'jquery',
                 'tui-calendar'
             ],
-            '1.0',
+            '1.0.1',
             true
         );
     }
