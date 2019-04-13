@@ -31,7 +31,15 @@ class Schedule extends AbstractModel
     /**
      * @var string|null
      */
+    private $state;
+    /**
+     * @var string|null
+     */
     private $category;
+    /**
+     * @var string|null
+     */
+    private $location;
     /**
      * @var string|null
      */
@@ -44,6 +52,10 @@ class Schedule extends AbstractModel
      * @var string|null
      */
     private $end;
+    /**
+     * @var bool|int|null
+     */
+    private $isAllDay;
     /**
      * @var bool|int|null
      */
@@ -106,6 +118,24 @@ class Schedule extends AbstractModel
     /**
      * @return string|null
      */
+    public function getState(): ?string
+    {
+        return $this->state;
+    }
+
+    /**
+     * @param string|null $state
+     * @return Schedule
+     */
+    public function setState(?string $state): Schedule
+    {
+        $this->state = $state;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
     public function getCategory(): ?string
     {
         return $this->category;
@@ -118,6 +148,24 @@ class Schedule extends AbstractModel
     public function setCategory(?string $category): Schedule
     {
         $this->category = $category;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getLocation(): ?string
+    {
+        return $this->location;
+    }
+
+    /**
+     * @param string|null $location
+     * @return Schedule
+     */
+    public function setLocation(?string $location): Schedule
+    {
+        $this->location = $location;
         return $this;
     }
 
@@ -172,6 +220,24 @@ class Schedule extends AbstractModel
     public function setEnd(?string $end): Schedule
     {
         $this->end = $end;
+        return $this;
+    }
+
+    /**
+     * @return bool|int|null
+     */
+    public function getIsAllDay()
+    {
+        return $this->isAllDay;
+    }
+
+    /**
+     * @param bool|int|null $isAllDay
+     * @return Schedule
+     */
+    public function setIsAllDay($isAllDay)
+    {
+        $this->isAllDay = $isAllDay;
         return $this;
     }
 

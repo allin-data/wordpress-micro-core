@@ -6,6 +6,8 @@
 
         defaults: {
             target: '#calendar',
+            modalSelector: '#calendar_modal',
+            actionCreateSchedule: '',
             labels: {
                 'Milestone': 'Milestone',
                 'Task': 'Task',
@@ -94,7 +96,8 @@
          * @param {Function} callback
          * @private
          */
-        _updateCalendar: function (calendar, config, callback = function () {}) {
+        _updateCalendar: function (calendar, config, callback = function () {
+        }) {
             calendar.changeView(calendar.getViewName(), true);
             callback.call(this, calendar, config);
         },
@@ -106,7 +109,8 @@
          * @param {Function} callback
          * @private
          */
-        _setCalendarOption: function (calendar, option, config, callback = function () {}) {
+        _setCalendarOption: function (calendar, option, config, callback = function () {
+        }) {
             calendar.setOptions(option, true);
             callback.call(this, calendar, config);
         },
@@ -118,7 +122,8 @@
          * @param {Function} callback
          * @private
          */
-        _setCalendarView: function (calendar, view, config, callback = function () {}) {
+        _setCalendarView: function (calendar, view, config, callback = function () {
+        }) {
             calendar.changeView(view, true);
             callback.call(this, calendar, config);
         },
@@ -281,16 +286,16 @@
                 },
                 'beforeDeleteSchedule': function (event) {
                     me._addHookOnBeforeDeleteSchedule(calendar, event, config);
-                },
+                }
             });
 
-            $(config.target).on('calendar-set-option', function(e, option, callback) {
+            $(config.target).on('calendar-set-option', function (e, option, callback) {
                 me._setCalendarOption(calendar, option, config, callback);
             });
-            $(config.target).on('calendar-set-view', function(e, view, callback) {
+            $(config.target).on('calendar-set-view', function (e, view, callback) {
                 me._setCalendarView(calendar, view, config, callback);
             });
-            $(config.target).on('calendar-refresh', function(e, callback) {
+            $(config.target).on('calendar-refresh', function (e, callback) {
                 me._updateCalendar(calendar, config, callback);
             })
         },
@@ -334,13 +339,57 @@
          * @private
          */
         _addHookOnBeforeCreateSchedule: function (calendar, event, config) {
-            console.log('beforeCreateSchedule');
-            // open a creation popup
+            let startDate = sprintf(
+                '%s-%s-%s',
+                event.start.getFullYear(),
+                ('00'+event.start.getMonth()).slice(-2),
+                ('00'+event.start.getDay()).slice(-2)
+            );
+            let endDate = sprintf(
+                '%s-%s-%s',
+                event.end.getFullYear(),
+                ('00'+event.end.getMonth()).slice(-2),
+                ('00'+event.end.getDay()).slice(-2)
+            );
+            
+            let schedule = {
+                calendarId: event.calendarId,
+                title: event.title,
+                state: event.state,
+                category: event.raw.class,
+                location: event.location,
+                start: startDate,
+                end: endDate,
+                isAllDay: event.isAllDay || false,
+                isReadOnly: event.isReadOnly || false
+            };
 
-            // If you dont' want to show any popup, just use `e.guide.clearGuideElement()`
+            let payload = $.extend({}, {
+                action: config.actionCreateSchedule
+            }, schedule || {});
 
-            // then close guide element(blue box from dragging or clicking days)
-            //e.guide.clearGuideElement();
+            $.ajax({
+                type: 'POST',
+                url: wp_ajax_action.action_url,
+                //contentType: 'application/json',
+                data: payload,
+                success: function(data, status, event){
+                    console.log('finished create schedules success', event, status, data);
+                    calendar.createSchedules([schedule]);
+                },
+                error: function(event, status, error){
+                    console.log('finished create schedules success', event, status, error);
+
+                    $(config.modalSelector).modal({
+                        escapeClose: true,
+                        clickClose: true,
+                        showClose: true
+                    });
+                },
+                complete: function(event, status) {
+                    console.log('finished create schedules callback', event, status);
+                }
+            });
         },
 
         /**
@@ -351,9 +400,9 @@
          */
         _addHookOnBeforeUpdateSchedule: function (calendar, event, config) {
             console.log('beforeUpdateSchedule');
-            e.schedule.start = e.start;
-            e.schedule.end = e.end;
-            calendar.updateSchedule(e.schedule.id, e.schedule.calendarId, e.schedule);
+            event.schedule.start = event.start;
+            event.schedule.end = event.end;
+            calendar.updateSchedule(event.schedule.id, event.schedule.calendarId, event.schedule);
         },
 
         /**

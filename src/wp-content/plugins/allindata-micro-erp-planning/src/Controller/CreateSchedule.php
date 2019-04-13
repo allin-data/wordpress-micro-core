@@ -48,10 +48,13 @@ class CreateSchedule extends AbstractController
     {
         $calendarId = (int)$this->getParam('calendarId');
         $title = $this->getParam('title');
+        $state = $this->getParam('state');
         $category = $this->getParam('category');
+        $location = $this->getParam('location');
         $dueDateClass = $this->getParam('dueDateClass');
         $start = $this->getParam('start');
         $end = $this->getParam('end');
+        $isAllDay = $this->getParam('isAllDay');
         $isReadOnly = $this->getParam('isReadOnly');
 
         /** @var Schedule $schedule */
@@ -59,15 +62,17 @@ class CreateSchedule extends AbstractController
         $schedule
             ->setCalendarId($calendarId)
             ->setTitle($title)
+            ->setState($state)
             ->setCategory($category)
+            ->setLocation($location)
             ->setDueDateClass($dueDateClass)
             ->setStart($start)
             ->setEnd($end)
+            ->setIsAllDay($isAllDay)
             ->setIsReadOnly($isReadOnly);
         if (!$this->scheduleValidator->validate($schedule)->isValid()) {
             $this->throwErrorMessage(implode(',', $this->scheduleValidator->getErrors()));
         }
-
         $this->scheduleResource->save($schedule);
     }
 }

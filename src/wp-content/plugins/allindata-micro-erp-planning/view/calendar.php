@@ -20,15 +20,15 @@ Copyright (C) 2019 All.In Data GmbH
 
 <div id="calendar_<?= $block->getAttribute('id') ?>" class="planning-calendar"></div>
 
+<div id="calendar_modal"><p>Foobar</p></div>
+
 <script>
     jQuery(document).ready(function ($) {
-        var Calendar = tui.Calendar;
-        var DatePicket = tui.DatePicket;
-        var TimePicket = tui.TimePicket;
-
         let calendarSelector = '#calendar_<?= $block->getAttribute('id') ?>';
         $(calendarSelector).microErpPlanningCalendar({
             target: calendarSelector,
+            actionCreateSchedule: '<?= $block->getCreateScheduleActionSlug() ?>',
+            modalSelector: '#calendar_modal',
             labels: {
                 'Milestone': '<?= $block->getAttribute('label-milestone'); ?>',
                 'Task': '<?= $block->getAttribute('label-task'); ?>',

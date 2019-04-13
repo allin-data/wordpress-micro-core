@@ -49,9 +49,11 @@ abstract class AbstractController implements PluginControllerInterface
             $this->throwErrorMessage(__('Insufficient permissions', AID_MICRO_ERP_CORE_TEXTDOMAIN));
         }
 
-        $nonce = $this->getParam('nonce');
-        if (!$nonce || false === wp_verify_nonce($nonce, static::ACTION_SLUG)) {
-            $this->throwErrorMessage(__( 'Invalid nonce specified', AID_MICRO_ERP_CORE_TEXTDOMAIN));
+        if (!(defined('DOING_AJAX') && DOING_AJAX)) {
+            $nonce = $this->getParam('nonce');
+            if (!$nonce || false === wp_verify_nonce($nonce, static::ACTION_SLUG)) {
+                $this->throwErrorMessage(__('Invalid nonce specified', AID_MICRO_ERP_CORE_TEXTDOMAIN));
+            }
         }
     }
 
@@ -67,13 +69,16 @@ abstract class AbstractController implements PluginControllerInterface
     {
         // stop if controller action is used async
         if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-            exit();
+            wp_die();
+        }
+        if (defined('DOING_AJAX') && DOING_AJAX) {
+            wp_die();
         }
 
         $redirectTarget = $this->getParam(static::REDIRECTION_KEY);
         if ($redirectTarget) {
             wp_safe_redirect(site_url($redirectTarget));
-            exit();
+            wp_die();
         }
 
         header("Location: " . $_SERVER['HTTP_REFERER']);
@@ -130,7 +135,9 @@ abstract class AbstractController implements PluginControllerInterface
      */
     protected function isAllowed(): bool
     {
-        if (!is_user_logged_in() || !current_user_can(UserRole::ROLE_LEVEL_USER_DEFAULT)) {
+        if (!is_user_logged_in() ||
+            !(current_user_can(UserRole::ROLE_LEVEL_USER_DEFAULT) ||
+                current_user_can(UserRole::ROLE_LEVEL_ADMINISTRATION))) {
             return false;
         }
         return true;
@@ -142,7 +149,7 @@ abstract class AbstractController implements PluginControllerInterface
      */
     protected function throwErrorMessage(string $message)
     {
-        if(true === WP_DEBUG || true === WP_DEBUG_DISPLAY) {
+        if (true === WP_DEBUG || true === WP_DEBUG_DISPLAY) {
             trigger_error(sprintf(
                 '[%s::Error] %s',
                 static::class,
@@ -151,7 +158,7 @@ abstract class AbstractController implements PluginControllerInterface
         }
 
         if (true === WP_DEBUG_LOG) {
-            $logPath = ABSPATH . '/logs/';
+            $logPath = ABSPATH . 'wp-content/logs/';
             $logFile = $logPath . 'debug.log';
 
             if (!is_dir($logPath)) {
@@ -165,12 +172,20 @@ abstract class AbstractController implements PluginControllerInterface
             );
         }
 
+
+        error_log(
+            '[' . static::class . '::throwErrorMessage] ' . $message,
+            0
+        );
+
         if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-            die();
-        } else {
-            header("Location: " . $_SERVER['HTTP_REFERER']);
+            wp_die();
+        }
+        if (defined('DOING_AJAX') && DOING_AJAX) {
+            wp_die();
         }
 
+        header("Location: " . $_SERVER['HTTP_REFERER']);
         throw new Exception($message);
     }
 }

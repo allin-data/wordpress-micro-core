@@ -84,6 +84,15 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             true
         );
         wp_enqueue_script(
+            'jquery-modal',
+            AID_MICRO_ERP_PLANNING_URL . 'node_modules/jquery-modal/jquery.modal.js',
+            [
+                'jquery'
+            ],
+            '0.9.2',
+            true
+        );
+        wp_enqueue_script(
             'tui-code-snippet',
             AID_MICRO_ERP_PLANNING_URL . 'node_modules/tui-code-snippet/dist/tui-code-snippet.js',
             [
@@ -125,7 +134,9 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             '1.11',
             true
         );
-        wp_enqueue_script(
+
+
+        wp_register_script(
             'aid-micro-erp-planning-calendar',
             AID_MICRO_ERP_PLANNING_URL . 'view/js/calendar.js',
             [
@@ -135,5 +146,9 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             '1.0.1',
             true
         );
+        wp_localize_script('aid-micro-erp-planning-calendar', 'wp_ajax_action', [
+            'action_url' => admin_url('admin-ajax.php')
+        ]);
+        wp_enqueue_script('aid-micro-erp-planning-calendar');
     }
 }
