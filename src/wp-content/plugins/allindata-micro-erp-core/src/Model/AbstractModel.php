@@ -33,7 +33,7 @@ abstract class AbstractModel
      */
     public function __get($name)
     {
-        $methodName = sprintf('get%s',  $this->canonicalizeMethodName($name));
+        $methodName = sprintf('get%s', $this->canonicalizeMethodName($name));
         if (!method_exists($this, $methodName)) {
             return $this->{$name} ?: null;
         }
@@ -47,12 +47,13 @@ abstract class AbstractModel
      */
     public function __set($name, $value)
     {
-        $methodName = sprintf('set%s',  $this->canonicalizeMethodName($name));
+        $methodName = sprintf('set%s', $this->canonicalizeMethodName($name));
         if (!method_exists($this, $methodName)) {
             $this->{$name} = $value;
             return $this;
         }
-        $this->{$methodName}($value);
+
+        $this->{$methodName}($this->castValue($value));
         return $this;
     }
 
@@ -62,7 +63,7 @@ abstract class AbstractModel
      */
     public function get($name)
     {
-        $methodName = sprintf('get%s',  $this->canonicalizeMethodName($name));
+        $methodName = sprintf('get%s', $this->canonicalizeMethodName($name));
         if (!method_exists($this, $methodName)) {
             return $this->{$name} ?: null;
         }
@@ -76,12 +77,12 @@ abstract class AbstractModel
      */
     public function set($name, $value)
     {
-        $methodName = sprintf('set%s',  $this->canonicalizeMethodName($name));
+        $methodName = sprintf('set%s', $this->canonicalizeMethodName($name));
         if (!method_exists($this, $methodName)) {
             $this->{$name} = $value;
             return $this;
         }
-        $this->{$methodName}($value);
+        $this->{$methodName}($this->castValue($value));
         return $this;
     }
 
@@ -92,12 +93,12 @@ abstract class AbstractModel
     public function fromArray(array $dataSet)
     {
         foreach ($dataSet as $key => $value) {
-            $methodName = sprintf('set%s',  $this->canonicalizeMethodName($key));
+            $methodName = sprintf('set%s', $this->canonicalizeMethodName($key));
             if (!method_exists($this, $methodName)) {
                 $this->{$key} = $value;
                 continue;
             }
-            $this->{$methodName}($value);
+            $this->{$methodName}($this->castValue($value));
         }
         return $this;
     }
@@ -119,7 +120,7 @@ abstract class AbstractModel
         );
         $dataSet = [];
         foreach ($properties as $property) {
-            $methodName = sprintf('get%s',  ucfirst($property->getName()));
+            $methodName = sprintf('get%s', ucfirst($property->getName()));
             $value = $this->{$methodName}();
             if ($value instanceof AbstractModel) {
                 $dataSet[$property->getName()] = $value->toArray();
@@ -141,11 +142,38 @@ abstract class AbstractModel
      */
     private function canonicalizeMethodName(string $methodName): string
     {
-        $methodNameParts = explode(' ', ucwords(str_replace(['-','_'], ' ', $methodName)));
+        $methodNameParts = explode(' ', ucwords(str_replace(['-', '_'], ' ', $methodName)));
         foreach ($methodNameParts as $idx => $part) {
             $methodNameParts[$idx] = ucfirst(strtolower($part));
         }
 
         return implode('', $methodNameParts);
+    }
+
+    /**
+     * @param mixed $value
+     * @return array|bool|float|int|string|null
+     */
+    private function castValue($value)
+    {
+        if (is_array($value)) {
+            return (array)$value;
+        }
+        if (!!$value === $value) {
+            return !!$value;
+        }
+        if (is_numeric($value) && intval($value) == $value) {
+            return (int)$value;
+        }
+        if (is_numeric($value) && floatval($value) == $value) {
+            return (float)$value;
+        }
+        if (is_null($value)) {
+            return null;
+        }
+        if (is_string($value)) {
+            return (string)$value;
+        }
+        return $value;
     }
 }

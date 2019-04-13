@@ -8,6 +8,8 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Core\Model;
 
+use WP_Query;
+
 /**
  * Class AbstractCollection
  * @package AllInData\MicroErp\Core\Model
@@ -46,20 +48,15 @@ abstract class AbstractCollection
      */
     public function load($limit = self::DEFAULT_LIMIT, $offset = self::DEFAULT_OFFSET): array
     {
-        $db = $this->resource->getDatabase()->getInstance();
+        $query = new WP_Query([
+            'fields' => 'ids',
+            'post_type' => $this->resource->getEntityName(),
+            'post_status' => 'publish',
+            'offset' => $offset,
+            'number' => $limit
+        ]);
 
-        $queryCollection = $db->prepare(
-            'SELECT ID FROM `'.$db->posts.'` WHERE `post_type`=%s LIMIT %d OFFSET %d',
-            $this->resource->getEntityName(),
-            $limit,
-            $offset
-        );
-
-        /** @var array $entity */
-        $collectionIdSet = $db->get_results(
-            $queryCollection,
-            ARRAY_A
-        );
+        $collectionIdSet = (array)$query->get_posts();
 
         if (!is_array($collectionIdSet)) {
             return [];
@@ -79,23 +76,15 @@ abstract class AbstractCollection
      */
     public function getTotalCount(): int
     {
-        $db = $this->resource->getDatabase()->getInstance();
+        $query = new WP_Query([
+            'fields' => 'ids',
+            'post_type' => $this->resource->getEntityName(),
+            'post_status' => 'publish',
+            'cache_results'  => false,
+            'update_post_meta_cache' => false,
+            'update_post_term_cache' => false
+        ]);
 
-        $queryCollection = $db->prepare(
-            'SELECT ID FROM `'.$db->posts.'` WHERE `post_type`=%s',
-            $this->resource->getEntityName()
-        );
-
-        /** @var array $entity */
-        $collectionIdSet = $db->get_results(
-            $queryCollection,
-            ARRAY_A
-        );
-
-        if (!is_array($collectionIdSet)) {
-            return 0;
-        }
-
-        return count($collectionIdSet);
+        return $query->post_count;
     }
 }

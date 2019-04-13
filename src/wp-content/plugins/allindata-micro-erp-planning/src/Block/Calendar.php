@@ -11,6 +11,8 @@ namespace AllInData\MicroErp\Planning\Block;
 use AllInData\MicroErp\Core\Block\AbstractBlock;
 use AllInData\MicroErp\Planning\Controller\CreateSchedule;
 use AllInData\MicroErp\Planning\Model\Collection\Schedule as ScheduleCollection;
+use AllInData\MicroErp\Planning\Model\Schedule;
+use DateTime;
 
 /**
  * Class Calendar
@@ -41,35 +43,61 @@ class Calendar extends AbstractBlock
     }
 
     /**
-     * @TODO implementation
      * @return array
+     * @throws \Exception
      */
     public function getSchedules()
     {
-        return [
-            [
-                'id' => 1,
-                'calendarId' => 1,
-                'title' => 'Demo Schedule #01',
-                'category' => 'time',
-                'dueDateClass' => '',
-                'start' => '2019-04-18T22:30:00+09:00',
-                'end' => '2019-04-19T02:30:00+09:00',
-                'isReadOnly' => false
-            ],
-            [
-                'id' => 2,
-                'calendarId' => 1,
-                'title' => 'Demo Schedule #02',
-                'category' => 'time',
-                'dueDateClass' => '',
-                'start' => '2019-04-18T17:30:00+09:00',
-                'end' => '2019-04-19T17:31:00+09:00',
-                'isReadOnly' => true
-            ]
-        ];
-        //return $this->scheduleCollection->load();
+        $collection = $this->scheduleCollection->load();
+
+        $scheduleSet = [];
+        foreach ($collection as $schedule) {
+            /** @var Schedule $schedule */
+            $startDate = new DateTime($schedule->getStart());
+            $endDate = new DateTime($schedule->getEnd());
+
+            $scheduleSet[] = [
+                'id' => $schedule->getId(),
+                'calendarId' => $schedule->getCalendarId(),
+                'title' => $schedule->getTitle(),
+                'state' => $schedule->getState(),
+                'category' => $schedule->getCategory(),
+                'location' => $schedule->getLocation(),
+                'dueDateClass' => $schedule->getDueDateClass(),
+                'start' => $startDate->format('Y-m-d\TH:i:s+09:00'),
+                'end' => $endDate->format('Y-m-d\TH:i:s+09:00'),
+                'isAllDay' => !!$schedule->getIsAllDay(),
+                'isReadOnly' => !!$schedule->getIsReadOnly()
+            ];
+        }
+
+//        $scheduleSet[] =
+//            [
+//                'id' => 1,
+//                'calendarId' => 1,
+//                'title' => 'Demo Schedule #01',
+//                'category' => 'time',
+//                'dueDateClass' => '',
+//                'start' => '2019-04-18T22:30:00+09:00',
+//                'end' => '2019-04-19T02:30:00+09:00',
+//                'isReadOnly' => false
+//            ];
+
+//        [
+//            'id' => 1,
+//            'calendarId' => 1,
+//            'title' => 'Demo Schedule #01',
+//            'category' => 'time',
+//            'dueDateClass' => '',
+//            'start' => '2019-04-18T22:30:00+09:00',
+//            'end' => '2019-04-19T02:30:00+09:00',
+//            'isReadOnly' => false
+//        ],
+        //'start' => '2019-04-18T22:30:00+09:00',
+        //'end' => '2019-04-19T02:30:00+09:00',
+        return $scheduleSet;
     }
+
     /**
      * @return string
      */
