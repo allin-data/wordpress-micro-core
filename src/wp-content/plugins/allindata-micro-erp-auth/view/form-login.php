@@ -3,6 +3,7 @@
 /*
 Copyright (C) 2019 All.In Data GmbH
 */
+/** @var \AllInData\MicroErp\Auth\Block\Login $block */
 ?>
 <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
     <li class="nav-item">
@@ -20,10 +21,12 @@ Copyright (C) 2019 All.In Data GmbH
 
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-        <form id="login_form" method="post">
+        <form id="login_form" method="post" action="<?= $block->getFormUrl() ?>">
+            <input type="hidden" name="nonce" value="<?= $block->getFormNonce($block->getCreateUserActionSlug()); ?>"/>
+            <input type="hidden" name="action" value="<?= $block->getCreateUserActionSlug(); ?>"/>
+            <input type="hidden" name="<?= $block->getFormRedirectKey(); ?>" value="<?= $block->getFormRedirectUrl(); ?>"/>
             <input type="text" name="username" id="username" />
             <input type="password" name="password" id="password" />
-            <input type="hidden" name="action" value="login" />
             <input type="submit" id="login_submit" />
         </form>
     </div>

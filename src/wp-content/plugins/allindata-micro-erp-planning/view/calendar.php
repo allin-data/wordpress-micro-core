@@ -48,6 +48,7 @@ Copyright (C) 2019 All.In Data GmbH
             calendarOptions: {
                 title: '<?= $block->getTitle(); ?>',
                 defaultView: '<?= $block->getAttribute('default-view'); ?>',
+                date: <?= date('Y-m-d H:i:s'); ?>,
                 taskView: 'milestone',
                 scheduleView: 'allday',
                 isReadOnly: false,

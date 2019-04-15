@@ -18,6 +18,24 @@ use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
 class LoginForm extends AbstractShortCode implements PluginShortCodeInterface
 {
     /**
+     * @var \AllInData\MicroErp\Auth\Block\Login
+     */
+    private $block;
+
+    /**
+     * Calendar constructor.
+     * @param string $templatePath
+     * @param \AllInData\MicroErp\Auth\Block\Login $block
+     */
+    public function __construct(
+        string $templatePath,
+        \AllInData\MicroErp\Auth\Block\Login $block
+    ) {
+        parent::__construct($templatePath);
+        $this->block = $block;
+    }
+
+    /**
      * @inheritdoc
      */
     public function init()
@@ -33,6 +51,8 @@ class LoginForm extends AbstractShortCode implements PluginShortCodeInterface
         if (is_admin()) {
             return '';
         }
-        $this->getTemplate('form-login');
+        $this->getTemplate('form-login', [
+            'block' => $this->block
+        ]);
     }
 }

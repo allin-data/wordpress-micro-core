@@ -34,6 +34,7 @@
                 disableDblClick: false,
                 useCreationPopup: true,
                 useDetailPopup: true,
+                date: '',
                 template: {},
                 month: {},
                 week: {}

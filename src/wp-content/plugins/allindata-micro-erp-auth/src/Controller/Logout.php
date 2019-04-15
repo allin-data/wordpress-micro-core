@@ -17,7 +17,7 @@ use AllInData\MicroErp\Core\Controller\PluginControllerInterface;
  */
 class Logout extends AbstractAnonController implements PluginControllerInterface
 {
-    const ACTION_SLUG = 'logout';
+    const ACTION_SLUG = 'micro_erp_auth_logout';
 
     /**
      * @inheritDoc
@@ -25,11 +25,5 @@ class Logout extends AbstractAnonController implements PluginControllerInterface
     protected function doExecute()
     {
         wp_logout();
-
-        if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-            die();
-        } else {
-            header("Location: " . $_SERVER['HTTP_REFERER']);
-        }
     }
 }

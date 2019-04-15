@@ -10,6 +10,7 @@ namespace AllInData\MicroErp\Auth;
 
 use AllInData\MicroErp\Auth\Controller\Login;
 use AllInData\MicroErp\Auth\Controller\Logout;
+use AllInData\MicroErp\Auth\Helper\LoginPageStateHelper;
 use AllInData\MicroErp\Auth\Module\LogoutMenuEntry;
 use AllInData\MicroErp\Auth\ShortCode\LoginForm;
 use AllInData\MicroErp\Core\Controller\PluginControllerInterface;
@@ -60,9 +61,13 @@ class PluginConfiguration
     private function getPluginModules(): array
     {
         return [
-            new ForceLogin(),
+            new ForceLogin(
+                $this->getLoginPageStateHelper()
+            ),
             new LogoutMenuEntry(),
-            new RegisterLoginPagePostState()
+            new RegisterLoginPagePostState(
+                $this->getLoginPageStateHelper()
+            )
         ];
     }
 
@@ -83,7 +88,18 @@ class PluginConfiguration
     private function getPluginShortCodes(): array
     {
         return [
-            new LoginForm(AID_MICRO_ERP_AUTH_TEMPLATE_DIR)
+            new LoginForm(
+                AID_MICRO_ERP_AUTH_TEMPLATE_DIR,
+                new \AllInData\MicroErp\Auth\Block\Login()
+            )
         ];
+    }
+
+    /**
+     * @return LoginPageStateHelper
+     */
+    private function getLoginPageStateHelper(): LoginPageStateHelper
+    {
+        return new LoginPageStateHelper();
     }
 }

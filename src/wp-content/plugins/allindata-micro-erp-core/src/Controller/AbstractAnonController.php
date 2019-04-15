@@ -20,6 +20,7 @@ abstract class AbstractAnonController extends AbstractController implements Plug
     public function init()
     {
         parent::init();
+        add_action('admin_post_nopriv_' . static::ACTION_SLUG, [$this, 'execute']);
         add_action('wp_ajax_nopriv_' . static::ACTION_SLUG, [$this, 'execute']);
     }
 

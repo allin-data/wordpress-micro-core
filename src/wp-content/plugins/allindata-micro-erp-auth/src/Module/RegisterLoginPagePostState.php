@@ -8,6 +8,7 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Auth\Module;
 
+use AllInData\MicroErp\Auth\Helper\LoginPageStateHelper;
 use AllInData\MicroErp\Core\Module\PluginModuleInterface;
 use AllInData\MicroErp\Auth\Widget\Elementor\LoginForm;
 use WP_Post;
@@ -25,6 +26,20 @@ class RegisterLoginPagePostState implements PluginModuleInterface
     const SHORTCODE_LOGIN_FORM = '[micro_erp_auth_login_form]';
 
     /**
+     * @var LoginPageStateHelper
+     */
+    private $loginPageStateHelper;
+
+    /**
+     * RegisterLoginPagePostState constructor.
+     * @param LoginPageStateHelper $loginPageStateHelper
+     */
+    public function __construct(LoginPageStateHelper $loginPageStateHelper)
+    {
+        $this->loginPageStateHelper = $loginPageStateHelper;
+    }
+
+    /**
      * @inheritdoc
      */
     public function init()
@@ -39,18 +54,8 @@ class RegisterLoginPagePostState implements PluginModuleInterface
      */
     public function addLoginPageState($postStates, $post)
     {
-        if (strpos($post->post_content, self::SHORTCODE_LOGIN_FORM)) {
-            $postStates[] = __('Login and Register Page', AID_MICRO_ERP_THEME_TEXTDOMAIN);
-            return $postStates;
-        }
-
-        $data = get_post_meta($post->ID, '_elementor_data', true);
-        if (!$data) {
-            return $postStates;
-        }
-
-        if (strpos($data, LoginForm::WIDGET_NAME)) {
-            $postStates[] = __('Login and Register Page', AID_MICRO_ERP_THEME_TEXTDOMAIN);
+        if ($this->loginPageStateHelper->isLoginPageState($post)) {
+            $postStates[] = $this->loginPageStateHelper->getLoginPageStateName();
         }
 
         return $postStates;
