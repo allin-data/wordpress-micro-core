@@ -26,6 +26,7 @@ Copyright (C) 2019 All.In Data GmbH
     jQuery(document).ready(function ($) {
         let calendarSelector = '#calendar_<?= $block->getAttribute('id') ?>';
         $(calendarSelector).microErpPlanningCalendar({
+            calendarId: 1,
             target: calendarSelector,
             actionCreateSchedule: '<?= $block->getCreateScheduleActionSlug() ?>',
             modalSelector: '#calendar_modal',
@@ -48,7 +49,7 @@ Copyright (C) 2019 All.In Data GmbH
             calendarOptions: {
                 title: '<?= $block->getTitle(); ?>',
                 defaultView: '<?= $block->getAttribute('default-view'); ?>',
-                date: <?= date('Y-m-d H:i:s'); ?>,
+                date: '<?= date('Y-m-d\TH:i:s+09:00'); ?>',
                 taskView: 'milestone',
                 scheduleView: 'allday',
                 isReadOnly: false,

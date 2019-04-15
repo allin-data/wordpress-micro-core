@@ -10,28 +10,28 @@ namespace AllInData\MicroErp\Planning\Model\Factory;
 
 use AllInData\MicroErp\Core\Model\AbstractFactory;
 use AllInData\MicroErp\Core\Model\AbstractModel;
-use AllInData\MicroErp\Planning\Model\Schedule as Entity;
+use AllInData\MicroErp\Planning\Model\ScheduleMeta as Entity;
 
 /**
- * Class Schedule
+ * Class ScheduleMeta
  * @package AllInData\MicroErp\Planning\Model\Factory
  */
-class Schedule extends AbstractFactory
+class ScheduleMeta extends AbstractFactory
 {
     /**
-     * @var ScheduleMeta
+     * @var ScheduleMetaCreator
      */
-    private $scheduleMetaFactory;
+    private $scheduleMetaCreatorFactory;
 
     /**
      * AbstractFactory constructor.
      * @param string $modelClass
-     * @param ScheduleMeta $scheduleMetaFactory
+     * @param ScheduleMetaCreator $scheduleMetaCreatorFactory
      */
-    public function __construct(string $modelClass, ScheduleMeta $scheduleMetaFactory)
+    public function __construct(string $modelClass, ScheduleMetaCreator $scheduleMetaCreatorFactory)
     {
         parent::__construct($modelClass);
-        $this->scheduleMetaFactory = $scheduleMetaFactory;
+        $this->scheduleMetaCreatorFactory = $scheduleMetaCreatorFactory;
     }
 
     /**
@@ -40,10 +40,10 @@ class Schedule extends AbstractFactory
      */
     public function create(array $data = []): AbstractModel
     {
-        if (isset($data['raw']) && is_array($data['raw'])) {
-            $data['raw'] = $this->scheduleMetaFactory->create($data['raw']);
+        if (isset($data['creator']) && is_array($data['creator'])) {
+            $data['creator'] = $this->scheduleMetaCreatorFactory->create($data['creator']);
         } else {
-            $data['raw'] = null;
+            $data['creator'] = null;
         }
         return parent::create($data);
     }

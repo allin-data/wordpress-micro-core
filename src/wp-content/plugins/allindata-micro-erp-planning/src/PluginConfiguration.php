@@ -14,6 +14,8 @@ use AllInData\MicroErp\Core\Module\PluginModuleInterface;
 use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
 use AllInData\MicroErp\Core\Widget\ElementorWidgetInterface;
 use AllInData\MicroErp\Planning\Controller\CreateSchedule;
+use AllInData\MicroErp\Planning\Model\Factory\ScheduleMeta;
+use AllInData\MicroErp\Planning\Model\Factory\ScheduleMetaCreator;
 use AllInData\MicroErp\Planning\Model\Schedule;
 use AllInData\MicroErp\Planning\ShortCode\Calendar;
 use AllInData\MicroErp\Planning\Model\Collection\Schedule as ScheduleCollection;
@@ -108,7 +110,11 @@ class PluginConfiguration
     private function getScheduleFactory(): ScheduleFactory
     {
         return new ScheduleFactory(
-            Schedule::class
+            Schedule::class,
+            new ScheduleMeta(
+            \AllInData\MicroErp\Planning\Model\ScheduleMeta::class,
+                new ScheduleMetaCreator(\AllInData\MicroErp\Planning\Model\ScheduleMetaCreator::class)
+            )
         );
     }
 

@@ -12,6 +12,7 @@ use AllInData\MicroErp\Core\Controller\AbstractController;
 use AllInData\MicroErp\Planning\Model\Schedule;
 use AllInData\MicroErp\Planning\Model\Validator\Schedule as ScheduleValidator;
 use AllInData\MicroErp\Planning\Model\Resource\Schedule as ScheduleResource;
+use DateTime;
 
 /**
  * Class CreateSchedule
@@ -46,30 +47,16 @@ class CreateSchedule extends AbstractController
      */
     protected function doExecute()
     {
-        $calendarId = (int)$this->getParam('calendarId');
-        $title = $this->getParam('title');
-        $state = $this->getParam('state');
-        $category = $this->getParam('category');
-        $location = $this->getParam('location');
-        $dueDateClass = $this->getParam('dueDateClass');
-        $start = $this->getParam('start');
-        $end = $this->getParam('end');
-        $isAllDay = $this->getParam('isAllDay');
-        $isReadOnly = $this->getParam('isReadOnly');
+        $scheduleData = $this->getParamAsArray('schedule', []);
 
         /** @var Schedule $schedule */
-        $schedule = $this->scheduleResource->getModelFactory()->create();
+        $schedule = $this->scheduleResource->getModelFactory()->create($scheduleData);
+
+        $startDate = new DateTime($schedule->getStart());
+        $endDate = new DateTime($schedule->getEnd());
         $schedule
-            ->setCalendarId($calendarId)
-            ->setTitle($title)
-            ->setState($state)
-            ->setCategory($category)
-            ->setLocation($location)
-            ->setDueDateClass($dueDateClass)
-            ->setStart($start)
-            ->setEnd($end)
-            ->setIsAllDay($isAllDay)
-            ->setIsReadOnly($isReadOnly);
+            ->setStart($startDate->format('Y-m-d\TH:i:s+09:00'))
+            ->setEnd($endDate->format('Y-m-d\TH:i:s+09:00'));
         if (!$this->scheduleValidator->validate($schedule)->isValid()) {
             $this->throwErrorMessage(implode(',', $this->scheduleValidator->getErrors()));
         }

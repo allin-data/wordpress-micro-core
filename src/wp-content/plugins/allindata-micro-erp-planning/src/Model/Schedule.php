@@ -21,7 +21,7 @@ class Schedule extends AbstractModel
      */
     private $id;
     /**
-     * @var int|null
+     * @var int|string|null
      */
     private $calendarId;
     /**
@@ -31,15 +31,15 @@ class Schedule extends AbstractModel
     /**
      * @var string|null
      */
+    private $body;
+    /**
+     * @var string|null
+     */
     private $state;
     /**
      * @var string|null
      */
     private $category;
-    /**
-     * @var string|null
-     */
-    private $location;
     /**
      * @var string|null
      */
@@ -55,11 +55,59 @@ class Schedule extends AbstractModel
     /**
      * @var bool|int|null
      */
-    private $isAllDay;
+    private $isAllday;
+    /**
+     * @var bool|int|null
+     */
+    private $isFocused;
+    /**
+     * @var bool|int|null
+     */
+    private $isPending;
     /**
      * @var bool|int|null
      */
     private $isReadOnly;
+    /**
+     * @var bool|int|null
+     */
+    private $isVisible;
+    /**
+     * @var int|null
+     */
+    private $goingDuration;
+    /**
+     * @var int|null
+     */
+    private $comingDuration;
+    /**
+     * @var string|null
+     */
+    private $recurrenceRule;
+    /**
+     * @var string|null
+     */
+    private $color;
+    /**
+     * @var string|null
+     */
+    private $bgColor;
+    /**
+     * @var string|null
+     */
+    private $dragBgColor;
+    /**
+     * @var string|null
+     */
+    private $borderColor;
+    /**
+     * @var string|null
+     */
+    private $customStyle;
+    /**
+     * @var ScheduleMeta|null
+     */
+    private $raw;
 
     /**
      * @return int|string|null
@@ -80,18 +128,18 @@ class Schedule extends AbstractModel
     }
 
     /**
-     * @return int|null
+     * @return int|string|null
      */
-    public function getCalendarId(): ?int
+    public function getCalendarId()
     {
         return $this->calendarId;
     }
 
     /**
-     * @param int|null $calendarId
+     * @param int|string|null $calendarId
      * @return Schedule
      */
-    public function setCalendarId(?int $calendarId): Schedule
+    public function setCalendarId($calendarId)
     {
         $this->calendarId = $calendarId;
         return $this;
@@ -112,6 +160,24 @@ class Schedule extends AbstractModel
     public function setTitle(?string $title): Schedule
     {
         $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getBody(): ?string
+    {
+        return $this->body;
+    }
+
+    /**
+     * @param string|null $body
+     * @return Schedule
+     */
+    public function setBody(?string $body): Schedule
+    {
+        $this->body = $body;
         return $this;
     }
 
@@ -148,24 +214,6 @@ class Schedule extends AbstractModel
     public function setCategory(?string $category): Schedule
     {
         $this->category = $category;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getLocation(): ?string
-    {
-        return $this->location;
-    }
-
-    /**
-     * @param string|null $location
-     * @return Schedule
-     */
-    public function setLocation(?string $location): Schedule
-    {
-        $this->location = $location;
         return $this;
     }
 
@@ -226,18 +274,54 @@ class Schedule extends AbstractModel
     /**
      * @return bool|int|null
      */
-    public function getIsAllDay()
+    public function getIsAllday()
     {
-        return $this->isAllDay;
+        return $this->isAllday;
     }
 
     /**
-     * @param bool|int|null $isAllDay
+     * @param bool|int|null $isAllday
      * @return Schedule
      */
-    public function setIsAllDay($isAllDay)
+    public function setIsAllday($isAllday)
     {
-        $this->isAllDay = $isAllDay;
+        $this->isAllday = $isAllday;
+        return $this;
+    }
+
+    /**
+     * @return bool|int|null
+     */
+    public function getIsFocused()
+    {
+        return $this->isFocused;
+    }
+
+    /**
+     * @param bool|int|null $isFocused
+     * @return Schedule
+     */
+    public function setIsFocused($isFocused)
+    {
+        $this->isFocused = $isFocused;
+        return $this;
+    }
+
+    /**
+     * @return bool|int|null
+     */
+    public function getIsPending()
+    {
+        return $this->isPending;
+    }
+
+    /**
+     * @param bool|int|null $isPending
+     * @return Schedule
+     */
+    public function setIsPending($isPending)
+    {
+        $this->isPending = $isPending;
         return $this;
     }
 
@@ -256,6 +340,186 @@ class Schedule extends AbstractModel
     public function setIsReadOnly($isReadOnly)
     {
         $this->isReadOnly = $isReadOnly;
+        return $this;
+    }
+
+    /**
+     * @return bool|int|null
+     */
+    public function getIsVisible()
+    {
+        return $this->isVisible;
+    }
+
+    /**
+     * @param bool|int|null $isVisible
+     * @return Schedule
+     */
+    public function setIsVisible($isVisible)
+    {
+        $this->isVisible = $isVisible;
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getGoingDuration(): ?int
+    {
+        return $this->goingDuration;
+    }
+
+    /**
+     * @param int|null $goingDuration
+     * @return Schedule
+     */
+    public function setGoingDuration(?int $goingDuration): Schedule
+    {
+        $this->goingDuration = $goingDuration;
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getComingDuration(): ?int
+    {
+        return $this->comingDuration;
+    }
+
+    /**
+     * @param int|null $comingDuration
+     * @return Schedule
+     */
+    public function setComingDuration(?int $comingDuration): Schedule
+    {
+        $this->comingDuration = $comingDuration;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getRecurrenceRule(): ?string
+    {
+        return $this->recurrenceRule;
+    }
+
+    /**
+     * @param string|null $recurrenceRule
+     * @return Schedule
+     */
+    public function setRecurrenceRule(?string $recurrenceRule): Schedule
+    {
+        $this->recurrenceRule = $recurrenceRule;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getColor(): ?string
+    {
+        return $this->color;
+    }
+
+    /**
+     * @param string|null $color
+     * @return Schedule
+     */
+    public function setColor(?string $color): Schedule
+    {
+        $this->color = $color;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getBgColor(): ?string
+    {
+        return $this->bgColor;
+    }
+
+    /**
+     * @param string|null $bgColor
+     * @return Schedule
+     */
+    public function setBgColor(?string $bgColor): Schedule
+    {
+        $this->bgColor = $bgColor;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDragBgColor(): ?string
+    {
+        return $this->dragBgColor;
+    }
+
+    /**
+     * @param string|null $dragBgColor
+     * @return Schedule
+     */
+    public function setDragBgColor(?string $dragBgColor): Schedule
+    {
+        $this->dragBgColor = $dragBgColor;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getBorderColor(): ?string
+    {
+        return $this->borderColor;
+    }
+
+    /**
+     * @param string|null $borderColor
+     * @return Schedule
+     */
+    public function setBorderColor(?string $borderColor): Schedule
+    {
+        $this->borderColor = $borderColor;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCustomStyle(): ?string
+    {
+        return $this->customStyle;
+    }
+
+    /**
+     * @param string|null $customStyle
+     * @return Schedule
+     */
+    public function setCustomStyle(?string $customStyle): Schedule
+    {
+        $this->customStyle = $customStyle;
+        return $this;
+    }
+
+    /**
+     * @return ScheduleMeta|null
+     */
+    public function getRaw(): ?ScheduleMeta
+    {
+        return $this->raw;
+    }
+
+    /**
+     * @param ScheduleMeta|null $raw
+     * @return Schedule
+     */
+    public function setRaw(?ScheduleMeta $raw): Schedule
+    {
+        $this->raw = $raw;
         return $this;
     }
 }

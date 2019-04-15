@@ -5,6 +5,7 @@
         lastClickedSchedule: null,
 
         defaults: {
+            calendarId: 1,
             target: '#calendar',
             modalSelector: '#calendar_modal',
             actionCreateSchedule: '',
@@ -39,6 +40,7 @@
                 month: {},
                 week: {}
             },
+            currentView: 'month',
             schedules: []
         },
 
@@ -85,26 +87,47 @@
          */
         _createCalendar: function (config, callback = function () {
         }) {
-            let Calendar = tui.Calendar,
+            let me = this,
+                Calendar = tui.Calendar,
                 calendarInstance = new Calendar(config.target, config.calendarOptions);
 
-            callback.call(this, calendarInstance, config);
+            calendarInstance.id = config.calendarId;
+            calendarInstance.createSchedules(config.schedules);
+            me._refreshScheduleVisibility(calendarInstance, config, function () {
+                callback.call(me, calendarInstance, config);
+            });
         },
 
         /**
-         * @param {tui.Calendar} calendar
+         * @param {Calendar} calendar
          * @param {Object} config
          * @param {Function} callback
          * @private
          */
         _updateCalendar: function (calendar, config, callback = function () {
         }) {
-            calendar.changeView(calendar.getViewName(), true);
+            let me = this;
+            calendar.changeView(config.currentView, true);
+            me._refreshScheduleVisibility(calendar, config, function () {
+                callback.call(me, calendar, config);
+            });
+        },
+
+        /**
+         * @param {Calendar} calendar
+         * @param {Object} config
+         * @param {Function} callback
+         * @private
+         */
+        _refreshScheduleVisibility: function (calendar, config, callback = function () {
+        }) {
+            calendar.toggleSchedules(config.calendarId, false, false);
+            calendar.render(true);
             callback.call(this, calendar, config);
         },
 
         /**
-         * @param {tui.Calendar} calendar
+         * @param {Calendar} calendar
          * @param {Object} option
          * @param {Object} config
          * @param {Function} callback
@@ -117,7 +140,7 @@
         },
 
         /**
-         * @param {tui.Calendar} calendar
+         * @param {Calendar} calendar
          * @param {string} view
          * @param {Object} config
          * @param {Function} callback
@@ -126,6 +149,7 @@
         _setCalendarView: function (calendar, view, config, callback = function () {
         }) {
             calendar.changeView(view, true);
+            config.currentView = view;
             callback.call(this, calendar, config);
         },
 
@@ -266,7 +290,7 @@
         },
 
         /**
-         * @param {tui.Calendar} calendar
+         * @param {Calendar} calendar
          * @param {Object} config
          * @private
          */
@@ -302,7 +326,7 @@
         },
 
         /**
-         * @param {tui.Calendar} calendar
+         * @param {Calendar} calendar
          * @param {Object} event
          * @param {Object} config
          * @private
@@ -324,7 +348,7 @@
         },
 
         /**
-         * @param {tui.Calendar} calendar
+         * @param {Calendar} calendar
          * @param {Object} event
          * @param {Object} config
          * @private
@@ -334,51 +358,34 @@
         },
 
         /**
-         * @param {tui.Calendar} calendar
+         * @param {Calendar} calendar
          * @param {Object} event
          * @param {Object} config
          * @private
          */
         _addHookOnBeforeCreateSchedule: function (calendar, event, config) {
-            let startDate = sprintf(
-                '%s-%s-%s',
-                event.start.getFullYear(),
-                ('00'+event.start.getMonth()).slice(-2),
-                ('00'+event.start.getDay()).slice(-2)
-            );
-            let endDate = sprintf(
-                '%s-%s-%s',
-                event.end.getFullYear(),
-                ('00'+event.end.getMonth()).slice(-2),
-                ('00'+event.end.getDay()).slice(-2)
-            );
-            
-            let schedule = {
-                calendarId: event.calendarId,
-                title: event.title,
-                state: event.state,
-                category: event.raw.class,
-                location: event.location,
-                start: startDate,
-                end: endDate,
-                isAllDay: event.isAllDay || false,
-                isReadOnly: event.isReadOnly || false
-            };
+            let startDate = this._mapDate(event.start);
+            let endDate = this._mapDate(event.end);
 
-            let payload = $.extend({}, {
-                action: config.actionCreateSchedule
-            }, schedule || {});
+            let schedule = $.extend(true, this._getSchedulePrototype(), event);
+            schedule.start = startDate;
+            schedule.end = endDate;
+
+            let payload = {
+                action: config.actionCreateSchedule,
+                schedule: schedule || {}
+            };
 
             $.ajax({
                 type: 'POST',
                 url: wp_ajax_action.action_url,
                 //contentType: 'application/json',
                 data: payload,
-                success: function(data, status, event){
+                success: function (data, status, event) {
                     console.log('finished create schedules success', event, status, data);
                     calendar.createSchedules([schedule]);
                 },
-                error: function(event, status, error){
+                error: function (event, status, error) {
                     console.log('finished create schedules success', event, status, error);
 
                     $(config.modalSelector).modal({
@@ -387,14 +394,14 @@
                         showClose: true
                     });
                 },
-                complete: function(event, status) {
+                complete: function (event, status) {
                     console.log('finished create schedules callback', event, status);
                 }
             });
         },
 
         /**
-         * @param {tui.Calendar} calendar
+         * @param {Calendar} calendar
          * @param {Object} event
          * @param {Object} config
          * @private
@@ -407,7 +414,7 @@
         },
 
         /**
-         * @param {tui.Calendar} calendar
+         * @param {Calendar} calendar
          * @param {Object} event
          * @param {Object} config
          * @private
@@ -416,8 +423,64 @@
             console.log('beforeDeleteSchedule');
             calendar.deleteSchedule(e.schedule.id, e.schedule.calendarId);
         },
-    };
 
+        /**
+         * @param {TZDate} date
+         * @return {string}
+         * @private
+         */
+        _mapDate: function (date) {
+            let yyyy = date.getFullYear().toString();
+            let mm = (date.getMonth()+1).toString(); // getMonth() is zero-based
+            let dd  = date.getDate().toString();
+
+            return yyyy + '-' + (mm[1]?mm:"0"+mm[0]) + '-' + (dd[1]?dd:"0"+dd[0]);
+        },
+
+        /**
+         * @return {{borderColor: null, dueDateClass: string, color: null, customStyle: string, start: null, raw: {hasRecurrenceRule: boolean, creator: {phone: string, name: string, company: string, avatar: string, email: string}, memo: string, location: null, hasToOrCc: boolean, class: string}, recurrenceRule: string, isVisible: boolean, title: null, body: null, isPending: boolean, isFocused: boolean, comingDuration: number, goingDuration: number, isAllday: boolean, isReadOnly: boolean, calendarId: null, bgColor: null, dragBgColor: null, end: null, id: null, category: string}}
+         * @private
+         */
+        _getSchedulePrototype: function () {
+            return {
+                id: null,
+                calendarId: null,
+                title: null,
+                body: null,
+                isAllday: false,
+                start: null,
+                end: null,
+                category: '',
+                dueDateClass: '',
+                isFocused: false,
+                isPending: false,
+                isVisible: true,
+                isReadOnly: false,
+                goingDuration: 0,
+                comingDuration: 0,
+                recurrenceRule: '',
+                color: null,
+                bgColor: null,
+                dragBgColor: null,
+                borderColor: null,
+                customStyle: '',
+                raw: {
+                    memo: '',
+                    hasToOrCc: false,
+                    hasRecurrenceRule: false,
+                    location: null,
+                    class: 'public', // or 'private'
+                    creator: {
+                        name: '',
+                        avatar: '',
+                        company: '',
+                        email: '',
+                        phone: ''
+                    }
+                }
+            }
+        }
+    };
 
     /**
      * Creates new instance

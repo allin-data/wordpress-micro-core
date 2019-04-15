@@ -103,6 +103,21 @@ abstract class AbstractController implements PluginControllerInterface
      * @param string $key
      * @param null|mixed $defaultValue
      * @param int $filterType
+     * @return array|null
+     */
+    protected function getParamAsArray($key, $defaultValue = null, $filterType = FILTER_DEFAULT)
+    {
+        $val = $this->getGetParamAsArray($key, $defaultValue, $filterType);
+        if (empty($val)) {
+            $val = $this->getPostParamAsArray($key, $defaultValue, $filterType);
+        }
+        return $val;
+    }
+
+    /**
+     * @param string $key
+     * @param null|mixed $defaultValue
+     * @param int $filterType
      * @return mixed|null
      */
     protected function getGetParam($key, $defaultValue = null, $filterType = FILTER_SANITIZE_STRING)
@@ -124,6 +139,36 @@ abstract class AbstractController implements PluginControllerInterface
     {
         $val = filter_input(INPUT_POST, $key, $filterType);
         if (is_null($val)) {
+            return $defaultValue;
+        }
+        return $val;
+    }
+
+    /**
+     * @param string $key
+     * @param null|mixed $defaultValue
+     * @param int $filterType
+     * @return mixed|null
+     */
+    protected function getGetParamAsArray($key, $defaultValue = null, $filterType = FILTER_DEFAULT)
+    {
+        $val = filter_input(INPUT_GET, $key, $filterType, FILTER_FORCE_ARRAY);
+        if (empty($val)) {
+            return $defaultValue;
+        }
+        return $val;
+    }
+
+    /**
+     * @param string $key
+     * @param null|mixed $defaultValue
+     * @param int $filterType
+     * @return mixed|null
+     */
+    protected function getPostParamAsArray($key, $defaultValue = null, $filterType = FILTER_DEFAULT)
+    {
+        $val = filter_input(INPUT_POST, $key, $filterType, FILTER_FORCE_ARRAY);
+        if (empty($val)) {
             return $defaultValue;
         }
         return $val;

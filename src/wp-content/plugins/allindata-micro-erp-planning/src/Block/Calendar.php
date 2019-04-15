@@ -48,27 +48,13 @@ class Calendar extends AbstractBlock
      */
     public function getSchedules()
     {
+
         $collection = $this->scheduleCollection->load();
 
         $scheduleSet = [];
         foreach ($collection as $schedule) {
             /** @var Schedule $schedule */
-            $startDate = new DateTime($schedule->getStart());
-            $endDate = new DateTime($schedule->getEnd());
-
-            $scheduleSet[] = [
-                'id' => $schedule->getId(),
-                'calendarId' => $schedule->getCalendarId(),
-                'title' => $schedule->getTitle(),
-                'state' => $schedule->getState(),
-                'category' => $schedule->getCategory(),
-                'location' => $schedule->getLocation(),
-                'dueDateClass' => $schedule->getDueDateClass(),
-                'start' => $startDate->format('Y-m-d\TH:i:s+09:00'),
-                'end' => $endDate->format('Y-m-d\TH:i:s+09:00'),
-                'isAllDay' => !!$schedule->getIsAllDay(),
-                'isReadOnly' => !!$schedule->getIsReadOnly()
-            ];
+            $scheduleSet[] = $schedule->toArray();
         }
 
 //        $scheduleSet[] =
