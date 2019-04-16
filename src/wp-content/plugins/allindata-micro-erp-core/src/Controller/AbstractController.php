@@ -8,6 +8,7 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Core\Controller;
 
+use AllInData\MicroErp\Core\Model\AbstractModel;
 use AllInData\MicroErp\Mdm\Model\UserRole;
 use Exception;
 
@@ -35,8 +36,8 @@ abstract class AbstractController implements PluginControllerInterface
     public function execute()
     {
         $this->beforeExecute();
-        $this->doExecute();
-        $this->afterExecute();
+        $result = $this->doExecute();
+        $this->afterExecute($result);
     }
 
     /**
@@ -64,11 +65,18 @@ abstract class AbstractController implements PluginControllerInterface
 
     /**
      * Tasks after execution
+     * @param mixed|AbstractModel|null $result
      */
-    protected function afterExecute()
+    protected function afterExecute($result = null)
     {
         // stop if controller action is used async
         if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+            if ($result && $result instanceof AbstractModel) {
+                echo json_encode($result->toArray());
+            }
+            if ($result) {
+                echo json_encode($result);
+            }
             wp_die();
         }
         if (defined('DOING_AJAX') && DOING_AJAX) {

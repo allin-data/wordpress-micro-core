@@ -29,6 +29,8 @@ Copyright (C) 2019 All.In Data GmbH
             calendarId: 1,
             target: calendarSelector,
             actionCreateSchedule: '<?= $block->getCreateScheduleActionSlug() ?>',
+            actionUpdateSchedule: '<?= $block->getUpdateScheduleActionSlug() ?>',
+            actionDeleteSchedule: '<?= $block->getDeleteScheduleActionSlug() ?>',
             modalSelector: '#calendar_modal',
             labels: {
                 'Milestone': '<?= $block->getAttribute('label-milestone'); ?>',

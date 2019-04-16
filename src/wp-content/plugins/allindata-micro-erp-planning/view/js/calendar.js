@@ -9,6 +9,8 @@
             target: '#calendar',
             modalSelector: '#calendar_modal',
             actionCreateSchedule: '',
+            actionUpdateSchedule: '',
+            actionDeleteSchedule: '',
             labels: {
                 'Milestone': 'Milestone',
                 'Task': 'Task',
@@ -364,10 +366,11 @@
          * @private
          */
         _addHookOnBeforeCreateSchedule: function (calendar, event, config) {
-            let startDate = this._mapDate(event.start);
-            let endDate = this._mapDate(event.end);
+            let me = this,
+                startDate = this._mapDate(event.start),
+                endDate = this._mapDate(event.end),
+                schedule = $.extend(true, this._getSchedulePrototype(), event);
 
-            let schedule = $.extend(true, this._getSchedulePrototype(), event);
             schedule.calendarId = 1;
             schedule.category = 'time';
             schedule.start = startDate;
@@ -382,21 +385,12 @@
                 type: 'POST',
                 url: wp_ajax_action.action_url,
                 data: payload,
-                success: function (data, status, event) {
-                    console.log('finished create schedules success', event, status, data);
+                success: function (data) {
+                    schedule.id = JSON.parse(data);
                     calendar.createSchedules([schedule]);
                 },
-                error: function (event, status, error) {
-                    console.log('finished create schedules success', event, status, error);
-
-                    $(config.modalSelector).modal({
-                        escapeClose: true,
-                        clickClose: true,
-                        showClose: true
-                    });
-                },
-                complete: function (event, status) {
-                    console.log('finished create schedules callback', event, status);
+                error: function () {
+                    me._throwModalError('Could not create schedule', config);
                 }
             });
         },
@@ -408,10 +402,36 @@
          * @private
          */
         _addHookOnBeforeUpdateSchedule: function (calendar, event, config) {
-            console.log('beforeUpdateSchedule');
-            event.schedule.start = event.start;
-            event.schedule.end = event.end;
-            calendar.updateSchedule(event.schedule.id, event.schedule.calendarId, event.schedule);
+            let me = this,
+                startDate = this._mapDate(event.start),
+                endDate = this._mapDate(event.end),
+                schedule = $.extend(true, this._getSchedulePrototype(), event.schedule);
+            schedule.calendarId = 1;
+            schedule.category = 'time';
+            schedule.start = startDate;
+            schedule.end = endDate;
+
+            let payload = {
+                action: config.actionUpdateSchedule,
+                schedule: schedule || {}
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: wp_ajax_action.action_url,
+                data: payload,
+                success: function (data) {
+                    let result = JSON.parse(data);
+                    if (!result) {
+                        me._throwModalError('Could not update schedule', config);
+                        return;
+                    }
+                    calendar.updateSchedule(schedule.id, schedule.calendarId, schedule);
+                },
+                error: function () {
+                    me._throwModalError('Could not update schedule', config);
+                }
+            });
         },
 
         /**
@@ -421,8 +441,42 @@
          * @private
          */
         _addHookOnBeforeDeleteSchedule: function (calendar, event, config) {
-            console.log('beforeDeleteSchedule');
-            calendar.deleteSchedule(e.schedule.id, e.schedule.calendarId);
+            let me = this;
+
+            let payload = {
+                action: config.actionDeleteSchedule,
+                scheduleId: event.schedule.id
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: wp_ajax_action.action_url,
+                data: payload,
+                success: function (data) {
+                    let result = JSON.parse(data);
+                    if (!result) {
+                        me._throwModalError('Could not delete schedule', config);
+                        return;
+                    }
+                    calendar.deleteSchedule(event.schedule.id, event.schedule.calendarId);
+                },
+                error: function () {
+                    me._throwModalError('Could not delete schedule', config);
+                }
+            });
+        },
+
+        /**
+         * @param {string} errorMessage
+         * @param {Object} config
+         * @private
+         */
+        _throwModalError: function (errorMessage, config) {
+            $(config.modalSelector).modal({
+                escapeClose: true,
+                clickClose: true,
+                showClose: true
+            });
         },
 
         /**

@@ -9,6 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Core\Model;
 
 use AllInData\MicroErp\Core\Database\WordpressDatabase;
+use AllInData\MicroErp\Mdm\Model\UserRole;
 use RuntimeException;
 
 /**
@@ -44,6 +45,28 @@ abstract class AbstractPostResource extends AbstractResource
     }
 
     /**
+     * @param AbstractModel $entity
+     * @return bool
+     */
+    protected function validateEntity(AbstractModel $entity): bool
+    {
+        if (!($entity instanceof AbstractPostModel)) {
+            return true;
+        }
+
+        if (!is_user_logged_in()) {
+            return false;
+        }
+
+        if ($entity->getPostAuthor() !== get_current_user_id() &&
+            !current_user_can(UserRole::ROLE_LEVEL_ADMINISTRATION)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
      * @param AbstractPostModel $entity
      * @return AbstractPostModel
      */
@@ -69,8 +92,8 @@ abstract class AbstractPostResource extends AbstractResource
             ->setPostMimeType($entity->getPostMimeType() ?? '')
             ->setPostDate($entity->getPostDate() ?? date('Y-m-d H:i:s'))
             ->setPostDateGmt($entity->getPostDateGmt() ?? date('Y-m-d H:i:s'))
-            ->setPostModified($entity->getPostModified() ?? date('Y-m-d H:i:s'))
-            ->setPostModifiedGmt($entity->getPostModifiedGmt() ?? date('Y-m-d H:i:s'))
+            ->setPostModified(date('Y-m-d H:i:s'))
+            ->setPostModifiedGmt(date('Y-m-d H:i:s'))
             ->setGuid($entity->getGuid() ?? get_the_guid($entity));
         return $entity;
     }

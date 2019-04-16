@@ -13,14 +13,15 @@ use AllInData\MicroErp\Planning\Model\Schedule;
 use AllInData\MicroErp\Planning\Model\Validator\Schedule as ScheduleValidator;
 use AllInData\MicroErp\Planning\Model\Resource\Schedule as ScheduleResource;
 use DateTime;
+use InvalidArgumentException;
 
 /**
- * Class CreateSchedule
+ * Class UpdateSchedule
  * @package AllInData\MicroErp\Planning\Controller
  */
-class CreateSchedule extends AbstractController
+class UpdateSchedule extends AbstractController
 {
-    const ACTION_SLUG = 'micro_erp_planning_create_schedule';
+    const ACTION_SLUG = 'micro_erp_planning_update_schedule';
 
     /**
      * @var ScheduleValidator
@@ -49,8 +50,12 @@ class CreateSchedule extends AbstractController
     {
         $scheduleData = $this->getParamAsArray('schedule', []);
 
+        if (!isset($scheduleData['id'])) {
+            throw new InvalidArgumentException('Schedule id is missing.');
+        }
+
         /** @var Schedule $schedule */
-        $schedule = $this->scheduleResource->getModelFactory()->create($scheduleData);
+        $schedule = $this->scheduleResource->loadById((int)$scheduleData['id']);
 
         $startDate = new DateTime($schedule->getStart());
         $endDate = new DateTime($schedule->getEnd());
@@ -71,6 +76,6 @@ class CreateSchedule extends AbstractController
         }
 
         $this->scheduleResource->save($schedule);
-        return $schedule->getId();
+        return true;
     }
 }

@@ -14,6 +14,8 @@ use AllInData\MicroErp\Core\Module\PluginModuleInterface;
 use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
 use AllInData\MicroErp\Core\Widget\ElementorWidgetInterface;
 use AllInData\MicroErp\Planning\Controller\CreateSchedule;
+use AllInData\MicroErp\Planning\Controller\DeleteSchedule;
+use AllInData\MicroErp\Planning\Controller\UpdateSchedule;
 use AllInData\MicroErp\Planning\Model\Factory\ScheduleMeta;
 use AllInData\MicroErp\Planning\Model\Factory\ScheduleMetaCreator;
 use AllInData\MicroErp\Planning\Model\Schedule;
@@ -74,6 +76,13 @@ class PluginConfiguration
         return [
             new CreateSchedule(
                 $this->getScheduleValidator(),
+                $this->getScheduleResource()
+            ),
+            new UpdateSchedule(
+                $this->getScheduleValidator(),
+                $this->getScheduleResource()
+            ),
+            new DeleteSchedule(
                 $this->getScheduleResource()
             )
         ];

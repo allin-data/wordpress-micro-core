@@ -135,7 +135,6 @@ abstract class AbstractResource
      */
     public function save(AbstractModel $entity)
     {
-
         if (!empty($entity->get($this->primaryKey))) {
             $entity = $this->update($entity);
         } else {
@@ -204,6 +203,9 @@ abstract class AbstractResource
     protected function insert(AbstractModel $entity)
     {
         $entity = $this->beforeInsert($entity);
+        if (!$this->validateEntity($entity)) {
+            throw new RuntimeException('Could not process entity');
+        }
         $postData = $this->extractPostData($entity->toArray());
 
         $db = $this->database->getInstance();
@@ -241,6 +243,9 @@ abstract class AbstractResource
     protected function update(AbstractModel $entity)
     {
         $entity = $this->beforeUpdate($entity);
+        if (!$this->validateEntity($entity)) {
+            throw new RuntimeException('Could not process entity');
+        }
         $postData = $this->extractPostData($entity->toArray());
         $db = $this->database->getInstance();
         $db->update(
@@ -308,6 +313,15 @@ abstract class AbstractResource
     protected function beforeUpdate(AbstractModel $entity): AbstractModel
     {
         return $entity;
+    }
+
+    /**
+     * @param AbstractModel $entity
+     * @return bool
+     */
+    protected function validateEntity(AbstractModel $entity): bool
+    {
+        return true;
     }
 
     /**

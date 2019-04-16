@@ -10,6 +10,8 @@ namespace AllInData\MicroErp\Planning\Block;
 
 use AllInData\MicroErp\Core\Block\AbstractBlock;
 use AllInData\MicroErp\Planning\Controller\CreateSchedule;
+use AllInData\MicroErp\Planning\Controller\DeleteSchedule;
+use AllInData\MicroErp\Planning\Controller\UpdateSchedule;
 use AllInData\MicroErp\Planning\Model\Collection\Schedule as ScheduleCollection;
 use AllInData\MicroErp\Planning\Model\Schedule;
 use DateTime;
@@ -66,5 +68,21 @@ class Calendar extends AbstractBlock
     public function getCreateScheduleActionSlug()
     {
         return CreateSchedule::ACTION_SLUG;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUpdateScheduleActionSlug()
+    {
+        return UpdateSchedule::ACTION_SLUG;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDeleteScheduleActionSlug()
+    {
+        return DeleteSchedule::ACTION_SLUG;
     }
 }
