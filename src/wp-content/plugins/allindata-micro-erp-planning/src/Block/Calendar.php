@@ -57,30 +57,6 @@ class Calendar extends AbstractBlock
             $scheduleSet[] = $schedule->toArray();
         }
 
-//        $scheduleSet[] =
-//            [
-//                'id' => 1,
-//                'calendarId' => 1,
-//                'title' => 'Demo Schedule #01',
-//                'category' => 'time',
-//                'dueDateClass' => '',
-//                'start' => '2019-04-18T22:30:00+09:00',
-//                'end' => '2019-04-19T02:30:00+09:00',
-//                'isReadOnly' => false
-//            ];
-
-//        [
-//            'id' => 1,
-//            'calendarId' => 1,
-//            'title' => 'Demo Schedule #01',
-//            'category' => 'time',
-//            'dueDateClass' => '',
-//            'start' => '2019-04-18T22:30:00+09:00',
-//            'end' => '2019-04-19T02:30:00+09:00',
-//            'isReadOnly' => false
-//        ],
-        //'start' => '2019-04-18T22:30:00+09:00',
-        //'end' => '2019-04-19T02:30:00+09:00',
         return $scheduleSet;
     }
 

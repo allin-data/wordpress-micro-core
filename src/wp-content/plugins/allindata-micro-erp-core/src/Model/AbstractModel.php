@@ -118,9 +118,15 @@ abstract class AbstractModel
             ReflectionProperty::IS_PROTECTED |
             ReflectionProperty::IS_PRIVATE
         );
+        $parentProperties = $reflect->getParentClass()->getProperties(
+            ReflectionProperty::IS_PUBLIC |
+            ReflectionProperty::IS_PROTECTED |
+            ReflectionProperty::IS_PRIVATE
+        );
+        $properties = array_merge($properties, $parentProperties);
         $dataSet = [];
         foreach ($properties as $property) {
-            $methodName = sprintf('get%s', ucfirst($property->getName()));
+            $methodName = sprintf('get%s', $this->canonicalizeMethodName($property->getName()));
             $value = $this->{$methodName}();
             if ($value instanceof AbstractModel) {
                 $dataSet[$property->getName()] = $value->toArray();

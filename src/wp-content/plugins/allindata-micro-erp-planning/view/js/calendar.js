@@ -368,6 +368,8 @@
             let endDate = this._mapDate(event.end);
 
             let schedule = $.extend(true, this._getSchedulePrototype(), event);
+            schedule.calendarId = 1;
+            schedule.category = 'time';
             schedule.start = startDate;
             schedule.end = endDate;
 
@@ -379,7 +381,6 @@
             $.ajax({
                 type: 'POST',
                 url: wp_ajax_action.action_url,
-                //contentType: 'application/json',
                 data: payload,
                 success: function (data, status, event) {
                     console.log('finished create schedules success', event, status, data);
@@ -430,11 +431,15 @@
          * @private
          */
         _mapDate: function (date) {
-            let yyyy = date.getFullYear().toString();
-            let mm = (date.getMonth()+1).toString(); // getMonth() is zero-based
-            let dd  = date.getDate().toString();
+            let yyyy = date.getFullYear().toString(),
+                mm = (date.getMonth()+1).toString(),
+                dd  = date.getDate().toString(),
+                hh  = date.getHours().toString(),
+                ii  = date.getMinutes().toString(),
+                ss  = date.getSeconds().toString();
 
-            return yyyy + '-' + (mm[1]?mm:"0"+mm[0]) + '-' + (dd[1]?dd:"0"+dd[0]);
+            return yyyy + '-' + (mm[1]?mm:"0"+mm[0]) + '-' + (dd[1]?dd:"0"+dd[0]) + ' ' +
+                (hh[1]?hh:"0"+hh[0]) + ':' + (ii[1]?ii:"0"+ii[0]) + ':' + (ss[1]?ss:"0"+ss[0]);
         },
 
         /**

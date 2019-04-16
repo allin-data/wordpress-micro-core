@@ -55,11 +55,21 @@ class CreateSchedule extends AbstractController
         $startDate = new DateTime($schedule->getStart());
         $endDate = new DateTime($schedule->getEnd());
         $schedule
-            ->setStart($startDate->format('Y-m-d\TH:i:s+09:00'))
-            ->setEnd($endDate->format('Y-m-d\TH:i:s+09:00'));
+            ->setIsReadOnly($schedule->getIsReadOnly() === 'true' ? true : false)
+            ->setIsAllday($schedule->getIsAllday() === 'true' ? true : false)
+            ->setIsFocused($schedule->getIsFocused() === 'true' ? true : false)
+            ->setIsPending($schedule->getIsPending() === 'true' ? true : false)
+            ->setIsVisible($schedule->getIsVisible() === 'true' ? true : false)
+            ->setStart($startDate->format('Y-m-d\TH:i:s+00:00'))
+            ->setEnd($endDate->format('Y-m-d\TH:i:s+00:00'))
+            ->setPostTitle($schedule->getTitle())
+            ->setPostContent($schedule->getBody())
+            ->setPostContentFiltered($schedule->getBody())
+            ->setPostStatus($schedule->getIsPending() ? 'private' : 'publish');
         if (!$this->scheduleValidator->validate($schedule)->isValid()) {
             $this->throwErrorMessage(implode(',', $this->scheduleValidator->getErrors()));
         }
+
         $this->scheduleResource->save($schedule);
     }
 }

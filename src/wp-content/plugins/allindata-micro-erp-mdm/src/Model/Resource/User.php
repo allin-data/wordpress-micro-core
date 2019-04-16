@@ -183,6 +183,11 @@ class User extends AbstractResource
                 continue;
             }
             $key = $this->canonicalizeAttributeName($itemKey);
+
+            if (is_serialized($itemValue)) {
+                $itemValue = unserialize($itemValue);
+            }
+
             $filteredDataSet[$key] = $itemValue;
         }
         return $filteredDataSet;
@@ -240,6 +245,10 @@ class User extends AbstractResource
                 'umeta_id'
             ])) {
                 continue;
+            }
+
+            if (!is_scalar($value)) {
+                $value = serialize($value);
             }
 
             $set = [

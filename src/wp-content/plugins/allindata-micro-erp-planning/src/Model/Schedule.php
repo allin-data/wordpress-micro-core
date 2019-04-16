@@ -8,18 +8,14 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Planning\Model;
 
-use AllInData\MicroErp\Core\Model\AbstractModel;
+use AllInData\MicroErp\Core\Model\AbstractPostModel;
 
 /**
  * Class Schedule
  * @package AllInData\MicroErp\Planning\Model
  */
-class Schedule extends AbstractModel
+class Schedule extends AbstractPostModel
 {
-    /**
-     * @var int|string|null
-     */
-    private $id;
     /**
      * @var int|string|null
      */
@@ -108,24 +104,6 @@ class Schedule extends AbstractModel
      * @var ScheduleMeta|null
      */
     private $raw;
-
-    /**
-     * @return int|string|null
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param int|string|null $id
-     * @return Schedule
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-        return $this;
-    }
 
     /**
      * @return int|string|null

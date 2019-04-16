@@ -9,6 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Core\Model;
 
 use AllInData\MicroErp\Core\Database\WordpressDatabase;
+use RuntimeException;
 
 /**
  * Class AbstractModel
@@ -134,7 +135,8 @@ abstract class AbstractResource
      */
     public function save(AbstractModel $entity)
     {
-        if ($entity->get($this->primaryKey)) {
+
+        if (!empty($entity->get($this->primaryKey))) {
             $entity = $this->update($entity);
         } else {
             $entity = $this->insert($entity);
@@ -201,6 +203,7 @@ abstract class AbstractResource
      */
     protected function insert(AbstractModel $entity)
     {
+        $entity = $this->beforeInsert($entity);
         $postData = $this->extractPostData($entity->toArray());
 
         $db = $this->database->getInstance();
@@ -210,6 +213,9 @@ abstract class AbstractResource
             $postData['format']
         );
         $entityId = $db->insert_id;
+        if (!$entityId) {
+            throw new RuntimeException('Could not persist entity');
+        }
         $entity->set($this->primaryKey, $entityId);
 
         $postMetaDataSet = $this->extractPostMetaData($entity->toArray());
@@ -234,6 +240,7 @@ abstract class AbstractResource
      */
     protected function update(AbstractModel $entity)
     {
+        $entity = $this->beforeUpdate($entity);
         $postData = $this->extractPostData($entity->toArray());
         $db = $this->database->getInstance();
         $db->update(
@@ -269,7 +276,38 @@ abstract class AbstractResource
      */
     protected function getFormatSet(array $data): array
     {
-        return [];
+        $castSet = [];
+        foreach ($data as $value) {
+            $castType = '%s';
+            if (is_numeric($value) && intval($value) == $value) {
+                $castType = '%d';
+            } elseif (is_numeric($value) && floatval($value) == $value) {
+                $castType = '%f';
+            }
+            if (is_bool($value)) {
+                $castType = '%d';
+            }
+            $castSet[] = $castType;
+        }
+        return $castSet;
+    }
+
+    /**
+     * @param AbstractModel $entity
+     * @return AbstractModel
+     */
+    protected function beforeInsert(AbstractModel $entity): AbstractModel
+    {
+        return $entity;
+    }
+
+    /**
+     * @param AbstractModel $entity
+     * @return AbstractModel
+     */
+    protected function beforeUpdate(AbstractModel $entity): AbstractModel
+    {
+        return $entity;
     }
 
     /**
@@ -309,6 +347,11 @@ abstract class AbstractResource
                 continue;
             }
             $key = $this->canonicalizeAttributeName($itemKey);
+
+            if (is_serialized($itemValue)) {
+                $itemValue = unserialize($itemValue);
+            }
+
             $filteredDataSet[$key] = $itemValue;
         }
         return $filteredDataSet;
@@ -320,7 +363,7 @@ abstract class AbstractResource
      */
     private function extractPostData(array $entityData): array
     {
-        $primaryKeyValue = $entityData[$this->primaryKey] ?: null;
+        $primaryKeyValue = $entityData[$this->primaryKey] ?? null;
 
         $postEntityDataKeySet = $this->getPostEntityDataKeySet();
         $filteredDataSet = [];
@@ -350,7 +393,7 @@ abstract class AbstractResource
      */
     private function extractPostMetaData(array $entityData): array
     {
-        $primaryKeyValue = $entityData[$this->primaryKey] ?: null;
+        $primaryKeyValue = $entityData[$this->primaryKey] ?? null;
 
         $postEntityDataKeySet = $this->getPostEntityDataKeySet();
         $filteredDataSet = [];
@@ -369,6 +412,10 @@ abstract class AbstractResource
                 'meta_id'
             ])) {
                 continue;
+            }
+
+            if (!is_scalar($value)) {
+                $value = serialize($value);
             }
 
             $set = [
