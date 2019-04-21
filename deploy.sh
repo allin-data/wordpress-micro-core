@@ -381,32 +381,24 @@ ENVIRONMENT=""
 REMOTE_TARGET_HOST=""
 REMOTE_TARGET_PATH=""
 REMOTE_USER=""
-REMOTE_PW=""
 LOCAL_BASE_PATH=${__dir}"/src/wp-content"
 REL_BASE_PATH_PLUGINS="/plugins"
-REL_BASE_PATH_THEMES="/themes"
+REL_BASE_PATH_THEMES="/themes/monstroid2-child"
 
 case "${arg_e}" in
 "dev")
-  ENVIRONMENT="Development"
   error "No deployment for development"
   [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
   ;;
 "stage")
   ENVIRONMENT="Stage"
   REMOTE_TARGET_HOST="81.169.134.195"
-  REMOTE_TARGET_PATH="/mahucms.all-in-data.dev"
+  REMOTE_TARGET_PATH="/var/www/vhosts/all-in-data.dev/mahucms.all-in-data.dev/wp-content"
   REMOTE_USER="allindatadev"
-  REMOTE_PW="$LWL:3h$6nCAD0fd211PDspkxE$KxwdL"
   ;;
 "prod")
   error "No deployment for production"
   [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
-  ENVIRONMENT="Production"
-  REMOTE_TARGET_HOST=""
-  REMOTE_TARGET_PATH=""
-  REMOTE_USER=""
-  REMOTE_PW=""
   ;;
 *)
   ENVIRONMENT="Development"
@@ -436,22 +428,34 @@ info "-- Step 1/2: Deploy plugins"
 if [ ${arg_n} != 0 ]; then
     # debug mode / dry run
     info "Running in Dry-Run mode. No changes will be applied."
-    rsync -a -u -v -P -n --delete -c -h --stats "${LOCAL_BASE_PATH}/${REL_BASE_PATH_PLUGINS}" ${REMOTE_USER}@${REMOTE_TARGET_HOST}:"${REMOTE_TARGET_PATH}/${REL_BASE_PATH_PLUGINS}"
+    info "Local directory: ${LOCAL_BASE_PATH}${REL_BASE_PATH_PLUGINS}/"
+    info "Remote host: ${REMOTE_USER}@${REMOTE_TARGET_HOST}"
+    info "Remote directory: ${REMOTE_TARGET_PATH}${REL_BASE_PATH_PLUGINS}"
+    rsync -a -u -P -n --delete -c -h --stats "${LOCAL_BASE_PATH}${REL_BASE_PATH_PLUGINS}/" ${REMOTE_USER}@${REMOTE_TARGET_HOST}:"${REMOTE_TARGET_PATH}${REL_BASE_PATH_PLUGINS}"
 else
     # production mode
     info "Running in Operational mode. All changes will be applied."
-    rsync -a -u -v -P --delete -c -h --stats "${LOCAL_BASE_PATH}/${REL_BASE_PATH_PLUGINS}" ${REMOTE_USER}@${REMOTE_TARGET_HOST}:"${REMOTE_TARGET_PATH}/${REL_BASE_PATH_PLUGINS}"
+    info "Local directory: ${LOCAL_BASE_PATH}${REL_BASE_PATH_PLUGINS}/"
+    info "Remote host: ${REMOTE_USER}@${REMOTE_TARGET_HOST}"
+    info "Remote directory: ${REMOTE_TARGET_PATH}${REL_BASE_PATH_PLUGINS}"
+    rsync -a -u -v -P --delete -c -h --stats "${LOCAL_BASE_PATH}${REL_BASE_PATH_PLUGINS}/" ${REMOTE_USER}@${REMOTE_TARGET_HOST}:"${REMOTE_TARGET_PATH}${REL_BASE_PATH_PLUGINS}"
 fi
 
 info "-- Step 2/2: Deploy themes"
 if [ ${arg_n} != 0 ]; then
     # debug mode / dry run
     info "Running in Dry-Run mode. No changes will be applied."
-    rsync -a -u -v -P -n --delete -c -h --stats "${LOCAL_BASE_PATH}/${REL_BASE_PATH_THEMES}" ${REMOTE_USER}@${REMOTE_TARGET_HOST}:"${REMOTE_TARGET_PATH}/${REL_BASE_PATH_THEMES}"
+    info "Local directory: ${LOCAL_BASE_PATH}${REL_BASE_PATH_THEMES}/"
+    info "Remote host: ${REMOTE_USER}@${REMOTE_TARGET_HOST}"
+    info "Remote directory: ${REMOTE_TARGET_PATH}${REL_BASE_PATH_THEMES}"
+    rsync -a -u -P -n --delete -c -h --stats "${LOCAL_BASE_PATH}${REL_BASE_PATH_THEMES}/" ${REMOTE_USER}@${REMOTE_TARGET_HOST}:"${REMOTE_TARGET_PATH}${REL_BASE_PATH_THEMES}"
 else
     # production mode
     info "Running in Operational mode. All changes will be applied."
-    rsync -a -u -v -P --delete -c -h --stats "${LOCAL_BASE_PATH}/${REL_BASE_PATH_THEMES}" ${REMOTE_USER}@${REMOTE_TARGET_HOST}:"${REMOTE_TARGET_PATH}/${REL_BASE_PATH_THEMES}"
+    info "Local directory: ${LOCAL_BASE_PATH}${REL_BASE_PATH_THEMES}/"
+    info "Remote host: ${REMOTE_USER}@${REMOTE_TARGET_HOST}"
+    info "Remote directory: ${REMOTE_TARGET_PATH}${REL_BASE_PATH_THEMES}"
+    rsync -a -u -v -P --delete -c -h --stats "${LOCAL_BASE_PATH}${REL_BASE_PATH_THEMES}/" ${REMOTE_USER}@${REMOTE_TARGET_HOST}:"${REMOTE_TARGET_PATH}${REL_BASE_PATH_THEMES}"
 fi
 
 info "Finished deployment for environment: ${ENVIRONMENT}"
