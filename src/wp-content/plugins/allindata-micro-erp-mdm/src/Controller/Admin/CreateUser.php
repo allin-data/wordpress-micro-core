@@ -76,5 +76,9 @@ class CreateUser extends AbstractAdminController
         }
 
         $this->userResource->save($user);
+
+        if (!empty($user->getId())) {
+            wp_new_user_notification($user->getId(), null, 'user');
+        }
     }
 }
