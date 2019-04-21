@@ -49,6 +49,10 @@ class Schedule extends AbstractPostModel
      */
     private $end;
     /**
+     * @var string|null
+     */
+    private $location;
+    /**
      * @var bool|int|null
      */
     private $isAllday;
@@ -246,6 +250,24 @@ class Schedule extends AbstractPostModel
     public function setEnd(?string $end): Schedule
     {
         $this->end = $end;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getLocation(): ?string
+    {
+        return $this->location;
+    }
+
+    /**
+     * @param string|null $location
+     * @return Schedule
+     */
+    public function setLocation(?string $location): Schedule
+    {
+        $this->location = $location;
         return $this;
     }
 

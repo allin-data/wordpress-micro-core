@@ -31,10 +31,6 @@ class ScheduleMeta extends AbstractModel
     /**
      * @var string|null
      */
-    private $location;
-    /**
-     * @var string|null
-     */
     private $class;
     /**
      * @var ScheduleMetaCreator|null
@@ -92,24 +88,6 @@ class ScheduleMeta extends AbstractModel
     public function setHasRecurrenceRule(?string $hasRecurrenceRule): ScheduleMeta
     {
         $this->hasRecurrenceRule = $hasRecurrenceRule;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getLocation(): ?string
-    {
-        return $this->location;
-    }
-
-    /**
-     * @param string|null $location
-     * @return ScheduleMeta
-     */
-    public function setLocation(?string $location): ScheduleMeta
-    {
-        $this->location = $location;
         return $this;
     }
 

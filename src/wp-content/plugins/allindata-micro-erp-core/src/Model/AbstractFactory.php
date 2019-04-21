@@ -42,4 +42,21 @@ abstract class AbstractFactory
 
         return new $this->modelClass($data);
     }
+
+    /**
+     * @param AbstractModel $genuineEntity
+     * @param array $data
+     * @return AbstractModel
+     */
+    public function copy(AbstractModel $genuineEntity, array $data = []): AbstractModel
+    {
+        if (!(class_exists($this->modelClass))) {
+            throw new \RuntimeException(
+                sprintf('Class "%s" does not exist or could not be found.', $this->modelClass)
+            );
+        }
+
+        $aggregatedData = array_merge($genuineEntity->toArray(), $data);
+        return $this->create($aggregatedData);
+    }
 }

@@ -54,8 +54,13 @@ class UpdateSchedule extends AbstractController
             throw new InvalidArgumentException('Schedule id is missing.');
         }
 
+        /** @var Schedule $originSchedule */
+        $originSchedule = $this->scheduleResource->loadById((int)$scheduleData['id']);
+        if (empty($originSchedule->getId())) {
+            throw new InvalidArgumentException('Schedule could not be found.');
+        }
         /** @var Schedule $schedule */
-        $schedule = $this->scheduleResource->loadById((int)$scheduleData['id']);
+        $schedule = $this->scheduleResource->getModelFactory()->copy($originSchedule, $scheduleData);
 
         $startDate = new DateTime($schedule->getStart());
         $endDate = new DateTime($schedule->getEnd());

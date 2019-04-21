@@ -44,17 +44,13 @@ abstract class AbstractCollection
     /**
      * @param int $limit
      * @param int $offset
+     * @param array $queryArgs
      * @return AbstractModel[]
      */
-    public function load($limit = self::DEFAULT_LIMIT, $offset = self::DEFAULT_OFFSET): array
+    public function load($limit = self::DEFAULT_LIMIT, $offset = self::DEFAULT_OFFSET, array $queryArgs = []): array
     {
-        $query = new WP_Query([
-            'fields' => 'ids',
-            'post_type' => $this->resource->getEntityName(),
-            'post_status' => 'publish',
-            'offset' => $offset,
-            'number' => $limit
-        ]);
+        $args = array_merge($this->getDefaultQueryArguments($limit, $offset), $queryArgs);
+        $query = new WP_Query($args);
 
         $collectionIdSet = (array)$query->get_posts();
 
@@ -72,19 +68,45 @@ abstract class AbstractCollection
     }
 
     /**
+     * @param array $queryArgs
      * @return int
      */
-    public function getTotalCount(): int
+    public function getTotalCount(array $queryArgs = []): int
     {
-        $query = new WP_Query([
+        $args = array_merge($this->getDefaultTotalsQueryArguments(), $queryArgs);
+        $query = new WP_Query($args);
+        return $query->post_count;
+    }
+
+    /**
+     * @param int $limit
+     * @param int $offset
+     * @return array
+     */
+    protected function getDefaultQueryArguments($limit = self::DEFAULT_LIMIT, $offset = self::DEFAULT_OFFSET): array
+    {
+        return [
+            'fields' => 'ids',
+            'post_type' => $this->resource->getEntityName(),
+            'post_status' => 'publish',
+            'offset' => $offset,
+            'number' => $limit
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    protected function getDefaultTotalsQueryArguments(): array
+    {
+        return [
             'fields' => 'ids',
             'post_type' => $this->resource->getEntityName(),
             'post_status' => 'publish',
             'cache_results'  => false,
             'update_post_meta_cache' => false,
             'update_post_term_cache' => false
-        ]);
-
-        return $query->post_count;
+        ];
     }
+
 }
