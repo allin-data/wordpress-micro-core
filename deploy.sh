@@ -384,6 +384,7 @@ REMOTE_USER=""
 LOCAL_BASE_PATH=${__dir}"/src/wp-content"
 REL_BASE_PATH_PLUGINS="/plugins"
 REL_BASE_PATH_THEMES="/themes/monstroid2-child"
+REL_BASE_PATH_LANGUAGE="/languages"
 
 case "${arg_e}" in
 "dev")
@@ -424,7 +425,7 @@ fi
 info "Starting deployment for environment: ${ENVIRONMENT}"
 
 
-info "-- Step 1/2: Deploy plugins"
+info "-- Step 1/3: Deploy plugins"
 if [ ${arg_n} != 0 ]; then
     # debug mode / dry run
     info "Running in Dry-Run mode. No changes will be applied."
@@ -441,7 +442,7 @@ else
     rsync -a -u -v -P --delete -c -h --stats "${LOCAL_BASE_PATH}${REL_BASE_PATH_PLUGINS}/" ${REMOTE_USER}@${REMOTE_TARGET_HOST}:"${REMOTE_TARGET_PATH}${REL_BASE_PATH_PLUGINS}"
 fi
 
-info "-- Step 2/2: Deploy themes"
+info "-- Step 2/3: Deploy themes"
 if [ ${arg_n} != 0 ]; then
     # debug mode / dry run
     info "Running in Dry-Run mode. No changes will be applied."
@@ -456,6 +457,23 @@ else
     info "Remote host: ${REMOTE_USER}@${REMOTE_TARGET_HOST}"
     info "Remote directory: ${REMOTE_TARGET_PATH}${REL_BASE_PATH_THEMES}"
     rsync -a -u -v -P --delete -c -h --stats "${LOCAL_BASE_PATH}${REL_BASE_PATH_THEMES}/" ${REMOTE_USER}@${REMOTE_TARGET_HOST}:"${REMOTE_TARGET_PATH}${REL_BASE_PATH_THEMES}"
+fi
+
+info "-- Step 3/3: Deploy languages"
+if [ ${arg_n} != 0 ]; then
+    # debug mode / dry run
+    info "Running in Dry-Run mode. No changes will be applied."
+    info "Local directory: ${LOCAL_BASE_PATH}${REL_BASE_PATH_LANGUAGE}/"
+    info "Remote host: ${REMOTE_USER}@${REMOTE_TARGET_HOST}"
+    info "Remote directory: ${REMOTE_TARGET_PATH}${REL_BASE_PATH_LANGUAGE}"
+    rsync -a -u -P -n --delete -c -h --stats "${LOCAL_BASE_PATH}${REL_BASE_PATH_LANGUAGE}/" ${REMOTE_USER}@${REMOTE_TARGET_HOST}:"${REMOTE_TARGET_PATH}${REL_BASE_PATH_LANGUAGE}"
+else
+    # production mode
+    info "Running in Operational mode. All changes will be applied."
+    info "Local directory: ${LOCAL_BASE_PATH}${REL_BASE_PATH_LANGUAGE}/"
+    info "Remote host: ${REMOTE_USER}@${REMOTE_TARGET_HOST}"
+    info "Remote directory: ${REMOTE_TARGET_PATH}${REL_BASE_PATH_LANGUAGE}"
+    rsync -a -u -v -P --delete -c -h --stats "${LOCAL_BASE_PATH}${REL_BASE_PATH_LANGUAGE}/" ${REMOTE_USER}@${REMOTE_TARGET_HOST}:"${REMOTE_TARGET_PATH}${REL_BASE_PATH_LANGUAGE}"
 fi
 
 info "Finished deployment for environment: ${ENVIRONMENT}"
