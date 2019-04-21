@@ -1,4 +1,4 @@
-/*! elementor - v2.5.11 - 31-03-2019 */
+/*! elementor - v2.5.14 - 16-04-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -652,7 +652,11 @@ BaseSettingsModel = Backbone.Model.extend({
 			}
 			var controlName = control.name;
 
-			defaults[controlName] = control.default;
+			if ('object' === _typeof(control.default)) {
+				defaults[controlName] = elementorCommon.helpers.cloneObject(control.default);
+			} else {
+				defaults[controlName] = control.default;
+			}
 
 			var isDynamicControl = control.dynamic && control.dynamic.active,
 			    hasDynamicSettings = isDynamicControl && attrs.__dynamic__ && attrs.__dynamic__[controlName];
@@ -908,40 +912,24 @@ BaseSettingsModel = Backbone.Model.extend({
 			}
 		});
 
-		if (options.removeDefault) {
+		// TODO: `options.removeDefault` is a bc since 2.5.14
+		if (options.remove && -1 !== options.remove.indexOf('default') || options.removeDefault) {
 			var controls = this.controls;
 
 			_.each(data, function (value, key) {
 				var control = controls[key];
 
-				if (control) {
-					// TODO: use `save_default` in text|textarea controls.
-					if (control.save_default || ('text' === control.type || 'textarea' === control.type) && data[key]) {
-						return;
-					}
+				if (!control) {
+					return;
+				}
 
-					if (data[key] && 'object' === _typeof(data[key])) {
-						// First check length difference
-						if (Object.keys(data[key]).length !== Object.keys(control.default).length) {
-							return;
-						}
+				// TODO: use `save_default` in text|textarea controls.
+				if (control.save_default || ('text' === control.type || 'textarea' === control.type) && data[key]) {
+					return;
+				}
 
-						// If it's equal length, loop over value
-						var isEqual = true;
-
-						_.each(data[key], function (propertyValue, propertyKey) {
-							if (data[key][propertyKey] !== control.default[propertyKey]) {
-								return isEqual = false;
-							}
-						});
-
-						if (isEqual) {
-							delete data[key];
-						}
-					}
-					if (data[key] === control.default) {
-						delete data[key];
-					}
+				if (_.isEqual(data[key], control.default)) {
+					delete data[key];
 				}
 			});
 		}

@@ -86,12 +86,9 @@ if ( ! class_exists( 'Jet_Popup_Generator' ) ) {
 		 * @since 1.0.0
 		 * @return void|boolean
 		 */
-		public function page_popups_init( $origin_data ) {
+		public function page_popups_init() {
 
 			$this->define_page_popups();
-
-			// Original Content
-			return $origin_data;
 		}
 
 		/**
@@ -139,6 +136,8 @@ if ( ! class_exists( 'Jet_Popup_Generator' ) ) {
 					$popup_settings_main = wp_parse_args( $meta_settings, $this->popup_default_settings );
 
 					if ( filter_var( $popup_settings_main['jet_popup_use_ajax'], FILTER_VALIDATE_BOOLEAN ) ) {
+						$popup_id = apply_filters( 'jet-popup/popup-generator/before-define-popup-assets/popup-id', $popup_id, $popup_settings_main );
+
 						$document = Elementor\Plugin::$instance->documents->get( $popup_id );
 
 						$elements_data = $document->get_elements_raw_data();

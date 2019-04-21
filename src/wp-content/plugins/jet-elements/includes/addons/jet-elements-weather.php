@@ -107,6 +107,19 @@ class Jet_Elements_Weather extends Jet_Elements_Base {
 			)
 		);
 
+		$this->add_control(
+			'time_format',
+			array(
+				'label'   => esc_html__( 'Time Format', 'jet-elements' ),
+				'type'    => Controls_Manager::SELECT,
+				'default' => '12',
+				'options' => array(
+					'12' => esc_html__( '12 hour format', 'jet-elements' ),
+					'24' => esc_html__( '24 hour format', 'jet-elements' ),
+				),
+			)
+		);
+
 		$this->end_controls_section();
 
 		$this->start_controls_section(
@@ -1564,6 +1577,22 @@ class Jet_Elements_Weather extends Jet_Elements_Base {
 		$format = apply_filters( 'jet-elements/weather/pressure-format', '%s' );
 
 		return sprintf( $format, $pressure );
+	}
+
+	/**
+	 * Get weather astro time.
+	 *
+	 * @param  string $time
+	 * @return string
+	 */
+	public function get_weather_astro_time( $time ) {
+		$format = $this->get_settings_for_display( 'time_format' );
+
+		if ( '24' === $format ) {
+			$time = date( 'H:i', strtotime( $time ) );
+		}
+
+		return $time;
 	}
 
 	/**

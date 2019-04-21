@@ -19,11 +19,11 @@ $data     = $this->weather_data;
 			<div class="jet-weather__details-item jet-weather__current-day"><?php echo $data['current']['week_day']; ?></div>
 			<div class="jet-weather__details-item jet-weather__current-sunrise">
 				<?php echo $this->get_weather_svg_icon( 'sunrise' ); ?>
-				<?php echo $data['current']['sunrise']; ?>
+				<?php echo $this->get_weather_astro_time( $data['current']['sunrise'] ); ?>
 			</div>
 			<div class="jet-weather__details-item jet-weather__current-sunset">
 				<?php echo $this->get_weather_svg_icon( 'sunset' ); ?>
-				<?php echo $data['current']['sunset']; ?>
+				<?php echo $this->get_weather_astro_time( $data['current']['sunset'] ); ?>
 			</div>
 		</div>
 		<div class="jet-weather__details-column">

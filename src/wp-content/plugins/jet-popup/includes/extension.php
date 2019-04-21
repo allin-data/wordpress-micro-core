@@ -33,7 +33,7 @@ if ( ! class_exists( 'Jet_Popup_Element_Extensions' ) ) {
 		 */
 		public $default_widget_settings = [
 			'jet_attached_popup'          => '',
-			'jet_trigger_type'            => 'click',
+			'jet_trigger_type'            => 'click-self',
 			'jet_trigger_custom_selector' => '',
 		];
 
@@ -91,6 +91,8 @@ if ( ! class_exists( 'Jet_Popup_Element_Extensions' ) ) {
 				]
 			);
 
+			do_action( 'jet-popup/editor/widget-extension/before-base-controls', $obj, $args );
+
 			if ( empty( $avaliable_popups ) ) {
 
 				$obj->add_control(
@@ -147,6 +149,8 @@ if ( ! class_exists( 'Jet_Popup_Element_Extensions' ) ) {
 				]
 			);
 
+			do_action( 'jet-popup/editor/widget-extension/after-base-controls', $obj, $args );
+
 			$obj->end_controls_section();
 		}
 
@@ -159,18 +163,24 @@ if ( ! class_exists( 'Jet_Popup_Element_Extensions' ) ) {
 			$data     = $widget->get_data();
 			$settings = $data['settings'];
 
-			$settings = wp_parse_args( $settings, $this->default_widget_settings );
-
 			$widget_settings = array();
 
 			if ( ! empty( $settings['jet_attached_popup'] ) ) {
+				$settings = wp_parse_args( $settings, $this->default_widget_settings );
+
 				$widget_settings['attached-popup']          = 'jet-popup-' . $settings['jet_attached_popup'];
-				$widget_settings['trigger-type']            = $settings['jet_trigger_type'];
+				$widget_settings['trigger-type']            = isset( $settings['jet_trigger_type'] ) ? $settings['jet_trigger_type'] : 'click-self';
 				$widget_settings['trigger-custom-selector'] = $settings['jet_trigger_custom_selector'];
 
 				$widget->add_render_attribute( '_wrapper', array(
 					'class' => 'jet-popup-target',
 				) );
+
+				$widget_settings = apply_filters(
+					'jet-popup/widget-extension/widget-before-render-settings',
+					$widget_settings,
+					$settings
+				);
 			}
 
 			if ( ! empty( $widget_settings ) ) {

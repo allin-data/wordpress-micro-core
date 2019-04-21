@@ -4,6 +4,9 @@ Build popup with any layout in drag&drop way, change its position and trigger ev
 
 # ChangeLog
 
+## [1.2.6](https://github.com/ZemezLab/jet-popup/releases/tag/1.2.6)
+* ADD: Jet Engine Compatibility
+
 ## [1.2.5](https://github.com/ZemezLab/jet-popup/releases/tag/1.2.5)
 * ADD: Condition manager
 * ADD: Action button widget / link navigation and close option

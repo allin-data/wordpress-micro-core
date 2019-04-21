@@ -3,7 +3,7 @@
  * Plugin Name: Jet Popup
  * Plugin URI:  http://jetpopup.zemez.io/
  * Description: The advanced plugin for creating popups with Elementor
- * Version:     1.2.5
+ * Version:     1.2.6.1
  * Author:      Zemez
  * Author URI:  https://zemez.io/wordpress/
  * Text Domain: jet-popup
@@ -46,7 +46,7 @@ if ( ! class_exists( 'Jet_Popup' ) ) {
 		 * @var string
 		 */
 
-		private $version = '1.2.5';
+		private $version = '1.2.6.1';
 
 		/**
 		 * Holder for base plugin URL

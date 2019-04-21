@@ -1,5 +1,8 @@
 # ChangeLog
 
+## [2.1.12](https://github.com/ZemezLab/jet-blog/releases/tag/2.1.12) - 18.04.2019
+* Added: filter hook 'cx_include_module_url' in the `CX_Loader` class
+
 ## [2.1.11](https://github.com/ZemezLab/jet-blog/releases/tag/2.1.11) - 26.03.2019
 * Added: the ability displaying CPT terms in the Smart Posts List Widget and the Smart Posts Tiles Widget
 * Update: framework to CX

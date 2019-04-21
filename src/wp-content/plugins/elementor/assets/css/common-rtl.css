@@ -1,4 +1,4 @@
-/*! elementor - v2.5.11 - 31-03-2019 */
+/*! elementor - v2.5.14 - 16-04-2019 */
 .dialog-widget-content {
   background-color: #fff;
   position: absolute;
@@ -70,7 +70,7 @@
   cursor: pointer;
   position: absolute;
   top: 30px;
-  right: 30px;
+  left: 30px;
   font-size: 15px;
   line-height: 1; }
   .dialog-close-button:not(:hover) {

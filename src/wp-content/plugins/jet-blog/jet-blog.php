@@ -3,7 +3,7 @@
  * Plugin Name: JetBlog For Elementor
  * Plugin URI:  https://jetblog.zemez.io/
  * Description: Blogging Package for Elementor Page Builder
- * Version:     2.1.11
+ * Version:     2.1.12
  * Author:      Zemez
  * Author URI:  https://zemez.io/wordpress/
  * Text Domain: jet-blog
@@ -48,7 +48,7 @@ if ( ! class_exists( 'Jet_Blog' ) ) {
 		 *
 		 * @var string
 		 */
-		private $version = '2.1.11';
+		private $version = '2.1.12';
 
 		/**
 		 * Holder for base plugin path

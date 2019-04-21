@@ -40,7 +40,10 @@
 			if ( widgetsData.hasOwnProperty( widget_id ) ) {
 				var widgetData     = widgetsData[ widget_id ],
 					opentEvent     = widgetData[ 'trigger-type' ],
-					customSelector = widgetData[ 'trigger-custom-selector' ];
+					customSelector = widgetData[ 'trigger-custom-selector' ],
+					popupData      = {
+						popupId: widgetData[ 'attached-popup' ]
+					};
 
 				switch( opentEvent ) {
 					case 'click-self':
@@ -51,11 +54,19 @@
 
 							var $target = $( this );
 
+							if ( window.elementorFrontend.hooks ) {
+								popupData = elementorFrontend.hooks.applyFilters(
+									'jet-popup/widget-extensions/popup-data',
+									popupData,
+									widgetData,
+									$scope,
+									event
+								);
+							}
+
 							$( window ).trigger( {
 								type: 'jet-popup-open-trigger',
-								popupData: {
-									popupId: widgetData[ 'attached-popup' ],
-								}
+								popupData: popupData
 							} );
 
 							return false;
@@ -65,11 +76,19 @@
 						$scope.on( 'click.JetPopup', '.elementor-button, .jet-button__instance .jet-popup-action-button__instance', function( event ) {
 							event.preventDefault();
 
+							if ( window.elementorFrontend.hooks ) {
+								popupData = elementorFrontend.hooks.applyFilters(
+									'jet-popup/widget-extensions/popup-data',
+									popupData,
+									widgetData,
+									$scope,
+									event
+								);
+							}
+
 							$( window ).trigger( {
 								type: 'jet-popup-open-trigger',
-								popupData: {
-									popupId: widgetData[ 'attached-popup' ]
-								}
+								popupData: popupData
 							} );
 
 							return false;
@@ -87,11 +106,19 @@
 
 								$target.addClass( 'jet-popup-cursor-pointer' );
 
+								if ( window.elementorFrontend.hooks ) {
+									popupData = elementorFrontend.hooks.applyFilters(
+										'jet-popup/widget-extensions/popup-data',
+										popupData,
+										widgetData,
+										$scope,
+										event
+									);
+								}
+
 								$( window ).trigger( {
 									type: 'jet-popup-open-trigger',
-									popupData: {
-										popupId: widgetData[ 'attached-popup' ]
-									}
+									popupData: popupData
 								} );
 
 								return false;
@@ -101,22 +128,38 @@
 					case 'hover':
 						$scope.on( 'mouseenter.JetPopup', function( event ) {
 
+							if ( window.elementorFrontend.hooks ) {
+								popupData = elementorFrontend.hooks.applyFilters(
+									'jet-popup/widget-extensions/popup-data',
+									popupData,
+									widgetData,
+									$scope,
+									event
+								);
+							}
+
 							$( window ).trigger( {
 								type: 'jet-popup-open-trigger',
-								popupData: {
-									popupId: widgetData[ 'attached-popup' ]
-								}
+								popupData: popupData
 							} );
 						} );
 						break;
 					case 'scroll-to':
 						elementorFrontend.waypoint( $scope, function( event ) {
 
+							if ( window.elementorFrontend.hooks ) {
+								popupData = elementorFrontend.hooks.applyFilters(
+									'jet-popup/widget-extensions/popup-data',
+									popupData,
+									widgetData,
+									$scope,
+									event
+								);
+							}
+
 							$( window ).trigger( {
 								type: 'jet-popup-open-trigger',
-								popupData: {
-									popupId: widgetData[ 'attached-popup' ]
-								}
+								popupData: popupData
 							} );
 						}, {
 							offset: 'bottom-in-view'
@@ -902,9 +945,17 @@
 				var $this       = $( this ),
 					elementType = $this.data( 'element_type' );
 
+				if (!elementType) {
+					return;
+				}
+
 				try {
-					window.elementorFrontend.hooks.doAction( 'frontend/element_ready/widget', $this, $ );
+					if( 'widget' === elementType ){
+						elementType = $this.data( 'widget_type' );
+						window.elementorFrontend.hooks.doAction( 'frontend/element_ready/widget', $this, $ );
+					}
 					window.elementorFrontend.hooks.doAction( 'frontend/element_ready/' + elementType, $this, $ );
+
 				} catch( err ) {
 					console.log(err);
 

@@ -170,7 +170,8 @@ class Jet_Popup_Document extends Elementor\Core\Base\Document {
 		$this->add_control(
 			'jet_popup_show_again_delay',
 			[
-				'label'   => __( 'Show Again Delay', 'jet-popup' ),
+				'label'       => __( 'Repeat showing popup in', 'jet-popup' ),
+				'description' => __( 'Set the timeout caching and a popup will be displayed again', 'jet-popup' ),
 				'type'    => Elementor\Controls_Manager::SELECT,
 				'default' => 'none',
 				'options' => [

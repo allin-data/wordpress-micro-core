@@ -4,6 +4,9 @@ Brand new addon for Elementor Page builder. It provides the set of modules to cr
 
 # ChangeLog
 
+## [1.15.8](https://github.com/ZemezLab/jet-elements/archive/1.15.5.zip) - 08.04.2019
+* Hot Fix: scroll navi widget
+
 ## [1.15.7](https://github.com/ZemezLab/jet-elements/archive/1.15.5.zip) - 04.04.2019
 * Fixed: scroll navi widget / section switching function
 * Fixed: subscribe widget / ajax url

@@ -3,6 +3,8 @@
 Enjoy the easy-to-use widgets made for enriching headers & footers with content.
 
 # ChangeLog
+## [1.1.6](https://github.com/ZemezLab/jet-blocks/releases/tag/1.1.6) - 18.04.2019
+* Added: filter hook 'cx_include_module_url' in the `CX_Loader` class
 
 ## [1.1.5](https://github.com/ZemezLab/jet-blocks/releases/tag/1.1.5) - 26.03.2019
 * Added: `Lost password link` option in the Login Form Widget

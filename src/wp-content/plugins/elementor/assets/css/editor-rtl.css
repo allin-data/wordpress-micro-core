@@ -1,4 +1,4 @@
-/*! elementor - v2.5.11 - 31-03-2019 */
+/*! elementor - v2.5.14 - 16-04-2019 */
 @charset "UTF-8";
 *, :before, :after {
   margin: 0;
@@ -884,15 +884,13 @@ select {
     color: #a4afb7;
     background: none; }
   .elementor-panel .elementor-panel-scheme-color .elementor-panel-scheme-items {
-    position: relative; }
-  .elementor-panel .elementor-panel-scheme-color .elementor-panel-scheme-item {
-    display: inline-block; }
-    @media (max-width: 1439px) {
-      .elementor-panel .elementor-panel-scheme-color .elementor-panel-scheme-item:not(:nth-child(4n)) {
-        margin-left: 13px; } }
-    @media (min-width: 1440px) {
-      .elementor-panel .elementor-panel-scheme-color .elementor-panel-scheme-item:not(:nth-child(4n)) {
-        margin-left: 19px; } }
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
   .elementor-panel .elementor-panel-scheme-color .wp-picker-container:not(.wp-picker-active) {
     float: none; }
   .elementor-panel .elementor-panel-scheme-color .wp-picker-container.wp-picker-active {
