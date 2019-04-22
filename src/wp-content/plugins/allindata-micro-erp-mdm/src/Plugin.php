@@ -23,10 +23,6 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
      */
     public function load()
     {
-        // Administration menu
-        add_action('admin_menu', [$this, 'addAdminMainMenu'], 9, 0);
-        add_action('plugins_loaded', array(self::class, 'init'), 999);
-
         register_activation_hook(AID_MICRO_ERP_MDM_FILE, [$this, 'installPlugin']);
         register_deactivation_hook(AID_MICRO_ERP_MDM_FILE, [$this, 'deinstallPlugin']);
     }
@@ -47,13 +43,7 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
     public function deinstallPlugin()
     {
         remove_role(UserRole::ROLE_LEVEL_USER_DEFAULT);
-    }
-
-    /**
-     * Add menu
-     */
-    public function addAdminMainMenu()
-    {
-        //
+        // @deprecated
+        remove_role('dgr_acl_level_user_default');
     }
 }

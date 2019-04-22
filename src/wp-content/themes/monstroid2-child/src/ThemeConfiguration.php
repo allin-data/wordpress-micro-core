@@ -9,7 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Theme;
 
 use AllInData\MicroErp\Theme\Module\DisabledAdminBar;
-use AllInData\MicroErp\Theme\Module\ExtendMainMenuByAdminMenu;
+use AllInData\MicroErp\Theme\Module\ExtendNavigationByAdminMenu;
 use AllInData\MicroErp\Theme\Module\ThemeModuleInterface;
 use bitExpert\Disco\Annotations\Configuration;
 use bitExpert\Disco\Annotations\Bean;
@@ -38,7 +38,9 @@ class ThemeConfiguration
     {
         return [
             new DisabledAdminBar(),
-            new ExtendMainMenuByAdminMenu()
+            new ExtendNavigationByAdminMenu('adminmenu', [
+                'main'
+            ])
         ];
     }
 }

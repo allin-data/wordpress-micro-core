@@ -42,7 +42,7 @@ define('AID_MICRO_ERP_MDM_TEMPLATE_DIR', __DIR__ . '/view/');
 define('AID_MICRO_ERP_MDM_TEMP_DIR', ABSPATH . 'tmp/');
 define('AID_MICRO_ERP_MDM_PATH', plugin_dir_path(__FILE__));
 define('AID_MICRO_ERP_MDM_URL', plugin_dir_url(__FILE__));
-define('AID_MICRO_ERP_MDM_FILE',__FILE__);
+define('AID_MICRO_ERP_MDM_FILE', __FILE__);
 
 defined('ABSPATH') or exit;
 
@@ -50,6 +50,9 @@ require __DIR__ . '/vendor/autoload.php';
 
 class AllInDataMicroErpMdm
 {
+    /**
+     * Init
+     */
     static function init()
     {
         $config = new \bitExpert\Disco\BeanFactoryConfiguration(AID_MICRO_ERP_MDM_TEMP_DIR);
@@ -70,5 +73,18 @@ class AllInDataMicroErpMdm
         $app = $beanFactory->get('PluginApp');
         $app->doInit();
     }
+
+    /**
+     * Install Plugin
+     */
+    static function installPlugin()
+    {
+        self::init();
+        $beanFactory = \bitExpert\Disco\BeanFactoryRegistry::getInstance();
+        /** @var \AllInData\MicroErp\Mdm\Plugin $app */
+        $app = $beanFactory->get('PluginApp');
+        $app->installPlugin();
+    }
 }
+register_activation_hook(AID_MICRO_ERP_MDM_FILE, [AllInDataMicroErpMdm::class, 'installPlugin']);
 add_action('elementor/init', [AllInDataMicroErpMdm::class, 'init']);

@@ -22,6 +22,7 @@ use AllInData\MicroErp\Mdm\Module\ElementorCategory;
 use AllInData\MicroErp\Mdm\ShortCode\Admin\FormCreateUser;
 use AllInData\MicroErp\Mdm\ShortCode\Admin\GridUser;
 use AllInData\MicroErp\Mdm\ShortCode\UserOrganization;
+use AllInData\MicroErp\Mdm\ShortCode\UserProfile;
 use AllInData\MicroErp\Mdm\Widget\Elementor\Admin\FormCreateNewUser;
 use AllInData\MicroErp\Mdm\Widget\Elementor\FooBar;
 use AllInData\MicroErp\Mdm\Widget\Elementor\Admin\ListOfUserAccounts;
@@ -31,6 +32,7 @@ use AllInData\MicroErp\Core\Database\WordpressDatabase;
 use AllInData\MicroErp\Core\Module\PluginModuleInterface;
 use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
 use AllInData\MicroErp\Core\Widget\ElementorWidgetInterface;
+use AllInData\MicroErp\Mdm\Widget\Elementor\UserProfileForm;
 use Elementor\Elements_Manager;
 use Elementor\Plugin as ElementorPlugin;
 use bitExpert\Disco\Annotations\Configuration;
@@ -65,7 +67,7 @@ class PluginConfiguration
     private function getPluginWidgets(): array
     {
         return [
-            new FooBar(),
+            new UserProfileForm(),
             new UserOrganizationForm(),
             new ListOfUserAccounts(),
             new FormCreateNewUser()
@@ -116,6 +118,7 @@ class PluginConfiguration
     private function getPluginShortCodes(): array
     {
         return [
+            new UserProfile(AID_MICRO_ERP_MDM_TEMPLATE_DIR),
             new UserOrganization(AID_MICRO_ERP_MDM_TEMPLATE_DIR),
             new GridUser(
                 AID_MICRO_ERP_MDM_TEMPLATE_DIR,

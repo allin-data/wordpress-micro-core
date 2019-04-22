@@ -9,6 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Auth\Module;
 
 use AllInData\MicroErp\Core\Module\PluginModuleInterface;
+use Countable;
 use stdClass;
 use WP_Post;
 
@@ -49,7 +50,12 @@ class LogoutMenuEntry implements PluginModuleInterface
             return $items;
         }
 
-        $items[] = $this->getLogoutMenuEntry($menu->term_id, count($items));
+        $itemCount = 0;
+        if (is_array($items) || ($items instanceof Countable)) {
+            $itemCount = count($items);
+        }
+
+        $items[] = $this->getLogoutMenuEntry($menu->term_id, $itemCount + 1000);
         return $items;
     }
 

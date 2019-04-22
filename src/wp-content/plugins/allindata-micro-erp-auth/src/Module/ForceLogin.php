@@ -12,6 +12,7 @@ use AllInData\MicroErp\Auth\Controller\Login;
 use AllInData\MicroErp\Auth\Controller\Logout;
 use AllInData\MicroErp\Auth\Helper\LoginPageStateHelper;
 use AllInData\MicroErp\Core\Module\PluginModuleInterface;
+use AllInData\MicroErp\Mdm\Model\UserRole;
 
 /**
  * Class ForceLogin
@@ -80,6 +81,12 @@ class ForceLogin implements PluginModuleInterface
         $whitelistSet = array_merge(self::WHITELIST_PATH_SET, [$this->getUrlPath($this->getLoginUrl())]);
         if (!is_user_logged_in() && !in_array($currentPage, $whitelistSet)) {
             wp_redirect($this->getLoginUrl());
+            exit();
+        }
+
+        // only administrators are allowed in the backend
+        if (is_admin() && !current_user_can(UserRole::ROLE_LEVEL_ADMINISTRATION)) {
+            wp_redirect(get_home_url());
             exit();
         }
     }
