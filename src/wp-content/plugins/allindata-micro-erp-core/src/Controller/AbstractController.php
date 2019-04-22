@@ -85,11 +85,9 @@ abstract class AbstractController implements PluginControllerInterface
 
         $redirectTarget = $this->getParam(static::REDIRECTION_KEY);
         if ($redirectTarget) {
-            wp_safe_redirect(site_url($redirectTarget));
-            wp_die();
+            wp_redirect($redirectTarget, 302, null);
+            exit();
         }
-
-        header("Location: " . $_SERVER['HTTP_REFERER']);
     }
 
     /**

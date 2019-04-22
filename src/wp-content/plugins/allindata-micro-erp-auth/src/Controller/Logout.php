@@ -17,7 +17,7 @@ use AllInData\MicroErp\Core\Controller\PluginControllerInterface;
  */
 class Logout extends AbstractAnonController implements PluginControllerInterface
 {
-    const ACTION_SLUG = 'micro_erp_auth_logout';
+    const ACTION_SLUG = 'logout';
 
     /**
      * @inheritDoc

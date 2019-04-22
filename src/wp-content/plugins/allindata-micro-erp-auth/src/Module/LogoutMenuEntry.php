@@ -8,9 +8,9 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Auth\Module;
 
-use AllInData\MicroErp\Mdm\Model\Factory\ElementorMdmCategory as CategoryFactory;
 use AllInData\MicroErp\Core\Module\PluginModuleInterface;
-use Elementor\Elements_Manager;
+use stdClass;
+use WP_Post;
 
 /**
  * Class LogoutMenuEntry
@@ -19,25 +19,83 @@ use Elementor\Elements_Manager;
 class LogoutMenuEntry implements PluginModuleInterface
 {
     /**
+     * @var array
+     */
+    private $logoutMenuSet = [];
+
+    /**
+     * LogoutMenuEntry constructor.
+     * @param array $logoutMenuSet
+     */
+    public function __construct(array $logoutMenuSet)
+    {
+        $this->logoutMenuSet = $logoutMenuSet;
+    }
+
+    /**
      * @inheritdoc
      */
     public function init()
     {
-        add_filter('wp_nav_menu_items', [$this, 'addLogoutMenuEntry'], 10, 2);
+        add_filter('wp_get_nav_menu_items', [$this, 'addLogoutMenuEntry'], 999, 3);
     }
 
     /**
      * add link to main menu, trigger logout action
      */
-    public function addLogoutMenuEntry($items, $args)
+    public function addLogoutMenuEntry($items, $menu, $args)
     {
-        $menuType = $args->theme_location ?: null;
-        if (!is_user_logged_in() || $menuType !== 'main') {
+        if (!is_user_logged_in() || !$this->isApplicableMenu($menu->term_id)) {
             return $items;
         }
-        $logoutUrl = wp_logout_url(get_permalink());
-        $logoutItemEntry = '<li class="logout"><a href="' . $logoutUrl . '">' . __('Logout', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) . '</a></li>';
-        $items = $items . $logoutItemEntry;
+
+        $items[] = $this->getLogoutMenuEntry($menu->term_id, count($items));
         return $items;
+    }
+
+    /**
+     * @param $menuId
+     * @param $position
+     * @return WP_Post
+     */
+    private function getLogoutMenuEntry($menuId, $position): WP_Post
+    {
+        $post = new WP_Post(new stdClass());
+
+        $post->post_title = __('Logout', AID_MICRO_ERP_AUTH_TEXTDOMAIN);
+        $post->title = __('Logout', AID_MICRO_ERP_AUTH_TEXTDOMAIN);
+        $post->post_name = __('Logout', AID_MICRO_ERP_AUTH_TEXTDOMAIN);
+        $post->post_status = "publish";
+        $post->post_type = "nav_menu_item";
+        $post->menu_item_parent = $menuId;
+        $post->menu_order = $position;
+        $post->object = "custom";
+        $post->type = "custom";
+        $post->type_label = "Individueller Link";
+        $post->guid = wp_logout_url(get_permalink());
+        $post->url = wp_logout_url(get_permalink());
+
+        return $post;
+    }
+
+    /**
+     * @param int|string $menuId
+     * @return bool
+     */
+    private function isApplicableMenu($menuId): bool
+    {
+        $locations = get_nav_menu_locations();
+        foreach ($this->logoutMenuSet as $logoutMenuSelector) {
+            $mainLocationId = $locations[$logoutMenuSelector] ?: null;
+            if (!$mainLocationId) {
+                continue;
+            }
+
+            if ($menuId == $mainLocationId) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
