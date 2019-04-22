@@ -9,7 +9,6 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Core\Controller;
 
 use AllInData\MicroErp\Core\Model\AbstractModel;
-use AllInData\MicroErp\Mdm\Model\UserRole;
 use Exception;
 
 /**
@@ -187,11 +186,44 @@ abstract class AbstractController implements PluginControllerInterface
     protected function isAllowed(): bool
     {
         if (!is_user_logged_in() ||
-            !(current_user_can(UserRole::ROLE_LEVEL_USER_DEFAULT) ||
-                current_user_can(UserRole::ROLE_LEVEL_ADMINISTRATION))) {
+            !$this->hasAllowanceCapabilities()) {
             return false;
         }
         return true;
+    }
+
+    /**
+     * @return bool
+     */
+    protected function hasAllowanceCapabilities(): bool
+    {
+        if (current_user_can('administrator')) {
+            return true;
+        }
+
+        foreach ($this->getRequiredCapabilitySet() as $requiredCapability) {
+            if (current_user_can($requiredCapability)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * @return array
+     */
+    protected function getRequiredCapabilitySet(): array
+    {
+        return [];
+    }
+
+    /**
+     * @param string|int $userId
+     * @return bool
+     */
+    protected function isCurrentUser($userId): bool
+    {
+        return $userId == get_current_user_id();
     }
 
     /**

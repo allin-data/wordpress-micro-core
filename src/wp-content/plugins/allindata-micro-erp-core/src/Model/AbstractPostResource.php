@@ -8,15 +8,11 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Core\Model;
 
-use AllInData\MicroErp\Core\Database\WordpressDatabase;
-use AllInData\MicroErp\Mdm\Model\UserRole;
-use RuntimeException;
-
 /**
  * Class AbstractPostResource
  * @package AllInData\MicroErp\Core\Model
  */
-abstract class AbstractPostResource extends AbstractResource
+abstract class AbstractPostResource extends AbstractOwnedResource
 {
     /**
      * @param AbstractModel $entity
@@ -59,7 +55,7 @@ abstract class AbstractPostResource extends AbstractResource
         }
 
         if ($entity->getPostAuthor() !== get_current_user_id() &&
-            !current_user_can(UserRole::ROLE_LEVEL_ADMINISTRATION)) {
+            !current_user_can('administrator')) {
             return false;
         }
 
@@ -74,7 +70,7 @@ abstract class AbstractPostResource extends AbstractResource
     {
         $entity
             ->setPostType($entity->getPostType() ?? static::ENTITY_NAME)
-            ->setPostAuthor($entity->getPostAuthor() ?? get_current_user_id())
+            ->setPostAuthor($entity->getPostAuthor() ?? $this->getCurrentScopeUserId())
             ->setPostTitle($entity->getPostTitle() ?? '')
             ->setPostName($entity->getPostName() ?? sanitize_title($entity->getPostTitle()))
             ->setPostContent($entity->getPostContent() ?? '')

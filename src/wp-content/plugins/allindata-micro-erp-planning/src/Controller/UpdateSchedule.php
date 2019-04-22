@@ -59,6 +59,7 @@ class UpdateSchedule extends AbstractController
         if (empty($originSchedule->getId())) {
             throw new InvalidArgumentException('Schedule could not be found.');
         }
+
         /** @var Schedule $schedule */
         $schedule = $this->scheduleResource->getModelFactory()->copy($originSchedule, $scheduleData);
 
@@ -82,5 +83,13 @@ class UpdateSchedule extends AbstractController
 
         $this->scheduleResource->save($schedule);
         return true;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    protected function getRequiredCapabilitySet(): array
+    {
+        return [\AllInData\MicroErp\Planning\Model\Capability\DeleteSchedule::CAPABILITY];
     }
 }

@@ -13,6 +13,10 @@ use AllInData\MicroErp\Core\Database\WordpressDatabase;
 use AllInData\MicroErp\Core\Module\PluginModuleInterface;
 use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
 use AllInData\MicroErp\Core\Widget\ElementorWidgetInterface;
+use AllInData\MicroErp\Mdm\Model\Capability\CapabilityInterface;
+use AllInData\MicroErp\Mdm\Model\Role\ManagerRole;
+use AllInData\MicroErp\Mdm\Model\Role\OwnerRole;
+use AllInData\MicroErp\Mdm\Model\Role\UserRole;
 use AllInData\MicroErp\Planning\Controller\CreateSchedule;
 use AllInData\MicroErp\Planning\Controller\DeleteSchedule;
 use AllInData\MicroErp\Planning\Controller\UpdateSchedule;
@@ -45,7 +49,8 @@ class PluginConfiguration
             $this->getPluginModules(),
             $this->getPluginControllers(),
             $this->getPluginShortCodes(),
-            $this->getPluginWidgets()
+            $this->getPluginWidgets(),
+            $this->getPluginCapabilities()
         );
     }
 
@@ -100,6 +105,30 @@ class PluginConfiguration
                     $this->getScheduleCollection()
                 )
             )
+        ];
+    }
+
+    /**
+     * @return CapabilityInterface[]
+     */
+    private function getPluginCapabilities(): array
+    {
+        return [
+            new \AllInData\MicroErp\Planning\Model\Capability\CreateSchedule([
+                UserRole::ROLE_LEVEL,
+                ManagerRole::ROLE_LEVEL,
+                OwnerRole::ROLE_LEVEL
+            ]),
+            new \AllInData\MicroErp\Planning\Model\Capability\UpdateSchedule([
+                UserRole::ROLE_LEVEL,
+                ManagerRole::ROLE_LEVEL,
+                OwnerRole::ROLE_LEVEL
+            ]),
+            new \AllInData\MicroErp\Planning\Model\Capability\DeleteSchedule([
+                UserRole::ROLE_LEVEL,
+                ManagerRole::ROLE_LEVEL,
+                OwnerRole::ROLE_LEVEL
+            ]),
         ];
     }
 

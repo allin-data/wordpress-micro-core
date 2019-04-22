@@ -8,8 +8,11 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Mdm\Model\Collection;
 
-use AllInData\MicroErp\Mdm\Model\UserRole;
 use AllInData\MicroErp\Core\Model\AbstractCollection;
+use AllInData\MicroErp\Mdm\Model\Role\ManagerRole;
+use AllInData\MicroErp\Mdm\Model\Role\OwnerRole;
+use AllInData\MicroErp\Mdm\Model\Role\UserRole;
+use WP_User_Query;
 
 /**
  * Class User
@@ -26,7 +29,7 @@ class User extends AbstractCollection
     public function load($limit = self::DEFAULT_LIMIT, $offset = self::DEFAULT_OFFSET, array $queryArgs = []): array
     {
         $args = array_merge($this->getDefaultQueryArguments($limit, $offset), $queryArgs);
-        $query = new \WP_User_Query($args);
+        $query = new WP_User_Query($args);
 
         $collectionIdSet = (array)$query->get_results();
 
@@ -50,7 +53,7 @@ class User extends AbstractCollection
     public function getTotalCount(array $queryArgs = []): int
     {
         $args = array_merge($this->getDefaultTotalsQueryArguments(), $queryArgs);
-        $query = new \WP_User_Query($args);
+        $query = new WP_User_Query($args);
         return $query->get_total();
     }
 
@@ -62,7 +65,11 @@ class User extends AbstractCollection
     protected function getDefaultQueryArguments($limit = self::DEFAULT_LIMIT, $offset = self::DEFAULT_OFFSET): array
     {
         return [
-            'role' => UserRole::ROLE_LEVEL_USER_DEFAULT,
+            'role__in' => [
+                UserRole::ROLE_LEVEL,
+                ManagerRole::ROLE_LEVEL,
+                OwnerRole::ROLE_LEVEL
+            ],
             'fields' => [
                 'ID'
             ],
@@ -77,7 +84,11 @@ class User extends AbstractCollection
     protected function getDefaultTotalsQueryArguments(): array
     {
         return [
-            'role' => UserRole::ROLE_LEVEL_USER_DEFAULT,
+            'role__in' => [
+                UserRole::ROLE_LEVEL,
+                ManagerRole::ROLE_LEVEL,
+                OwnerRole::ROLE_LEVEL
+            ],
             'fields' => [
                 'ID'
             ]

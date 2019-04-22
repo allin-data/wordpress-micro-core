@@ -8,8 +8,8 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Mdm\Controller\Admin;
 
+use AllInData\MicroErp\Mdm\Model\Role\OwnerRole;
 use AllInData\MicroErp\Mdm\Model\User;
-use AllInData\MicroErp\Mdm\Model\UserRole;
 use AllInData\MicroErp\Mdm\Model\Validator\User as UserValidator;
 use AllInData\MicroErp\Mdm\Model\Resource\User as UserResource;
 use AllInData\MicroErp\Core\Controller\AbstractAdminController;
@@ -57,7 +57,7 @@ class CreateUser extends AbstractAdminController
         $password = wp_generate_password(self::USER_PASSWORD_LENGTH, true, true);
         $userId = wp_create_user($login, $password, $email);
         $nativeUser = new \WP_User($userId);
-        $nativeUser->set_role(UserRole::ROLE_LEVEL_USER_DEFAULT);
+        $nativeUser->set_role(OwnerRole::ROLE_LEVEL);
 
         if (!is_int($userId)) {
             if ($userId instanceof \WP_Error) {

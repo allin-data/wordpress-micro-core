@@ -73,4 +73,12 @@ class CreateSchedule extends AbstractController
         $this->scheduleResource->save($schedule);
         return $schedule->getId();
     }
+
+    /**
+     * @inheritDoc
+     */
+    protected function getRequiredCapabilitySet(): array
+    {
+        return [\AllInData\MicroErp\Planning\Model\Capability\CreateSchedule::CAPABILITY];
+    }
 }

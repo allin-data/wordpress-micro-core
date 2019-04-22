@@ -15,6 +15,10 @@ use AllInData\MicroErp\Mdm\Model\Factory\ElementorMdmAdminCategory;
 use AllInData\MicroErp\Mdm\Model\Factory\ElementorMdmCategory;
 use AllInData\MicroErp\Mdm\Model\Resource\User as UserResource;
 use AllInData\MicroErp\Mdm\Model\Factory\User as UserFactory;
+use AllInData\MicroErp\Mdm\Model\Role\ManagerRole;
+use AllInData\MicroErp\Mdm\Model\Role\OwnerRole;
+use AllInData\MicroErp\Mdm\Model\Role\RoleInterface;
+use AllInData\MicroErp\Mdm\Model\Role\UserRole;
 use AllInData\MicroErp\Mdm\Model\Validator\User as UserValidator;
 use AllInData\MicroErp\Mdm\Model\User;
 use AllInData\MicroErp\Mdm\Module\ElementorAdminCategory;
@@ -56,7 +60,8 @@ class PluginConfiguration
             $this->getPluginModules(),
             $this->getPluginControllers(),
             $this->getPluginShortCodes(),
-            $this->getPluginWidgets()
+            $this->getPluginWidgets(),
+            $this->getRoles()
         );
     }
 
@@ -128,6 +133,18 @@ class PluginConfiguration
                 AID_MICRO_ERP_MDM_TEMPLATE_DIR,
                 new Block\Admin\FormCreateUser()
             )
+        ];
+    }
+
+    /**
+     * @return RoleInterface[]
+     */
+    private function getRoles(): array
+    {
+        return [
+            new UserRole(),
+            new ManagerRole(),
+            new OwnerRole()
         ];
     }
 

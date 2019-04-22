@@ -49,4 +49,12 @@ class DeleteSchedule extends AbstractController
         }
         return $this->scheduleResource->deleteById($entity->getId());
     }
+
+    /**
+     * @inheritDoc
+     */
+    protected function getRequiredCapabilitySet(): array
+    {
+        return [\AllInData\MicroErp\Planning\Model\Capability\DeleteSchedule::CAPABILITY];
+    }
 }

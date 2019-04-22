@@ -99,7 +99,7 @@ abstract class AbstractResource
         $db = $this->database->getInstance();
 
         $queryEntity = $db->prepare(
-            'SELECT * FROM `'.$db->posts.'` WHERE `post_type`=%s AND `ID`=%d',
+            'SELECT * FROM `'.$db->posts.'` WHERE `post_type`=%s AND `ID`=%d '.$this->getAdditionalLoadWhereEntity(),
             $this->entityName,
             $id
         );
@@ -110,16 +110,19 @@ abstract class AbstractResource
             ARRAY_A
         );
 
-        $queryEntityData = $db->prepare(
-            'SELECT * FROM `'.$db->postmeta.'` WHERE `post_id`=%d',
-            $id
-        );
+        $entityData = [];
+        if (!empty($entity)) {
+            $queryEntityData = $db->prepare(
+                'SELECT * FROM `'.$db->postmeta.'` WHERE `post_id`=%d '.$this->getAdditionalLoadWhereEntityData(),
+                $id
+            );
 
-        /** @var array $entityData */
-        $entityData = $db->get_results(
-            $queryEntityData,
-            ARRAY_A
-        );
+            /** @var array $entityData */
+            $entityData = $db->get_results(
+                $queryEntityData,
+                ARRAY_A
+            );
+        }
 
         $mappedEntity = $this->mapPostData($entity);
         $mappedEntityData = $this->mapPostMetaData($entityData);
@@ -194,6 +197,22 @@ abstract class AbstractResource
         }
 
         return implode('_', $attributeNameParts);
+    }
+
+    /**
+     * @return string
+     */
+    protected function getAdditionalLoadWhereEntity(): string
+    {
+        return '';
+    }
+
+    /**
+     * @return string
+     */
+    protected function getAdditionalLoadWhereEntityData(): string
+    {
+        return '';
     }
 
     /**

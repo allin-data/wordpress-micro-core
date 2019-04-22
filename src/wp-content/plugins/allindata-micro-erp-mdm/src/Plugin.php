@@ -8,9 +8,13 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Mdm;
 
-use AllInData\MicroErp\Mdm\Model\UserRole;
 use AllInData\MicroErp\Core\AbstractElementorPlugin;
+use AllInData\MicroErp\Core\Controller\PluginControllerInterface;
+use AllInData\MicroErp\Core\Module\PluginModuleInterface;
 use AllInData\MicroErp\Core\PluginInterface;
+use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
+use AllInData\MicroErp\Core\Widget\ElementorWidgetInterface;
+use AllInData\MicroErp\Mdm\Model\Role\RoleInterface;
 
 /**
  * Class Plugin
@@ -19,12 +23,38 @@ use AllInData\MicroErp\Core\PluginInterface;
 class Plugin extends AbstractElementorPlugin implements PluginInterface
 {
     /**
+     * @var RoleInterface[]
+     */
+    private $roles;
+
+    /**
+     * Plugin constructor.
+     * @param string $templatePath
+     * @param PluginModuleInterface[] $modules
+     * @param PluginControllerInterface[] $controllers
+     * @param PluginShortCodeInterface[] $shortCodes
+     * @param ElementorWidgetInterface[] $widgets
+     * @param RoleInterface[] $roles
+     */
+    public function __construct(
+        string $templatePath,
+        array $modules = [],
+        array $controllers = [],
+        array $shortCodes = [],
+        array $widgets = [],
+        array $roles = []
+    ) {
+        parent::__construct($templatePath, $modules, $controllers, $shortCodes, $widgets);
+        $this->roles = $roles;
+    }
+
+    /**
      * @inheritdoc
      */
     public function load()
     {
         register_activation_hook(AID_MICRO_ERP_MDM_FILE, [$this, 'installPlugin']);
-        register_deactivation_hook(AID_MICRO_ERP_MDM_FILE, [$this, 'deinstallPlugin']);
+        register_deactivation_hook(AID_MICRO_ERP_MDM_FILE, [$this, 'disablePlugin']);
     }
 
     /**
@@ -32,18 +62,18 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
      */
     public function installPlugin()
     {
-        /** @var \WP_Role $parentRole */
-        $parentRole = get_role('subscriber');
-        add_role(UserRole::ROLE_LEVEL_USER_DEFAULT, __('Micro ERP User Default'), $parentRole->capabilities);
+        foreach ($this->roles as $role) {
+            $role->installRole();
+        }
     }
 
     /**
-     * On plugin deinstallation
+     * On plugin deactivation
      */
-    public function deinstallPlugin()
+    public function disablePlugin()
     {
-        remove_role(UserRole::ROLE_LEVEL_USER_DEFAULT);
-        // @deprecated
-        remove_role('dgr_acl_level_user_default');
+        foreach ($this->roles as $role) {
+            $role->removeRole();
+        }
     }
 }

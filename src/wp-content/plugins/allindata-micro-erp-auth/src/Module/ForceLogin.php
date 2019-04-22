@@ -12,7 +12,6 @@ use AllInData\MicroErp\Auth\Controller\Login;
 use AllInData\MicroErp\Auth\Controller\Logout;
 use AllInData\MicroErp\Auth\Helper\LoginPageStateHelper;
 use AllInData\MicroErp\Core\Module\PluginModuleInterface;
-use AllInData\MicroErp\Mdm\Model\UserRole;
 
 /**
  * Class ForceLogin
@@ -65,6 +64,10 @@ class ForceLogin implements PluginModuleInterface
             $action = filter_input(INPUT_POST, 'action');
         }
 
+        if (wp_doing_ajax() || wp_doing_cron()) {
+            return;
+        }
+
         // Login action is currently in progress, do not disturb
         if (Login::ACTION_SLUG === $action &&
             self::REQUEST_URI_LOGIN_ACTION_ENDPOINT === $currentPage) {
@@ -85,7 +88,7 @@ class ForceLogin implements PluginModuleInterface
         }
 
         // only administrators are allowed in the backend
-        if (is_admin() && !current_user_can(UserRole::ROLE_LEVEL_ADMINISTRATION)) {
+        if (is_admin() && !current_user_can('administrator')) {
             wp_redirect(get_home_url());
             exit();
         }

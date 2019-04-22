@@ -42,6 +42,7 @@ define('AID_MICRO_ERP_PLANNING_TEMPLATE_DIR', __DIR__ . '/view/');
 define('AID_MICRO_ERP_PLANNING_TEMP_DIR', ABSPATH . 'tmp/');
 define('AID_MICRO_ERP_PLANNING_PATH', plugin_dir_path(__FILE__));
 define('AID_MICRO_ERP_PLANNING_URL', plugin_dir_url(__FILE__));
+define('AID_MICRO_ERP_PLANNING_FILE', __FILE__);
 
 defined('ABSPATH') or exit;
 
@@ -69,5 +70,18 @@ class AllInDataMicroErpPlanning
         $app = $beanFactory->get('PluginApp');
         $app->doInit();
     }
+
+    /**
+     * Install Plugin
+     */
+    static function installPlugin()
+    {
+        self::init();
+        $beanFactory = \bitExpert\Disco\BeanFactoryRegistry::getInstance();
+        /** @var \AllInData\MicroErp\Planning\Plugin $app */
+        $app = $beanFactory->get('PluginApp');
+        $app->installPlugin();
+    }
 }
+register_activation_hook(AID_MICRO_ERP_PLANNING_FILE, [AllInDataMicroErpPlanning::class, 'installPlugin']);
 add_action('elementor/init', [AllInDataMicroErpPlanning::class, 'init']);

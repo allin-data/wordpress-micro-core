@@ -16,6 +16,7 @@ Copyright (C) 2019 All.In Data GmbH
         <th scope="col"><?php _e('First name', AID_MICRO_ERP_MDM_TEXTDOMAIN) ?></th>
         <th scope="col"><?php _e('Last name', AID_MICRO_ERP_MDM_TEXTDOMAIN) ?></th>
         <th scope="col"><?php _e('Login name', AID_MICRO_ERP_MDM_TEXTDOMAIN) ?></th>
+        <th scope="col"><?php _e('Role', AID_MICRO_ERP_MDM_TEXTDOMAIN) ?></th>
         <th scope="col"><?php _e('Email', AID_MICRO_ERP_MDM_TEXTDOMAIN) ?></th>
         <th scope="col"><?php _e('Actions', AID_MICRO_ERP_MDM_TEXTDOMAIN) ?></th>
     </tr>
@@ -32,6 +33,7 @@ Copyright (C) 2019 All.In Data GmbH
             <td><input type="text" name="firstName" value="<?= $user->getFirstName(); ?>"/></td>
             <td><input type="text" name="lastName" value="<?= $user->getLastName(); ?>"/></td>
             <td><?= $user->getUserLogin(); ?></td>
+            <td><?= $block->getUserRoles($user); ?></td>
             <td><input type="email" name="email" value="<?= $user->getUserEmail(); ?>"/></td>
             <td><input type="submit" value="<?php _e('Update', AID_MICRO_ERP_MDM_TEXTDOMAIN); ?>"/></td>
         </form>

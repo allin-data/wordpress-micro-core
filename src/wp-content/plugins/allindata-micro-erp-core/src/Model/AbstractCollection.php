@@ -49,7 +49,7 @@ abstract class AbstractCollection
      */
     public function load($limit = self::DEFAULT_LIMIT, $offset = self::DEFAULT_OFFSET, array $queryArgs = []): array
     {
-        $args = array_merge($this->getDefaultQueryArguments($limit, $offset), $queryArgs);
+        $args = array_merge($queryArgs, $this->getDefaultQueryArguments($limit, $offset));
         $query = new WP_Query($args);
 
         $collectionIdSet = (array)$query->get_posts();
@@ -73,7 +73,7 @@ abstract class AbstractCollection
      */
     public function getTotalCount(array $queryArgs = []): int
     {
-        $args = array_merge($this->getDefaultTotalsQueryArguments(), $queryArgs);
+        $args = array_merge($queryArgs, $this->getDefaultTotalsQueryArguments());
         $query = new WP_Query($args);
         return $query->post_count;
     }
