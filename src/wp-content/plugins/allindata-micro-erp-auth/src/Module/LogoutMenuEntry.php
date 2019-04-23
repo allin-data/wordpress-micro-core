@@ -8,6 +8,7 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Auth\Module;
 
+use AllInData\MicroErp\Auth\Helper\LoginPageStateHelper;
 use AllInData\MicroErp\Core\Module\PluginModuleInterface;
 use Countable;
 use stdClass;
@@ -20,16 +21,22 @@ use WP_Post;
 class LogoutMenuEntry implements PluginModuleInterface
 {
     /**
+     * @var LoginPageStateHelper
+     */
+    private $loginPageHelper;
+    /**
      * @var array
      */
     private $logoutMenuSet = [];
 
     /**
      * LogoutMenuEntry constructor.
+     * @param LoginPageStateHelper $loginPageHelper
      * @param array $logoutMenuSet
      */
-    public function __construct(array $logoutMenuSet)
+    public function __construct(LoginPageStateHelper $loginPageHelper, array $logoutMenuSet)
     {
+        $this->loginPageHelper = $loginPageHelper;
         $this->logoutMenuSet = $logoutMenuSet;
     }
 
@@ -68,6 +75,8 @@ class LogoutMenuEntry implements PluginModuleInterface
     {
         $post = new WP_Post(new stdClass());
 
+        $logoutUrl = wp_logout_url(get_post_permalink($this->loginPageHelper->getLoginPagePost()));
+
         $post->post_title = __('Logout', AID_MICRO_ERP_AUTH_TEXTDOMAIN);
         $post->title = __('Logout', AID_MICRO_ERP_AUTH_TEXTDOMAIN);
         $post->post_name = __('Logout', AID_MICRO_ERP_AUTH_TEXTDOMAIN);
@@ -78,8 +87,8 @@ class LogoutMenuEntry implements PluginModuleInterface
         $post->object = "custom";
         $post->type = "custom";
         $post->type_label = "Individueller Link";
-        $post->guid = wp_logout_url(get_permalink());
-        $post->url = wp_logout_url(get_permalink());
+        $post->guid = $logoutUrl;
+        $post->url = $logoutUrl;
 
         return $post;
     }

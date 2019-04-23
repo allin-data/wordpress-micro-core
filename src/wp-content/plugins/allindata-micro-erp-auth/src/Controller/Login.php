@@ -10,6 +10,7 @@ namespace AllInData\MicroErp\Auth\Controller;
 
 use AllInData\MicroErp\Core\Controller\AbstractAnonController;
 use AllInData\MicroErp\Core\Controller\PluginControllerInterface;
+use WP_User;
 
 /**
  * Class Login
@@ -24,9 +25,15 @@ class Login extends AbstractAnonController implements PluginControllerInterface
      */
     protected function doExecute()
     {
+        $doRemeber = $this->getParam('rememberme') === 'on' ? true : false;
         $credentials['user_login'] = $this->getParam('username');
         $credentials['user_password'] = $this->getParam('password');
-        $credentials['remember'] = $this->getParam('rememberme') === 'on' ? true : false;
-        wp_signon($credentials, false);
+        $credentials['remember'] = $doRemeber;
+        $user = wp_signon($credentials, is_ssl());
+        if (is_wp_error($user)) {
+            /** @var \WP_Error $user */
+            $this->throwErrorMessage($user->get_error_message());
+        }
+        wp_set_auth_cookie($user->ID, $doRemeber, is_ssl());
     }
 }

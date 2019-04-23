@@ -27,9 +27,6 @@ class DisabledAdminBar implements ThemeModuleInterface
      */
     public function disabledAdminBar()
     {
-        if (current_user_can('administrator')) {
-            return;
-        }
-        show_admin_bar(false);
+        show_admin_bar(current_user_can('administrator'));
     }
 }

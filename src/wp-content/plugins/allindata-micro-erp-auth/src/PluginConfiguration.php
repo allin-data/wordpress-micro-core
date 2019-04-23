@@ -64,9 +64,12 @@ class PluginConfiguration
             new ForceLogin(
                 $this->getLoginPageStateHelper()
             ),
-            new LogoutMenuEntry([
-                'main'
-            ]),
+            new LogoutMenuEntry(
+                $this->getLoginPageStateHelper(),
+                [
+                    'main'
+                ]
+            ),
             new RegisterLoginPagePostState(
                 $this->getLoginPageStateHelper()
             )
