@@ -31,7 +31,7 @@ Copyright (C) 2019 All.In Data GmbH
                     <input type="password" class="form-control" placeholder="password" name="password" id="password"/>
                 </div>
                 <div class="row align-items-center remember">
-                    <input type="checkbox"/>Remember Me
+                    <input type="checkbox"/>&nbsp;Remember Me
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn float-right login_btn" id="login_submit">
@@ -42,7 +42,7 @@ Copyright (C) 2019 All.In Data GmbH
         </div>
         <div class="card-footer">
             <div class="d-flex justify-content-center links">
-                <?php _e('Don\'t have an account?', AID_MICRO_ERP_AUTH_TEXTDOMAIN) ?>
+                <?php _e('Don\'t have an account?', AID_MICRO_ERP_AUTH_TEXTDOMAIN) ?>&nbsp;
                 <a href="#"><?php _e('Sign Up', AID_MICRO_ERP_AUTH_TEXTDOMAIN) ?></a>
             </div>
             <div class="d-flex justify-content-center">
