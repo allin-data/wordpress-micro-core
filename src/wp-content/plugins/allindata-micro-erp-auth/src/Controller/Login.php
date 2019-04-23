@@ -26,7 +26,7 @@ class Login extends AbstractAnonController implements PluginControllerInterface
     {
         $credentials['user_login'] = $this->getParam('username');
         $credentials['user_password'] = $this->getParam('password');
-        $credentials['remember'] = true;
+        $credentials['remember'] = $this->getParam('rememberme') === 'on' ? true : false;
         wp_signon($credentials, false);
     }
 }

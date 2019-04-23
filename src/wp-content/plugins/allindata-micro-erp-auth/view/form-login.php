@@ -31,7 +31,7 @@ Copyright (C) 2019 All.In Data GmbH
                     <input type="password" class="form-control" placeholder="password" name="password" id="password"/>
                 </div>
                 <div class="row align-items-center remember">
-                    <input type="checkbox"/>&nbsp;Remember Me
+                    <input type="checkbox" name="rememberme" id="rememberme"/>&nbsp;Remember Me
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary float-right" id="login_submit">
