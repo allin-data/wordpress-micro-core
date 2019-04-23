@@ -16988,6 +16988,27 @@ html {
     margin-left: auto !important;
   }
 }
+/* line 2, sass/modules/auth/_loginform.scss */
+.login-form .card {
+  background: none;
+}
+/* line 5, sass/modules/auth/_loginform.scss */
+.login-form .card .card-body {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+/* line 9, sass/modules/auth/_loginform.scss */
+.login-form .card .card-header,
+.login-form .card .card-footer {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+/* line 17, sass/modules/auth/_loginform.scss */
+.login-form .remember input {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
 /* line 1, sass/modules/planning/_calendar.scss */
 .planning-calendar {
   width: 100%;

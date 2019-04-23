@@ -5,7 +5,7 @@ Copyright (C) 2019 All.In Data GmbH
 */
 /** @var \AllInData\MicroErp\Auth\Block\Login $block */
 ?>
-<div class="d-flex justify-content-center h-100">
+<div class="login-form d-flex justify-content-center h-100">
     <div class="card">
         <div class="card-header">
             <h3><?php _e('Sign In', AID_MICRO_ERP_AUTH_TEXTDOMAIN) ?></h3>
@@ -34,7 +34,7 @@ Copyright (C) 2019 All.In Data GmbH
                     <input type="checkbox"/>&nbsp;Remember Me
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn float-right login_btn" id="login_submit">
+                    <button type="submit" class="btn btn-primary float-right" id="login_submit">
                         <?php _e('Login', AID_MICRO_ERP_AUTH_TEXTDOMAIN) ?>
                     </button>
                 </div>
