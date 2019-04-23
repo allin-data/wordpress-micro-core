@@ -95,10 +95,17 @@ class Theme
     public function addStylesToThemeEnqueue()
     {
         wp_enqueue_style(
+            'fontawesome-free',
+            get_stylesheet_directory_uri() . '/node_modules/@fortawesome/fontawesome-free/css/all.css',
+            [],
+            '5.8.1'
+        );
+        wp_enqueue_style(
             'monstroid2-child-theme-style',
             get_stylesheet_directory_uri() . '/style.css',
             [
-                'monstroid2-theme-style'
+                'monstroid2-theme-style',
+                'fontawesome-free'
             ]
         );
     }
