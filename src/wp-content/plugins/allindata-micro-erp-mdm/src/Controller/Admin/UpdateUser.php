@@ -19,7 +19,7 @@ use AllInData\MicroErp\Core\Controller\AbstractAdminController;
  */
 class UpdateUser extends AbstractAdminController
 {
-    const ACTION_SLUG = 'micro_erp_admin_update_user';
+    const ACTION_SLUG = 'micro_erp_mdm_admin_user_update';
 
     /**
      * @var UserValidator
@@ -50,7 +50,6 @@ class UpdateUser extends AbstractAdminController
         $firstName = $this->getParam('firstName');
         $lastName = $this->getParam('lastName');
         $email = $this->getParam('email');
-        /** @var string $password */
 
         /** @var User $user */
         $user = $this->userResource->loadById($userId);

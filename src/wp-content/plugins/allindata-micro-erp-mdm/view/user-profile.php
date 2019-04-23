@@ -4,5 +4,58 @@
 Copyright (C) 2019 All.In Data GmbH
 */
 
+/** @var \AllInData\MicroErp\Mdm\Block\UserProfile $block */
+$user = $block->getUser();
 ?>
-<p>User Profile Template</p>
+<h2><?php _e('User Profile', AID_MICRO_ERP_MDM_TEXTDOMAIN); ?></h2>
+<div class="row">
+    <form method="post" action="#">
+        <input type="hidden" name="action" value="<?= $block->getUpdateUserActionSlug(); ?>"/>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label for="firstName"><?php _e('First name', AID_MICRO_ERP_MDM_TEXTDOMAIN) ?>:
+                    <input type="text" name="firstName" value="<?= $user->getFirstName() ?>"/></label>
+            </div>
+            <div class="col-md-6">
+                <label for="lastName"><?php _e('Last name', AID_MICRO_ERP_MDM_TEXTDOMAIN) ?>:
+                    <input type="text" name="lastName" value="<?= $user->getLastName() ?>"/></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-primary" id="submit">
+                    <?php _e('Update profile', AID_MICRO_ERP_MDM_TEXTDOMAIN); ?>
+                </button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    jQuery(document).ready(function ($) {
+        $('#submit').click(function () {
+            let button = $(this),
+                payload = {};
+
+            button.prop("disabled", true);
+
+            payload.action = $('input[name="action"]').val();
+            payload.firstName = $('input[name="firstName"]').val();
+            payload.lastName = $('input[name="lastName"]').val();
+
+            $.ajax({
+                type: 'POST',
+                url: wp_ajax_action.action_url,
+                data: payload,
+                success: function (data) {
+                    button.prop("disabled", false);
+                },
+                error: function () {
+                    button.prop("disabled", false);
+                }
+            });
+        });
+    });
+</script>

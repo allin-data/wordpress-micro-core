@@ -18,6 +18,24 @@ use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
 class UserProfile extends AbstractShortCode implements PluginShortCodeInterface
 {
     /**
+     * @var \AllInData\MicroErp\Mdm\Block\UserProfile
+     */
+    private $block;
+
+    /**
+     * GridUser constructor.
+     * @param string $templatePath
+     * @param \AllInData\MicroErp\Mdm\Block\UserProfile $block
+     */
+    public function __construct(
+        string $templatePath,
+        \AllInData\MicroErp\Mdm\Block\UserProfile $block
+    ) {
+        parent::__construct($templatePath);
+        $this->block = $block;
+    }
+
+    /**
      * @inheritdoc
      */
     public function init()
@@ -30,12 +48,11 @@ class UserProfile extends AbstractShortCode implements PluginShortCodeInterface
      */
     public function addShortCode($attributes, $content, $name)
     {
-        if (!is_user_logged_in()) {
+        if (!is_user_logged_in() || is_admin()) {
             return '';
         }
-        if (is_admin()) {
-            return '';
-        }
-        $this->getTemplate('user-profile');
+        $this->getTemplate('user-profile', [
+            'block' => $this->block
+        ]);
     }
 }

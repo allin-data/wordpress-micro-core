@@ -35,7 +35,7 @@ Copyright (C) 2019 All.In Data GmbH
             <td><?= $user->getUserLogin(); ?></td>
             <td><?= $block->getUserRoles($user); ?></td>
             <td><input type="email" name="email" value="<?= $user->getUserEmail(); ?>"/></td>
-            <td><input type="submit" value="<?php _e('Update', AID_MICRO_ERP_MDM_TEXTDOMAIN); ?>"/></td>
+            <td><input class="btn btn-primary" type="submit" value="<?php _e('Update', AID_MICRO_ERP_MDM_TEXTDOMAIN); ?>"/></td>
         </form>
     </tr>
 <?php endforeach; ?>

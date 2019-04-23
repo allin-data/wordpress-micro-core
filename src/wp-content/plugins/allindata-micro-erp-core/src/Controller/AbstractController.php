@@ -201,6 +201,10 @@ abstract class AbstractController implements PluginControllerInterface
             return true;
         }
 
+        if (empty($this->getRequiredCapabilitySet())) {
+            return true;
+        }
+
         foreach ($this->getRequiredCapabilitySet() as $requiredCapability) {
             if (current_user_can($requiredCapability)) {
                 return true;

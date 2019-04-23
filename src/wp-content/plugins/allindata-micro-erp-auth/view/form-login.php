@@ -27,7 +27,7 @@ Copyright (C) 2019 All.In Data GmbH
             <input type="hidden" name="<?= $block->getFormRedirectKey(); ?>" value="<?= $block->getFormRedirectUrl(); ?>"/>
             <input type="text" name="username" id="username" />
             <input type="password" name="password" id="password" />
-            <input type="submit" id="login_submit" />
+            <input class="btn btn-primary" type="submit" id="login_submit" />
         </form>
     </div>
     <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">

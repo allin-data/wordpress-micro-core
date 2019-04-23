@@ -8,7 +8,6 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Mdm\Block\Admin;
 
-use AllInData\MicroErp\Mdm\Controller\Admin\CreateUser;
 use AllInData\MicroErp\Mdm\Controller\Admin\UpdateUser;
 use AllInData\MicroErp\Mdm\Model\Collection\User as UserCollection;
 use AllInData\MicroErp\Mdm\Model\User;

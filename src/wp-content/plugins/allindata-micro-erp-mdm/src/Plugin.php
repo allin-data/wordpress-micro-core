@@ -14,6 +14,7 @@ use AllInData\MicroErp\Core\Module\PluginModuleInterface;
 use AllInData\MicroErp\Core\PluginInterface;
 use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
 use AllInData\MicroErp\Core\Widget\ElementorWidgetInterface;
+use AllInData\MicroErp\Mdm\Model\Capability\CapabilityInterface;
 use AllInData\MicroErp\Mdm\Model\Role\RoleInterface;
 
 /**
@@ -26,6 +27,10 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
      * @var RoleInterface[]
      */
     private $roles;
+    /**
+     * @var CapabilityInterface[]
+     */
+    private $capabilities;
 
     /**
      * Plugin constructor.
@@ -35,6 +40,7 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
      * @param PluginShortCodeInterface[] $shortCodes
      * @param ElementorWidgetInterface[] $widgets
      * @param RoleInterface[] $roles
+     * @param CapabilityInterface[] $capabilities
      */
     public function __construct(
         string $templatePath,
@@ -42,10 +48,12 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
         array $controllers = [],
         array $shortCodes = [],
         array $widgets = [],
-        array $roles = []
+        array $roles = [],
+        array $capabilities = []
     ) {
         parent::__construct($templatePath, $modules, $controllers, $shortCodes, $widgets);
         $this->roles = $roles;
+        $this->capabilities = $capabilities;
     }
 
     /**
@@ -65,6 +73,9 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
         foreach ($this->roles as $role) {
             $role->installRole();
         }
+        foreach ($this->capabilities as $capability) {
+            $capability->install();
+        }
     }
 
     /**
@@ -72,6 +83,9 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
      */
     public function disablePlugin()
     {
+        foreach ($this->capabilities as $capability) {
+            $capability->remove();
+        }
         foreach ($this->roles as $role) {
             $role->removeRole();
         }

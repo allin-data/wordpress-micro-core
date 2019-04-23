@@ -48,10 +48,7 @@ class GridUser extends AbstractShortCode implements PluginShortCodeInterface
      */
     public function addShortCode($attributes, $content, $name)
     {
-        if (!is_user_logged_in() || !current_user_can('administrator')) {
-            return '';
-        }
-        if (is_admin()) {
+        if (!is_user_logged_in() || !current_user_can('administrator') || is_admin()) {
             return '';
         }
         $this->getTemplate('admin/grid-user', [

@@ -6,23 +6,20 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Mdm\Controller\Admin;
+namespace AllInData\MicroErp\Mdm\Controller;
 
-use AllInData\MicroErp\Mdm\Model\Role\OwnerRole;
 use AllInData\MicroErp\Mdm\Model\User;
 use AllInData\MicroErp\Mdm\Model\Validator\User as UserValidator;
 use AllInData\MicroErp\Mdm\Model\Resource\User as UserResource;
-use AllInData\MicroErp\Core\Controller\AbstractAdminController;
-use function wp_create_user;
+use AllInData\MicroErp\Core\Controller\AbstractController;
 
 /**
- * Class CreateUser
+ * Class UpdateUser
  * @package AllInData\MicroErp\Mdm\Controller
  */
-class CreateUser extends AbstractAdminController
+class UpdateUser extends AbstractController
 {
-    const ACTION_SLUG = 'micro_erp_mdm_admin_user_create';
-    const USER_PASSWORD_LENGTH = 32;
+    const ACTION_SLUG = 'micro_erp_mdm_user_update';
 
     /**
      * @var UserValidator
@@ -34,7 +31,7 @@ class CreateUser extends AbstractAdminController
     private $userResource;
 
     /**
-     * CreateUser constructor.
+     * UpdateUser constructor.
      * @param UserValidator $userValidator
      * @param UserResource $userResource
      */
@@ -49,25 +46,16 @@ class CreateUser extends AbstractAdminController
      */
     protected function doExecute()
     {
+        $userId = get_current_user_id();
         $firstName = $this->getParam('firstName');
         $lastName = $this->getParam('lastName');
-        $login = $this->getParam('login');
-        $email = $this->getParam('email');
-        /** @var string $password */
-        $password = wp_generate_password(self::USER_PASSWORD_LENGTH, true, true);
-        $userId = wp_create_user($login, $password, $email);
-        $nativeUser = new \WP_User($userId);
-        $nativeUser->set_role(OwnerRole::ROLE_LEVEL);
-
-        if (!is_int($userId)) {
-            if ($userId instanceof \WP_Error) {
-                $this->throwErrorMessage($userId->get_error_message());
-            }
-            $this->throwErrorMessage(__('Failed to create user', AID_MICRO_ERP_MDM_TEXTDOMAIN));
-        }
 
         /** @var User $user */
         $user = $this->userResource->loadById($userId);
+        if (!$user->getId()) {
+            $this->throwErrorMessage(sprintf(__('User with id "%s" does not exist', AID_MICRO_ERP_MDM_TEXTDOMAIN), $userId));
+        }
+
         $user->setFirstName($firstName)
             ->setLastName($lastName)
             ->setDisplayName(sprintf('%s %s', $firstName, $lastName));
@@ -76,9 +64,5 @@ class CreateUser extends AbstractAdminController
         }
 
         $this->userResource->save($user);
-
-        if (!empty($user->getId())) {
-            wp_new_user_notification($user->getId(), null, 'user');
-        }
     }
 }

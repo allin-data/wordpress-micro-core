@@ -10,6 +10,7 @@ namespace AllInData\MicroErp\Mdm;
 
 use AllInData\MicroErp\Mdm\Controller\Admin\CreateUser;
 use AllInData\MicroErp\Mdm\Controller\Admin\UpdateUser;
+use AllInData\MicroErp\Mdm\Model\Capability\CapabilityInterface;
 use AllInData\MicroErp\Mdm\Model\Collection\User as UserCollection;
 use AllInData\MicroErp\Mdm\Model\Factory\ElementorMdmAdminCategory;
 use AllInData\MicroErp\Mdm\Model\Factory\ElementorMdmCategory;
@@ -25,12 +26,9 @@ use AllInData\MicroErp\Mdm\Module\ElementorAdminCategory;
 use AllInData\MicroErp\Mdm\Module\ElementorCategory;
 use AllInData\MicroErp\Mdm\ShortCode\Admin\FormCreateUser;
 use AllInData\MicroErp\Mdm\ShortCode\Admin\GridUser;
-use AllInData\MicroErp\Mdm\ShortCode\UserOrganization;
 use AllInData\MicroErp\Mdm\ShortCode\UserProfile;
 use AllInData\MicroErp\Mdm\Widget\Elementor\Admin\FormCreateNewUser;
-use AllInData\MicroErp\Mdm\Widget\Elementor\FooBar;
 use AllInData\MicroErp\Mdm\Widget\Elementor\Admin\ListOfUserAccounts;
-use AllInData\MicroErp\Mdm\Widget\Elementor\UserOrganizationForm;
 use AllInData\MicroErp\Core\Controller\PluginControllerInterface;
 use AllInData\MicroErp\Core\Database\WordpressDatabase;
 use AllInData\MicroErp\Core\Module\PluginModuleInterface;
@@ -61,7 +59,8 @@ class PluginConfiguration
             $this->getPluginControllers(),
             $this->getPluginShortCodes(),
             $this->getPluginWidgets(),
-            $this->getRoles()
+            $this->getPluginRoles(),
+            $this->getPluginCapabilities()
         );
     }
 
@@ -73,7 +72,6 @@ class PluginConfiguration
     {
         return [
             new UserProfileForm(),
-            new UserOrganizationForm(),
             new ListOfUserAccounts(),
             new FormCreateNewUser()
         ];
@@ -113,6 +111,10 @@ class PluginConfiguration
             new UpdateUser(
                 $this->getUserValidator(),
                 $this->getUserResource()
+            ),
+            new \AllInData\MicroErp\Mdm\Controller\UpdateUser(
+                $this->getUserValidator(),
+                $this->getUserResource()
             )
         ];
     }
@@ -123,8 +125,10 @@ class PluginConfiguration
     private function getPluginShortCodes(): array
     {
         return [
-            new UserProfile(AID_MICRO_ERP_MDM_TEMPLATE_DIR),
-            new UserOrganization(AID_MICRO_ERP_MDM_TEMPLATE_DIR),
+            new UserProfile(
+                AID_MICRO_ERP_MDM_TEMPLATE_DIR,
+                new Block\UserProfile($this->getUserResource())
+            ),
             new GridUser(
                 AID_MICRO_ERP_MDM_TEMPLATE_DIR,
                 new Block\Admin\GridUser($this->getUserCollection())
@@ -139,12 +143,24 @@ class PluginConfiguration
     /**
      * @return RoleInterface[]
      */
-    private function getRoles(): array
+    private function getPluginRoles(): array
     {
         return [
             new UserRole(),
             new ManagerRole(),
             new OwnerRole()
+        ];
+    }
+
+    /**
+     * @return CapabilityInterface[]
+     */
+    private function getPluginCapabilities(): array
+    {
+        return [
+            new \AllInData\MicroErp\Mdm\Model\Capability\UpdateOrganization([
+                OwnerRole::ROLE_LEVEL
+            ])
         ];
     }
 

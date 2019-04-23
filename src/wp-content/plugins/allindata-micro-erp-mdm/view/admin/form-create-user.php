@@ -31,7 +31,7 @@ Copyright (C) 2019 All.In Data GmbH
         </div>
         <div class="row">
             <div class="col-md-12">
-                <input type="submit" value="<?php _e('Create user', AID_MICRO_ERP_MDM_TEXTDOMAIN); ?>"/>
+                <input class="btn btn-primary" type="submit" value="<?php _e('Create user', AID_MICRO_ERP_MDM_TEXTDOMAIN); ?>"/>
             </div>
         </div>
 
