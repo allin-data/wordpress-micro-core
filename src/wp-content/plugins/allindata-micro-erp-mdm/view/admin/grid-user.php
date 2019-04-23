@@ -30,11 +30,11 @@ Copyright (C) 2019 All.In Data GmbH
             <input type="hidden" name="<?= $block->getFormRedirectKey(); ?>" value="<?= $block->getFormRedirectUrl(); ?>"/>
             <input type="hidden" name="userId" value="<?= $user->getId(); ?>"/>
             <th scope="row"><?= $user->getId(); ?></th>
-            <td><input type="text" name="firstName" value="<?= $user->getFirstName(); ?>"/></td>
-            <td><input type="text" name="lastName" value="<?= $user->getLastName(); ?>"/></td>
+            <td><input type="text" class="form-control" name="firstName" value="<?= $user->getFirstName(); ?>"/></td>
+            <td><input type="text" class="form-control" name="lastName" value="<?= $user->getLastName(); ?>"/></td>
             <td><?= $user->getUserLogin(); ?></td>
             <td><?= $block->getUserRoles($user); ?></td>
-            <td><input type="email" name="email" value="<?= $user->getUserEmail(); ?>"/></td>
+            <td><input type="email" class="form-control" name="email" value="<?= $user->getUserEmail(); ?>"/></td>
             <td><input class="btn btn-primary" type="submit" value="<?php _e('Update', AID_MICRO_ERP_MDM_TEXTDOMAIN); ?>"/></td>
         </form>
     </tr>

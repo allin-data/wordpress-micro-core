@@ -12,24 +12,17 @@ $user = $block->getUser();
     <form method="post" action="#">
         <input type="hidden" name="action" value="<?= $block->getUpdateUserActionSlug(); ?>"/>
 
-        <div class="row">
-            <div class="col-md-6">
-                <label for="firstName"><?php _e('First name', AID_MICRO_ERP_MDM_TEXTDOMAIN) ?>:
-                    <input type="text" name="firstName" value="<?= $user->getFirstName() ?>"/></label>
-            </div>
-            <div class="col-md-6">
-                <label for="lastName"><?php _e('Last name', AID_MICRO_ERP_MDM_TEXTDOMAIN) ?>:
-                    <input type="text" name="lastName" value="<?= $user->getLastName() ?>"/></label>
-            </div>
+        <div class="form-group">
+            <label for="firstName"><?php _e('First name', AID_MICRO_ERP_MDM_TEXTDOMAIN) ?>:</label>
+            <input type="text" name="firstName" class="form-control" value="<?= $user->getFirstName() ?>"/>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <button class="btn btn-primary" id="submit">
-                    <?php _e('Update profile', AID_MICRO_ERP_MDM_TEXTDOMAIN); ?>
-                </button>
-            </div>
+        <div class="form-group">
+            <label for="lastName"><?php _e('Last name', AID_MICRO_ERP_MDM_TEXTDOMAIN) ?>:</label>
+            <input type="text" name="lastName" class="form-control" value="<?= $user->getLastName() ?>"/>
         </div>
-
+        <button class="btn btn-primary" id="submit">
+            <?php _e('Update profile', AID_MICRO_ERP_MDM_TEXTDOMAIN); ?>
+        </button>
     </form>
 </div>
 
