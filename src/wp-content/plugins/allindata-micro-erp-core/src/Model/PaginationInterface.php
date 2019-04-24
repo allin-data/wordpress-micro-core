@@ -20,9 +20,10 @@ interface PaginationInterface
     public function getCollection(): AbstractCollection;
 
     /**
+     * @param array $queryArgs
      * @return AbstractModel[]
      */
-    public function load(): array;
+    public function load(array $queryArgs = []): array;
 
     /**
      * @return int

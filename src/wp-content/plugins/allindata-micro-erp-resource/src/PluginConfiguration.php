@@ -76,11 +76,16 @@ class PluginConfiguration
      */
     private function getPluginWidgets(): array
     {
+        $formCreateNewResource = (new FormCreateNewResource())
+            ->setResourceTypeCollection($this->getResourceTypeCollection());
+        $listOfResources = (new ListOfResources())
+            ->setResourceTypeCollection($this->getResourceTypeCollection());
+
         return [
             new FormCreateNewResourceType(),
             new ListOfResourceTypes(),
-            new FormCreateNewResource(),
-            new ListOfResources()
+            $formCreateNewResource,
+            $listOfResources
         ];
     }
 
@@ -114,8 +119,7 @@ class PluginConfiguration
                 $this->getResourceTypeResource()
             ),
             new \AllInData\MicroErp\Resource\Controller\UpdateResource(
-                $this->getResourceResource(),
-                $this->getResourceTypeResource()
+                $this->getResourceResource()
             ),
             new \AllInData\MicroErp\Resource\Controller\DeleteResource(
                 $this->getResourceResource()
@@ -143,13 +147,13 @@ class PluginConfiguration
                 AID_MICRO_ERP_RESOURCE_TEMPLATE_DIR,
                 new \AllInData\MicroErp\Resource\Block\GridResource(
                     $this->getResourcePagination(),
-                    $this->getResourceTypeCollection()
+                    $this->getResourceTypeResource()
                 )
             ),
             new FormCreateResource(
                 AID_MICRO_ERP_RESOURCE_TEMPLATE_DIR,
                 new \AllInData\MicroErp\Resource\Block\FormCreateResource(
-                    $this->getResourceTypeCollection()
+                    $this->getResourceTypeResource()
                 )
             )
         ];

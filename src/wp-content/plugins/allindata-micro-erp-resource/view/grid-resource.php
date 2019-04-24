@@ -27,13 +27,7 @@ Copyright (C) 2019 All.In Data GmbH
         <th scope="row"><?= $resource->getId(); ?></th>
         <td><input type="text" class="form-control" name="name" value="<?= $resource->getName(); ?>"/></td>
         <td>
-            <select class="custom-select" name="typeId">
-                <?php foreach ($block->getResourceTypeSet() as $resourceType): ?>
-                    <option value="<?= $resourceType->getId(); ?>"<?php if($resource->getTypeId() == $resourceType->getId()):?>selected<?php endif; ?>>
-                        <?= $resourceType->getLabel(); ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
+            <?= $block->getResourceType()->getLabel() ?>
         </td>
         <td>
             <button id="update"
@@ -70,7 +64,6 @@ Copyright (C) 2019 All.In Data GmbH
 
             payload.action = button.data('action');
             payload.resourceId = button.data('id');
-            payload.typeId = $('select[name="typeId"]').val();
             payload.name = $('input[name="name"]').val();
 
             $.ajax({

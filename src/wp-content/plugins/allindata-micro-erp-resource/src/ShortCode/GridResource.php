@@ -56,7 +56,8 @@ class GridResource extends AbstractShortCode implements PluginShortCodeInterface
 
         $attributes = $this->prepareAttributes($attributes, [
             'title' => __('Resource Creation', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN),
-            'label' => __('Resource', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN)
+            'label' => __('Resource', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN),
+            'resource_type_id' => null
         ], $name);
         $this->block->setAttributes($attributes);
 

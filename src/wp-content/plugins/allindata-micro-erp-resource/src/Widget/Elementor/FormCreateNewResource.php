@@ -8,8 +8,10 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Resource\Widget\Elementor;
 
+use AllInData\MicroErp\Core\Model\GenericCollection;
 use AllInData\MicroErp\Resource\Model\ElementorResourceCategory as ElementorCategory;
 use AllInData\MicroErp\Core\Widget\AbstractElementorWidget;
+use AllInData\MicroErp\Resource\Model\ResourceType;
 
 /**
  * Class FormCreateNewResource
@@ -17,6 +19,21 @@ use AllInData\MicroErp\Core\Widget\AbstractElementorWidget;
  */
 class FormCreateNewResource extends AbstractElementorWidget
 {
+    /**
+     * @var GenericCollection
+     */
+    private static $resourceTypeCollection;
+
+    /**
+     * @param GenericCollection $resourceTypeCollection
+     * @return FormCreateNewResource
+     */
+    public function setResourceTypeCollection(GenericCollection $resourceTypeCollection): FormCreateNewResource
+    {
+        static::$resourceTypeCollection = $resourceTypeCollection;
+        return $this;
+    }
+
     /**
      * @inheritDoc
      */
@@ -73,12 +90,20 @@ class FormCreateNewResource extends AbstractElementorWidget
                 'placeholder' => __('Enter the title', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN),
             ]
         );
+
+        $typeSet = static::$resourceTypeCollection->load(GenericCollection::NO_LIMIT);
+        sort($typeSet);
+        $resourceTypeOptionSet = [];
+        foreach ($typeSet as $type) {
+            /** @var ResourceType $type */
+            $resourceTypeOptionSet[$type->getId()] = $type->getLabel();
+        }
         $this->add_control(
-            'label',
+            'resource_type_id',
             [
-                'label' => __('Resource Label', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'placeholder' => __('Enter the label for resources', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN),
+                'label' => __('Resource Type', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => $resourceTypeOptionSet
             ]
         );
 

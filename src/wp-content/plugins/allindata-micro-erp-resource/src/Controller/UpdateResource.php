@@ -24,20 +24,14 @@ class UpdateResource extends AbstractController
      * @var GenericResource
      */
     private $resourceResource;
-    /**
-     * @var GenericResource
-     */
-    private $resourceTypeResource;
 
     /**
      * UpdateResource constructor.
      * @param GenericResource $resourceResource
-     * @param GenericResource $resourceTypeResource
      */
-    public function __construct(GenericResource $resourceResource, GenericResource $resourceTypeResource)
+    public function __construct(GenericResource $resourceResource)
     {
         $this->resourceResource = $resourceResource;
-        $this->resourceTypeResource = $resourceTypeResource;
     }
 
     /**
@@ -46,16 +40,7 @@ class UpdateResource extends AbstractController
     protected function doExecute()
     {
         $resourceId = (int)$this->getParam('resourceId');
-        $typeId = (int)$this->getParam('typeId');
         $name = $this->getParam('name');
-
-        $resourceType = $this->resourceTypeResource->loadById($typeId);
-        if (!$resourceType->getId()) {
-            $this->throwErrorMessage(
-                sprintf(__('Resource type with id "%s" does not exist', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN), $typeId)
-            );
-        }
-
         /** @var Resource $resource */
         $resource = $this->resourceResource->loadById($resourceId);
         if (!$resource->getId()) {
@@ -64,7 +49,6 @@ class UpdateResource extends AbstractController
             );
         }
         $resource
-            ->setTypeId($typeId)
             ->setName($name);
         $this->resourceResource->save($resource);
         return true;

@@ -101,14 +101,13 @@ abstract class AbstractPagination implements PaginationInterface
     }
 
     /**
+     * @param array $queryArgs
      * @return AbstractModel[]
      */
-    public function load(): array
+    public function load(array $queryArgs = []): array
     {
         $limit = $this->getCurrentShowPerPage();
         $offset = $this->getCurrentShowPerPage() * $this->getCurrentPage();
-
-        $queryArgs = [];
 
         $searchValueSet = [];
         // filters
@@ -133,7 +132,6 @@ abstract class AbstractPagination implements PaginationInterface
         $queryArgs['order'] = $orderSet;
         $queryArgs['orderby'] = $orderBySet;
         $queryArgs['meta_key'] = $metaKeySet;
-
         return $this->collection->load(
             $limit,
             $offset,

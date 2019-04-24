@@ -9,7 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Resource\Block;
 
 use AllInData\MicroErp\Core\Block\AbstractPaginationBlock;
-use AllInData\MicroErp\Core\Model\GenericCollection;
+use AllInData\MicroErp\Core\Model\GenericResource;
 use AllInData\MicroErp\Core\Model\PaginationInterface;
 use AllInData\MicroErp\Resource\Controller\DeleteResource;
 use AllInData\MicroErp\Resource\Controller\UpdateResource;
@@ -23,21 +23,25 @@ use AllInData\MicroErp\Resource\Model\ResourceType;
 class GridResource extends AbstractPaginationBlock
 {
     /**
-     * @var GenericCollection
+     * @var GenericResource
      */
-    private $resourceTypeCollection;
+    private $resourceTypeResource;
+    /**
+     * @var ResourceType
+     */
+    private $resourceType;
 
     /**
      * AbstractPaginationBlock constructor.
      * @param PaginationInterface $pagination
-     * @param GenericCollection $resourceTypeCollection
+     * @param GenericResource $resourceTypeResource
      */
     public function __construct(
         PaginationInterface $pagination,
-        GenericCollection $resourceTypeCollection
+        GenericResource $resourceTypeResource
     ) {
         parent::__construct($pagination);
-        $this->resourceTypeCollection = $resourceTypeCollection;
+        $this->resourceTypeResource = $resourceTypeResource;
     }
 
     /**
@@ -45,7 +49,16 @@ class GridResource extends AbstractPaginationBlock
      */
     public function getResources(): array
     {
-        return $this->getPagination()->load();
+        $metaQuery = [
+            [
+                'key' => 'type_id',
+                'value' => $this->getResourceTypeId(),
+                'compare' => '=',
+            ],
+        ];
+        return $this->getPagination()->load([
+            'meta_query' => $metaQuery
+        ]);
     }
 
     /**
@@ -61,28 +74,27 @@ class GridResource extends AbstractPaginationBlock
      */
     public function getResourceLabel()
     {
-        return $this->getAttribute('label');
+        return $this->getResourceType()->getLabel();
     }
 
     /**
-     * @return ResourceType[]
+     * @return int
      */
-    public function getResourceTypeSet()
+    public function getResourceTypeId()
     {
-        $typeSet = $this->resourceTypeCollection->load(GenericCollection::NO_LIMIT);
-        sort($typeSet);
-        return $typeSet;
+        return (int)$this->getAttribute('resource_type_id');
     }
 
     /**
-     * @param int $typeId
-     * @return string|null
+     * @return ResourceType|null
      */
-    public function getResourceTypeLabel(int $typeId)
+    public function getResourceType()
     {
-        /** @var ResourceType $resourceType */
-        $resourceType = $this->resourceTypeCollection->getResource()->loadById($typeId);
-        return $resourceType->getLabel();
+        if ($this->resourceType) {
+            return $this->resourceType;
+        }
+        $this->resourceType = $this->resourceTypeResource->loadById($this->getResourceTypeId());
+        return $this->resourceType;
     }
 
     /**

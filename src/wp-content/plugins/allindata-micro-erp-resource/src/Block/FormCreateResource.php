@@ -9,7 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Resource\Block;
 
 use AllInData\MicroErp\Core\Block\AbstractBlock;
-use AllInData\MicroErp\Core\Model\GenericCollection;
+use AllInData\MicroErp\Core\Model\GenericResource;
 use AllInData\MicroErp\Resource\Controller\CreateResource;
 use AllInData\MicroErp\Resource\Model\ResourceType;
 
@@ -20,17 +20,17 @@ use AllInData\MicroErp\Resource\Model\ResourceType;
 class FormCreateResource extends AbstractBlock
 {
     /**
-     * @var GenericCollection
+     * @var GenericResource
      */
-    private $resourceTypeCollection;
+    private $resourceTypeResource;
 
     /**
      * FormCreateResource constructor.
-     * @param GenericCollection $resourceTypeCollection
+     * @param GenericResource $resourceTypeResource
      */
-    public function __construct(GenericCollection $resourceTypeCollection)
+    public function __construct(GenericResource $resourceTypeResource)
     {
-        $this->resourceTypeCollection = $resourceTypeCollection;
+        $this->resourceTypeResource = $resourceTypeResource;
     }
 
     /**
@@ -46,17 +46,25 @@ class FormCreateResource extends AbstractBlock
      */
     public function getResourceLabel()
     {
-        return $this->getAttribute('label');
+        return $this->getResourceType()->getLabel();
     }
 
     /**
-     * @return ResourceType[]
+     * @return int
      */
-    public function getResourceTypeSet()
+    public function getResourceTypeId()
     {
-        $typeSet = $this->resourceTypeCollection->load(GenericCollection::NO_LIMIT);
-        sort($typeSet);
-        return $typeSet;
+        return (int)$this->getAttribute('resource_type_id');
+    }
+
+    /**
+     * @return ResourceType|null
+     */
+    public function getResourceType()
+    {
+        /** @var ResourceType $resourceType */
+        $resourceType = $this->resourceTypeResource->loadById($this->getResourceTypeId());
+        return $resourceType;
     }
 
     /**

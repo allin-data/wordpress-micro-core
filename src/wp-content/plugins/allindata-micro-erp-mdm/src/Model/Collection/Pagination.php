@@ -18,14 +18,13 @@ use AllInData\MicroErp\Core\Model\GenericPagination;
 class Pagination extends GenericPagination
 {
     /**
+     * @param array $queryArgs
      * @return AbstractModel[]
      */
-    public function load(): array
+    public function load(array $queryArgs = []): array
     {
         $limit = $this->getCurrentShowPerPage();
         $offset = $this->getCurrentShowPerPage() * $this->getCurrentPage();
-
-        $queryArgs = [];
 
         $searchValueSet = [];
         // filters
