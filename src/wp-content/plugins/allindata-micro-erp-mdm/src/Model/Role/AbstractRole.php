@@ -123,13 +123,13 @@ abstract class AbstractRole implements RoleInterface
             return $items;
         }
 
-        $menuCount = 0;
+        $menuCount = 999;
         if (is_array($items) || ($items instanceof Countable)) {
-            $menuCount = count($items);
+            $menuCount += count($items);
         }
         foreach ($roleMenuItems as $roleMenuItem) {
             /** @var WP_Post menu_order */
-            $roleMenuItem->menu_order = $roleMenuItem->menu_order + $menuCount + 9999;
+            $roleMenuItem->menu_order = ++$menuCount;
         }
         $items = array_merge($items, $roleMenuItems);
         return $items;
@@ -162,6 +162,6 @@ abstract class AbstractRole implements RoleInterface
     protected function init()
     {
         add_action('init', [$this, 'addRoleNavigationMenu'], 10);
-        add_filter('wp_get_nav_menu_items', [$this, 'extendNavigation'], 10, 3);
+        add_filter('wp_get_nav_menu_items', [$this, 'extendNavigation'], 800, 3);
     }
 }

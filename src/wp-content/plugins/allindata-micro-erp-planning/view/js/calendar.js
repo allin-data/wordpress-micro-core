@@ -182,6 +182,7 @@
                     return me._e('All Day');
                 },
                 time: function (schedule) {
+        console.log(schedule);
                     return schedule.title + ' <i class="fa fa-refresh"></i>' + schedule.start;
                 },
                 monthMoreTitleDate: function (date) {

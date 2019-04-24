@@ -13,6 +13,7 @@ use AllInData\MicroErp\Core\Module\PluginModuleInterface;
 use Countable;
 use stdClass;
 use WP_Post;
+use WP_Query;
 
 /**
  * Class LogoutMenuEntry
@@ -53,7 +54,11 @@ class LogoutMenuEntry implements PluginModuleInterface
      */
     public function addLogoutMenuEntry($items, $menu, $args)
     {
-        if (!is_user_logged_in() || !$this->isApplicableMenu($menu->term_id)) {
+        $items = $this->clearItems($items);
+        if (is_admin() ||
+            !is_user_logged_in() ||
+            !$this->isApplicableMenu($menu->term_id) ||
+            $this->hasLogoutMenutEntry($items)) {
             return $items;
         }
 
@@ -67,28 +72,75 @@ class LogoutMenuEntry implements PluginModuleInterface
     }
 
     /**
+     * @param array $items
+     * @return array
+     */
+    private function clearItems(array $items): array
+    {
+        foreach ($items as $idx => $item) {
+            /** @var WP_Post $item */
+            if ($item->post_name === 'logout' &&
+                empty($item->url)) {
+                unset($items[$idx]);
+            }
+        }
+        return $items;
+    }
+
+    /**
+     * @param array $items
+     * @return bool
+     */
+    private function hasLogoutMenutEntry(array $items): bool
+    {
+        foreach ($items as $item) {
+            /** @var WP_Post $item */
+            if ($item->post_name === 'logout') {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * @param $menuId
      * @param $position
      * @return WP_Post
      */
     private function getLogoutMenuEntry($menuId, $position): WP_Post
     {
-        $post = new WP_Post(new stdClass());
-
         $logoutUrl = wp_logout_url(get_post_permalink($this->loginPageHelper->getLoginPagePost()));
 
-        $post->post_title = __('Logout', AID_MICRO_ERP_AUTH_TEXTDOMAIN);
+        $query = new WP_Query([
+            'post_status' => 'publish',
+            'post_type' => 'nav_menu_item',
+            'name' => 'logout'
+        ]);
+        $result = $query->get_posts();
+
+        if (1 !== $query->post_count) {
+
+            $post = new WP_Post(new stdClass());
+            $post->post_title = __('Logout', AID_MICRO_ERP_AUTH_TEXTDOMAIN);
+            $post->post_name = 'logout';
+            $post->post_status = "publish";
+            $post->post_type = "nav_menu_item";
+            $post->post_parent = 0;
+            $post->menu_order = $position;
+            $post->guid = home_url('logout');
+
+            $postId = wp_insert_post((array)$post);
+            $post = get_post($postId);
+        } else {
+            $post = array_shift($result);
+        }
         $post->title = __('Logout', AID_MICRO_ERP_AUTH_TEXTDOMAIN);
-        $post->post_name = __('Logout', AID_MICRO_ERP_AUTH_TEXTDOMAIN);
-        $post->post_status = "publish";
-        $post->post_type = "nav_menu_item";
-        $post->menu_item_parent = $menuId;
+        $post->menu_item_parent = 0;
         $post->menu_order = $position;
-        $post->object = "custom";
-        $post->type = "custom";
-        $post->type_label = "Individueller Link";
-        $post->guid = $logoutUrl;
+        $post->guid = home_url('logout');
         $post->url = $logoutUrl;
+
+        wp_update_post((array)$post);
 
         return $post;
     }

@@ -42,7 +42,7 @@ class ExtendNavigationByAdminMenu implements ThemeModuleInterface
      */
     public function init()
     {
-        add_filter('wp_get_nav_menu_items', [$this, 'extendNavigation'], 10, 3);
+        add_filter('wp_get_nav_menu_items', [$this, 'extendNavigation'], 900, 3);
     }
 
     /**
@@ -67,13 +67,13 @@ class ExtendNavigationByAdminMenu implements ThemeModuleInterface
             return $items;
         }
 
-        $menuCount = 0;
+        $menuCount = 9999;
         if (is_array($items) || ($items instanceof Countable)) {
-            $menuCount = count($items);
+            $menuCount += count($items);
         }
         foreach ($adminMenuItems as $adminMenuItem) {
             /** @var WP_Post menu_order */
-            $adminMenuItem->menu_order = $adminMenuItem->menu_order + $menuCount;
+            $adminMenuItem->menu_order = ++$menuCount;
         }
         $items = array_merge($items, $adminMenuItems);
         return $items;
