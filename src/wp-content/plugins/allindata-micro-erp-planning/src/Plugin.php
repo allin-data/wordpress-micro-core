@@ -135,6 +135,15 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             true
         );
         wp_enqueue_script(
+            'moment-js',
+            AID_MICRO_ERP_PLANNING_URL . 'node_modules/moment/min/moment.min.js',
+            [
+                'jquery'
+            ],
+            '2.24.0',
+            true
+        );
+        wp_enqueue_script(
             'jquery-modal',
             AID_MICRO_ERP_PLANNING_URL . 'node_modules/jquery-modal/jquery.modal.js',
             [
@@ -147,7 +156,8 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             'tui-code-snippet',
             AID_MICRO_ERP_PLANNING_URL . 'node_modules/tui-code-snippet/dist/tui-code-snippet.js',
             [
-                'jquery'
+                'jquery',
+                'moment-js'
             ],
             '1.5',
             true
@@ -157,6 +167,7 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             AID_MICRO_ERP_PLANNING_URL . 'node_modules/tui-time-picker/dist/tui-time-picker.js',
             [
                 'jquery',
+                'moment-js',
                 'tui-code-snippet'
             ],
             '1.5',
@@ -167,6 +178,7 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             AID_MICRO_ERP_PLANNING_URL . 'node_modules/tui-date-picker/dist/tui-date-picker.js',
             [
                 'jquery',
+                'moment-js',
                 'tui-code-snippet',
                 'tui-time-picker'
             ],
@@ -178,6 +190,7 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             AID_MICRO_ERP_PLANNING_URL . 'node_modules/tui-calendar/dist/tui-calendar.js',
             [
                 'jquery',
+                'moment-js',
                 'tui-code-snippet',
                 'tui-date-picker',
                 'tui-time-picker'
@@ -192,6 +205,7 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             AID_MICRO_ERP_PLANNING_URL . 'view/js/calendar.js',
             [
                 'jquery',
+                'moment-js',
                 'tui-calendar'
             ],
             '1.0.1',

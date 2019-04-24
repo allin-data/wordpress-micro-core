@@ -27,6 +27,11 @@
                 'Friday': 'Friday',
                 'Saturday': 'Saturday'
             },
+            formats: {
+                datetime: 'DD.MM.YYYY HH:mm:ss',
+                date: 'DD.MM.YYYY',
+                time: 'HH:mm:ss',
+            },
             calendarOptions: {
                 title: 'Demo Schedule Calendar',
                 defaultView: 'month',
@@ -40,7 +45,8 @@
                 date: '',
                 template: {},
                 month: {},
-                week: {}
+                week: {},
+                usageStatistics: false
             },
             currentView: 'month',
             schedules: []
@@ -162,6 +168,7 @@
          */
         _getTemplates: function (config) {
             let me = this;
+
             return {
                 milestone: function (schedule) {
                     return '<span style="color:red;"><i class="fa fa-flag"></i> ' + schedule.title + '</span>';
@@ -182,8 +189,8 @@
                     return me._e('All Day');
                 },
                 time: function (schedule) {
-        console.log(schedule);
-                    return schedule.title + ' <i class="fa fa-refresh"></i>' + schedule.start;
+                    return schedule.title + ' <i class="fa fa-refresh"></i> ' +
+                        moment(schedule.start.toDate()).format(config.formats.time);
                 },
                 monthMoreTitleDate: function (date) {
                     date = new Date(date);
@@ -205,7 +212,7 @@
                 },
 
                 monthGridFooter: function () {
-                    return '<div class="calendar-new-schedule-button">' + me._e('New Schedule') + '</div>';
+                    return '<div class="calendar-new-schedule-button"><i class="fa fa-plus"></i></div>';
                 },
 
                 monthGridFooterExceed: function (hiddenSchedules) {
@@ -246,7 +253,19 @@
                 },
                 popupDetailBody: function (model) {
                     return model.body;
-                }
+                },
+                popupDetailDate: function(isAllDay, start, end) {
+                    let startDate = moment(start.toDate()),
+                        endDate =  moment(end.toDate()),
+                        isSameDate = startDate.format(config.formats.date) === endDate.format(config.formats.date),
+                        endFormat = (isSameDate ? '' : config.formats.date) + ' ' + config.formats.time;
+
+                    if (isAllDay) {
+                        return startDate.format(config.formats.date) + (isSameDate ? '' : ' - ' + endDate.format(config.formats.date));
+                    }
+
+                    return (startDate.format(config.formats.datetime) + ' - ' + endDate.format(endFormat));
+                },
             }
         },
 
@@ -487,14 +506,14 @@
          */
         _mapDate: function (date) {
             let yyyy = date.getFullYear().toString(),
-                mm = (date.getMonth()+1).toString(),
-                dd  = date.getDate().toString(),
-                hh  = date.getHours().toString(),
-                ii  = date.getMinutes().toString(),
-                ss  = date.getSeconds().toString();
+                mm = (date.getMonth() + 1).toString(),
+                dd = date.getDate().toString(),
+                hh = date.getHours().toString(),
+                ii = date.getMinutes().toString(),
+                ss = date.getSeconds().toString();
 
-            return yyyy + '-' + (mm[1]?mm:"0"+mm[0]) + '-' + (dd[1]?dd:"0"+dd[0]) + ' ' +
-                (hh[1]?hh:"0"+hh[0]) + ':' + (ii[1]?ii:"0"+ii[0]) + ':' + (ss[1]?ss:"0"+ss[0]);
+            return yyyy + '-' + (mm[1] ? mm : "0" + mm[0]) + '-' + (dd[1] ? dd : "0" + dd[0]) + ' ' +
+                (hh[1] ? hh : "0" + hh[0]) + ':' + (ii[1] ? ii : "0" + ii[0]) + ':' + (ss[1] ? ss : "0" + ss[0]);
         },
 
         /**
