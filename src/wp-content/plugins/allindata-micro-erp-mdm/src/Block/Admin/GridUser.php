@@ -49,14 +49,6 @@ class GridUser extends AbstractPaginationBlock
     }
 
     /**
-     * @return int
-     */
-    public function getUserTotalCount()
-    {
-        return $this->getPagination()->getTotalCount();
-    }
-
-    /**
      * @return string
      */
     public function getUpdateUserActionSlug()

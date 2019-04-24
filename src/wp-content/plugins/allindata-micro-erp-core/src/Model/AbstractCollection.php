@@ -100,7 +100,7 @@ abstract class AbstractCollection
             'post_type' => $this->resource->getEntityName(),
             'post_status' => 'publish',
             'offset' => $offset,
-            'number' => $limit
+            'posts_per_page' => $limit
         ];
     }
 

@@ -54,7 +54,7 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
     public function load()
     {
         register_activation_hook(AID_MICRO_ERP_PLANNING_FILE, [$this, 'installPlugin']);
-        register_deactivation_hook(AID_MICRO_ERP_MDM_FILE, [$this, 'disablePlugin']);
+        register_deactivation_hook(AID_MICRO_ERP_PLANNING_FILE, [$this, 'disablePlugin']);
         add_action('wp_enqueue_scripts', [$this, 'addStylesToThemeEnqueue'], 999);
         add_action('wp_enqueue_scripts', [$this, 'addScripts'], 999);
     }

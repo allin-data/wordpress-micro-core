@@ -32,7 +32,7 @@ abstract class AbstractFactory
      * @param array $data
      * @return AbstractModel
      */
-    public function create(array $data = []): AbstractModel
+    public function create(array $data = [])
     {
         if (!(class_exists($this->modelClass))) {
             throw new \RuntimeException(
@@ -48,7 +48,7 @@ abstract class AbstractFactory
      * @param array $data
      * @return AbstractModel
      */
-    public function copy(AbstractModel $genuineEntity, array $data = []): AbstractModel
+    public function copy(AbstractModel $genuineEntity, array $data = [])
     {
         if (!(class_exists($this->modelClass))) {
             throw new \RuntimeException(

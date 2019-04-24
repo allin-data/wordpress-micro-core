@@ -25,7 +25,7 @@ $isDisabledNext = $currentPage === $pagination->getLastPage();
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <?php for ($page = $pagination->getFirstPage(); $page < $pagination->getLastPage(); $page++): ?>
+                <?php for ($page = $pagination->getFirstPage(); $page <= $pagination->getLastPage(); $page++): ?>
                     <?php if ($currentPage == $page): /* Active Page */ ?>
                         <li class="page-item active" aria-current="page">
                 <span class="page-link">
@@ -69,7 +69,7 @@ $isDisabledNext = $currentPage === $pagination->getLastPage();
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <?php for ($page = $pagination->getFirstPage(); $page < $pagination->getLastPage(); $page++): ?>
+                <?php for ($page = $pagination->getFirstPage(); $page <= $pagination->getLastPage(); $page++): ?>
                     <?php if ($currentPage == $page): /* Active Page */ ?>
                         <li class="page-item active" aria-current="page">
                 <span class="page-link">

@@ -243,7 +243,7 @@ abstract class AbstractPagination implements PaginationInterface
             $sorters[] = $additionalSorter->toArray();
         }
 
-        $queryValues[$this->pageAttributeName] = $page ?: $this->getCurrentPage();
+        $queryValues[$this->pageAttributeName] = $page ?? $this->getCurrentPage();
         $queryValues[$this->showPerPageAttributeName] = $this->getCurrentShowPerPage();
         $queryValues[$this->filtersAttributeName] = $filters;
         $queryValues[$this->sortsAttributeName] = $sorters;

@@ -7,3 +7,5 @@ and managed by applied instances).
 ## Dependencies
 
 - Micro ERP Core
+- Micro ERP Auth
+- Micro ERP MDM
