@@ -16,6 +16,7 @@ Copyright (C) 2019 All.In Data GmbH
         <th scope="col"><?php _e('Resource Type ID', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
         <th scope="col"><?php _e('Name', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
         <th scope="col"><?php _e('Label', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
+        <th scope="col"><?php _e('Is Disabled?', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
         <th scope="col"><?php _e('Actions', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
     </tr>
     </thead>
@@ -30,6 +31,8 @@ Copyright (C) 2019 All.In Data GmbH
             <th scope="row"><?= $resourceType->getId(); ?></th>
             <td><?= $resourceType->getName(); ?></td>
             <td><input type="text" class="form-control" name="label" value="<?= $resourceType->getLabel(); ?>"/></td>
+            <td><input type="checkbox" class="form-control" name="is_disabled"
+                       value="on" <?php if ($resourceType->getIsDisabled()): ?>checked<?php endif; ?>/></td>
             <td><input class="btn btn-primary" type="submit" value="<?php _e('Update', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN); ?>"/></td>
         </form>
     </tr>

@@ -41,6 +41,7 @@ class UpdateResourceType extends AbstractAdminController
     {
         $resourceTypeId = $this->getParam('resourceTypeId');
         $label = $this->getParam('label');
+        $isDisabled = $this->getParam('is_disabled') === 'on' ? true : false;
 
         /** @var ResourceType $resourceType */
         $resourceType = $this->resource->loadById($resourceTypeId);
@@ -50,7 +51,8 @@ class UpdateResourceType extends AbstractAdminController
             );
         }
 
-        $resourceType->setLabel($label);
+        $resourceType->setLabel($label)
+            ->setIsDisabled($isDisabled);
 
         $this->resource->save($resourceType);
     }

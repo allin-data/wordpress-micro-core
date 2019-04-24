@@ -45,7 +45,8 @@ class CreateResourceType extends AbstractAdminController
         /** @var ResourceType $resourceType */
         $resourceType = $this->resource->getModelFactory()->create();
         $resourceType->setName($name)
-            ->setLabel($label);
+            ->setLabel($label)
+            ->setIsDisabled(false);
 
         $this->resource->save($resourceType);
     }

@@ -50,6 +50,14 @@ class FormCreateResource extends AbstractBlock
     }
 
     /**
+     * @return bool
+     */
+    public function isCreationAllowed(): bool
+    {
+        return !$this->getResourceType()->getIsDisabled();
+    }
+
+    /**
      * @return int
      */
     public function getResourceTypeId()

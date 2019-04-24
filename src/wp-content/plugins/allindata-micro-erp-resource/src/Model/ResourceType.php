@@ -24,6 +24,10 @@ class ResourceType extends AbstractPostModel
      * @var string|null
      */
     private $label;
+    /**
+     * @var bool|int|null
+     */
+    private $isDisabled;
 
     /**
      * @return string|null
@@ -58,6 +62,24 @@ class ResourceType extends AbstractPostModel
     public function setLabel(?string $label): ResourceType
     {
         $this->label = $label;
+        return $this;
+    }
+
+    /**
+     * @return bool|int|null
+     */
+    public function getIsDisabled()
+    {
+        return $this->isDisabled;
+    }
+
+    /**
+     * @param bool|int|null $isDisabled
+     * @return ResourceType
+     */
+    public function setIsDisabled($isDisabled)
+    {
+        $this->isDisabled = $isDisabled;
         return $this;
     }
 }
