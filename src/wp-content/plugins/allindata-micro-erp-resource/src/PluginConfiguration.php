@@ -8,6 +8,7 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Resource;
 
+use AllInData\MicroErp\Auth\Model\GenericOwnedCollection;
 use AllInData\MicroErp\Core\Model\GenericCollection;
 use AllInData\MicroErp\Core\Controller\PluginControllerInterface;
 use AllInData\MicroErp\Core\Database\WordpressDatabase;
@@ -22,14 +23,25 @@ use AllInData\MicroErp\Core\Module\PluginModuleInterface;
 use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
 use AllInData\MicroErp\Core\Widget\ElementorWidgetInterface;
 use AllInData\MicroErp\Mdm\Model\Capability\CapabilityInterface;
+use AllInData\MicroErp\Mdm\Model\Role\ManagerRole;
+use AllInData\MicroErp\Mdm\Model\Role\OwnerRole;
 use AllInData\MicroErp\Resource\Controller\Admin\CreateResourceType;
 use AllInData\MicroErp\Resource\Controller\Admin\UpdateResourceType;
+use AllInData\MicroErp\Resource\Model\Capability\CreateResource;
+use AllInData\MicroErp\Resource\Model\Capability\DeleteResource;
+use AllInData\MicroErp\Resource\Model\Capability\UpdateResource;
+use AllInData\MicroErp\Resource\Model\Resource;
 use AllInData\MicroErp\Resource\Module\ElementorAdminCategory;
 use AllInData\MicroErp\Resource\Model\ResourceType;
+use AllInData\MicroErp\Resource\Module\ElementorCategory;
 use AllInData\MicroErp\Resource\ShortCode\Admin\FormCreateResourceType;
 use AllInData\MicroErp\Resource\ShortCode\Admin\GridResourceType;
+use AllInData\MicroErp\Resource\ShortCode\FormCreateResource;
+use AllInData\MicroErp\Resource\ShortCode\GridResource;
 use AllInData\MicroErp\Resource\Widget\Elementor\Admin\FormCreateNewResourceType;
 use AllInData\MicroErp\Resource\Widget\Elementor\Admin\ListOfResourceTypes;
+use AllInData\MicroErp\Resource\Widget\Elementor\FormCreateNewResource;
+use AllInData\MicroErp\Resource\Widget\Elementor\ListOfResources;
 use bitExpert\Disco\Annotations\Configuration;
 use bitExpert\Disco\Annotations\Bean;
 use Elementor\Elements_Manager;
@@ -66,7 +78,9 @@ class PluginConfiguration
     {
         return [
             new FormCreateNewResourceType(),
-            new ListOfResourceTypes()
+            new ListOfResourceTypes(),
+            new FormCreateNewResource(),
+            new ListOfResources()
         ];
     }
 
@@ -76,6 +90,10 @@ class PluginConfiguration
     private function getPluginModules(): array
     {
         return [
+            new ElementorCategory(
+                new GenericFactory(\AllInData\MicroErp\Resource\Model\ElementorResourceCategory::class),
+                $this->getElementorManager()
+            ),
             new ElementorAdminCategory(
                 new GenericFactory(\AllInData\MicroErp\Resource\Model\ElementorResourceAdminCategory::class),
                 $this->getElementorManager()
@@ -90,7 +108,18 @@ class PluginConfiguration
     {
         return [
             new CreateResourceType($this->getResourceTypeResource()),
-            new UpdateResourceType($this->getResourceTypeResource())
+            new UpdateResourceType($this->getResourceTypeResource()),
+            new \AllInData\MicroErp\Resource\Controller\CreateResource(
+                $this->getResourceResource(),
+                $this->getResourceTypeResource()
+            ),
+            new \AllInData\MicroErp\Resource\Controller\UpdateResource(
+                $this->getResourceResource(),
+                $this->getResourceTypeResource()
+            ),
+            new \AllInData\MicroErp\Resource\Controller\DeleteResource(
+                $this->getResourceResource()
+            )
         ];
     }
 
@@ -109,6 +138,19 @@ class PluginConfiguration
             new FormCreateResourceType(
                 AID_MICRO_ERP_RESOURCE_TEMPLATE_DIR,
                 new \AllInData\MicroErp\Resource\Block\Admin\FormCreateResourceType()
+            ),
+            new GridResource(
+                AID_MICRO_ERP_RESOURCE_TEMPLATE_DIR,
+                new \AllInData\MicroErp\Resource\Block\GridResource(
+                    $this->getResourcePagination(),
+                    $this->getResourceTypeCollection()
+                )
+            ),
+            new FormCreateResource(
+                AID_MICRO_ERP_RESOURCE_TEMPLATE_DIR,
+                new \AllInData\MicroErp\Resource\Block\FormCreateResource(
+                    $this->getResourceTypeCollection()
+                )
             )
         ];
     }
@@ -118,7 +160,30 @@ class PluginConfiguration
      */
     private function getPluginCapabilities(): array
     {
-        return [];
+        return [
+            new CreateResource([
+                ManagerRole::ROLE_LEVEL,
+                OwnerRole::ROLE_LEVEL
+            ]),
+            new UpdateResource([
+                ManagerRole::ROLE_LEVEL,
+                OwnerRole::ROLE_LEVEL
+            ]),
+            new DeleteResource([
+                ManagerRole::ROLE_LEVEL,
+                OwnerRole::ROLE_LEVEL
+            ])
+        ];
+    }
+
+    /**
+     * @return GenericFactory
+     */
+    private function getResourceFactory(): GenericFactory
+    {
+        return new GenericFactory(
+            Resource::class
+        );
     }
 
     /**
@@ -128,6 +193,18 @@ class PluginConfiguration
     {
         return new GenericFactory(
             ResourceType::class
+        );
+    }
+
+    /**
+     * @return GenericResource
+     */
+    private function getResourceResource(): GenericResource
+    {
+        return new GenericResource(
+            $this->getWordpressDatabase(),
+            'resource',
+            $this->getResourceFactory()
         );
     }
 
@@ -144,12 +221,34 @@ class PluginConfiguration
     }
 
     /**
+     * @return GenericOwnedCollection
+     */
+    private function getResourceCollection(): GenericOwnedCollection
+    {
+        return new GenericOwnedCollection(
+            $this->getResourceResource()
+        );
+    }
+
+    /**
      * @return GenericCollection
      */
     private function getResourceTypeCollection(): GenericCollection
     {
         return new GenericCollection(
             $this->getResourceTypeResource()
+        );
+    }
+
+    /**
+     * @return GenericPagination
+     */
+    private function getResourcePagination(): GenericPagination
+    {
+        return new GenericPagination(
+            $this->getResourceCollection(),
+            new PaginationFilterFactory(GenericPaginationFilter::class),
+            new PaginationSorterFactory(GenericPaginationSorter::class)
         );
     }
 

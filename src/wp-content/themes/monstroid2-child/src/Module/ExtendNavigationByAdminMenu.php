@@ -24,17 +24,17 @@ class ExtendNavigationByAdminMenu implements ThemeModuleInterface
     /**
      * @var array
      */
-    private $logoutMenuSet;
+    private $applicableMenuSet;
 
     /**
      * ExtendNavigationByAdminMenu constructor.
      * @param string $adminMenuSlug
-     * @param array $logoutMenuSet
+     * @param array $applicableMenuSet
      */
-    public function __construct($adminMenuSlug, array $logoutMenuSet)
+    public function __construct($adminMenuSlug, array $applicableMenuSet)
     {
         $this->adminMenuSlug = $adminMenuSlug;
-        $this->logoutMenuSet = $logoutMenuSet;
+        $this->applicableMenuSet = $applicableMenuSet;
     }
 
     /**
@@ -86,8 +86,8 @@ class ExtendNavigationByAdminMenu implements ThemeModuleInterface
     private function isApplicableMenu($menuId): bool
     {
         $locations = get_nav_menu_locations();
-        foreach ($this->logoutMenuSet as $logoutMenuSelector) {
-            $mainLocationId = $locations[$logoutMenuSelector] ?: null;
+        foreach ($this->applicableMenuSet as $menuSelector) {
+            $mainLocationId = $locations[$menuSelector] ?: null;
             if (!$mainLocationId) {
                 continue;
             }

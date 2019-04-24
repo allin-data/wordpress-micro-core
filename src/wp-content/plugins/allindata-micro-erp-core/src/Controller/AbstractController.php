@@ -69,16 +69,14 @@ abstract class AbstractController implements PluginControllerInterface
     protected function afterExecute($result = null)
     {
         // stop if controller action is used async
-        if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+        if ((!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') ||
+            (defined('DOING_AJAX') && DOING_AJAX)) {
             if ($result && $result instanceof AbstractModel) {
                 echo json_encode($result->toArray());
             }
             if ($result) {
                 echo json_encode($result);
             }
-            wp_die();
-        }
-        if (defined('DOING_AJAX') && DOING_AJAX) {
             wp_die();
         }
 

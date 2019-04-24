@@ -56,12 +56,12 @@ class Theme
     public function addNavigationMenus()
     {
         register_nav_menus(
-            array(
+            [
                 'admin-menu' => __('Admin Menu'),
                 'main' => __('Main Menu'),
                 'footer' => __('Footer Menu'),
                 'social' => __('Social Menu')
-            )
+            ]
         );
     }
 

@@ -9,3 +9,4 @@ and managed by applied instances).
 - Micro ERP Core
 - Micro ERP Auth
 - Micro ERP MDM
+- Micro ERP Subordination

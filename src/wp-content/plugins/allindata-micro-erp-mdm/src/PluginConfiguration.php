@@ -151,9 +151,15 @@ class PluginConfiguration
     private function getPluginRoles(): array
     {
         return [
-            new UserRole(),
-            new ManagerRole(),
-            new OwnerRole()
+            new UserRole([
+                'main'
+            ]),
+            new ManagerRole([
+                'main'
+            ]),
+            new OwnerRole([
+                'main'
+            ])
         ];
     }
 
