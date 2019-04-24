@@ -129,7 +129,7 @@ abstract class AbstractRole implements RoleInterface
         }
         foreach ($roleMenuItems as $roleMenuItem) {
             /** @var WP_Post menu_order */
-            $roleMenuItem->menu_order = $roleMenuItem->menu_order + $menuCount;
+            $roleMenuItem->menu_order = $roleMenuItem->menu_order + $menuCount + 9999;
         }
         $items = array_merge($items, $roleMenuItems);
         return $items;

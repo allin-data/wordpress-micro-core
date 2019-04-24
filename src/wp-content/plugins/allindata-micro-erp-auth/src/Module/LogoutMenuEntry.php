@@ -62,7 +62,7 @@ class LogoutMenuEntry implements PluginModuleInterface
             $itemCount = count($items);
         }
 
-        $items[] = $this->getLogoutMenuEntry($menu->term_id, $itemCount + 1000);
+        $items[] = $this->getLogoutMenuEntry($menu->term_id, $itemCount + 99999);
         return $items;
     }
 
