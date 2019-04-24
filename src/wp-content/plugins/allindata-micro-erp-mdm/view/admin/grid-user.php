@@ -7,7 +7,8 @@ Copyright (C) 2019 All.In Data GmbH
 /** @var \AllInData\MicroErp\Mdm\Block\Admin\GridUser $block */
 ?>
 <h2><?php _e('User List', AID_MICRO_ERP_MDM_TEXTDOMAIN); ?></h2>
-<p><?php _e('Total', AID_MICRO_ERP_MDM_TEXTDOMAIN); ?>: <?= $block->getUserTotalCount(); ?></p>
+
+<?php $block->renderPaginationBlock(true, true); ?>
 
 <table class="table">
     <thead>
@@ -41,3 +42,5 @@ Copyright (C) 2019 All.In Data GmbH
 <?php endforeach; ?>
     </tbody>
 </table>
+
+<?php $block->renderPaginationBlock(); ?>

@@ -8,40 +8,24 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Mdm\Block\Admin;
 
+use AllInData\MicroErp\Core\Block\AbstractPaginationBlock;
 use AllInData\MicroErp\Mdm\Controller\Admin\UpdateUser;
-use AllInData\MicroErp\Mdm\Model\Collection\User as UserCollection;
 use AllInData\MicroErp\Mdm\Model\User;
-use AllInData\MicroErp\Core\Block\AbstractBlock;
 use WP_User;
 
 /**
  * Class GridUser
  * @package AllInData\MicroErp\Mdm\Block\Admin
  */
-class GridUser extends AbstractBlock
+class GridUser extends AbstractPaginationBlock
 {
-    /**
-     * @var UserCollection
-     */
-    private $userCollection;
 
     /**
-     * GridUser constructor.
-     * @param UserCollection $userCollection
-     */
-    public function __construct(UserCollection $userCollection)
-    {
-        $this->userCollection = $userCollection;
-    }
-
-    /**
-     * @param int $limit
-     * @param int $offset
      * @return User[]
      */
-    public function getUsers($limit = UserCollection::DEFAULT_LIMIT, $offset = UserCollection::DEFAULT_OFFSET): array
+    public function getUsers(): array
     {
-        return $this->userCollection->load($limit, $offset);
+        return $this->getPagination()->load();
     }
 
     /**
@@ -69,7 +53,7 @@ class GridUser extends AbstractBlock
      */
     public function getUserTotalCount()
     {
-        return $this->userCollection->getTotalCount();
+        return $this->getPagination()->getTotalCount();
     }
 
     /**

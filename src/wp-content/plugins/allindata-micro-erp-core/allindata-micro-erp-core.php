@@ -39,6 +39,7 @@ define('AID_MICRO_ERP_CORE_SLUG', 'allindata-micro-erp-core');
 define('AID_MICRO_ERP_CORE_TEXTDOMAIN', 'allindata-micro-erp-core');
 define('AID_MICRO_ERP_CORE_TEMPLATE_DIR', __DIR__ . '/view/');
 define('AID_MICRO_ERP_CORE_TEMP_DIR', ABSPATH . 'tmp/');
+define('AID_MICRO_ERP_CORE_FILE', __FILE__);
 
 defined('ABSPATH') or exit;
 

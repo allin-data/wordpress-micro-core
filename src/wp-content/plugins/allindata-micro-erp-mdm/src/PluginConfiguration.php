@@ -8,9 +8,14 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Mdm;
 
+use AllInData\MicroErp\Core\Model\GenericPaginationFilter;
+use AllInData\MicroErp\Core\Model\GenericPaginationSorter;
+use AllInData\MicroErp\Core\Model\PaginationFilterFactory;
+use AllInData\MicroErp\Core\Model\PaginationSorterFactory;
 use AllInData\MicroErp\Mdm\Controller\Admin\CreateUser;
 use AllInData\MicroErp\Mdm\Controller\Admin\UpdateUser;
 use AllInData\MicroErp\Mdm\Model\Capability\CapabilityInterface;
+use AllInData\MicroErp\Mdm\Model\Collection\Pagination;
 use AllInData\MicroErp\Mdm\Model\Collection\User as UserCollection;
 use AllInData\MicroErp\Mdm\Model\Factory\ElementorMdmAdminCategory;
 use AllInData\MicroErp\Mdm\Model\Factory\ElementorMdmCategory;
@@ -131,7 +136,7 @@ class PluginConfiguration
             ),
             new GridUser(
                 AID_MICRO_ERP_MDM_TEMPLATE_DIR,
-                new Block\Admin\GridUser($this->getUserCollection())
+                new Block\Admin\GridUser($this->getUserPagination())
             ),
             new FormCreateUser(
                 AID_MICRO_ERP_MDM_TEMPLATE_DIR,
@@ -203,6 +208,18 @@ class PluginConfiguration
     {
         return new UserCollection(
             $this->getUserResource()
+        );
+    }
+
+    /**
+     * @return Pagination
+     */
+    private function getUserPagination(): Pagination
+    {
+        return new Pagination(
+            $this->getUserCollection(),
+            new PaginationFilterFactory(GenericPaginationFilter::class),
+            new PaginationSorterFactory(GenericPaginationSorter::class)
         );
     }
 

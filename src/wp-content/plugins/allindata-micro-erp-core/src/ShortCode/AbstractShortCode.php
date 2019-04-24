@@ -8,6 +8,9 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Core\ShortCode;
 
+use function apply_filters;
+use function load_template;
+
 /**
  * Class AbstractPlugin
  * @package AllInData\MicroErp\Core
@@ -56,7 +59,7 @@ abstract class AbstractShortCode implements PluginShortCodeInterface
         if (!file_exists($templateFile)) {
             throw new \RuntimeException(sprintf(__('Template "%s" could not be found.'), $templateName));
         }
-        \load_template($templateFile, false);
+        load_template($templateFile, false);
     }
 
     /**
@@ -79,6 +82,6 @@ abstract class AbstractShortCode implements PluginShortCodeInterface
     private function loadTemplate($templateName)
     {
         $template = $this->getTemplatePath() . $templateName . '.php';
-        return \apply_filters('micro_erp_locate_template', $template, $templateName, $this->templatePath);
+        return apply_filters('micro_erp_locate_template', $template, $templateName, $this->getTemplatePath());
     }
 }

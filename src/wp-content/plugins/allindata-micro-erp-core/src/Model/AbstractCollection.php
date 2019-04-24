@@ -16,6 +16,7 @@ use WP_Query;
  */
 abstract class AbstractCollection
 {
+    const NO_LIMIT = 0;
     const DEFAULT_LIMIT = 20;
     const DEFAULT_OFFSET = 0;
 
@@ -85,6 +86,15 @@ abstract class AbstractCollection
      */
     protected function getDefaultQueryArguments($limit = self::DEFAULT_LIMIT, $offset = self::DEFAULT_OFFSET): array
     {
+        if (static::NO_LIMIT === $limit) {
+            return [
+                'fields' => 'ids',
+                'post_type' => $this->resource->getEntityName(),
+                'post_status' => 'publish',
+                'nopaging' => true
+            ];
+        }
+
         return [
             'fields' => 'ids',
             'post_type' => $this->resource->getEntityName(),
