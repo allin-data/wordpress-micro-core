@@ -45,6 +45,96 @@ class Calendar extends AbstractBlock
     }
 
     /**
+     * @param string $key
+     * @return string|null
+     */
+    public function getCommonStyle($key)
+    {
+        return $this->getAttribute('advanced-style_common.'.$key);
+    }
+
+    /**
+     * @param string $key
+     * @return string|null
+     */
+    public function getCommonBorder($key)
+    {
+        $size = $this->getAttribute('advanced-style_common.'.$key.'.px');
+        $style = $this->getAttribute('advanced-style_common.'.$key.'.style');
+        $color = $this->getAttribute('advanced-style_common.'.$key.'.color');
+        return $size.'px '.$style.' '.$color;
+    }
+
+    /**
+     * @param string $key
+     * @return string|null
+     */
+    public function getMonthStyle($key)
+    {
+        return $this->getAttribute('advanced-style_month.'.$key);
+    }
+
+    /**
+     * @param string $key
+     * @return string|null
+     */
+    public function getMonthBorder($key)
+    {
+        $size = $this->getAttribute('advanced-style_month.'.$key.'.px');
+        $style = $this->getAttribute('advanced-style_month.'.$key.'.style');
+        $color = $this->getAttribute('advanced-style_month.'.$key.'.color');
+        return $size.'px '.$style.' '.$color;
+    }
+
+    /**
+     * @param string $key
+     * @return string|null
+     */
+    public function getMonthBoxShadow($key)
+    {
+        $sizeTop = $this->getAttribute('advanced-style_month.'.$key.'.px.top');
+        $sizeRight = $this->getAttribute('advanced-style_month.'.$key.'.px.right');
+        $sizeBottom = $this->getAttribute('advanced-style_month.'.$key.'.px.bottom');
+        $sizeLeft = $this->getAttribute('advanced-style_month.'.$key.'.px.left');
+        $color = $this->getAttribute('advanced-style_month.'.$key.'.color');
+        return $sizeTop.'px '.$sizeRight.'px '.$sizeBottom.'px '.$sizeLeft.'px '.$color;
+    }
+
+    /**
+     * @param string $key
+     * @return string|null
+     */
+    public function getMonthPadding($key)
+    {
+        $sizeTop = $this->getAttribute('advanced-style_month.'.$key.'.px.top');
+        $sizeRight = $this->getAttribute('advanced-style_month.'.$key.'.px.right');
+        $sizeBottom = $this->getAttribute('advanced-style_month.'.$key.'.px.bottom');
+        $sizeLeft = $this->getAttribute('advanced-style_month.'.$key.'.px.left');
+        return $sizeTop.'px '.$sizeRight.'px '.$sizeBottom.'px '.$sizeLeft.'px';
+    }
+
+    /**
+     * @param string $key
+     * @return string|null
+     */
+    public function getWeekStyle($key)
+    {
+        return $this->getAttribute('advanced-style_week.'.$key);
+    }
+
+    /**
+     * @param string $key
+     * @return string|null
+     */
+    public function getWeekBorder($key)
+    {
+        $size = $this->getAttribute('advanced-style_week.'.$key.'.px');
+        $style = $this->getAttribute('advanced-style_week.'.$key.'.style');
+        $color = $this->getAttribute('advanced-style_week.'.$key.'.color');
+        return $size.'px '.$style.' '.$color;
+    }
+
+    /**
      * @return array
      * @throws \Exception
      */
