@@ -50,7 +50,8 @@ class Calendar extends AbstractBlock
      */
     public function getCommonStyle($key)
     {
-        return $this->getAttribute('advanced-style_common.'.$key);
+        $key = $this->mapKey($key);
+        return $this->getAttribute('advanced_style_common_'.$key);
     }
 
     /**
@@ -59,9 +60,10 @@ class Calendar extends AbstractBlock
      */
     public function getCommonBorder($key)
     {
-        $size = $this->getAttribute('advanced-style_common.'.$key.'.px');
-        $style = $this->getAttribute('advanced-style_common.'.$key.'.style');
-        $color = $this->getAttribute('advanced-style_common.'.$key.'.color');
+        $key = $this->mapKey($key);
+        $size = $this->getAttribute('advanced_style_common_'.$key.'.px');
+        $style = $this->getAttribute('advanced_style_common_'.$key.'.style');
+        $color = $this->getAttribute('advanced_style_common_'.$key.'.color');
         return $size.'px '.$style.' '.$color;
     }
 
@@ -71,7 +73,8 @@ class Calendar extends AbstractBlock
      */
     public function getMonthStyle($key)
     {
-        return $this->getAttribute('advanced-style_month.'.$key);
+        $key = $this->mapKey($key);
+        return $this->getAttribute('advanced_style_month_'.$key);
     }
 
     /**
@@ -80,9 +83,10 @@ class Calendar extends AbstractBlock
      */
     public function getMonthBorder($key)
     {
-        $size = $this->getAttribute('advanced-style_month.'.$key.'.px');
-        $style = $this->getAttribute('advanced-style_month.'.$key.'.style');
-        $color = $this->getAttribute('advanced-style_month.'.$key.'.color');
+        $key = $this->mapKey($key);
+        $size = $this->getAttribute('advanced_style_month_'.$key.'.px');
+        $style = $this->getAttribute('advanced_style_month_'.$key.'.style');
+        $color = $this->getAttribute('advanced_style_month_'.$key.'.color');
         return $size.'px '.$style.' '.$color;
     }
 
@@ -92,11 +96,12 @@ class Calendar extends AbstractBlock
      */
     public function getMonthBoxShadow($key)
     {
-        $sizeTop = $this->getAttribute('advanced-style_month.'.$key.'.px.top');
-        $sizeRight = $this->getAttribute('advanced-style_month.'.$key.'.px.right');
-        $sizeBottom = $this->getAttribute('advanced-style_month.'.$key.'.px.bottom');
-        $sizeLeft = $this->getAttribute('advanced-style_month.'.$key.'.px.left');
-        $color = $this->getAttribute('advanced-style_month.'.$key.'.color');
+        $key = $this->mapKey($key);
+        $sizeTop = $this->getAttribute('advanced_style_month_'.$key.'.px.top');
+        $sizeRight = $this->getAttribute('advanced_style_month_'.$key.'.px.right');
+        $sizeBottom = $this->getAttribute('advanced_style_month_'.$key.'.px.bottom');
+        $sizeLeft = $this->getAttribute('advanced_style_month_'.$key.'.px.left');
+        $color = $this->getAttribute('advanced_style_month_'.$key.'.color');
         return $sizeTop.'px '.$sizeRight.'px '.$sizeBottom.'px '.$sizeLeft.'px '.$color;
     }
 
@@ -106,10 +111,11 @@ class Calendar extends AbstractBlock
      */
     public function getMonthPadding($key)
     {
-        $sizeTop = $this->getAttribute('advanced-style_month.'.$key.'.px.top');
-        $sizeRight = $this->getAttribute('advanced-style_month.'.$key.'.px.right');
-        $sizeBottom = $this->getAttribute('advanced-style_month.'.$key.'.px.bottom');
-        $sizeLeft = $this->getAttribute('advanced-style_month.'.$key.'.px.left');
+        $key = $this->mapKey($key);
+        $sizeTop = $this->getAttribute('advanced_style_month_'.$key.'.px.top');
+        $sizeRight = $this->getAttribute('advanced_style_month_'.$key.'.px.right');
+        $sizeBottom = $this->getAttribute('advanced_style_month_'.$key.'.px.bottom');
+        $sizeLeft = $this->getAttribute('advanced_style_month_'.$key.'.px.left');
         return $sizeTop.'px '.$sizeRight.'px '.$sizeBottom.'px '.$sizeLeft.'px';
     }
 
@@ -119,7 +125,8 @@ class Calendar extends AbstractBlock
      */
     public function getWeekStyle($key)
     {
-        return $this->getAttribute('advanced-style_week.'.$key);
+        $key = $this->mapKey($key);
+        return $this->getAttribute('advanced_style_week_'.$key);
     }
 
     /**
@@ -128,9 +135,10 @@ class Calendar extends AbstractBlock
      */
     public function getWeekBorder($key)
     {
-        $size = $this->getAttribute('advanced-style_week.'.$key.'.px');
-        $style = $this->getAttribute('advanced-style_week.'.$key.'.style');
-        $color = $this->getAttribute('advanced-style_week.'.$key.'.color');
+        $key = $this->mapKey($key);
+        $size = $this->getAttribute('advanced_style_week_'.$key.'.px');
+        $style = $this->getAttribute('advanced_style_week_'.$key.'.style');
+        $color = $this->getAttribute('advanced_style_week_'.$key.'.color');
         return $size.'px '.$style.' '.$color;
     }
 
@@ -174,5 +182,14 @@ class Calendar extends AbstractBlock
     public function getDeleteScheduleActionSlug()
     {
         return DeleteSchedule::ACTION_SLUG;
+    }
+
+    /**
+     * @param string $key
+     * @return string
+     */
+    private function mapKey($key)
+    {
+        return str_replace('.', '_', $key);
     }
 }

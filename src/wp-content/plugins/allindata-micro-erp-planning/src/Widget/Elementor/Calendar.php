@@ -315,7 +315,7 @@ class Calendar extends AbstractElementorWidget
         );
 
         $this->add_control(
-            'advanced-style_common.border.px',
+            'advanced_style_common_border_px',
             [
                 'label' => __('Border Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -326,7 +326,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.border.style',
+            'advanced_style_common_border_style',
             [
                 'label' => __('Border Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -335,7 +335,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.border.color',
+            'advanced_style_common_border_color',
             [
                 'label' => __('Border Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -345,7 +345,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.backgroundColor',
+            'advanced_style_common_backgroundColor',
             [
                 'label' => __('Background Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -355,7 +355,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.holiday.color',
+            'advanced_style_common_holiday_color',
             [
                 'label' => __('Holiday Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -365,7 +365,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.saturday.color',
+            'advanced_style_common_saturday_color',
             [
                 'label' => __('Saturday Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -375,7 +375,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.dayname.color',
+            'advanced_style_common_dayname_color',
             [
                 'label' => __('Dayname Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -385,7 +385,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.today.color',
+            'advanced_style_common_today_color',
             [
                 'label' => __('Today Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -407,7 +407,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.creationGuide.backgroundColor',
+            'advanced_style_common_creationGuide_backgroundColor',
             [
                 'label' => __('Background Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -418,7 +418,7 @@ class Calendar extends AbstractElementorWidget
         );
 
         $this->add_control(
-            'advanced-style_common.creationGuide.border.px',
+            'advanced_style_common_creationGuide_border_px',
             [
                 'label' => __('Border Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -429,7 +429,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.creationGuide.border.style',
+            'advanced_style_common_creationGuide_border_style',
             [
                 'label' => __('Border Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -438,7 +438,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.creationGuide.border.color',
+            'advanced_style_common_creationGuide_border_color',
             [
                 'label' => __('Border Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -460,7 +460,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.dayname.height',
+            'advanced_style_month_dayname_height',
             [
                 'label' => __('Dayname Height [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -471,7 +471,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.dayname.borderLeft.px',
+            'advanced_style_month_dayname_borderLeft_px',
             [
                 'label' => __('Border Left Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -482,7 +482,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.dayname.borderLeft.style',
+            'advanced_style_month_dayname_borderLeft_style',
             [
                 'label' => __('Border Left Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -491,7 +491,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.dayname.borderLeft.color',
+            'advanced_style_month_dayname_borderLeft_color',
             [
                 'label' => __('Border Left Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -501,7 +501,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.dayname.paddingLeft',
+            'advanced_style_month_dayname_paddingLeft',
             [
                 'label' => __('Padding Left [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -512,7 +512,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.dayname.paddingRight',
+            'advanced_style_month_dayname_paddingRight',
             [
                 'label' => __('Padding Right [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -523,7 +523,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.dayname.backgroundColor',
+            'advanced_style_month_dayname_backgroundColor',
             [
                 'label' => __('Background Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -533,7 +533,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.dayname.fontSize',
+            'advanced_style_month_dayname_fontSize',
             [
                 'label' => __('Font Size [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -544,7 +544,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.dayname.fontWeight',
+            'advanced_style_month_dayname_fontWeight',
             [
                 'label' => __('Font Weight', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -553,7 +553,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.dayname.textAlign',
+            'advanced_style_month_dayname_textAlign',
             [
                 'label' => __('Text Align', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
@@ -588,7 +588,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.holidayExceptThisMonth.color',
+            'advanced_style_month_holidayExceptThisMonth_color',
             [
                 'label' => __('Holiday Except This Month Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -598,7 +598,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.dayExceptThisMonth.color',
+            'advanced_style_month_dayExceptThisMonth_color',
             [
                 'label' => __('Day Except This Month Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -608,7 +608,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.weekend.backgroundColor',
+            'advanced_style_month_weekend_backgroundColor',
             [
                 'label' => __('Weekend Background Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -618,7 +618,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.day.fontSize',
+            'advanced_style_month_day_fontSize',
             [
                 'label' => __('Font Size [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -641,7 +641,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.schedule.borderRadius',
+            'advanced_style_month_schedule_borderRadius',
             [
                 'label' => __('Border Radius [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -652,7 +652,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.schedule.height',
+            'advanced_style_month_schedule_height',
             [
                 'label' => __('Height [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -663,7 +663,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.schedule.marginTop',
+            'advanced_style_month_schedule_marginTop',
             [
                 'label' => __('Margin Top [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -674,7 +674,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.schedule.marginLeft',
+            'advanced_style_month_schedule_marginLeft',
             [
                 'label' => __('Margin Left [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -685,7 +685,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.schedule.marginRight',
+            'advanced_style_month_schedule_marginRight',
             [
                 'label' => __('Margin Left [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -708,7 +708,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreView.border.px',
+            'advanced_style_month_moreView_border_px',
             [
                 'label' => __('Border Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -719,7 +719,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreView.border.style',
+            'advanced_style_month_moreView_border_style',
             [
                 'label' => __('Border Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -728,7 +728,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreView.border.color',
+            'advanced_style_month_moreView_border_color',
             [
                 'label' => __('Border Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -738,7 +738,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreView.boxShadow.px.top',
+            'advanced_style_month_moreView_boxShadow_px_top',
             [
                 'label' => __('Box Shadow Size Top [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -749,7 +749,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreView.boxShadow.px.right',
+            'advanced_style_month_moreView_boxShadow_px_right',
             [
                 'label' => __('Box Shadow Size Right [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -760,7 +760,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreView.boxShadow.px.bottom',
+            'advanced_style_month_moreView_boxShadow_px_bottom',
             [
                 'label' => __('Box Shadow Size Bottom [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -771,7 +771,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreView.boxShadow.px.left',
+            'advanced_style_month_moreView_boxShadow_px_left',
             [
                 'label' => __('Box Shadow Size Left [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -782,7 +782,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreView.boxShadow.color',
+            'advanced_style_month_moreView_boxShadow_color',
             [
                 'label' => __('Border Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -792,7 +792,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreView.backgroundColor',
+            'advanced_style_month_moreView_backgroundColor',
             [
                 'label' => __('Background Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -802,7 +802,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreView.paddingBottom',
+            'advanced_style_month_moreView_paddingBottom',
             [
                 'label' => __('Padding Bottom [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -813,7 +813,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreViewTitle.height',
+            'advanced_style_month_moreViewTitle_height',
             [
                 'label' => __('Title Height [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -824,7 +824,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreViewTitle.marginBottom',
+            'advanced_style_month_moreViewTitle_marginBottom',
             [
                 'label' => __('Title Margin Bottom [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -835,7 +835,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreViewTitle.backgroundColor',
+            'advanced_style_month_moreViewTitle_backgroundColor',
             [
                 'label' => __('Background Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -845,7 +845,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreViewTitle.borderBottom.px',
+            'advanced_style_month_moreViewTitle_borderBottom_px',
             [
                 'label' => __('Title Border Bottom Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -856,7 +856,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreViewTitle.borderBottom.style',
+            'advanced_style_month_moreViewTitle_borderBottom_style',
             [
                 'label' => __('Title Border Bottom Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -865,7 +865,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreViewTitle.borderBottom.color',
+            'advanced_style_month_moreViewTitle_borderBottom_color',
             [
                 'label' => __('Title Border Bottom Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -875,7 +875,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreViewTitle.padding.px.top',
+            'advanced_style_month_moreViewTitle_padding_px_top',
             [
                 'label' => __('Title Padding Top [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -886,7 +886,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreViewTitle.padding.px.right',
+            'advanced_style_month_moreViewTitle_padding_px_right',
             [
                 'label' => __('Title Padding Right [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -897,7 +897,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreViewTitle.padding.px.bottom',
+            'advanced_style_month_moreViewTitle_padding_px_bottom',
             [
                 'label' => __('Title Padding Bottom [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -908,7 +908,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreViewTitle.padding.px.left',
+            'advanced_style_month_moreViewTitle_padding_px_left',
             [
                 'label' => __('Title Padding Left [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -919,7 +919,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreViewList.padding.px.top',
+            'advanced_style_month_moreViewList_padding_px_top',
             [
                 'label' => __('List Padding Top [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -930,7 +930,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreViewList.padding.px.right',
+            'advanced_style_month_moreViewList_padding_px_right',
             [
                 'label' => __('List Padding Right [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -941,7 +941,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreViewList.padding.px.bottom',
+            'advanced_style_month_moreViewList_padding_px_bottom',
             [
                 'label' => __('List Padding Bottom [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -952,7 +952,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_month.moreViewList.padding.px.left',
+            'advanced_style_month_moreViewList_padding_px_left',
             [
                 'label' => __('List Padding Left [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -975,7 +975,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayname.height',
+            'advanced_style_week_dayname_height',
             [
                 'label' => __('Dayname Height [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -986,7 +986,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayname.borderTop.px',
+            'advanced_style_week_dayname_borderTop_px',
             [
                 'label' => __('Border Top Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -997,7 +997,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayname.borderTop.style',
+            'advanced_style_week_dayname_borderTop_style',
             [
                 'label' => __('Border Top Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1006,7 +1006,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayname.borderTop.color',
+            'advanced_style_week_dayname_borderTop_color',
             [
                 'label' => __('Border Top Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1016,7 +1016,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayname.borderBottom.px',
+            'advanced_style_week_dayname_borderBottom_px',
             [
                 'label' => __('Border Bottom Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1027,7 +1027,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayname.borderBottom.style',
+            'advanced_style_week_dayname_borderBottom_style',
             [
                 'label' => __('Border Bottom Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1036,7 +1036,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayname.borderBottom.color',
+            'advanced_style_week_dayname_borderBottom_color',
             [
                 'label' => __('Border Bottom Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1046,7 +1046,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayname.borderLeft.px',
+            'advanced_style_week_dayname_borderLeft_px',
             [
                 'label' => __('Border Left Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1057,7 +1057,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayname.borderLeft.style',
+            'advanced_style_week_dayname_borderLeft_style',
             [
                 'label' => __('Border Left Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1066,7 +1066,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayname.borderLeft.color',
+            'advanced_style_week_dayname_borderLeft_color',
             [
                 'label' => __('Border Left Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1076,7 +1076,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayname.paddingLeft',
+            'advanced_style_week_dayname_paddingLeft',
             [
                 'label' => __('Padding Left [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1087,7 +1087,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayname.backgroundColor',
+            'advanced_style_week_dayname_backgroundColor',
             [
                 'label' => __('Background Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1097,7 +1097,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayname.textAlign',
+            'advanced_style_week_dayname_textAlign',
             [
                 'label' => __('Text Align', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
@@ -1120,7 +1120,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.today.color',
+            'advanced_style_week_today_color',
             [
                 'label' => __('Today Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1130,7 +1130,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.pastDay.color',
+            'advanced_style_week_pastDay_color',
             [
                 'label' => __('Pastday Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1152,7 +1152,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.vpanelSplitter.border.px',
+            'advanced_style_week_vpanelSplitter_border_px',
             [
                 'label' => __('Border Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1163,7 +1163,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.vpanelSplitter.border.style',
+            'advanced_style_week_vpanelSplitter_border_style',
             [
                 'label' => __('Border Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1172,7 +1172,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.vpanelSplitter.border.color',
+            'advanced_style_week_vpanelSplitter_border_color',
             [
                 'label' => __('Border Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1182,7 +1182,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.vpanelSplitter.height',
+            'advanced_style_week_vpanelSplitter_height',
             [
                 'label' => __('Height [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1205,7 +1205,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.daygrid.borderRight.px',
+            'advanced_style_week_daygrid_borderRight_px',
             [
                 'label' => __('Border Right Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1216,7 +1216,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.daygrid.borderRight.style',
+            'advanced_style_week_daygrid_borderRight_style',
             [
                 'label' => __('Border Right Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1225,7 +1225,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.daygrid.borderRight.color',
+            'advanced_style_week_daygrid_borderRight_color',
             [
                 'label' => __('Border Right Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1235,7 +1235,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.daygrid.backgroundColor',
+            'advanced_style_week_daygrid_backgroundColor',
             [
                 'label' => __('Background Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1245,7 +1245,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.daygridLeft.width',
+            'advanced_style_week_daygridLeft_width',
             [
                 'label' => __('Left Width [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1256,7 +1256,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.daygridLeft.backgroundColor',
+            'advanced_style_week_daygridLeft_backgroundColor',
             [
                 'label' => __('Left Background Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1266,7 +1266,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.daygridLeft.paddingRight',
+            'advanced_style_week_daygridLeft_paddingRight',
             [
                 'label' => __('Left Padding Right [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1277,7 +1277,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.daygridLeft.borderRight.px',
+            'advanced_style_week_daygridLeft_borderRight_px',
             [
                 'label' => __('Left Border Right Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1288,7 +1288,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.daygridLeft.borderRight.style',
+            'advanced_style_week_daygridLeft_borderRight_style',
             [
                 'label' => __('Left Border Right Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1297,7 +1297,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.daygridLeft.borderRight.color',
+            'advanced_style_week_daygridLeft_borderRight_color',
             [
                 'label' => __('Left Border Right Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1307,7 +1307,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.today.backgroundColor',
+            'advanced_style_week_today_backgroundColor',
             [
                 'label' => __('Today Background Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1317,7 +1317,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.weekend.backgroundColor',
+            'advanced_style_week_weekend_backgroundColor',
             [
                 'label' => __('Weekend Background Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1339,7 +1339,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.timegridLeft.width',
+            'advanced_style_week_timegridLeft_width',
             [
                 'label' => __('Left Width [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1350,7 +1350,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.timegridLeft.backgroundColor',
+            'advanced_style_week_timegridLeft_backgroundColor',
             [
                 'label' => __('Left Background Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1360,7 +1360,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.timegridLeft.borderRight.px',
+            'advanced_style_common_timegridLeft_borderRight_px',
             [
                 'label' => __('Left Border Right Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1371,7 +1371,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.timegridLeft.borderRight.style',
+            'advanced_style_common_timegridLeft_borderRight_style',
             [
                 'label' => __('Left Border Right Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1380,7 +1380,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.timegridLeft.borderRight.color',
+            'advanced_style_common_timegridLeft_borderRight_color',
             [
                 'label' => __('Left Border Right Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1390,7 +1390,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.timegridLeft.fontSize',
+            'advanced_style_week_timegridLeft_fontSize',
             [
                 'label' => __('Left Font Size [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1401,7 +1401,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.timegridLeftTimezoneLabel.height',
+            'advanced_style_week_timegridLeftTimezoneLabel_height',
             [
                 'label' => __('Left Timezone Label Height [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1412,7 +1412,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.timegridLeftAdditionalTimezone.backgroundColor',
+            'advanced_style_week_timegridLeftAdditionalTimezone_backgroundColor',
             [
                 'label' => __('Left Additional Timezone Background Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1422,7 +1422,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.timegridOneHour.height',
+            'advanced_style_week_timegridOneHour_height',
             [
                 'label' => __('1-Hour Height [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1433,7 +1433,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.timegridHalfHour.height',
+            'advanced_style_week_timegridHalfHour_height',
             [
                 'label' => __('0.5-Hour Height [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1444,7 +1444,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.timegridHalfHour.borderBottom.px',
+            'advanced_style_common_timegridHalfHour_borderBottom_px',
             [
                 'label' => __('0.5-Hour Border Bottom Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1455,7 +1455,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.timegridHalfHour.borderBottom.style',
+            'advanced_style_common_timegridHalfHour_borderBottom_style',
             [
                 'label' => __('0.5-Hour Border Bottom Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1464,7 +1464,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.timegridHalfHour.borderBottom.color',
+            'advanced_style_common_timegridHalfHour_borderBottom_color',
             [
                 'label' => __('0.5-Hour Border Bottom Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1474,7 +1474,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.timegridHorizontalLine.borderBottom.px',
+            'advanced_style_common_timegridHorizontalLine_borderBottom_px',
             [
                 'label' => __('Horizontal Line Border Bottom Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1485,7 +1485,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.timegridHorizontalLine.borderBottom.style',
+            'advanced_style_common_timegridHorizontalLine_borderBottom_style',
             [
                 'label' => __('Horizontal Line Border Bottom Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1494,7 +1494,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_common.timegridHorizontalLine.borderBottom.color',
+            'advanced_style_common_timegridHorizontalLine_borderBottom_color',
             [
                 'label' => __('Horizontal Line Border Bottom Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1504,7 +1504,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.timegrid.paddingRight',
+            'advanced_style_week_timegrid_paddingRight',
             [
                 'label' => __('Padding Right [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1515,7 +1515,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.timegrid.borderRight.px',
+            'advanced_style_week_timegrid_borderRight_px',
             [
                 'label' => __('Border Right Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1526,7 +1526,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.timegrid.borderRight.style',
+            'advanced_style_week_timegrid_borderRight_style',
             [
                 'label' => __('Border Right Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1535,7 +1535,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.timegrid.borderRight.color',
+            'advanced_style_week_timegrid_borderRight_color',
             [
                 'label' => __('Border Right Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1545,7 +1545,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.timegridSchedule.borderRadius',
+            'advanced_style_week_timegridSchedule_borderRadius',
             [
                 'label' => __('Schedule Border Radius [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1556,7 +1556,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.timegridSchedule.paddingLeft',
+            'advanced_style_week_timegridSchedule_paddingLeft',
             [
                 'label' => __('Schedule Padding Left [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1579,7 +1579,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.currentTime.color',
+            'advanced_style_week_currentTime_color',
             [
                 'label' => __('Current Time Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1589,7 +1589,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.currentTime.fontSize',
+            'advanced_style_week_currentTime_fontSize',
             [
                 'label' => __('Current Time Font Size [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1600,7 +1600,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.currentTime.fontWeight',
+            'advanced_style_week_currentTime_fontWeight',
             [
                 'label' => __('Current Time Font Weight', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1609,7 +1609,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.pastTime.color',
+            'advanced_style_week_pastTime_color',
             [
                 'label' => __('Past Time Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1619,7 +1619,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.pastTime.fontWeight',
+            'advanced_style_week_pastTime_fontWeight',
             [
                 'label' => __('Past Time Font Weight', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1628,7 +1628,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.futureTime.color',
+            'advanced_style_week_futureTime_color',
             [
                 'label' => __('Future Time Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1638,7 +1638,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.futureTime.fontWeight',
+            'advanced_style_week_futureTime_fontWeight',
             [
                 'label' => __('Future Time Font Weight', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1647,7 +1647,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.currentTimeLinePast.border.px',
+            'advanced_style_week_currentTimeLinePast_border_px',
             [
                 'label' => __('Current Time Line Past Border Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1658,7 +1658,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.currentTimeLinePast.border.style',
+            'advanced_style_week_currentTimeLinePast_border_style',
             [
                 'label' => __('Current Time Line Past Border Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1667,7 +1667,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.currentTimeLinePast.border.color',
+            'advanced_style_week_currentTimeLinePast_border_color',
             [
                 'label' => __('Current Time Line Past Border Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1677,7 +1677,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.currentTimeLineBullet.backgroundColor',
+            'advanced_style_week_currentTimeLineBullet_backgroundColor',
             [
                 'label' => __('Current Time Line Bullet Background Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1687,7 +1687,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.currentTimeLineToday.border.px',
+            'advanced_style_week_currentTimeLineToday_border_px',
             [
                 'label' => __('Current Time Line Today Border Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1698,7 +1698,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.currentTimeLineToday.border.style',
+            'advanced_style_week_currentTimeLineToday_border_style',
             [
                 'label' => __('Current Time Line Today Border Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1707,7 +1707,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.currentTimeLineToday.border.color',
+            'advanced_style_week_currentTimeLineToday_border_color',
             [
                 'label' => __('Current Time Line Today Border Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1717,7 +1717,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.currentTimeLineFuture.border.px',
+            'advanced_style_week_currentTimeLineFuture_border_px',
             [
                 'label' => __('Current Time Line Future Border Size', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1728,7 +1728,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.currentTimeLineFuture.border.style',
+            'advanced_style_week_currentTimeLineFuture_border_style',
             [
                 'label' => __('Current Time Line Future Border Style', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1737,7 +1737,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.currentTimeLineFuture.border.color',
+            'advanced_style_week_currentTimeLineFuture_border_color',
             [
                 'label' => __('Current Time Line Future Border Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1759,7 +1759,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.creationGuide.color',
+            'advanced_style_week_creationGuide_color',
             [
                 'label' => __('Color', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1769,7 +1769,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.creationGuide.fontSize',
+            'advanced_style_week_creationGuide_fontSize',
             [
                 'label' => __('Font Size [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1780,7 +1780,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.creationGuide.fontWeight',
+            'advanced_style_week_creationGuide_fontWeight',
             [
                 'label' => __('Font Weight', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1801,7 +1801,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayGridSchedule.borderRadius',
+            'advanced_style_week_dayGridSchedule_borderRadius',
             [
                 'label' => __('Border Radius [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1812,7 +1812,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayGridSchedule.height',
+            'advanced_style_week_dayGridSchedule_height',
             [
                 'label' => __('Height [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1823,7 +1823,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayGridSchedule.marginTop',
+            'advanced_style_week_dayGridSchedule_marginTop',
             [
                 'label' => __('Margin Top [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1834,7 +1834,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayGridSchedule.marginLeft',
+            'advanced_style_week_dayGridSchedule_marginLeft',
             [
                 'label' => __('Margin Left [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
@@ -1845,7 +1845,7 @@ class Calendar extends AbstractElementorWidget
             ]
         );
         $this->add_control(
-            'advanced-style_week.dayGridSchedule.marginRight',
+            'advanced_style_week_dayGridSchedule_marginRight',
             [
                 'label' => __('Margin Right [px]', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::NUMBER,
