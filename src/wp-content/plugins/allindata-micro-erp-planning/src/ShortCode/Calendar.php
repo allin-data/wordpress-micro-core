@@ -48,7 +48,7 @@ class Calendar extends AbstractShortCode implements PluginShortCodeInterface
      */
     public function addShortCode($attributes, $content, $name)
     {
-        if (!is_user_logged_in() || is_admin()) {
+        if (!is_user_logged_in()) {
             return '';
         }
 
