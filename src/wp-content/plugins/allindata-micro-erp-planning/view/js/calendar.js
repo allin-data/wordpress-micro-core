@@ -12,6 +12,7 @@
             actionUpdateSchedule: '',
             actionDeleteSchedule: '',
             labels: {
+                'Calendar Range': '%1$s to %2$s',
                 'Milestone': 'Milestone',
                 'Task': 'Task',
                 'All Day': 'All Day',
@@ -27,10 +28,14 @@
                 'Friday': 'Friday',
                 'Saturday': 'Saturday'
             },
+            initialDate: moment(),
+            renderDateSelector: '.calendar-render-range',
             formats: {
                 datetime: 'DD.MM.YYYY HH:mm:ss',
                 date: 'DD.MM.YYYY',
                 time: 'HH:mm:ss',
+                calendarRangeStart: 'DD.MM',
+                calendarRangeEnd: 'DD.MM.YYYY',
             },
             calendarOptions: {
                 title: 'Demo Schedule Calendar',
@@ -46,7 +51,17 @@
                 template: {},
                 month: {},
                 week: {},
+                timezones: [{
+                    timezoneOffset: (new Date()).getTimezoneOffset(),
+                    displayLabel: 'GMT+02:00',
+                    tooltip: 'Europe/Berlin'
+                }],
                 usageStatistics: false
+            },
+            callbacks: {
+                today: function() {},
+                prev: function() {},
+                next: function() {},
             },
             currentView: 'month',
             schedules: []
@@ -69,6 +84,7 @@
             config.calendarOptions.template = $.extend({}, this._getTemplates(config), config.calendarOptions.template || {});
             config.calendarOptions.month = $.extend({}, this._getMonthDefintion(config), config.calendarOptions.month || {});
             config.calendarOptions.week = $.extend({}, this._getWeekDefintion(config), config.calendarOptions.week || {});
+            config.calendarOptions.date = config.initialDate.format(config.formats.datetime);
 
             this._createCalendar(config, this._addHooks);
         },
@@ -129,8 +145,19 @@
          */
         _refreshScheduleVisibility: function (calendar, config, callback = function () {
         }) {
+            let me = this,
+                calendarRangeLabel;
+
             calendar.toggleSchedules(config.calendarId, false, false);
             calendar.render(true);
+
+            calendarRangeLabel = me._e('Calendar Range', [
+                moment(calendar.getDateRangeStart().toDate()).format(config.formats.calendarRangeStart),
+                moment(calendar.getDateRangeEnd().toDate()).format(config.formats.calendarRangeEnd)
+            ]);
+    console.log(calendarRangeLabel);
+            $(config.renderDateSelector).html(calendarRangeLabel);
+
             callback.call(this, calendar, config);
         },
 
@@ -344,7 +371,19 @@
             });
             $(config.target).on('calendar-refresh', function (e, callback) {
                 me._updateCalendar(calendar, config, callback);
-            })
+            });
+            $(config.target).on('calendar-today', function () {
+                calendar.today();
+                me._updateCalendar(calendar, config, config.callbacks.today);
+            });
+            $(config.target).on('calendar-prev', function () {
+                calendar.prev();
+                me._updateCalendar(calendar, config, config.callbacks.prev);
+            });
+            $(config.target).on('calendar-next', function () {
+                calendar.next();
+                me._updateCalendar(calendar, config, config.callbacks.next);
+            });
         },
 
         /**

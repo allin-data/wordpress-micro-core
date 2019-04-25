@@ -18,18 +18,20 @@ Copyright (C) 2019 All.In Data GmbH
     </div>
 </div>
 
-<div id="menu">
-      <span id="menu-navi">
-        <button type="button" class="btn btn-default btn-sm move-today" data-action="move-today">Today</button>
-        <button type="button" class="btn btn-default btn-sm move-day" data-action="move-prev">
-          <i class="calendar-icon ic-arrow-line-left" data-action="move-prev"></i>
+<nav id="calendar-menu">
+    <div class="justify-content-center">
+        <button type="button" class="btn btn-default btn-sm move-today" data-action="move-today">
+            <?php _e('Today', AID_MICRO_ERP_PLANNING_TEXTDOMAIN); ?>
         </button>
-        <button type="button" class="btn btn-default btn-sm move-day" data-action="move-next">
-          <i class="calendar-icon ic-arrow-line-right" data-action="move-next"></i>
+        <button type="button" class="btn btn-default btn-sm move-prev" data-action="move-prev">
+            <i class="fas fa-angle-double-left" data-action="move-prev"></i>
         </button>
-      </span>
-    <span id="renderRange" class="render-range"></span>
-</div>
+        <button type="button" class="btn btn-default btn-sm move-next" data-action="move-next">
+            <i class="fas fa-angle-double-right" data-action="move-next"></i>
+        </button>
+        <span class="calendar-render-range">...</span>
+    </div>
+</nav>
 
 <div id="calendar_<?= $block->getAttribute('id') ?>" class="planning-calendar"></div>
 
@@ -37,7 +39,9 @@ Copyright (C) 2019 All.In Data GmbH
 
 <script>
     jQuery(document).ready(function ($) {
-        let calendarSelector = '#calendar_<?= $block->getAttribute('id') ?>';
+        let calendarSelector = '#calendar_<?= $block->getAttribute('id') ?>',
+            currentDate = moment();
+
         $(calendarSelector).microErpPlanningCalendar({
             calendarId: 1,
             target: calendarSelector,
@@ -61,10 +65,11 @@ Copyright (C) 2019 All.In Data GmbH
                 'Friday': '<?= $block->getAttribute('label-friday'); ?>',
                 'Saturday': '<?= $block->getAttribute('label-saturday'); ?>'
             },
+            initialDate: currentDate,
+            renderDateSelector: '.calendar-render-range',
             calendarOptions: {
                 title: '<?= $block->getTitle(); ?>',
                 defaultView: '<?= $block->getAttribute('default-view'); ?>',
-                date: '<?= date('Y-m-d\TH:i:s+09:00'); ?>',
                 taskView: 'milestone',
                 scheduleView: 'allday',
                 isReadOnly: false,
@@ -74,6 +79,16 @@ Copyright (C) 2019 All.In Data GmbH
                 useDetailPopup: true
             },
             schedules: <?= json_encode($block->getSchedules()); ?>
+        });
+
+        $('.move-today').click(function () {
+            $(calendarSelector).trigger('calendar-today');
+        });
+        $('.move-next').click(function () {
+            $(calendarSelector).trigger('calendar-next');
+        });
+        $('.move-prev').click(function () {
+            $(calendarSelector).trigger('calendar-prev');
         });
 
         $('#view-month').click(function () {
