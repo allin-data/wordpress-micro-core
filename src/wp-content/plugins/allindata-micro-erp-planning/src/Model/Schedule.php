@@ -55,7 +55,7 @@ class Schedule extends AbstractPostModel
     /**
      * @var bool|int|null
      */
-    private $isAllday;
+    private $isAllDay;
     /**
      * @var bool|int|null
      */
@@ -276,16 +276,16 @@ class Schedule extends AbstractPostModel
      */
     public function getIsAllday()
     {
-        return $this->isAllday;
+        return $this->isAllDay;
     }
 
     /**
-     * @param bool|int|null $isAllday
+     * @param bool|int|null $isAllDay
      * @return Schedule
      */
-    public function setIsAllday($isAllday)
+    public function setIsAllday($isAllDay)
     {
-        $this->isAllday = $isAllday;
+        $this->isAllDay = $isAllDay;
         return $this;
     }
 

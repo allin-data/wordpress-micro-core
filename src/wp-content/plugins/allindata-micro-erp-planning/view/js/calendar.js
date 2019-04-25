@@ -31,11 +31,12 @@
             initialDate: moment(),
             renderDateSelector: '.calendar-render-range',
             formats: {
-                datetime: 'DD.MM.YYYY HH:mm:ss',
+                datetime: 'DD.MM.YYYY HH:mm',
                 date: 'DD.MM.YYYY',
-                time: 'HH:mm:ss',
+                time: 'HH:mm',
                 calendarRangeStart: 'DD.MM',
                 calendarRangeEnd: 'DD.MM.YYYY',
+                map: 'YYYY-MM-DD HH:mm:ss'
             },
             calendarOptions: {
                 title: 'Demo Schedule Calendar',
@@ -59,9 +60,12 @@
                 usageStatistics: false
             },
             callbacks: {
-                today: function() {},
-                prev: function() {},
-                next: function() {},
+                today: function () {
+                },
+                prev: function () {
+                },
+                next: function () {
+                },
             },
             currentView: 'month',
             schedules: []
@@ -155,7 +159,6 @@
                 moment(calendar.getDateRangeStart().toDate()).format(config.formats.calendarRangeStart),
                 moment(calendar.getDateRangeEnd().toDate()).format(config.formats.calendarRangeEnd)
             ]);
-    console.log(calendarRangeLabel);
             $(config.renderDateSelector).html(calendarRangeLabel);
 
             callback.call(this, calendar, config);
@@ -281,9 +284,9 @@
                 popupDetailBody: function (model) {
                     return model.body;
                 },
-                popupDetailDate: function(isAllDay, start, end) {
+                popupDetailDate: function (isAllDay, start, end) {
                     let startDate = moment(start.toDate()),
-                        endDate =  moment(end.toDate()),
+                        endDate = moment(end.toDate()),
                         isSameDate = startDate.format(config.formats.date) === endDate.format(config.formats.date),
                         endFormat = (isSameDate ? '' : config.formats.date) + ' ' + config.formats.time;
 
@@ -426,9 +429,9 @@
          */
         _addHookOnBeforeCreateSchedule: function (calendar, event, config) {
             let me = this,
-                startDate = this._mapDate(event.start),
-                endDate = this._mapDate(event.end),
-                schedule = $.extend(true, this._getSchedulePrototype(), event);
+                startDate = me._mapDate(event.start, config),
+                endDate = me._mapDate(event.end, config),
+                schedule = me._merge(me._getSchedulePrototype(), event);
 
             schedule.calendarId = 1;
             schedule.category = 'time';
@@ -462,14 +465,14 @@
          */
         _addHookOnBeforeUpdateSchedule: function (calendar, event, config) {
             let me = this,
-                startDate = this._mapDate(event.start),
-                endDate = this._mapDate(event.end),
-                schedule = $.extend(true, this._getSchedulePrototype(), event.schedule);
+                startDate = me._mapDate(event.start, config),
+                endDate = me._mapDate(event.end, config),
+                schedule = me._merge(me._getSchedulePrototype(), event.schedule);
             schedule.calendarId = 1;
             schedule.category = 'time';
             schedule.start = startDate;
             schedule.end = endDate;
-
+console.log();
             let payload = {
                 action: config.actionUpdateSchedule,
                 schedule: schedule || {}
@@ -540,23 +543,33 @@
 
         /**
          * @param {TZDate} date
+         * @param {Object} config
          * @return {string}
          * @private
          */
-        _mapDate: function (date) {
-            let yyyy = date.getFullYear().toString(),
-                mm = (date.getMonth() + 1).toString(),
-                dd = date.getDate().toString(),
-                hh = date.getHours().toString(),
-                ii = date.getMinutes().toString(),
-                ss = date.getSeconds().toString();
-
-            return yyyy + '-' + (mm[1] ? mm : "0" + mm[0]) + '-' + (dd[1] ? dd : "0" + dd[0]) + ' ' +
-                (hh[1] ? hh : "0" + hh[0]) + ':' + (ii[1] ? ii : "0" + ii[0]) + ':' + (ss[1] ? ss : "0" + ss[0]);
+        _mapDate: function (date, config) {
+            return moment(date.toDate()).format(config.formats.map);
         },
 
         /**
-         * @return {{borderColor: null, dueDateClass: string, color: null, customStyle: string, start: null, raw: {hasRecurrenceRule: boolean, creator: {phone: string, name: string, company: string, avatar: string, email: string}, memo: string, location: null, hasToOrCc: boolean, class: string}, recurrenceRule: string, isVisible: boolean, title: null, body: null, isPending: boolean, isFocused: boolean, comingDuration: number, goingDuration: number, isAllday: boolean, isReadOnly: boolean, calendarId: null, bgColor: null, dragBgColor: null, end: null, id: null, category: string}}
+         * Merge objects, only with target properties. Target object will not be modified.
+         * @param {Object} target
+         * @param {Object} source
+         * @return {Object} Merged Object
+         * @private
+         */
+        _merge: function (target, source) {
+            let newTarget = Object.assign({}, target);
+            Object.keys(newTarget).map(function (property) {
+                if (source[property]) {
+                    newTarget[property] = source[property]
+                }
+            });
+            return newTarget;
+        },
+
+        /**
+         * @return {{borderColor: null, dueDateClass: string, color: null, customStyle: string, start: null, raw: {hasRecurrenceRule: boolean, creator: {phone: string, name: string, company: string, avatar: string, email: string}, memo: string, location: null, hasToOrCc: boolean, class: string}, recurrenceRule: string, isVisible: boolean, title: null, body: null, isPending: boolean, isFocused: boolean, comingDuration: number, goingDuration: number, isAllDay: boolean, isReadOnly: boolean, calendarId: null, bgColor: null, dragBgColor: null, end: null, id: null, category: string}}
          * @private
          */
         _getSchedulePrototype: function () {
@@ -565,7 +578,7 @@
                 calendarId: null,
                 title: null,
                 body: null,
-                isAllday: false,
+                isAllDay: false,
                 start: null,
                 end: null,
                 category: '',
