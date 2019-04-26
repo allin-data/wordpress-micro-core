@@ -8,6 +8,7 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Mdm\Model\Resource;
 
+use AllInData\MicroErp\Core\Helper\MethodUtil;
 use AllInData\MicroErp\Core\Model\AbstractModel;
 use AllInData\MicroErp\Core\Model\AbstractResource;
 use function sanitize_user;
@@ -160,7 +161,7 @@ class User extends AbstractResource
             if (!in_array($itemKey, $postEntityDataKeySet)) {
                 continue;
             }
-            $key = $this->canonicalizeAttributeName($itemKey);
+            $key = MethodUtil::canonicalizeAttributeName($itemKey);
             $filteredDataSet[$key] = $itemValue;
         }
         $filteredDataSet[$this->getPrimaryKey()] = $primaryKeyValue;
@@ -182,7 +183,7 @@ class User extends AbstractResource
             if (in_array($itemKey, $postEntityDataKeySet)) {
                 continue;
             }
-            $key = $this->canonicalizeAttributeName($itemKey);
+            $key = MethodUtil::canonicalizeAttributeName($itemKey);
 
             if (is_serialized($itemValue)) {
                 $itemValue = unserialize($itemValue);
@@ -204,7 +205,7 @@ class User extends AbstractResource
         $postEntityDataKeySet = $this->getUserEntityDataKeySet();
         $filteredDataSet = [];
         foreach ($entityData as $itemKey => $itemValue) {
-            $key = $this->decanonicalizeAttributeName($itemKey);
+            $key = MethodUtil::decanonicalizeAttributeName($itemKey);
             if (!in_array($key, $postEntityDataKeySet)) {
                 continue;
             }
@@ -231,7 +232,7 @@ class User extends AbstractResource
         $postEntityDataKeySet = $this->getUserEntityDataKeySet();
         $filteredDataSet = [];
         foreach ($entityData as $itemKey => $itemValue) {
-            $key = $this->decanonicalizeAttributeName($itemKey);
+            $key = MethodUtil::decanonicalizeAttributeName($itemKey);
             if (in_array($key, $postEntityDataKeySet)) {
                 continue;
             }

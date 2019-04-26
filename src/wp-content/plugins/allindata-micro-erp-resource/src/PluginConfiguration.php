@@ -26,15 +26,23 @@ use AllInData\MicroErp\Mdm\Model\Capability\CapabilityInterface;
 use AllInData\MicroErp\Mdm\Model\Role\ManagerRole;
 use AllInData\MicroErp\Mdm\Model\Role\OwnerRole;
 use AllInData\MicroErp\Resource\Controller\Admin\CreateResourceType;
+use AllInData\MicroErp\Resource\Controller\Admin\CreateResourceTypeAttribute;
+use AllInData\MicroErp\Resource\Controller\Admin\DeleteResourceTypeAttribute;
 use AllInData\MicroErp\Resource\Controller\Admin\UpdateResourceType;
+use AllInData\MicroErp\Resource\Controller\Admin\UpdateResourceTypeAttribute;
+use AllInData\MicroErp\Resource\Model\Attribute\Type\Text;
 use AllInData\MicroErp\Resource\Model\Capability\CreateResource;
 use AllInData\MicroErp\Resource\Model\Capability\DeleteResource;
 use AllInData\MicroErp\Resource\Model\Capability\UpdateResource;
+use AllInData\MicroErp\Resource\Model\Factory\AttributeTypeFactory;
 use AllInData\MicroErp\Resource\Model\Resource;
+use AllInData\MicroErp\Resource\Model\ResourceAttributeValue;
+use AllInData\MicroErp\Resource\Model\ResourceTypeAttribute;
 use AllInData\MicroErp\Resource\Module\ElementorAdminCategory;
 use AllInData\MicroErp\Resource\Model\ResourceType;
 use AllInData\MicroErp\Resource\Module\ElementorCategory;
 use AllInData\MicroErp\Resource\ShortCode\Admin\FormCreateResourceType;
+use AllInData\MicroErp\Resource\ShortCode\Admin\FormEditResourceTypeAttributes;
 use AllInData\MicroErp\Resource\ShortCode\Admin\GridResourceType;
 use AllInData\MicroErp\Resource\ShortCode\FormCreateResource;
 use AllInData\MicroErp\Resource\ShortCode\GridResource;
@@ -123,6 +131,17 @@ class PluginConfiguration
             ),
             new \AllInData\MicroErp\Resource\Controller\DeleteResource(
                 $this->getResourceResource()
+            ),
+            new CreateResourceTypeAttribute(
+                $this->getResourceTypeAttributeResource(),
+                $this->getResourceTypeResource()
+            ),
+            new UpdateResourceTypeAttribute(
+                $this->getResourceTypeAttributeResource(),
+                $this->getResourceTypeResource()
+            ),
+            new DeleteResourceTypeAttribute(
+                $this->getResourceTypeAttributeResource()
             )
         ];
     }
@@ -154,6 +173,14 @@ class PluginConfiguration
                 AID_MICRO_ERP_RESOURCE_TEMPLATE_DIR,
                 new \AllInData\MicroErp\Resource\Block\FormCreateResource(
                     $this->getResourceTypeResource()
+                )
+            ),
+            new FormEditResourceTypeAttributes(
+                AID_MICRO_ERP_RESOURCE_TEMPLATE_DIR,
+                new \AllInData\MicroErp\Resource\Block\Admin\FormEditResourceTypeAttributes(
+                    $this->getResourceTypeResource(),
+                    $this->getResourceTypeAttributeCollection(),
+                    $this->getAttributeTypeFactory()
                 )
             )
         ];
@@ -193,11 +220,42 @@ class PluginConfiguration
     /**
      * @return GenericFactory
      */
-    private function getResourceTypeFactory(): GenericFactory
+    private function getResourceAttributeValueFactory(): GenericFactory
     {
         return new GenericFactory(
-            ResourceType::class
+            ResourceAttributeValue::class
         );
+    }
+
+    /**
+     * @return \AllInData\MicroErp\Resource\Model\Factory\ResourceType
+     */
+    private function getResourceTypeFactory(): \AllInData\MicroErp\Resource\Model\Factory\ResourceType
+    {
+        return new \AllInData\MicroErp\Resource\Model\Factory\ResourceType(
+            ResourceType::class,
+            $this->getResourceTypeAttributeFactory()
+        );
+    }
+
+    /**
+     * @return GenericFactory
+     */
+    private function getResourceTypeAttributeFactory(): GenericFactory
+    {
+        return new GenericFactory(
+            ResourceTypeAttribute::class
+        );
+    }
+
+    /**
+     * @return AttributeTypeFactory
+     */
+    private function getAttributeTypeFactory(): AttributeTypeFactory
+    {
+        return new AttributeTypeFactory([
+            Text::TYPE => new Text()
+        ]);
     }
 
     /**
@@ -215,12 +273,36 @@ class PluginConfiguration
     /**
      * @return GenericResource
      */
+    private function getResourceAttributeValueResource(): GenericResource
+    {
+        return new GenericResource(
+            $this->getWordpressDatabase(),
+            'resource_attribute_value',
+            $this->getResourceAttributeValueFactory()
+        );
+    }
+
+    /**
+     * @return GenericResource
+     */
     private function getResourceTypeResource(): GenericResource
     {
         return new GenericResource(
             $this->getWordpressDatabase(),
             'resource_type',
             $this->getResourceTypeFactory()
+        );
+    }
+
+    /**
+     * @return GenericResource
+     */
+    private function getResourceTypeAttributeResource(): GenericResource
+    {
+        return new GenericResource(
+            $this->getWordpressDatabase(),
+            'resource_type_attribute',
+            $this->getResourceTypeAttributeFactory()
         );
     }
 
@@ -235,12 +317,32 @@ class PluginConfiguration
     }
 
     /**
+     * @return GenericOwnedCollection
+     */
+    private function getResourceAttributeValueCollection(): GenericOwnedCollection
+    {
+        return new GenericOwnedCollection(
+            $this->getResourceAttributeValueResource()
+        );
+    }
+
+    /**
      * @return GenericCollection
      */
     private function getResourceTypeCollection(): GenericCollection
     {
         return new GenericCollection(
             $this->getResourceTypeResource()
+        );
+    }
+
+    /**
+     * @return \AllInData\MicroErp\Resource\Model\Collection\ResourceTypeAttribute
+     */
+    private function getResourceTypeAttributeCollection(): \AllInData\MicroErp\Resource\Model\Collection\ResourceTypeAttribute
+    {
+        return new \AllInData\MicroErp\Resource\Model\Collection\ResourceTypeAttribute(
+            $this->getResourceTypeAttributeResource()
         );
     }
 

@@ -22,7 +22,8 @@ Copyright (C) 2019 All.In Data GmbH
             <input type="text" name="label" class="form-control" value=""/>
         </div>
         
-        <input class="btn btn-primary" type="submit" value="<?php _e('Create resource type', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN); ?>"/>
-
+        <button class="btn btn-primary" type="submit">
+            <?php _e('Create resource type', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN); ?>
+        </button>
     </form>
 </div>

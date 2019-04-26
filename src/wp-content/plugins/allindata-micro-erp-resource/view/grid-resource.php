@@ -22,8 +22,6 @@ Copyright (C) 2019 All.In Data GmbH
     <tbody>
 <?php foreach ($block->getResources() as $resource): ?>
     <tr>
-        <input type="hidden" name="action" value="<?= $block->getUpdateActionSlug(); ?>"/>
-
         <th scope="row"><?= $resource->getId(); ?></th>
         <td><input type="text" class="form-control" name="name" value="<?= $resource->getName(); ?>"/></td>
         <td>
@@ -98,7 +96,7 @@ Copyright (C) 2019 All.In Data GmbH
                 success: function (data) {
                     updateButton.prop("disabled", false);
                     deleteButton.prop("disabled", false);
-                    deleteButton.closest("tr").remove();
+                    deleteButton.closest('tr').remove();
                     location.reload();
                 },
                 error: function () {

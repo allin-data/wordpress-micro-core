@@ -8,6 +8,7 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Core\Controller;
 
+use AllInData\MicroErp\Core\Helper\RequestUtil;
 use AllInData\MicroErp\Core\Model\AbstractModel;
 use Exception;
 
@@ -95,11 +96,7 @@ abstract class AbstractController implements PluginControllerInterface
      */
     protected function getParam($key, $defaultValue = null, $filterType = FILTER_SANITIZE_STRING)
     {
-        $val = $this->getGetParam($key, $defaultValue, $filterType);
-        if (is_null($val)) {
-            $val = $this->getPostParam($key, $defaultValue, $filterType);
-        }
-        return $val;
+        return RequestUtil::getParam($key, $defaultValue, $filterType);
     }
 
     /**
@@ -110,71 +107,7 @@ abstract class AbstractController implements PluginControllerInterface
      */
     protected function getParamAsArray($key, $defaultValue = null, $filterType = FILTER_DEFAULT)
     {
-        $val = $this->getGetParamAsArray($key, $defaultValue, $filterType);
-        if (empty($val)) {
-            $val = $this->getPostParamAsArray($key, $defaultValue, $filterType);
-        }
-        return $val;
-    }
-
-    /**
-     * @param string $key
-     * @param null|mixed $defaultValue
-     * @param int $filterType
-     * @return mixed|null
-     */
-    protected function getGetParam($key, $defaultValue = null, $filterType = FILTER_SANITIZE_STRING)
-    {
-        $val = filter_input(INPUT_GET, $key, $filterType);
-        if (is_null($val)) {
-            return $defaultValue;
-        }
-        return $val;
-    }
-
-    /**
-     * @param string $key
-     * @param null|mixed $defaultValue
-     * @param int $filterType
-     * @return mixed|null
-     */
-    protected function getPostParam($key, $defaultValue = null, $filterType = FILTER_SANITIZE_STRING)
-    {
-        $val = filter_input(INPUT_POST, $key, $filterType);
-        if (is_null($val)) {
-            return $defaultValue;
-        }
-        return $val;
-    }
-
-    /**
-     * @param string $key
-     * @param null|mixed $defaultValue
-     * @param int $filterType
-     * @return mixed|null
-     */
-    protected function getGetParamAsArray($key, $defaultValue = null, $filterType = FILTER_DEFAULT)
-    {
-        $val = filter_input(INPUT_GET, $key, $filterType, FILTER_FORCE_ARRAY);
-        if (empty($val)) {
-            return $defaultValue;
-        }
-        return $val;
-    }
-
-    /**
-     * @param string $key
-     * @param null|mixed $defaultValue
-     * @param int $filterType
-     * @return mixed|null
-     */
-    protected function getPostParamAsArray($key, $defaultValue = null, $filterType = FILTER_DEFAULT)
-    {
-        $val = filter_input(INPUT_POST, $key, $filterType, FILTER_FORCE_ARRAY);
-        if (empty($val)) {
-            return $defaultValue;
-        }
-        return $val;
+        return RequestUtil::getParamAsArray($key, $defaultValue, $filterType);
     }
 
     /**

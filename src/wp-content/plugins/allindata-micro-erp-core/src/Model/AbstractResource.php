@@ -9,6 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Core\Model;
 
 use AllInData\MicroErp\Core\Database\WordpressDatabase;
+use AllInData\MicroErp\Core\Helper\MethodUtil;
 use RuntimeException;
 
 /**
@@ -133,6 +134,33 @@ abstract class AbstractResource
     }
 
     /**
+     * @param mixed $id
+     * @return bool
+     */
+    public function existsById($id): bool
+    {
+        $db = $this->database->getInstance();
+
+        $query = $db->prepare(
+            'SELECT * FROM `'.$db->posts.'` WHERE `post_type`=%s AND `ID`=%d '.$this->getAdditionalLoadWhereEntity(),
+            $this->entityName,
+            $id
+        );
+
+        /** @var array $entity */
+        $entity = $db->get_row(
+            $query,
+            ARRAY_A
+        );
+
+        if (empty($entity) || !isset($entity['ID'])) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
      * @param AbstractModel $entity
      * @return AbstractModel
      */
@@ -166,37 +194,50 @@ abstract class AbstractResource
     }
 
     /**
-     * Maps camel_case to CamelCase
-     * @param string $attributeName
-     * @return string
+     * @param array $entityData
+     * @return array
      */
-    public function canonicalizeAttributeName(string $attributeName): string
+    public function mapPostData(array $entityData): array
     {
-        $attributeNameParts = explode(' ', ucwords(str_replace(['-','_'], ' ', $attributeName)));
-        foreach ($attributeNameParts as $idx => $part) {
-            $attributeNameParts[$idx] = ucfirst(strtolower($part));
-        }
-        if (0 === count($attributeNameParts)) {
-            return '';
-        }
-        $attributeNameParts[0] = strtolower($attributeNameParts[0]);
+        $primaryKeyValue = $entityData['ID'] ?: null;
 
-        return implode('', $attributeNameParts);
+        $postEntityDataKeySet = $this->getPostEntityDataKeySet();
+        $filteredDataSet = [];
+        foreach ($entityData as $itemKey => $itemValue) {
+            if (!in_array($itemKey, $postEntityDataKeySet)) {
+                continue;
+            }
+            $key = MethodUtil::canonicalizeAttributeName($itemKey);
+            $filteredDataSet[$key] = $itemValue;
+        }
+        $filteredDataSet[$this->getPrimaryKey()] = $primaryKeyValue;
+
+        return $filteredDataSet;
     }
 
     /**
-     * Maps CamelCase to camel_case
-     * @param string $attributeName
-     * @return string
+     * @param array $entityData
+     * @return array
      */
-    public function decanonicalizeAttributeName(string $attributeName): string
+    public function mapPostMetaData(array $entityData): array
     {
-        $attributeNameParts = preg_split('/(?=[A-Z])/', $attributeName);
-        foreach ($attributeNameParts as $idx => $part) {
-            $attributeNameParts[$idx] = strtolower($part);
-        }
+        $postEntityDataKeySet = $this->getPostEntityDataKeySet();
+        $filteredDataSet = [];
+        foreach($entityData as $attributeSet) {
+            $itemKey = $attributeSet['meta_key'];
+            $itemValue = $attributeSet['meta_value'];
+            if (in_array($itemKey, $postEntityDataKeySet)) {
+                continue;
+            }
+            $key = MethodUtil::canonicalizeAttributeName($itemKey);
 
-        return implode('_', $attributeNameParts);
+            if (is_serialized($itemValue)) {
+                $itemValue = unserialize($itemValue);
+            }
+
+            $filteredDataSet[$key] = $itemValue;
+        }
+        return $filteredDataSet;
     }
 
     /**
@@ -347,53 +388,6 @@ abstract class AbstractResource
      * @param array $entityData
      * @return array
      */
-    private function mapPostData(array $entityData): array
-    {
-        $primaryKeyValue = $entityData['ID'] ?: null;
-
-        $postEntityDataKeySet = $this->getPostEntityDataKeySet();
-        $filteredDataSet = [];
-        foreach ($entityData as $itemKey => $itemValue) {
-            if (!in_array($itemKey, $postEntityDataKeySet)) {
-                continue;
-            }
-            $key = $this->canonicalizeAttributeName($itemKey);
-            $filteredDataSet[$key] = $itemValue;
-        }
-        $filteredDataSet[$this->getPrimaryKey()] = $primaryKeyValue;
-
-        return $filteredDataSet;
-    }
-
-    /**
-     * @param array $entityData
-     * @return array
-     */
-    private function mapPostMetaData(array $entityData): array
-    {
-        $postEntityDataKeySet = $this->getPostEntityDataKeySet();
-        $filteredDataSet = [];
-        foreach($entityData as $attributeSet) {
-            $itemKey = $attributeSet['meta_key'];
-            $itemValue = $attributeSet['meta_value'];
-            if (in_array($itemKey, $postEntityDataKeySet)) {
-                continue;
-            }
-            $key = $this->canonicalizeAttributeName($itemKey);
-
-            if (is_serialized($itemValue)) {
-                $itemValue = unserialize($itemValue);
-            }
-
-            $filteredDataSet[$key] = $itemValue;
-        }
-        return $filteredDataSet;
-    }
-
-    /**
-     * @param array $entityData
-     * @return array
-     */
     private function extractPostData(array $entityData): array
     {
         $primaryKeyValue = $entityData[$this->primaryKey] ?? null;
@@ -401,7 +395,7 @@ abstract class AbstractResource
         $postEntityDataKeySet = $this->getPostEntityDataKeySet();
         $filteredDataSet = [];
         foreach ($entityData as $itemKey => $itemValue) {
-            $key = $this->decanonicalizeAttributeName($itemKey);
+            $key = MethodUtil::decanonicalizeAttributeName($itemKey);
             if (!in_array($key, $postEntityDataKeySet)) {
                 continue;
             }
@@ -431,7 +425,7 @@ abstract class AbstractResource
         $postEntityDataKeySet = $this->getPostEntityDataKeySet();
         $filteredDataSet = [];
         foreach ($entityData as $itemKey => $itemValue) {
-            $key = $this->decanonicalizeAttributeName($itemKey);
+            $key = MethodUtil::decanonicalizeAttributeName($itemKey);
             if (in_array($key, $postEntityDataKeySet)) {
                 continue;
             }

@@ -8,6 +8,9 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Core\Model;
 
+use AllInData\MicroErp\Core\Helper\MethodUtil;
+use AllInData\MicroErp\Core\Helper\RequestUtil;
+
 /**
  * Class AbstractPagination
  * @package AllInData\MicroErp\Core\Model
@@ -123,8 +126,8 @@ abstract class AbstractPagination implements PaginationInterface
         $orderBySet = [];
         $metaKeySet = [];
         foreach ($this->getCurrentSorters() as $sorter) {
-            $orderBySet[] = 'meta_value_' . $this->decanonicalizeAttributeName($sorter->getName());
-            $metaKeySet[] = $this->decanonicalizeAttributeName($sorter->getName());
+            $orderBySet[] = 'meta_value_' . MethodUtil::decanonicalizeAttributeName($sorter->getName());
+            $metaKeySet[] = MethodUtil::decanonicalizeAttributeName($sorter->getName());
             $orderSet[] = $sorter->getDirection();
         }
 
@@ -223,7 +226,7 @@ abstract class AbstractPagination implements PaginationInterface
     ): string {
         $queryValues = [];
 
-        $filters = (array)$this->getParamAsArray(
+        $filters = (array)RequestUtil::getParamAsArray(
             $this->filtersAttributeName,
             []
         );
@@ -232,7 +235,7 @@ abstract class AbstractPagination implements PaginationInterface
             $filters[] = $additionalFilter->toArray();
         }
 
-        $sorters = (array)$this->getParamAsArray(
+        $sorters = (array)RequestUtil::getParamAsArray(
             $this->sortsAttributeName,
             []
         );
@@ -254,7 +257,7 @@ abstract class AbstractPagination implements PaginationInterface
      */
     public function getCurrentPage(): int
     {
-        $value = (int)$this->getParam(
+        $value = (int)RequestUtil::getParam(
             $this->pageAttributeName,
             $this->defaultPage,
             FILTER_SANITIZE_NUMBER_INT
@@ -267,7 +270,7 @@ abstract class AbstractPagination implements PaginationInterface
      */
     public function getCurrentShowPerPage(): int
     {
-        $value = (int)$this->getParam(
+        $value = (int)RequestUtil::getParam(
             $this->showPerPageAttributeName,
             $this->defaultShowPerPage,
             FILTER_SANITIZE_NUMBER_INT
@@ -280,7 +283,7 @@ abstract class AbstractPagination implements PaginationInterface
      */
     public function getCurrentFilters(): array
     {
-        $values = (array)$this->getParamAsArray(
+        $values = (array)RequestUtil::getParamAsArray(
             $this->filtersAttributeName,
             []
         );
@@ -296,7 +299,7 @@ abstract class AbstractPagination implements PaginationInterface
      */
     public function getCurrentSorters(): array
     {
-        $values = (array)$this->getParamAsArray(
+        $values = (array)RequestUtil::getParamAsArray(
             $this->sortsAttributeName,
             []
         );
@@ -305,110 +308,5 @@ abstract class AbstractPagination implements PaginationInterface
             $sorters[] = $this->paginationSorterFactory->create($valueSet);
         }
         return $sorters;
-    }
-
-    /**
-     * @param string $key
-     * @param null|mixed $defaultValue
-     * @param int $filterType
-     * @return mixed|null
-     */
-    protected function getParam($key, $defaultValue = null, $filterType = FILTER_SANITIZE_STRING)
-    {
-        $val = $this->getGetParam($key, $defaultValue, $filterType);
-        if (is_null($val)) {
-            $val = $this->getPostParam($key, $defaultValue, $filterType);
-        }
-        return $val;
-    }
-
-    /**
-     * @param string $key
-     * @param null|mixed $defaultValue
-     * @param int $filterType
-     * @return array|null
-     */
-    protected function getParamAsArray($key, $defaultValue = null, $filterType = FILTER_DEFAULT)
-    {
-        $val = $this->getGetParamAsArray($key, $defaultValue, $filterType);
-        if (empty($val)) {
-            $val = $this->getPostParamAsArray($key, $defaultValue, $filterType);
-        }
-        return $val;
-    }
-
-    /**
-     * @param string $key
-     * @param null|mixed $defaultValue
-     * @param int $filterType
-     * @return mixed|null
-     */
-    protected function getGetParam($key, $defaultValue = null, $filterType = FILTER_SANITIZE_STRING)
-    {
-        $val = filter_input(INPUT_GET, $key, $filterType);
-        if (is_null($val)) {
-            return $defaultValue;
-        }
-        return $val;
-    }
-
-    /**
-     * @param string $key
-     * @param null|mixed $defaultValue
-     * @param int $filterType
-     * @return mixed|null
-     */
-    protected function getPostParam($key, $defaultValue = null, $filterType = FILTER_SANITIZE_STRING)
-    {
-        $val = filter_input(INPUT_POST, $key, $filterType);
-        if (is_null($val)) {
-            return $defaultValue;
-        }
-        return $val;
-    }
-
-    /**
-     * @param string $key
-     * @param null|mixed $defaultValue
-     * @param int $filterType
-     * @return mixed|null
-     */
-    protected function getGetParamAsArray($key, $defaultValue = null, $filterType = FILTER_DEFAULT)
-    {
-        $val = filter_input(INPUT_GET, $key, $filterType, FILTER_FORCE_ARRAY);
-        if (empty($val)) {
-            return $defaultValue;
-        }
-        return $val;
-    }
-
-    /**
-     * @param string $key
-     * @param null|mixed $defaultValue
-     * @param int $filterType
-     * @return mixed|null
-     */
-    protected function getPostParamAsArray($key, $defaultValue = null, $filterType = FILTER_DEFAULT)
-    {
-        $val = filter_input(INPUT_POST, $key, $filterType, FILTER_FORCE_ARRAY);
-        if (empty($val)) {
-            return $defaultValue;
-        }
-        return $val;
-    }
-
-    /**
-     * Maps CamelCase to camel_case
-     * @param string $attributeName
-     * @return string
-     */
-    protected function decanonicalizeAttributeName(string $attributeName): string
-    {
-        $attributeNameParts = preg_split('/(?=[A-Z])/', $attributeName);
-        foreach ($attributeNameParts as $idx => $part) {
-            $attributeNameParts[$idx] = strtolower($part);
-        }
-
-        return implode('_', $attributeNameParts);
     }
 }

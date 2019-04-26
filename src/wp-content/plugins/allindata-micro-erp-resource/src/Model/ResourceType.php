@@ -28,6 +28,10 @@ class ResourceType extends AbstractPostModel
      * @var bool|int|null
      */
     private $isDisabled;
+    /**
+     * @var ResourceTypeAttribute[]|null
+     */
+    private $attributes;
 
     /**
      * @return string|null
@@ -80,6 +84,24 @@ class ResourceType extends AbstractPostModel
     public function setIsDisabled($isDisabled)
     {
         $this->isDisabled = $isDisabled;
+        return $this;
+    }
+
+    /**
+     * @return ResourceTypeAttribute[]|null
+     */
+    public function getAttributes(): ?array
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * @param ResourceTypeAttribute[]|null $attributes
+     * @return ResourceType
+     */
+    public function setAttributes(?array $attributes): ResourceType
+    {
+        $this->attributes = $attributes;
         return $this;
     }
 }

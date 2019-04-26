@@ -8,6 +8,8 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Core\Model;
 
+use AllInData\MicroErp\Core\Helper\MethodUtil;
+use InvalidArgumentException;
 use WP_Query;
 
 /**
@@ -66,6 +68,59 @@ abstract class AbstractCollection
         }
 
         return $collectionItems;
+    }
+
+    /**
+     * @param array $args
+     * @return AbstractModel[]
+     */
+    public function loadByQuery(array $args = []): array
+    {
+        $db = $this->getResource()->getDatabase()->getInstance();
+
+        $query = $this->getQuery();
+        $queryEntityData = $this->getPreparedQuery($query, $args);
+
+        /** @var array $entityData */
+        $entityDataSet = $db->get_results(
+            $queryEntityData,
+            ARRAY_A
+        );
+
+        $items = [];
+        foreach ($entityDataSet as $entityData) {
+            $mappedEntity = $this->getResource()->mapPostData($entityData);
+            $mappedEntityData = $this->getResource()->mapPostMetaData($entityData);
+            $data = array_merge($mappedEntity, $mappedEntityData);
+            $items[] = $this->getResource()->getModelFactory()->create($data);
+        }
+
+        return $items;
+    }
+
+    /**
+     * @return string
+     */
+    protected function getQuery(): string
+    {
+        $db = $this->getResource()->getDatabase()->getInstance();
+        return 'SELECT * FROM `'.$db->postmeta.'` AS pm ' .
+            'LEFT JOIN `'.$db->posts.'` AS p ON p.ID = pm.post_id ' .
+            'WHERE 1=1';
+    }
+
+    /**
+     * @param string $rawQueryString
+     * @param array $args
+     * @return string
+     */
+    protected function getPreparedQuery(string $rawQueryString, array $args): string
+    {
+        $db = $this->getResource()->getDatabase()->getInstance();
+        return $db->prepare(
+            $rawQueryString,
+            []
+        );
     }
 
     /**

@@ -8,6 +8,7 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Mdm\Model\Collection;
 
+use AllInData\MicroErp\Core\Helper\MethodUtil;
 use AllInData\MicroErp\Core\Model\AbstractModel;
 use AllInData\MicroErp\Core\Model\GenericPagination;
 
@@ -40,8 +41,8 @@ class Pagination extends GenericPagination
         $orderBySet = [];
         $metaKeySet = [];
         foreach ($this->getCurrentSorters() as $sorter) {
-            $orderBySet[] = 'meta_value_' . $this->decanonicalizeAttributeName($sorter->getName());
-            $metaKeySet[] = $this->decanonicalizeAttributeName($sorter->getName());
+            $orderBySet[] = 'meta_value_' . MethodUtil::decanonicalizeAttributeName($sorter->getName());
+            $metaKeySet[] = MethodUtil::decanonicalizeAttributeName($sorter->getName());
             $orderSet[] = $sorter->getDirection();
         }
 
