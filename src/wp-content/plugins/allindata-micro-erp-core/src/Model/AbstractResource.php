@@ -396,14 +396,17 @@ abstract class AbstractResource
         $filteredDataSet = [];
         foreach ($entityData as $itemKey => $itemValue) {
             $key = MethodUtil::decanonicalizeAttributeName($itemKey);
-            if (!in_array($key, $postEntityDataKeySet)) {
+            if (!in_array($key, $postEntityDataKeySet) ||
+                is_null($itemValue)) {
                 continue;
             }
             $filteredDataSet[$key] = $itemValue;
         }
 
         unset($filteredDataSet[$this->primaryKey]);
-        $filteredDataSet['ID'] = $primaryKeyValue;
+        if (!is_null($primaryKeyValue) && 0 !== $primaryKeyValue) {
+            $filteredDataSet['ID'] = $primaryKeyValue;
+        }
         $filteredDataSet['post_type'] = $this->entityName;
 
         $mappingSet = [
@@ -426,7 +429,8 @@ abstract class AbstractResource
         $filteredDataSet = [];
         foreach ($entityData as $itemKey => $itemValue) {
             $key = MethodUtil::decanonicalizeAttributeName($itemKey);
-            if (in_array($key, $postEntityDataKeySet)) {
+            if (in_array($key, $postEntityDataKeySet) ||
+                is_null($itemValue)) {
                 continue;
             }
             $filteredDataSet[$key] = $itemValue;

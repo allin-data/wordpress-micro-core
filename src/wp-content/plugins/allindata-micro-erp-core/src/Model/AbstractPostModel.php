@@ -77,11 +77,11 @@ abstract class AbstractPostModel extends AbstractModel
     /**
      * @var string|null
      */
-    private $postModified_gmt;
+    private $postModifiedGmt;
     /**
      * @var string|null
      */
-    private $postContent_filtered;
+    private $postContentFiltered;
     /**
      * @var int|null
      */
@@ -382,16 +382,16 @@ abstract class AbstractPostModel extends AbstractModel
      */
     public function getPostModifiedGmt(): ?string
     {
-        return $this->postModified_gmt;
+        return $this->postModifiedGmt;
     }
 
     /**
-     * @param string|null $postModified_gmt
+     * @param string|null $postModifiedGmt
      * @return AbstractPostModel
      */
-    public function setPostModifiedGmt(?string $postModified_gmt): AbstractPostModel
+    public function setPostModifiedGmt(?string $postModifiedGmt): AbstractPostModel
     {
-        $this->postModified_gmt = $postModified_gmt;
+        $this->postModifiedGmt = $postModifiedGmt;
         return $this;
     }
 
@@ -400,16 +400,16 @@ abstract class AbstractPostModel extends AbstractModel
      */
     public function getPostContentFiltered(): ?string
     {
-        return $this->postContent_filtered;
+        return $this->postContentFiltered;
     }
 
     /**
-     * @param string|null $postContent_filtered
+     * @param string|null $postContentFiltered
      * @return AbstractPostModel
      */
-    public function setPostContentFiltered(?string $postContent_filtered): AbstractPostModel
+    public function setPostContentFiltered(?string $postContentFiltered): AbstractPostModel
     {
-        $this->postContent_filtered = $postContent_filtered;
+        $this->postContentFiltered = $postContentFiltered;
         return $this;
     }
 

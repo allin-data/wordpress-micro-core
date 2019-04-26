@@ -62,6 +62,7 @@ class CreateResourceTypeAttribute extends AbstractAdminController
         /** @var ResourceTypeAttribute $resourceTypeAttribute */
         $resourceTypeAttribute = $this->entityResource->getModelFactory()->create();
         $resourceTypeAttribute
+            ->setResourceTypeId($resourceTypeId)
             ->setType($type)
             ->setName($name)
             ->setMeta($meta);
