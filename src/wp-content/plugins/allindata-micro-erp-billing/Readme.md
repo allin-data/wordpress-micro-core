@@ -1,9 +1,10 @@
 # Micro ERP Billing
 
-The Billing module of the All.In Data Micro ERP environment manage the account capabilities 
-defined by the selected subscription package. Also, the subscription packages itself are able to 
-be managed.
+The Billing module of the All.In Data Micro ERP environment allowes the creation of quotes and
+invoices for configured resources combined in the execution ot tasks defined in planning.
 
 ## Dependencies
 
 - Micro ERP Core
+- Micro ERP MDM
+- Micro ERP Planning
