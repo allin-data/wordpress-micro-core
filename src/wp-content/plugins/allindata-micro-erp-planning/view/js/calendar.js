@@ -223,6 +223,10 @@
             // translations
             this.translatedLabels = $.extend({}, this.defaults.labels, options.labels || {});
 
+            // resources
+            config.resources.meta = $.extend({}, config.resources.meta || {});
+            config.resources.items = $.extend({}, config.resources.items || {});
+
             // templates
             config.calendarOptions.template = $.extend({}, this._getTemplates(config), config.calendarOptions.template || {});
             config.calendarOptions.month = $.extend({}, this._getMonthDefintion(config), config.calendarOptions.month || {});
@@ -613,17 +617,40 @@
                 .off('click')
                 .on('click', function () {
                     let formData,
+                        resourcesTypes = config.resources.meta,
+                        resourceValueSet = [],
                         schedule;
 
+                    // resource data
+                    for (let resourcesTypeId in resourcesTypes) {
+                        let valueSet;
+                        valueSet = modal.find('select[name="resource_'+resourcesTypeId+'"]').val();
+                        if (!valueSet) {
+                            continue;
+                        }
+                        if (!Array.isArray(valueSet)) {
+                            resourceValueSet.push(valueSet);
+                            continue;
+                        }
+                        valueSet.forEach(function (valueSetItem) {
+                            resourceValueSet.push(valueSetItem);
+                        });
+                    }
+
+                    // general data
                     formData = {
-                        id: event.schedule.id,
                         start: modal.find('input[name="start-date"]').val() + ' ' + modal.find('input[name="start-time"]').val(),
                         end: modal.find('input[name="end-date"]').val() + ' ' + modal.find('input[name="end-time"]').val(),
                         isAllDay: modal.find('input[name="is_all_day"]').is(':checked'),
                         title: modal.find('input[name="name"]').val(),
-                        body: modal.find('textarea[name="body"]').val()
+                        body: modal.find('textarea[name="body"]').val(),
+                        resources: resourceValueSet
                     };
-                    formData = me._merge(event.schedule, formData);
+
+                    if(event.schedule && event.schedule.hasOwnProperty('id')) {
+                        formData['id'] = event.schedule.id;
+                    }
+                    formData = me._merge(formData, event.schedule || {});
                     schedule = me._merge(me._getSchedulePrototype(), formData);
 
                     callback.call(me, calendar, schedule, config, function (calendar, schedule, config) {
@@ -635,6 +662,7 @@
 
             // reset and optionally prefill creation guide form
             if (event.schedule) {
+                // update flow
                 me._prefillCustomScheduleCreationGuide(
                     modal,
                     moment(event.schedule.start.toDate()).format('YYYY-MM-DD'),
@@ -642,17 +670,21 @@
                     moment(event.schedule.end.toDate()).format('YYYY-MM-DD'),
                     moment(event.schedule.end.toDate()).format('HH:mm'),
                     event.schedule.isAllDay,
+                    config.resources.meta,
                     event.schedule.title,
-                    event.schedule.body
+                    event.schedule.body,
+                    event.schedule.resources
                 );
             } else {
+                // creation flow
                 me._prefillCustomScheduleCreationGuide(
                     modal,
                     moment(event.start).format('YYYY-MM-DD'),
                     moment(event.start).format('HH:mm'),
                     moment(event.end).format('YYYY-MM-DD'),
                     moment(event.end).format('HH:mm'),
-                    event.isAllDay
+                    event.isAllDay,
+                    config.resources.meta
                 );
             }
 
@@ -667,12 +699,25 @@
          * @param {String} endDate
          * @param {String} endTime
          * @param {Boolean} isAllDay
+         * @param {Object} resourcesTypes
          * @param {String} name
          * @param {String} body
+         * @param {Object[]} resources
          * @private
          */
         _prefillCustomScheduleCreationGuide: function (parentForm, startDate = null, startTime = null, endDate = null,
-                                                       endTime = null, isAllDay = false, name = null, body = null) {
+                                                       endTime = null, isAllDay = false, resourcesTypes = {},
+                                                       name = null, body = null, resources = []) {
+            let resourceMap = [];
+
+            resources.forEach(function (resource) {
+                let typeId = resource['type_id'];
+                if (-1 === resourceMap.indexOf(typeId)) {
+                    resourceMap[typeId] = [];
+                }
+                resourceMap[typeId].push(resource);
+            });
+
             parentForm.find('input[name="name"]').val(name);
             parentForm.find('textarea[name="body"]').val(body);
             parentForm.find('input[name="is_all_day"]').prop('checked', isAllDay);
@@ -680,6 +725,24 @@
             parentForm.find('input[name="start-time"]').val(startTime);
             parentForm.find('input[name="end-date"]').val(endDate);
             parentForm.find('input[name="end-time"]').val(endTime);
+
+            for (let resourcesType in resourcesTypes) {
+                let typeId,
+                    valueSet = [];
+
+                if(!resourcesType.hasOwnProperty('id')) {
+                    continue;
+                }
+                typeId = resourcesType['id'];
+
+                if (-1 === resourceMap.indexOf(typeId)) {
+                    resourceMap[typeId] = [];
+                }
+                resourceMap[typeId].forEach(function (resource) {
+                    valueSet.push(resource['id']);
+                });
+                parentForm.find('select[name="resource_'+resourcesType['id']+'"]').val(valueSet);
+            }
         },
 
         /**
@@ -889,11 +952,12 @@
                 dragBgColor: null,
                 borderColor: null,
                 customStyle: '',
+                resources: [],
                 raw: {
                     memo: '',
                     hasToOrCc: false,
                     hasRecurrenceRule: false,
-                    class: 'public', // or 'private'
+                    class: 'public', // or 'private',
                     creator: {
                         name: '',
                         avatar: '',

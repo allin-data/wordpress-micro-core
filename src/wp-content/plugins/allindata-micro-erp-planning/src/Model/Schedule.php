@@ -9,6 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Planning\Model;
 
 use AllInData\MicroErp\Core\Model\AbstractPostModel;
+use AllInData\MicroErp\Resource\Model\Resource;
 
 /**
  * Class Schedule
@@ -104,6 +105,10 @@ class Schedule extends AbstractPostModel
      * @var string|null
      */
     private $customStyle;
+    /**
+     * @var Resource[]|null
+     */
+    private $resources;
     /**
      * @var ScheduleMeta|null
      */
@@ -502,6 +507,24 @@ class Schedule extends AbstractPostModel
     public function setCustomStyle(?string $customStyle): Schedule
     {
         $this->customStyle = $customStyle;
+        return $this;
+    }
+
+    /**
+     * @return Resource[]|null
+     */
+    public function getResources(): ?array
+    {
+        return $this->resources;
+    }
+
+    /**
+     * @param Resource[]|null $resources
+     * @return Schedule
+     */
+    public function setResources(?array $resources): Schedule
+    {
+        $this->resources = $resources;
         return $this;
     }
 

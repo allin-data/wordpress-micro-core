@@ -87,6 +87,27 @@ class Theme
             4.3,
             true
         );
+        wp_enqueue_script(
+            'popper-js',
+            get_theme_file_uri('node_modules/popper.js/dist/umd/popper.js'),
+            [
+                'jquery',
+                'bootstrap-js',
+            ],
+            '1.15.0',
+            true
+        );
+        wp_enqueue_script(
+            'bootstrap-multiselect-js',
+            get_theme_file_uri('node_modules/@dashboardcode/bsmultiselect/dist/js/BsMultiSelect.js'),
+            [
+                'jquery',
+                'bootstrap-js',
+                'popper-js',
+            ],
+            '0.2.22',
+            true
+        );
     }
 
     /**
@@ -105,6 +126,14 @@ class Theme
             get_stylesheet_directory_uri() . '/style.css',
             [
                 'monstroid2-theme-style',
+                'fontawesome-free'
+            ]
+        );
+        wp_enqueue_style(
+            'bootstrap-multiselect-style',
+            get_stylesheet_directory_uri() . '/node_modules/@dashboardcode/bsmultiselect/dist/css/BsMultiSelect.css',
+            [
+                'monstroid2-child-theme-style',
                 'fontawesome-free'
             ]
         );

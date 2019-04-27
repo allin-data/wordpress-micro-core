@@ -121,6 +121,24 @@ $timeMax = (new \DateTime())->setTime(22, 0, 0);
                            max="<?= $timeMax->format('H:i') ?>"
                            step="600">
                 </div>
+
+                <?php /** COMPLEX RESOURCE TEMPLATING */ ?>
+
+                <?php foreach($block->getResourceTypes() as $resourceType): ?>
+                <div class="input-group form-group">
+                    <label for="resource_<?= $resourceType->getId()?>"><?= $resourceType->getLabel() ?></label>
+                    <select class="custom-select" name="resource_<?= $resourceType->getId()?>" multiple="multiple">
+                        <?php foreach($block->getResourcesByType($resourceType) as $resources): ?>
+                        <option value="<?= $resources->getId() ?>">
+                            <?= $resources->getName() ?>
+                        </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <?php endforeach; ?>
+
+                <?php /** COMPLEX RESOURCE TEMPLATING */ ?>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary btn-schedule-creation-guide-save">
@@ -140,6 +158,23 @@ $timeMax = (new \DateTime())->setTime(22, 0, 0);
     jQuery(document).ready(function ($) {
         let calendarSelector = '#calendar_<?= $block->getAttribute('id') ?>',
             currentDate = moment();
+
+        $('select[multiple="multiple"]').bsMultiSelect({
+            useCss: true,
+            containerClass: 'dashboardcode-bsmultiselect',
+            dropDownMenuClass: 'dropdown-menu',
+            dropDownItemClass:  'px-2',
+            dropDownItemHoverClass: 'text-primary bg-light',
+            selectedPanelClass: 'form-control',
+            selectedItemClass: 'badge',
+            removeSelectedItemButtonClass: 'close',
+            filterInputItemClass: '',
+            filterInputClass: '',
+            selectedPanelFocusClass : 'focus',
+            selectedPanelDisabledClass: 'disabled',
+            selectedItemContentDisabledClass: 'disabled'
+        });
+
 
         $(calendarSelector).microErpPlanningCalendar({
             calendarId: 1,
@@ -178,7 +213,7 @@ $timeMax = (new \DateTime())->setTime(22, 0, 0);
                 submitButtonSelector: '#calendar_modal_schedule_creation_guide .btn-schedule-creation-guide-save',
                 closeButtonSelector: '#calendar_modal_schedule_creation_guide .btn-schedule-creation-guide-close',
             },
-            resources: <?= json_encode($block->getResources()); ?>,
+            resources: <?= json_encode($block->getResourceMap()); ?>,
             calendarOptions: {
                 title: '<?= $block->getTitle(); ?>',
                 defaultView: '<?= $block->getAttribute('default-view'); ?>',

@@ -48,6 +48,7 @@ class CreateSchedule extends AbstractController
     protected function doExecute()
     {
         $scheduleData = $this->getParamAsArray('schedule', []);
+        $scheduleData['resources'] = $this->mapResourceValues($scheduleData['resources'] ?? [], []);
 
         /** @var Schedule $schedule */
         $schedule = $this->scheduleResource->getModelFactory()->create($scheduleData);
@@ -72,6 +73,30 @@ class CreateSchedule extends AbstractController
 
         $this->scheduleResource->save($schedule);
         return $schedule->getId();
+    }
+
+    /**
+     * @param int[] $resourceValueSet
+     * @param array $defaultValue
+     * @return array
+     */
+    private function mapResourceValues(array $resourceValueSet, array $defaultValue = []): array
+    {
+        if (empty($resourceValueSet)) {
+            return $defaultValue;
+        }
+
+        $idSet = [];
+        foreach ($resourceValueSet as $resourceValue) {
+            if (is_numeric($resourceValue)) {
+                $idSet[] = [
+                    'id' => (int)$resourceValue
+                ];
+            } else {
+                $idSet[] = (array)$resourceValue;
+            }
+        }
+        return $idSet;
     }
 
     /**
