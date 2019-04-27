@@ -6,13 +6,12 @@ Copyright (C) 2019 All.In Data GmbH
 
 /** @var \AllInData\MicroErp\Resource\Block\Admin\FormEditResourceTypeAttributes $block */
 
-$labelNew = __('New', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN);
 $templateRow = '<tr>' .
     '<th scope="row">%1$s</th>' .
     '<td>%2$s</td>' .
     '<td>%3$s</td>' .
     '<td>%4$s</td>' .
-    '<td><span class="badge badge-secondary">$labelNew</span></td>' .
+    '<td><span class="badge badge-secondary">'.__('New', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN).'</span></td>' .
     '</tr>';
 
 ?>
