@@ -16,10 +16,10 @@ abstract class AbstractOwnedCollection extends \AllInData\MicroErp\Core\Model\Ab
 {
     /**
      * @TODO Support user scope take over by leading user role or administrator
-     * @return int
+     * @return int[]
      */
-    protected function getCurrentScopeUserId(): int
+    protected function getCurrentScopeUserIdSet(): array
     {
-        return get_current_user_id();
+        return [get_current_user_id()];
     }
 }

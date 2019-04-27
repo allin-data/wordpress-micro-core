@@ -9,6 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Core\Model;
 
 use AllInData\MicroErp\Core\Helper\MethodUtil;
+use JsonSerializable;
 use ReflectionClass;
 use ReflectionException;
 use ReflectionProperty;
@@ -17,7 +18,7 @@ use ReflectionProperty;
  * Class AbstractModel
  * @package AllInData\MicroErp\Core\Model
  */
-abstract class AbstractModel
+abstract class AbstractModel implements JsonSerializable
 {
     /**
      * AbstractModel constructor.
@@ -142,6 +143,14 @@ abstract class AbstractModel
         }
 
         return $dataSet;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function jsonSerialize()
+    {
+        return $this->toArray();
     }
 
     /**

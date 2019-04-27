@@ -144,15 +144,6 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             true
         );
         wp_enqueue_script(
-            'jquery-modal',
-            AID_MICRO_ERP_PLANNING_URL . 'node_modules/jquery-modal/jquery.modal.js',
-            [
-                'jquery'
-            ],
-            '0.9.2',
-            true
-        );
-        wp_enqueue_script(
             'tui-code-snippet',
             AID_MICRO_ERP_PLANNING_URL . 'node_modules/tui-code-snippet/dist/tui-code-snippet.js',
             [

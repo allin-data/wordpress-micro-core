@@ -26,7 +26,11 @@
                 'Wednesday': 'Wednesday',
                 'Thursday': 'Thursday',
                 'Friday': 'Friday',
-                'Saturday': 'Saturday'
+                'Saturday': 'Saturday',
+                'Error Message': 'Error Message',
+                'Could not create schedule': 'Could not create schedule',
+                'Could not update schedule': 'Could not update schedule',
+                'Could not delete schedule': 'Could not delete schedule'
             },
             initialDate: moment(),
             renderDateSelector: '.calendar-render-range',
@@ -38,6 +42,7 @@
                 calendarRangeEnd: 'DD.MM.YYYY',
                 map: 'YYYY-MM-DD HH:mm:ss'
             },
+            resources: {},
             calendarOptions: {
                 title: 'Demo Schedule Calendar',
                 defaultView: 'month',
@@ -572,7 +577,7 @@
                     calendar.createSchedules([schedule]);
                 },
                 error: function () {
-                    me._throwModalError('Could not create schedule', config);
+                    me._throwModalError(me._e('Could not create schedule'), config);
                 }
             });
         },
@@ -605,13 +610,13 @@
                 success: function (data) {
                     let result = JSON.parse(data);
                     if (!result) {
-                        me._throwModalError('Could not update schedule', config);
+                        me._throwModalError(me._e('Could not update schedule'), config);
                         return;
                     }
                     calendar.updateSchedule(schedule.id, schedule.calendarId, schedule);
                 },
                 error: function () {
-                    me._throwModalError('Could not update schedule', config);
+                    me._throwModalError(me._e('Could not update schedule'), config);
                 }
             });
         },
@@ -637,28 +642,29 @@
                 success: function (data) {
                     let result = JSON.parse(data);
                     if (!result) {
-                        me._throwModalError('Could not delete schedule', config);
+                        me._throwModalError(me._e('Could not delete schedule'), config);
                         return;
                     }
                     calendar.deleteSchedule(event.schedule.id, event.schedule.calendarId);
                 },
                 error: function () {
-                    me._throwModalError('Could not delete schedule', config);
+                    me._throwModalError(me._e('Could not delete schedule'), config);
                 }
             });
         },
 
         /**
-         * @param {string} errorMessage
+         * @param {String} errorMessage
          * @param {Object} config
+         * @param {String} title
          * @private
          */
-        _throwModalError: function (errorMessage, config) {
-            $(config.modalSelector).modal({
-                escapeClose: true,
-                clickClose: true,
-                showClose: true
-            });
+        _throwModalError: function (errorMessage, config, title = null) {
+            let me = this,
+                titleLabel = title || me._e('Error Message');
+            $(config.modalSelector + ' .modal-title').html(titleLabel);
+            $(config.modalSelector + ' .modal-body').html(errorMessage);
+            $(config.modalSelector).modal('show');
         },
 
         /**

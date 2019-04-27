@@ -35,7 +35,29 @@ Copyright (C) 2019 All.In Data GmbH
 
 <div id="calendar_<?= $block->getAttribute('id') ?>" class="planning-calendar"></div>
 
-<div id="calendar_modal"><p>Foobar</p></div>
+<div id="calendar_modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="<?php _e('Close', AID_MICRO_ERP_PLANNING_TEXTDOMAIN); ?>">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal">
+                    <?php _e('Close', AID_MICRO_ERP_PLANNING_TEXTDOMAIN); ?>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
     jQuery(document).ready(function ($) {
@@ -63,10 +85,15 @@ Copyright (C) 2019 All.In Data GmbH
                 'Wednesday': '<?= $block->getAttribute('label-wednesday'); ?>',
                 'Thursday': '<?= $block->getAttribute('label-thursday'); ?>',
                 'Friday': '<?= $block->getAttribute('label-friday'); ?>',
-                'Saturday': '<?= $block->getAttribute('label-saturday'); ?>'
+                'Saturday': '<?= $block->getAttribute('label-saturday'); ?>',
+                'Error Message': '<?php _e('Error Message', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'Could not create schedule': '<?php _e('Could not create schedule', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'Could not update schedule': '<?php _e('Could not update schedule', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'Could not delete schedule': '<?php _e('Could not delete schedule', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
             },
             initialDate: currentDate,
             renderDateSelector: '.calendar-render-range',
+            resources: <?= json_encode($block->getResources()); ?>,
             calendarOptions: {
                 title: '<?= $block->getTitle(); ?>',
                 defaultView: '<?= $block->getAttribute('default-view'); ?>',
@@ -83,7 +110,7 @@ Copyright (C) 2019 All.In Data GmbH
                     'common.holiday.color': '<?= $block->getCommonStyle('holiday.color') ?>',
                     'common.saturday.color': '<?= $block->getCommonStyle('saturday.color') ?>',
                     'common.dayname.color': '<?= $block->getCommonStyle('dayname.color') ?>',
-                    'common.today.color':  '<?= $block->getCommonStyle('today.color') ?>',
+                    'common.today.color': '<?= $block->getCommonStyle('today.color') ?>',
 
                     // creation guide style
                     'common.creationGuide.backgroundColor': '<?= $block->getCommonStyle('creationGuide.backgroundColor') ?>',

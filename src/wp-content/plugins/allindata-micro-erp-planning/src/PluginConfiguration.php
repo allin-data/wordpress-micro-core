@@ -8,8 +8,12 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Planning;
 
+use AllInData\MicroErp\Auth\Model\GenericOwnedCollection;
 use AllInData\MicroErp\Core\Controller\PluginControllerInterface;
 use AllInData\MicroErp\Core\Database\WordpressDatabase;
+use AllInData\MicroErp\Core\Model\GenericCollection;
+use AllInData\MicroErp\Core\Model\GenericFactory;
+use AllInData\MicroErp\Core\Model\GenericResource;
 use AllInData\MicroErp\Core\Module\PluginModuleInterface;
 use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
 use AllInData\MicroErp\Core\Widget\ElementorWidgetInterface;
@@ -28,6 +32,9 @@ use AllInData\MicroErp\Planning\Model\Collection\Schedule as ScheduleCollection;
 use AllInData\MicroErp\Planning\Model\Resource\Schedule as ScheduleResource;
 use AllInData\MicroErp\Planning\Model\Factory\Schedule as ScheduleFactory;
 use AllInData\MicroErp\Planning\Model\Validator\Schedule as ScheduleValidator;
+use AllInData\MicroErp\Resource\Model\Resource;
+use AllInData\MicroErp\Resource\Model\ResourceType;
+use AllInData\MicroErp\Resource\Model\ResourceTypeAttribute;
 use bitExpert\Disco\Annotations\Configuration;
 use bitExpert\Disco\Annotations\Bean;
 use Exception;
@@ -102,7 +109,9 @@ class PluginConfiguration
             new Calendar(
                 AID_MICRO_ERP_PLANNING_TEMPLATE_DIR,
                 new \AllInData\MicroErp\Planning\Block\Calendar(
-                    $this->getScheduleCollection()
+                    $this->getScheduleCollection(),
+                    $this->getResourceTypeCollection(),
+                    $this->getResourceCollection()
                 )
             )
         ];
@@ -157,6 +166,37 @@ class PluginConfiguration
     }
 
     /**
+     * @return GenericFactory
+     */
+    private function getResourceFactory(): GenericFactory
+    {
+        return new GenericFactory(
+            Resource::class
+        );
+    }
+
+    /**
+     * @return \AllInData\MicroErp\Resource\Model\Factory\ResourceType
+     */
+    private function getResourceTypeFactory(): \AllInData\MicroErp\Resource\Model\Factory\ResourceType
+    {
+        return new \AllInData\MicroErp\Resource\Model\Factory\ResourceType(
+            ResourceType::class,
+            $this->getResourceTypeAttributeFactory()
+        );
+    }
+
+    /**
+     * @return GenericFactory
+     */
+    private function getResourceTypeAttributeFactory(): GenericFactory
+    {
+        return new GenericFactory(
+            ResourceTypeAttribute::class
+        );
+    }
+
+    /**
      * @return ScheduleResource
      */
     private function getScheduleResource(): ScheduleResource
@@ -169,12 +209,56 @@ class PluginConfiguration
     }
 
     /**
+     * @return GenericResource
+     */
+    private function getResourceResource(): GenericResource
+    {
+        return new GenericResource(
+            $this->getWordpressDatabase(),
+            'resource',
+            $this->getResourceFactory()
+        );
+    }
+
+    /**
+     * @return GenericResource
+     */
+    private function getResourceTypeResource(): GenericResource
+    {
+        return new GenericResource(
+            $this->getWordpressDatabase(),
+            'resource_type',
+            $this->getResourceTypeFactory()
+        );
+    }
+
+    /**
      * @return ScheduleCollection
      */
     private function getScheduleCollection(): ScheduleCollection
     {
         return new ScheduleCollection(
             $this->getScheduleResource()
+        );
+    }
+
+    /**
+     * @return GenericOwnedCollection
+     */
+    private function getResourceCollection(): GenericOwnedCollection
+    {
+        return new GenericOwnedCollection(
+            $this->getResourceResource()
+        );
+    }
+
+    /**
+     * @return GenericCollection
+     */
+    private function getResourceTypeCollection(): GenericCollection
+    {
+        return new GenericCollection(
+            $this->getResourceTypeResource()
         );
     }
 

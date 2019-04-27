@@ -9,12 +9,14 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Planning\Block;
 
 use AllInData\MicroErp\Core\Block\AbstractBlock;
+use AllInData\MicroErp\Core\Model\GenericCollection;
 use AllInData\MicroErp\Planning\Controller\CreateSchedule;
 use AllInData\MicroErp\Planning\Controller\DeleteSchedule;
 use AllInData\MicroErp\Planning\Controller\UpdateSchedule;
 use AllInData\MicroErp\Planning\Model\Collection\Schedule as ScheduleCollection;
 use AllInData\MicroErp\Planning\Model\Schedule;
-use DateTime;
+use AllInData\MicroErp\Resource\Model\Resource;
+use AllInData\MicroErp\Resource\Model\ResourceType;
 
 /**
  * Class Calendar
@@ -26,14 +28,63 @@ class Calendar extends AbstractBlock
      * @var ScheduleCollection
      */
     private $scheduleCollection;
+    /**
+     * @var GenericCollection
+     */
+    private $resourceTypeCollection;
+    /**
+     * @var GenericCollection
+     */
+    private $resourceCollection;
 
     /**
      * Calendar constructor.
      * @param ScheduleCollection $scheduleCollection
+     * @param GenericCollection $resourceTypeCollection
+     * @param GenericCollection $resourceCollection
      */
-    public function __construct(ScheduleCollection $scheduleCollection)
-    {
+    public function __construct(
+        ScheduleCollection $scheduleCollection,
+        GenericCollection $resourceTypeCollection,
+        GenericCollection $resourceCollection
+    ) {
         $this->scheduleCollection = $scheduleCollection;
+        $this->resourceTypeCollection = $resourceTypeCollection;
+        $this->resourceCollection = $resourceCollection;
+    }
+
+    /**
+     * @return array[][] 'meta' with resource type information, 'items' with resource information
+     */
+    public function getResources(): array
+    {
+        $resourceTypes = $this->resourceTypeCollection->loadBypassOwnership();
+        $resourcesMeta = [];
+        $resourcesItemSet = [];
+        foreach ($resourceTypes as $resourceType) {
+            /** @var ResourceType $resourceType */
+            if ($resourceType->getIsDisabled()) {
+                continue;
+            }
+
+            $resourceSet = $this->resourceCollection->load([
+                'meta_query' => [
+                    [
+                        'key' => 'type_id',
+                        'value' => $resourceType->getId(),
+                        'compare' => '=',
+                    ],
+                ]
+            ]);
+
+            $resourcesMeta[$resourceType->getId()] = $resourceType;
+            $resourcesItemSet[$resourceType->getId()] = $resourceSet;
+        }
+
+        return [
+            'meta' => $resourcesMeta,
+            'items' => $resourcesItemSet
+        ];
     }
 
     /**
