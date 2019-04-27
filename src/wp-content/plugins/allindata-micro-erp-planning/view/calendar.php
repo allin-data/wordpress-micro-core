@@ -59,6 +59,35 @@ Copyright (C) 2019 All.In Data GmbH
     </div>
 </div>
 
+<div id="calendar_modal_schedule_creation_guide" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><?= __('Schedule Creation Guide', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?></h5>
+                <button type="button"
+                        class="close btn-schedule-creation-guide-close"
+                        data-dismiss="modal"
+                        aria-label="<?php _e('Close', AID_MICRO_ERP_PLANNING_TEXTDOMAIN); ?>">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Form Schedule Creation Guide</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-schedule-creation-guide-save">
+                    <?php _e('Save Schedule', AID_MICRO_ERP_PLANNING_TEXTDOMAIN); ?>
+                </button>
+                <button type="button"
+                        class="btn btn-secondary btn-schedule-creation-guide-close"
+                        data-dismiss="modal">
+                    <?php _e('Close', AID_MICRO_ERP_PLANNING_TEXTDOMAIN); ?>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     jQuery(document).ready(function ($) {
         let calendarSelector = '#calendar_<?= $block->getAttribute('id') ?>',
@@ -93,6 +122,11 @@ Copyright (C) 2019 All.In Data GmbH
             },
             initialDate: currentDate,
             renderDateSelector: '.calendar-render-range',
+            customScheduleCreationGuide: {
+                modalTemplateSelector: '#calendar_modal_schedule_creation_guide',
+                submitButtonSelector: '#calendar_modal_schedule_creation_guide .btn-schedule-creation-guide-save',
+                closeButtonSelector: '#calendar_modal_schedule_creation_guide .btn-schedule-creation-guide-close',
+            },
             resources: <?= json_encode($block->getResources()); ?>,
             calendarOptions: {
                 title: '<?= $block->getTitle(); ?>',
@@ -102,8 +136,19 @@ Copyright (C) 2019 All.In Data GmbH
                 isReadOnly: false,
                 disableClick: false,
                 disableDblClick: false,
-                useCreationPopup: true,
+                useCreationPopup: false,
                 useDetailPopup: true,
+                month: {
+                    startDayOfWeek: 1,
+                    isAlways6Week: false,
+                    narrowWeekend: true
+                },
+                week: {
+                    startDayOfWeek: 1,
+                    narrowWeekend: true,
+                    hourStart: 7,
+                    hourEnd: 20
+                },
                 theme: {
                     'common.border': '<?= $block->getCommonBorder('border') ?>',
                     'common.backgroundColor': '<?= $block->getCommonStyle('backgroundColor') ?>',

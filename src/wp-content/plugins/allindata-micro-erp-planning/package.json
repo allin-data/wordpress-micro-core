@@ -11,6 +11,6 @@
   "dependencies": {
     "moment": "^2.24.0",
     "sprintf-js": "^1.1.2",
-    "tui-calendar": "^1.11.0"
+    "tui-calendar": "^1.12.0"
   }
 }

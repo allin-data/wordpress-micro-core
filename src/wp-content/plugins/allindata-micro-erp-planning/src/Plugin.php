@@ -94,7 +94,7 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             [
                 'monstroid2-child-theme-style'
             ],
-            '1.11'
+            '1.12'
         );
         wp_enqueue_style(
             'tui-date-picker',
@@ -186,7 +186,7 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
                 'tui-date-picker',
                 'tui-time-picker'
             ],
-            '1.11',
+            '1.12',
             true
         );
 

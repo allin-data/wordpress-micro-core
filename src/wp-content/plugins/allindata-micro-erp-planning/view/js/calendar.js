@@ -42,6 +42,11 @@
                 calendarRangeEnd: 'DD.MM.YYYY',
                 map: 'YYYY-MM-DD HH:mm:ss'
             },
+            customScheduleCreationGuide: {
+                modalTemplateSelector: '#calendar_modal_schedule_creation_guide',
+                submitButtonSelector: '#calendar_modal_schedule_creation_guide .btn-schedule-creation-guide-save',
+                closeButtonSelector: '#calendar_modal_schedule_creation_guide .btn-schedule-creation-guide-close',
+            },
             resources: {},
             calendarOptions: {
                 title: 'Demo Schedule Calendar',
@@ -55,8 +60,17 @@
                 useDetailPopup: true,
                 date: '',
                 template: {},
-                month: {},
-                week: {},
+                month: {
+                    startDayOfWeek: 1,
+                    isAlways6Week: false,
+                    narrowWeekend: true
+                },
+                week: {
+                    startDayOfWeek: 1,
+                    narrowWeekend: true,
+                    hourStart: 0,
+                    hourEnd: 24
+                },
                 timezones: [{
                     timezoneOffset: (new Date()).getTimezoneOffset(),
                     displayLabel: 'GMT+02:00',
@@ -241,8 +255,11 @@
         _createCalendar: function (config, callback = function () {
         }) {
             let me = this,
-                Calendar = tui.Calendar,
-                calendarInstance = new Calendar(config.target, config.calendarOptions);
+                Calendar,
+                calendarInstance;
+
+            Calendar = tui.Calendar;
+            calendarInstance = new Calendar(config.target, config.calendarOptions);
 
             calendarInstance.id = config.calendarId;
             calendarInstance.createSchedules(config.schedules);
@@ -252,7 +269,7 @@
         },
 
         /**
-         * @param {Calendar} calendar
+         * @param {tui.Calendar} calendar
          * @param {Object} config
          * @param {Function} callback
          * @private
@@ -267,7 +284,7 @@
         },
 
         /**
-         * @param {Calendar} calendar
+         * @param {tui.Calendar} calendar
          * @param {Object} config
          * @param {Function} callback
          * @private
@@ -290,7 +307,7 @@
         },
 
         /**
-         * @param {Calendar} calendar
+         * @param {tui.Calendar} calendar
          * @param {Object} option
          * @param {Object} config
          * @param {Function} callback
@@ -303,7 +320,7 @@
         },
 
         /**
-         * @param {Calendar} calendar
+         * @param {tui.Calendar} calendar
          * @param {string} view
          * @param {Object} config
          * @param {Function} callback
@@ -403,12 +420,7 @@
 
                     return me._e('ComingTime') + hour + ':' + minutes;
                 },
-                popupDetailRepeat: function (model) {
-                    return model.recurrenceRule;
-                },
-                popupDetailBody: function (model) {
-                    return model.body;
-                },
+
                 popupDetailDate: function (isAllDay, start, end) {
                     let startDate = moment(start.toDate()),
                         endDate = moment(end.toDate()),
@@ -421,6 +433,33 @@
 
                     return (startDate.format(config.formats.datetime) + ' - ' + endDate.format(endFormat));
                 },
+                popupSave: function () {
+                    return 'Save';
+                },
+                popupUpdate: function () {
+                    return 'Update';
+                },
+                popupDetailLocation: function (schedule) {
+                    return 'Location : ' + schedule.location;
+                },
+                popupDetailUser: function (schedule) {
+                    return 'User : ' + (schedule.attendees || []).join(', ');
+                },
+                popupDetailState: function (schedule) {
+                    return 'State : ' + schedule.state || 'Busy';
+                },
+                popupDetailRepeat: function (schedule) {
+                    return 'Repeat : ' + schedule.recurrenceRule;
+                },
+                popupDetailBody: function (schedule) {
+                    return 'Body : ' + schedule.body;
+                },
+                popupEdit: function () {
+                    return 'Edit';
+                },
+                popupDelete: function () {
+                    return 'Delete';
+                }
             }
         },
 
@@ -439,9 +478,7 @@
                     this._e('Thursday'),
                     this._e('Friday'),
                     this._e('Saturday')
-                ],
-                startDayOfWeek: 1,
-                narrowWeekend: true
+                ]
             }
         },
 
@@ -460,14 +497,12 @@
                     this._e('Thursday'),
                     this._e('Friday'),
                     this._e('Saturday')
-                ],
-                startDayOfWeek: 1,
-                narrowWeekend: true
+                ]
             }
         },
 
         /**
-         * @param {Calendar} calendar
+         * @param {tui.Calendar} calendar
          * @param {Object} config
          * @private
          */
@@ -475,18 +510,35 @@
             let me = this;
             calendar.on({
                 'clickSchedule': function (event) {
+                    console.log('clickSchedule');
                     me._addHookOnClickSchedule(calendar, event, config);
                 },
                 'clickMore': function (event) {
+                    console.log('clickMore');
                     me._addHookOnClickMore(calendar, event, config);
                 },
+                'clickDayname': function (event) {
+                    console.log('clickDayname');
+                },
                 'beforeCreateSchedule': function (event) {
-                    me._addHookOnBeforeCreateSchedule(calendar, event, config);
+                    console.log('beforeCreateSchedule');
+                    if (true === config.calendarOptions.useCreationPopup) {
+                        // render default schedule creator
+                        me._addHookOnBeforeCreateSchedule(calendar, event, config);
+                        return;
+                    }
+
+                    // render custom schedule creator
+                    me._renderCustomScheduleCreationGuide(calendar, event, config, function (calendar, event, config) {
+                        me._addHookOnBeforeCreateSchedule(calendar, event, config);
+                    });
                 },
                 'beforeUpdateSchedule': function (event) {
+                    console.log('beforeUpdateSchedule');
                     me._addHookOnBeforeUpdateSchedule(calendar, event, config);
                 },
                 'beforeDeleteSchedule': function (event) {
+                    console.log('beforeDeleteSchedule');
                     me._addHookOnBeforeDeleteSchedule(calendar, event, config);
                 }
             });
@@ -514,8 +566,32 @@
             });
         },
 
+        _renderCustomScheduleCreationGuide: function (calendar, event, config, callback = function () {
+        }) {
+            let me = this,
+                guide = event.guide;
+            console.log(guide, calendar);
+            $(config.customScheduleCreationGuide.submitButtonSelector)
+                .on('click', function () {
+                    me._updateCalendar(calendar, config, function () {
+                        calendar.render();
+                        $(config.customScheduleCreationGuide.modalTemplateSelector).modal('dispose');
+                    });
+                });
+
+            $(config.customScheduleCreationGuide.submitButtonSelector)
+                .off('click')
+                .on('click', function () {
+                    calendar.render();
+                    // fetch data from form
+                    callback.call(me, calendar, event, config);
+                });
+
+            $(config.customScheduleCreationGuide.modalTemplateSelector).modal('show');
+        },
+
         /**
-         * @param {Calendar} calendar
+         * @param {tui.Calendar} calendar
          * @param {Object} event
          * @param {Object} config
          * @private
@@ -537,7 +613,7 @@
         },
 
         /**
-         * @param {Calendar} calendar
+         * @param {tui.Calendar} calendar
          * @param {Object} event
          * @param {Object} config
          * @private
@@ -547,7 +623,7 @@
         },
 
         /**
-         * @param {Calendar} calendar
+         * @param {tui.Calendar} calendar
          * @param {Object} event
          * @param {Object} config
          * @private
@@ -583,7 +659,7 @@
         },
 
         /**
-         * @param {Calendar} calendar
+         * @param {tui.Calendar} calendar
          * @param {Object} event
          * @param {Object} config
          * @private
@@ -622,7 +698,7 @@
         },
 
         /**
-         * @param {Calendar} calendar
+         * @param {tui.Calendar} calendar
          * @param {Object} event
          * @param {Object} config
          * @private
