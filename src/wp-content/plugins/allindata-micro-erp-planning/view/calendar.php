@@ -5,6 +5,11 @@ Copyright (C) 2019 All.In Data GmbH
 */
 
 /** @var \AllInData\MicroErp\Planning\Block\Calendar $block */
+
+$dateMin = (new \DateTime())->sub(new \DateInterval('P1Y'));
+$dateMax = (new \DateTime())->add(new \DateInterval('P1Y'));
+$timeMin = (new \DateTime())->setTime(7, 0, 0);
+$timeMax = (new \DateTime())->setTime(22, 0, 0);
 ?>
 <h2><?= $block->getTitle(); ?></h2>
 
@@ -77,6 +82,45 @@ Copyright (C) 2019 All.In Data GmbH
                     <label for="name"><?php _e('Name', AID_MICRO_ERP_PLANNING_TEXTDOMAIN); ?></label>
                     <input type="text" class="form-control" name="name"/>
                 </div>
+                <div class="input-group form-group">
+                    <label for="body"><?php _e('Description', AID_MICRO_ERP_PLANNING_TEXTDOMAIN); ?></label>
+                    <textarea class="form-control" name="body" rows="3"></textarea>
+                </div>
+                <div class="input-group form-group">
+                    <label for="is_all_day"><?php _e('Is All-Day?', AID_MICRO_ERP_PLANNING_TEXTDOMAIN); ?></label>
+                    <input name="is_all_day"
+                           type="checkbox"
+                           class="form-control checkboxchecker"
+                           value="on" />
+                </div>
+                <div class="input-group form-group">
+                    <label for="start-date"><?php _e('Start', AID_MICRO_ERP_PLANNING_TEXTDOMAIN); ?></label>
+                    <input type="date"
+                           name="start-date"
+                           class="form-control"
+                           min="<?= $dateMin->format('Y-m-d') ?>"
+                           max="<?= $dateMax->format('Y-m-d') ?>">
+                    <input type="time"
+                           name="start-time"
+                           class="form-control"
+                           min="<?= $timeMin->format('H:i') ?>"
+                           max="<?= $timeMax->format('H:i') ?>"
+                           step="600">
+                </div>
+                <div class="input-group form-group">
+                    <label for="end-date"><?php _e('End', AID_MICRO_ERP_PLANNING_TEXTDOMAIN); ?></label>
+                    <input type="date"
+                           name="end-date"
+                           class="form-control"
+                           min="<?= $dateMin->format('Y-m-d') ?>"
+                           max="<?= $dateMax->format('Y-m-d') ?>">
+                    <input type="time"
+                           name="end-time"
+                           class="form-control"
+                           min="<?= $timeMin->format('H:i') ?>"
+                           max="<?= $timeMax->format('H:i') ?>"
+                           step="600">
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary btn-schedule-creation-guide-save">
@@ -120,9 +164,12 @@ Copyright (C) 2019 All.In Data GmbH
                 'Friday': '<?= $block->getAttribute('label-friday'); ?>',
                 'Saturday': '<?= $block->getAttribute('label-saturday'); ?>',
                 'Error Message': '<?php _e('Error Message', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
-                'Could not create schedule': '<?php _e('Could not create schedule', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
-                'Could not update schedule': '<?php _e('Could not update schedule', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
-                'Could not delete schedule': '<?php _e('Could not delete schedule', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'Could not create schedule': '<?php _e('Could not create schedule',
+                    AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'Could not update schedule': '<?php _e('Could not update schedule',
+                    AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+                'Could not delete schedule': '<?php _e('Could not delete schedule',
+                    AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
             },
             initialDate: currentDate,
             renderDateSelector: '.calendar-render-range',

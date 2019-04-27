@@ -274,6 +274,18 @@
          * @param {Function} callback
          * @private
          */
+        _resetCalendar: function (calendar, config, callback = function () {
+        }) {
+            calendar.changeView(config.currentView, true);
+            callback.call(this, calendar, config);
+        },
+
+        /**
+         * @param {tui.Calendar} calendar
+         * @param {Object} config
+         * @param {Function} callback
+         * @private
+         */
         _updateCalendar: function (calendar, config, callback = function () {
         }) {
             let me = this;
@@ -528,9 +540,7 @@
                     }
 
                     // render custom schedule creator
-                    me._renderCustomScheduleCreationGuide(calendar, event, config,
-                        function (calendar, schedule, config, callback = function () {
-                        }) {
+                    me._renderCustomScheduleCreationGuide(calendar, event, config, function (calendar, schedule, config, callback) {
                             me._addHookOnBeforeCreateSchedule(calendar, schedule, config, callback);
                         });
                 },
@@ -550,9 +560,7 @@
                     }
 
                     // render custom schedule creator
-                    me._renderCustomScheduleCreationGuide(calendar, event, config,
-                        function (calendar, schedule, config, callback = function () {
-                        }) {
+                    me._renderCustomScheduleCreationGuide(calendar, event, config, function (calendar, schedule, config, callback) {
                             me._addHookOnBeforeUpdateSchedule(calendar, schedule, config, callback);
                         });
                 },
@@ -598,34 +606,73 @@
 
             modal = $(config.customScheduleCreationGuide.modalTemplateSelector);
 
+            $(config.customScheduleCreationGuide.closeButtonSelector).click(function() {
+                me._resetCalendar(calendar, config);
+            });
+
             $(config.customScheduleCreationGuide.submitButtonSelector)
                 .off('click')
                 .on('click', function () {
                     let formData,
                         schedule;
 
-                    // @TODO fetch data from custom schedule creation form
                     formData = {
                         id: event.schedule.id,
-                        start: event.start,
-                        end: event.end,
-                        isAllDay: event.isAllDay,
-                        title: modal.find('input[name="name"]').val()
+                        start: modal.find('input[name="start-date"]').val() + ' ' + modal.find('input[name="start-time"]').val(),
+                        end: modal.find('input[name="end-date"]').val() + ' ' + modal.find('input[name="end-time"]').val(),
+                        isAllDay: modal.find('input[name="is_all_day"]').is(':checked'),
+                        title: modal.find('input[name="name"]').val(),
+                        body: modal.find('textarea[name="body"]').val()
                     };
                     formData = me._merge(event.schedule, formData);
                     schedule = me._merge(me._getSchedulePrototype(), formData);
 
                     callback.call(me, calendar, schedule, config, function (calendar, schedule, config) {
-                        $(config.customScheduleCreationGuide.closeButtonSelector).trigger('click');
+                        me._resetCalendar(calendar, config, function () {
+                            $(config.customScheduleCreationGuide.closeButtonSelector).trigger('click');
+                        });
                     });
                 });
 
-            // does prefetched data exist?
+            // reset and optionally prefill creation guide form
+            me._prefillCustomScheduleCreationGuide(modal);
             if (event.schedule) {
-                modal.find('input[name="name"]').val(event.schedule.title);
+                me._prefillCustomScheduleCreationGuide(
+                    modal,
+                    event.schedule.title,
+                    event.schedule.body,
+                    event.schedule.isAllDay,
+                    moment(event.schedule.start.toDate()).format('YYYY-MM-DD'),
+                    moment(event.schedule.start.toDate()).format('HH:mm'),
+                    moment(event.schedule.end.toDate()).format('YYYY-MM-DD'),
+                    moment(event.schedule.end.toDate()).format('HH:mm')
+                );
             }
 
             modal.modal('show');
+        },
+
+        /**
+         *
+         * @param {Object} parentForm
+         * @param {String} name
+         * @param {String} body
+         * @param {Boolean} isAllDay
+         * @param {String} startDate
+         * @param {String} startTime
+         * @param {String} endDate
+         * @param {String} endTime
+         * @private
+         */
+        _prefillCustomScheduleCreationGuide: function (parentForm, name = null, body = null, isAllDay = false,
+                                                       startDate = null, startTime = null, endDate = null, endTime = null) {
+            parentForm.find('input[name="name"]').val(name);
+            parentForm.find('textarea[name="body"]').val(body);
+            parentForm.find('input[name="is_all_day"]').prop('checked', isAllDay);
+            parentForm.find('input[name="start-date"]').val(startDate);
+            parentForm.find('input[name="start-time"]').val(startTime);
+            parentForm.find('input[name="end-date"]').val(endDate);
+            parentForm.find('input[name="end-time"]').val(endTime);
         },
 
         /**
@@ -822,6 +869,7 @@
                 end: null,
                 category: '',
                 dueDateClass: '',
+                location: null,
                 isFocused: false,
                 isPending: false,
                 isVisible: true,
@@ -838,7 +886,6 @@
                     memo: '',
                     hasToOrCc: false,
                     hasRecurrenceRule: false,
-                    location: null,
                     class: 'public', // or 'private'
                     creator: {
                         name: '',
