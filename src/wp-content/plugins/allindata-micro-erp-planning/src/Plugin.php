@@ -190,7 +190,6 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             true
         );
 
-
         wp_register_script(
             'aid-micro-erp-planning-calendar',
             AID_MICRO_ERP_PLANNING_URL . 'view/js/calendar.js',

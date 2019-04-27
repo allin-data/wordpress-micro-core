@@ -510,18 +510,17 @@
             let me = this;
             calendar.on({
                 'clickSchedule': function (event) {
-                    console.log('clickSchedule');
                     me._addHookOnClickSchedule(calendar, event, config);
                 },
                 'clickMore': function (event) {
-                    console.log('clickMore');
                     me._addHookOnClickMore(calendar, event, config);
                 },
                 'clickDayname': function (event) {
                     console.log('clickDayname');
                 },
                 'beforeCreateSchedule': function (event) {
-                    console.log('beforeCreateSchedule');
+                    event.start = me._mapDate(event.start, config);
+                    event.end = me._mapDate(event.end, config);
                     if (true === config.calendarOptions.useCreationPopup) {
                         // render default schedule creator
                         me._addHookOnBeforeCreateSchedule(calendar, event, config);
@@ -529,16 +528,35 @@
                     }
 
                     // render custom schedule creator
-                    me._renderCustomScheduleCreationGuide(calendar, event, config, function (calendar, event, config) {
-                        me._addHookOnBeforeCreateSchedule(calendar, event, config);
-                    });
+                    me._renderCustomScheduleCreationGuide(calendar, event, config,
+                        function (calendar, schedule, config, callback = function () {
+                        }) {
+                            me._addHookOnBeforeCreateSchedule(calendar, schedule, config, callback);
+                        });
                 },
                 'beforeUpdateSchedule': function (event) {
-                    console.log('beforeUpdateSchedule');
-                    me._addHookOnBeforeUpdateSchedule(calendar, event, config);
+                    if (!event.start) {
+                        event.start = event.schedule.start;
+                    }
+                    if (!event.end) {
+                        event.end = event.schedule.end;
+                    }
+                    event.start = me._mapDate(event.start, config);
+                    event.end = me._mapDate(event.end, config);
+
+                    if (true === config.calendarOptions.useCreationPopup) {
+                        me._addHookOnBeforeUpdateSchedule(calendar, event.schedule, config);
+                        return;
+                    }
+
+                    // render custom schedule creator
+                    me._renderCustomScheduleCreationGuide(calendar, event, config,
+                        function (calendar, schedule, config, callback = function () {
+                        }) {
+                            me._addHookOnBeforeUpdateSchedule(calendar, schedule, config, callback);
+                        });
                 },
                 'beforeDeleteSchedule': function (event) {
-                    console.log('beforeDeleteSchedule');
                     me._addHookOnBeforeDeleteSchedule(calendar, event, config);
                 }
             });
@@ -566,28 +584,48 @@
             });
         },
 
+        /**
+         * @param {tui.Calendar} calendar
+         * @param {Object} event
+         * @param {Object} config
+         * @param {Function} callback
+         * @private
+         */
         _renderCustomScheduleCreationGuide: function (calendar, event, config, callback = function () {
         }) {
             let me = this,
-                guide = event.guide;
-            console.log(guide, calendar);
-            $(config.customScheduleCreationGuide.submitButtonSelector)
-                .on('click', function () {
-                    me._updateCalendar(calendar, config, function () {
-                        calendar.render();
-                        $(config.customScheduleCreationGuide.modalTemplateSelector).modal('dispose');
-                    });
-                });
+                modal;
+
+            modal = $(config.customScheduleCreationGuide.modalTemplateSelector);
 
             $(config.customScheduleCreationGuide.submitButtonSelector)
                 .off('click')
                 .on('click', function () {
-                    calendar.render();
-                    // fetch data from form
-                    callback.call(me, calendar, event, config);
+                    let formData,
+                        schedule;
+
+                    // @TODO fetch data from custom schedule creation form
+                    formData = {
+                        id: event.schedule.id,
+                        start: event.start,
+                        end: event.end,
+                        isAllDay: event.isAllDay,
+                        title: modal.find('input[name="name"]').val()
+                    };
+                    formData = me._merge(event.schedule, formData);
+                    schedule = me._merge(me._getSchedulePrototype(), formData);
+
+                    callback.call(me, calendar, schedule, config, function (calendar, schedule, config) {
+                        $(config.customScheduleCreationGuide.closeButtonSelector).trigger('click');
+                    });
                 });
 
-            $(config.customScheduleCreationGuide.modalTemplateSelector).modal('show');
+            // does prefetched data exist?
+            if (event.schedule) {
+                modal.find('input[name="name"]').val(event.schedule.title);
+            }
+
+            modal.modal('show');
         },
 
         /**
@@ -624,20 +662,18 @@
 
         /**
          * @param {tui.Calendar} calendar
-         * @param {Object} event
+         * @param {Object} schedule
          * @param {Object} config
+         * @param {Function} callback
          * @private
          */
-        _addHookOnBeforeCreateSchedule: function (calendar, event, config) {
-            let me = this,
-                startDate = me._mapDate(event.start, config),
-                endDate = me._mapDate(event.end, config),
-                schedule = me._merge(me._getSchedulePrototype(), event);
+        _addHookOnBeforeCreateSchedule: function (calendar, schedule, config, callback = function () {
+        }) {
+            let me = this;
 
+            schedule = me._merge(me._getSchedulePrototype(), schedule);
             schedule.calendarId = 1;
             schedule.category = 'time';
-            schedule.start = startDate;
-            schedule.end = endDate;
 
             let payload = {
                 action: config.actionCreateSchedule,
@@ -651,6 +687,7 @@
                 success: function (data) {
                     schedule.id = JSON.parse(data);
                     calendar.createSchedules([schedule]);
+                    callback.call(me, calendar, schedule, config);
                 },
                 error: function () {
                     me._throwModalError(me._e('Could not create schedule'), config);
@@ -660,19 +697,18 @@
 
         /**
          * @param {tui.Calendar} calendar
-         * @param {Object} event
+         * @param {Object} schedule
          * @param {Object} config
+         * @param {Function} callback
          * @private
          */
-        _addHookOnBeforeUpdateSchedule: function (calendar, event, config) {
-            let me = this,
-                startDate = me._mapDate(event.start, config),
-                endDate = me._mapDate(event.end, config),
-                schedule = me._merge(me._getSchedulePrototype(), event.schedule);
+        _addHookOnBeforeUpdateSchedule: function (calendar, schedule, config, callback = function () {
+        }) {
+            let me = this;
+
+            schedule = me._merge(me._getSchedulePrototype(), schedule);
             schedule.calendarId = 1;
             schedule.category = 'time';
-            schedule.start = startDate;
-            schedule.end = endDate;
 
             let payload = {
                 action: config.actionUpdateSchedule,
@@ -690,6 +726,7 @@
                         return;
                     }
                     calendar.updateSchedule(schedule.id, schedule.calendarId, schedule);
+                    callback.call(me, calendar, schedule, config);
                 },
                 error: function () {
                     me._throwModalError(me._e('Could not update schedule'), config);

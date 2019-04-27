@@ -73,6 +73,10 @@ Copyright (C) 2019 All.In Data GmbH
             </div>
             <div class="modal-body">
                 <p>Form Schedule Creation Guide</p>
+                <div class="input-group form-group">
+                    <label for="name"><?php _e('Name', AID_MICRO_ERP_PLANNING_TEXTDOMAIN); ?></label>
+                    <input type="text" class="form-control" name="name"/>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary btn-schedule-creation-guide-save">
