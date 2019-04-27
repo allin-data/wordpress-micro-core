@@ -605,8 +605,7 @@
                 modal;
 
             modal = $(config.customScheduleCreationGuide.modalTemplateSelector);
-
-            $(config.customScheduleCreationGuide.closeButtonSelector).click(function() {
+            modal.on("hidden.bs.modal", function () {
                 me._resetCalendar(calendar, config);
             });
 
@@ -635,17 +634,25 @@
                 });
 
             // reset and optionally prefill creation guide form
-            me._prefillCustomScheduleCreationGuide(modal);
             if (event.schedule) {
                 me._prefillCustomScheduleCreationGuide(
                     modal,
-                    event.schedule.title,
-                    event.schedule.body,
-                    event.schedule.isAllDay,
                     moment(event.schedule.start.toDate()).format('YYYY-MM-DD'),
                     moment(event.schedule.start.toDate()).format('HH:mm'),
                     moment(event.schedule.end.toDate()).format('YYYY-MM-DD'),
-                    moment(event.schedule.end.toDate()).format('HH:mm')
+                    moment(event.schedule.end.toDate()).format('HH:mm'),
+                    event.schedule.isAllDay,
+                    event.schedule.title,
+                    event.schedule.body
+                );
+            } else {
+                me._prefillCustomScheduleCreationGuide(
+                    modal,
+                    moment(event.start).format('YYYY-MM-DD'),
+                    moment(event.start).format('HH:mm'),
+                    moment(event.end).format('YYYY-MM-DD'),
+                    moment(event.end).format('HH:mm'),
+                    event.isAllDay
                 );
             }
 
@@ -655,17 +662,17 @@
         /**
          *
          * @param {Object} parentForm
-         * @param {String} name
-         * @param {String} body
-         * @param {Boolean} isAllDay
          * @param {String} startDate
          * @param {String} startTime
          * @param {String} endDate
          * @param {String} endTime
+         * @param {Boolean} isAllDay
+         * @param {String} name
+         * @param {String} body
          * @private
          */
-        _prefillCustomScheduleCreationGuide: function (parentForm, name = null, body = null, isAllDay = false,
-                                                       startDate = null, startTime = null, endDate = null, endTime = null) {
+        _prefillCustomScheduleCreationGuide: function (parentForm, startDate = null, startTime = null, endDate = null,
+                                                       endTime = null, isAllDay = false, name = null, body = null) {
             parentForm.find('input[name="name"]').val(name);
             parentForm.find('textarea[name="body"]').val(body);
             parentForm.find('input[name="is_all_day"]').prop('checked', isAllDay);
