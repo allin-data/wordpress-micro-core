@@ -160,9 +160,9 @@ class Calendar extends AbstractBlock
     public function getCommonBorder($key)
     {
         $key = $this->mapKey($key);
-        $size = $this->getAttribute('advanced_style_common_' . $key . '.px');
-        $style = $this->getAttribute('advanced_style_common_' . $key . '.style');
-        $color = $this->getAttribute('advanced_style_common_' . $key . '.color');
+        $size = $this->getAttribute('advanced_style_common_' . $key . '_px');
+        $style = $this->getAttribute('advanced_style_common_' . $key . '_style');
+        $color = $this->getAttribute('advanced_style_common_' . $key . '_color');
         return $size . 'px ' . $style . ' ' . $color;
     }
 
@@ -183,9 +183,9 @@ class Calendar extends AbstractBlock
     public function getMonthBorder($key)
     {
         $key = $this->mapKey($key);
-        $size = $this->getAttribute('advanced_style_month_' . $key . '.px');
-        $style = $this->getAttribute('advanced_style_month_' . $key . '.style');
-        $color = $this->getAttribute('advanced_style_month_' . $key . '.color');
+        $size = $this->getAttribute('advanced_style_month_' . $key . '_px');
+        $style = $this->getAttribute('advanced_style_month_' . $key . '_style');
+        $color = $this->getAttribute('advanced_style_month_' . $key . '_color');
         return $size . 'px ' . $style . ' ' . $color;
     }
 
@@ -196,11 +196,11 @@ class Calendar extends AbstractBlock
     public function getMonthBoxShadow($key)
     {
         $key = $this->mapKey($key);
-        $sizeTop = $this->getAttribute('advanced_style_month_' . $key . '.px.top');
-        $sizeRight = $this->getAttribute('advanced_style_month_' . $key . '.px.right');
-        $sizeBottom = $this->getAttribute('advanced_style_month_' . $key . '.px.bottom');
-        $sizeLeft = $this->getAttribute('advanced_style_month_' . $key . '.px.left');
-        $color = $this->getAttribute('advanced_style_month_' . $key . '.color');
+        $sizeTop = $this->getAttribute('advanced_style_month_' . $key . '_px_top');
+        $sizeRight = $this->getAttribute('advanced_style_month_' . $key . '_px_right');
+        $sizeBottom = $this->getAttribute('advanced_style_month_' . $key . '_px_bottom');
+        $sizeLeft = $this->getAttribute('advanced_style_month_' . $key . '_px_left');
+        $color = $this->getAttribute('advanced_style_month_' . $key . '_color');
         return $sizeTop . 'px ' . $sizeRight . 'px ' . $sizeBottom . 'px ' . $sizeLeft . 'px ' . $color;
     }
 
@@ -211,10 +211,10 @@ class Calendar extends AbstractBlock
     public function getMonthPadding($key)
     {
         $key = $this->mapKey($key);
-        $sizeTop = $this->getAttribute('advanced_style_month_' . $key . '.px.top');
-        $sizeRight = $this->getAttribute('advanced_style_month_' . $key . '.px.right');
-        $sizeBottom = $this->getAttribute('advanced_style_month_' . $key . '.px.bottom');
-        $sizeLeft = $this->getAttribute('advanced_style_month_' . $key . '.px.left');
+        $sizeTop = $this->getAttribute('advanced_style_month_' . $key . '_px_top');
+        $sizeRight = $this->getAttribute('advanced_style_month_' . $key . '_px_right');
+        $sizeBottom = $this->getAttribute('advanced_style_month_' . $key . '_px_bottom');
+        $sizeLeft = $this->getAttribute('advanced_style_month_' . $key . '_px_left');
         return $sizeTop . 'px ' . $sizeRight . 'px ' . $sizeBottom . 'px ' . $sizeLeft . 'px';
     }
 
@@ -235,9 +235,9 @@ class Calendar extends AbstractBlock
     public function getWeekBorder($key)
     {
         $key = $this->mapKey($key);
-        $size = $this->getAttribute('advanced_style_week_' . $key . '.px');
-        $style = $this->getAttribute('advanced_style_week_' . $key . '.style');
-        $color = $this->getAttribute('advanced_style_week_' . $key . '.color');
+        $size = $this->getAttribute('advanced_style_week_' . $key . '_px');
+        $style = $this->getAttribute('advanced_style_week_' . $key . '_style');
+        $color = $this->getAttribute('advanced_style_week_' . $key . '_color');
         return $size . 'px ' . $style . ' ' . $color;
     }
 
