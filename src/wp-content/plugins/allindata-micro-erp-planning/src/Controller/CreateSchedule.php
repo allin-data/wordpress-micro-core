@@ -9,6 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Planning\Controller;
 
 use AllInData\MicroErp\Core\Controller\AbstractController;
+use AllInData\MicroErp\Core\Model\AbstractModel;
 use AllInData\MicroErp\Planning\Model\Schedule;
 use AllInData\MicroErp\Planning\Model\Validator\Schedule as ScheduleValidator;
 use AllInData\MicroErp\Planning\Model\Resource\Schedule as ScheduleResource;
@@ -76,9 +77,9 @@ class CreateSchedule extends AbstractController
     }
 
     /**
-     * @param int[] $resourceValueSet
+     * @param int[]|mixed[] $resourceValueSet
      * @param array $defaultValue
-     * @return array
+     * @return int[]
      */
     private function mapResourceValues(array $resourceValueSet, array $defaultValue = []): array
     {
@@ -88,13 +89,10 @@ class CreateSchedule extends AbstractController
 
         $idSet = [];
         foreach ($resourceValueSet as $resourceValue) {
-            if (is_numeric($resourceValue)) {
-                $idSet[] = [
-                    'id' => (int)$resourceValue
-                ];
-            } else {
-                $idSet[] = (array)$resourceValue;
+            if (!is_numeric($resourceValue)) {
+                continue;
             }
+            $idSet[] = $resourceValue;
         }
         return $idSet;
     }

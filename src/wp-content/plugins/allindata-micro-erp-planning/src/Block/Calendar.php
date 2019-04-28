@@ -67,15 +67,19 @@ class Calendar extends AbstractBlock
                 continue;
             }
 
-            $resourceSet = $this->resourceCollection->load([
-                'meta_query' => [
-                    [
-                        'key' => 'type_id',
-                        'value' => $resourceType->getId(),
-                        'compare' => '=',
-                    ],
+            $resourceSet = $this->resourceCollection->load(
+                GenericCollection::NO_LIMIT,
+                0,
+                [
+                    'meta_query' => [
+                        [
+                            'key' => 'type_id',
+                            'value' => $resourceType->getId(),
+                            'compare' => '=',
+                        ],
+                    ]
                 ]
-            ]);
+            );
 
             $resourcesMeta[$resourceType->getId()] = $resourceType;
             $resourcesItemSet[$resourceType->getId()] = $resourceSet;

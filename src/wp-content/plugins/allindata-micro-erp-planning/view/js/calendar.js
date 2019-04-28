@@ -8,6 +8,7 @@
             calendarId: 1,
             target: '#calendar',
             modalSelector: '#calendar_modal',
+            multiSelectSelector: 'select[multiple="multiple"]',
             actionCreateSchedule: '',
             actionUpdateSchedule: '',
             actionDeleteSchedule: '',
@@ -539,14 +540,20 @@
                     event.end = me._mapDate(event.end, config);
                     if (true === config.calendarOptions.useCreationPopup) {
                         // render default schedule creator
-                        me._addHookOnBeforeCreateSchedule(calendar, event, config);
+                        me._addHookOnBeforeCreateSchedule(calendar, event, config, function (calendar, schedule, config, callback) {
+                            config.schedules.push(schedule);
+                            callback.call(me, calendar, schedule, config);
+                        });
                         return;
                     }
 
                     // render custom schedule creator
                     me._renderCustomScheduleCreationGuide(calendar, event, config, function (calendar, schedule, config, callback) {
-                            me._addHookOnBeforeCreateSchedule(calendar, schedule, config, callback);
+                        me._addHookOnBeforeCreateSchedule(calendar, schedule, config, function (calendar, schedule, config) {
+                            config.schedules.push(schedule);
+                            callback.call(me, calendar, schedule, config);
                         });
+                    });
                 },
                 'beforeUpdateSchedule': function (event) {
                     if (!event.start) {
@@ -559,14 +566,30 @@
                     event.end = me._mapDate(event.end, config);
 
                     if (true === config.calendarOptions.useCreationPopup) {
-                        me._addHookOnBeforeUpdateSchedule(calendar, event.schedule, config);
+                        me._addHookOnBeforeUpdateSchedule(calendar, event.schedule, config, function (calendar, schedule, config, callback) {
+                            config.schedules.forEach(function (originSchedule, idx) {
+                                if (originSchedule.id != schedule.id) {
+                                    return;
+                                }
+                                config.schedules[idx] = schedule;
+                            });
+                            callback.call(me, calendar, schedule, config);
+                        });
                         return;
                     }
 
                     // render custom schedule creator
                     me._renderCustomScheduleCreationGuide(calendar, event, config, function (calendar, schedule, config, callback) {
-                            me._addHookOnBeforeUpdateSchedule(calendar, schedule, config, callback);
+                        me._addHookOnBeforeUpdateSchedule(calendar, schedule, config, function (calendar, schedule, config) {
+                            config.schedules.forEach(function (originSchedule, idx) {
+                                if (originSchedule.id != schedule.id) {
+                                    return;
+                                }
+                                config.schedules[idx] = schedule;
+                            });
+                            callback.call(me, calendar, schedule, config);
                         });
+                    });
                 },
                 'beforeDeleteSchedule': function (event) {
                     me._addHookOnBeforeDeleteSchedule(calendar, event, config);
@@ -606,7 +629,9 @@
         _renderCustomScheduleCreationGuide: function (calendar, event, config, callback = function () {
         }) {
             let me = this,
-                modal;
+                modal,
+                originSchedule = {},
+                schedule;
 
             modal = $(config.customScheduleCreationGuide.modalTemplateSelector);
             modal.on("hidden.bs.modal", function () {
@@ -624,7 +649,7 @@
                     // resource data
                     for (let resourcesTypeId in resourcesTypes) {
                         let valueSet;
-                        valueSet = modal.find('select[name="resource_'+resourcesTypeId+'"]').val();
+                        valueSet = modal.find('select[name="resource_' + resourcesTypeId + '"]').val();
                         if (!valueSet) {
                             continue;
                         }
@@ -647,11 +672,11 @@
                         resources: resourceValueSet
                     };
 
-                    if(event.schedule && event.schedule.hasOwnProperty('id')) {
+                    if (event.schedule && event.schedule.hasOwnProperty('id')) {
                         formData['id'] = event.schedule.id;
                     }
-                    formData = me._merge(formData, event.schedule || {});
-                    schedule = me._merge(me._getSchedulePrototype(), formData);
+                    schedule = me._merge(me._getSchedulePrototype(), event.schedule || {});
+                    schedule = me._merge(schedule, formData);
 
                     callback.call(me, calendar, schedule, config, function (calendar, schedule, config) {
                         me._resetCalendar(calendar, config, function () {
@@ -663,21 +688,35 @@
             // reset and optionally prefill creation guide form
             if (event.schedule) {
                 // update flow
+                config.schedules.forEach(function (schedule) {
+                    if (schedule.id != event.schedule.id) {
+                        return;
+                    }
+                    originSchedule = schedule;
+                    return false;
+                });
+                schedule = me._merge(me._getSchedulePrototype(), originSchedule);
+                schedule = me._merge(schedule, event.schedule);
+
+                let startDate = (schedule.start.toDate) ? schedule.start.toDate() : schedule.start;
+                let endDate = (schedule.end.toDate) ? schedule.end.toDate() : schedule.end;
                 me._prefillCustomScheduleCreationGuide(
+                    config,
                     modal,
-                    moment(event.schedule.start.toDate()).format('YYYY-MM-DD'),
-                    moment(event.schedule.start.toDate()).format('HH:mm'),
-                    moment(event.schedule.end.toDate()).format('YYYY-MM-DD'),
-                    moment(event.schedule.end.toDate()).format('HH:mm'),
-                    event.schedule.isAllDay,
+                    moment(startDate).format('YYYY-MM-DD'),
+                    moment(startDate).format('HH:mm'),
+                    moment(endDate).format('YYYY-MM-DD'),
+                    moment(endDate).format('HH:mm'),
+                    schedule.isAllDay,
                     config.resources.meta,
-                    event.schedule.title,
-                    event.schedule.body,
-                    event.schedule.resources
+                    schedule.title,
+                    schedule.body,
+                    schedule.resources
                 );
             } else {
                 // creation flow
                 me._prefillCustomScheduleCreationGuide(
+                    config,
                     modal,
                     moment(event.start).format('YYYY-MM-DD'),
                     moment(event.start).format('HH:mm'),
@@ -693,6 +732,7 @@
 
         /**
          *
+         * @param {Object} config
          * @param {Object} parentForm
          * @param {String} startDate
          * @param {String} startTime
@@ -705,18 +745,10 @@
          * @param {Object[]} resources
          * @private
          */
-        _prefillCustomScheduleCreationGuide: function (parentForm, startDate = null, startTime = null, endDate = null,
+        _prefillCustomScheduleCreationGuide: function (config, parentForm, startDate = null, startTime = null, endDate = null,
                                                        endTime = null, isAllDay = false, resourcesTypes = {},
                                                        name = null, body = null, resources = []) {
-            let resourceMap = [];
-
-            resources.forEach(function (resource) {
-                let typeId = resource['type_id'];
-                if (-1 === resourceMap.indexOf(typeId)) {
-                    resourceMap[typeId] = [];
-                }
-                resourceMap[typeId].push(resource);
-            });
+            let resourceMap = config.resources.items;
 
             parentForm.find('input[name="name"]').val(name);
             parentForm.find('textarea[name="body"]').val(body);
@@ -726,22 +758,20 @@
             parentForm.find('input[name="end-date"]').val(endDate);
             parentForm.find('input[name="end-time"]').val(endTime);
 
-            for (let resourcesType in resourcesTypes) {
-                let typeId,
-                    valueSet = [];
-
-                if(!resourcesType.hasOwnProperty('id')) {
-                    continue;
+            for (let resourcesTypeId in resourcesTypes) {
+                let valueSet = [];
+                if (!resourceMap.hasOwnProperty(resourcesTypeId)) {
+                    return;
                 }
-                typeId = resourcesType['id'];
-
-                if (-1 === resourceMap.indexOf(typeId)) {
-                    resourceMap[typeId] = [];
-                }
-                resourceMap[typeId].forEach(function (resource) {
-                    valueSet.push(resource['id']);
+                resourceMap[resourcesTypeId].forEach(function (resource) {
+                    if (!resources.includes(resource.id.toString())) {
+                        return;
+                    }
+                    valueSet.push(resource.id.toString());
                 });
-                parentForm.find('select[name="resource_'+resourcesType['id']+'"]').val(valueSet);
+
+                parentForm.find('select[name="resource_' + resourcesTypeId + '"]').val(valueSet);
+                $(config.multiSelectSelector).trigger('chosen:updated');
             }
         },
 

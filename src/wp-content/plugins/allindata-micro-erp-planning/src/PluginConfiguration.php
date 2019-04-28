@@ -161,8 +161,7 @@ class PluginConfiguration
             new ScheduleMeta(
             \AllInData\MicroErp\Planning\Model\ScheduleMeta::class,
                 new ScheduleMetaCreator(\AllInData\MicroErp\Planning\Model\ScheduleMetaCreator::class)
-            ),
-            $this->getResourceFactory()
+            )
         );
     }
 

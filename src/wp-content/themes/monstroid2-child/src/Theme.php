@@ -88,24 +88,12 @@ class Theme
             true
         );
         wp_enqueue_script(
-            'popper-js',
-            get_theme_file_uri('node_modules/popper.js/dist/umd/popper.js'),
+            'chosen-js',
+            get_theme_file_uri('node_modules/chosen-js/chosen.jquery.js'),
             [
-                'jquery',
-                'bootstrap-js',
+                'jquery'
             ],
-            '1.15.0',
-            true
-        );
-        wp_enqueue_script(
-            'bootstrap-multiselect-js',
-            get_theme_file_uri('node_modules/@dashboardcode/bsmultiselect/dist/js/BsMultiSelect.js'),
-            [
-                'jquery',
-                'bootstrap-js',
-                'popper-js',
-            ],
-            '0.2.22',
+            '1.8.7',
             true
         );
     }
@@ -130,12 +118,13 @@ class Theme
             ]
         );
         wp_enqueue_style(
-            'bootstrap-multiselect-style',
-            get_stylesheet_directory_uri() . '/node_modules/@dashboardcode/bsmultiselect/dist/css/BsMultiSelect.css',
+            'chosen-js-style',
+            get_stylesheet_directory_uri() . '/node_modules/chosen-js/chosen.css',
             [
                 'monstroid2-child-theme-style',
                 'fontawesome-free'
-            ]
+            ],
+            '1.8.7'
         );
     }
 

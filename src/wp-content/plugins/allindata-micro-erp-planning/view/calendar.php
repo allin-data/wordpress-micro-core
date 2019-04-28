@@ -127,7 +127,10 @@ $timeMax = (new \DateTime())->setTime(22, 0, 0);
                 <?php foreach($block->getResourceTypes() as $resourceType): ?>
                 <div class="input-group form-group">
                     <label for="resource_<?= $resourceType->getId()?>"><?= $resourceType->getLabel() ?></label>
-                    <select class="custom-select" name="resource_<?= $resourceType->getId()?>" multiple="multiple">
+                    <select class="custom-select"
+                            name="resource_<?= $resourceType->getId()?>"
+                            multiple="multiple"
+                            data-placeholder="<?= sprintf(__('Choose %1$s', AID_MICRO_ERP_PLANNING_TEXTDOMAIN), $resourceType->getLabel()) ?>">
                         <?php foreach($block->getResourcesByType($resourceType) as $resources): ?>
                         <option value="<?= $resources->getId() ?>">
                             <?= $resources->getName() ?>
@@ -159,20 +162,17 @@ $timeMax = (new \DateTime())->setTime(22, 0, 0);
         let calendarSelector = '#calendar_<?= $block->getAttribute('id') ?>',
             currentDate = moment();
 
-        $('select[multiple="multiple"]').bsMultiSelect({
-            useCss: true,
-            containerClass: 'dashboardcode-bsmultiselect',
-            dropDownMenuClass: 'dropdown-menu',
-            dropDownItemClass:  'px-2',
-            dropDownItemHoverClass: 'text-primary bg-light',
-            selectedPanelClass: 'form-control',
-            selectedItemClass: 'badge',
-            removeSelectedItemButtonClass: 'close',
-            filterInputItemClass: '',
-            filterInputClass: '',
-            selectedPanelFocusClass : 'focus',
-            selectedPanelDisabledClass: 'disabled',
-            selectedItemContentDisabledClass: 'disabled'
+        $('select[multiple="multiple"]').chosen({
+            width: '95%',
+            disable_search_threshold: 3,
+            single_backstroke_delete: false,
+            hide_results_on_select: true,
+            no_results_text: '<?= __('No results', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>',
+            max_selected_options: 5
+        }).bind("chosen:maxselected", function () {
+            $('#calendar_modal .modal-title').html('<?= __('Error Message', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>');
+            $('#calendar_modal .modal-body').html('<?= __('You have no permission to add more items', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>');
+            $(config.modalSelector).modal('show');
         });
 
 
@@ -183,6 +183,7 @@ $timeMax = (new \DateTime())->setTime(22, 0, 0);
             actionUpdateSchedule: '<?= $block->getUpdateScheduleActionSlug() ?>',
             actionDeleteSchedule: '<?= $block->getDeleteScheduleActionSlug() ?>',
             modalSelector: '#calendar_modal',
+            multiSelectSelector: 'select[multiple="multiple"]',
             labels: {
                 'Milestone': '<?= $block->getAttribute('label-milestone'); ?>',
                 'Task': '<?= $block->getAttribute('label-task'); ?>',

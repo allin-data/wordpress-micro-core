@@ -9,6 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Planning\Controller;
 
 use AllInData\MicroErp\Core\Controller\AbstractController;
+use AllInData\MicroErp\Core\Model\AbstractModel;
 use AllInData\MicroErp\Planning\Model\Schedule;
 use AllInData\MicroErp\Planning\Model\Validator\Schedule as ScheduleValidator;
 use AllInData\MicroErp\Planning\Model\Resource\Schedule as ScheduleResource;
@@ -59,6 +60,7 @@ class UpdateSchedule extends AbstractController
         if (empty($originSchedule->getId())) {
             throw new InvalidArgumentException('Schedule could not be found.');
         }
+        $scheduleData['resources'] = $this->mapResourceValues($scheduleData['resources'] ?? [], []);
 
         /** @var Schedule $schedule */
         $schedule = $this->scheduleResource->getModelFactory()->copy($originSchedule, $scheduleData);
@@ -83,6 +85,27 @@ class UpdateSchedule extends AbstractController
 
         $this->scheduleResource->save($schedule);
         return true;
+    }
+
+    /**
+     * @param int[]|mixed[] $resourceValueSet
+     * @param array $defaultValue
+     * @return int[]
+     */
+    private function mapResourceValues(array $resourceValueSet, array $defaultValue = []): array
+    {
+        if (empty($resourceValueSet)) {
+            return $defaultValue;
+        }
+
+        $idSet = [];
+        foreach ($resourceValueSet as $resourceValue) {
+            if (!is_numeric($resourceValue)) {
+                continue;
+            }
+            $idSet[] = $resourceValue;
+        }
+        return $idSet;
     }
 
     /**
