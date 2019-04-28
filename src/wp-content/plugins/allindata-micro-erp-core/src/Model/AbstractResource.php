@@ -110,6 +110,9 @@ abstract class AbstractResource
             $queryEntity,
             ARRAY_A
         );
+        if (empty($entity)) {
+            return $this->modelFactory->create();
+        }
 
         $entityData = [];
         if (!empty($entity)) {

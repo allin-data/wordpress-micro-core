@@ -40,7 +40,9 @@ abstract class AbstractOwnedCollection extends AbstractCollection
 
         $collectionItems = [];
         foreach ($collectionIdSet as $id) {
-            $entity = $this->getResource()->loadById($id);
+            /** @var AbstractOwnedResource $resource */
+            $resource = $this->getResource();
+            $entity = $resource->loadBypassOwnership($id);
             $collectionItems[] = $entity;
         }
 
@@ -84,6 +86,6 @@ abstract class AbstractOwnedCollection extends AbstractCollection
      */
     protected function getCurrentScopeUserIdSet(): array
     {
-        return [get_current_user_id()];
+        return apply_filters('micro_erp_query_current_scope_user_id', [get_current_user_id()]);
     }
 }
