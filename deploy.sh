@@ -136,13 +136,14 @@ function help () {
 
 # shellcheck disable=SC2015
 [[ "${__usage+x}" ]] || read -r -d '' __usage <<-'EOF' || true # exits non-zero when EOF encountered
-  -e --env  [arg]  Environment. Required. One of [dev|stage|prod].
-  -v               Enable verbose mode, print script as it is executed
-  -s --silent      Do not ask for confirmation
-  -n --dryrun       Enables dryrun mode
-  -d --debug       Enables debug mode
-  -h --help        This page
-  -n --no-color    Disable color output
+  -e --env       [arg]  Environment. Required. One of [dev|stage|prod].
+  -c --context   [arg]  Context. Required. Name of deployment context (e.g. customer).
+  -v                    Enable verbose mode, print script as it is executed
+  -s --silent           Do not ask for confirmation
+  -n --dryrun           Enables dryrun mode
+  -d --debug            Enables debug mode
+  -h --help             This page
+  -n --no-color         Disable color output
 EOF
 
 # shellcheck disable=SC2015
@@ -364,7 +365,8 @@ fi
 ### Validation. Error out if the things required for your script are not present
 ##############################################################################
 
-[[ "${arg_e:-}" ]]     || help      "Setting environment with -f or --env is required"
+[[ "${arg_e:-}" ]]     || help      "Setting environment with -e or --env is required"
+[[ "${arg_c:-}" ]]     || help      "Setting context with -c or --context is required"
 [[ "${LOG_LEVEL:-}" ]] || emergency "Cannot continue without LOG_LEVEL. "
 
 
@@ -378,12 +380,15 @@ fi
 #info "OSTYPE: ${OSTYPE}"
 
 ENVIRONMENT=""
+CONTEXT="${arg_c}"
+CONFIGFILE=""
 REMOTE_TARGET_HOST=""
 REMOTE_TARGET_PATH=""
 REMOTE_USER=""
 LOCAL_BASE_PATH=${__dir}"/src/wp-content"
+THEME_NAME=""
 REL_BASE_PATH_PLUGINS="/plugins"
-REL_BASE_PATH_THEMES="/themes/monstroid2-child"
+REL_BASE_PATH_THEMES="/themes/${THEME_NAME}"
 REL_BASE_PATH_LANGUAGE="/languages"
 
 case "${arg_e}" in
@@ -393,9 +398,6 @@ case "${arg_e}" in
   ;;
 "stage")
   ENVIRONMENT="Stage"
-  REMOTE_TARGET_HOST="81.169.134.195"
-  REMOTE_TARGET_PATH="/var/www/vhosts/all-in-data.dev/mahucms.all-in-data.dev/wp-content"
-  REMOTE_USER="allindatadev"
   ;;
 "prod")
   error "No deployment for production"
@@ -403,10 +405,24 @@ case "${arg_e}" in
   ;;
 *)
   ENVIRONMENT="Development"
+  error "No deployment for development"
+  [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
   ;;
 esac
 
 info "Selected environment: ${ENVIRONMENT}"
+info "Selected context: ${CONTEXT}"
+##
+## Load deployment configuration
+##
+CONFIGFILE="${__dir}/conf/deploy/${arg_e}/${CONTEXT}.cnf"
+if [ ! -f "${CONFIGFILE}" ]; then
+    error "Configuration file not found"
+    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
+fi
+. "${CONFIGFILE}"
+## Update values
+REL_BASE_PATH_THEMES="/themes/${THEME_NAME}"
 
 if [ ${arg_s} != 1 ]; then
     read -p "Are you sure? [Yn]" -n 1 -r
