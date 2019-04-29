@@ -51,7 +51,7 @@ class FormCreateResource extends AbstractShortCode implements PluginShortCodeInt
     public function addShortCode($attributes, $content, $name)
     {
         if (!is_user_logged_in() ||
-            (!current_user_can(CreateResource::CAPABILITY) && !current_user_can(AdministratorRole::ROLE_LEVEL)) ||
+            !(current_user_can(CreateResource::CAPABILITY) || current_user_can(AdministratorRole::ROLE_LEVEL)) ||
             is_admin()) {
             return '';
         }

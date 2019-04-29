@@ -10,7 +10,8 @@ namespace AllInData\MicroErp\Resource\ShortCode;
 
 use AllInData\MicroErp\Core\ShortCode\AbstractShortCode;
 use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
-use AllInData\MicroErp\Resource\Model\Capability\CreateResource;
+use AllInData\MicroErp\Mdm\Model\Role\AdministratorRole;
+use AllInData\MicroErp\Resource\Model\Capability\UpdateResource;
 
 /**
  * Class GridResource
@@ -50,6 +51,7 @@ class GridResource extends AbstractShortCode implements PluginShortCodeInterface
     public function addShortCode($attributes, $content, $name)
     {
         if (!is_user_logged_in() ||
+            !(current_user_can(UpdateResource::CAPABILITY) || current_user_can(AdministratorRole::ROLE_LEVEL)) ||
             is_admin()) {
             return '';
         }
