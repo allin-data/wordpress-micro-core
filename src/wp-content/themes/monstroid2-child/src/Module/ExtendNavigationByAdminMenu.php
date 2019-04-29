@@ -60,9 +60,9 @@ class ExtendNavigationByAdminMenu implements ThemeModuleInterface
             return $items;
         }
 
-        $adminMenu = wp_get_nav_menu_object($this->adminMenuSlug);
+        $adminMenuId = $this->getApplicableMenuId($this->adminMenuSlug);
+        $adminMenu = wp_get_nav_menu_object($adminMenuId);
         $adminMenuItems = wp_get_nav_menu_items($adminMenu->term_id, ['post_status' => 'publish']);
-
         if (!$adminMenuItems) {
             return $items;
         }
@@ -98,5 +98,21 @@ class ExtendNavigationByAdminMenu implements ThemeModuleInterface
         }
 
         return false;
+    }
+
+    /**
+     * @param string $menuSlug
+     * @return int
+     */
+    private function getApplicableMenuId($menuSlug): int
+    {
+        $locations = get_nav_menu_locations();
+        foreach ($locations as $locationName => $menuId) {
+            if ($menuSlug == $locationName) {
+                return $menuId;
+            }
+        }
+
+        return 0;
     }
 }

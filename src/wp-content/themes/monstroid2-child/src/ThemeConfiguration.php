@@ -38,7 +38,7 @@ class ThemeConfiguration
     {
         return [
             new DisabledAdminBar(),
-            new ExtendNavigationByAdminMenu('adminmenu', [
+            new ExtendNavigationByAdminMenu('admin-menu', [
                 'main'
             ])
         ];

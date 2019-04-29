@@ -42,7 +42,7 @@ abstract class AbstractRole implements RoleInterface
     {
         add_role($this->getRoleLevel(), $this->getRoleLabel(), $this->getCapabilities());
         do_action('role_install_' . $this->getRoleLevel(), $this->getRoleLevel());
-        $this->installCapability($this->getRoleLevel().'_view_menu');
+        $this->installCapability($this->getRoleLevel() . '_view_menu');
     }
 
     /**
@@ -52,7 +52,7 @@ abstract class AbstractRole implements RoleInterface
     {
         remove_role($this->getRoleLevel());
         do_action('role_remove_' . $this->getRoleLevel(), $this->getRoleLevel());
-        $this->removeCapability($this->getRoleLevel().'_view_menu');
+        $this->removeCapability($this->getRoleLevel() . '_view_menu');
     }
 
     /**
@@ -111,16 +111,16 @@ abstract class AbstractRole implements RoleInterface
     public function extendNavigation($items, $menu, $args)
     {
         if (is_admin() ||
-            !current_user_can($this->getRoleLevel().'_view_menu') ||
+            !current_user_can($this->getRoleLevel() . '_view_menu') ||
             !$this->isApplicableMenu($menu->term_id)) {
             return $items;
         }
 
         $menuSlug = 'menu_' . $this->getRoleLevel();
 
-        $roleMenu = wp_get_nav_menu_object($menuSlug);
+        $roleMenuId = $this->getApplicableMenuId($menuSlug);
+        $roleMenu = wp_get_nav_menu_object($roleMenuId);
         $roleMenuItems = wp_get_nav_menu_items($roleMenu->term_id, ['post_status' => 'publish']);
-
         if (!$roleMenuItems) {
             return $items;
         }
@@ -156,6 +156,22 @@ abstract class AbstractRole implements RoleInterface
         }
 
         return false;
+    }
+
+    /**
+     * @param string $menuSlug
+     * @return int
+     */
+    private function getApplicableMenuId($menuSlug): int
+    {
+        $locations = get_nav_menu_locations();
+        foreach ($locations as $locationName => $menuId) {
+            if ($menuSlug == $locationName) {
+                return $menuId;
+            }
+        }
+
+        return 0;
     }
 
     /**
