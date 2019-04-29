@@ -400,11 +400,9 @@ case "${arg_e}" in
   ENVIRONMENT="Stage"
   ;;
 "prod")
-  error "No deployment for production"
-  [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
+  ENVIRONMENT="Production"
   ;;
 *)
-  ENVIRONMENT="Development"
   error "No deployment for development"
   [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
   ;;
