@@ -70,7 +70,7 @@ abstract class AbstractPostResource extends AbstractOwnedResource
     {
         $entity
             ->setPostType($entity->getPostType() ?? static::ENTITY_NAME)
-            ->setPostAuthor($entity->getPostAuthor() ?? $this->getCurrentScopeUserId())
+            ->setPostAuthor($entity->getPostAuthor() ?? get_current_user_id())
             ->setPostTitle($entity->getPostTitle() ?? '')
             ->setPostName($entity->getPostName() ?? sanitize_title($entity->getPostTitle()))
             ->setPostContent($entity->getPostContent() ?? '')
