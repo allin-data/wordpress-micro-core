@@ -23,7 +23,7 @@ $this->__processed_item_index += 1;
 		<div class="timeline-item__card-inner">
 				<?php
 					if ( 'yes' === $item_settings['show_item_image'] ) {
-						echo $this->__loop_item( array( 'item_image', 'url' ), '<div class="timeline-item__card-img"><img src="%s" alt=""></div>' );
+						echo $this->__get_timeline_image();
 					}
 				?>
 				<div class="timeline-item__card-content">

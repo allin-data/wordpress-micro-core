@@ -46,10 +46,14 @@ if ( ! class_exists( 'Jet_Blocks_Assets' ) ) {
 		 */
 		public function enqueue_styles() {
 
+			$direction_suffix = is_rtl() ? '-rtl' : '';
+
+			$file_name = 'jet-blocks' . $direction_suffix . '.css';
+
 			$has_custom_file = Responsive::has_custom_breakpoints();
 
 			if ( $has_custom_file ) {
-				$frontend_file = new FrontendFile( 'custom-jet-blocks.css', jet_blocks()->plugin_path( 'assets/css/templates/jet-blocks.css' ) );
+				$frontend_file = new FrontendFile( 'custom-' . $file_name, jet_blocks()->plugin_path( 'assets/css/templates/' . $file_name ) );
 
 				$time = $frontend_file->get_meta( 'time' );
 
@@ -59,7 +63,7 @@ if ( ! class_exists( 'Jet_Blocks_Assets' ) ) {
 
 				$style_url = $frontend_file->get_url();
 			} else {
-				$style_url = jet_blocks()->plugin_url( 'assets/css/jet-blocks.css' );
+				$style_url = jet_blocks()->plugin_url( 'assets/css/' . $file_name );
 			}
 
 			wp_enqueue_style(

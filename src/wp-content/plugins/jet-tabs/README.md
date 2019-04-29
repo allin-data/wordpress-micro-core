@@ -6,6 +6,9 @@ The plugin makes it simple to create a template with Elementor and add it to the
 
 # ChangeLog
 
+## [1.1.7](https://github.com/ZemezLab/jet-tabs/releases/tag/1.1.7) - 24.04.2019
+* Added: the ability to change the tab by clicking on the anchor link
+
 ## [1.1.6](https://github.com/ZemezLab/jet-tabs/releases/tag/1.1.6)
 * Added: typography and text color controls for tabs content
 * Added: js triggers

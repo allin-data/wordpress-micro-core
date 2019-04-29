@@ -1188,6 +1188,7 @@ class Jet_Tabs_Widget extends Jet_Tabs_Base {
 							'class'         => array(
 								'jet-tabs__control',
 								'jet-tabs__control-icon-' . $this->get_settings( 'tabs_control_icon_position' ),
+								'elementor-menu-anchor',
 								$index === $active_index ? 'active-tab' : '',
 							),
 							'data-tab'      => $tab_count,

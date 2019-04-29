@@ -5,8 +5,9 @@
 ?>
 <figure class="jet-banner jet-effect-<?php $this->__html( 'animation_effect', '%s' ); ?>"><?php
 	$target = $this->__get_html( 'banner_link_target', ' target="%s"' );
+	$rel = $this->__get_html( 'banner_link_rel', ' rel="%s"' );
 
-	$this->__html( 'banner_link', '<a href="%s" class="jet-banner__link"' . $target . '>' );
+	$this->__html( 'banner_link', '<a href="%s" class="jet-banner__link"' . $target . $rel . '>' );
 		echo '<div class="jet-banner__overlay"></div>';
 		echo $this->__get_banner_image();
 		echo '<figcaption class="jet-banner__content">';

@@ -11,6 +11,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
+use Elementor\Modules\DynamicTags\Module as TagsModule;
 use Elementor\Repeater;
 use Elementor\Scheme_Color;
 use Elementor\Scheme_Typography;
@@ -162,8 +163,15 @@ class Jet_Elements_Headline extends Jet_Elements_Base {
 		$this->add_control(
 			'before_image',
 			array(
-				'label'   => esc_html__( 'Before Image', 'jet-elements' ),
-				'type'    => Controls_Manager::MEDIA,
+				'label'     => esc_html__( 'Before Image', 'jet-elements' ),
+				'type'      => Controls_Manager::MEDIA,
+				'dynamic'   => array(
+					'active'     => true,
+					'categories' => array(
+						TagsModule::POST_META_CATEGORY,
+						TagsModule::IMAGE_CATEGORY,
+					),
+				),
 				'condition' => array(
 					'before_deco_type' => 'image',
 				),
@@ -210,8 +218,15 @@ class Jet_Elements_Headline extends Jet_Elements_Base {
 		$this->add_control(
 			'after_image',
 			array(
-				'label'   => esc_html__( 'After Image', 'jet-elements' ),
-				'type'    => Controls_Manager::MEDIA,
+				'label'     => esc_html__( 'After Image', 'jet-elements' ),
+				'type'      => Controls_Manager::MEDIA,
+				'dynamic'   => array(
+					'active'     => true,
+					'categories' => array(
+						TagsModule::POST_META_CATEGORY,
+						TagsModule::IMAGE_CATEGORY,
+					),
+				),
 				'condition' => array(
 					'after_deco_type' => 'image',
 				),
@@ -1779,7 +1794,7 @@ class Jet_Elements_Headline extends Jet_Elements_Base {
 			}
 
 			if ( 'image' === $settings['before_deco_type'] && ! empty( $settings['before_image']['url'] ) ) {
-				$before_deco_image = sprintf( '<img src="%s" alt="">', $settings['before_image']['url'] );
+				$before_deco_image = sprintf( '<img src="%s" alt="%s">', $settings['before_image']['url'], esc_attr( Control_Media::get_image_alt( $settings['before_image'] ) ) );
 				$before_deco_html = sprintf( '<span class="jet-headline__deco jet-headline__deco-image">%1$s</span>', $before_deco_image );
 			}
 		}
@@ -1793,7 +1808,7 @@ class Jet_Elements_Headline extends Jet_Elements_Base {
 			}
 
 			if ( 'image' === $settings['after_deco_type'] && ! empty( $settings['after_image']['url'] ) ) {
-				$after_deco_image = sprintf( '<img src="%s" alt="">', $settings['after_image']['url'] );
+				$after_deco_image = sprintf( '<img src="%s" alt="%s">', $settings['after_image']['url'], esc_attr( Control_Media::get_image_alt( $settings['after_image'] ) ) );
 				$after_deco_html = sprintf( '<span class="jet-headline__deco jet-headline__deco-image">%1$s</span>', $after_deco_image );
 			}
 		}

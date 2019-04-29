@@ -8,6 +8,10 @@ The plugin works in tandem with Elementor live page builder, allowing to add con
 
 # ChangeLog
 
+## 1.5.9 - 24.04.2019
+* Added: `stretch` option to `Menu items alignment` control
+* Added: better RTL compatibility
+
 ## 1.5.8.1
 * Fixed: mega menu width in mobile mode
 

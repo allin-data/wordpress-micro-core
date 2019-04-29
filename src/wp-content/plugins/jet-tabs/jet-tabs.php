@@ -3,7 +3,7 @@
  * Plugin Name: JetTabs For Elementor
  * Plugin URI:  https://jettabs.zemez.io/
  * Description: JetTabs - Tabs and Accordions for Elementor Page Builder
- * Version:     1.1.6
+ * Version:     1.1.7
  * Author:      Zemez
  * Author URI:  https://zemez.io/wordpress/
  * Text Domain: jet-tabs
@@ -57,7 +57,7 @@ if ( ! class_exists( 'Jet_Tabs' ) ) {
 		 *
 		 * @var string
 		 */
-		private $version = '1.1.6';
+		private $version = '1.1.7';
 
 		/**
 		 * Holder for base plugin path

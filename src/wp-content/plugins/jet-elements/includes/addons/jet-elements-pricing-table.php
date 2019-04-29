@@ -1851,4 +1851,14 @@ class Jet_Elements_Pricing_Table extends Jet_Elements_Base {
 		<# } #>
 		<?php
 	}
+	
+	public function __get_badge_image() {
+		$badge = $this->get_settings_for_display( 'featured_badge' );
+		
+		if ( ! isset( $badge['url'] ) ) {
+			return;
+		}
+		
+		return jet_elements_tools()->get_image_by_url( $badge['url'], array( 'class' => 'pricing-table__badge', 'alt' => esc_attr( Control_Media::get_image_alt( $badge ) ) ) );
+	}
 }

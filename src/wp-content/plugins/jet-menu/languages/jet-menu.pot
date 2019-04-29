@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JetMenu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-23 12:01+0200\n"
+"POT-Creation-Date: 2019-04-23 12:28+0300\n"
 "PO-Revision-Date: 2018-08-31 11:07+0200\n"
 "Last-Translator: JetImpex\n"
 "Language-Team: JetImpex\n"
@@ -88,8 +88,9 @@ msgstr ""
 #: includes/class-jet-menu-dynamic-css.php:329
 #: includes/class-jet-menu-dynamic-css.php:344
 #: includes/class-jet-menu-dynamic-css.php:361
-#: includes/class-jet-menu-options-page.php:707
-#: includes/class-jet-menu-options-page.php:1051
+#: includes/class-jet-menu-options-page.php:708
+#: includes/class-jet-menu-options-page.php:1052
+#: includes/class-jet-menu-settings-item.php:402
 msgid "Default"
 msgstr ""
 
@@ -116,7 +117,7 @@ msgstr ""
 #: includes/widgets/jet-widget-custom-menu.php:1040
 #: includes/widgets/jet-widget-custom-menu.php:1534
 #: includes/widgets/jet-widget-custom-menu.php:1949
-#: includes/widgets/jet-widget-mega-menu.php:355
+#: includes/widgets/jet-widget-mega-menu.php:388
 msgid "Normal"
 msgstr ""
 
@@ -423,7 +424,7 @@ msgid "Sub Menu Styles"
 msgstr ""
 
 #: includes/class-jet-menu-options-page.php:340
-#: includes/widgets/jet-widget-mega-menu.php:805
+#: includes/widgets/jet-widget-mega-menu.php:838
 msgid "Mobile Menu"
 msgstr ""
 
@@ -494,13 +495,13 @@ msgid "Sub menu open event"
 msgstr ""
 
 #: includes/class-jet-menu-options-page.php:471
-#: includes/class-jet-menu-options-page.php:711
-#: includes/class-jet-menu-options-page.php:1055
+#: includes/class-jet-menu-options-page.php:712
+#: includes/class-jet-menu-options-page.php:1056
 #: includes/widgets/jet-widget-custom-menu.php:687
 #: includes/widgets/jet-widget-custom-menu.php:1181
 #: includes/widgets/jet-widget-custom-menu.php:1572
 #: includes/widgets/jet-widget-custom-menu.php:1986
-#: includes/widgets/jet-widget-mega-menu.php:356
+#: includes/widgets/jet-widget-mega-menu.php:389
 msgid "Hover"
 msgstr ""
 
@@ -531,385 +532,396 @@ msgid "Menu items alignment"
 msgstr ""
 
 #: includes/class-jet-menu-options-page.php:541
-#: includes/class-jet-menu-options-page.php:1323
-#: includes/class-jet-menu-options-page.php:1482
-#: includes/class-jet-menu-options-page.php:1599
-#: includes/widgets/jet-widget-custom-menu.php:288
 #: includes/widgets/jet-widget-mega-menu.php:191
-#: includes/widgets/jet-widget-mega-menu.php:930
-#: includes/widgets/jet-widget-mega-menu.php:1117
-#: includes/widgets/jet-widget-mega-menu.php:1278
-msgid "Right"
+msgid "End"
 msgstr ""
 
 #: includes/class-jet-menu-options-page.php:542
-#: includes/class-jet-menu-options-page.php:1309
-#: includes/class-jet-menu-options-page.php:1324
-#: includes/class-jet-menu-options-page.php:1470
-#: includes/class-jet-menu-options-page.php:1483
-#: includes/class-jet-menu-options-page.php:1586
-#: includes/class-jet-menu-options-page.php:1600
+#: includes/class-jet-menu-options-page.php:1310
+#: includes/class-jet-menu-options-page.php:1325
+#: includes/class-jet-menu-options-page.php:1471
+#: includes/class-jet-menu-options-page.php:1484
+#: includes/class-jet-menu-options-page.php:1587
+#: includes/class-jet-menu-options-page.php:1601
 #: includes/widgets/jet-widget-custom-menu.php:284
 #: includes/widgets/jet-widget-custom-menu.php:1750
 #: includes/widgets/jet-widget-custom-menu.php:1873
 #: includes/widgets/jet-widget-custom-menu.php:2142
 #: includes/widgets/jet-widget-mega-menu.php:187
-#: includes/widgets/jet-widget-mega-menu.php:926
-#: includes/widgets/jet-widget-mega-menu.php:956
-#: includes/widgets/jet-widget-mega-menu.php:1113
-#: includes/widgets/jet-widget-mega-menu.php:1143
-#: includes/widgets/jet-widget-mega-menu.php:1274
-#: includes/widgets/jet-widget-mega-menu.php:1300
+#: includes/widgets/jet-widget-mega-menu.php:959
+#: includes/widgets/jet-widget-mega-menu.php:989
+#: includes/widgets/jet-widget-mega-menu.php:1146
+#: includes/widgets/jet-widget-mega-menu.php:1176
+#: includes/widgets/jet-widget-mega-menu.php:1307
+#: includes/widgets/jet-widget-mega-menu.php:1333
 msgid "Center"
 msgstr ""
 
 #: includes/class-jet-menu-options-page.php:543
-#: includes/class-jet-menu-options-page.php:1322
-#: includes/class-jet-menu-options-page.php:1484
-#: includes/class-jet-menu-options-page.php:1601
-#: includes/widgets/jet-widget-custom-menu.php:280
 #: includes/widgets/jet-widget-mega-menu.php:183
-#: includes/widgets/jet-widget-mega-menu.php:922
-#: includes/widgets/jet-widget-mega-menu.php:1109
-#: includes/widgets/jet-widget-mega-menu.php:1270
-msgid "Left"
+msgid "Start"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:553
-#: includes/class-jet-menu-options-page.php:562
-#: includes/class-jet-menu-options-page.php:574
+#: includes/class-jet-menu-options-page.php:544
+#: includes/widgets/jet-widget-mega-menu.php:195
+msgid "Stretch"
+msgstr ""
+
+#: includes/class-jet-menu-options-page.php:554
+#: includes/class-jet-menu-options-page.php:563
+#: includes/class-jet-menu-options-page.php:575
 msgid "Menu container"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:583
+#: includes/class-jet-menu-options-page.php:584
 msgid "Menu container border radius"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:600
-#: includes/widgets/jet-widget-mega-menu.php:240
+#: includes/class-jet-menu-options-page.php:601
+#: includes/widgets/jet-widget-mega-menu.php:273
 msgid "Inherit border radius for the first menu item from main container"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:610
-#: includes/widgets/jet-widget-mega-menu.php:256
+#: includes/class-jet-menu-options-page.php:611
+#: includes/widgets/jet-widget-mega-menu.php:289
 msgid "Inherit border radius for the last menu item from main container"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:621
+#: includes/class-jet-menu-options-page.php:622
 msgid "Menu container padding"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:634
+#: includes/class-jet-menu-options-page.php:635
 msgid "Menu container min width (px)"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:635
-#: includes/class-jet-menu-options-page.php:685
-#: includes/widgets/jet-widget-mega-menu.php:285
+#: includes/class-jet-menu-options-page.php:636
+#: includes/class-jet-menu-options-page.php:686
+#: includes/widgets/jet-widget-mega-menu.php:318
 msgid "Set 0 to automatic width detection"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:650
+#: includes/class-jet-menu-options-page.php:651
 msgid "Top level menu"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:661
+#: includes/class-jet-menu-options-page.php:662
 msgid "Show Item Description"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:673
+#: includes/class-jet-menu-options-page.php:674
 msgid "Top level menu description"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:684
+#: includes/class-jet-menu-options-page.php:685
 msgid "Top level item max width (%)"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:715
-#: includes/class-jet-menu-options-page.php:1059
+#: includes/class-jet-menu-options-page.php:716
+#: includes/class-jet-menu-options-page.php:1060
 #: includes/lib/class-tgm-plugin-activation.php:2414
 #: includes/widgets/jet-widget-custom-menu.php:813
 #: includes/widgets/jet-widget-custom-menu.php:1307
 #: includes/widgets/jet-widget-custom-menu.php:1610
 #: includes/widgets/jet-widget-custom-menu.php:2023
-#: includes/widgets/jet-widget-mega-menu.php:357
+#: includes/widgets/jet-widget-mega-menu.php:390
 msgid "Active"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:735
-#: includes/class-jet-menu-options-page.php:1079
+#: includes/class-jet-menu-options-page.php:736
+#: includes/class-jet-menu-options-page.php:1080
 msgid "Item text color"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:747
+#: includes/class-jet-menu-options-page.php:748
 msgid "Item description color"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:759
+#: includes/class-jet-menu-options-page.php:760
 msgid "Item Icon Color"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:771
-#: includes/class-jet-menu-options-page.php:1115
+#: includes/class-jet-menu-options-page.php:772
+#: includes/class-jet-menu-options-page.php:1116
 msgid "Item drop-down arrow color"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:780
-#: includes/class-jet-menu-options-page.php:786
-#: includes/class-jet-menu-options-page.php:822
-#: includes/class-jet-menu-options-page.php:1124
-#: includes/class-jet-menu-options-page.php:1130
-#: includes/class-jet-menu-options-page.php:1166
+#: includes/class-jet-menu-options-page.php:781
+#: includes/class-jet-menu-options-page.php:787
+#: includes/class-jet-menu-options-page.php:823
+#: includes/class-jet-menu-options-page.php:1125
+#: includes/class-jet-menu-options-page.php:1131
+#: includes/class-jet-menu-options-page.php:1167
 msgid "Item"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:798
-#: includes/class-jet-menu-options-page.php:1142
+#: includes/class-jet-menu-options-page.php:799
+#: includes/class-jet-menu-options-page.php:1143
 msgid "First item"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:810
-#: includes/class-jet-menu-options-page.php:1154
+#: includes/class-jet-menu-options-page.php:811
+#: includes/class-jet-menu-options-page.php:1155
 msgid "Last item"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:831
-#: includes/class-jet-menu-options-page.php:1175
+#: includes/class-jet-menu-options-page.php:832
+#: includes/class-jet-menu-options-page.php:1176
 msgid "Item border radius"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:849
-#: includes/class-jet-menu-options-page.php:1193
+#: includes/class-jet-menu-options-page.php:850
+#: includes/class-jet-menu-options-page.php:1194
 msgid "Item padding"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:862
-#: includes/class-jet-menu-options-page.php:1206
+#: includes/class-jet-menu-options-page.php:863
+#: includes/class-jet-menu-options-page.php:1207
 msgid "Item margin"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:892
+#: includes/class-jet-menu-options-page.php:893
 msgid "Simple Submenu Panel"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:896
+#: includes/class-jet-menu-options-page.php:897
 msgid "Mega Submenu Panel"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:919
+#: includes/class-jet-menu-options-page.php:920
 msgid "Panel Width"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:928
-#: includes/class-jet-menu-options-page.php:934
-#: includes/class-jet-menu-options-page.php:946
+#: includes/class-jet-menu-options-page.php:929
+#: includes/class-jet-menu-options-page.php:935
+#: includes/class-jet-menu-options-page.php:947
 msgid "Panel"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:955
+#: includes/class-jet-menu-options-page.php:956
 msgid "Panel border radius"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:973
+#: includes/class-jet-menu-options-page.php:974
 msgid "Panel padding"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:986
+#: includes/class-jet-menu-options-page.php:987
 msgid "Panel margin"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1007
+#: includes/class-jet-menu-options-page.php:1008
 msgid "Submenu"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1018
+#: includes/class-jet-menu-options-page.php:1019
 msgid "Show Submenu Item Description"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1030
+#: includes/class-jet-menu-options-page.php:1031
 msgid "Submenu descriptions"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1091
+#: includes/class-jet-menu-options-page.php:1092
 msgid "Item descriptions color"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1103
+#: includes/class-jet-menu-options-page.php:1104
 msgid "Item icon color"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1236
-#: includes/class-jet-menu-settings-item.php:98
+#: includes/class-jet-menu-options-page.php:1237
+#: includes/class-jet-menu-settings-item.php:108
 #: includes/widgets/jet-widget-custom-menu.php:1523
 #: includes/widgets/jet-widget-custom-menu.php:1905
-#: includes/widgets/jet-widget-mega-menu.php:868
+#: includes/widgets/jet-widget-mega-menu.php:901
 msgid "Icon"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1240
-#: includes/class-jet-menu-options-page.php:1373
-#: includes/class-jet-menu-options-page.php:1393
-#: includes/class-jet-menu-options-page.php:1399
-#: includes/class-jet-menu-options-page.php:1411
+#: includes/class-jet-menu-options-page.php:1241
+#: includes/class-jet-menu-options-page.php:1374
+#: includes/class-jet-menu-options-page.php:1394
+#: includes/class-jet-menu-options-page.php:1400
+#: includes/class-jet-menu-options-page.php:1412
 #: includes/widgets/jet-widget-custom-menu.php:1773
-#: includes/widgets/jet-widget-mega-menu.php:1005
+#: includes/widgets/jet-widget-mega-menu.php:1038
 msgid "Badge"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1244
-#: includes/widgets/jet-widget-mega-menu.php:1206
+#: includes/class-jet-menu-options-page.php:1245
+#: includes/widgets/jet-widget-mega-menu.php:1239
 msgid "Drop-down Arrow"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1261
+#: includes/class-jet-menu-options-page.php:1262
 msgid "Top Level Icon"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1266
+#: includes/class-jet-menu-options-page.php:1267
 msgid "Sub Level Icon"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1285
+#: includes/class-jet-menu-options-page.php:1286
 msgid "Icon size"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1291
+#: includes/class-jet-menu-options-page.php:1292
 msgid "Icon margin"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1304
+#: includes/class-jet-menu-options-page.php:1305
 msgid "Icon vertical position"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1310
-#: includes/class-jet-menu-options-page.php:1469
-#: includes/class-jet-menu-options-page.php:1587
+#: includes/class-jet-menu-options-page.php:1311
+#: includes/class-jet-menu-options-page.php:1470
+#: includes/class-jet-menu-options-page.php:1588
 #: includes/widgets/jet-widget-custom-menu.php:1746
 #: includes/widgets/jet-widget-custom-menu.php:1869
 #: includes/widgets/jet-widget-custom-menu.php:2138
-#: includes/widgets/jet-widget-mega-menu.php:952
-#: includes/widgets/jet-widget-mega-menu.php:1139
-#: includes/widgets/jet-widget-mega-menu.php:1296
+#: includes/widgets/jet-widget-mega-menu.php:985
+#: includes/widgets/jet-widget-mega-menu.php:1172
+#: includes/widgets/jet-widget-mega-menu.php:1329
 msgid "Top"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1311
-#: includes/class-jet-menu-options-page.php:1471
-#: includes/class-jet-menu-options-page.php:1588
+#: includes/class-jet-menu-options-page.php:1312
+#: includes/class-jet-menu-options-page.php:1472
+#: includes/class-jet-menu-options-page.php:1589
 #: includes/widgets/jet-widget-custom-menu.php:1754
 #: includes/widgets/jet-widget-custom-menu.php:1877
 #: includes/widgets/jet-widget-custom-menu.php:2146
-#: includes/widgets/jet-widget-mega-menu.php:960
-#: includes/widgets/jet-widget-mega-menu.php:1147
-#: includes/widgets/jet-widget-mega-menu.php:1304
+#: includes/widgets/jet-widget-mega-menu.php:993
+#: includes/widgets/jet-widget-mega-menu.php:1180
+#: includes/widgets/jet-widget-mega-menu.php:1337
 msgid "Bottom"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1317
+#: includes/class-jet-menu-options-page.php:1318
 msgid "Icon horizontal position"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1333
+#: includes/class-jet-menu-options-page.php:1323
+#: includes/class-jet-menu-options-page.php:1485
+#: includes/class-jet-menu-options-page.php:1602
+#: includes/widgets/jet-widget-custom-menu.php:280
+#: includes/widgets/jet-widget-mega-menu.php:955
+#: includes/widgets/jet-widget-mega-menu.php:1142
+#: includes/widgets/jet-widget-mega-menu.php:1303
+msgid "Left"
+msgstr ""
+
+#: includes/class-jet-menu-options-page.php:1324
+#: includes/class-jet-menu-options-page.php:1483
+#: includes/class-jet-menu-options-page.php:1600
+#: includes/widgets/jet-widget-custom-menu.php:288
+#: includes/widgets/jet-widget-mega-menu.php:963
+#: includes/widgets/jet-widget-mega-menu.php:1150
+#: includes/widgets/jet-widget-mega-menu.php:1311
+msgid "Right"
+msgstr ""
+
+#: includes/class-jet-menu-options-page.php:1334
 msgid "Icon order"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1355
+#: includes/class-jet-menu-options-page.php:1356
 msgid "Top Level Badge"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1360
+#: includes/class-jet-menu-options-page.php:1361
 msgid "Sub Level Badge"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1384
+#: includes/class-jet-menu-options-page.php:1385
 msgid "Badge text color"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1420
+#: includes/class-jet-menu-options-page.php:1421
 msgid "Badge border radius"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1438
+#: includes/class-jet-menu-options-page.php:1439
 msgid "Badge padding"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1451
+#: includes/class-jet-menu-options-page.php:1452
 msgid "Badge margin"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1464
+#: includes/class-jet-menu-options-page.php:1465
 msgid "Badge vertical position (may be overridden with order)"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1477
+#: includes/class-jet-menu-options-page.php:1478
 msgid "Badge horizontal position"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1493
+#: includes/class-jet-menu-options-page.php:1494
 msgid "Badge order"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1499
+#: includes/class-jet-menu-options-page.php:1500
 msgid "Hide badge on mobile"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1525
+#: includes/class-jet-menu-options-page.php:1526
 msgid "Top Level Arrow"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1530
+#: includes/class-jet-menu-options-page.php:1531
 msgid "Sub Level Arrow"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1545
+#: includes/class-jet-menu-options-page.php:1546
 msgid "Arrow icon"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1562
+#: includes/class-jet-menu-options-page.php:1563
 msgid "Arrow size"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1568
+#: includes/class-jet-menu-options-page.php:1569
 msgid "Arrow margin"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1581
+#: includes/class-jet-menu-options-page.php:1582
 msgid "Arrow vertical position"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1594
+#: includes/class-jet-menu-options-page.php:1595
 msgid "Arrow horizontal position"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1610
+#: includes/class-jet-menu-options-page.php:1611
 msgid "Arrow order"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1627
-#: includes/widgets/jet-widget-mega-menu.php:814
+#: includes/class-jet-menu-options-page.php:1628
+#: includes/widgets/jet-widget-mega-menu.php:847
 msgid "Toggle text color"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1634
-#: includes/widgets/jet-widget-mega-menu.php:825
+#: includes/class-jet-menu-options-page.php:1635
+#: includes/widgets/jet-widget-mega-menu.php:858
 msgid "Toggle background color"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1641
-#: includes/widgets/jet-widget-mega-menu.php:836
+#: includes/class-jet-menu-options-page.php:1642
+#: includes/widgets/jet-widget-mega-menu.php:869
 msgid "Container background color"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1648
-#: includes/widgets/jet-widget-mega-menu.php:847
+#: includes/class-jet-menu-options-page.php:1649
+#: includes/widgets/jet-widget-mega-menu.php:880
 msgid "Cover background color"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1813
+#: includes/class-jet-menu-options-page.php:1814
 msgid "Incorrect data in options file"
 msgstr ""
 
-#: includes/class-jet-menu-options-page.php:1820
+#: includes/class-jet-menu-options-page.php:1821
 msgid "Options successfully imported. Page will be reloaded."
 msgstr ""
 
@@ -926,12 +938,13 @@ msgstr ""
 #: includes/class-jet-menu-options-presets.php:170
 #: includes/class-jet-menu-options-presets.php:200
 #: includes/class-jet-menu-options-presets.php:231
-#: includes/class-jet-menu-settings-item.php:150
-#: includes/class-jet-menu-settings-item.php:190
-#: includes/class-jet-menu-settings-item.php:236
-#: includes/class-jet-menu-settings-item.php:282
-#: includes/class-jet-menu-settings-item.php:330
-#: includes/class-jet-menu-settings-item.php:378
+#: includes/class-jet-menu-settings-item.php:160
+#: includes/class-jet-menu-settings-item.php:200
+#: includes/class-jet-menu-settings-item.php:246
+#: includes/class-jet-menu-settings-item.php:292
+#: includes/class-jet-menu-settings-item.php:340
+#: includes/class-jet-menu-settings-item.php:388
+#: includes/class-jet-menu-settings-item.php:436
 #: includes/class-jet-menu-settings-nav.php:62
 msgid "You are not allowed to do this"
 msgstr ""
@@ -1026,98 +1039,109 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:108
-msgid "Badges"
+#: includes/class-jet-menu-settings-item.php:98
+#: includes/widgets/jet-widget-custom-menu.php:134
+msgid "Settings"
 msgstr ""
 
 #: includes/class-jet-menu-settings-item.php:118
-msgid "Misc"
+msgid "Badges"
 msgstr ""
 
 #: includes/class-jet-menu-settings-item.php:128
+msgid "Misc"
+msgstr ""
+
+#: includes/class-jet-menu-settings-item.php:138
 msgid "Vertical Menu"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:164
+#: includes/class-jet-menu-settings-item.php:174
 #: includes/class-jet-menu-settings-nav.php:207
 #: includes/widgets/jet-widget-custom-menu.php:943
 #: includes/widgets/jet-widget-custom-menu.php:985
 #: includes/widgets/jet-widget-custom-menu.php:1437
 #: includes/widgets/jet-widget-custom-menu.php:1479
-#: includes/widgets/jet-widget-mega-menu.php:242
-#: includes/widgets/jet-widget-mega-menu.php:258
-#: includes/widgets/jet-widget-mega-menu.php:1184
+#: includes/widgets/jet-widget-mega-menu.php:275
+#: includes/widgets/jet-widget-mega-menu.php:291
+#: includes/widgets/jet-widget-mega-menu.php:1217
 msgid "Yes"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:165
+#: includes/class-jet-menu-settings-item.php:175
 #: includes/class-jet-menu-settings-nav.php:208
 #: includes/widgets/jet-widget-custom-menu.php:944
 #: includes/widgets/jet-widget-custom-menu.php:986
 #: includes/widgets/jet-widget-custom-menu.php:1438
 #: includes/widgets/jet-widget-custom-menu.php:1480
-#: includes/widgets/jet-widget-mega-menu.php:243
-#: includes/widgets/jet-widget-mega-menu.php:259
-#: includes/widgets/jet-widget-mega-menu.php:1185
+#: includes/widgets/jet-widget-mega-menu.php:276
+#: includes/widgets/jet-widget-mega-menu.php:292
+#: includes/widgets/jet-widget-mega-menu.php:1218
 msgid "No"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:167
+#: includes/class-jet-menu-settings-item.php:177
 msgid "Mega Submenu Enabled"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:201
+#: includes/class-jet-menu-settings-item.php:211
 msgid "Menu icon"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:218
-#: includes/widgets/jet-widget-mega-menu.php:396
-#: includes/widgets/jet-widget-mega-menu.php:686
+#: includes/class-jet-menu-settings-item.php:228
+#: includes/widgets/jet-widget-mega-menu.php:429
+#: includes/widgets/jet-widget-mega-menu.php:719
 msgid "Icon color"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:247
+#: includes/class-jet-menu-settings-item.php:257
 msgid "Menu badge"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:256
+#: includes/class-jet-menu-settings-item.php:266
 msgid "Badge color"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:264
+#: includes/class-jet-menu-settings-item.php:274
 msgid "Badge background color"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:293
+#: includes/class-jet-menu-settings-item.php:303
 msgid "Hide item navigation label"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:304
+#: includes/class-jet-menu-settings-item.php:314
 msgid "Set custom padding for this item"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:345
+#: includes/class-jet-menu-settings-item.php:355
+#: includes/class-jet-menu-settings-item.php:418
 msgid "Set custom mega menu width for this item (px)"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:354
+#: includes/class-jet-menu-settings-item.php:364
+#: includes/class-jet-menu-settings-item.php:405
 msgid "Relative the menu item"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:357
+#: includes/class-jet-menu-settings-item.php:367
 msgid "Relative the menu container"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:360
+#: includes/class-jet-menu-settings-item.php:370
 msgid "Vertical mega menu position"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:405
+#: includes/class-jet-menu-settings-item.php:408
+msgid "Mega menu position"
+msgstr ""
+
+#: includes/class-jet-menu-settings-item.php:465
 #: includes/class-jet-menu-settings-nav.php:90
 msgid "Success!"
 msgstr ""
 
-#: includes/class-jet-menu-settings-item.php:452
+#: includes/class-jet-menu-settings-item.php:512
 #: includes/class-jet-menu-settings-nav.php:70
 msgid "Incorrect input data"
 msgstr ""
@@ -1587,10 +1611,6 @@ msgstr ""
 msgid "Select Menu"
 msgstr ""
 
-#: includes/widgets/jet-widget-custom-menu.php:134
-msgid "Settings"
-msgstr ""
-
 #: includes/widgets/jet-widget-custom-menu.php:141
 msgid "Sub Menu Position"
 msgstr ""
@@ -1629,11 +1649,11 @@ msgstr ""
 #: includes/widgets/jet-widget-custom-menu.php:1249
 #: includes/widgets/jet-widget-custom-menu.php:1375
 #: includes/widgets/jet-widget-custom-menu.php:1838
-#: includes/widgets/jet-widget-mega-menu.php:272
-#: includes/widgets/jet-widget-mega-menu.php:481
-#: includes/widgets/jet-widget-mega-menu.php:596
-#: includes/widgets/jet-widget-mega-menu.php:771
-#: includes/widgets/jet-widget-mega-menu.php:1081
+#: includes/widgets/jet-widget-mega-menu.php:305
+#: includes/widgets/jet-widget-mega-menu.php:514
+#: includes/widgets/jet-widget-mega-menu.php:629
+#: includes/widgets/jet-widget-mega-menu.php:804
+#: includes/widgets/jet-widget-mega-menu.php:1114
 msgid "Padding"
 msgstr ""
 
@@ -1648,12 +1668,12 @@ msgstr ""
 #: includes/widgets/jet-widget-custom-menu.php:1388
 #: includes/widgets/jet-widget-custom-menu.php:1720
 #: includes/widgets/jet-widget-custom-menu.php:1851
-#: includes/widgets/jet-widget-mega-menu.php:493
-#: includes/widgets/jet-widget-mega-menu.php:608
-#: includes/widgets/jet-widget-mega-menu.php:783
-#: includes/widgets/jet-widget-mega-menu.php:906
-#: includes/widgets/jet-widget-mega-menu.php:1093
-#: includes/widgets/jet-widget-mega-menu.php:1244
+#: includes/widgets/jet-widget-mega-menu.php:526
+#: includes/widgets/jet-widget-mega-menu.php:641
+#: includes/widgets/jet-widget-mega-menu.php:816
+#: includes/widgets/jet-widget-mega-menu.php:939
+#: includes/widgets/jet-widget-mega-menu.php:1126
+#: includes/widgets/jet-widget-mega-menu.php:1277
 msgid "Margin"
 msgstr ""
 
@@ -1673,11 +1693,11 @@ msgstr ""
 #: includes/widgets/jet-widget-custom-menu.php:1707
 #: includes/widgets/jet-widget-custom-menu.php:1825
 #: includes/widgets/jet-widget-custom-menu.php:2112
-#: includes/widgets/jet-widget-mega-menu.php:228
-#: includes/widgets/jet-widget-mega-menu.php:469
-#: includes/widgets/jet-widget-mega-menu.php:584
-#: includes/widgets/jet-widget-mega-menu.php:759
-#: includes/widgets/jet-widget-mega-menu.php:1069
+#: includes/widgets/jet-widget-mega-menu.php:261
+#: includes/widgets/jet-widget-mega-menu.php:502
+#: includes/widgets/jet-widget-mega-menu.php:617
+#: includes/widgets/jet-widget-mega-menu.php:792
+#: includes/widgets/jet-widget-mega-menu.php:1102
 msgid "Border Radius"
 msgstr ""
 
@@ -1717,7 +1737,7 @@ msgid "Mega Menu Width"
 msgstr ""
 
 #: includes/widgets/jet-widget-custom-menu.php:422
-#: includes/widgets/jet-widget-mega-menu.php:515
+#: includes/widgets/jet-widget-mega-menu.php:548
 msgid "Sub Menu"
 msgstr ""
 
@@ -1726,7 +1746,7 @@ msgid "Sub Menu Width"
 msgstr ""
 
 #: includes/widgets/jet-widget-custom-menu.php:535
-#: includes/widgets/jet-widget-mega-menu.php:307
+#: includes/widgets/jet-widget-mega-menu.php:340
 msgid "Main Menu Items"
 msgstr ""
 
@@ -1825,104 +1845,104 @@ msgstr ""
 msgid "Menu Items Alignment"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:284
+#: includes/widgets/jet-widget-mega-menu.php:317
 msgid "Min Width (px)"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:324
-#: includes/widgets/jet-widget-mega-menu.php:642
+#: includes/widgets/jet-widget-mega-menu.php:357
+#: includes/widgets/jet-widget-mega-menu.php:675
 msgid "Description typography"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:333
+#: includes/widgets/jet-widget-mega-menu.php:366
 msgid "Item max width (%)"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:334
+#: includes/widgets/jet-widget-mega-menu.php:367
 msgid "Leave empty to automatic width detection"
-msgstr ""
-
-#: includes/widgets/jet-widget-mega-menu.php:374
-#: includes/widgets/jet-widget-mega-menu.php:664
-#: includes/widgets/jet-widget-mega-menu.php:1034
-msgid "Text color"
-msgstr ""
-
-#: includes/widgets/jet-widget-mega-menu.php:385
-#: includes/widgets/jet-widget-mega-menu.php:675
-msgid "Description color"
 msgstr ""
 
 #: includes/widgets/jet-widget-mega-menu.php:407
 #: includes/widgets/jet-widget-mega-menu.php:697
+#: includes/widgets/jet-widget-mega-menu.php:1067
+msgid "Text color"
+msgstr ""
+
+#: includes/widgets/jet-widget-mega-menu.php:418
+#: includes/widgets/jet-widget-mega-menu.php:708
+msgid "Description color"
+msgstr ""
+
+#: includes/widgets/jet-widget-mega-menu.php:440
+#: includes/widgets/jet-widget-mega-menu.php:730
 msgid "Drop-down arrow color"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:438
-#: includes/widgets/jet-widget-mega-menu.php:728
+#: includes/widgets/jet-widget-mega-menu.php:471
+#: includes/widgets/jet-widget-mega-menu.php:761
 msgctxt "Border Control"
 msgid "First Item Border Type"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:447
-#: includes/widgets/jet-widget-mega-menu.php:737
+#: includes/widgets/jet-widget-mega-menu.php:480
+#: includes/widgets/jet-widget-mega-menu.php:770
 msgid "Last item border"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:452
-#: includes/widgets/jet-widget-mega-menu.php:742
+#: includes/widgets/jet-widget-mega-menu.php:485
+#: includes/widgets/jet-widget-mega-menu.php:775
 msgctxt "Border Control"
 msgid "Last Item Border Type"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:524
+#: includes/widgets/jet-widget-mega-menu.php:557
 msgid "Simple Panel"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:525
+#: includes/widgets/jet-widget-mega-menu.php:558
 msgid "Mega Panel"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:542
+#: includes/widgets/jet-widget-mega-menu.php:575
 msgid "Width (px)"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:625
+#: includes/widgets/jet-widget-mega-menu.php:658
 msgid "Sub Menu Items Style"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:858
+#: includes/widgets/jet-widget-mega-menu.php:891
 msgid "Top Level"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:859
+#: includes/widgets/jet-widget-mega-menu.php:892
 msgid "Sub Level"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:889
-#: includes/widgets/jet-widget-mega-menu.php:1227
+#: includes/widgets/jet-widget-mega-menu.php:922
+#: includes/widgets/jet-widget-mega-menu.php:1260
 msgid "Font size"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:918
-#: includes/widgets/jet-widget-mega-menu.php:1105
-#: includes/widgets/jet-widget-mega-menu.php:1266
+#: includes/widgets/jet-widget-mega-menu.php:951
+#: includes/widgets/jet-widget-mega-menu.php:1138
+#: includes/widgets/jet-widget-mega-menu.php:1299
 msgid "Horizontal position"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:948
-#: includes/widgets/jet-widget-mega-menu.php:1135
-#: includes/widgets/jet-widget-mega-menu.php:1292
+#: includes/widgets/jet-widget-mega-menu.php:981
+#: includes/widgets/jet-widget-mega-menu.php:1168
+#: includes/widgets/jet-widget-mega-menu.php:1325
 msgid "Vertical position"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:978
-#: includes/widgets/jet-widget-mega-menu.php:1165
-#: includes/widgets/jet-widget-mega-menu.php:1322
+#: includes/widgets/jet-widget-mega-menu.php:1011
+#: includes/widgets/jet-widget-mega-menu.php:1198
+#: includes/widgets/jet-widget-mega-menu.php:1355
 msgid "Order"
 msgstr ""
 
-#: includes/widgets/jet-widget-mega-menu.php:1182
+#: includes/widgets/jet-widget-mega-menu.php:1215
 msgid "Hide on mobile"
 msgstr ""
 

@@ -109,6 +109,18 @@ class Jet_Elements_Advanced_Carousel extends Jet_Elements_Base {
 				),
 			)
 		);
+		
+		$repeater->add_control(
+			'item_link_rel',
+			array(
+				'label'        => esc_html__( 'Add nofollow', 'jet-elements' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'return_value' => 'nofollow',
+				'condition'    => array(
+					'item_link!' => '',
+				),
+			)
+		);
 
 		$repeater->add_control(
 			'item_button_text',
@@ -1687,8 +1699,10 @@ class Jet_Elements_Advanced_Carousel extends Jet_Elements_Base {
 		} else {
 			$url = $image['url'];
 		}
+		
+		$alt = esc_attr( Control_Media::get_image_alt( $image ) );
 
-		return sprintf( '<img src="%1$s" alt="" class="%2$s">', $url, $class );
+		return sprintf( '<img src="%1$s" class="%2$s" alt="%3$s">', $url, $class, $alt );
 
 	}
 

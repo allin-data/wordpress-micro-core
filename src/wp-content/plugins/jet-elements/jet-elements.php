@@ -3,7 +3,7 @@
  * Plugin Name: Jet Elements For Elementor
  * Plugin URI:  http://jetelements.zemez.io/
  * Description: Brand new addon for Elementor Page builder. It provides the set of modules to create different kinds of content, adds custom modules to your website and applies attractive styles in the matter of several clicks!
- * Version:     1.15.8
+ * Version:     1.15.10
  * Author:      Zemez
  * Author URI:  https://zemez.io/wordpress/
  * Text Domain: jet-elements
@@ -62,7 +62,7 @@ if ( ! class_exists( 'Jet_Elements' ) ) {
 		 *
 		 * @var string
 		 */
-		private $version = '1.15.8';
+		private $version = '1.15.10';
 
 		/**
 		 * Framework component

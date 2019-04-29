@@ -16,8 +16,8 @@ $item_after_image = $this->__loop_item( array( 'item_after_image', 'url' ), '%s'
 ?>
 <div class="jet-image-comparison__item">
 	<div class="jet-image-comparison__container jet-juxtapose" data-prev-icon="<?php echo $prevArrow; ?>" data-next-icon="<?php echo $nextArrow; ?>" data-makeresponsive="true" data-startingposition="<?php echo $starting_position_string; ?>">
-		<img class="jet-image-comparison__before-image" src="<?php echo $item_before_image; ?>" <?php echo $item_before_label; ?> alt="">
-		<img class="jet-image-comparison__after-image" src="<?php echo $item_after_image; ?>" <?php echo $item_after_label; ?> alt="">
+		<img class="jet-image-comparison__before-image" src="<?php echo $item_before_image; ?>" <?php echo $item_before_label; ?> alt="" data-no-lazy="1">
+		<img class="jet-image-comparison__after-image" src="<?php echo $item_after_image; ?>" <?php echo $item_after_label; ?> alt="" data-no-lazy="1">
 	</div>
 </div>
 

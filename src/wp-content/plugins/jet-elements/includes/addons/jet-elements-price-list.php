@@ -873,6 +873,19 @@ class Jet_Elements_Price_List extends Jet_Elements_Base {
 
 		return $this->get_render_attribute_string( $item_key );
 	}
+	
+	public function __get_price_list_image() {
+		$image_item = $this->__processed_item['item_image'];
+		
+		if ( empty( $image_item['url'] ) ) {
+			return;
+		}
+		
+		return sprintf( '<div class="price-list__item-img-wrap"><img src="%1$s" alt="%2$s" class="price-list__item-img"></div>',
+			$image_item['url'],
+			esc_attr( Control_Media::get_image_alt( $image_item ) )
+		);
+	}
 
 	protected function render() {
 		$this->__context = 'render';

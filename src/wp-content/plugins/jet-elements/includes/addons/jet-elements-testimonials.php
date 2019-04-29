@@ -2386,4 +2386,17 @@ class Jet_Elements_Testimonials extends Jet_Elements_Base {
 
 		return sprintf( 'data-settings=\'%1$s\'', $instance_settings );
 	}
+	
+	public function __get_testimonials_image() {
+		$image_item = $this->__processed_item['item_image'];
+		
+		if ( empty( $image_item['url'] ) ) {
+			return;
+		}
+		
+		return sprintf( '<figure class="jet-testimonials__figure"><img class="jet-testimonials__tag-img" src="%1$s" alt="%2$s"></figure>',
+			$image_item['url'],
+			esc_attr( Control_Media::get_image_alt( $image_item ) )
+		);
+	}
 }

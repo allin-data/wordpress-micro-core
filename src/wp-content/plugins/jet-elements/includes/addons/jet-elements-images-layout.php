@@ -246,6 +246,19 @@ class Jet_Elements_Images_Layout extends Jet_Elements_Base {
 				),
 			)
 		);
+		
+		$repeater->add_control(
+			'item_rel',
+			array(
+				'label'        => esc_html__( 'Add nofollow', 'jet-elements' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'return_value' => 'nofollow',
+				'default'      => '',
+				'condition'    => array(
+					'item_link_type' => 'external',
+				),
+			)
+		);
 
 		$this->add_control(
 			'image_list',
@@ -883,16 +896,16 @@ class Jet_Elements_Images_Layout extends Jet_Elements_Base {
 	 *
 	 * @return html
 	 */
-	protected function __loop_image_item( $key = '', $format = '%s', $img_size_key = 'item_image_size' ) {
+	protected function __loop_image_item() {
 		$item = $this->__processed_item;
 		$params = [];
 
-		if ( ! array_key_exists( $key, $item ) ) {
+		if ( ! array_key_exists( 'item_image', $item ) ) {
 			return false;
 		}
 
-		$image_item      = $item[ $key ];
-		$image_item_size = isset( $item[ $img_size_key ] ) ? $item[ $img_size_key ] : 'full';
+		$image_item      = $item['item_image'];
+		$image_item_size = isset( $item['item_image_size'] ) ? $item['item_image_size'] : 'full';
 
 		if ( ! empty( $image_item['id'] ) ) {
 			$image_data = wp_get_attachment_image_src( $image_item['id'], $image_item_size );
@@ -905,8 +918,16 @@ class Jet_Elements_Images_Layout extends Jet_Elements_Base {
 			$params[] = 1200;
 			$params[] = 800;
 		}
-
-		return vsprintf( $format, $params );
+		
+		$alt = esc_attr( Control_Media::get_image_alt( $image_item ) );
+		
+		$settings = $this->get_settings_for_display();
+		
+		if ( 'justify' === $settings['layout_type'] ) {
+			return sprintf( '<img class="jet-images-layout__image-instance" src="%1$s" data-width="%2$s" data-height="%3$s" alt="%4$s">', $params[0], $params[1], $params[2], $alt );
+		}
+		
+		return sprintf( '<img class="jet-images-layout__image-instance" src="%1$s" alt="%2$s">', $params[0], $alt );
 	}
 
 	protected function render() {

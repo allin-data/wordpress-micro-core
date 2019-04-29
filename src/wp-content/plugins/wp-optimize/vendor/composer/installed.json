@@ -1,0 +1,22 @@
+[
+    {
+        "name": "team-updraft/common-libs",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "git@source.updraftplus.com:team-updraft/common-libs.git",
+            "reference": "bf24f35bf4a0f1f38ad4e9ce73147514f926ba34"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://source.updraftplus.com/api/v4/projects/team-updraft%2Fcommon-libs/repository/archive.zip?sha=bf24f35bf4a0f1f38ad4e9ce73147514f926ba34",
+            "reference": "bf24f35bf4a0f1f38ad4e9ce73147514f926ba34",
+            "shasum": ""
+        },
+        "time": "2019-04-16T21:38:36+00:00",
+        "type": "project",
+        "installation-source": "dist",
+        "description": "These are the common libs used across all of our projects"
+    }
+]

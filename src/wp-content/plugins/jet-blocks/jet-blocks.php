@@ -3,7 +3,7 @@
  * Plugin Name: JetBlocks For Elementor
  * Plugin URI:  http://jetblocks.zemez.io/
  * Description: The basic utilitary widgets for implementing additional functionality to headers, footers and special sections built with Elementor
- * Version:     1.1.6
+ * Version:     1.1.7
  * Author:      Zemez
  * Author URI:  https://zemez.io/wordpress/
  * Text Domain: jet-blocks
@@ -49,7 +49,7 @@ if ( ! class_exists( 'Jet_Blocks' ) ) {
 		 * @var string
 		 */
 
-		private $version = '1.1.6';
+		private $version = '1.1.7';
 
 		/**
 		 * Holder for base plugin path

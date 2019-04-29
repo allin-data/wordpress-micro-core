@@ -133,6 +133,18 @@ class Jet_Elements_Banner extends Jet_Elements_Base {
 				),
 			)
 		);
+		
+		$this->add_control(
+			'banner_link_rel',
+			array(
+				'label'        => esc_html__( 'Add nofollow', 'jet-elements' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'return_value' => 'nofollow',
+				'condition'    => array(
+					'banner_link!' => '',
+				),
+			)
+		);
 
 		$this->end_controls_section();
 

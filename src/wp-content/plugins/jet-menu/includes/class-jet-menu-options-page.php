@@ -538,9 +538,10 @@ if ( ! class_exists( 'Jet_Menu_Options_Page' ) ) {
 						'multiple' => false,
 						'value'    => $this->get_option( 'jet-menu-container-alignment' ),
 						'options'  => array(
-							'flex-end'   => esc_html__( 'Right', 'jet-menu' ),
+							'flex-end'   => esc_html__( 'End', 'jet-menu' ),
 							'center'     => esc_html__( 'Center', 'jet-menu' ),
-							'flex-start' => esc_html__( 'Left', 'jet-menu' ),
+							'flex-start' => esc_html__( 'Start', 'jet-menu' ),
+							'stretch'    => esc_html__( 'Stretch', 'jet-menu' ),
 						),
 						'label'    => '',
 						'class'    => '',

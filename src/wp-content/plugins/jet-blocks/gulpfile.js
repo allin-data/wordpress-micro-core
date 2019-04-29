@@ -33,6 +33,30 @@ gulp.task( 'jet-blocks', () => {
 		.pipe( livereload() );
 } );
 
+//frontend-rtl
+gulp.task( 'jet-blocks-rtl', () => {
+	return gulp.src( './assets/scss/jet-blocks-rtl.scss' )
+	   .pipe(
+		   plumber( {
+			   errorHandler: function( error ) {
+				   console.log( '=================ERROR=================' );
+				   console.log( error.message );
+				   this.emit( 'end' );
+			   }
+		   } )
+	   )
+	   .pipe( sass( { outputStyle: 'compressed' } ) )
+	   .pipe( autoprefixer( {
+		   browsers: ['last 10 versions'],
+		   cascade:  false
+	   } ) )
+
+	   .pipe( rename( 'jet-blocks-rtl.css' ) )
+	   .pipe( gulp.dest( './assets/css/' ) )
+	   .pipe( notify( 'Compile Sass Done!' ) )
+	   .pipe( livereload() );
+} );
+
 //frontend-template
 gulp.task( 'jet-blocks-template', () => {
 	return gulp.src( './assets/scss/jet-blocks-template.scss' )
@@ -52,6 +76,30 @@ gulp.task( 'jet-blocks-template', () => {
 		} ) )
 
 		.pipe( rename( 'jet-blocks.css' ) )
+		.pipe( gulp.dest( './assets/css/templates' ) )
+		.pipe( notify( 'Compile Sass Done!' ) )
+		.pipe( livereload() );
+} );
+
+//frontend-template-rtl
+gulp.task( 'jet-blocks-template-rtl', () => {
+	return gulp.src( './assets/scss/jet-blocks-template-rtl.scss' )
+		.pipe(
+			plumber( {
+				errorHandler: function( error ) {
+					console.log( '=================ERROR=================' );
+					console.log( error.message );
+					this.emit( 'end' );
+				}
+			} )
+		)
+		.pipe( sass( { outputStyle: 'compressed' } ) )
+		.pipe( autoprefixer( {
+			browsers: ['last 10 versions'],
+			cascade:  false
+		} ) )
+
+		.pipe( rename( 'jet-blocks-rtl.css' ) )
 		.pipe( gulp.dest( './assets/css/templates' ) )
 		.pipe( notify( 'Compile Sass Done!' ) )
 		.pipe( livereload() );
@@ -108,14 +156,16 @@ gulp.task( 'jet-blocks-admin', () => {
 //watch
 gulp.task( 'watch', () => {
 	livereload.listen();
-	gulp.watch( './assets/scss/**', ['jet-blocks', 'jet-blocks-template', 'jet-blocks-editor', 'jet-blocks-admin'] );
+	gulp.watch( './assets/scss/**', ['jet-blocks', 'jet-blocks-rtl', 'jet-blocks-template', 'jet-blocks-template-rtl', 'jet-blocks-editor', 'jet-blocks-admin'] );
 } );
 
 //default
 gulp.task( 'default',
 	[
 		'jet-blocks',
+		'jet-blocks-rtl',
 		'jet-blocks-template',
+		'jet-blocks-template-rtl',
 		'jet-blocks-editor',
 		'jet-blocks-admin',
 		'watch'

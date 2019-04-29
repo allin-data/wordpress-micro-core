@@ -148,7 +148,6 @@ class Jet_Blocks_Search extends Jet_Blocks_Base {
 			)
 		);
 
-		// TODO: add condition
 		$this->add_control(
 			'popup_show_effect',
 			array(
@@ -162,6 +161,9 @@ class Jet_Blocks_Search extends Jet_Blocks_Base {
 					'move-down' => esc_html__( 'Move Down', 'jet-blocks' ),
 				),
 				'default' => 'move-up',
+				'condition' => array(
+					'show_search_in_popup' => 'true',
+				),
 			)
 		);
 

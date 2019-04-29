@@ -90,6 +90,11 @@
 		padding: 0;
 		z-index: auto;
 
+		.rtl & {
+			left: auto;
+			right: 0;
+		}
+
 		@media (min-width: 768px) {
 			position: absolute;
 		}
@@ -107,7 +112,7 @@
 			z-index: 999;
 			pointer-events: none;
 
-			&.right-side {
+			&.inverse-side {
 				right: 0;
 				left: auto;
 			}
@@ -117,9 +122,29 @@
 				left: 100%;
 				right: auto;
 
-				&.right-side {
+				&.inverse-side {
 					right: 100%;
 					left: auto;
+				}
+			}
+		}
+
+		.jet-desktop-menu-active.rtl & {
+			left: auto;
+			right: 0;
+
+			&.inverse-side {
+				right: auto;
+				left: 0;
+			}
+
+			.jet-sub-menu {
+				left: auto;
+				right: 100%;
+
+				&.inverse-side {
+					right: auto;
+					left: 100%;
 				}
 			}
 		}

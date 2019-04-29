@@ -3,6 +3,10 @@
 Enjoy the easy-to-use widgets made for enriching headers & footers with content.
 
 # ChangeLog
+## [1.1.7](https://github.com/ZemezLab/jet-blocks/releases/tag/1.1.7) - 24.04.2019
+* Added: better RTL compatibility in the Nav Menu Widget
+* Update: replace Home URL with site URL in framework loader
+
 ## [1.1.6](https://github.com/ZemezLab/jet-blocks/releases/tag/1.1.6) - 18.04.2019
 * Added: filter hook 'cx_include_module_url' in the `CX_Loader` class
 

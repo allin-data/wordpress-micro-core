@@ -7,8 +7,9 @@
 	<div class="jet-carousel__item-inner">
 	<figure class="jet-banner jet-effect-<?php echo esc_attr( $this->get_settings_for_display( 'animation_effect' ) ); ?>"><?php
 		$target = $this->__loop_item( array( 'item_link_target' ), ' target="%s"' );
+		$rel = $this->__loop_item( array( 'item_link_rel' ), ' rel="%s"' );
 
-		echo $this->__loop_item( array( 'item_link' ), '<a href="%s" class="jet-banner__link"' . $target . '>' );
+		echo $this->__loop_item( array( 'item_link' ), '<a href="%s" class="jet-banner__link"' . $target . $rel . '>' );
 			echo '<div class="jet-banner__overlay"></div>';
 			echo $this->get_advanced_carousel_img( 'jet-banner__img' );
 			echo '<figcaption class="jet-banner__content">';

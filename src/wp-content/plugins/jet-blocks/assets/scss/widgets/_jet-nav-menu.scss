@@ -2,6 +2,8 @@
 	display: flex;
 	flex-wrap: wrap;
 
+	direction: ltr;
+
 	.menu-item {
 		&-has-children {
 			position: relative;
@@ -107,6 +109,44 @@
 					left: auto;
 					right: 100%;
 				}
+			}
+		}
+	}
+
+	// Horizontal Menu ( RTL )
+	&--horizontal {
+		@if $direction == rtl {
+			flex-direction: row-reverse;
+
+			.jet-nav__sub {
+				left: auto;
+				right: 0;
+			}
+
+			.menu-item.jet-nav-hover > .jet-nav__sub,
+			.menu-item.jet-nav-hover-out > .jet-nav__sub {
+				left: auto;
+				right: 100%;
+			}
+
+			.menu-item.jet-nav-hover > .jet-nav__sub.jet-nav-depth-0,
+			.menu-item.jet-nav-hover-out > .jet-nav__sub.jet-nav-depth-0 {
+				left: auto;
+				right: 0;
+			}
+
+			.menu-item {
+				&-link-sub {
+					.jet-nav-arrow {
+						transform: rotate(90deg);
+					}
+				}
+			}
+
+			.jet-nav-arrow {
+				margin-left: 0;
+				margin-right: 10px;
+				order: -1;
 			}
 		}
 	}
@@ -237,6 +277,12 @@
 		.menu-item-link.menu-item-link-sub {
 			.jet-nav-arrow {
 				transform: rotate(0);
+
+				@if $direction == rtl {
+					margin-left: 0;
+					margin-right: 10px;
+					order: -1;
+				}
 			}
 		}
 	}
@@ -258,6 +304,12 @@
 			.menu-item-link.menu-item-link-sub {
 				.jet-nav-arrow {
 					transform: rotate( 0deg );
+
+					@if $direction == rtl {
+						margin-left: 0;
+						margin-right: 10px;
+						order: -1;
+					}
 				}
 			}
 
@@ -273,9 +325,11 @@
 				}
 
 				.jet-nav-arrow {
-					margin-left: 10px;
-					margin-right: 0;
-					order: 1;
+					@if $direction == ltr {
+						margin-left: 10px;
+						margin-right: 0;
+						order: 1;
+					}
 				}
 			}
 		}

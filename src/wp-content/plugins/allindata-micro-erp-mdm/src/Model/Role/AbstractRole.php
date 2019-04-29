@@ -42,6 +42,7 @@ abstract class AbstractRole implements RoleInterface
     {
         add_role($this->getRoleLevel(), $this->getRoleLabel(), $this->getCapabilities());
         do_action('role_install_' . $this->getRoleLevel(), $this->getRoleLevel());
+        $this->installCapability($this->getRoleLevel().'_view_menu');
     }
 
     /**
@@ -51,6 +52,7 @@ abstract class AbstractRole implements RoleInterface
     {
         remove_role($this->getRoleLevel());
         do_action('role_remove_' . $this->getRoleLevel(), $this->getRoleLevel());
+        $this->removeCapability($this->getRoleLevel().'_view_menu');
     }
 
     /**
@@ -109,7 +111,7 @@ abstract class AbstractRole implements RoleInterface
     public function extendNavigation($items, $menu, $args)
     {
         if (is_admin() ||
-            !current_user_can('administrator') ||
+            !current_user_can($this->getRoleLevel().'_view_menu') ||
             !$this->isApplicableMenu($menu->term_id)) {
             return $items;
         }
@@ -154,6 +156,28 @@ abstract class AbstractRole implements RoleInterface
         }
 
         return false;
+    }
+
+    /**
+     * @param string $capability
+     */
+    private function installCapability(string $capability)
+    {
+        $role = get_role($this->getRoleLevel());
+        if ($role && !$role->has_cap($capability)) {
+            $role->add_cap($capability);
+        }
+    }
+
+    /**
+     * @param string $capability
+     */
+    private function removeCapability(string $capability)
+    {
+        $role = get_role($this->getRoleLevel());
+        if ($role && $role->has_cap($capability)) {
+            $role->remove_cap($capability);
+        }
     }
 
     /**

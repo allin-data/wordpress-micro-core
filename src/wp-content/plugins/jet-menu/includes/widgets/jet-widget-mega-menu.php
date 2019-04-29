@@ -180,20 +180,53 @@ class Jet_Widget_Mega_Menu extends Widget_Base {
 				'type'    => Controls_Manager::CHOOSE,
 				'options' => array(
 					'flex-start' => array(
-						'title' => esc_html__( 'Left', 'jet-menu' ),
-						'icon'  => 'fa fa-align-left',
+						'title' => esc_html__( 'Start', 'jet-menu' ),
+						'icon'  => ! is_rtl() ? 'fa fa-align-left' : 'fa fa-align-right',
 					),
 					'center' => array(
 						'title' => esc_html__( 'Center', 'jet-menu' ),
 						'icon'  => 'fa fa-align-center',
 					),
 					'flex-end' => array(
-						'title' => esc_html__( 'Right', 'jet-menu' ),
-						'icon'  => 'fa fa-align-right',
+						'title' => esc_html__( 'End', 'jet-menu' ),
+						'icon'  => ! is_rtl() ? 'fa fa-align-right' : 'fa fa-align-left',
+					),
+					'stretch' => array(
+						'title' => esc_html__( 'Stretch', 'jet-menu' ),
+						'icon'  => 'fa fa-align-justify',
 					),
 				),
-				'selectors'  => array(
+				'selectors' => array(
 					'{{WRAPPER}} ' . $css_scheme['container'] => 'justify-content: {{VALUE}} !important;',
+				),
+			)
+		);
+
+		$this->add_control(
+			'menu_container_alignment_misc',
+			array(
+				'type'      => Controls_Manager::HIDDEN,
+				'default'   => 'styles',
+				'selectors' => array(
+					'.jet-desktop-menu-active {{WRAPPER}} ' . $css_scheme['top_level_item'] => 'flex-grow: 0;',
+				),
+				'condition' => array(
+					'menu_container_alignment!' => 'stretch',
+				),
+			)
+		);
+
+		$this->add_control(
+			'menu_container_alignment_stretch',
+			array(
+				'type'      => Controls_Manager::HIDDEN,
+				'default'   => 'styles',
+				'selectors' => array(
+					'.jet-desktop-menu-active {{WRAPPER}} ' . $css_scheme['top_level_item'] => 'flex-grow: 1;',
+					'.jet-desktop-menu-active {{WRAPPER}} ' . $css_scheme['top_level_item'] . ' > a' => 'justify-content: center;',
+				),
+				'condition' => array(
+					'menu_container_alignment' => 'stretch',
 				),
 			)
 		);

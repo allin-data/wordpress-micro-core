@@ -761,6 +761,24 @@ if ( ! class_exists( 'Jet_Menu_Public_Manager' ) ) {
 				)
 			);
 
+			$menu_align = jet_menu_option_page()->get_option( 'jet-menu-container-alignment' );
+
+			if ( 'stretch' === $menu_align ) {
+				jet_menu()->dynamic_css()->add_style(
+					sprintf( '.jet-desktop-menu-active %1$s > .jet-menu-item', $wrapper ),
+					array(
+						'flex-grow' => 1,
+					)
+				);
+
+				jet_menu()->dynamic_css()->add_style(
+					sprintf( '.jet-desktop-menu-active %1$s > .jet-menu-item > a', $wrapper ),
+					array(
+						'justify-content' => 'center',
+					)
+				);
+			}
+
 		}
 
 		/**

@@ -146,6 +146,30 @@ class Jet_Elements_Slider extends Jet_Elements_Base {
 				),
 			)
 		);
+		
+		$repeater->add_control(
+			'item_button_primary_target',
+			array(
+				'label'        => esc_html__( 'Open link in new window', 'jet-elements' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'return_value' => '_blank',
+				'condition'    => array(
+					'item_button_primary_url!' => '',
+				),
+			)
+		);
+		
+		$repeater->add_control(
+			'item_button_primary_rel',
+			array(
+				'label'        => esc_html__( 'Add nofollow', 'jet-elements' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'return_value' => 'nofollow',
+				'condition'    => array(
+					'item_button_primary_url!' => '',
+				),
+			)
+		);
 
 		$repeater->add_control(
 			'item_button_primary_text',
@@ -168,6 +192,30 @@ class Jet_Elements_Slider extends Jet_Elements_Base {
 						TagsModule::POST_META_CATEGORY,
 						TagsModule::URL_CATEGORY,
 					),
+				),
+			)
+		);
+		
+		$repeater->add_control(
+			'item_button_secondary_target',
+			array(
+				'label'        => esc_html__( 'Open link in new window', 'jet-elements' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'return_value' => '_blank',
+				'condition'    => array(
+					'item_button_secondary_url!' => '',
+				),
+			)
+		);
+		
+		$repeater->add_control(
+			'item_button_secondary_rel',
+			array(
+				'label'        => esc_html__( 'Add nofollow', 'jet-elements' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'return_value' => 'nofollow',
+				'condition'    => array(
+					'item_button_secondary_url!' => '',
 				),
 			)
 		);
@@ -2522,25 +2570,35 @@ class Jet_Elements_Slider extends Jet_Elements_Base {
 	 * [__loop_item_image_tag description]
 	 * @return [type] [description]
 	 */
-	protected function __loop_item_image_tag( ) {
+	protected function __loop_item_image_tag() {
 		$item = $this->__processed_item;
 		$image = $item['item_image'];
 
 		if ( empty( $image['id'] ) ) {
 			return sprintf( '<img class="sp-image" src="%s" alt="">', Utils::get_placeholder_image_src() );
 		}
-
+		
 		$image_sizes = get_intermediate_image_sizes();
-
 		$slider_image_size = $this->get_settings_for_display( 'slider_image_size' );
-
 		$slider_image_size = ! empty( $slider_image_size ) ? $slider_image_size : 'full';
-
 		$image_attr = array(
 			'class' => 'sp-image',
 		);
-
+		
 		return wp_get_attachment_image( $image['id'], $slider_image_size, false, $image_attr );
+	}
+	
+	protected function __loop_item_image_thumb() {
+		$item = $this->__processed_item;
+		$image = $item['item_image'];
+		
+		if ( empty( $image['id'] ) ) {
+			return sprintf( '<img class="sp-thumbnail" src="%s" alt="">', Utils::get_placeholder_image_src() );
+		}
+		
+		$alt = esc_attr( Control_Media::get_image_alt( $image ) );
+		
+		return sprintf( '<img class="sp-thumbnail" src="%1$s" alt="%2$s">', $image['url'], $alt );
 	}
 
 	/**

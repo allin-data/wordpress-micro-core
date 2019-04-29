@@ -30,19 +30,15 @@ if ( 'lightbox' === $link_type ) {
 } else {
 	$target = $this->__loop_item( array( 'item_target' ), '%s' );
 	$target = ! empty( $target ) ? $target : '_self';
+	$rel    = $this->__loop_item( array( 'item_rel' ), '%s' );
+	$rel    = ! empty( $rel ) ? $rel : '';
 
 	$this->add_render_attribute( $link_instance, 'href', $this->__loop_item( array( 'item_url' ), '%s' ) );
 	$this->add_render_attribute( $link_instance, 'target', $target );
+	$this->add_render_attribute( $link_instance, 'rel', $rel );
 }
 
 $this->item_counter++;
-
-
-$image_format = '<img class="jet-images-layout__image-instance" src="%s" alt="">';
-
-if ( 'justify' === $settings['layout_type'] ) {
-	$image_format = '<img class="jet-images-layout__image-instance" src="%1$s" data-width="%2$s" data-height="%3$s" alt="">';
-}
 
 ?>
 <div class="jet-images-layout__item <?php echo $col_class ?>">
@@ -50,7 +46,7 @@ if ( 'justify' === $settings['layout_type'] ) {
 		<div class="jet-images-layout__image-loader"><span></span></div>
 		<a <?php echo $this->get_render_attribute_string( $link_instance ); ?>>
 			<div class="jet-images-layout__image">
-				<?php echo $this->__loop_image_item( 'item_image', $image_format ); ?>
+				<?php echo $this->__loop_image_item(); ?>
 			</div>
 			<div class="jet-images-layout__content">
 					<?php

@@ -12,7 +12,7 @@ $this->__processed_item_index += 1;
 <li class="price-list__item"><?php
 	echo $this->__open_price_item_link( 'item_url' );
 	echo '<div class="price-list__item-inner">';
-	echo $this->__loop_item( array( 'item_image', 'url' ), '<div class="price-list__item-img-wrap"><img src="%s" alt="" class="price-list__item-img"></div>' );
+	echo $this->__get_price_list_image();
 	echo '<div class="price-list__item-content">';
 		echo '<div class="price-list__item-title__wrapper">';
 			echo $this->__loop_item( array( 'item_title' ), '<h5 ' . $item_title_attr . '>%s</h5>' );

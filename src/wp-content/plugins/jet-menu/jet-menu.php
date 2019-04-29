@@ -3,7 +3,7 @@
  * Plugin Name: JetMenu
  * Plugin URI: http://jetmenu.zemez.io/
  * Description: A top-notch mega menu addon for Elementor. Use it to create a fully responsive mega menu with drop-down items, rich in content modules, and change your menu style according to your vision without any coding knowledge!
- * Version:     1.5.8.1
+ * Version:     1.5.9
  * Author:      Zemez
  * Author URI:  https://zemez.io/wordpress/
  * Text Domain: jet-menu
@@ -57,7 +57,7 @@ if ( ! class_exists( 'Jet_Menu' ) ) {
 		 *
 		 * @var string
 		 */
-		private $version = '1.5.8.1';
+		private $version = '1.5.9';
 
 		/**
 		 * Plugin slug

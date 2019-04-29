@@ -123,7 +123,7 @@ if ( ! class_exists( 'Jet_Elements_CX_Loader' ) ) {
 					$url = str_replace(
 						'\\',
 						'/',
-						str_replace( untrailingslashit( ABSPATH ), esc_url( home_url() ), $dir )
+						str_replace( untrailingslashit( ABSPATH ), esc_url( site_url() ), $dir )
 					);
 
 					$this->included_modules[ $slug ] = array(

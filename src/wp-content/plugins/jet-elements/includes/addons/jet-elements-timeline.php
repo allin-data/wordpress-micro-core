@@ -1580,5 +1580,18 @@ class Jet_Elements_Timeline extends Jet_Elements_Base {
 
 		$this->__processed_item_index = 0;
 	}
+	
+	public function __get_timeline_image() {
+		$image_item = $this->__processed_item['item_image'];
+		
+		if ( empty( $image_item['url'] ) ) {
+			return;
+		}
+		
+		return sprintf( '<div class="timeline-item__card-img"><img src="%1$s" alt="%2$s"></div>',
+			$image_item['url'],
+			esc_attr( Control_Media::get_image_alt( $image_item ) )
+		);
+	}
 
 }

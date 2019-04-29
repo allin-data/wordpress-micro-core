@@ -535,4 +535,25 @@ class Jet_Elements_Brands extends Jet_Elements_Base {
 		echo '<# } #>';
 
 	}
+	
+	public function __get_brand_image( $img_key ) {
+		call_user_func( array( $this, sprintf( '__get_brand_image_%s', $this->__context ) ), $img_key );
+	}
+	
+	public function __get_brand_image_render( $img_key ) {
+		$image_item = $this->__processed_item[ $img_key ];
+		
+		if ( empty( $image_item['url'] ) ) {
+			return;
+		}
+		
+		printf( '<div class="brands-list__item-img-wrap"><img src="%1$s" alt="%2$s" class="brands-list__item-img"></div>',
+			$image_item['url'],
+			esc_attr( Control_Media::get_image_alt( $image_item ) )
+		);
+	}
+	
+	public function __get_brand_image_edit( $img_key ) {
+		echo $this->__loop_item( array( $img_key, 'url' ), '<div class="brands-list__item-img-wrap"><img src="%s" alt="" class="brands-list__item-img"></div>' );
+	}
 }

@@ -154,6 +154,18 @@
 				} );
 			}
 
+			$( document ).on( 'click.jetTabAnchor', 'a[href*="#jet-tabs-control-"]', function( event ) {
+				var $hash = $( this.hash );
+
+				if ( ! $hash.closest( $scope )[0] ) {
+					return;
+				}
+
+				var tabInx = $hash.data( 'tab' ) - 1;
+
+				switchTab( tabInx );
+			} );
+
 		},// tabsInit end
 
 		switcherInit: function( $scope ) {
@@ -378,6 +390,16 @@
 
 				} );
 			}
+
+			$( document ).on( 'click.jetAccordionAnchor', 'a[href*="#jet-toggle-control-"]', function( event ) {
+				var $hash = $( this.hash );
+
+				if ( ! $hash.closest( $scope )[0] ) {
+					return;
+				}
+
+				$hash.trigger( 'click.jetAccordion' );
+			} );
 
 		},// accordionInit end
 

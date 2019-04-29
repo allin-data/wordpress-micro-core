@@ -4,10 +4,19 @@ Brand new addon for Elementor Page builder. It provides the set of modules to cr
 
 # ChangeLog
 
-## [1.15.8](https://github.com/ZemezLab/jet-elements/archive/1.15.5.zip) - 08.04.2019
+## [1.15.10](https://github.com/ZemezLab/jet-elements/archive/1.15.10.zip) - 24.04.2019
+* Added: the ability to use dynamic tags for decorative images in the Headline Widget
+* Update: replace Home URL with site URL in framework loader
+
+## [1.15.9](https://github.com/ZemezLab/jet-elements/archive/1.15.9.zip) - 22.04.2019
+* Added: `alt` attribute for images in widgets
+* Added: `rel` and `target` attributes for buttons in widgets
+* Update: disabled lazy load images by WP Rocket in the Images Comparison Widget
+
+## [1.15.8](https://github.com/ZemezLab/jet-elements/archive/1.15.8.zip) - 08.04.2019
 * Hot Fix: scroll navi widget
 
-## [1.15.7](https://github.com/ZemezLab/jet-elements/archive/1.15.5.zip) - 04.04.2019
+## [1.15.7](https://github.com/ZemezLab/jet-elements/archive/1.15.7.zip) - 04.04.2019
 * Fixed: scroll navi widget / section switching function
 * Fixed: subscribe widget / ajax url
 * Fixed: compatibility with the wpml old versions

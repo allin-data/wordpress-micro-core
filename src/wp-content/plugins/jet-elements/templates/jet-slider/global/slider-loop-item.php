@@ -7,13 +7,18 @@ $settings = $this->get_settings_for_display();
 $container_width = $settings['slider_container_width']['size'];
 $container_width = ( '%' === $settings['slider_container_width']['unit'] ) ? $container_width . $settings['slider_container_width']['unit'] : $container_width;
 
+$target_primary   = $this->__loop_item( array( 'item_button_primary_target' ), ' target="%s"' );
+$rel_primary      = $this->__loop_item( array( 'item_button_primary_rel' ), ' rel="%s"' );
+$target_secondary = $this->__loop_item( array( 'item_button_secondary_target' ), ' target="%s"' );
+$rel_secondary    = $this->__loop_item( array( 'item_button_secondary_rel' ), ' rel="%s"' );
+
 ?>
 <div class="jet-slider__item sp-slide">
 	<?php
 		echo $this->__loop_item_image_tag();
 
 		if ( filter_var( $settings['thumbnails'], FILTER_VALIDATE_BOOLEAN ) ) {
-			echo $this->__loop_item( array( 'item_image', 'url' ), '<img class="sp-thumbnail" src="%s" alt="">' );
+			echo $this->__loop_item_image_thumb();
 		}
 	?>
 	<div class="jet-slider__content sp-layer" data-position="centerCenter" data-width="100%" data-height="100%" data-horizontal="0%" data-show-transition="up" data-show-duration="400" data-show-delay="400">
@@ -26,8 +31,8 @@ $container_width = ( '%' === $settings['slider_container_width']['unit'] ) ? $co
 					echo $this->__loop_item( array( 'item_desc' ), '<div class="jet-slider__desc">%s</div>' );
 				?>
 				<div class="jet-slider__button-wrapper"><?php
-					echo $this->__loop_button_item( array( 'item_button_primary_url', 'item_button_primary_text' ), '<a class="elementor-button elementor-size-md jet-slider__button jet-slider__button--primary" href="%1$s">%2$s</a>' );
-					echo $this->__loop_button_item( array( 'item_button_secondary_url', 'item_button_secondary_text' ), '<a class="elementor-button elementor-size-md jet-slider__button jet-slider__button--secondary" href="%1$s">%2$s</a>' ); ?>
+					echo $this->__loop_button_item( array( 'item_button_primary_url', 'item_button_primary_text' ), '<a class="elementor-button elementor-size-md jet-slider__button jet-slider__button--primary" href="%1$s"' . $target_primary . $rel_primary . '>%2$s</a>' );
+					echo $this->__loop_button_item( array( 'item_button_secondary_url', 'item_button_secondary_text' ), '<a class="elementor-button elementor-size-md jet-slider__button jet-slider__button--secondary" href="%1$s"' . $target_secondary . $rel_secondary . '>%2$s</a>' ); ?>
 				</div>
 			</div>
 		</div>

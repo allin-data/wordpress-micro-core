@@ -1934,11 +1934,10 @@
 					sectionInvert = 'yes' === $this.data('invert') ? true : false,
 					$section      = $( '#' + sectionId );
 
-				$section.addClass( 'jet-scroll-navigation-section' );
-				//$section.attr( 'touch-action', 'none' );
-				$section[0].dataset.sectionName = sectionId;
-
 				if ( $section[0] ) {
+					$section.addClass( 'jet-scroll-navigation-section' );
+					//$section.attr( 'touch-action', 'none' );
+					$section[0].dataset.sectionName = sectionId;
 					sections[ sectionId ] = {
 						selector: $section,
 						offset: Math.round( $section.offset().top ),

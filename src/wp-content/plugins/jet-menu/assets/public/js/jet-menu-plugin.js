@@ -436,14 +436,15 @@
 
 			this.$instance.on( 'rebuildItems', function() {
 				var $subMenuList = $( '.jet-sub-menu', self.$instance ),
-					maxWidth     = self.$window.outerWidth( true );
+					maxWidth     = self.$window.outerWidth( true ),
+					isRTL        = $( 'body' ).hasClass( 'rtl' );
 
 				if ( ! $subMenuList[0] ) {
 					return;
 				}
 
 				if ( initSubMenuPosition ) {
-					$subMenuList.removeClass( 'right-side' );
+					$subMenuList.removeClass( 'inverse-side' );
 					initSubMenuPosition = false;
 				}
 
@@ -452,14 +453,26 @@
 						subMenuOffset = $this.offset().left,
 						subMenuPos    = subMenuOffset + $this.outerWidth( true );
 
-					if ( subMenuPos >= maxWidth ) {
-						$this.addClass( 'right-side' );
-						$this.find( '.jet-sub-menu' ).addClass( 'right-side' );
+					if ( ! isRTL ) {
+						if ( subMenuPos >= maxWidth ) {
+							$this.addClass( 'inverse-side' );
+							$this.find( '.jet-sub-menu' ).addClass( 'inverse-side' );
 
-						initSubMenuPosition = true;
-					} else if ( subMenuOffset < 0 ) {
-						$this.removeClass( 'right-side' );
-						$this.find( '.jet-sub-menu' ).removeClass( 'right-side' );
+							initSubMenuPosition = true;
+						} else if ( subMenuOffset < 0 ) {
+							$this.removeClass( 'inverse-side' );
+							$this.find( '.jet-sub-menu' ).removeClass( 'inverse-side' );
+						}
+					} else {
+						if ( subMenuOffset < 0 ) {
+							$this.addClass( 'inverse-side' );
+							$this.find( '.jet-sub-menu' ).addClass( 'inverse-side' );
+
+							initSubMenuPosition = true;
+						} else if ( subMenuPos >= maxWidth ) {
+							$this.removeClass( 'inverse-side' );
+							$this.find( '.jet-sub-menu' ).removeClass( 'inverse-side' );
+						}
 					}
 
 				} );

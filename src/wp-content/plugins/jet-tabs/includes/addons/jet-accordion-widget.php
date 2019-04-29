@@ -820,6 +820,7 @@ class Jet_Accordion_Widget extends Jet_Tabs_Base {
 							'id'            => 'jet-toggle-control-' . $id_int . $toggle_count,
 							'class'         => array(
 								'jet-toggle__control',
+								'elementor-menu-anchor',
 							),
 							'data-toggle'   => $toggle_count,
 						) );
