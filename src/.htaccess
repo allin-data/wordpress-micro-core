@@ -125,7 +125,7 @@ FileETag None
 
 	# Download / Lade Inhalte nur von Seiten die explizit erlaubt sind
 	# Beispiel das alles von der eigenen Domain erlaubt allerdings keinerlei Externas:
-	Header set Content-Security-Policy "default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.all-in-data.dev *.paypalobjects.com *.paypal.com *.cloudflare.com *.youtube.com *.ytimg.com *.vimeo.com *.googleapis.com; connect-src 'self' *.paypal.com; img-src 'self' 'unsafe-inline' data: *.all-in-data.dev *.w.org *.cloudfront.net *.gravatar.com *.template-help.com http://*.template-help.com; style-src 'self' 'unsafe-inline' *.googleapis.com; font-src 'self' *.gstatic.com data:; frame-src 'self' *.all-in-data.dev *.sandbox.paypal.com; manifest-src 'self'"
+	Header set Content-Security-Policy "default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.all-in-data.dev *.paypalobjects.com *.paypal.com *.cloudflare.com *.youtube.com *.ytimg.com *.vimeo.com *.googleapis.com; connect-src 'self' *.paypal.com; img-src 'self' 'unsafe-inline' data: *.all-in-data.dev *.w.org *.cloudfront.net *.gravatar.com *.template-help.com http://*.template-help.com *.zemez.io; style-src 'self' 'unsafe-inline' *.googleapis.com; font-src 'self' *.gstatic.com data:; frame-src 'self' *.all-in-data.dev *.sandbox.paypal.com; manifest-src 'self'"
 
 	# Referrer Policy
 	Header set Referrer-Policy "origin-when-cross-origin"
@@ -145,4 +145,3 @@ FileETag None
 </Files>
 
 # END Wordfence WAF
-
