@@ -74,8 +74,7 @@ abstract class AbstractController implements PluginControllerInterface
             (defined('DOING_AJAX') && DOING_AJAX)) {
             if ($result && $result instanceof AbstractModel) {
                 echo json_encode($result->toArray());
-            }
-            if ($result) {
+            } elseif ($result) {
                 echo json_encode($result);
             }
             wp_die();

@@ -49,6 +49,7 @@ class CreateResourceTypeAttribute extends AbstractAdminController
         $resourceTypeId = (int)$this->getParam('resourceTypeId');
         $type = $this->getParam('type');
         $name = $this->getParam('name');
+        $isShownInGrid = $this->getParam('isShownInGrid') === 'true' ? true : false;
         $meta = $this->getParamAsArray('meta');
 
         /** @var ResourceType $resourceType */
@@ -65,8 +66,11 @@ class CreateResourceTypeAttribute extends AbstractAdminController
             ->setResourceTypeId($resourceTypeId)
             ->setType($type)
             ->setName($name)
+            ->setIsShownInGrid($isShownInGrid)
             ->setMeta($meta);
 
         $this->entityResource->save($resourceTypeAttribute);
+
+        return $resourceTypeAttribute;
     }
 }

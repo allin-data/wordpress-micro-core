@@ -9,17 +9,18 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Resource\Model\Attribute\Type;
 
 use AllInData\MicroErp\Core\Model\AbstractModel;
+use AllInData\MicroErp\Resource\Model\ResourceTypeAttribute;
 
 /**
  * Class AbstractType
  * @package AllInData\MicroErp\Resource\Model\Attribute\Type
  */
-abstract class AbstractType extends AbstractModel
+abstract class AbstractType extends AbstractModel implements TypeInterface
 {
     const TYPE = '';
 
     /**
-     * @return string
+     * @inheritDoc
      */
     public function getType(): string
     {
@@ -27,7 +28,7 @@ abstract class AbstractType extends AbstractModel
     }
 
     /**
-     * @return string
+     * @inheritDoc
      */
     public function getTypeLabel(): string
     {
@@ -35,8 +36,28 @@ abstract class AbstractType extends AbstractModel
     }
 
     /**
-     * @param mixed $value
-     * @return mixed
+     * @inheritDoc
      */
     abstract public function renderValue($value);
+
+    /**
+     * @inheritDoc
+     */
+    public function renderFormLabelName(ResourceTypeAttribute $resourceTypeAttribute): string
+    {
+        return sprintf('attributes[%1$s]', strtolower($resourceTypeAttribute->getName()));
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function renderFormPart(ResourceTypeAttribute $resourceTypeAttribute, $value = null): string
+    {
+        return sprintf(
+            '<input type="%1$s" name="%2$s" class="form-control" value="%3$s"/>',
+            $this->getType(),
+            $this->renderFormLabelName($resourceTypeAttribute),
+            $value
+        );
+    }
 }

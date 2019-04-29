@@ -227,12 +227,15 @@ abstract class AbstractResource
         $postEntityDataKeySet = $this->getPostEntityDataKeySet();
         $filteredDataSet = [];
         foreach($entityData as $attributeSet) {
-            $itemKey = $attributeSet['meta_key'];
-            $itemValue = $attributeSet['meta_value'];
-            if (in_array($itemKey, $postEntityDataKeySet)) {
+            $itemKey = $attributeSet['meta_key'] ?? null;
+            $itemValue = $attributeSet['meta_value'] ?? null;
+            if (!$itemKey ||
+                !$itemValue ||
+                in_array($itemKey, $postEntityDataKeySet)) {
                 continue;
             }
-            $key = MethodUtil::canonicalizeAttributeName($itemKey);
+            /** @var string $itemKey */
+            $key = MethodUtil::canonicalizeAttributeName((string)$itemKey);
 
             if (is_serialized($itemValue)) {
                 $itemValue = unserialize($itemValue);

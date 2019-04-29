@@ -13,6 +13,7 @@ use AllInData\MicroErp\Core\Model\GenericResource;
 use AllInData\MicroErp\Core\Model\PaginationInterface;
 use AllInData\MicroErp\Resource\Controller\DeleteResource;
 use AllInData\MicroErp\Resource\Controller\UpdateResource;
+use AllInData\MicroErp\Resource\Model\Collection\ResourceTypeAttribute;
 use AllInData\MicroErp\Resource\Model\Resource;
 use AllInData\MicroErp\Resource\Model\ResourceType;
 
@@ -30,18 +31,25 @@ class GridResource extends AbstractPaginationBlock
      * @var ResourceType
      */
     private $resourceType;
+    /**
+     * @var ResourceTypeAttribute
+     */
+    private $attributeCollection;
 
     /**
-     * AbstractPaginationBlock constructor.
+     * GridResource constructor.
      * @param PaginationInterface $pagination
      * @param GenericResource $resourceTypeResource
+     * @param ResourceTypeAttribute $attributeCollection
      */
     public function __construct(
         PaginationInterface $pagination,
-        GenericResource $resourceTypeResource
+        GenericResource $resourceTypeResource,
+        ResourceTypeAttribute $attributeCollection
     ) {
         parent::__construct($pagination);
         $this->resourceTypeResource = $resourceTypeResource;
+        $this->attributeCollection = $attributeCollection;
     }
 
     /**
@@ -95,6 +103,25 @@ class GridResource extends AbstractPaginationBlock
         }
         $this->resourceType = $this->resourceTypeResource->loadById($this->getResourceTypeId());
         return $this->resourceType;
+    }
+
+    /**
+     * @param ResourceType $resourceType
+     * @return \AllInData\MicroErp\Resource\Model\ResourceTypeAttribute[]
+     */
+    public function getResourceTypeAttributes(ResourceType $resourceType): array
+    {
+        return $this->attributeCollection->load(ResourceTypeAttribute::NO_LIMIT, 0,
+            [
+                'meta_query' => [
+                    [
+                        'key' => 'resource_type_id',
+                        'value' => $resourceType->getId(),
+                        'compare' => '=',
+                    ],
+                ]
+            ]
+        );
     }
 
     /**

@@ -19,7 +19,7 @@ class ResourceAttributeValue extends AbstractPostModel
     /**
      * @var int|null
      */
-    private $attributeId;
+    private $attributeTypeId;
     /**
      * @var string|null
      */
@@ -28,18 +28,18 @@ class ResourceAttributeValue extends AbstractPostModel
     /**
      * @return int|null
      */
-    public function getAttributeId(): ?int
+    public function getAttributeTypeId(): ?int
     {
-        return $this->attributeId;
+        return $this->attributeTypeId;
     }
 
     /**
-     * @param int|null $attributeId
+     * @param int|null $attributeTypeId
      * @return ResourceAttributeValue
      */
-    public function setAttributeId(?int $attributeId): ResourceAttributeValue
+    public function setAttributeTypeId(?int $attributeTypeId): ResourceAttributeValue
     {
-        $this->attributeId = $attributeId;
+        $this->attributeTypeId = $attributeTypeId;
         return $this;
     }
 

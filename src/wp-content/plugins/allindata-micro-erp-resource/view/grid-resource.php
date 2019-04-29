@@ -5,6 +5,7 @@ Copyright (C) 2019 All.In Data GmbH
 */
 
 /** @var \AllInData\MicroErp\Resource\Block\GridResource $block */
+$resourceTypeAttributes = $block->getResourceTypeAttributes($block->getResourceType());
 ?>
 <h2><?= $block->getTitle(); ?></h2>
 
@@ -13,36 +14,47 @@ Copyright (C) 2019 All.In Data GmbH
 <table class="table">
     <thead>
     <tr>
-        <th scope="col"><?= sprintf(__('%1$s ID', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN), $block->getResourceLabel()); ?></th>
-        <th scope="col"><?php _e('Name', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
+        <th scope="col"><?= sprintf(__('%1$s ID', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN),
+                $block->getResourceLabel()); ?></th>
+        <?php foreach ($resourceTypeAttributes as $resourceTypeAttribute): ?>
+            <?php if (!$resourceTypeAttribute->getIsShownInGrid()) {
+                continue;
+            } ?>
+            <th scope="col"><?= $resourceTypeAttribute->getName() ?></th>
+        <?php endforeach; ?>
         <th scope="col"><?php _e('Type', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
         <th scope="col"><?php _e('Actions', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
     </tr>
     </thead>
     <tbody>
-<?php foreach ($block->getResources() as $resource): ?>
-    <tr>
-        <th scope="row"><?= $resource->getId(); ?></th>
-        <td><input type="text" class="form-control" name="name" value="<?= $resource->getName(); ?>"/></td>
-        <td>
-            <?= $block->getResourceType()->getLabel() ?>
-        </td>
-        <td>
-            <button id="update"
-                    data-id="<?= $resource->getId(); ?>"
-                    data-action="<?= $block->getUpdateActionSlug(); ?>"
-                    class="btn btn-info">
-                <?php _e('Update', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN); ?>
-            </button>
-            <button id="delete"
-                    data-id="<?= $resource->getId(); ?>"
-                    data-action="<?= $block->getDeleteActionSlug(); ?>"
-                    class="btn btn-danger">
-                <?php _e('Delete', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN); ?>
-            </button>
-        </td>
-    </tr>
-<?php endforeach; ?>
+    <?php foreach ($block->getResources() as $resource): ?>
+        <tr>
+            <th scope="row"><?= $resource->getId(); ?></th>
+            <?php foreach ($resourceTypeAttributes as $resourceTypeAttribute): ?>
+                <?php if (!$resourceTypeAttribute->getIsShownInGrid()) {
+                    continue;
+                } ?>
+                <td>@TODO</td>
+            <?php endforeach; ?>
+            <td>
+                <?= $block->getResourceType()->getLabel() ?>
+            </td>
+            <td>
+                <button id="update"
+                        data-id="<?= $resource->getId(); ?>"
+                        data-action="<?= $block->getUpdateActionSlug(); ?>"
+                        class="btn btn-info">
+                    <?php _e('Update', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN); ?>
+                </button>
+                <button id="delete"
+                        data-id="<?= $resource->getId(); ?>"
+                        data-action="<?= $block->getDeleteActionSlug(); ?>"
+                        class="btn btn-danger">
+                    <?php _e('Delete', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN); ?>
+                </button>
+            </td>
+        </tr>
+    <?php endforeach; ?>
     </tbody>
 </table>
 

@@ -25,20 +25,14 @@ class UpdateResourceTypeAttribute extends AbstractAdminController
      * @var GenericResource
      */
     private $entityResource;
-    /**
-     * @var GenericResource
-     */
-    private $resourceTypeResource;
 
     /**
      * CreateResourceTypeAttribute constructor.
      * @param GenericResource $entityResource
-     * @param GenericResource $resourceTypeResource
      */
-    public function __construct(GenericResource $entityResource, GenericResource $resourceTypeResource)
+    public function __construct(GenericResource $entityResource)
     {
         $this->entityResource = $entityResource;
-        $this->resourceTypeResource = $resourceTypeResource;
     }
 
     /**
@@ -47,18 +41,10 @@ class UpdateResourceTypeAttribute extends AbstractAdminController
     protected function doExecute()
     {
         $resourceTypeAttributeId = $this->getParam('resourceTypeAttributeId');
-        $resourceTypeId = (int)$this->getParam('resourceTypeId');
         $type = $this->getParam('type');
         $name = $this->getParam('name');
+        $isShownInGrid = $this->getParam('isShownInGrid') === 'true' ? true : false;
         $meta = $this->getParamAsArray('meta');
-
-        /** @var ResourceType $resourceType */
-        $resourceType = $this->resourceTypeResource->loadById($resourceTypeId);
-        if (!$resourceType->getId()) {
-            $this->throwErrorMessage(
-                sprintf(__('Resource type with id "%s" does not exist', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN), $resourceTypeId)
-            );
-        }
 
         /** @var ResourceType $resourceType */
         $resourceTypeAttribute = $this->entityResource->loadById($resourceTypeAttributeId);
@@ -72,8 +58,11 @@ class UpdateResourceTypeAttribute extends AbstractAdminController
         $resourceTypeAttribute
             ->setType($type)
             ->setName($name)
+            ->setIsShownInGrid($isShownInGrid)
             ->setMeta($meta);
 
         $this->entityResource->save($resourceTypeAttribute);
+
+        return $resourceTypeAttribute;
     }
 }

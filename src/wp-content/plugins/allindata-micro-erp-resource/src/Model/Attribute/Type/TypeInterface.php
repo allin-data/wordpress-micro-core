@@ -8,6 +8,8 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Resource\Model\Attribute\Type;
 
+use AllInData\MicroErp\Resource\Model\ResourceTypeAttribute;
+
 /**
  * Interface TypeInterface
  * @package AllInData\MicroErp\Resource\Model\Attribute\Type
@@ -29,4 +31,17 @@ interface TypeInterface
      * @return mixed
      */
     public function renderValue($value);
+
+    /**
+     * @param ResourceTypeAttribute $resourceTypeAttribute
+     * @return string
+     */
+    public function renderFormLabelName(ResourceTypeAttribute $resourceTypeAttribute): string;
+
+    /**
+     * @param ResourceTypeAttribute $resourceTypeAttribute
+     * @param string|int|bool|mixed $value
+     * @return string
+     */
+    public function renderFormPart(ResourceTypeAttribute $resourceTypeAttribute, $value = null): string;
 }

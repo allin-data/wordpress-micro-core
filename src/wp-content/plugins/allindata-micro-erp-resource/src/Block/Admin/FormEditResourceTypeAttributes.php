@@ -86,9 +86,17 @@ class FormEditResourceTypeAttributes extends AbstractBlock
     {
         $resourceType = $this->getResourceType();
 
-        return $this->attributeCollection->loadByQuery([
-            ResourceTypeAttribute::RESOURCE_TYPE_FILTER_ATTRIBUTE => $resourceType->getId()
-        ]);
+        return $this->attributeCollection->load(ResourceTypeAttribute::NO_LIMIT, 0,
+            [
+                'meta_query' => [
+                    [
+                        'key' => 'resource_type_id',
+                        'value' => $resourceType->getId(),
+                        'compare' => '=',
+                    ],
+                ]
+            ]
+        );
     }
 
     /**

@@ -5,6 +5,7 @@ Copyright (C) 2019 All.In Data GmbH
 */
 
 /** @var \AllInData\MicroErp\Resource\Block\FormCreateResource $block */
+$resourceType = $block->getResourceType();
 ?>
     <h2><?= $block->getTitle(); ?></h2>
 <?php if ($block->isCreationAllowed()): ?>
@@ -16,10 +17,14 @@ Copyright (C) 2019 All.In Data GmbH
             <input type="hidden" name="<?= $block->getFormRedirectKey(); ?>"
                    value="<?= $block->getFormRedirectUrl(); ?>"/>
 
-            <div class="form-group">
-                <label for="name"><?php _e('Name', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?>:</label>
-                <input type="text" name="name" class="form-control" value=""/>
-            </div>
+            <?php foreach ($block->getResourceTypeAttributes($resourceType) as $resourceTypeAttribute): ?>
+                <?php $attributeType = $block->getResourceAttributeType($resourceTypeAttribute); ?>
+                <div class="form-group">
+                    <label for="<?= $attributeType->renderFormLabelName($resourceTypeAttribute) ?>"><?= $resourceTypeAttribute->getName() ?>
+                        :</label>
+                    <?= $attributeType->renderFormPart($resourceTypeAttribute) ?>
+                </div>
+            <?php endforeach; ?>
 
             <input class="btn btn-success" type="submit"
                    value="<?= sprintf(__('Create %1$s', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN),
@@ -31,7 +36,7 @@ Copyright (C) 2019 All.In Data GmbH
     <div class="row">
         <p class="justify-content-center">
             <?= sprintf(
-                    __('The creation of %1$s is currently disabled.', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN),
+                __('The creation of %1$s is currently disabled.', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN),
                 $block->getResourceLabel()
             ); ?>
         </p>

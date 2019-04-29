@@ -7,10 +7,10 @@ Copyright (C) 2019 All.In Data GmbH
 /** @var \AllInData\MicroErp\Resource\Block\Admin\FormEditResourceTypeAttributes $block */
 
 $templateRow = '<tr>' .
-    '<th scope="row">%1$s</th>' .
-    '<td>%2$s</td>' .
-    '<td>%3$s</td>' .
-    '<td>%4$s</td>' .
+    '<th scope="row">{{id}}</th>' .
+    '<td>{{name}}</td>' .
+    '<td>{{type}}</td>' .
+    '<td>{{resourceTypeLabel}}</td>' .
     '<td><span class="badge badge-secondary">'.__('New', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN).'</span></td>' .
     '</tr>';
 
@@ -23,6 +23,7 @@ $templateRow = '<tr>' .
             <th scope="col"><?php _e('Field ID', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN); ?></th>
             <th scope="col"><?php _e('Name', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
             <th scope="col"><?php _e('Type', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
+            <th scope="col"><?php _e('Shown in Grid?', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
             <th scope="col"><?php _e('Resource Type', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
             <th scope="col"><?php _e('Actions', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
         </tr>
@@ -41,6 +42,12 @@ $templateRow = '<tr>' .
                             </option>
                         </select>
                     <?php endforeach; ?>
+                </td>
+                <td>
+                    <input name="is_shown_in_grid"
+                           type="checkbox"
+                           class="form-control checkboxchecker"
+                           value="on" <?php if ($attribute->getIsShownInGrid()): ?>checked<?php endif; ?>/>
                 </td>
                 <td>
                     <?= $block->getResourceType()->getLabel() ?>
@@ -82,6 +89,13 @@ $templateRow = '<tr>' .
                         </option>
                     </select>
                 <?php endforeach; ?>
+            </div>
+            <div class="input-group form-group">
+                <label for="is_shown_in_grid"><?php _e('Is shown in grid?', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN); ?></label>
+                <input name="is_shown_in_grid"
+                       type="checkbox"
+                       class="form-control checkboxchecker"
+                       value="on" />
             </div>
             <button type="button"
                     class="btn btn-primary btn-attribute-create-form-save"

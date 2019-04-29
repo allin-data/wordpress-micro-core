@@ -29,6 +29,10 @@ class ResourceTypeAttribute extends AbstractPostModel
      */
     private $name;
     /**
+     * @var bool|int|null
+     */
+    private $isShownInGrid;
+    /**
      * @var array|null
      */
     private $meta;
@@ -84,6 +88,24 @@ class ResourceTypeAttribute extends AbstractPostModel
     public function setName(?string $name): ResourceTypeAttribute
     {
         $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return bool|int|null
+     */
+    public function getIsShownInGrid()
+    {
+        return $this->isShownInGrid;
+    }
+
+    /**
+     * @param bool|int|null $isShownInGrid
+     * @return ResourceTypeAttribute
+     */
+    public function setIsShownInGrid($isShownInGrid)
+    {
+        $this->isShownInGrid = $isShownInGrid;
         return $this;
     }
 

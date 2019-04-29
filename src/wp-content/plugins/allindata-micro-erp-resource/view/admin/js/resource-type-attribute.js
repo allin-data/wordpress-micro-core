@@ -63,19 +63,28 @@
             payload.resourceTypeId = id;
             payload.name = $('#attribute_create_form_' + id + ' input[name="name"]').val();
             payload.type = $('#attribute_create_form_' + id + ' select[name="type"]').val();
+            payload.isShownInGrid = $('#attribute_create_form_' + id + ' input[name="is_shown_in_grid"]').is(':checked');
 
             $.ajax({
                 type: 'POST',
                 url: wp_ajax_action.action_url,
                 data: payload,
-                success: function (data) {
-                    let templateRow;
-
+                success: function (response) {
+                    let templateRow,
+                        data;
                     templateRow = config.createTemplateRow;
-                    templateRow.replace('%1$s', data.id);
-                    templateRow.replace('%2$s', data.name);
-                    templateRow.replace('%3$s', data.type); //@TODO mapping to label value
-                    templateRow.replace('%4$s', config.resourceTypeLabel);
+                    data = JSON.parse(response);
+
+                    //@TODO mapping to label value
+                    data['resourceTypeLabel'] = data['resourceTypeId'];
+                    for (let attributeName in data) {
+                        if (!data.hasOwnProperty(attributeName)) {
+                            continue;
+                        }
+                        let patternString = '{{' + attributeName + '}}',
+                            pattern = new RegExp(patternString,"gim");
+                        templateRow = templateRow.replace(pattern, data[attributeName]);
+                    }
 
                     me._toggleButtons(config, false);
 
@@ -106,7 +115,8 @@
             payload.resourceTypeAttributeId = id;
             payload.resourceTypeId = resourceTypeId;
             payload.name = $('#attribute_table_row_' + id + ' input[name="name"]').val();
-            payload.type = $('#attribute_table_row_' + id + ' input[name="type"]').val();
+            payload.type = $('#attribute_table_row_' + id + ' select[name="type"]').val();
+            payload.isShownInGrid = $('#attribute_table_row_' + id + ' input[name="is_shown_in_grid"]').is(':checked');
 
             $.ajax({
                 type: 'POST',

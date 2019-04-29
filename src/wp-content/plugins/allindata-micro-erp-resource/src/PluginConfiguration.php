@@ -137,8 +137,7 @@ class PluginConfiguration
                 $this->getResourceTypeResource()
             ),
             new UpdateResourceTypeAttribute(
-                $this->getResourceTypeAttributeResource(),
-                $this->getResourceTypeResource()
+                $this->getResourceTypeAttributeResource()
             ),
             new DeleteResourceTypeAttribute(
                 $this->getResourceTypeAttributeResource()
@@ -166,13 +165,16 @@ class PluginConfiguration
                 AID_MICRO_ERP_RESOURCE_TEMPLATE_DIR,
                 new \AllInData\MicroErp\Resource\Block\GridResource(
                     $this->getResourcePagination(),
-                    $this->getResourceTypeResource()
+                    $this->getResourceTypeResource(),
+                    $this->getResourceTypeAttributeCollection()
                 )
             ),
             new FormCreateResource(
                 AID_MICRO_ERP_RESOURCE_TEMPLATE_DIR,
                 new \AllInData\MicroErp\Resource\Block\FormCreateResource(
-                    $this->getResourceTypeResource()
+                    $this->getResourceTypeResource(),
+                    $this->getResourceTypeAttributeCollection(),
+                    $this->getAttributeTypeFactory()
                 )
             ),
             new FormEditResourceTypeAttributes(
@@ -277,7 +279,7 @@ class PluginConfiguration
     {
         return new GenericResource(
             $this->getWordpressDatabase(),
-            'resource_attribute_value',
+            'resattribute_value',
             $this->getResourceAttributeValueFactory()
         );
     }
@@ -301,7 +303,7 @@ class PluginConfiguration
     {
         return new GenericResource(
             $this->getWordpressDatabase(),
-            'resource_type_attribute',
+            'restype_attribute',
             $this->getResourceTypeAttributeFactory()
         );
     }
