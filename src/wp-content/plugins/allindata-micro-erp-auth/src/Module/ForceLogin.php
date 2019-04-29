@@ -88,6 +88,12 @@ class ForceLogin implements PluginModuleInterface
         }
 
         // only administrators are allowed in the backend
+        if (is_user_logged_in() && $currentPage === self::REQUEST_URI_PATH_LOGIN) {
+            wp_redirect(get_home_url());
+            exit();
+        }
+
+        // only administrators are allowed in the backend
         if (is_admin() && !current_user_can('administrator')) {
             wp_redirect(get_home_url());
             exit();
