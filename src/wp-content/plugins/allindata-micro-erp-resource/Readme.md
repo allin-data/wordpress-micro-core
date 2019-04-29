@@ -6,7 +6,8 @@ and managed by applied instances).
 
 ## Dependencies
 
-- Micro ERP Core
-- Micro ERP Auth
-- Micro ERP MDM
+- Micro ERP Core >= 1.0
+- Elementor Page Builder >= 2.5
+- Micro ERP Auth >= 1.0
+- Micro ERP MDM >= 1.0
 - Micro ERP Subordination

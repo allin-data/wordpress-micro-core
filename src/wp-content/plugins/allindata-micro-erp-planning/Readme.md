@@ -6,8 +6,10 @@ schedules and calenders of other users subordinated to him.
 
 ## Dependencies
 
-- Micro ERP Core
+- Micro ERP Core >= 1.0
+- Elementor Page Builder >= 2.5
+- Micro ERP Auth >= 1.0
 - Micro ERP Billing
-- Micro ERP MDM
-- Micro ERP Resource
+- Micro ERP MDM >= 1.0
+- Micro ERP Resource >= 1.0
 - Micro ERP Subordination

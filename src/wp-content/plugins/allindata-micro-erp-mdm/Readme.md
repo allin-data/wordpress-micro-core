@@ -19,4 +19,5 @@ management of the central user account, the definition of additional users and t
 
 ## Dependencies
 
-- Micro ERP Core
+- Micro ERP Core >= 1.0
+- Elementor Page Builder >= 2.5

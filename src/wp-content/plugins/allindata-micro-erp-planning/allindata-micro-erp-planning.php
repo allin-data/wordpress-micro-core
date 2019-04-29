@@ -50,8 +50,15 @@ require __DIR__ . '/vendor/autoload.php';
 
 class AllInDataMicroErpPlanning
 {
-    static function init()
+    /**
+     * Init
+     */
+    static public function init()
     {
+        if (!static::checkDependencies()) {
+            return;
+        }
+
         $config = new \bitExpert\Disco\BeanFactoryConfiguration(AID_MICRO_ERP_PLANNING_TEMP_DIR);
         $config->setProxyAutoloader(
             new \ProxyManager\Autoloader\Autoloader(
@@ -69,6 +76,34 @@ class AllInDataMicroErpPlanning
         /** @var \AllInData\MicroErp\Core\PluginInterface $app */
         $app = $beanFactory->get('PluginApp');
         $app->doInit();
+    }
+
+    /**
+     * @return bool
+     */
+    static private function checkDependencies(): bool
+    {
+        // --- AllInData Micro ERP Core
+        if (!version_compare(AID_MICRO_ERP_CORE_VERSION, '1.0', '>=')) {
+            return false;
+        }
+        // --- Elementor Page Builder
+        if (!version_compare(ELEMENTOR_VERSION, '2.5', '>=')) {
+            return false;
+        }
+        // --- AllInData Micro ERP Auth
+        if (!version_compare(AID_MICRO_ERP_AUTH_VERSION, '1.0', '>=')) {
+            return false;
+        }
+        // --- AllInData Micro ERP MDM
+        if (!version_compare(AID_MICRO_ERP_MDM_VERSION, '1.0', '>=')) {
+            return false;
+        }
+        // --- AllInData Micro ERP Resource
+        if (!version_compare(AID_MICRO_ERP_RESOURCE_VERSION, '1.0', '>=')) {
+            return false;
+        }
+        return true;
     }
 
     /**

@@ -53,8 +53,12 @@ class AllInDataMicroErpMdm
     /**
      * Init
      */
-    static function init()
+    static public function init()
     {
+        if (!static::checkDependencies()) {
+            return;
+        }
+
         $config = new \bitExpert\Disco\BeanFactoryConfiguration(AID_MICRO_ERP_MDM_TEMP_DIR);
         $config->setProxyAutoloader(
             new \ProxyManager\Autoloader\Autoloader(
@@ -72,6 +76,22 @@ class AllInDataMicroErpMdm
         /** @var \AllInData\MicroErp\Core\PluginInterface $app */
         $app = $beanFactory->get('PluginApp');
         $app->doInit();
+    }
+
+    /**
+     * @return bool
+     */
+    static private function checkDependencies(): bool
+    {
+        // --- AllInData Micro ERP Core
+        if (!version_compare(AID_MICRO_ERP_CORE_VERSION, '1.0', '>=')) {
+            return false;
+        }
+        // --- Elementor Page Builder
+        if (!version_compare(ELEMENTOR_VERSION, '2.5', '>=')) {
+            return false;
+        }
+        return true;
     }
 
     /**

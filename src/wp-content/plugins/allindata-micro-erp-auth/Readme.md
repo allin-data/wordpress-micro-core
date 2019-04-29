@@ -5,4 +5,5 @@ authorization process.
 
 ## Dependencies
 
-- Micro ERP Core
+- Micro ERP Core >= 1.0
+- Elementor Page Builder >= 2.5
