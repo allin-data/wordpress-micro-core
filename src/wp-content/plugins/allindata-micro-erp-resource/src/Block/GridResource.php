@@ -111,7 +111,7 @@ class GridResource extends AbstractPaginationBlock
      */
     public function getResourceTypeAttributes(ResourceType $resourceType): array
     {
-        return $this->attributeCollection->load(ResourceTypeAttribute::NO_LIMIT, 0,
+        $unsortedResult = $this->attributeCollection->load(ResourceTypeAttribute::NO_LIMIT, 0,
             [
                 'meta_query' => [
                     [
@@ -122,6 +122,20 @@ class GridResource extends AbstractPaginationBlock
                 ]
             ]
         );
+
+        $resourceTypeAttributes = [];
+        foreach ($unsortedResult as $resourceTypeAttribute) {
+            /** @var \AllInData\MicroErp\Resource\Model\ResourceTypeAttribute $resourceTypeAttribute */
+            $sortValue = $resourceTypeAttribute->getSortOrder();
+            while (isset($this->resourceTypeAttributes[$sortValue])) {
+                ++$sortValue;
+            }
+            $resourceTypeAttribute->setSortOrder($sortValue);
+            $resourceTypeAttributes[$sortValue] = $resourceTypeAttribute;
+        }
+        ksort($resourceTypeAttributes, SORT_NUMERIC);
+
+        return $resourceTypeAttributes;
     }
 
     /**
