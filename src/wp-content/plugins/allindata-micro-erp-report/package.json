@@ -1,0 +1,15 @@
+{
+  "name": "allindata-theme-micro-report",
+  "version": "1.0.0",
+  "description": "Micro ERP Report",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "florian.horn@all-in-data.de",
+  "license": "SEE LICENSE IN Readme.md",
+  "dependencies": {
+    "c3": "^0.7.0",
+    "d3": "^5.9.2"
+  }
+}
