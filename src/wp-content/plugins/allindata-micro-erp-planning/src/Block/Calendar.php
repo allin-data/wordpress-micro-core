@@ -16,7 +16,9 @@ use AllInData\MicroErp\Planning\Controller\UpdateSchedule;
 use AllInData\MicroErp\Planning\Model\Collection\Schedule as ScheduleCollection;
 use AllInData\MicroErp\Planning\Model\Schedule;
 use AllInData\MicroErp\Resource\Model\Resource;
+use AllInData\MicroErp\Resource\Model\ResourceAttributeValue;
 use AllInData\MicroErp\Resource\Model\ResourceType;
+use AllInData\MicroErp\Resource\Model\ResourceTypeAttribute;
 
 /**
  * Class Calendar
@@ -36,21 +38,39 @@ class Calendar extends AbstractBlock
      * @var GenericCollection
      */
     private $resourceCollection;
+    /**
+     * @var \AllInData\MicroErp\Resource\Model\Collection\ResourceTypeAttribute
+     */
+    private $attributeCollection;
+    /**
+     * @var GenericCollection
+     */
+    private $resourceAttributeValueCollection;
+    /**
+     * @var ResourceType[]
+     */
+    private $resourceTypeSet;
 
     /**
      * Calendar constructor.
      * @param ScheduleCollection $scheduleCollection
      * @param GenericCollection $resourceTypeCollection
      * @param GenericCollection $resourceCollection
+     * @param \AllInData\MicroErp\Resource\Model\Collection\ResourceTypeAttribute $attributeCollection
+     * @param GenericCollection $resourceAttributeValueCollection
      */
     public function __construct(
         ScheduleCollection $scheduleCollection,
         GenericCollection $resourceTypeCollection,
-        GenericCollection $resourceCollection
+        GenericCollection $resourceCollection,
+        \AllInData\MicroErp\Resource\Model\Collection\ResourceTypeAttribute $attributeCollection,
+        GenericCollection $resourceAttributeValueCollection
     ) {
         $this->scheduleCollection = $scheduleCollection;
         $this->resourceTypeCollection = $resourceTypeCollection;
         $this->resourceCollection = $resourceCollection;
+        $this->attributeCollection = $attributeCollection;
+        $this->resourceAttributeValueCollection = $resourceAttributeValueCollection;
     }
 
     /**
@@ -96,17 +116,20 @@ class Calendar extends AbstractBlock
      */
     public function getResourceTypes(): array
     {
-        $resourceTypes = $this->resourceTypeCollection->loadBypassOwnership(
-            GenericCollection::NO_LIMIT,
-            0
-        );
+        if (!$this->resourceTypeSet) {
+            $this->resourceTypeSet = $this->resourceTypeCollection->loadBypassOwnership(
+                GenericCollection::NO_LIMIT,
+                0
+            );
+        }
+
         $resourceTypeSet = [];
-        foreach ($resourceTypes as $resourceType) {
+        foreach ($this->resourceTypeSet as $resourceType) {
             /** @var ResourceType $resourceType */
             if ($resourceType->getIsDisabled()) {
                 continue;
             }
-            $resourceTypeSet[] = $resourceType;
+            $resourceTypeSet[$resourceType->getId()] = $resourceType;
         }
 
         return $resourceTypeSet;
@@ -133,6 +156,89 @@ class Calendar extends AbstractBlock
         );
 
         return $resourceSet;
+    }
+
+    /**
+     * @param Resource $resource
+     * @return string
+     */
+    public function getResourceName(Resource $resource): string
+    {
+        $unsortedResult = $this->attributeCollection->load(
+            GenericCollection::NO_LIMIT,
+            0,
+            [
+                'meta_query' => [
+                    [
+                        'key' => 'resource_type_id',
+                        'value' => $resource->getTypeId(),
+                        'compare' => '=',
+                    ],
+                    [
+                        'key' => 'is_used_as_name',
+                        'value' => (int)true,
+                        'compare' => '=',
+                    ],
+                ]
+            ]
+        );
+        $resourceTypeAttributes = [];
+        foreach ($unsortedResult as $resourceTypeAttribute) {
+            /** @var ResourceTypeAttribute $resourceTypeAttribute */
+            $sortValue = $resourceTypeAttribute->getSortOrder();
+            while (isset($this->resourceTypeAttributes[$sortValue])) {
+                ++$sortValue;
+            }
+            $resourceTypeAttribute->setSortOrder($sortValue);
+            $resourceTypeAttributes[$sortValue] = $resourceTypeAttribute;
+        }
+        ksort($resourceTypeAttributes, SORT_NUMERIC);
+
+        $nameValueSet = [];
+        foreach ($resourceTypeAttributes as $resourceTypeAttribute) {
+            $values = $this->resourceAttributeValueCollection->load(
+                GenericCollection::NO_LIMIT,
+                0,
+                [
+                    'meta_query' => [
+                        [
+                            'key' => 'resource_attribute_id',
+                            'value' => $resourceTypeAttribute->getId(),
+                            'compare' => '=',
+                        ],
+                        [
+                            'key' => 'resource_id',
+                            'value' => $resource->getId(),
+                            'compare' => '=',
+                        ],
+                    ]
+                ]
+            );
+
+            /** @var ResourceAttributeValue $valueEntity */
+            $valueEntity = array_shift($values);
+            if (!$valueEntity) {
+                continue;
+            }
+            $nameValueSet[] = $valueEntity->getValue();
+        }
+
+        // fallback entity name
+        $entityName = __('Entity', AID_MICRO_ERP_PLANNING_TEXTDOMAIN);
+        if (empty($nameValueSet)) {
+            $resourceTypeSet = $this->getResourceTypes();
+            if (isset($resourceTypeSet[$resource->getTypeId()])) {
+                $entityName = $resourceTypeSet[$resource->getTypeId()]->getLabel();
+            }
+        } else {
+            $entityName = implode(', ', $nameValueSet);
+        }
+
+        return sprintf(
+            '%1$s (%2$s)',
+            $entityName,
+            $resource->getId()
+        );
     }
 
     /**

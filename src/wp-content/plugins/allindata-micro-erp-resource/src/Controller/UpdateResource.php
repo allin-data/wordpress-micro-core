@@ -48,7 +48,6 @@ class UpdateResource extends AbstractController
     protected function doExecute()
     {
         $resourceId = (int)$this->getParam('resourceId');
-        $name = $this->getParam('name');
         $attributes = $this->getParamAsArray('attributes');
 
         /** @var Resource $resource */
@@ -58,9 +57,8 @@ class UpdateResource extends AbstractController
                 sprintf(__('Resource with id "%s" does not exist', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN), $resourceId)
             );
         }
-        $resource
-            ->setName($name);
-        $this->resourceResource->save($resource);
+        // no direct properties to update
+        // $this->resourceResource->save($resource);
 
         $resourceAttributeValues = $this->resourceAttributeValueCollection->load(
             GenericCollection::NO_LIMIT,

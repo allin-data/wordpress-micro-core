@@ -51,6 +51,7 @@ class CreateResourceTypeAttribute extends AbstractAdminController
         $name = $this->getParam('name');
         $sortOrder = (int)$this->getParam('sortOrder',0, FILTER_SANITIZE_NUMBER_INT);
         $isShownInGrid = $this->getParam('isShownInGrid') === 'true' ? true : false;
+        $isUsedAsName = $this->getParam('isUsedAsName') === 'true' ? true : false;
         $meta = $this->getParamAsArray('meta');
 
         /** @var ResourceType $resourceType */
@@ -68,6 +69,7 @@ class CreateResourceTypeAttribute extends AbstractAdminController
             ->setType($type)
             ->setName($name)
             ->setIsShownInGrid($isShownInGrid)
+            ->setIsUsedAsName($isUsedAsName)
             ->setSortOrder($sortOrder)
             ->setMeta($meta);
 

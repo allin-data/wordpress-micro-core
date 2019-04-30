@@ -30,6 +30,7 @@ $templateRow = '<tr>' .
             <th scope="col"><?php _e('Name', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
             <th scope="col"><?php _e('Type', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
             <th scope="col"><?php _e('Shown in Grid?', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
+            <th scope="col"><?php _e('Used in Display-Name?', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
             <th scope="col"><?php _e('Resource Type', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
             <th scope="col"><?php _e('Actions', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN) ?></th>
             <th scope="col"><?php _e('Order', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN); ?></th>
@@ -55,6 +56,12 @@ $templateRow = '<tr>' .
                            type="checkbox"
                            class="form-control checkboxchecker"
                            value="on" <?php if ($attribute->getIsShownInGrid()): ?>checked<?php endif; ?>/>
+                </td>
+                <td>
+                    <input name="is_used_as_name"
+                           type="checkbox"
+                           class="form-control checkboxchecker"
+                           value="on" <?php if ($attribute->getIsUsedAsName()): ?>checked<?php endif; ?>/>
                 </td>
                 <td>
                     <?= $block->getResourceType()->getLabel() ?>
@@ -117,6 +124,13 @@ $templateRow = '<tr>' .
             <div class="input-group form-group">
                 <label for="is_shown_in_grid"><?php _e('Is shown in grid?', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN); ?></label>
                 <input name="is_shown_in_grid"
+                       type="checkbox"
+                       class="form-control checkboxchecker"
+                       value="on" />
+            </div>
+            <div class="input-group form-group">
+                <label for="is_used_as_name"><?php _e('Is used in display name?', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN); ?></label>
+                <input name="is_used_as_name"
                        type="checkbox"
                        class="form-control checkboxchecker"
                        value="on" />

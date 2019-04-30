@@ -64,6 +64,7 @@
             payload.name = $('#attribute_create_form_' + id + ' input[name="name"]').val();
             payload.type = $('#attribute_create_form_' + id + ' select[name="type"]').val();
             payload.isShownInGrid = $('#attribute_create_form_' + id + ' input[name="is_shown_in_grid"]').is(':checked');
+            payload.isUsedAsName = $('#attribute_create_form_' + id + ' input[name="is_used_as_name"]').is(':checked');
 
             $.ajax({
                 type: 'POST',
@@ -117,6 +118,7 @@
             payload.name = $('#attribute_table_row_' + id + ' input[name="name"]').val();
             payload.type = $('#attribute_table_row_' + id + ' select[name="type"]').val();
             payload.isShownInGrid = $('#attribute_table_row_' + id + ' input[name="is_shown_in_grid"]').is(':checked');
+            payload.isUsedAsName = $('#attribute_table_row_' + id + ' input[name="is_used_as_name"]').is(':checked');
             payload.sortOrder = $('#attribute_table_row_' + id + ' input[name="sort_order"]').val();
 
             $.ajax({

@@ -64,7 +64,6 @@ class CreateResource extends AbstractController
     protected function doExecute()
     {
         $typeId = (int)$this->getParam('typeId');
-        $name = $this->getParam('name');
         $attributes = $this->getParamAsArray('attributes');
 
         $resourceType = $this->resourceTypeResource->loadById($typeId);
@@ -77,8 +76,7 @@ class CreateResource extends AbstractController
         /** @var Resource $resource */
         $resource = $this->resourceResource->getModelFactory()->create();
         $resource
-            ->setTypeId($typeId)
-            ->setName($name);
+            ->setTypeId($typeId);
         $this->resourceResource->save($resource);
 
         foreach ($attributes as $attributeId => $attributeValue) {

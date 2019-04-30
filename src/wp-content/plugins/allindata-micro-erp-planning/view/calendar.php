@@ -133,7 +133,7 @@ $timeMax = (new \DateTime())->setTime(22, 0, 0);
                             data-placeholder="<?= sprintf(__('Choose %1$s', AID_MICRO_ERP_PLANNING_TEXTDOMAIN), $resourceType->getLabel()) ?>">
                         <?php foreach($block->getResourcesByType($resourceType) as $resources): ?>
                         <option value="<?= $resources->getId() ?>">
-                            <?= $resources->getName() ?>
+                            <?= $block->getResourceName($resources) ?>
                         </option>
                         <?php endforeach; ?>
                     </select>
@@ -174,7 +174,6 @@ $timeMax = (new \DateTime())->setTime(22, 0, 0);
             $('#calendar_modal .modal-body').html('<?= __('You have no permission to add more items', AID_MICRO_ERP_PLANNING_TEXTDOMAIN) ?>');
             $(config.modalSelector).modal('show');
         });
-
 
         $(calendarSelector).microErpPlanningCalendar({
             calendarId: 1,

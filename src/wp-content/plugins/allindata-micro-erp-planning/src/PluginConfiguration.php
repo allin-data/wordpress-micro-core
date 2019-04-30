@@ -33,6 +33,7 @@ use AllInData\MicroErp\Planning\Model\Resource\Schedule as ScheduleResource;
 use AllInData\MicroErp\Planning\Model\Factory\Schedule as ScheduleFactory;
 use AllInData\MicroErp\Planning\Model\Validator\Schedule as ScheduleValidator;
 use AllInData\MicroErp\Resource\Model\Resource;
+use AllInData\MicroErp\Resource\Model\ResourceAttributeValue;
 use AllInData\MicroErp\Resource\Model\ResourceType;
 use AllInData\MicroErp\Resource\Model\ResourceTypeAttribute;
 use bitExpert\Disco\Annotations\Configuration;
@@ -111,7 +112,9 @@ class PluginConfiguration
                 new \AllInData\MicroErp\Planning\Block\Calendar(
                     $this->getScheduleCollection(),
                     $this->getResourceTypeCollection(),
-                    $this->getResourceCollection()
+                    $this->getResourceCollection(),
+                    $this->getResourceTypeAttributeCollection(),
+                    $this->getResourceAttributeValueCollection()
                 )
             )
         ];
@@ -197,6 +200,16 @@ class PluginConfiguration
     }
 
     /**
+     * @return GenericFactory
+     */
+    private function getResourceAttributeValueFactory(): GenericFactory
+    {
+        return new GenericFactory(
+            ResourceAttributeValue::class
+        );
+    }
+
+    /**
      * @return ScheduleResource
      */
     private function getScheduleResource(): ScheduleResource
@@ -233,6 +246,30 @@ class PluginConfiguration
     }
 
     /**
+     * @return GenericResource
+     */
+    private function getResourceTypeAttributeResource(): GenericResource
+    {
+        return new GenericResource(
+            $this->getWordpressDatabase(),
+            'restype_attribute',
+            $this->getResourceTypeAttributeFactory()
+        );
+    }
+
+    /**
+     * @return GenericResource
+     */
+    private function getResourceAttributeValueResource(): GenericResource
+    {
+        return new GenericResource(
+            $this->getWordpressDatabase(),
+            'resattribute_value',
+            $this->getResourceAttributeValueFactory()
+        );
+    }
+
+    /**
      * @return ScheduleCollection
      */
     private function getScheduleCollection(): ScheduleCollection
@@ -259,6 +296,26 @@ class PluginConfiguration
     {
         return new GenericCollection(
             $this->getResourceTypeResource()
+        );
+    }
+
+    /**
+     * @return \AllInData\MicroErp\Resource\Model\Collection\ResourceTypeAttribute
+     */
+    private function getResourceTypeAttributeCollection(): \AllInData\MicroErp\Resource\Model\Collection\ResourceTypeAttribute
+    {
+        return new \AllInData\MicroErp\Resource\Model\Collection\ResourceTypeAttribute(
+            $this->getResourceTypeAttributeResource()
+        );
+    }
+
+    /**
+     * @return GenericOwnedCollection
+     */
+    private function getResourceAttributeValueCollection(): GenericOwnedCollection
+    {
+        return new GenericOwnedCollection(
+            $this->getResourceAttributeValueResource()
         );
     }
 

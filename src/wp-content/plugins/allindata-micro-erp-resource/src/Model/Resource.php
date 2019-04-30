@@ -20,10 +20,6 @@ class Resource extends AbstractPostModel
      * @var int|null
      */
     private $typeId;
-    /**
-     * @var string|null
-     */
-    private $name;
 
     /**
      * @return int|null
@@ -40,24 +36,6 @@ class Resource extends AbstractPostModel
     public function setTypeId(?int $typeId): Resource
     {
         $this->typeId = $typeId;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string|null $name
-     * @return Resource
-     */
-    public function setName(?string $name): Resource
-    {
-        $this->name = $name;
         return $this;
     }
 }
