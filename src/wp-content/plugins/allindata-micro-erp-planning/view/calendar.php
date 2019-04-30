@@ -160,7 +160,19 @@ $timeMax = (new \DateTime())->setTime(22, 0, 0);
 <script>
     jQuery(document).ready(function ($) {
         let calendarSelector = '#calendar_<?= $block->getAttribute('id') ?>',
+            resizeBuffer,
             currentDate = moment();
+
+        // set calendar height
+        $(calendarSelector).height($(calendarSelector).width() * 0.66);
+        $(window).resize(function () {
+            clearTimeout(resizeBuffer);
+            resizeBuffer = setTimeout(function () {
+                $(calendarSelector)
+                    .height($(calendarSelector).width() * 0.66)
+                    .trigger('calendar-refresh');
+            }, 200);
+        });
 
         $('select[multiple="multiple"]').chosen({
             width: '95%',
