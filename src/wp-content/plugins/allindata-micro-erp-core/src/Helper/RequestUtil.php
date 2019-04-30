@@ -22,7 +22,7 @@ class RequestUtil
      */
     static public function getParam($key, $defaultValue = null, $filterType = FILTER_SANITIZE_STRING)
     {
-        $val = static::getGetParam($key, $defaultValue, $filterType);
+        $val = static::getGetParam($key, null, $filterType);
         if (is_null($val)) {
             $val = static::getPostParam($key, $defaultValue, $filterType);
         }
@@ -37,7 +37,7 @@ class RequestUtil
      */
     static public function getParamAsArray($key, $defaultValue = null, $filterType = FILTER_DEFAULT)
     {
-        $val = static::getGetParamAsArray($key, $defaultValue, $filterType);
+        $val = static::getGetParamAsArray($key, null, $filterType);
         if (empty($val)) {
             $val = static::getPostParamAsArray($key, $defaultValue, $filterType);
         }

@@ -33,6 +33,10 @@ class ResourceTypeAttribute extends AbstractPostModel
      */
     private $isShownInGrid;
     /**
+     * @var int|null
+     */
+    private $sortOrder;
+    /**
      * @var array|null
      */
     private $meta;
@@ -106,6 +110,24 @@ class ResourceTypeAttribute extends AbstractPostModel
     public function setIsShownInGrid($isShownInGrid)
     {
         $this->isShownInGrid = $isShownInGrid;
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getSortOrder(): ?int
+    {
+        return $this->sortOrder;
+    }
+
+    /**
+     * @param int|null $sortOrder
+     * @return ResourceTypeAttribute
+     */
+    public function setSortOrder(?int $sortOrder): ResourceTypeAttribute
+    {
+        $this->sortOrder = $sortOrder;
         return $this;
     }
 

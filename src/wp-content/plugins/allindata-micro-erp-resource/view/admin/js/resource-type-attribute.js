@@ -117,6 +117,7 @@
             payload.name = $('#attribute_table_row_' + id + ' input[name="name"]').val();
             payload.type = $('#attribute_table_row_' + id + ' select[name="type"]').val();
             payload.isShownInGrid = $('#attribute_table_row_' + id + ' input[name="is_shown_in_grid"]').is(':checked');
+            payload.sortOrder = $('#attribute_table_row_' + id + ' input[name="sort_order"]').val();
 
             $.ajax({
                 type: 'POST',

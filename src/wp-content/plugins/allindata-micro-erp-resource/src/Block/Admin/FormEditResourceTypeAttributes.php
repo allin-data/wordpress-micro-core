@@ -41,6 +41,10 @@ class FormEditResourceTypeAttributes extends AbstractBlock
      * @var ResourceType
      */
     private $resourceType;
+    /**
+     * @var \AllInData\MicroErp\Resource\Model\ResourceTypeAttribute[]|null
+     */
+    private $resourceTypeAttributes;
 
     /**
      * FormEditResourceTypeAttributes constructor.
@@ -84,9 +88,13 @@ class FormEditResourceTypeAttributes extends AbstractBlock
      */
     public function getResourceTypeAttributes(): array
     {
+        if ($this->resourceTypeAttributes) {
+            return $this->resourceTypeAttributes;
+        }
+
         $resourceType = $this->getResourceType();
 
-        return $this->attributeCollection->load(ResourceTypeAttribute::NO_LIMIT, 0,
+        $unsortedResult = $this->attributeCollection->load(ResourceTypeAttribute::NO_LIMIT, 0,
             [
                 'meta_query' => [
                     [
@@ -97,6 +105,20 @@ class FormEditResourceTypeAttributes extends AbstractBlock
                 ]
             ]
         );
+
+        $this->resourceTypeAttributes = [];
+        foreach ($unsortedResult as $resourceTypeAttribute) {
+            /** @var \AllInData\MicroErp\Resource\Model\ResourceTypeAttribute $resourceTypeAttribute */
+            $sortValue = $resourceTypeAttribute->getSortOrder();
+            while (isset($this->resourceTypeAttributes[$sortValue])) {
+                ++$sortValue;
+            }
+            $resourceTypeAttribute->setSortOrder($sortValue);
+            $this->resourceTypeAttributes[$sortValue] = $resourceTypeAttribute;
+        }
+        ksort($this->resourceTypeAttributes, SORT_NUMERIC);
+
+        return $this->resourceTypeAttributes;
     }
 
     /**

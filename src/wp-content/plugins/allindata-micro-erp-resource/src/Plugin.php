@@ -87,6 +87,16 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             return;
         }
 
+        wp_enqueue_script(
+            'aid-micro-erp-resource-sortable',
+            AID_MICRO_ERP_RESOURCE_URL . 'view/admin/js/sortable.js',
+            [
+                'jquery'
+            ],
+            '1.0.0',
+            true
+        );
+
         wp_register_script(
             'aid-micro-erp-resource-type-attribute',
             AID_MICRO_ERP_RESOURCE_URL . 'view/admin/js/resource-type-attribute.js',
