@@ -45,7 +45,7 @@ class AttributeTypeFactory
      */
     public function getType(string $key): TypeInterface
     {
-        if ($this->hasType($key)) {
+        if (!$this->hasType($key)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     __('Attribute type with key "%s" does not exist', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN),

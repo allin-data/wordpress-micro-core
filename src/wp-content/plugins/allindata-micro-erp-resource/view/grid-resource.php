@@ -34,7 +34,8 @@ $resourceTypeAttributes = $block->getResourceTypeAttributes($block->getResourceT
                 <?php if (!$resourceTypeAttribute->getIsShownInGrid()) {
                     continue;
                 } ?>
-                <td>@TODO</td>
+                <?php $attributeType = $block->getAttributeType($resourceTypeAttribute); ?>
+                <td><?= $attributeType->renderFormPart($resourceTypeAttribute, '@TODO') ?></td>
             <?php endforeach; ?>
             <td>
                 <?= $block->getResourceType()->getLabel() ?>

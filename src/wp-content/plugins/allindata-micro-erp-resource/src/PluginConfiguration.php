@@ -25,9 +25,12 @@ use AllInData\MicroErp\Core\Widget\ElementorWidgetInterface;
 use AllInData\MicroErp\Mdm\Model\Capability\CapabilityInterface;
 use AllInData\MicroErp\Mdm\Model\Role\ManagerRole;
 use AllInData\MicroErp\Mdm\Model\Role\OwnerRole;
+use AllInData\MicroErp\Resource\Controller\Admin\CreateResourceAttributeValue;
 use AllInData\MicroErp\Resource\Controller\Admin\CreateResourceType;
 use AllInData\MicroErp\Resource\Controller\Admin\CreateResourceTypeAttribute;
+use AllInData\MicroErp\Resource\Controller\Admin\DeleteResourceAttributeValue;
 use AllInData\MicroErp\Resource\Controller\Admin\DeleteResourceTypeAttribute;
+use AllInData\MicroErp\Resource\Controller\Admin\UpdateResourceAttributeValue;
 use AllInData\MicroErp\Resource\Controller\Admin\UpdateResourceType;
 use AllInData\MicroErp\Resource\Controller\Admin\UpdateResourceTypeAttribute;
 use AllInData\MicroErp\Resource\Model\Attribute\Type\Text;
@@ -141,6 +144,16 @@ class PluginConfiguration
             ),
             new DeleteResourceTypeAttribute(
                 $this->getResourceTypeAttributeResource()
+            ),
+            new CreateResourceAttributeValue(
+                $this->getResourceAttributeValueResource(),
+                $this->getResourceTypeAttributeResource()
+            ),
+            new UpdateResourceAttributeValue(
+                $this->getResourceAttributeValueResource()
+            ),
+            new DeleteResourceAttributeValue(
+                $this->getResourceAttributeValueResource()
             )
         ];
     }
@@ -166,7 +179,8 @@ class PluginConfiguration
                 new \AllInData\MicroErp\Resource\Block\GridResource(
                     $this->getResourcePagination(),
                     $this->getResourceTypeResource(),
-                    $this->getResourceTypeAttributeCollection()
+                    $this->getResourceTypeAttributeCollection(),
+                    $this->getAttributeTypeFactory()
                 )
             ),
             new FormCreateResource(

@@ -13,7 +13,9 @@ use AllInData\MicroErp\Core\Model\GenericResource;
 use AllInData\MicroErp\Core\Model\PaginationInterface;
 use AllInData\MicroErp\Resource\Controller\DeleteResource;
 use AllInData\MicroErp\Resource\Controller\UpdateResource;
+use AllInData\MicroErp\Resource\Model\Attribute\Type\TypeInterface;
 use AllInData\MicroErp\Resource\Model\Collection\ResourceTypeAttribute;
+use AllInData\MicroErp\Resource\Model\Factory\AttributeTypeFactory;
 use AllInData\MicroErp\Resource\Model\Resource;
 use AllInData\MicroErp\Resource\Model\ResourceType;
 
@@ -35,21 +37,28 @@ class GridResource extends AbstractPaginationBlock
      * @var ResourceTypeAttribute
      */
     private $attributeCollection;
+    /**
+     * @var AttributeTypeFactory
+     */
+    private $attributeTypeFactory;
 
     /**
      * GridResource constructor.
      * @param PaginationInterface $pagination
      * @param GenericResource $resourceTypeResource
      * @param ResourceTypeAttribute $attributeCollection
+     * @param AttributeTypeFactory $attributeTypeFactory
      */
     public function __construct(
         PaginationInterface $pagination,
         GenericResource $resourceTypeResource,
-        ResourceTypeAttribute $attributeCollection
+        ResourceTypeAttribute $attributeCollection,
+        AttributeTypeFactory $attributeTypeFactory
     ) {
         parent::__construct($pagination);
         $this->resourceTypeResource = $resourceTypeResource;
         $this->attributeCollection = $attributeCollection;
+        $this->attributeTypeFactory = $attributeTypeFactory;
     }
 
     /**
@@ -136,6 +145,23 @@ class GridResource extends AbstractPaginationBlock
         ksort($resourceTypeAttributes, SORT_NUMERIC);
 
         return $resourceTypeAttributes;
+    }
+
+    /**
+     * @return TypeInterface[]
+     */
+    public function getAttributeTypes(): array
+    {
+        return $this->attributeTypeFactory->getTypes();
+    }
+
+    /**
+     * @param \AllInData\MicroErp\Resource\Model\ResourceTypeAttribute $resourceTypeAttribute
+     * @return TypeInterface
+     */
+    public function getAttributeType(\AllInData\MicroErp\Resource\Model\ResourceTypeAttribute $resourceTypeAttribute): TypeInterface
+    {
+        return $this->attributeTypeFactory->getType($resourceTypeAttribute->getType());
     }
 
     /**

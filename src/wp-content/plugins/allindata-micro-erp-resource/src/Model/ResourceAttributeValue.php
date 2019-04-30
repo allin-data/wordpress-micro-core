@@ -19,43 +19,65 @@ class ResourceAttributeValue extends AbstractPostModel
     /**
      * @var int|null
      */
-    private $attributeTypeId;
+    private $resourceId;
     /**
-     * @var string|null
+     * @var int|null
+     */
+    private $resourceAttributeId;
+    /**
+     * @var string|int|float|bool|mixed|null
      */
     private $value;
 
     /**
      * @return int|null
      */
-    public function getAttributeTypeId(): ?int
+    public function getResourceId(): ?int
     {
-        return $this->attributeTypeId;
+        return $this->resourceId;
     }
 
     /**
-     * @param int|null $attributeTypeId
+     * @param int|null $resourceId
      * @return ResourceAttributeValue
      */
-    public function setAttributeTypeId(?int $attributeTypeId): ResourceAttributeValue
+    public function setResourceId(?int $resourceId): ResourceAttributeValue
     {
-        $this->attributeTypeId = $attributeTypeId;
+        $this->resourceId = $resourceId;
         return $this;
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getValue(): ?string
+    public function getResourceAttributeId(): ?int
+    {
+        return $this->resourceAttributeId;
+    }
+
+    /**
+     * @param int|null $resourceAttributeId
+     * @return ResourceAttributeValue
+     */
+    public function setResourceAttributeId(?int $resourceAttributeId): ResourceAttributeValue
+    {
+        $this->resourceAttributeId = $resourceAttributeId;
+        return $this;
+    }
+
+    /**
+     * @return bool|float|int|mixed|string|null
+     */
+    public function getValue()
     {
         return $this->value;
     }
 
     /**
-     * @param string|null $value
+     * @param bool|float|int|mixed|string|null $value
      * @return ResourceAttributeValue
      */
-    public function setValue(?string $value): ResourceAttributeValue
+    public function setValue($value)
     {
         $this->value = $value;
         return $this;
