@@ -27,7 +27,7 @@ class Text extends AbstractType
     /**
      * @inheritDoc
      */
-    public function renderValue($value)
+    public function renderValue($value): string
     {
         return (string)$value;
     }

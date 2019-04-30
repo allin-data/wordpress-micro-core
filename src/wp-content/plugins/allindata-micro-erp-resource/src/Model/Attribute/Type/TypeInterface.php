@@ -28,9 +28,9 @@ interface TypeInterface
 
     /**
      * @param mixed $value
-     * @return mixed
+     * @return string
      */
-    public function renderValue($value);
+    public function renderValue($value): string;
 
     /**
      * @param ResourceTypeAttribute $resourceTypeAttribute

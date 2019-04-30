@@ -76,6 +76,7 @@ class UpdateResource extends AbstractController
             ]
         );
 
+        //@TODO add newly added resource attribute values to the resource entity
         foreach ($resourceAttributeValues as $resourceAttributeValue) {
             /** @var ResourceAttributeValue $resourceAttributeValue */
             if (!isset($attributes[$resourceAttributeValue->getResourceAttributeId()])) {

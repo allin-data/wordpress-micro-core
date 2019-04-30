@@ -36,7 +36,7 @@ $resourceTypeAttributes = $block->getResourceTypeAttributes($block->getResourceT
                 } ?>
                 <?php $attributeType = $block->getAttributeType($resourceTypeAttribute); ?>
                 <td><?= $attributeType->renderFormPart($resourceTypeAttribute,
-                        $block->getResourceAttributeValue($resource, $resourceTypeAttribute)->getValue()) ?></td>
+                        $block->getResourceAttributeValue($resource, $resourceTypeAttribute)) ?></td>
             <?php endforeach; ?>
             <td>
                 <?= $block->getResourceType()->getLabel() ?>

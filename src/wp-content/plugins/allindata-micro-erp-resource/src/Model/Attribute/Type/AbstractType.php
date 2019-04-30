@@ -38,7 +38,7 @@ abstract class AbstractType extends AbstractModel implements TypeInterface
     /**
      * @inheritDoc
      */
-    abstract public function renderValue($value);
+    abstract public function renderValue($value): string;
 
     /**
      * @inheritDoc

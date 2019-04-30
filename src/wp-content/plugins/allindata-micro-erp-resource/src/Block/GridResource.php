@@ -176,12 +176,12 @@ class GridResource extends AbstractPaginationBlock
     /**
      * @param Resource $resource
      * @param \AllInData\MicroErp\Resource\Model\ResourceTypeAttribute $resourceTypeAttribute
-     * @return ResourceAttributeValue|null
+     * @return string
      */
     public function getResourceAttributeValue(
         Resource $resource,
         \AllInData\MicroErp\Resource\Model\ResourceTypeAttribute $resourceTypeAttribute
-    ): ?ResourceAttributeValue {
+    ): string {
         /** @var ResourceAttributeValue[] $resourceAttributeValueSet */
         $resourceAttributeValueSet = $this->resourceAttributeValueCollection->load(
             GenericCollection::NO_LIMIT,
@@ -199,11 +199,12 @@ class GridResource extends AbstractPaginationBlock
 
         foreach ($resourceAttributeValueSet as $resourceAttributeValue) {
             if ($resourceAttributeValue->getResourceAttributeId() == $resourceTypeAttribute->getId()) {
-                return $resourceAttributeValue;
+                $attributeType = $this->getAttributeType($resourceTypeAttribute);
+                return $attributeType->renderValue($resourceAttributeValue->getValue());
             }
         }
 
-        return null;
+        return '';
     }
 
     /**
