@@ -45,7 +45,7 @@ abstract class AbstractType extends AbstractModel implements TypeInterface
      */
     public function renderFormLabelName(ResourceTypeAttribute $resourceTypeAttribute): string
     {
-        return sprintf('attributes[%1$s]', strtolower($resourceTypeAttribute->getName()));
+        return sprintf('attributes[%1$s]', $resourceTypeAttribute->getId());
     }
 
     /**
@@ -57,7 +57,7 @@ abstract class AbstractType extends AbstractModel implements TypeInterface
             '<input type="%1$s" name="%2$s" class="form-control" value="%3$s"/>',
             $this->getType(),
             $this->renderFormLabelName($resourceTypeAttribute),
-            $value
+            $value ?? ''
         );
     }
 }

@@ -11,7 +11,7 @@ $resourceTypeAttributes = $block->getResourceTypeAttributes($block->getResourceT
 
 <?php $block->renderPaginationBlock(true, true); ?>
 
-<table class="table">
+<table class="table resource-grid">
     <thead>
     <tr>
         <th scope="col"><?= sprintf(__('%1$s ID', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN),
@@ -28,14 +28,15 @@ $resourceTypeAttributes = $block->getResourceTypeAttributes($block->getResourceT
     </thead>
     <tbody>
     <?php foreach ($block->getResources() as $resource): ?>
-        <tr>
+        <tr id="grid_resource_item_<?= $resource->getId(); ?>">
             <th scope="row"><?= $resource->getId(); ?></th>
             <?php foreach ($resourceTypeAttributes as $resourceTypeAttribute): ?>
                 <?php if (!$resourceTypeAttribute->getIsShownInGrid()) {
                     continue;
                 } ?>
                 <?php $attributeType = $block->getAttributeType($resourceTypeAttribute); ?>
-                <td><?= $attributeType->renderFormPart($resourceTypeAttribute, '@TODO') ?></td>
+                <td><?= $attributeType->renderFormPart($resourceTypeAttribute,
+                        $block->getResourceAttributeValue($resource, $resourceTypeAttribute)->getValue()) ?></td>
             <?php endforeach; ?>
             <td>
                 <?= $block->getResourceType()->getLabel() ?>
@@ -68,14 +69,22 @@ $resourceTypeAttributes = $block->getResourceTypeAttributes($block->getResourceT
 
         updateButton.click(function () {
             let button = $(this),
+                itemId,
                 payload = {};
 
             updateButton.prop("disabled", true);
             deleteButton.prop("disabled", true);
 
+            itemId = button.data('id');
             payload.action = button.data('action');
-            payload.resourceId = button.data('id');
-            payload.name = $('input[name="name"]').val();
+            payload.resourceId = itemId;
+            payload.attributes = {};
+
+            $('#grid_resource_item_' + itemId + ' input[name^="attributes"]').each(function (index, item) {
+                let inputItem = $(item);
+                //@TODO adapt for different types
+                payload.attributes[inputItem.attr("name").replace(/[^0-9]/g, '')] = inputItem.val();
+            });
 
             $.ajax({
                 type: 'POST',

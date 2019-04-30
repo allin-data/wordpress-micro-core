@@ -9,8 +9,10 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Resource\Controller;
 
 use AllInData\MicroErp\Core\Controller\AbstractController;
+use AllInData\MicroErp\Core\Model\GenericFactory;
 use AllInData\MicroErp\Core\Model\GenericResource;
 use AllInData\MicroErp\Resource\Model\Resource;
+use AllInData\MicroErp\Resource\Model\ResourceAttributeValue;
 
 /**
  * Class CreateResource
@@ -28,16 +30,32 @@ class CreateResource extends AbstractController
      * @var GenericResource
      */
     private $resourceTypeResource;
+    /**
+     * @var GenericFactory
+     */
+    private $resourceAttributeValueFactory;
+    /**
+     * @var GenericResource
+     */
+    private $resourceAttributeValueResource;
 
     /**
-     * CreateSchedule constructor.
+     * CreateResource constructor.
      * @param GenericResource $resourceResource
      * @param GenericResource $resourceTypeResource
+     * @param GenericFactory $resourceAttributeValueFactory
+     * @param GenericResource $resourceAttributeValueResource
      */
-    public function __construct(GenericResource $resourceResource, GenericResource $resourceTypeResource)
-    {
+    public function __construct(
+        GenericResource $resourceResource,
+        GenericResource $resourceTypeResource,
+        GenericFactory $resourceAttributeValueFactory,
+        GenericResource $resourceAttributeValueResource
+    ) {
         $this->resourceResource = $resourceResource;
         $this->resourceTypeResource = $resourceTypeResource;
+        $this->resourceAttributeValueFactory = $resourceAttributeValueFactory;
+        $this->resourceAttributeValueResource = $resourceAttributeValueResource;
     }
 
     /**
@@ -47,6 +65,7 @@ class CreateResource extends AbstractController
     {
         $typeId = (int)$this->getParam('typeId');
         $name = $this->getParam('name');
+        $attributes = $this->getParamAsArray('attributes');
 
         $resourceType = $this->resourceTypeResource->loadById($typeId);
         if (!$resourceType->getId()) {
@@ -61,6 +80,17 @@ class CreateResource extends AbstractController
             ->setTypeId($typeId)
             ->setName($name);
         $this->resourceResource->save($resource);
+
+        foreach ($attributes as $attributeId => $attributeValue) {
+            /** @var ResourceAttributeValue $resourceAttributeValue */
+            $resourceAttributeValue = $this->resourceAttributeValueFactory->create();
+            $resourceAttributeValue
+                ->setResourceId($resource->getId())
+                ->setResourceAttributeId($attributeId)
+                ->setValue($attributeValue);
+            $this->resourceAttributeValueResource->save($resourceAttributeValue);
+        }
+
         return $resource->getId();
     }
 
