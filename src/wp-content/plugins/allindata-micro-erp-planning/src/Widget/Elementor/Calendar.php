@@ -70,7 +70,7 @@ class Calendar extends AbstractElementorWidget
         );
 
         $this->add_control(
-            'id',
+            'calendar_id',
             [
                 'label' => __('ID', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
@@ -1870,10 +1870,15 @@ class Calendar extends AbstractElementorWidget
         echo '</div>';
     }
 
+    /**
+     * @inheritDoc
+     */
     protected function _content_template()
     {
-        ?>
-        <div class="wrapper"> ...</div>
-        <?php
+        $settings = $this->get_frontend_settings_keys();
+
+        echo '<div class="' . $this->get_name() . '-elementor-widget">';
+        echo do_shortcode($this->getShortCodePreview('micro_erp_planning_calendar', $settings));
+        echo '</div>';
     }
 }

@@ -127,5 +127,17 @@ class Plugin extends AbstractElementorPlugin implements PluginInterface
             '0.7.0',
             true
         );
+
+        wp_enqueue_script(
+            'aid-micro-erp-report-utilization',
+            AID_MICRO_ERP_REPORT_URL . 'view/js/utilization-report.js',
+            [
+                'jquery',
+                'aid-micro-erp-report-d3',
+                'aid-micro-erp-report-c3'
+            ],
+            '1.0.0',
+            true
+        );
     }
 }

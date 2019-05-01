@@ -9,11 +9,19 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Report;
 
 use AllInData\MicroErp\Core\Controller\PluginControllerInterface;
+use AllInData\MicroErp\Core\Database\WordpressDatabase;
 use AllInData\MicroErp\Core\Model\GenericFactory;
 use AllInData\MicroErp\Core\Module\PluginModuleInterface;
 use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
 use AllInData\MicroErp\Core\Widget\ElementorWidgetInterface;
 use AllInData\MicroErp\Mdm\Model\Capability\CapabilityInterface;
+use AllInData\MicroErp\Planning\Model\Collection\Schedule as ScheduleCollection;
+use AllInData\MicroErp\Planning\Model\Factory\Schedule as ScheduleFactory;
+use AllInData\MicroErp\Planning\Model\Factory\ScheduleMeta;
+use AllInData\MicroErp\Planning\Model\Factory\ScheduleMetaCreator;
+use AllInData\MicroErp\Planning\Model\Resource\Schedule as ScheduleResource;
+use AllInData\MicroErp\Planning\Model\Schedule;
+use AllInData\MicroErp\Report\Helper\UtilizationReportHelper;
 use AllInData\MicroErp\Report\Module\ElementorCategory;
 use AllInData\MicroErp\Report\Widget\Elementor\EmployeeUtilizationReport;
 use bitExpert\Disco\Annotations\Configuration;
@@ -84,7 +92,11 @@ class PluginConfiguration
         return [
             new \AllInData\MicroErp\Report\ShortCode\EmployeeUtilizationReport(
                 AID_MICRO_ERP_REPORT_TEMPLATE_DIR,
-                new \AllInData\MicroErp\Report\Block\EmployeeUtilizationReport()
+                new \AllInData\MicroErp\Report\Block\EmployeeUtilizationReport(
+                    new UtilizationReportHelper(
+                        $this->getScheduleCollection()
+                    )
+                )
             )
         ];
     }
@@ -95,6 +107,51 @@ class PluginConfiguration
     private function getPluginCapabilities(): array
     {
         return [];
+    }
+
+    /**
+     * @return ScheduleFactory
+     */
+    private function getScheduleFactory(): ScheduleFactory
+    {
+        return new ScheduleFactory(
+            Schedule::class,
+            new ScheduleMeta(
+                \AllInData\MicroErp\Planning\Model\ScheduleMeta::class,
+                new ScheduleMetaCreator(\AllInData\MicroErp\Planning\Model\ScheduleMetaCreator::class)
+            )
+        );
+    }
+
+    /**
+     * @return ScheduleResource
+     */
+    private function getScheduleResource(): ScheduleResource
+    {
+        return new ScheduleResource(
+            $this->getWordpressDatabase(),
+            ScheduleResource::ENTITY_NAME,
+            $this->getScheduleFactory()
+        );
+    }
+
+    /**
+     * @return ScheduleCollection
+     */
+    private function getScheduleCollection(): ScheduleCollection
+    {
+        return new ScheduleCollection(
+            $this->getScheduleResource()
+        );
+    }
+
+    /**
+     * @return WordpressDatabase
+     */
+    private function getWordpressDatabase(): WordpressDatabase
+    {
+        global $wpdb;
+        return new WordpressDatabase($wpdb);
     }
 
     /**

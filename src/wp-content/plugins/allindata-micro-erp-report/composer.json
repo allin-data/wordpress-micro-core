@@ -13,7 +13,8 @@
         }
     ],
     "require": {
-        "bitexpert/disco": "^0.10"
+        "bitexpert/disco": "^0.10",
+        "azuyalabs/yasumi": "^2.1"
     },
     "autoload": {
         "psr-4": {

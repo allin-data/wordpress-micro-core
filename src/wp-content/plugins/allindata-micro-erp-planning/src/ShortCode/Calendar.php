@@ -52,8 +52,11 @@ class Calendar extends AbstractShortCode implements PluginShortCodeInterface
             return '';
         }
 
+        if (empty($attributes)) {
+            $attributes = [];
+        }
         $attributes = $this->prepareAttributes($attributes, [
-            'id' => '',
+            'calendar_id' => '',
             'title' => __('Calendar', AID_MICRO_ERP_MDM_TEXTDOMAIN),
             'default-view' => 'month',
             'label-milestone' => __('Milestone', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
@@ -206,10 +209,11 @@ class Calendar extends AbstractShortCode implements PluginShortCodeInterface
             'advanced_style_week_dayGridSchedule_marginLeft' => 8,
             'advanced_style_week_dayGridSchedule_marginRight' => 8,
         ], $name);
-        $this->block->setAttributes($attributes);
+        $block = clone $this->block;
+        $block->setAttributes($attributes);
 
         $this->getTemplate('calendar', [
-            'block' => $this->block
+            'block' => $block
         ]);
     }
 }

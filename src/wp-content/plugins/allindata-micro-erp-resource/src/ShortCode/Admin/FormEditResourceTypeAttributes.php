@@ -52,10 +52,10 @@ class FormEditResourceTypeAttributes extends AbstractShortCode implements Plugin
             return '';
         }
 
-        $block = clone $this->block;
         $attributes = $this->prepareAttributes($attributes, [
             'resource_type_id' => null
         ], $name);
+        $block = clone $this->block;
         $block->setAttributes($attributes);
 
         $this->getTemplate('admin/form-create-resource-type-attribute', [

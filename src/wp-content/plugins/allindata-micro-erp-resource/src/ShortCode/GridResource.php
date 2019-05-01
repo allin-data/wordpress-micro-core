@@ -61,10 +61,11 @@ class GridResource extends AbstractShortCode implements PluginShortCodeInterface
             'label' => __('Resource', AID_MICRO_ERP_RESOURCE_TEXTDOMAIN),
             'resource_type_id' => null
         ], $name);
-        $this->block->setAttributes($attributes);
+        $block = clone $this->block;
+        $block->setAttributes($attributes);
 
         $this->getTemplate('grid-resource', [
-            'block' => $this->block
+            'block' => $block
         ]);
     }
 }

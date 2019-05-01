@@ -53,15 +53,21 @@ class EmployeeUtilizationReport extends AbstractShortCode implements PluginShort
             return '';
         }
 
-        $attributes = $this->prepareAttributes($attributes, [
-            'id' => '',
+        if (empty($attributes)) {
+            $attributes = [];
+        }
+        $attributes = $this->prepareAttributes($attributes ?? [], [
+            'report_id' => '',
             'title' => __('Utilization Report', AID_MICRO_ERP_MDM_TEXTDOMAIN),
-            'scope' => 'current-month'
+            'scope' => \AllInData\MicroErp\Report\Block\EmployeeUtilizationReport::SCOPE_CURRENT_MONTH,
+            'interval' => \AllInData\MicroErp\Report\Block\EmployeeUtilizationReport::INTERVAL_MONTH,
+            'daily_working_hours' => 8
         ], $name);
-        $this->block->setAttributes($attributes);
+        $block = clone $this->block;
+        $block->setAttributes($attributes);
 
         $this->getTemplate('utilization-report', [
-            'block' => $this->block
+            'block' => $block
         ]);
     }
 }

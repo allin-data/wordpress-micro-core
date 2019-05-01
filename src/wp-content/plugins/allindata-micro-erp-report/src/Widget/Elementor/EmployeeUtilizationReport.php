@@ -67,9 +67,9 @@ class EmployeeUtilizationReport extends AbstractElementorWidget
 
 
         $this->add_control(
-            'id',
+            'report_id',
             [
-                'label' => __('ID', AID_MICRO_ERP_REPORT_TEXTDOMAIN),
+                'label' => __('Report ID', AID_MICRO_ERP_REPORT_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'placeholder' => __('Enter an unique report id', AID_MICRO_ERP_REPORT_TEXTDOMAIN),
                 'default' => uniqid()
@@ -86,11 +86,38 @@ class EmployeeUtilizationReport extends AbstractElementorWidget
         $this->add_control(
             'scope',
             [
-                'label' => __('Resource Type', AID_MICRO_ERP_REPORT_TEXTDOMAIN),
+                'label' => __('Scope', AID_MICRO_ERP_REPORT_TEXTDOMAIN),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'options' => [
-                    'current-month' => __('Current Month', AID_MICRO_ERP_REPORT_TEXTDOMAIN)
-                ]
+                    \AllInData\MicroErp\Report\Block\EmployeeUtilizationReport::SCOPE_CURRENT_MONTH => __('Current Month', AID_MICRO_ERP_REPORT_TEXTDOMAIN),
+                    \AllInData\MicroErp\Report\Block\EmployeeUtilizationReport::SCOPE_LAST_MONTH => __('Last Month', AID_MICRO_ERP_REPORT_TEXTDOMAIN),
+                    \AllInData\MicroErp\Report\Block\EmployeeUtilizationReport::SCOPE_NEXT_MONTH => __('Next Month', AID_MICRO_ERP_REPORT_TEXTDOMAIN)
+                ],
+                'default' => \AllInData\MicroErp\Report\Block\EmployeeUtilizationReport::SCOPE_CURRENT_MONTH
+            ]
+        );
+        $this->add_control(
+            'interval',
+            [
+                'label' => __('Interval', AID_MICRO_ERP_REPORT_TEXTDOMAIN),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    \AllInData\MicroErp\Report\Block\EmployeeUtilizationReport::INTERVAL_DAY => __('Day', AID_MICRO_ERP_REPORT_TEXTDOMAIN),
+                    \AllInData\MicroErp\Report\Block\EmployeeUtilizationReport::INTERVAL_WEEK => __('Week', AID_MICRO_ERP_REPORT_TEXTDOMAIN),
+                    \AllInData\MicroErp\Report\Block\EmployeeUtilizationReport::INTERVAL_MONTH => __('Month', AID_MICRO_ERP_REPORT_TEXTDOMAIN)
+                ],
+                'default' => \AllInData\MicroErp\Report\Block\EmployeeUtilizationReport::INTERVAL_MONTH
+            ]
+        );
+        $this->add_control(
+            'daily_working_hours',
+            [
+                'label' => __('Daily Working Hours', AID_MICRO_ERP_PLANNING_TEXTDOMAIN),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'min' => 1,
+                'max' => 16,
+                'step' => 1,
+                'default' => 8
             ]
         );
 
@@ -106,6 +133,18 @@ class EmployeeUtilizationReport extends AbstractElementorWidget
 
         echo '<div class="'.$this->get_name().'-elementor-widget">';
         echo do_shortcode($this->getShortCode('micro_erp_report_employee_utilization', $settings));
+        echo '</div>';
+    }
+
+    /**
+     * @inheritDoc
+     */
+    protected function _content_template()
+    {
+        $settings = $this->get_frontend_settings_keys();
+
+        echo '<div class="'.$this->get_name().'-elementor-widget">';
+        echo do_shortcode($this->getShortCodePreview('micro_erp_report_employee_utilization', $settings));
         echo '</div>';
     }
 }

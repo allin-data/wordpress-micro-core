@@ -38,7 +38,7 @@ $timeMax = (new \DateTime())->setTime(22, 0, 0);
     </div>
 </nav>
 
-<div id="calendar_<?= $block->getAttribute('id') ?>" class="planning-calendar"></div>
+<div id="calendar_<?= $block->getCalendarId() ?>" class="planning-calendar"></div>
 
 <div id="calendar_modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -159,7 +159,7 @@ $timeMax = (new \DateTime())->setTime(22, 0, 0);
 
 <script>
     jQuery(document).ready(function ($) {
-        let calendarSelector = '#calendar_<?= $block->getAttribute('id') ?>',
+        let calendarSelector = '#calendar_<?= $block->getCalendarId() ?>',
             resizeBuffer,
             currentDate = moment();
 
@@ -188,7 +188,7 @@ $timeMax = (new \DateTime())->setTime(22, 0, 0);
         });
 
         $(calendarSelector).microErpPlanningCalendar({
-            calendarId: 1,
+            calendarId: '<?= $block->getCalendarId(); ?>',
             target: calendarSelector,
             actionCreateSchedule: '<?= $block->getCreateScheduleActionSlug() ?>',
             actionUpdateSchedule: '<?= $block->getUpdateScheduleActionSlug() ?>',

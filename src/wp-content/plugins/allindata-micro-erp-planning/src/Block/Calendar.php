@@ -74,6 +74,14 @@ class Calendar extends AbstractBlock
     }
 
     /**
+     * @return string
+     */
+    public function getCalendarId(): string
+    {
+        return (string)$this->getAttribute('calendar_id');
+    }
+
+    /**
      * @return array[][] 'meta' with resource type information, 'items' with resource information
      */
     public function getResourceMap(): array

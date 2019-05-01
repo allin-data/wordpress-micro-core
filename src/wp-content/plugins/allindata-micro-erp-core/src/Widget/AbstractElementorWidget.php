@@ -62,4 +62,34 @@ abstract class AbstractElementorWidget extends Widget_Base implements ElementorW
             $attributesString
         );
     }
+
+    /**
+     * @param string $name
+     * @param array $attributeKeys
+     * @return string
+     */
+    protected function getShortCodePreview(string $name, array $attributeKeys = []): string
+    {
+        $attributesString = '';
+        foreach ($attributeKeys as $key) {
+            $attributesString .= sprintf(
+                ' %s="{{{ settings.%s }}}"',
+                $key,
+                $key
+            );
+        }
+
+        if (empty($attributes) || 0 === strlen(trim($attributesString))) {
+            return sprintf(
+                '[%s]',
+                $name
+            );
+        }
+
+        return sprintf(
+            '[%s %s]',
+            $name,
+            $attributesString
+        );
+    }
 }
