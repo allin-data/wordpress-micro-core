@@ -9,7 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Resource\Block;
 
 use AllInData\MicroErp\Core\Block\AbstractPaginationBlock;
-use AllInData\MicroErp\Core\Model\GenericCollection;
+use AllInData\MicroErp\Core\Model\GenericOwnedCollection;
 use AllInData\MicroErp\Core\Model\GenericResource;
 use AllInData\MicroErp\Core\Model\PaginationInterface;
 use AllInData\MicroErp\Resource\Controller\DeleteResource;
@@ -44,7 +44,7 @@ class GridResource extends AbstractPaginationBlock
      */
     private $attributeTypeFactory;
     /**
-     * @var GenericCollection
+     * @var GenericOwnedCollection
      */
     private $resourceAttributeValueCollection;
 
@@ -54,14 +54,14 @@ class GridResource extends AbstractPaginationBlock
      * @param GenericResource $resourceTypeResource
      * @param ResourceTypeAttribute $attributeCollection
      * @param AttributeTypeFactory $attributeTypeFactory
-     * @param GenericCollection $resourceAttributeValueCollection
+     * @param GenericOwnedCollection $resourceAttributeValueCollection
      */
     public function __construct(
         PaginationInterface $pagination,
         GenericResource $resourceTypeResource,
         ResourceTypeAttribute $attributeCollection,
         AttributeTypeFactory $attributeTypeFactory,
-        GenericCollection $resourceAttributeValueCollection
+        GenericOwnedCollection $resourceAttributeValueCollection
     ) {
         parent::__construct($pagination);
         $this->resourceTypeResource = $resourceTypeResource;
@@ -184,7 +184,7 @@ class GridResource extends AbstractPaginationBlock
     ): string {
         /** @var ResourceAttributeValue[] $resourceAttributeValueSet */
         $resourceAttributeValueSet = $this->resourceAttributeValueCollection->load(
-            GenericCollection::NO_LIMIT,
+            GenericOwnedCollection::NO_LIMIT,
             0,
             [
                 'meta_query' => [

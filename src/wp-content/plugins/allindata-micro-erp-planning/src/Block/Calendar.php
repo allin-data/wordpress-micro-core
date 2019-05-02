@@ -10,6 +10,7 @@ namespace AllInData\MicroErp\Planning\Block;
 
 use AllInData\MicroErp\Core\Block\AbstractBlock;
 use AllInData\MicroErp\Core\Model\GenericCollection;
+use AllInData\MicroErp\Core\Model\GenericOwnedCollection;
 use AllInData\MicroErp\Planning\Controller\CreateSchedule;
 use AllInData\MicroErp\Planning\Controller\DeleteSchedule;
 use AllInData\MicroErp\Planning\Controller\UpdateSchedule;
@@ -35,7 +36,7 @@ class Calendar extends AbstractBlock
      */
     private $resourceTypeCollection;
     /**
-     * @var GenericCollection
+     * @var GenericOwnedCollection
      */
     private $resourceCollection;
     /**
@@ -43,7 +44,7 @@ class Calendar extends AbstractBlock
      */
     private $attributeCollection;
     /**
-     * @var GenericCollection
+     * @var GenericOwnedCollection
      */
     private $resourceAttributeValueCollection;
     /**
@@ -55,16 +56,16 @@ class Calendar extends AbstractBlock
      * Calendar constructor.
      * @param ScheduleCollection $scheduleCollection
      * @param GenericCollection $resourceTypeCollection
-     * @param GenericCollection $resourceCollection
+     * @param GenericOwnedCollection $resourceCollection
      * @param \AllInData\MicroErp\Resource\Model\Collection\ResourceTypeAttribute $attributeCollection
-     * @param GenericCollection $resourceAttributeValueCollection
+     * @param GenericOwnedCollection $resourceAttributeValueCollection
      */
     public function __construct(
         ScheduleCollection $scheduleCollection,
         GenericCollection $resourceTypeCollection,
-        GenericCollection $resourceCollection,
+        GenericOwnedCollection $resourceCollection,
         \AllInData\MicroErp\Resource\Model\Collection\ResourceTypeAttribute $attributeCollection,
-        GenericCollection $resourceAttributeValueCollection
+        GenericOwnedCollection $resourceAttributeValueCollection
     ) {
         $this->scheduleCollection = $scheduleCollection;
         $this->resourceTypeCollection = $resourceTypeCollection;

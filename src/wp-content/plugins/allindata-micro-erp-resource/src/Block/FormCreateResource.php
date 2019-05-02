@@ -93,7 +93,7 @@ class FormCreateResource extends AbstractBlock
     public function getResourceType()
     {
         /** @var ResourceType $resourceType */
-        $resourceType = $this->resourceTypeResource->loadById($this->getResourceTypeId());
+        $resourceType = $this->resourceTypeResource->loadBypassOwnership($this->getResourceTypeId());
         return $resourceType;
     }
 
@@ -103,7 +103,7 @@ class FormCreateResource extends AbstractBlock
      */
     public function getResourceTypeAttributes(ResourceType $resourceType): array
     {
-        $unsortedResult = $this->attributeCollection->load(ResourceTypeAttribute::NO_LIMIT, 0,
+        $unsortedResult = $this->attributeCollection->loadBypassOwnership(ResourceTypeAttribute::NO_LIMIT, 0,
             [
                 'meta_query' => [
                     [

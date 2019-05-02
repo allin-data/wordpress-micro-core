@@ -9,7 +9,7 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Resource\Controller;
 
 use AllInData\MicroErp\Core\Controller\AbstractController;
-use AllInData\MicroErp\Core\Model\GenericCollection;
+use AllInData\MicroErp\Core\Model\GenericOwnedCollection;
 use AllInData\MicroErp\Core\Model\GenericResource;
 use AllInData\MicroErp\Resource\Model\Resource;
 use AllInData\MicroErp\Resource\Model\ResourceAttributeValue;
@@ -27,16 +27,16 @@ class DeleteResource extends AbstractController
      */
     private $resourceResource;
     /**
-     * @var GenericCollection
+     * @var GenericOwnedCollection
      */
     private $resourceAttributeValueCollection;
 
     /**
      * DeleteResource constructor.
      * @param GenericResource $resourceResource
-     * @param GenericCollection $resourceAttributeValueCollection
+     * @param GenericOwnedCollection $resourceAttributeValueCollection
      */
-    public function __construct(GenericResource $resourceResource, GenericCollection $resourceAttributeValueCollection)
+    public function __construct(GenericResource $resourceResource, GenericOwnedCollection $resourceAttributeValueCollection)
     {
         $this->resourceResource = $resourceResource;
         $this->resourceAttributeValueCollection = $resourceAttributeValueCollection;
@@ -58,7 +58,7 @@ class DeleteResource extends AbstractController
         }
 
         $resourceAttributeValues = $this->resourceAttributeValueCollection->load(
-            GenericCollection::NO_LIMIT,
+            GenericOwnedCollection::NO_LIMIT,
             0,
             [
                 'meta_query' => [

@@ -9,14 +9,14 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Resource\Model\Collection;
 
 use AllInData\MicroErp\Core\Helper\MethodUtil;
-use AllInData\MicroErp\Core\Model\AbstractCollection;
+use AllInData\MicroErp\Core\Model\AbstractOwnedCollection;
 use InvalidArgumentException;
 
 /**
  * Class ResourceTypeAttribute
  * @package AllInData\MicroErp\Resource\Model\Collection
  */
-class ResourceTypeAttribute extends AbstractCollection
+class ResourceTypeAttribute extends AbstractOwnedCollection
 {
     const RESOURCE_TYPE_FILTER_ATTRIBUTE = 'resource_type_id';
 
