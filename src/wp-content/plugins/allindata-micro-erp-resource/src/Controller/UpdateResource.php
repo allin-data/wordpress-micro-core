@@ -10,7 +10,7 @@ namespace AllInData\MicroErp\Resource\Controller;
 
 use AllInData\MicroErp\Core\Controller\AbstractController;
 use AllInData\MicroErp\Core\Model\GenericOwnedCollection;
-use AllInData\MicroErp\Core\Model\GenericResource;
+use AllInData\MicroErp\Core\Model\GenericOwnedResource;
 use AllInData\MicroErp\Resource\Model\Resource;
 use AllInData\MicroErp\Resource\Model\ResourceAttributeValue;
 
@@ -23,7 +23,7 @@ class UpdateResource extends AbstractController
     const ACTION_SLUG = 'micro_erp_resource_update_resource';
 
     /**
-     * @var GenericResource
+     * @var GenericOwnedResource
      */
     private $resourceResource;
     /**
@@ -33,10 +33,10 @@ class UpdateResource extends AbstractController
 
     /**
      * UpdateResource constructor.
-     * @param GenericResource $resourceResource
+     * @param GenericOwnedResource $resourceResource
      * @param GenericOwnedCollection $resourceAttributeValueCollection
      */
-    public function __construct(GenericResource $resourceResource, GenericOwnedCollection $resourceAttributeValueCollection)
+    public function __construct(GenericOwnedResource $resourceResource, GenericOwnedCollection $resourceAttributeValueCollection)
     {
         $this->resourceResource = $resourceResource;
         $this->resourceAttributeValueCollection = $resourceAttributeValueCollection;

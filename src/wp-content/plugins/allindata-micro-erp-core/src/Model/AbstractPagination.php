@@ -135,6 +135,7 @@ abstract class AbstractPagination implements PaginationInterface
         $queryArgs['order'] = $orderSet;
         $queryArgs['orderby'] = $orderBySet;
         $queryArgs['meta_key'] = $metaKeySet;
+        $queryArgs = $this->applyQueryArguments($queryArgs);
         return $this->collection->load(
             $limit,
             $offset,
@@ -308,5 +309,14 @@ abstract class AbstractPagination implements PaginationInterface
             $sorters[] = $this->paginationSorterFactory->create($valueSet);
         }
         return $sorters;
+    }
+
+    /**
+     * @param array $queryArgs
+     * @return array
+     */
+    protected function applyQueryArguments(array $queryArgs): array
+    {
+        return $queryArgs;
     }
 }

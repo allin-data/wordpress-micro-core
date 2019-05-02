@@ -10,6 +10,7 @@ namespace AllInData\MicroErp\Resource\Controller;
 
 use AllInData\MicroErp\Core\Controller\AbstractController;
 use AllInData\MicroErp\Core\Model\GenericFactory;
+use AllInData\MicroErp\Core\Model\GenericOwnedResource;
 use AllInData\MicroErp\Core\Model\GenericResource;
 use AllInData\MicroErp\Resource\Model\Resource;
 use AllInData\MicroErp\Resource\Model\ResourceAttributeValue;
@@ -23,7 +24,7 @@ class CreateResource extends AbstractController
     const ACTION_SLUG = 'micro_erp_resource_create_resource';
 
     /**
-     * @var GenericResource
+     * @var GenericOwnedResource
      */
     private $resourceResource;
     /**
@@ -35,22 +36,22 @@ class CreateResource extends AbstractController
      */
     private $resourceAttributeValueFactory;
     /**
-     * @var GenericResource
+     * @var GenericOwnedResource
      */
     private $resourceAttributeValueResource;
 
     /**
      * CreateResource constructor.
-     * @param GenericResource $resourceResource
+     * @param GenericOwnedResource $resourceResource
      * @param GenericResource $resourceTypeResource
      * @param GenericFactory $resourceAttributeValueFactory
-     * @param GenericResource $resourceAttributeValueResource
+     * @param GenericOwnedResource $resourceAttributeValueResource
      */
     public function __construct(
-        GenericResource $resourceResource,
+        GenericOwnedResource $resourceResource,
         GenericResource $resourceTypeResource,
         GenericFactory $resourceAttributeValueFactory,
-        GenericResource $resourceAttributeValueResource
+        GenericOwnedResource $resourceAttributeValueResource
     ) {
         $this->resourceResource = $resourceResource;
         $this->resourceTypeResource = $resourceTypeResource;

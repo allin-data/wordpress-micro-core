@@ -45,4 +45,6 @@ defined('ABSPATH') or exit;
 
 require __DIR__ . '/vendor/autoload.php';
 
-do_action('allindata/micro/erp/init');
+add_action('plugins_loaded', function () {
+    do_action('allindata/micro/erp/init');
+});

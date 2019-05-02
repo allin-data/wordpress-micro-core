@@ -13,9 +13,12 @@ use AllInData\MicroErp\Core\Module\PluginModuleInterface;
 use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
 use AllInData\MicroErp\Core\Widget\ElementorWidgetInterface;
 use AllInData\MicroErp\Mdm\Model\Capability\CapabilityInterface;
-use AllInData\MicroErp\Subordination\Module\AdministrationResource;
-use AllInData\MicroErp\Subordination\Module\ManagerResource;
-use AllInData\MicroErp\Subordination\Module\OwnerResource;
+use AllInData\MicroErp\Mdm\Model\Role\AdministratorRole;
+use AllInData\MicroErp\Mdm\Model\Role\ManagerRole;
+use AllInData\MicroErp\Mdm\Model\Role\OwnerRole;
+use AllInData\MicroErp\Subordination\Module\AdministratorScopeResource;
+use AllInData\MicroErp\Subordination\Module\ManagerScopeResource;
+use AllInData\MicroErp\Subordination\Module\OwnerScopeResource;
 use bitExpert\Disco\Annotations\Configuration;
 use bitExpert\Disco\Annotations\Bean;
 use Exception;
@@ -57,9 +60,9 @@ class PluginConfiguration
     private function getPluginModules(): array
     {
         return [
-            new AdministrationResource(),
-            new OwnerResource(),
-            new ManagerResource()
+            new AdministratorScopeResource(new AdministratorRole()),
+            new OwnerScopeResource(new OwnerRole()),
+            new ManagerScopeResource(new ManagerRole())
         ];
     }
 

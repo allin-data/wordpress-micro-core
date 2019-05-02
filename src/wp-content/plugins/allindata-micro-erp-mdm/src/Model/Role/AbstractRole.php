@@ -42,6 +42,7 @@ abstract class AbstractRole implements RoleInterface
     {
         add_role($this->getRoleLevel(), $this->getRoleLabel(), $this->getCapabilities());
         do_action('role_install_' . $this->getRoleLevel(), $this->getRoleLevel());
+        $this->installCapability($this->getRoleLevel());
         $this->installCapability($this->getRoleLevel() . '_view_menu');
     }
 
@@ -53,6 +54,7 @@ abstract class AbstractRole implements RoleInterface
         remove_role($this->getRoleLevel());
         do_action('role_remove_' . $this->getRoleLevel(), $this->getRoleLevel());
         $this->removeCapability($this->getRoleLevel() . '_view_menu');
+        $this->removeCapability($this->getRoleLevel());
     }
 
     /**
@@ -93,6 +95,10 @@ abstract class AbstractRole implements RoleInterface
      */
     public function addRoleNavigationMenu()
     {
+        if (has_nav_menu('menu_' . $this->getRoleLevel())) {
+            return;
+        }
+
         register_nav_menu(
             'menu_' . $this->getRoleLevel(), sprintf(
                 __('Menu %1$s', AID_MICRO_ERP_MDM_TEXTDOMAIN),

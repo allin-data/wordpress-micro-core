@@ -13,6 +13,8 @@ use AllInData\MicroErp\Core\Model\GenericCollection;
 use AllInData\MicroErp\Core\Controller\PluginControllerInterface;
 use AllInData\MicroErp\Core\Database\WordpressDatabase;
 use AllInData\MicroErp\Core\Model\GenericFactory;
+use AllInData\MicroErp\Core\Model\GenericOwnedPagination;
+use AllInData\MicroErp\Core\Model\GenericOwnedResource;
 use AllInData\MicroErp\Core\Model\GenericPagination;
 use AllInData\MicroErp\Core\Model\GenericPaginationFilter;
 use AllInData\MicroErp\Core\Model\GenericPaginationSorter;
@@ -267,11 +269,11 @@ class PluginConfiguration
     }
 
     /**
-     * @return GenericResource
+     * @return GenericOwnedResource
      */
-    private function getResourceResource(): GenericResource
+    private function getResourceResource(): GenericOwnedResource
     {
-        return new GenericResource(
+        return new GenericOwnedResource(
             $this->getWordpressDatabase(),
             'resource',
             $this->getResourceFactory()
@@ -279,11 +281,11 @@ class PluginConfiguration
     }
 
     /**
-     * @return GenericResource
+     * @return GenericOwnedResource
      */
-    private function getResourceAttributeValueResource(): GenericResource
+    private function getResourceAttributeValueResource(): GenericOwnedResource
     {
-        return new GenericResource(
+        return new GenericOwnedResource(
             $this->getWordpressDatabase(),
             'resattribute_value',
             $this->getResourceAttributeValueFactory()
@@ -355,11 +357,11 @@ class PluginConfiguration
     }
 
     /**
-     * @return GenericPagination
+     * @return GenericOwnedPagination
      */
-    private function getResourcePagination(): GenericPagination
+    private function getResourcePagination(): GenericOwnedPagination
     {
-        return new GenericPagination(
+        return new GenericOwnedPagination(
             $this->getResourceCollection(),
             new PaginationFilterFactory(GenericPaginationFilter::class),
             new PaginationSorterFactory(GenericPaginationSorter::class)
