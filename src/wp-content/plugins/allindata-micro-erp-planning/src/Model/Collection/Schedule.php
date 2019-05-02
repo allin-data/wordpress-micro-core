@@ -8,7 +8,7 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Planning\Model\Collection;
 
-use AllInData\MicroErp\Auth\Model\AbstractOwnedCollection;
+use AllInData\MicroErp\Core\Model\AbstractOwnedCollection;
 
 /**
  * Class Schedule

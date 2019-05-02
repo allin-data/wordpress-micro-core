@@ -12,6 +12,6 @@ namespace AllInData\MicroErp\Core\Model;
  * Class GenericCollection
  * @package AllInData\MicroErp\Core\Model
  */
-class GenericCollection extends AbstractOwnedCollection
+class GenericCollection extends AbstractCollection
 {
 }

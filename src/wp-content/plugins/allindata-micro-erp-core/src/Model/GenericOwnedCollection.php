@@ -6,18 +6,15 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Auth\Model;
-
-use AllInData\MicroErp\Core\Model\GenericCollection;
+namespace AllInData\MicroErp\Core\Model;
 
 /**
  * Class GenericOwnedCollection
- * @package AllInData\MicroErp\Auth\Model
+ * @package AllInData\MicroErp\Core\Model
  */
-class GenericOwnedCollection extends GenericCollection
+class GenericOwnedCollection extends AbstractOwnedCollection
 {
     /**
-     * @TODO Support user scope take over by leading user role or administrator
      * @return int[]
      */
     protected function getCurrentScopeUserIdSet(): array

@@ -8,7 +8,7 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Resource;
 
-use AllInData\MicroErp\Auth\Model\GenericOwnedCollection;
+use AllInData\MicroErp\Core\Model\GenericOwnedCollection;
 use AllInData\MicroErp\Core\Model\GenericCollection;
 use AllInData\MicroErp\Core\Controller\PluginControllerInterface;
 use AllInData\MicroErp\Core\Database\WordpressDatabase;
