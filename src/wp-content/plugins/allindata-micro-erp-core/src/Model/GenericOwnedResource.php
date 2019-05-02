@@ -9,9 +9,9 @@ Copyright (C) 2019 All.In Data GmbH
 namespace AllInData\MicroErp\Core\Model;
 
 /**
- * Class GenericResource
+ * Class GenericOwnedResource
  * @package AllInData\MicroErp\Core\Model
  */
-class GenericResource extends AbstractResource
+class GenericOwnedResource extends AbstractOwnedResource
 {
 }
