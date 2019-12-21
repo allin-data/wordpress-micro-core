@@ -1,1 +1,0 @@
-<img class="jet-template-preview-img">

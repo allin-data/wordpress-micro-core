@@ -1,9 +1,0 @@
-.jet-logo {
-	display: flex;
-	&__link {
-		display: inline-flex;
-		.jet-logo-display-block & {
-			flex-direction: column;
-		}
-	}
-}
