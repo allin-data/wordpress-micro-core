@@ -24,7 +24,6 @@ interface PluginShortCodeInterface
      * @param array $attributes
      * @param string $content
      * @param string $name
-     * @return mixed
      */
     public function addShortCode($attributes, $content, $name);
 }

@@ -26,19 +26,19 @@ abstract class AbstractResource
     /**
      * @var WordpressDatabase
      */
-    private $database;
+    protected $database;
     /**
      * @var string
      */
-    private $entityName;
+    protected $entityName;
     /**
      * @var AbstractFactory
      */
-    private $modelFactory;
+    protected $modelFactory;
     /**
      * @var string
      */
-    private $primaryKey;
+    protected $primaryKey;
 
     /**
      * AbstractResource constructor.

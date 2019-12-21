@@ -1,4 +1,4 @@
 # Micro ERP Core
 
-The Core module of the All.In Data Micro ERP environment provides fundamental and 
-reusable functionalities. It has no specific purpose on its own.
+The Core module of the All.In Data Micro ERP provides fundamental and 
+reusable functionality for the modern development of Wordpress plugins.

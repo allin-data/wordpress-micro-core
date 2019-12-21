@@ -49,6 +49,7 @@ abstract class AbstractPaginationBlock extends AbstractBlock
     }
 
     /**
+     * @param bool $showSummary
      * @param bool $reverseLayout
      */
     public function renderPaginationBlock($showSummary = true, $reverseLayout = false)

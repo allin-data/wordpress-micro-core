@@ -31,7 +31,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  * License: proprietary
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * WC requires at least: 5.0.0
- * WC tested up to: 5.1.0
+ * WC tested up to: 5.3.0
  */
 
 define('AID_MICRO_ERP_CORE_VERSION', '1.0');

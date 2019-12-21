@@ -12,6 +12,11 @@
             "homepage": "https://www.all-in-data.de"
         }
     ],
+    "config": {
+        "platform": {
+            "php": "7.2.18"
+        }
+    },
     "require": {
         "bitexpert/disco": "^0.10"
     },

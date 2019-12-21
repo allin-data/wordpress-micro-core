@@ -8,6 +8,7 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Core\ShortCode;
 
+use AllInData\MicroErp\Core\Block\AbstractBlock;
 use function apply_filters;
 use function load_template;
 
@@ -17,18 +18,27 @@ use function load_template;
  */
 abstract class AbstractShortCode implements PluginShortCodeInterface
 {
+    const SHORTCODE_NAME = '';
+    const TEMPLATE_NAME = '';
+
     /**
      * @var string
      */
-    private $templatePath;
+    protected $templatePath;
+    /**
+     * @var AbstractBlock
+     */
+    protected $block;
 
     /**
-     * AbstractPlugin constructor.
+     * AbstractShortCode constructor.
      * @param string $templatePath
+     * @param AbstractBlock $block
      */
-    public function __construct(string $templatePath = '')
+    public function __construct(string $templatePath, AbstractBlock $block)
     {
         $this->templatePath = $templatePath;
+        $this->block = $block;
     }
 
     /**
@@ -42,7 +52,71 @@ abstract class AbstractShortCode implements PluginShortCodeInterface
     /**
      * @inheritdoc
      */
-    abstract public function init();
+    public function init()
+    {
+        add_shortcode($this->getShortCodeName(), [$this, 'addShortCode']);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function addShortCode($attributes, $content, $name)
+    {
+        if(!$this->beforeExecute()) {
+            return '';
+        }
+
+        if (empty($attributes)) {
+            $attributes = [];
+        }
+        $attributes = $this->prepareAttributes($attributes, $this->getDefaultAttributeMap(), $name);
+
+        $block = clone $this->block;
+        $block->setAttributes($attributes);
+
+        ob_start();
+        $this->getTemplate($this->getTemplateName(), [
+            'block' => $block
+        ]);
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+    /**
+     * @return bool
+     */
+    protected function beforeExecute(): bool
+    {
+        if (is_admin()) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * @return string
+     */
+    protected function getShortCodeName(): string
+    {
+        return static::SHORTCODE_NAME;
+    }
+
+    /**
+     * @return string
+     */
+    protected function getTemplateName(): string
+    {
+        return static::TEMPLATE_NAME;
+    }
+
+    /**
+     * @return array
+     */
+    protected function getDefaultAttributeMap(): array
+    {
+        return [];
+    }
 
     /**
      * @param string $templateName
