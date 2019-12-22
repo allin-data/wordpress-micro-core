@@ -8,13 +8,6 @@ Copyright (C) 2019 All.In Data GmbH
 
 namespace AllInData\MicroErp\Core;
 
-define('AID_MICRO_ERP_CORE_VERSION', '1.0');
-define('AID_MICRO_ERP_CORE_SLUG', 'allindata-micro-erp-core');
-define('AID_MICRO_ERP_CORE_TEXTDOMAIN', 'allindata-micro-erp-core');
-define('AID_MICRO_ERP_CORE_TEMPLATE_DIR', __DIR__ . '/view/');
-define('AID_MICRO_ERP_CORE_TEMP_DIR', ABSPATH . 'tmp/');
-define('AID_MICRO_ERP_CORE_FILE', __FILE__);
-
 add_action('plugins_loaded', function () {
     do_action('allindata/micro/erp/init');
 });
@@ -27,6 +20,13 @@ class Init
 {
     static public function init()
     {
+        if (!defined('AID_MICRO_ERP_CORE_VERSION')) define('AID_MICRO_ERP_CORE_VERSION', '1.0');
+        if (!defined('AID_MICRO_ERP_CORE_SLUG')) define('AID_MICRO_ERP_CORE_SLUG', 'allindata-micro-erp-core');
+        if (!defined('AID_MICRO_ERP_CORE_TEXTDOMAIN')) define('AID_MICRO_ERP_CORE_TEXTDOMAIN', 'allindata-micro-erp-core');
+        if (!defined('AID_MICRO_ERP_CORE_TEMPLATE_DIR')) define('AID_MICRO_ERP_CORE_TEMPLATE_DIR', __DIR__ . '/../view/');
+        if (!defined('AID_MICRO_ERP_CORE_TEMP_DIR')) define('AID_MICRO_ERP_CORE_TEMP_DIR', ABSPATH . 'tmp/');
+        if (!defined('AID_MICRO_ERP_CORE_FILE')) define('AID_MICRO_ERP_CORE_FILE', __FILE__);
+
         if (!static::checkDependencies()) {
             return;
         }
