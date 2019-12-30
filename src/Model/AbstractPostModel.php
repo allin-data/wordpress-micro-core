@@ -31,15 +31,15 @@ abstract class AbstractPostModel extends AbstractModel
      */
     private $postDateGmt;
     /**
-     * @var string|null
+     * @var string|int|null
      */
     private $postContent;
     /**
-     * @var string|null
+     * @var string|int|null
      */
     private $postTitle;
     /**
-     * @var string|null
+     * @var string|int|null
      */
     private $postExcerpt;
     /**
@@ -59,15 +59,15 @@ abstract class AbstractPostModel extends AbstractModel
      */
     private $postPassword;
     /**
-     * @var string|null
+     * @var string|int|null
      */
     private $postName;
     /**
-     * @var string|null
+     * @var string|int|null
      */
     private $toPing;
     /**
-     * @var string|null
+     * @var string|int|null
      */
     private $pinged;
     /**
@@ -79,7 +79,7 @@ abstract class AbstractPostModel extends AbstractModel
      */
     private $postModifiedGmt;
     /**
-     * @var string|null
+     * @var string|int|null
      */
     private $postContentFiltered;
     /**
@@ -87,7 +87,7 @@ abstract class AbstractPostModel extends AbstractModel
      */
     private $postParent;
     /**
-     * @var string|null
+     * @var string|int|null
      */
     private $guid;
     /**
@@ -95,7 +95,7 @@ abstract class AbstractPostModel extends AbstractModel
      */
     private $menuOrder;
     /**
-     * @var string|null
+     * @var string|int|null
      */
     private $postType;
     /**
@@ -180,54 +180,54 @@ abstract class AbstractPostModel extends AbstractModel
     }
 
     /**
-     * @return string|null
+     * @return int|string|null
      */
-    public function getPostContent(): ?string
+    public function getPostContent()
     {
         return $this->postContent;
     }
 
     /**
-     * @param string|null $postContent
+     * @param int|string|null $postContent
      * @return AbstractPostModel
      */
-    public function setPostContent(?string $postContent): AbstractPostModel
+    public function setPostContent($postContent)
     {
         $this->postContent = $postContent;
         return $this;
     }
 
     /**
-     * @return string|null
+     * @return int|string|null
      */
-    public function getPostTitle(): ?string
+    public function getPostTitle()
     {
         return $this->postTitle;
     }
 
     /**
-     * @param string|null $postTitle
+     * @param int|string|null $postTitle
      * @return AbstractPostModel
      */
-    public function setPostTitle(?string $postTitle): AbstractPostModel
+    public function setPostTitle($postTitle)
     {
         $this->postTitle = $postTitle;
         return $this;
     }
 
     /**
-     * @return string|null
+     * @return int|string|null
      */
-    public function getPostExcerpt(): ?string
+    public function getPostExcerpt()
     {
         return $this->postExcerpt;
     }
 
     /**
-     * @param string|null $postExcerpt
+     * @param int|string|null $postExcerpt
      * @return AbstractPostModel
      */
-    public function setPostExcerpt(?string $postExcerpt): AbstractPostModel
+    public function setPostExcerpt($postExcerpt)
     {
         $this->postExcerpt = $postExcerpt;
         return $this;
@@ -306,54 +306,54 @@ abstract class AbstractPostModel extends AbstractModel
     }
 
     /**
-     * @return string|null
+     * @return int|string|null
      */
-    public function getPostName(): ?string
+    public function getPostName()
     {
         return $this->postName;
     }
 
     /**
-     * @param string|null $postName
+     * @param int|string|null $postName
      * @return AbstractPostModel
      */
-    public function setPostName(?string $postName): AbstractPostModel
+    public function setPostName($postName)
     {
         $this->postName = $postName;
         return $this;
     }
 
     /**
-     * @return string|null
+     * @return int|string|null
      */
-    public function getToPing(): ?string
+    public function getToPing()
     {
         return $this->toPing;
     }
 
     /**
-     * @param string|null $toPing
+     * @param int|string|null $toPing
      * @return AbstractPostModel
      */
-    public function setToPing(?string $toPing): AbstractPostModel
+    public function setToPing($toPing)
     {
         $this->toPing = $toPing;
         return $this;
     }
 
     /**
-     * @return string|null
+     * @return int|string|null
      */
-    public function getPinged(): ?string
+    public function getPinged()
     {
         return $this->pinged;
     }
 
     /**
-     * @param string|null $pinged
+     * @param int|string|null $pinged
      * @return AbstractPostModel
      */
-    public function setPinged(?string $pinged): AbstractPostModel
+    public function setPinged($pinged)
     {
         $this->pinged = $pinged;
         return $this;
@@ -396,18 +396,18 @@ abstract class AbstractPostModel extends AbstractModel
     }
 
     /**
-     * @return string|null
+     * @return int|string|null
      */
-    public function getPostContentFiltered(): ?string
+    public function getPostContentFiltered()
     {
         return $this->postContentFiltered;
     }
 
     /**
-     * @param string|null $postContentFiltered
+     * @param int|string|null $postContentFiltered
      * @return AbstractPostModel
      */
-    public function setPostContentFiltered(?string $postContentFiltered): AbstractPostModel
+    public function setPostContentFiltered($postContentFiltered)
     {
         $this->postContentFiltered = $postContentFiltered;
         return $this;
@@ -432,18 +432,18 @@ abstract class AbstractPostModel extends AbstractModel
     }
 
     /**
-     * @return string|null
+     * @return int|string|null
      */
-    public function getGuid(): ?string
+    public function getGuid()
     {
         return $this->guid;
     }
 
     /**
-     * @param string|null $guid
+     * @param int|string|null $guid
      * @return AbstractPostModel
      */
-    public function setGuid(?string $guid): AbstractPostModel
+    public function setGuid($guid)
     {
         $this->guid = $guid;
         return $this;
@@ -468,18 +468,18 @@ abstract class AbstractPostModel extends AbstractModel
     }
 
     /**
-     * @return string|null
+     * @return int|string|null
      */
-    public function getPostType(): ?string
+    public function getPostType()
     {
         return $this->postType;
     }
 
     /**
-     * @param string|null $postType
+     * @param int|string|null $postType
      * @return AbstractPostModel
      */
-    public function setPostType(?string $postType): AbstractPostModel
+    public function setPostType($postType)
     {
         $this->postType = $postType;
         return $this;
