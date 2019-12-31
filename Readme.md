@@ -152,7 +152,7 @@ class Plugin extends AbstractPlugin implements PluginInterface
 }
 ```
 
-This should be enough as a scaffold to start you plugin development.
+This should be enough as a scaffold to start your plugin development.
 
 ## Contribution
 Feel free to contribute to this library by reporting issues or create some pull requests for improvements.
