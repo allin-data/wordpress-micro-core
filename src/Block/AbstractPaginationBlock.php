@@ -35,7 +35,7 @@ abstract class AbstractPaginationBlock extends AbstractBlock
      */
     public function __construct(
         PaginationInterface $pagination,
-        string $paginationTemplatePath
+        string $paginationTemplatePath = Init::TEMPLATE_DIR
     ) {
         $this->pagination = $pagination;
         $this->paginationTemplatePath = $paginationTemplatePath;

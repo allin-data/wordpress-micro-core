@@ -40,13 +40,20 @@ require __DIR__ . '/vendor/autoload.php';
 
 class FoobarWp extends \AllInData\Micro\Core\Init
 {
-    static $PLUGIN_CONFIGURATION = \FoobarWp\PluginConfiguration::class;
-    static $VERSION = '1.0';
-    static $SLUG = 'foobar-wp';
-    static $TEXTDOMAIN = 'foobar-wp';
-    static $TEMPLATE_DIR = __DIR__ . '/view/';
-    static $TEMP_DIR = ABSPATH . 'tmp/';
-    static $FILE = __FILE__;
+    const SLUG = 'foobar-wp';
+
+    static public function prepare()
+    {
+        static::$PLUGIN_CONFIGURATION = \FoobarWp\PluginConfiguration::class;
+        static::$VERSION = '1.0';
+        static::$SLUG = self::SLUG;
+        static::$TEXTDOMAIN = self::SLUG;
+        static::$TEMPLATE_DIR = __DIR__ . '/view/';
+        static::$TEMP_DIR = ABSPATH . 'tmp/';
+        static::$FILE = __FILE__;
+        static::$PATH = \plugin_dir_path(__FILE__);
+        static::$URL = \plugin_dir_url(__FILE__);
+    }
 }
 add_action('allindata/micro/core/init', [FoobarWp::class, 'init']);
 ```

@@ -18,27 +18,40 @@ add_action('plugins_loaded', function () {
  */
 class Init
 {
-    static $PLUGIN_CONFIGURATION = '';
-    static $VERSION = '1.2';
-    static $SLUG = 'allindata-micro-core-core';
-    static $TEXTDOMAIN = 'allindata-micro-core-core';
-    static $TEMPLATE_DIR = __DIR__ . '/view/';
-    static $TEMP_DIR = ABSPATH . 'tmp/';
-    static $FILE = __FILE__;
-    static $PATH;
-    static $URL;
+    const TEMPLATE_DIR = __DIR__ . '/../view/';
+
+    static public $PLUGIN_CONFIGURATION = '';
+    static public $VERSION = '1.2';
+    static public $SLUG = 'allindata-micro-core-core';
+    static public $TEXTDOMAIN = 'allindata-micro-core-core';
+    static public $TEMPLATE_DIR = __DIR__ . '/../view/';
+    static public $TEMP_DIR = ABSPATH . 'tmp/';
+    static public $FILE = __FILE__;
+    static public $PATH;
+    static public $URL;
+
+    static public function prepare()
+    {
+        static::$VERSION = '1.2';
+        static::$SLUG = 'allindata-micro-core-core';
+        static::$TEXTDOMAIN = 'allindata-micro-core-core';
+        static::$TEMPLATE_DIR = __DIR__ . '/../view/';
+        static::$TEMP_DIR = ABSPATH . 'tmp/';
+        static::$FILE = __FILE__;
+        static::$PATH = \plugin_dir_path(__FILE__);
+        static::$URL = \plugin_dir_url(__FILE__);
+    }
 
     static public function init()
     {
-        static::$PATH = \plugin_dir_path(__FILE__);
-        static::$URL = \plugin_dir_url(__FILE__);
+        static::prepare();
 
         if (!static::checkDependencies()) {
             return;
         }
 
         static::loadPlugin(
-            static::$SLUG,
+            static::$SLUG ,
             static::$TEMP_DIR,
             static::$PLUGIN_CONFIGURATION
         );
