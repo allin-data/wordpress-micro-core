@@ -6,15 +6,16 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core\Controller;
+namespace AllInData\Micro\Core\Controller;
 
-use AllInData\MicroErp\Core\Helper\RequestUtil;
-use AllInData\MicroErp\Core\Model\AbstractModel;
+use AllInData\Micro\Core\Helper\RequestUtil;
+use AllInData\Micro\Core\Init;
+use AllInData\Micro\Core\Model\AbstractModel;
 use Exception;
 
 /**
  * Class AbstractController
- * @package AllInData\MicroErp\Core\Controller
+ * @package AllInData\Micro\Core\Controller
  */
 abstract class AbstractController implements PluginControllerInterface
 {
@@ -47,13 +48,13 @@ abstract class AbstractController implements PluginControllerInterface
     protected function beforeExecute()
     {
         if (!$this->isAllowed()) {
-            $this->throwErrorMessage(__('Insufficient permissions', AID_MICRO_ERP_CORE_TEXTDOMAIN));
+            $this->throwErrorMessage(__('Insufficient permissions', Init::$TEXTDOMAIN));
         }
 
         if (!(defined('DOING_AJAX') && DOING_AJAX)) {
             $nonce = $this->getParam('nonce');
             if (!$nonce || false === wp_verify_nonce($nonce, static::ACTION_SLUG)) {
-                $this->throwErrorMessage(__('Invalid nonce specified', AID_MICRO_ERP_CORE_TEXTDOMAIN));
+                $this->throwErrorMessage(__('Invalid nonce specified', Init::$TEXTDOMAIN));
             }
         }
     }

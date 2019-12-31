@@ -6,14 +6,14 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core\Model;
+namespace AllInData\Micro\Core\Model;
 
-use AllInData\MicroErp\Core\Helper\MethodUtil;
-use AllInData\MicroErp\Core\Helper\RequestUtil;
+use AllInData\Micro\Core\Helper\MethodUtil;
+use AllInData\Micro\Core\Helper\RequestUtil;
 
 /**
  * Class AbstractPagination
- * @package AllInData\MicroErp\Core\Model
+ * @package AllInData\Micro\Core\Model
  */
 abstract class AbstractPagination implements PaginationInterface
 {

@@ -6,14 +6,14 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core\Block;
+namespace AllInData\Micro\Core\Block;
 
-use AllInData\MicroErp\Core\Controller\AbstractController;
-use AllInData\MicroErp\Core\Model\AbstractModel;
+use AllInData\Micro\Core\Controller\AbstractController;
+use AllInData\Micro\Core\Model\AbstractModel;
 
 /**
  * Class AbstractBlock
- * @package AllInData\MicroErp\Core\Block
+ * @package AllInData\Micro\Core\Block
  */
 abstract class AbstractBlock
 {

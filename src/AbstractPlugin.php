@@ -6,15 +6,15 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core;
+namespace AllInData\Micro\Core;
 
-use AllInData\MicroErp\Core\Controller\PluginControllerInterface;
-use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
-use AllInData\MicroErp\Core\Module\PluginModuleInterface;
+use AllInData\Micro\Core\Controller\PluginControllerInterface;
+use AllInData\Micro\Core\ShortCode\PluginShortCodeInterface;
+use AllInData\Micro\Core\Module\PluginModuleInterface;
 
 /**
  * Class AbstractPlugin
- * @package AllInData\MicroErp\Core
+ * @package AllInData\Micro\Core
  */
 abstract class AbstractPlugin implements PluginInterface
 {
@@ -118,6 +118,6 @@ abstract class AbstractPlugin implements PluginInterface
     private function loadTemplate($templateName)
     {
         $template = $this->getTemplatePath() . $templateName . '.php';
-        return \apply_filters('micro_erp_locate_template', $template, $templateName, $this->templatePath);
+        return \apply_filters('micro_core_locate_template', $template, $templateName, $this->templatePath);
     }
 }

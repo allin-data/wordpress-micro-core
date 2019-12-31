@@ -6,13 +6,13 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core\Model;
+namespace AllInData\Micro\Core\Model;
 
 use Elementor\Core\Common\Modules\Finder\Base_Category as Entity;
 
 /**
  * Class AbstractElementorFactory
- * @package AllInData\MicroErp\Core\Model
+ * @package AllInData\Micro\Core\Model
  */
 abstract class AbstractElementorFactory
 {

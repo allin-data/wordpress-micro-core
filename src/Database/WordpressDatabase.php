@@ -6,13 +6,13 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core\Database;
+namespace AllInData\Micro\Core\Database;
 
 use wpdb;
 
 /**
  * Class WordpressDatabase
- * @package AllInData\MicroErp\Core\Database
+ * @package AllInData\Micro\Core\Database
  */
 class WordpressDatabase implements DatabaseInterface
 {

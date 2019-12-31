@@ -2,7 +2,7 @@
     "name": "allindata/wordpress-micro-core",
     "description": "The Core module of the All.In Data Micro Plugin provides fundamental and reusable functionality for the modern development of Wordpress plugins.",
     "type": "wp-plugin",
-    "version": "1.1.2",
+    "version": "1.2.0",
     "minimum-stability": "stable",
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "AllInData\\MicroErp\\Core\\": "./src"
+            "AllInData\\Micro\\Core\\": "./src"
         }
     }
 }

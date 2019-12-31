@@ -6,14 +6,14 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core\Widget;
+namespace AllInData\Micro\Core\Widget;
 
 use Elementor\Widget_Base;
 use Elementor\Plugin as ElementorPlugin;
 
 /**
  * Class AbstractElementorWidget
- * @package AllInData\MicroErp\Core\Model
+ * @package AllInData\Micro\Core\Model
  */
 abstract class AbstractElementorWidget extends Widget_Base implements ElementorWidgetInterface
 {

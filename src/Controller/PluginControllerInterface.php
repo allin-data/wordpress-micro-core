@@ -6,13 +6,13 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core\Controller;
+namespace AllInData\Micro\Core\Controller;
 
 use Exception;
 
 /**
  * Interface PluginControllerInterface
- * @package AllInData\MicroErp\Core\Controller
+ * @package AllInData\Micro\Core\Controller
  */
 interface PluginControllerInterface
 {

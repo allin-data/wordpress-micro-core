@@ -6,11 +6,11 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core\ShortCode;
+namespace AllInData\Micro\Core\ShortCode;
 
 /**
  * Class AbstractNonAnonymousShortCode
- * @package AllInData\MicroErp\Core\ShortCode
+ * @package AllInData\Micro\Core\ShortCode
  */
 abstract class AbstractNonAnonymousShortCode extends AbstractShortCode
 {

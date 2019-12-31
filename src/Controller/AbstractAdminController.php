@@ -6,11 +6,11 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core\Controller;
+namespace AllInData\Micro\Core\Controller;
 
 /**
  * Class AbstractAdminController
- * @package AllInData\MicroErp\Core\Controller
+ * @package AllInData\Micro\Core\Controller
  */
 abstract class AbstractAdminController extends AbstractController implements PluginControllerInterface
 {

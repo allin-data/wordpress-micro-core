@@ -6,11 +6,11 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core\Model;
+namespace AllInData\Micro\Core\Model;
 
 /**
  * Class PaginationFilterFactory
- * @package AllInData\MicroErp\Core\Model\Factory
+ * @package AllInData\Micro\Core\Model\Factory
  */
 class GenericFactory extends AbstractFactory
 {

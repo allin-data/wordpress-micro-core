@@ -6,16 +6,16 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core;
+namespace AllInData\Micro\Core;
 
-use AllInData\MicroErp\Core\Controller\PluginControllerInterface;
-use AllInData\MicroErp\Core\ShortCode\PluginShortCodeInterface;
-use AllInData\MicroErp\Core\Module\PluginModuleInterface;
-use AllInData\MicroErp\Core\Widget\ElementorWidgetInterface;
+use AllInData\Micro\Core\Controller\PluginControllerInterface;
+use AllInData\Micro\Core\ShortCode\PluginShortCodeInterface;
+use AllInData\Micro\Core\Module\PluginModuleInterface;
+use AllInData\Micro\Core\Widget\ElementorWidgetInterface;
 
 /**
  * Class AbstractPlugin
- * @package AllInData\MicroErp\Core
+ * @package AllInData\Micro\Core
  */
 abstract class AbstractElementorPlugin extends AbstractPlugin
 {

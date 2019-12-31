@@ -6,11 +6,11 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core;
+namespace AllInData\Micro\Core;
 
 /**
  * Interface PluginInterface
- * @package AllInData\MicroErp\Core
+ * @package AllInData\Micro\Core
  */
 interface PluginInterface
 {

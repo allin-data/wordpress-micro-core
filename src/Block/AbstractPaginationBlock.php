@@ -6,13 +6,14 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core\Block;
+namespace AllInData\Micro\Core\Block;
 
-use AllInData\MicroErp\Core\Model\PaginationInterface;
+use AllInData\Micro\Core\Init;
+use AllInData\Micro\Core\Model\PaginationInterface;
 
 /**
  * Class AbstractPaginationBlock
- * @package AllInData\MicroErp\Core\Block
+ * @package AllInData\Micro\Core\Block
  */
 abstract class AbstractPaginationBlock extends AbstractBlock
 {
@@ -34,7 +35,7 @@ abstract class AbstractPaginationBlock extends AbstractBlock
      */
     public function __construct(
         PaginationInterface $pagination,
-        string $paginationTemplatePath = AID_MICRO_ERP_CORE_TEMPLATE_DIR
+        string $paginationTemplatePath
     ) {
         $this->pagination = $pagination;
         $this->paginationTemplatePath = $paginationTemplatePath;
@@ -97,6 +98,6 @@ abstract class AbstractPaginationBlock extends AbstractBlock
     private function loadTemplate($templateName)
     {
         $template = $this->getPaginationTemplatePath() . $templateName . '.php';
-        return apply_filters('micro_erp_locate_template', $template, $templateName, $this->getPaginationTemplatePath());
+        return apply_filters('micro_core_locate_template', $template, $templateName, $this->getPaginationTemplatePath());
     }
 }

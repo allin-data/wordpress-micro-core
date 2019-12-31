@@ -6,11 +6,11 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core\Model;
+namespace AllInData\Micro\Core\Model;
 
 /**
  * Interface PaginationInterface
- * @package AllInData\MicroErp\Core\Model
+ * @package AllInData\Micro\Core\Model
  */
 interface PaginationInterface
 {

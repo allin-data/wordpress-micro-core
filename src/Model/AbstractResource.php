@@ -6,15 +6,15 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core\Model;
+namespace AllInData\Micro\Core\Model;
 
-use AllInData\MicroErp\Core\Database\WordpressDatabase;
-use AllInData\MicroErp\Core\Helper\MethodUtil;
+use AllInData\Micro\Core\Database\WordpressDatabase;
+use AllInData\Micro\Core\Helper\MethodUtil;
 use RuntimeException;
 
 /**
  * Class AbstractModel
- * @package AllInData\MicroErp\Core\Model
+ * @package AllInData\Micro\Core\Model
  */
 abstract class AbstractResource
 {

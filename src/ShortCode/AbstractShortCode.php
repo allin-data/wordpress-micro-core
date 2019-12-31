@@ -6,15 +6,15 @@ declare(strict_types=1);
 Copyright (C) 2019 All.In Data GmbH
 */
 
-namespace AllInData\MicroErp\Core\ShortCode;
+namespace AllInData\Micro\Core\ShortCode;
 
-use AllInData\MicroErp\Core\Block\AbstractBlock;
+use AllInData\Micro\Core\Block\AbstractBlock;
 use function apply_filters;
 use function load_template;
 
 /**
  * Class AbstractPlugin
- * @package AllInData\MicroErp\Core
+ * @package AllInData\Micro\Core
  */
 abstract class AbstractShortCode implements PluginShortCodeInterface
 {
@@ -156,6 +156,6 @@ abstract class AbstractShortCode implements PluginShortCodeInterface
     private function loadTemplate($templateName)
     {
         $template = $this->getTemplatePath() . $templateName . '.php';
-        return apply_filters('micro_erp_locate_template', $template, $templateName, $this->getTemplatePath());
+        return apply_filters('micro_core_locate_template', $template, $templateName, $this->getTemplatePath());
     }
 }
