@@ -19,7 +19,7 @@ add_action('plugins_loaded', function () {
 class Init
 {
     const SLUG = 'allindata-micro-core-core';
-    const VERSION = '1.2';
+    const VERSION = '1.3';
     const TEMPLATE_DIR = __DIR__ . '/../view/';
     const TEMP_DIR = ABSPATH . 'tmp/';
     const FILE = __FILE__;
