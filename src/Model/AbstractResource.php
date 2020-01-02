@@ -53,6 +53,10 @@ abstract class AbstractResource
         AbstractFactory $modelFactory,
         string $primaryKey = 'id'
     ) {
+        if (20 < strlen($entityName)) {
+            throw new \InvalidArgumentException('The provided entity name must not be longer then 20 characters.');
+        }
+
         $this->database = $database;
         $this->entityName = $entityName;
         $this->modelFactory = $modelFactory;
@@ -100,7 +104,7 @@ abstract class AbstractResource
         $db = $this->database->getInstance();
 
         $queryEntity = $db->prepare(
-            'SELECT * FROM `'.$db->posts.'` WHERE `post_type`=%s AND `ID`=%d '.$this->getAdditionalLoadWhereEntity(),
+            'SELECT * FROM `' . $db->posts . '` WHERE `post_type`=%s AND `ID`=%d ' . $this->getAdditionalLoadWhereEntity(),
             $this->entityName,
             $id
         );
@@ -117,7 +121,7 @@ abstract class AbstractResource
         $entityData = [];
         if (!empty($entity)) {
             $queryEntityData = $db->prepare(
-                'SELECT * FROM `'.$db->postmeta.'` WHERE `post_id`=%d '.$this->getAdditionalLoadWhereEntityData(),
+                'SELECT * FROM `' . $db->postmeta . '` WHERE `post_id`=%d ' . $this->getAdditionalLoadWhereEntityData(),
                 $id
             );
 
@@ -145,7 +149,7 @@ abstract class AbstractResource
         $db = $this->database->getInstance();
 
         $query = $db->prepare(
-            'SELECT * FROM `'.$db->posts.'` WHERE `post_type`=%s AND `ID`=%d '.$this->getAdditionalLoadWhereEntity(),
+            'SELECT * FROM `' . $db->posts . '` WHERE `post_type`=%s AND `ID`=%d ' . $this->getAdditionalLoadWhereEntity(),
             $this->entityName,
             $id
         );
@@ -226,7 +230,7 @@ abstract class AbstractResource
     {
         $postEntityDataKeySet = $this->getPostEntityDataKeySet();
         $filteredDataSet = [];
-        foreach($entityData as $attributeSet) {
+        foreach ($entityData as $attributeSet) {
             $itemKey = $attributeSet['meta_key'] ?? null;
             $itemValue = $attributeSet['meta_value'] ?? null;
             if (!$itemKey ||

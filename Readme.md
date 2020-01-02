@@ -40,20 +40,12 @@ require __DIR__ . '/vendor/autoload.php';
 
 class FoobarWp extends \AllInData\Micro\Core\Init
 {
+    const PLUGIN_CONFIGURATION = \FoobarWp\PluginConfiguration::class;
     const SLUG = 'foobar-wp';
-
-    static public function prepare()
-    {
-        static::$PLUGIN_CONFIGURATION = \FoobarWp\PluginConfiguration::class;
-        static::$VERSION = '1.0';
-        static::$SLUG = self::SLUG;
-        static::$TEXTDOMAIN = self::SLUG;
-        static::$TEMPLATE_DIR = __DIR__ . '/view/';
-        static::$TEMP_DIR = ABSPATH . 'tmp/';
-        static::$FILE = __FILE__;
-        static::$PATH = \plugin_dir_path(__FILE__);
-        static::$URL = \plugin_dir_url(__FILE__);
-    }
+    const VERSION = '1.0';
+    const TEMPLATE_DIR = __DIR__ . '/view/';
+    const TEMP_DIR = ABSPATH . 'tmp/';
+    const FILE = __FILE__;
 }
 add_action('allindata/micro/core/init', [FoobarWp::class, 'init']);
 ```
@@ -88,7 +80,7 @@ class PluginConfiguration
     public function PluginApp(): Plugin
     {
         return new Plugin(
-            \FoobarWp::$TEMPLATE_DIR,
+            \FoobarWp::load()->getTemplateDirectory(),
             $this->getPluginModules(),
             $this->getPluginControllers(),
             $this->getPluginShortCodes()
@@ -132,14 +124,11 @@ namespace FoobarWp;
 use AllInData\Micro\Core\AbstractPlugin;
 use AllInData\Micro\Core\PluginInterface;
 
-/**
- * Class Plugin
- * @package FoobarWp
- */
 class Plugin extends AbstractPlugin implements PluginInterface
 {
     public function load()
     {
+        // some examples
         add_action('wp_enqueue_scripts', [$this, 'addScripts'], 999);
         add_action('admin_enqueue_scripts', [$this, 'addAdminScripts'], 999);
         add_action('admin_enqueue_scripts', [$this, 'addAdminStyles'], 999);
@@ -147,14 +136,17 @@ class Plugin extends AbstractPlugin implements PluginInterface
 
     public function addAdminStyles()
     {
+        // ...
     }
 
     public function addScripts()
     {
+        // ...
     }
 
     public function addAdminScripts()
     {
+        // ...
     }
 }
 ```
