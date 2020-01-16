@@ -6,7 +6,7 @@ Copyright (C) 2019 All.In Data GmbH
 
 /** @var bool $reverseLayout */
 /** @var bool $showSummary */
-/** @var \AllInData\MicroErp\Core\Block\AbstractPaginationBlock $block */
+/** @var \AllInData\Micro\Core\Block\AbstractPaginationBlock $block */
 $pagination = $block->getPagination();
 $currentPage = $pagination->getCurrentPage();
 $isDisabledPrevious = $currentPage === $pagination->getFirstPage();
@@ -14,14 +14,14 @@ $isDisabledNext = $currentPage === $pagination->getLastPage();
 ?>
 <?php if ($pagination->getPageCount() > 1): ?>
     <?php if ($reverseLayout): /* Top Layout */ ?>
-        <nav aria-label="<?php _e('Pagination', AID_MICRO_ERP_CORE_TEXTDOMAIN) ?>">
+        <nav aria-label="<?php _e('Pagination', \AllInData\Micro\Core\Init::SLUG) ?>">
             <ul class="pagination justify-content-center">
 
                 <li class="page-item <?php if ($isDisabledPrevious): ?>disabled<?php endif; ?>">
                     <a class="page-link"
                        href="<?= $pagination->getPageUrl($currentPage - 1); ?>"
                         <?php if ($isDisabledPrevious): ?> tabindex="-1" aria-disabled="true"<?php endif; ?>
-                       aria-label="<?php _e('Previous', AID_MICRO_ERP_CORE_TEXTDOMAIN) ?>">
+                       aria-label="<?php _e('Previous', \AllInData\Micro\Core\Init::SLUG) ?>">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
@@ -45,19 +45,19 @@ $isDisabledNext = $currentPage === $pagination->getLastPage();
                     <a class="page-link"
                        href="<?= $pagination->getPageUrl($currentPage + 1); ?>"
                         <?php if ($isDisabledNext): ?> tabindex="-1" aria-disabled="true"<?php endif; ?>
-                       aria-label="<?php _e('Next', AID_MICRO_ERP_CORE_TEXTDOMAIN) ?>">
+                       aria-label="<?php _e('Next', \AllInData\Micro\Core\Init::SLUG) ?>">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
             </ul>
             <div class="summary justify-content-center">
-                <p><?php _e('Total items', AID_MICRO_ERP_CORE_TEXTDOMAIN) ?>: <?= $pagination->getTotalCount() ?></p>
+                <p><?php _e('Total items', \AllInData\Micro\Core\Init::SLUG) ?>: <?= $pagination->getTotalCount() ?></p>
             </div>
         </nav>
     <?php else: /* Bottom Layout */ ?>
-        <nav aria-label="<?php _e('Pagination', AID_MICRO_ERP_CORE_TEXTDOMAIN) ?>">
+        <nav aria-label="<?php _e('Pagination', \AllInData\Micro\Core\Init::SLUG) ?>">
             <div class="summary justify-content-center">
-                <p><?php _e('Total items', AID_MICRO_ERP_CORE_TEXTDOMAIN) ?>: <?= $pagination->getTotalCount() ?></p>
+                <p><?php _e('Total items', \AllInData\Micro\Core\Init::SLUG) ?>: <?= $pagination->getTotalCount() ?></p>
             </div>
             <ul class="pagination justify-content-center">
 
@@ -65,7 +65,7 @@ $isDisabledNext = $currentPage === $pagination->getLastPage();
                     <a class="page-link"
                        href="<?= $pagination->getPageUrl($currentPage - 1); ?>"
                         <?php if ($isDisabledPrevious): ?> tabindex="-1" aria-disabled="true"<?php endif; ?>
-                       aria-label="<?php _e('Previous', AID_MICRO_ERP_CORE_TEXTDOMAIN) ?>">
+                       aria-label="<?php _e('Previous', \AllInData\Micro\Core\Init::SLUG) ?>">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
@@ -89,7 +89,7 @@ $isDisabledNext = $currentPage === $pagination->getLastPage();
                     <a class="page-link"
                        href="<?= $pagination->getPageUrl($currentPage + 1); ?>"
                         <?php if ($isDisabledNext): ?> tabindex="-1" aria-disabled="true"<?php endif; ?>
-                       aria-label="<?php _e('Next', AID_MICRO_ERP_CORE_TEXTDOMAIN) ?>">
+                       aria-label="<?php _e('Next', \AllInData\Micro\Core\Init::SLUG) ?>">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>

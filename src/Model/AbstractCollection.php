@@ -146,7 +146,8 @@ abstract class AbstractCollection
                 'fields' => 'ids',
                 'post_type' => $this->resource->getEntityName(),
                 'post_status' => 'publish',
-                'nopaging' => true
+                'nopaging' => true,
+                'posts_per_page' => -1
             ];
         }
 
@@ -170,7 +171,9 @@ abstract class AbstractCollection
             'post_status' => 'publish',
             'cache_results'  => false,
             'update_post_meta_cache' => false,
-            'update_post_term_cache' => false
+            'update_post_term_cache' => false,
+            'nopaging' => true,
+            'posts_per_page' => -1
         ];
     }
 
