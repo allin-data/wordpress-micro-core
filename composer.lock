@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe1548977797ea56dc53ce4d2d9c8f89",
+    "content-hash": "d67f0a9cec7961d7beebd7dcca824d78",
     "packages": [
         {
             "name": "bitexpert/disco",
