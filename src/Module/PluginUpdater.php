@@ -91,6 +91,10 @@ class PluginUpdater implements PluginModuleInterface
      */
     public function applyUpdateOptions($options)
     {
+        if ($options['hook_extra']['plugin'] !== $this->installedPlugin) {
+            return $options;
+        }
+
         $options['destination'] = $this->destinationFolder;
         $options['clear_destination'] = true;
         return $options;
