@@ -31,25 +31,35 @@ class PluginUpdater implements PluginModuleInterface
     /**
      * @var string
      */
-    private $installedFolder;
+    private $destinationFolder;
+    /**
+     * @var string
+     */
+    private $installedPlugin;
 
     /**
      * PluginUpdater constructor.
      * @param string $slug
      * @param string $remoteDeployJson
      * @param string $installedVersion
-     * @param string $installedFolder
+     * @param string $destinationFolder
+     * @param string $installedPlugin
      */
     public function __construct(
         string $slug,
         string $remoteDeployJson,
         string $installedVersion,
-        string $installedFolder
+        string $destinationFolder,
+        string $installedPlugin = null
     ) {
         $this->slug = $slug;
         $this->remoteDeployJson = $remoteDeployJson;
         $this->installedVersion = $installedVersion;
-        $this->installedFolder = $installedFolder;
+        $this->destinationFolder = $destinationFolder;
+        $this->installedPlugin = $installedPlugin;
+        if (!$this->installedPlugin) {
+            $this->installedPlugin = $this->slug . '/' . $this->slug . '.php';
+        }
     }
 
     /**
@@ -58,7 +68,8 @@ class PluginUpdater implements PluginModuleInterface
     public function init()
     {
         \add_filter('plugins_api', [$this, 'applyUpdateCheck'], 20, 3);
-        \add_filter('site_transient_update_plugins', [$this, 'applyUpdate']);
+        \add_filter('pre_set_site_transient_update_plugins', [$this, 'applyUpdate']);
+        \add_filter('upgrader_package_options', [$this, 'applyUpdateOptions']);
         \add_filter('upgrader_process_complete', [$this, 'clearCache'], 10, 2);
     }
 
@@ -72,6 +83,17 @@ class PluginUpdater implements PluginModuleInterface
         if ($options['action'] == 'update' && $options['type'] === 'plugin') {
             delete_transient($transientSlug);
         }
+    }
+
+    /**
+     * @param array $options
+     * @return array
+     */
+    public function applyUpdateOptions($options)
+    {
+        $options['destination'] = $this->destinationFolder;
+        $options['clear_destination'] = true;
+        return $options;
     }
 
     /**
@@ -95,29 +117,21 @@ class PluginUpdater implements PluginModuleInterface
             );
 
             if (!\is_wp_error($remote) && isset($remote['response']['code']) && $remote['response']['code'] == 200 && !empty($remote['body'])) {
-                \set_transient($transientSlug, $remote, 43200); // 12 hours cache
+                \set_transient($transientSlug, $remote, 43200);
             }
-
         }
-
 
         if (!$remote) {
             return $transient;
         }
 
         $remote = \json_decode($remote['body']);
-        // your installed plugin version should be on the line below! You can obtain it dynamically of course
         if ($remote &&
             version_compare($this->installedVersion, $remote->version, '<') &&
-            version_compare($remote->requires, get_bloginfo('version'), '<')) {
-            $res = new \stdClass();
-            $res->slug = $this->slug;
-            $res->plugin = $this->installedFolder;
-            $res->new_version = $remote->version;
-            $res->tested = $remote->tested;
-            $res->package = $remote->download_url;
-            $transient->response[$res->plugin] = $res;
-            $transient->checked[$res->plugin] = $remote->version;
+            version_compare($remote->requires, \get_bloginfo('version'), '<')) {
+            $remote->new_version = $remote->version;
+            $remote->package = $remote->download_url;
+            $transient->response[$this->installedPlugin] = $remote;
         }
 
         return $transient;
@@ -157,7 +171,7 @@ class PluginUpdater implements PluginModuleInterface
             return false;
         }
 
-        $remote = \json_decode($remote['body']);;
+        $remote = \json_decode($remote['body'], true);
         return $remote;
     }
 }
