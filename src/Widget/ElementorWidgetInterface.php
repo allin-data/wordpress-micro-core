@@ -17,7 +17,7 @@ interface ElementorWidgetInterface
     /**
      * Init widget
      */
-    public function init();
+    public function initialize();
 
     /**
      * Register current widget instance

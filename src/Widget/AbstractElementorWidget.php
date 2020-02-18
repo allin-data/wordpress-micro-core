@@ -20,7 +20,7 @@ abstract class AbstractElementorWidget extends Widget_Base implements ElementorW
     /**
      * @inheritDoc
      */
-    public function init()
+    public function initialize()
     {
         add_action('elementor/widgets/widgets_registered', [$this, 'registerWidget']);
     }
@@ -42,6 +42,9 @@ abstract class AbstractElementorWidget extends Widget_Base implements ElementorW
     {
         $attributesString = '';
         foreach ($attributes as $key => $value) {
+            if (!is_string($value) && !is_numeric($value)) {
+                continue;
+            }
             $attributesString .= sprintf(
                 ' %s="%s"',
                 $key,

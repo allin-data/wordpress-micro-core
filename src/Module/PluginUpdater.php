@@ -91,7 +91,9 @@ class PluginUpdater implements PluginModuleInterface
      */
     public function applyUpdateOptions($options)
     {
-        if ($options['hook_extra']['plugin'] !== $this->installedPlugin) {
+        if (!isset($options['hook_extra']) ||
+            !isset($options['hook_extra']['plugin']) ||
+            $options['hook_extra']['plugin'] !== $this->installedPlugin) {
             return $options;
         }
 

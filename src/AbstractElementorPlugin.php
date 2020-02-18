@@ -49,7 +49,7 @@ abstract class AbstractElementorPlugin extends AbstractPlugin
     public function doInit()
     {
         foreach ($this->widgets as $widget) {
-            $widget->init();
+            $widget->initialize();
         }
 
         parent::doInit();
