@@ -48,13 +48,13 @@ abstract class AbstractController implements PluginControllerInterface
     protected function beforeExecute()
     {
         if (!$this->isAllowed()) {
-            $this->throwErrorMessage(__('Insufficient permissions', Init::$TEXTDOMAIN));
+            $this->throwErrorMessage(__('Insufficient permissions', Init::load()->getTextdomain()));
         }
 
         if (!(defined('DOING_AJAX') && DOING_AJAX)) {
             $nonce = $this->getParam('nonce');
             if (!$nonce || false === wp_verify_nonce($nonce, static::ACTION_SLUG)) {
-                $this->throwErrorMessage(__('Invalid nonce specified', Init::$TEXTDOMAIN));
+                $this->throwErrorMessage(__('Invalid nonce specified', Init::load()->getTextdomain()));
             }
         }
     }
