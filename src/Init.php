@@ -101,10 +101,10 @@ class Init
     {
         // create cache folder if not exist
         if (!file_exists($cacheFolder)) {
-            mkdir($cacheFolder, 0660, true);
+            mkdir($cacheFolder, 0775, true);
         }
         // ensure cache folder permissions
-        chmod($cacheFolder, 0660);
+        chmod($cacheFolder, 0775);
 
         $config = new \bitExpert\Disco\BeanFactoryConfiguration($cacheFolder);
         $config->setProxyAutoloader(
